@@ -19,6 +19,10 @@ module.exports = {
         junglegreen: "#071E22",
         junglegreenDarker: "#041012",
       },
+      fontFamily: {
+        poppins: ["Poppins"],
+        vollkorn: ["Vollkorn"],
+      },
       padding: {
         shorter4: "1vw",
         shorter3: "2vw",

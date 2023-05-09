@@ -30,8 +30,7 @@ label {
   h5 {
     @apply text-lg md:text-xl lg:text-2xl font-medium;
   }
-  p,
-  label {
+  p {
     @apply text-base font-normal;
   }
 }
