@@ -1,7 +1,8 @@
 const Home = () => {
   return (
-    <main className="flex">
-      <h1 className="text-primary">Welcome!</h1>
+    <main className="flex min-h-screen flex-col gap-2 justify-center items-center">
+      <h2 className="text-secondary">HI!</h2>
+      <button className="btn-primary">TEST</button>
     </main>
   );
 };
