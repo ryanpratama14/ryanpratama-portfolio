@@ -8,16 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1D7874",
-        primaryDarker: "#155956",
-        secondary: "#F4C095",
-        secondaryDarker: "#c99e7b",
-        red: "#EE2E31",
-        redDarker: "#cc272a",
-        wintergreen: "#679289",
-        wintergreenDarker: "#507069",
-        junglegreen: "#071E22",
-        junglegreenDarker: "#041012",
+        primary: "#ffeaae",
+        secondary: "#031d44",
+        third: "#04395e",
       },
       fontFamily: {
         poppins: ["Poppins"],

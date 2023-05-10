@@ -1,16 +1,24 @@
 import "../styles/globals.css";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
 
 export const metadata = {
   title: "Ryan's Next App",
   description: "Welcome to: Ryan's Portfolio",
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <About />
+      </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

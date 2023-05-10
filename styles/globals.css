@@ -13,7 +13,7 @@ label {
 
 @layer base {
   button {
-    @apply py-2 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
+    @apply border-[1px] font-semibold font-vollkorn text-xl flex items-center border-primary duration-300 text-primary hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-3px_3px_0px_0px_#ffeaae] py-2 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
   }
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold;
@@ -37,22 +37,10 @@ label {
 
 @layer components {
   .btn {
-    @apply py-2 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
-  }
-  .btn-primary {
-    @apply text-white bg-primary hover:bg-primaryDarker;
+    @apply font-semibold font-vollkorn border-[1px] flex items-center gap-1 border-primary duration-300 text-primary hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-3px_3px_0px_0px_#ffeaae] py-2 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
   }
   .btn-secondary {
-    @apply text-black bg-secondary hover:bg-secondaryDarker;
-  }
-  .btn-red {
-    @apply text-white bg-red hover:bg-redDarker;
-  }
-  .btn-wintergreen {
-    @apply text-white bg-wintergreen hover:bg-wintergreenDarker;
-  }
-  .btn-junglegreen {
-    @apply text-white bg-junglegreen hover:bg-junglegreenDarker;
+    @apply font-vollkorn font-semibold border-[1px] flex items-center gap-1 border-secondary duration-300 text-secondary hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#031d44] py-1 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
   }
   .h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold;
