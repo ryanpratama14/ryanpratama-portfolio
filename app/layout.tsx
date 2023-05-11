@@ -1,7 +1,8 @@
 import "../styles/globals.css";
-import About from "./components/About";
-import Navbar from "./components/Navbar";
 import { Poppins } from "next/font/google";
+import Template from "./template";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
 import ScrollToTop from "./components/ScrollToTop";
 import SocialMedia from "./components/SocialMedia";
 
@@ -24,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`themedBg ${poppins.className}`}>
         <Navbar />
-        {children}
+        <Template>{children}</Template>
         <About />
         <ScrollToTop />
         <SocialMedia />

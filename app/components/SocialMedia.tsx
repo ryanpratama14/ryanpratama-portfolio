@@ -40,21 +40,21 @@ export default function SocialMedia(): JSX.Element {
   return (
     <section className="fixed right-0 bottom-0 px-normal">
       <div className="flex items-center justify-center flex-col gap-4">
-        <div className="flex flex-col gap-2 md:gap-4">
+        <div className="flex flex-col gap-4">
           {linkSocial?.map((e, i: number) => {
             return (
               <Link
                 target="_blank"
                 key={i}
                 href={e?.href}
-                className="themedText hover:themedText2nd hover:scale-105"
+                className="themedText hover:themedText2nd hover:scale-110"
               >
                 <Icon width={24} icon={e?.icon} />
               </Link>
             );
           })}
         </div>
-        <div className="themedBg2nd h-12 md:h-24 w-1 rounded-md" />
+        <div className="themedBg2nd h-12 md:h-24 w-1 rounded-t-md themedShadowGlowed" />
       </div>
     </section>
   );

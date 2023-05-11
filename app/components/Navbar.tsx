@@ -33,11 +33,11 @@ export default function Navbar(): JSX.Element {
 
   return (
     <nav
-      className={`animate flex justify-between sticky top-0 px-normal py-4 ${
-        scrollPosition > 1 && "backdrop-blur-sm shadow-md"
+      className={`animate flex justify-between fixed w-full top-0 px-normal py-3 z-[5] md:py-4 ${
+        scrollPosition > 1 && "shadow-md backdrop-blur-[3px]"
       }`}
     >
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-4 items-center">
         <Image src={avatar} className="rounded-full w-8" alt="Ryan Pratama" />
         <Link
           className="btnSpecial"
