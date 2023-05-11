@@ -3,3 +3,9 @@ type NavbarItems = {
   icon: string;
   href: string;
 };
+
+type LinkSocialItems = {
+  href: string;
+  label: string;
+  icon: string;
+};

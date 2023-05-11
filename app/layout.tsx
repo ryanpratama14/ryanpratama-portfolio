@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import { Poppins } from "next/font/google";
+import ScrollToTop from "./components/ScrollToTop";
+import SocialMedia from "./components/SocialMedia";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,6 +26,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <About />
+        <ScrollToTop />
+        <SocialMedia />
       </body>
     </html>
   );

@@ -4,7 +4,7 @@
 
 @layer base {
   button {
-    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-2 px-4 active:scale-95  outline-none rounded-md w-fit;
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-4px_4px_0px_0px_#b53d95] dark:hover:shadow-[-4px_4px_0px_0px_#57e6d9] py-2 px-4 active:scale-95  outline-none rounded-md w-fit;
   }
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold themedText;
@@ -49,33 +49,52 @@
     @apply border-secondary dark:border-secondaryDark animate;
   }
   .btn {
-    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-2 px-6 active:scale-95  outline-none rounded-md w-fit;
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-4px_4px_0px_0px_#b53d95] dark:hover:shadow-[-4px_4px_0px_0px_#57e6d9] py-2 px-6 active:scale-95  outline-none rounded-md w-fit;
+  }
+  .btnSpecial {
+    @apply flex gap-1.5 items-center font-semibold text-primary dark:text-primaryDark bg-secondary dark:bg-secondaryDark rounded-md pl-3 pr-4 py-1;
   }
   .btnSmaller {
-    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-1 px-4 active:scale-95  outline-none rounded-md w-fit;
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-1 px-4 active:scale-95  outline-none rounded-md w-fit;
   }
   .h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold themedText;
   }
   .h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold themedText;
   }
   .h3 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold themedText;
   }
   .h4 {
-    @apply text-xl md:text-2xl lg:text-3xl font-medium;
+    @apply text-xl md:text-2xl lg:text-3xl font-medium themedText;
   }
   .h5 {
-    @apply text-lg md:text-xl lg:text-2xl font-medium;
+    @apply text-lg md:text-xl lg:text-2xl font-medium themedText;
   }
   .p {
-    @apply text-base font-normal;
+    @apply text-base font-normal v;
   }
   .pSmaller {
-    @apply text-sm font-normal;
+    @apply text-sm font-normal themedText;
   }
   .pSmaller2 {
-    @apply text-xs font-normal;
+    @apply text-xs font-normal themedText;
+  }
+}
+
+.bg-animate {
+  background-size: 400% 400%;
+  animation: bg-animation 3s infinite ease-in-out;
+}
+@keyframes bg-animation {
+  0% {
+    background-position: 0 30%;
+  }
+  30% {
+    background-position: 80% 80%;
+  }
+  100% {
+    background-position: 0% 30%;
   }
 }
