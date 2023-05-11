@@ -1,46 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: "Poppins", sans-serif;
-}
-
-label {
-  font-family: "Vollkorn", sans-serif;
-}
-
 @layer base {
   button {
-    @apply border-[1px] font-semibold font-vollkorn text-xl flex items-center border-primary duration-300 text-primary hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-3px_3px_0px_0px_#ffeaae] py-2 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-2 px-6 active:scale-95  outline-none rounded-md w-fit;
   }
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold themedText;
   }
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold themedText;
   }
   h3 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold themedText;
   }
   h4 {
-    @apply text-xl md:text-2xl lg:text-3xl font-medium;
+    @apply text-xl md:text-2xl lg:text-3xl font-medium themedText;
   }
   h5 {
-    @apply text-lg md:text-xl lg:text-2xl font-medium;
+    @apply text-lg md:text-xl lg:text-2xl font-medium themedText;
   }
   p {
-    @apply text-base font-normal;
+    @apply text-base font-normal themedText;
   }
 }
 
 @layer components {
-  .btn {
-    @apply font-semibold font-vollkorn border-[1px] flex items-center gap-1 border-primary duration-300 text-primary hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-3px_3px_0px_0px_#ffeaae] py-2 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
+  .animate {
+    @apply transition-all duration-300;
   }
-  .btn-secondary {
-    @apply font-vollkorn font-semibold border-[1px] flex items-center gap-1 border-secondary duration-300 text-secondary hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#031d44] py-1 px-6 active:scale-95 transition-all outline-none rounded-md w-fit;
+  .themedBg {
+    @apply bg-primary dark:bg-primaryDark animate;
+  }
+  .themedBg2nd {
+    @apply bg-secondary dark:bg-secondaryDark animate;
+  }
+  .themedText {
+    @apply text-primaryDark dark:text-primary animate;
+  }
+  .themedText2nd {
+    @apply text-secondary dark:text-secondaryDark animate;
+  }
+  .themedBorder {
+    @apply border-primary dark:border-primaryDark animate;
+  }
+  .themedBorder2nd {
+    @apply border-secondary dark:border-secondaryDark animate;
+  }
+  .btn {
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-2 px-6 active:scale-95  outline-none rounded-md w-fit;
+  }
+  .btnSmaller {
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-1 px-6 active:scale-95  outline-none rounded-md w-fit;
   }
   .h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold;

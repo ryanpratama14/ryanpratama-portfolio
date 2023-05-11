@@ -1,6 +1,12 @@
 import "../styles/globals.css";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata = {
   title: "Ryan's Next App",
@@ -14,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`themedBg ${poppins.className}`}>
         <Navbar />
         {children}
         <About />
