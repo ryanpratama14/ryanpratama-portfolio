@@ -1,10 +1,9 @@
-"use client";
 import useLocalStorage from "@/hooks/UseLocalStorage";
 import { Icon } from "@iconify/react";
 import { useEffect } from "react";
 
-export default function Theme() {
-  const [theme, setTheme] = useLocalStorage("theme", "dark");
+export default function Theme(): JSX.Element {
+  const [theme, setTheme] = useLocalStorage("theme", "light");
 
   useEffect(() => {
     if (theme === "dark") {
@@ -16,7 +15,7 @@ export default function Theme() {
 
   return (
     <div
-      className="flex w-12 items-center justify-center themedBg cursor-pointer themedText"
+      className="flex items-center justify-center themedBg cursor-pointer themedText"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Icon
