@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { useEffect } from "react";
 
 export default function Theme(): JSX.Element {
-  const [theme, setTheme] = useLocalStorage("theme", "light");
+  const [theme, setTheme] = useLocalStorage("theme", "dark");
 
   useEffect(() => {
     if (theme === "dark") {

@@ -1,5 +1,6 @@
 "use client";
 import { Link as LinkSmooth } from "react-scroll";
+import Link from "next/link";
 import avatar from "../../public/assets/avatar.jpeg";
 import Image from "next/image";
 import Theme from "./Theme";
@@ -34,19 +35,25 @@ export default function Navbar(): JSX.Element {
       }`}
     >
       <div className="flex gap-2 items-center">
-        <Image
-          src={avatar}
-          className="rounded-full w-8 shadow-md"
-          alt="Ryan Pratama"
-        />
-        <h5>Hire Me</h5>
+        <Image src={avatar} className="rounded-full w-8" alt="Ryan Pratama" />
+        <Link
+          className="flex gap-2 h4 md:h5 items-center themedText"
+          download={true}
+          target="_blank"
+          href="/Resume.pdf"
+        >
+          Resume
+          <span>
+            <Icon icon="tabler:hand-click" className="-rotate-[36deg]" />
+          </span>
+        </Link>
       </div>
-      <div className="flex gap-4">
+      <div className="hidden md:flex gap-4">
         {navbarData?.map((e, i: number) => {
           return (
             <LinkSmooth
               smooth={true}
-              offset={-100}
+              offset={-80}
               key={i}
               to={e?.href}
               className="btnSmaller cursor-pointer"

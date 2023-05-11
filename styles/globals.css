@@ -4,7 +4,7 @@
 
 @layer base {
   button {
-    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-2 px-6 active:scale-95  outline-none rounded-md w-fit;
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-2 px-4 active:scale-95  outline-none rounded-md w-fit;
   }
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold themedText;
@@ -52,7 +52,7 @@
     @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-2 px-6 active:scale-95  outline-none rounded-md w-fit;
   }
   .btnSmaller {
-    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-1 px-6 active:scale-95  outline-none rounded-md w-fit;
+    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-2 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-1 px-4 active:scale-95  outline-none rounded-md w-fit;
   }
   .h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold;
