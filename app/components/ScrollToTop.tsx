@@ -33,7 +33,7 @@ const ScrollToTop = (): JSX.Element => {
     >
       <div
         onClick={scrollToTop}
-        className="block themedText cursor-pointer hover:scale-110 hover:-translate-y-2"
+        className="block themedText cursor-pointer hover:scale-105 hover:-translate-y-1"
       >
         <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
       </div>

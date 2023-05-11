@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import ScrollToTop from "./components/ScrollToTop";
 import SocialMedia from "./components/SocialMedia";
+import Contact from "./components/Contact";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Navbar />
         <Template>{children}</Template>
         <About />
+        <Contact />
         <ScrollToTop />
         <SocialMedia />
       </body>
