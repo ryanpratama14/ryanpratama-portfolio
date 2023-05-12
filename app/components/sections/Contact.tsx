@@ -1,6 +1,5 @@
 "use client";
 import { Icon } from "@iconify/react";
-import Link from "next/link";
 import React from "react";
 
 export default function Contact(): JSX.Element {
@@ -18,7 +17,7 @@ export default function Contact(): JSX.Element {
           or if you would like to discuss potential collaborations.
         </p>
         <div className="flex group flex-col gap-3 justify-center items-center">
-          <Link
+          <a
             href="mailto:ru.ryanpratama@gmail.com"
             target="_blank"
             className="btn"
@@ -27,17 +26,17 @@ export default function Contact(): JSX.Element {
               <Icon icon="ic:outline-email" width={20} />
             </span>
             Email Me
-          </Link>
+          </a>
           <p className="relative">
             or text me instead on{" "}
-            <Link
+            <a
               href="https://t.me/ryanpratama14"
               target="_blank"
               className="themedText2nd hover:underline font-semibold"
             >
               Telegram
-            </Link>
-            <span className="drop-shadow scale-0 duration-300 group-hover:scale-150 max-sm:hidden absolute ml-3 transition-all">
+            </a>
+            <span className="drop-shadow scale-0 group-hover:scale-150 max-sm:hidden absolute ml-3 animate">
               🚀
             </span>
           </p>

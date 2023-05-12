@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import avatar from "../../public/assets/avatar.jpeg";
 import Image from "next/image";
 import Theme from "./Theme";
@@ -7,6 +6,7 @@ import { useScrollPosition } from "@/hooks/UseScrollPosition";
 import { Icon } from "@iconify/react";
 import { useState, Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import { LoadToTop } from "@/utils/utils";
 
 export default function Navbar(): JSX.Element {
   const navbarData: NavbarItems[] = [
@@ -37,18 +37,15 @@ export default function Navbar(): JSX.Element {
       }`}
     >
       <div className="flex gap-4 items-center">
-        <Image src={avatar} className="rounded-full w-8" alt="Ryan Pratama" />
-        <Link
-          className="btnSpecial"
-          download={true}
-          target="_blank"
-          href="/Resume.pdf"
-        >
+        <div onClick={() => LoadToTop()} className="cursor-pointer">
+          <Image src={avatar} className="rounded-full w-8" alt="Ryan Pratama" />
+        </div>
+        <a className="btnSpecial" target="_blank" href="/Resume.pdf">
           <span>
-            <Icon icon="material-symbols:download" width={20} />
+            <Icon icon="mdi:resume" width={20} />
           </span>
           Resume
-        </Link>
+        </a>
       </div>
       <div className="flex gap-4 items-center">
         {navbarData?.map((e, i: number) => {
@@ -83,9 +80,8 @@ export default function Navbar(): JSX.Element {
             <Menu.Items className="absolute right-0 mt-6 origin-top-right flex flex-col gap-3 rounded-md focus:outline-none">
               {navbarData?.map((e, i: number) => {
                 return (
-                  <Menu.Item>
+                  <Menu.Item key={i}>
                     <a
-                      key={i}
                       href={e?.href}
                       className="btnSmaller w-full cursor-pointer"
                     >

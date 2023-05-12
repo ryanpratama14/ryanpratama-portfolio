@@ -13,6 +13,8 @@ module.exports = {
         primaryDark: "#1b1b1b",
         secondary: "#b53d95",
         secondaryDark: "#57e6d9",
+        alternate: "#bfbfbf",
+        alternateDark: "#0a0a0a",
       },
       padding: {
         shorter4: "1vw",

@@ -27,7 +27,7 @@ const ScrollToTop = (): JSX.Element => {
     <div
       className={
         visible
-          ? "flex justify-center items-center fixed bottom-10 right-0 z-10 transition-all transform w-full"
+          ? "flex justify-center items-center fixed bottom-6 right-0 z-10 transition-all transform w-full"
           : "hidden"
       }
     >
