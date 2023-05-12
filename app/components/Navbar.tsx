@@ -4,7 +4,7 @@ import Image from "next/image";
 import Theme from "./Theme";
 import { useScrollPosition } from "@/hooks/UseScrollPosition";
 import { Icon } from "@iconify/react";
-import { useState, Fragment } from "react";
+import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { LoadToTop } from "@/utils/utils";
 
@@ -28,7 +28,6 @@ export default function Navbar(): JSX.Element {
   ];
 
   const scrollPosition = useScrollPosition();
-  const [dropdown, setDropdown] = useState<boolean>(false);
 
   return (
     <nav
@@ -37,7 +36,7 @@ export default function Navbar(): JSX.Element {
       }`}
     >
       <div className="flex gap-4 items-center">
-        <div onClick={() => LoadToTop()} className="cursor-pointer">
+        <div onClick={LoadToTop} className="cursor-pointer">
           <Image src={avatar} className="rounded-full w-8" alt="Ryan Pratama" />
         </div>
         <a className="btnSpecial" target="_blank" href="/Resume.pdf">
