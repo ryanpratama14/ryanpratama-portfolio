@@ -52,6 +52,7 @@ module.exports = {
       },
       fontFamily: {
         vollkorn: ["Vollkorn"],
+        poppins: ["Poppins"],
       },
     },
   },
