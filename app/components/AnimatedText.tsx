@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import React from "react";
 
-export default function AnimatedText({ text, className }: any) {
+export default function AnimatedText({
+  text,
+  className,
+}: any): React.JSX.Element {
   const quote = {
     initial: {
       opacity: 1,

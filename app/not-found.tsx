@@ -1,7 +1,8 @@
 "use client";
 import { Icon } from "@iconify/react";
+import React from "react";
 
-export default function NotFound(): JSX.Element {
+export default function NotFound(): React.JSX.Element {
   return (
     <section className="min-h-screen flex justify-center items-center">
       <div className="flex flex-col justify-center items-center gap-8">

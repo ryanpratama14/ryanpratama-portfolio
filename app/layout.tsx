@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import React from "react";
 import Template from "./template";
 
 // components
@@ -16,7 +17,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}): React.JSX.Element {
   return (
     <html lang="en">
       <body className="themedBg">
