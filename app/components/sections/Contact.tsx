@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 import React from "react";
 
-export default function Contact(): JSX.Element {
+export default function Contact(): React.JSX.Element {
   return (
     <section
       id="contact"

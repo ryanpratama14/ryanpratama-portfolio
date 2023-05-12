@@ -1,8 +1,9 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import React from "react";
 
-export default function SocialMedia(): JSX.Element {
+export default function SocialMedia(): React.JSX.Element {
   const linkSocial: LinkSocialItems[] = [
     {
       href: "mailto:ru.ryanpratama@gmail.com",

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import React from "react";
 
-export default function TransitionEffect(): JSX.Element {
+export default function TransitionEffect(): React.JSX.Element {
   return (
     <>
       <motion.div

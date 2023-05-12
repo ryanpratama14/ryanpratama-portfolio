@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { LoadToTop } from "@/utils/utils";
 
-const ScrollToTop = (): JSX.Element => {
+const ScrollToTop = (): React.JSX.Element => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {

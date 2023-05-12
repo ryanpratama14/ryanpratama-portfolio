@@ -4,11 +4,11 @@ import Image from "next/image";
 import Theme from "./Theme";
 import { useScrollPosition } from "@/hooks/UseScrollPosition";
 import { Icon } from "@iconify/react";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { LoadToTop } from "@/utils/utils";
 
-export default function Navbar(): JSX.Element {
+export default function Navbar(): React.JSX.Element {
   const navbarData: NavbarItems[] = [
     {
       href: "#about",
