@@ -5,8 +5,8 @@ export default function AnimatedText({
   text,
   className,
 }: {
-  text: string;
-  className: string;
+  text?: string;
+  className?: string;
 }): React.JSX.Element {
   const quote = {
     initial: {
