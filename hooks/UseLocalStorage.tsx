@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect } from "react";
 
 export default function useLocalStorage(key: string, defaultValue: any) {
@@ -13,6 +12,7 @@ export default function useLocalStorage(key: string, defaultValue: any) {
       return defaultValue;
     }
   });
+
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
