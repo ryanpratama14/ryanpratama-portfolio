@@ -4,7 +4,10 @@ import React from "react";
 export default function AnimatedText({
   text,
   className,
-}: any): React.JSX.Element {
+}: {
+  text: string;
+  className: string;
+}): React.JSX.Element {
   const quote = {
     initial: {
       opacity: 1,

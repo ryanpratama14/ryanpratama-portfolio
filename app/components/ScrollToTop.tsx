@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import { LoadToTop } from "@/utils/utils";
 
 const ScrollToTop = (): React.JSX.Element => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
