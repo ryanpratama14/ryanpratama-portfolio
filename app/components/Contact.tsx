@@ -7,7 +7,7 @@ export default function Contact(): JSX.Element {
   return (
     <section
       id="contact"
-      className="px-normal min-h-screen flex items-center justify-center text-center"
+      className="px-normal  min-h-screen flex items-center justify-center text-center"
     >
       <div className="flex flex-col gap-6 items-center justify-center">
         <h1>Contact Me</h1>
@@ -17,16 +17,31 @@ export default function Contact(): JSX.Element {
           available. Please feel free to reach out to me if you have any leads
           or if you would like to discuss potential collaborations.
         </p>
-        <Link
-          href="mailto:ru.ryanpratama@gmail.com"
-          target="_blank"
-          className="btn"
-        >
-          <span>
-            <Icon icon="ic:outline-email" width={20} />
-          </span>
-          Email Me
-        </Link>
+        <div className="flex group flex-col gap-3 justify-center items-center">
+          <Link
+            href="mailto:ru.ryanpratama@gmail.com"
+            target="_blank"
+            className="btn"
+          >
+            <span>
+              <Icon icon="ic:outline-email" width={20} />
+            </span>
+            Email Me
+          </Link>
+          <p className="relative">
+            or text me instead on{" "}
+            <Link
+              href="https://t.me/ryanpratama14"
+              target="_blank"
+              className="themedText2nd hover:underline font-semibold"
+            >
+              Telegram
+            </Link>
+            <span className="drop-shadow scale-0 duration-300 group-hover:scale-150 max-sm:hidden absolute ml-3 transition-all">
+              🚀
+            </span>
+          </p>
+        </div>
       </div>
     </section>
   );

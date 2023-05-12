@@ -38,16 +38,19 @@ export default function SocialMedia(): JSX.Element {
   ];
 
   return (
-    <section className="fixed right-0 bottom-0 px-normal">
+    <section className="fixed right-0 bottom-0 px-normal group">
       <div className="flex items-center justify-center flex-col gap-4">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
+          <p className="group-hover:scale-125 group-hover:translate-y-0 translate-y-10 scale-0 duration-300 transition-all">
+            👋
+          </p>
           {linkSocial?.map((e, i: number) => {
             return (
               <Link
                 target="_blank"
                 key={i}
                 href={e?.href}
-                className="themedText hover:themedText2nd hover:scale-110"
+                className="themedText hover:themedText2nd hover:scale-110 hover:themedShadowGlowed"
               >
                 <Icon width={24} icon={e?.icon} />
               </Link>

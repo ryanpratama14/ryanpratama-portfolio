@@ -15,7 +15,7 @@ export default function Theme(): JSX.Element {
 
   return (
     <div
-      className="flex items-center justify-center themedBg cursor-pointer themedText"
+      className="flex items-center justify-center cursor-pointer themedText"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Icon

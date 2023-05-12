@@ -7,10 +7,11 @@ label {
   font-family: "Vollkorn", serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
-  button {
-    @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-4px_4px_0px_0px_#b53d95] dark:hover:shadow-[-4px_4px_0px_0px_#57e6d9] py-2 px-4 active:scale-95  outline-none rounded-md w-fit;
-  }
   h1 {
     @apply md:-ml-[0.2rem] text-5xl md:text-6xl lg:text-7xl font-bold themedText;
   }
@@ -63,7 +64,7 @@ label {
     @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-4px_4px_0px_0px_#b53d95] dark:hover:shadow-[-4px_4px_0px_0px_#57e6d9] py-2 px-6 active:scale-95  outline-none rounded-md w-fit;
   }
   .btnSpecial {
-    @apply themedShadowGlowed flex gap-1.5 items-center font-semibold text-primary dark:text-primaryDark bg-secondary dark:bg-secondaryDark rounded-md pl-3 pr-4 py-1;
+    @apply themedShadowGlowed transition-all flex gap-1.5 items-center font-semibold text-primary dark:text-primaryDark bg-secondary dark:bg-secondaryDark rounded-md pl-3 pr-4 py-1 active:scale-95  outline-none;
   }
   .btnSmaller {
     @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-1 px-4 active:scale-95  outline-none rounded-md w-fit;

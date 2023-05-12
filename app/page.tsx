@@ -1,3 +1,6 @@
+"use client";
+import AnimatedText from "./components/AnimatedText";
+
 export default function Home() {
   return (
     <main className="flex px-normal lg:px-longer3 flex-col justify-center themedBg items-center min-h-screen">
@@ -6,7 +9,7 @@ export default function Home() {
           <label>Hi! My name is</label>
           <h1>Ryan</h1>
         </div>
-        <h3>I create digital products for the internet</h3>
+        <AnimatedText text="I create digital products for the internet" />
         <p className="w-full lg:w-[75%] xl:w-[50%]">
           A front-end developer specializing in building intuitive web
           applications with engaging user interfaces. I utilize the React.js

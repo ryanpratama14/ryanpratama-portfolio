@@ -48,6 +48,9 @@ module.exports = {
         longer9: "24vw",
         longer10: "26vw",
       },
+      fontFamily: {
+        vollkorn: ["Vollkorn"],
+      },
     },
   },
   plugins: [],
