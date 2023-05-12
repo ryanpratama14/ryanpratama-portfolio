@@ -8,7 +8,7 @@ export default function Contact(): JSX.Element {
       id="contact"
       className="px-normal  min-h-screen flex items-center justify-center text-center"
     >
-      <div className="flex flex-col gap-6 items-center justify-center">
+      <div className="flex group flex-col gap-6 items-center justify-center">
         <h1>Contact Me</h1>
         <p className="w-full md:w-[60%] xl:w-[40%]">
           I am actively seeking new opportunities at the moment and would be
@@ -16,7 +16,7 @@ export default function Contact(): JSX.Element {
           available. Please feel free to reach out to me if you have any leads
           or if you would like to discuss potential collaborations.
         </p>
-        <div className="flex group flex-col gap-3 justify-center items-center">
+        <div className="flex flex-col gap-3 justify-center items-center">
           <a
             href="mailto:ru.ryanpratama@gmail.com"
             target="_blank"

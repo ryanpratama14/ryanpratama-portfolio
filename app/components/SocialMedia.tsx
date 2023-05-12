@@ -56,7 +56,7 @@ export default function SocialMedia(): JSX.Element {
             );
           })}
         </div>
-        <div className="themedBg2nd h-12 md:h-24 w-1 rounded-t-md themedShadowGlowed" />
+        <div className="themedBg2nd h-12 md:h-24 xl:h-36 w-1.5 rounded-t-md themedShadowGlowed" />
       </div>
     </section>
   );
