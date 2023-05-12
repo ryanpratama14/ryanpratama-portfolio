@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import { LoadToTop } from "@/utils/utils";
 
 const ScrollToTop = (): JSX.Element => {
   const [visible, setVisible] = useState(false);
@@ -12,13 +13,6 @@ const ScrollToTop = (): JSX.Element => {
     } else if (scrolled <= 300) {
       setVisible(false);
     }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   };
 
   if (typeof window !== "undefined") {
@@ -34,7 +28,7 @@ const ScrollToTop = (): JSX.Element => {
       }
     >
       <div
-        onClick={scrollToTop}
+        onClick={LoadToTop}
         className="block themedText cursor-pointer hover:scale-105 hover:-translate-y-1"
       >
         <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
