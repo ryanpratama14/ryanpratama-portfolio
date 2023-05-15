@@ -36,7 +36,7 @@ export default function Contact(): React.JSX.Element {
             >
               Telegram
             </a>
-            <span className="drop-shadow scale-0 group-hover:scale-150 max-sm:hidden absolute ml-3 animate">
+            <span className="drop-shadow scale-0 group-hover:scale-150 absolute ml-3 animate">
               🚀
             </span>
           </p>
