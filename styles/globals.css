@@ -50,6 +50,9 @@ label {
     @apply flex flex-col-reverse;
   }
   .f-centered {
+    @apply justify-center items-center;
+  }
+  .f-centered-text {
     @apply justify-center items-center text-center;
   }
   .animate {
