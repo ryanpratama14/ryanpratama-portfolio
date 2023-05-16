@@ -8,9 +8,9 @@ export default function Template({
   children: React.ReactNode;
 }): React.JSX.Element {
   return (
-    <>
+    <React.Fragment>
       <TransitionEffect />
       {children}
-    </>
+    </React.Fragment>
   );
 }
