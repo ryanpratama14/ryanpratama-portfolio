@@ -4,8 +4,8 @@ import React from "react";
 
 export default function NotFound(): React.JSX.Element {
   return (
-    <section className="min-h-screen flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center gap-8">
+    <section className="min-h-screen flex f-centered">
+      <div className="f-col f-centered gap-8">
         <Icon
           icon="ooui:article-not-found-ltr"
           className="themedText2nd"

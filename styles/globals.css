@@ -12,6 +12,12 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
+button,
+a,
+label {
+  user-select: none;
+}
+
 @layer base {
   h1 {
     @apply md:-ml-[0.2rem] text-5xl md:text-6xl lg:text-7xl font-bold themedText;
@@ -37,6 +43,15 @@ html {
 }
 
 @layer components {
+  .f-col {
+    @apply flex flex-col;
+  }
+  .f-col-reverse {
+    @apply flex flex-col-reverse;
+  }
+  .f-centered {
+    @apply justify-center items-center text-center;
+  }
   .animate {
     @apply transition-all duration-300;
   }

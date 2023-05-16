@@ -38,8 +38,8 @@ export default function SocialMedia(): React.JSX.Element {
 
   return (
     <section className="fixed right-0 bottom-0 px-normal group">
-      <div className="flex items-center justify-center flex-col gap-4">
-        <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
+      <div className="flex f-centered flex-col gap-4">
+        <div className="f-col f-centered gap-3 md:gap-4">
           <p className="group-hover:scale-125 group-hover:translate-y-0 translate-y-10 scale-0 -300 animate">
             👋
           </p>
