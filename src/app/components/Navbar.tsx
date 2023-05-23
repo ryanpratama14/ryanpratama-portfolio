@@ -1,11 +1,11 @@
 "use client";
-import avatar from "../../public/assets/avatar.jpeg";
+import avatar from "../../../public/assets/avatar.jpeg";
 import Image from "next/image";
 import Theme from "./Theme";
-import { useScrollPosition } from "@/hooks/UseScrollPosition";
 import { Icon } from "@iconify/react";
 import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import { useScrollPosition } from "@/hooks/UseScrollPosition";
 import { LoadToTop } from "@/utils/utils";
 
 export default function Navbar(): React.JSX.Element {
