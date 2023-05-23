@@ -80,7 +80,7 @@ export default function Navbar(): React.JSX.Element {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 mt-6 origin-top-right f-col gap-3 rounded-md focus:outline-none">
+            <Menu.Items className="absolute right-0 mt-6 origin-top-right flex flex-col gap-3 rounded-md focus:outline-none">
               {navbarData?.map((e, i: number) => {
                 return (
                   <Menu.Item key={i}>

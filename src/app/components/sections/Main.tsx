@@ -4,9 +4,9 @@ import AnimatedText from "../AnimatedText";
 
 export default function Main(): React.JSX.Element {
   return (
-    <section className="f-col f-centered px-normal lg:px-longer3 themedBg min-h-screen">
-      <div className="f-col gap-4">
-        <div className="f-col">
+    <section className="flex flex-col justify-center items-center px-normal lg:px-longer3 themedBg min-h-screen">
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           <label className="text-lg md:text-xl">Hi! My name is</label>
           <h1>Ryan</h1>
         </div>

@@ -15,7 +15,7 @@ export default function Theme(): React.JSX.Element {
 
   return (
     <div
-      className="flex f-centered cursor-pointer themedText"
+      className="flex justify-center items-center cursor-pointer themedText"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Icon

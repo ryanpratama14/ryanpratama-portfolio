@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Footer(): React.JSX.Element {
   return (
-    <footer className="px-normal pb-longer7 md:pb-longer2 xl:pb-normal pt-6 flex f-centered">
-      <div className="f-col text-center">
+    <footer className="px-normal pb-longer7 md:pb-longer2 xl:pb-normal pt-6 flex justify-center items-center">
+      <div className="flex flex-col text-center">
         <p className="font-medium">
           Built by{" "}
           <span className="themedText2nd">
