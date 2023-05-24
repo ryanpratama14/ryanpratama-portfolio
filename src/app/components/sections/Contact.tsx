@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import React from "react";
+import AnimatedUnderlinedText from "../AnimatedUnderlinedText";
 
 export default function Contact(): React.JSX.Element {
   return (
@@ -8,7 +9,7 @@ export default function Contact(): React.JSX.Element {
       className="px-normal min-h-screen flex justify-center items-center text-center"
     >
       <div className="flex group flex-col gap-6 justify-center items-center">
-        <h1>Contact Me</h1>
+        <AnimatedUnderlinedText text="Contact Me" />
         <p className="w-full md:w-[60%] xl:w-[40%]">
           I am actively seeking new opportunities at the moment and would be
           open to hearing about any potential opportunities that may be

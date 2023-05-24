@@ -39,7 +39,7 @@ export default function Navbar(): React.JSX.Element {
         <div onClick={LoadToTop} className="cursor-pointer">
           <Image
             src={avatar}
-            className="rounded-full w-8"
+            className="rounded-full w-8 select-none"
             alt="ru.ryanpratama@gmail.com"
           />
         </div>

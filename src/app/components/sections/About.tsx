@@ -6,8 +6,8 @@ export default function About(): React.JSX.Element {
       className="py-normal px-normal lg:px-longer3 flex flex-col gap-12"
       id="about"
     >
-      <div className="flex group justify-between lg:flex-nowrap flex-wrap gap-6">
-        <div className="flex flex-col gap-4 w-full lg:w-[50%]">
+      <div className="flex justify-between lg:flex-nowrap flex-wrap gap-6">
+        <div className="flex flex-col gap-6 w-full lg:w-[50%]">
           <h1>About Me</h1>
           <p>
             In September 2022, I joined a free programming course taught by my
