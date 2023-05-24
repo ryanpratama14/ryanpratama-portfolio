@@ -51,7 +51,6 @@ module.exports = {
         longer10: "26vw",
       },
       fontFamily: {
-        vollkorn: ["Vollkorn"],
         poppins: ["Poppins"],
       },
     },

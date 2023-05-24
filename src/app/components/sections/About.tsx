@@ -18,7 +18,7 @@ export default function About(): React.JSX.Element {
               <a
                 href="https://faotech.dev/"
                 target="_blank"
-                className="themedText2nd hover:themedShadowGlowed"
+                className="font-semibold themedText2nd hover:themedShadowGlowed"
               >
                 faoTech
               </a>
