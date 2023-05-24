@@ -1,5 +1,4 @@
 import React from "react";
-import AnimatedUnderlinedText from "../AnimatedUnderlinedText";
 
 export default function About(): React.JSX.Element {
   return (
