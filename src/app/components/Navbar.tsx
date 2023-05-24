@@ -43,7 +43,7 @@ export default function Navbar(): React.JSX.Element {
             alt="ru.ryanpratama@gmail.com"
           />
         </div>
-        <a className="btnSpecial" target="_blank" href="/Resume.pdf">
+        <a className="btnSpecial" target="_blank" href="/resume.pdf">
           <span>
             <Icon icon="mdi:resume" width={20} />
           </span>
