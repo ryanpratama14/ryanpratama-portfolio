@@ -4,11 +4,11 @@ import AnimatedUnderlinedText from "../AnimatedUnderlinedText";
 export default function About(): React.JSX.Element {
   return (
     <section
-      className="py-normal lg:px-longer3 flex flex-col gap-12"
+      className="py-normal px-normal lg:px-longer3 flex flex-col gap-12"
       id="about"
     >
-      <div className="flex group justify-between gap-6">
-        <div className="flex flex-col gap-4 w-[50%]">
+      <div className="flex group justify-between lg:flex-nowrap flex-wrap gap-6">
+        <div className="flex flex-col gap-4 w-full lg:w-[50%]">
           <h1>About Me</h1>
           <p>
             In September 2022, I joined a free programming course taught by my
@@ -34,7 +34,7 @@ export default function About(): React.JSX.Element {
             industries and locations.
           </p>
         </div>
-        <div className="w-[50%]">
+        <div className="w-full lg:w-[50%]">
           <img />
         </div>
       </div>
