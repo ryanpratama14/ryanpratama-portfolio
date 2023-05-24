@@ -20,7 +20,7 @@ label {
 
 @layer base {
   h1 {
-    @apply md:-ml-[0.2rem] text-5xl md:text-6xl lg:text-7xl font-bold themedText;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold themedText;
   }
   h2 {
     @apply text-3xl md:text-4xl lg:text-5xl font-semibold themedText;
@@ -43,6 +43,9 @@ label {
 }
 
 @layer components {
+  .label {
+    @apply themedText2nd drop-shadow font-medium font-vollkorn;
+  }
   .animate {
     @apply transition-all duration-300;
   }
@@ -80,7 +83,7 @@ label {
     @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#b53d95] dark:hover:shadow-[-2px_2px_0px_0px_#57e6d9] py-1 px-4 active:scale-95  outline-none rounded-md w-fit;
   }
   .h1 {
-    @apply md:-ml-[0.2rem] text-4xl md:text-5xl lg:text-6xl font-bold themedText;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold themedText;
   }
   .h2 {
     @apply text-3xl md:text-4xl lg:text-5xl font-semibold themedText;
@@ -120,3 +123,21 @@ label {
     background-position: 0% 30%;
   }
 }
+/* 
+.fancy {
+  position: relative;
+  white-space: nowrap;
+  &:after {
+    --deco-height: 0.3125em;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--deco-height) * -1);
+    height: var(--deco-height);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-size: auto 100%;
+    background-repeat: round;
+    background-position: 0em;
+  }
+} */
