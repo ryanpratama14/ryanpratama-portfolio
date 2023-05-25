@@ -17,9 +17,9 @@ export default function SocialMedia(): React.JSX.Element {
                 target="_blank"
                 key={i}
                 href={e?.href}
-                className="themedText hover:themedText2nd hover:scale-110 hover:themedShadowGlowed"
+                className="themedText hover:themedText2nd text-xl md:text-2xl hover:scale-110 hover:themedShadowGlowed"
               >
-                <Icon width={24} icon={e?.icon} />
+                <Icon icon={e?.icon} />
               </a>
             );
           })}
