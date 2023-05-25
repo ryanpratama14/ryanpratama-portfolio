@@ -6,7 +6,7 @@ export default function Contact(): React.JSX.Element {
   return (
     <section
       id="contact"
-      className="px-normal min-h-screen flex justify-center items-center text-center"
+      className="px-normal min-h-screen flex justify-center text-center"
     >
       <div className="flex group flex-col gap-6 justify-center items-center">
         <h1>Contact Me</h1>
