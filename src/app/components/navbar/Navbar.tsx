@@ -6,19 +6,17 @@ import Resume from "./Resume";
 import MobileMenu from "./MobileMenu";
 import avatar from "../../../../public/assets/avatar.jpeg";
 import { Icon } from "@iconify/react";
-import { useScrollPosition } from "@/hooks/UseScrollPosition";
 import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { LoadToTop } from "@/utils/utils";
 import { navbarData } from "../../constants/constants";
 
 export default function Navbar(): React.JSX.Element {
-  const scrollPosition = useScrollPosition();
   const completion = useReadingProgress();
 
   return (
     <nav
       className={`animate flex justify-between fixed w-full top-0 px-normal py-3 z-[5] md:py-4 ${
-        scrollPosition > 1 && "shadow-md backdrop-blur-[3px]"
+        completion > 1 && "shadow-md backdrop-blur-[3px]"
       }`}
     >
       <div className="flex gap-4 items-center">
