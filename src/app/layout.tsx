@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Template from "./template";
 
 // components
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import SocialMedia from "./components/SocialMedia";
 import Footer from "./components/Footer";
