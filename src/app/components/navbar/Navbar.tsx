@@ -7,11 +7,13 @@ import MobileMenu from "./MobileMenu";
 import avatar from "../../../../public/assets/avatar.jpeg";
 import { Icon } from "@iconify/react";
 import { useScrollPosition } from "@/hooks/UseScrollPosition";
+import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { LoadToTop } from "@/utils/utils";
 import { navbarData } from "../../constants/constants";
 
 export default function Navbar(): React.JSX.Element {
   const scrollPosition = useScrollPosition();
+  const completion = useReadingProgress();
 
   return (
     <nav
@@ -47,6 +49,10 @@ export default function Navbar(): React.JSX.Element {
         <Theme />
         <MobileMenu />
       </div>
+      <span
+        style={{ transform: `translateX(${completion - 100}%)` }}
+        className="absolute bg-secondary dark:bg-secondaryDark transition-colors duration-300 left-0 bottom-0 h-0.5 w-full"
+      />
     </nav>
   );
 }
