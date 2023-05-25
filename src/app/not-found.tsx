@@ -1,6 +1,6 @@
 "use client";
-import { Icon } from "@iconify/react";
 import React from "react";
+import { Icon } from "@iconify/react";
 
 export default function NotFound(): React.JSX.Element {
   return (

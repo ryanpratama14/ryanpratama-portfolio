@@ -1,6 +1,6 @@
+import React, { useEffect } from "react";
 import useLocalStorage from "@/hooks/UseLocalStorage";
 import { Icon } from "@iconify/react";
-import React, { useEffect } from "react";
 
 export default function Theme(): React.JSX.Element {
   const [theme, setTheme] = useLocalStorage("theme", "dark");

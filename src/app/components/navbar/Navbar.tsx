@@ -20,7 +20,7 @@ export default function Navbar(): React.JSX.Element {
       }`}
     >
       <div className="flex gap-4 items-center">
-        <div onClick={LoadToTop} className="cursor-pointer">
+        <div onClick={LoadToTop} className="cursor-pointer hidden sm:block">
           <Image
             src={avatar}
             className="rounded-full w-8"
