@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Theme from "./Theme";
-import Resume from "./Resume";
-import MobileMenu from "./MobileMenu";
+import Theme from "./components/Theme";
+import Resume from "./components/Resume";
+import MobileMenu from "./components/MobileMenu";
 import avatar from "../../../../public/assets/avatar.jpeg";
 import { Icon } from "@iconify/react";
 import { useReadingProgress } from "@/hooks/useReadingProgress";

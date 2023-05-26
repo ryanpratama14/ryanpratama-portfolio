@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export default function NotFound(): React.JSX.Element {
   return (
@@ -12,9 +13,9 @@ export default function NotFound(): React.JSX.Element {
           width={200}
         />
         <h2>Ooops, page not found</h2>
-        <button className="btn" onClick={() => (window.location.href = "/")}>
+        <Link className="btn" href="/">
           Back to Homepage
-        </button>
+        </Link>
       </div>
     </section>
   );

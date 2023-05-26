@@ -33,9 +33,7 @@ export default function About(): React.JSX.Element {
             industries and locations.
           </p>
         </div>
-        <div className="w-full lg:w-[50%]">
-          <img />
-        </div>
+        <div className="w-full lg:w-[50%]">{/* <img /> */}</div>
       </div>
     </section>
   );
