@@ -1,22 +1,40 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Theme from "./components/Theme";
 import Resume from "./components/Resume";
 import MobileMenu from "./components/MobileMenu";
 import avatar from "../../../../public/assets/avatar.jpeg";
 import { Icon } from "@iconify/react";
-import { useReadingProgress } from "@/hooks/useReadingProgress";
+// import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { LoadToTop } from "@/utils/utils";
 import { navbarData } from "../../constants/constants";
 
 export default function Navbar(): React.JSX.Element {
-  const completion = useReadingProgress();
+  // const completion = useReadingProgress();
+  const [visible, setVisible] = useState<boolean>(true);
+  let lastScrollTop = 0;
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      () => {
+        var { pageYOffset } = window;
+        if (pageYOffset > lastScrollTop) {
+          setVisible(false);
+        } else if (pageYOffset < lastScrollTop) {
+          setVisible(true);
+        }
+        lastScrollTop = pageYOffset <= 0 ? 0 : pageYOffset;
+      },
+      { passive: true }
+    );
+  }, []);
 
   return (
     <nav
-      className={`animate flex justify-between fixed w-full top-0 px-normal py-3 z-[5] md:py-4 ${
-        completion > 1 && "shadow-md backdrop-blur-[3px]"
+      className={`animate shadow-md backdrop-blur-[3px] flex justify-between fixed w-full top-0 px-normal py-3 z-[5] md:py-4 ${
+        visible ? "translate-x-0" : "-translate-y-56"
       }`}
     >
       <div className="flex gap-4 items-center">
@@ -47,10 +65,10 @@ export default function Navbar(): React.JSX.Element {
         <Theme />
         <MobileMenu />
       </div>
-      <span
+      {/* <span
         style={{ transform: `translateX(${completion - 100}%)` }}
         className="absolute bg-secondary dark:bg-secondaryDark transition-colors duration-300 left-0 bottom-0 h-0.5 w-full"
-      />
+      /> */}
     </nav>
   );
 }
