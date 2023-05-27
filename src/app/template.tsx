@@ -2,11 +2,11 @@
 import React from "react";
 import TransitionEffect from "./components/TransitionEffect";
 
-export default function Template({
-  children,
-}: {
+type Props = {
   children: React.ReactNode;
-}): React.JSX.Element {
+};
+
+export default function Template({ children }: Props): React.JSX.Element {
   return (
     <React.Fragment>
       <TransitionEffect />

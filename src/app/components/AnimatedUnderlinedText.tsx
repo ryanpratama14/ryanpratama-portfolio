@@ -1,10 +1,12 @@
 import React from "react";
 
+type Props = {
+  text?: string;
+};
+
 export default function AnimatedUnderlinedText({
   text,
-}: {
-  text: string;
-}): React.JSX.Element {
+}: Props): React.JSX.Element {
   return (
     <div className="relative w-fit">
       <h1>{text}</h1>

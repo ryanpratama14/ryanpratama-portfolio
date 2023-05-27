@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   description: "Welcome to: Ryan's Portfolio",
 };
 
-export default function RootLayout({
-  children,
-}: {
+type Props = {
   children: React.ReactNode;
-}): React.JSX.Element {
+};
+
+export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en">
       <body className="themedBg">
