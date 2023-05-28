@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 import TransitionEffect from "./components/TransitionEffect";
 
 type Props = {
@@ -8,9 +10,9 @@ type Props = {
 
 export default function Template({ children }: Props): React.JSX.Element {
   return (
-    <React.Fragment>
+    <Provider store={store}>
       <TransitionEffect />
       {children}
-    </React.Fragment>
+    </Provider>
   );
 }
