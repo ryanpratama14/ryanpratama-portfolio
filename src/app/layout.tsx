@@ -22,11 +22,13 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en">
       <body className="themedBg">
-        <Navbar />
-        <Template>{children}</Template>
-        <Footer />
-        <ScrollToTop />
-        <SocialMedia />
+        <Template>
+          <Navbar />
+          {children}
+          <Footer />
+          <ScrollToTop />
+          <SocialMedia />
+        </Template>
       </body>
     </html>
   );

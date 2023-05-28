@@ -15,9 +15,3 @@ type PortfolioItems = {
   label?: string;
   icon?: string | IconifyIcon;
 };
-
-export declare module "react" {
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
-    before?: string;
-  }
-}
