@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Theme from "./components/Theme";
 import Resume from "./components/Resume";
@@ -13,22 +13,24 @@ import { navbarData } from "../../constants/constants";
 export default function Navbar(): React.JSX.Element {
   // const completion = useReadingProgress();
   const [visible, setVisible] = useState<boolean>(true);
-  let lastScrollTop = 0;
+  const lastScrollTop = useRef(0);
 
   useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      () => {
-        var { pageYOffset } = window;
-        if (pageYOffset > lastScrollTop) {
-          setVisible(false);
-        } else if (pageYOffset < lastScrollTop) {
-          setVisible(true);
-        }
-        lastScrollTop = pageYOffset <= 0 ? 0 : pageYOffset;
-      },
-      { passive: true }
-    );
+    if (typeof window !== "undefined") {
+      window.addEventListener(
+        "scroll",
+        () => {
+          var { pageYOffset } = window;
+          if (pageYOffset > lastScrollTop.current) {
+            setVisible(false);
+          } else if (pageYOffset < lastScrollTop.current) {
+            setVisible(true);
+          }
+          lastScrollTop.current = pageYOffset <= 0 ? 0 : pageYOffset;
+        },
+        { passive: true }
+      );
+    }
   }, []);
 
   return (
