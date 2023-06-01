@@ -28,7 +28,7 @@ export default function Main(): React.JSX.Element {
           <ul className="flex flex-wrap gap-3 themedText">
             {skillsData?.map((skill, index: number) => {
               return (
-                <li key={index} className="flex gap-1.5 items-center underline">
+                <li key={index} className="flex gap-1.5 items-center">
                   <span>
                     <Icon
                       width={20}
