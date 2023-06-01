@@ -42,7 +42,7 @@ label {
 
 @layer components {
   .padx {
-    @apply px-normal xl:px-longer3;
+    @apply px-normal 2xl:px-longer3;
   }
   .label {
     @apply themedText2nd drop-shadow font-medium font-mono;
