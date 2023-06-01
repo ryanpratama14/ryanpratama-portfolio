@@ -18,14 +18,14 @@ export default function Experience(): React.JSX.Element {
               className="h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             >
               <section className="flex flex-col gap-2 col-span-1 md:col-span-2 lg:col-span-1">
-                <div className="flex gap-2 items-center">
-                  <Image src={e?.src} alt={e?.label} className="w-24" />
+                <div className="flex gap-2 items-center group">
+                  <Image src={e?.src} alt={e?.label} className="w-24 h-24" />
                   <div className="flex flex-col gap-1">
                     <h4>{e?.label}</h4>
-                    <label className="hover:themedShadowGlowed lg:text-sm">
+                    <label className="group-hover:themedShadowGlowed lg:text-sm">
                       {e?.as}
                     </label>
-                    <small className="px-2 py-0.5 rounded-md themedBg2nd themedTextInverse">
+                    <small className="px-2 py-0.5 text-sm w-fit rounded-md themedBg2nd themedTextInverse">
                       {e?.since}
                     </small>
                   </div>

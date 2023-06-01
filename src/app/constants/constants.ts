@@ -67,7 +67,7 @@ export const experienceData: ExperienceItems[] = [
         href: "https://www.linkedin.com/company/faotech",
       },
     ],
-    since: "september 2022 - present",
+    since: "sep 2022 - present",
     as: "Front-End Developer",
     companyDetails:
       "Indonesian-based software house company. Our unique combination of Indonesian and Russian educational backgrounds allows us to serve clients from diverse industries and locations, and we are open to new projects worldwide.",
