@@ -39,7 +39,7 @@ export default function Experience(): React.JSX.Element {
                   })}
                 </ul>
               </article>
-              <div className="aspect-video md:aspect-auto md:h-full col-span-1 sm:order-last order-2 relative">
+              <div className="aspect-video md:aspect-auto lg:h-full col-span-1 sm:order-last order-2 relative">
                 <Image
                   src={e?.src2}
                   alt={e?.label}
@@ -56,7 +56,7 @@ export default function Experience(): React.JSX.Element {
                           className="btnSmaller px-1"
                         >
                           <span>
-                            <Icon icon={link?.icon} width={20} />
+                            <Icon icon={link?.icon} width={25} />
                           </span>
                         </a>
                       );
