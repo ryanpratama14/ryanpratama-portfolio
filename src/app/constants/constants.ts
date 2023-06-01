@@ -108,17 +108,17 @@ export const linkSocial: LinkSocialItems[] = [
   {
     href: "mailto:ru.ryanpratama@gmail.com",
     label: "Email",
-    icon: "ic:outline-email",
+    icon: "mdi:email-outline",
   },
   {
     href: "https://github.com/ryanpratama14",
     label: "GitHub",
-    icon: "uil:github-alt",
+    icon: "mdi:github",
   },
   {
     href: "https://www.linkedin.com/in/ryanpratama14/",
     label: "LinkedIn",
-    icon: "ri:linkedin-fill",
+    icon: "mdi:linkedin",
   },
   {
     href: "https://t.me/ryanpratama14",
@@ -128,7 +128,7 @@ export const linkSocial: LinkSocialItems[] = [
   {
     href: "https://wa.me/+79961005242",
     label: "WhatsApp",
-    icon: "ic:baseline-whatsapp",
+    icon: "mdi:whatsapp",
   },
   {
     href: "https://www.instagram.com/ryanpratama14/",
