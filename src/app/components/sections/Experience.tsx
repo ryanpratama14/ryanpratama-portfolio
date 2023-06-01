@@ -15,7 +15,7 @@ export default function Experience(): React.JSX.Element {
           return (
             <div
               key={i}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             >
               <section className="flex flex-col gap-2 col-span-1 md:col-span-2 lg:col-span-1">
                 <div className="flex gap-2 items-center">
@@ -39,11 +39,11 @@ export default function Experience(): React.JSX.Element {
                   })}
                 </ul>
               </article>
-              <div className="h-full col-span-1 sm:order-last order-2 relative">
+              <div className="aspect-square md:h-full col-span-1 sm:order-last order-2 relative">
                 <Image
                   src={e?.src2}
                   alt={e?.label}
-                  className="w-full object-cover rounded-md aspect-square shadow-[0px_0px_5px_1px_#b53d95] dark:shadow-[0px_0px_5px_1px_#57e6d9] animate"
+                  className="w-full h-full object-cover rounded-md shadow-[0px_0px_5px_1px_#b53d95] dark:shadow-[0px_0px_5px_1px_#57e6d9] animate"
                 />
                 <div className="absolute flex items-center justify-center top-0 w-full h-full opacity-0 hover:opacity-100 themedBg2ndOpacity rounded-md">
                   <div className="flex gap-2">
