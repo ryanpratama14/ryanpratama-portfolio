@@ -3,7 +3,7 @@ import AnimatedText from "../AnimatedText";
 
 export default function Main(): React.JSX.Element {
   return (
-    <section className="flex flex-col justify-center padx min-h-screen">
+    <section className="flex flex-col justify-center main-padding min-h-screen">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
           <label className="xl:text-xl">Hi! My name is</label>

@@ -41,8 +41,8 @@ label {
 }
 
 @layer components {
-  .padx {
-    @apply px-normal 2xl:px-longer3;
+  .main-padding {
+    @apply py-normal px-normal 2xl:px-longer3;
   }
   .label {
     @apply themedText2nd drop-shadow font-medium font-mono;

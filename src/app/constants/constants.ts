@@ -79,6 +79,11 @@ export const navbarData: NavbarItems[] = [
     icon: "mdi:about-circle-outline",
     label: "About",
   },
+  // {
+  //   href: "#experience",
+  //   icon: "icon-park-outline:journey",
+  //   label: "Experience",
+  // },
   {
     href: "#projects",
     icon: "ant-design:project-outlined",

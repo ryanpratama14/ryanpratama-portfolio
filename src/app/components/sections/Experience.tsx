@@ -8,7 +8,7 @@ export default function Experience(): React.JSX.Element {
   return (
     <section
       id="experience"
-      className="flex flex-col justify-center gap-12 min-h-screen padx"
+      className="flex flex-col justify-center gap-12 min-h-screen main-padding"
     >
       <h1>Experience</h1>
       {experienceData?.map((e, i: number) => {
