@@ -33,7 +33,7 @@ export default function About(): React.JSX.Element {
           </p>
         </div>
         <div className="w-full flex items-center justify-center gap-2 md:w-[30%] lg:w-[50%]">
-          <div className="relative group md:w-full w-[90%] translate-x-2 lg:translate-x-0">
+          <div className="relative group md:w-full w-[95%] translate-x-3 lg:translate-x-0">
             <Image
               src={ryan}
               alt="Ryan's fav photo all the time"
