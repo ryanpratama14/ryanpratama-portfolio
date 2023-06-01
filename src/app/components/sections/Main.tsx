@@ -16,14 +16,14 @@ export default function Main(): React.JSX.Element {
         </div>
         <div className="flex flex-col gap-3">
           <AnimatedText text="I create digital products for the internet" />
-          <p className="w-full lg:w-[75%] xl:w-[50%]">
+          <p className="w-full md:w-[75%] xl:w-[50%]">
             A front-end developer specializing in building intuitive web
             applications with engaging user interfaces. I utilize the React.js
             framework to develop efficient, scalable and maintainable frontend
             applications.
           </p>
         </div>
-        <div className="flex flex-col gap-3 w-full lg:w-[75%] xl:w-[50%]">
+        <div className="flex flex-col gap-3 w-full md:w-[75%] xl:w-[50%]">
           <h5 className="italic">Tech Stacks</h5>
           <ul className="flex flex-wrap gap-3 themedText">
             {skillsData?.map((skill, index: number) => {
