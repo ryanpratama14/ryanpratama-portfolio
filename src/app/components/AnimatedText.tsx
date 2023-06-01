@@ -36,7 +36,7 @@ export default function AnimatedText({
     },
   };
   return (
-    <motion.h4
+    <motion.h3
       variants={quote}
       initial="initial"
       animate="animate"
@@ -49,6 +49,6 @@ export default function AnimatedText({
           </motion.span>
         );
       })}
-    </motion.h4>
+    </motion.h3>
   );
 }

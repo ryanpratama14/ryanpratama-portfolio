@@ -21,7 +21,7 @@ export default function Experience(): React.JSX.Element {
                 <div className="flex gap-2 items-center">
                   <Image src={e?.src} alt={e?.label} className="w-24" />
                   <div className="flex flex-col gap-1">
-                    <h5>{e?.label}</h5>
+                    <h4>{e?.label}</h4>
                     <label className="hover:themedShadowGlowed lg:text-sm">
                       {e?.as}
                     </label>
@@ -33,7 +33,7 @@ export default function Experience(): React.JSX.Element {
               </section>
               <article className="flex flex-col gap-2 col-span-1 lg:col-span-2 sm:order-2 order-last">
                 <p>{e?.companyDetails}</p>
-                <ul className="flex flex-col list-disc pl-4 themedText">
+                <ul className="flex flex-col list-disc pl-5 themedText">
                   {e?.moreDetails?.map((detail, indexDetail: number) => {
                     return <li key={indexDetail}>{detail}</li>;
                   })}
