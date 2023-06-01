@@ -31,7 +31,8 @@ label {
   h5 {
     @apply text-lg md:text-xl lg:text-2xl font-medium themedTextAlternate;
   }
-  p {
+  p,
+  ul {
     @apply text-base font-normal themedText;
   }
   label {
@@ -40,6 +41,9 @@ label {
 }
 
 @layer components {
+  .padx {
+    @apply px-normal xl:px-longer3;
+  }
   .label {
     @apply themedText2nd drop-shadow font-medium font-mono;
   }
@@ -61,6 +65,9 @@ label {
   .themedText2nd {
     @apply text-secondary dark:text-secondaryDark animate;
   }
+  .themedTextInverse {
+    @apply text-primary dark:text-primaryDark animate;
+  }
   .themedBorder {
     @apply border-primary dark:border-primaryDark animate;
   }
@@ -69,6 +76,9 @@ label {
   }
   .themedShadowGlowed {
     @apply drop-shadow-[0px_0px_2px_#b53d95] dark:drop-shadow-[0px_0px_2px_#57e6d9];
+  }
+  .themedShadowGlowed2 {
+    @apply drop-shadow-[0px_0px_4px_#b53d95] dark:drop-shadow-[0px_0px_4px_#57e6d9];
   }
   .btn {
     @apply themedText2nd themedBorder2nd themedBg font-semibold border-[1px] flex items-center gap-1.5 hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-4px_4px_0px_0px_#b53d95] dark:hover:shadow-[-4px_4px_0px_0px_#57e6d9] py-2 px-6 active:scale-95 outline-none rounded-md w-fit;

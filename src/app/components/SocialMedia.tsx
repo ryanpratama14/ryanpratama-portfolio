@@ -17,14 +17,14 @@ export default function SocialMedia(): React.JSX.Element {
                 target="_blank"
                 key={i}
                 href={e?.href}
-                className="themedText hover:themedText2nd text-xl md:text-2xl hover:scale-110 hover:themedShadowGlowed"
+                className="themedText hover:themedText2nd text-xl xl:text-2xl hover:scale-110 hover:themedShadowGlowed"
               >
                 <Icon icon={e?.icon} />
               </a>
             );
           })}
         </div>
-        <div className="themedBg2nd h-12 md:h-24 xl:h-36 w-1.5 rounded-t-md themedShadowGlowed" />
+        <div className="themedBg2nd h-12 md:h-24 xl:h-36 w-1 rounded-t-md themedShadowGlowed" />
       </div>
     </section>
   );

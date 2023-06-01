@@ -4,7 +4,7 @@ import Image from "next/image";
 import Theme from "./components/Theme";
 import Resume from "./components/Resume";
 import MobileMenu from "./components/MobileMenu";
-import avatar from "../../../../public/assets/avatar.jpeg";
+import avatar from "../../../../public/assets/avatar.jpg";
 import { Icon } from "@iconify/react";
 // import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { LoadToTop } from "@/utils/utils";

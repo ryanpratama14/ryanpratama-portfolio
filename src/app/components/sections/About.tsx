@@ -1,12 +1,14 @@
 import React from "react";
+import ryan from "../../../../public/assets/ryan.jpeg";
+import Image from "next/image";
 
 export default function About(): React.JSX.Element {
   return (
     <section
-      className="min-h-screen px-normal lg:px-longer3 flex justify-center flex-col gap-12"
+      className="min-h-screen px-normal lg:px-longer3 flex justify-center flex-col gap-24"
       id="about"
     >
-      <div className="flex justify-between lg:flex-nowrap flex-wrap gap-6">
+      <div className="flex justify-between lg:flex-nowrap flex-wrap items-center gap-x-24 gap-y-12">
         <div className="flex flex-col gap-6 w-full lg:w-[50%]">
           <h1>About Me</h1>
           <p>
@@ -27,13 +29,19 @@ export default function About(): React.JSX.Element {
             <br />
             <br />
             As I developed my skills, I discovered a passion for front-end
-            development and decided to specialize in this field. Thanks to our
-            unique combination of Indonesian and Russian educational
-            backgrounds, faoTech is able to serve clients from diverse
-            industries and locations.
+            development and decided to specialize in this field.
           </p>
         </div>
-        <div className="w-full lg:w-[50%]">{/* <img /> */}</div>
+        <div className="w-full flex items-center justify-center gap-2 lg:w-[50%]">
+          <div className="relative group md:w-full w-[90%] translate-x-2 lg:translate-x-0">
+            <Image
+              src={ryan}
+              alt="Ryan's fav photo all the time"
+              className="-translate-x-4 -translate-y-4 group-hover:-translate-x-6 group-hover:-translate-y-6 animate aspect-square object-cover rounded-md grayscale group-hover:grayscale-0"
+            />
+            <div className="group-hover:translate-y-1 group-hover:translate-x-1 group-hover:lg:translate-y-3 group-hover:lg:translate-x-3 -z-10 absolute w-full top-0 aspect-square border-4 themedBorder2nd rounded-md" />
+          </div>
+        </div>
       </div>
     </section>
   );

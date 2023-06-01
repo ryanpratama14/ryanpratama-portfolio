@@ -1,3 +1,78 @@
+import faotech from "../../../public/assets/faoTech.png";
+import faotech2 from "../../../public/assets/faoTech2.jpeg";
+
+export const experienceData: ExperienceItems[] = [
+  {
+    src: faotech,
+    src2: faotech2,
+    label: "faoTech",
+    href: "https://faotech.dev/",
+    since: "september 2022 - present",
+    as: "Front-End Developer",
+    companyDetails:
+      "Indonesian-based software house company. Our unique combination of Indonesian and Russian educational backgrounds allows us to serve clients from diverse industries and locations, and we are open to new projects worldwide.",
+    moreDetails: [
+      "Developed 3 fully responsive web apps as using React.js.",
+      "Optimized key content pages for SEO objectives.",
+      "Created reusable JavaScript functions and JSX components that sped up the development process.",
+      "Conducted routine updates to ensure optimal website performance.",
+      "Utilized Axios to implement RESTful APIs, enabling seamless communication between the front-end and back-end.",
+      "Utilized industry best practices and stayed up-to-date with the latest front-end technologies.",
+      "Received great feedback from the Project Manager and Team Lead.",
+    ],
+    skills: [
+      {
+        label: "React.js",
+        icon: "mdi:react",
+      },
+      {
+        label: "React Native",
+        icon: "mdi:react",
+      },
+      {
+        label: "Next.js",
+        icon: "teenyicons:nextjs-solid",
+      },
+      {
+        label: "Redux Toolkit",
+        icon: "akar-icons:redux-fill",
+      },
+      {
+        label: "Axios",
+        icon: "simple-icons:axios",
+      },
+      {
+        label: "Git",
+        icon: "mdi:git",
+      },
+      {
+        label: "TypeScript",
+        icon: "teenyicons:typescript-solid",
+      },
+      {
+        label: "JavaScript",
+        icon: "teenyicons:javascript-solid",
+      },
+      {
+        label: "Tailwind CSS",
+        icon: "mdi:tailwind",
+      },
+      {
+        label: "Ant Design",
+        icon: "simple-icons:antdesign",
+      },
+      {
+        label: "MUI",
+        icon: "simple-icons:mui",
+      },
+      {
+        label: "Styled Components",
+        icon: "file-icons:styledcomponents",
+      },
+    ],
+  },
+];
+
 export const navbarData: NavbarItems[] = [
   {
     href: "#about",
