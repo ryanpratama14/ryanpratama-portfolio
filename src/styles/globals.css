@@ -55,6 +55,9 @@ label {
   .themedBg2nd {
     @apply bg-secondary dark:bg-secondaryDark animate;
   }
+  .themedBg2ndOpacity {
+    @apply bg-secondary/50 dark:bg-secondaryDark/50 animate;
+  }
   .themedText {
     @apply text-primaryDark dark:text-primary animate;
   }

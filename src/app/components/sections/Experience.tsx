@@ -30,22 +30,6 @@ export default function Experience(): React.JSX.Element {
                     </small>
                   </div>
                 </div>
-                {/* <div className="flex gap-2">
-                  {e?.links?.map((link, linkIndex) => {
-                    return (
-                      <a
-                        key={linkIndex}
-                        href={link?.href}
-                        target="_blank"
-                        className="btnSmaller p-0.5"
-                      >
-                        <span>
-                          <Icon icon={link?.icon} width={20} />
-                        </span>
-                      </a>
-                    );
-                  })}
-                </div> */}
               </section>
               <article className="flex flex-col gap-2 col-span-1 lg:col-span-2 sm:order-2 order-last">
                 <p>{e?.companyDetails}</p>
@@ -55,12 +39,30 @@ export default function Experience(): React.JSX.Element {
                   })}
                 </ul>
               </article>
-              <div className="h-full col-span-1 sm:order-last order-2">
+              <div className="h-full col-span-1 sm:order-last order-2 relative">
                 <Image
                   src={e?.src2}
                   alt={e?.label}
-                  className="w-full object-cover rounded-md aspect-square md:h-full shadow-[0px_0px_10px_1px_#b53d95] dark:shadow-[0px_0px_10px_1px_#57e6d9] animate"
+                  className="w-full object-cover rounded-md aspect-square md:h-full shadow-[0px_0px_5px_1px_#b53d95] dark:shadow-[0px_0px_5px_1px_#57e6d9] animate"
                 />
+                <div className="absolute flex items-center justify-center top-0 w-full h-full opacity-0 hover:opacity-100 themedBg2ndOpacity rounded-md">
+                  <div className="flex gap-2">
+                    {e?.links?.map((link, linkIndex) => {
+                      return (
+                        <a
+                          key={linkIndex}
+                          href={link?.href}
+                          target="_blank"
+                          className="btnSmaller px-1"
+                        >
+                          <span>
+                            <Icon icon={link?.icon} width={20} />
+                          </span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
           );
