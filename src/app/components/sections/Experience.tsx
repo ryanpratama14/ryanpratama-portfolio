@@ -43,7 +43,7 @@ export default function Experience(): React.JSX.Element {
                 <Image
                   src={e?.src2}
                   alt={e?.label}
-                  className="w-full object-cover rounded-md aspect-square md:h-full shadow-[0px_0px_5px_1px_#b53d95] dark:shadow-[0px_0px_5px_1px_#57e6d9] animate"
+                  className="w-full object-cover rounded-md aspect-square shadow-[0px_0px_5px_1px_#b53d95] dark:shadow-[0px_0px_5px_1px_#57e6d9] animate"
                 />
                 <div className="absolute flex items-center justify-center top-0 w-full h-full opacity-0 hover:opacity-100 themedBg2ndOpacity rounded-md">
                   <div className="flex gap-2">
