@@ -39,7 +39,7 @@ export default function Experience(): React.JSX.Element {
                   })}
                 </ul>
               </article>
-              <div className="aspect-video md:aspect-auto lg:h-full col-span-1 sm:order-last order-2 relative">
+              <div className="aspect-video md:aspect-auto col-span-1 sm:order-last order-2 relative">
                 <Image
                   src={e?.src2}
                   alt={e?.label}
