@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { LoadToTop } from "@/utils/utils";
 
@@ -15,17 +15,21 @@ const ScrollToTop = (): React.JSX.Element => {
     }
   };
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", toggleVisible);
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", toggleVisible);
+    }
+  }, []);
 
   return (
     <div
-      className={
-        visible
-          ? "flex justify-center items-center fixed bottom-6 right-0 z-10 transition-all transform w-full"
-          : "hidden"
-      }
+      className={`animate
+        ${
+          visible
+            ? "flex scale-100 translate-y-0 justify-center items-center fixed bottom-6 right-0 z-10 w-full"
+            : "scale-0 translate-y-12"
+        }
+      `}
     >
       <div
         onClick={LoadToTop}
