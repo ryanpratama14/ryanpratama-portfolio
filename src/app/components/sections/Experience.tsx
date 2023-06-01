@@ -17,11 +17,11 @@ export default function Experience(): React.JSX.Element {
               key={i}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              <section className="flex flex-col gap-4 col-span-1 md:col-span-2 lg:col-span-1">
+              <section className="flex flex-col gap-2 col-span-1 md:col-span-2 lg:col-span-1">
                 <div className="flex gap-2 items-center">
                   <Image src={e?.src} alt={e?.label} className="w-24" />
                   <div className="flex flex-col gap-1">
-                    <h4>{e?.label}</h4>
+                    <h5>{e?.label}</h5>
                     <label className="hover:themedShadowGlowed lg:text-sm">
                       {e?.as}
                     </label>
@@ -30,29 +30,14 @@ export default function Experience(): React.JSX.Element {
                     </small>
                   </div>
                 </div>
-                <ul className="flex flex-wrap gap-3 themedText text-sm">
-                  {e?.skills?.map((skill, skillsIndex: number) => {
-                    return (
-                      <li
-                        key={skillsIndex}
-                        className="flex gap-1.5 items-center"
-                      >
-                        <span>
-                          <Icon width={20} icon={skill?.icon} />
-                        </span>
-                        {skill?.label}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <div className="flex gap-2 lg:self-start self-end">
+                {/* <div className="flex gap-2">
                   {e?.links?.map((link, linkIndex) => {
                     return (
                       <a
                         key={linkIndex}
                         href={link?.href}
                         target="_blank"
-                        className="btnSmaller px-2"
+                        className="btnSmaller p-0.5"
                       >
                         <span>
                           <Icon icon={link?.icon} width={20} />
@@ -60,11 +45,11 @@ export default function Experience(): React.JSX.Element {
                       </a>
                     );
                   })}
-                </div>
+                </div> */}
               </section>
-              <article className="flex flex-col gap-4 col-span-1 lg:col-span-2 sm:order-2 order-last">
+              <article className="flex flex-col gap-2 col-span-1 lg:col-span-2 sm:order-2 order-last">
                 <p>{e?.companyDetails}</p>
-                <ul className="flex flex-col list-disc pl-6 themedText">
+                <ul className="flex flex-col list-disc pl-4 themedText">
                   {e?.moreDetails?.map((detail, indexDetail: number) => {
                     return <li key={indexDetail}>{detail}</li>;
                   })}

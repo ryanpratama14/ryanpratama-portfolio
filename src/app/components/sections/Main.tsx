@@ -1,5 +1,7 @@
 import React from "react";
 import AnimatedText from "../AnimatedText";
+import { Icon } from "@iconify/react";
+import { skillsData } from "@/app/constants/constants";
 
 export default function Main(): React.JSX.Element {
   return (
@@ -7,7 +9,7 @@ export default function Main(): React.JSX.Element {
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
           <label className="xl:text-xl">Hi! My name is</label>
-          <h1 className="-ml-0.5">Ryan</h1>
+          <h1 className="-translate-x-[0.2rem]">Ryan</h1>
         </div>
         <AnimatedText text="I create digital products for the internet" />
         <p className="w-full lg:w-[75%] xl:w-[50%]">
@@ -16,6 +18,25 @@ export default function Main(): React.JSX.Element {
           framework to develop efficient, scalable and maintainable frontend
           applications.
         </p>
+        <div className="flex flex-col gap-3 w-full lg:w-[75%] xl:w-[50%]">
+          <h5 className="italic">Tech Stacks</h5>
+          <ul className="flex flex-wrap gap-3 themedText text-sm">
+            {skillsData?.map((skill, index: number) => {
+              return (
+                <li key={index} className="flex gap-1.5 items-center">
+                  <span>
+                    <Icon
+                      width={20}
+                      icon={skill?.icon}
+                      className="themedText2nd"
+                    />
+                  </span>
+                  {skill?.label}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );

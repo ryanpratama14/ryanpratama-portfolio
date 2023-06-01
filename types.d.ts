@@ -19,7 +19,6 @@ type PortfolioItems = {
 type ExperienceItems = {
   label: string;
   since: string;
-  skills: SkillsItems[];
   links?: LinksItems[];
   src?: StaticImageData;
   src2?: StaticImageData;

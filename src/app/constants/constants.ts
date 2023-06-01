@@ -1,6 +1,57 @@
 import faotech from "../../../public/assets/faoTech.png";
 import faotech2 from "../../../public/assets/faoTech2.jpeg";
 
+export const skillsData: SkillsItems[] = [
+  {
+    label: "React.js",
+    icon: "teenyicons:react-solid",
+  },
+  {
+    label: "React Native",
+    icon: "teenyicons:react-solid",
+  },
+  {
+    label: "Next.js",
+    icon: "teenyicons:nextjs-solid",
+  },
+  {
+    label: "Redux Toolkit",
+    icon: "akar-icons:redux-fill",
+  },
+  {
+    label: "Axios",
+    icon: "simple-icons:axios",
+  },
+  {
+    label: "Git",
+    icon: "teenyicons:git-solid",
+  },
+  {
+    label: "TypeScript",
+    icon: "teenyicons:typescript-solid",
+  },
+  {
+    label: "JavaScript",
+    icon: "teenyicons:javascript-solid",
+  },
+  {
+    label: "Tailwind CSS",
+    icon: "teenyicons:tailwind-solid",
+  },
+  {
+    label: "Ant Design",
+    icon: "simple-icons:antdesign",
+  },
+  {
+    label: "MUI",
+    icon: "simple-icons:mui",
+  },
+  {
+    label: "Styled Components",
+    icon: "file-icons:styledcomponents",
+  },
+];
+
 export const experienceData: ExperienceItems[] = [
   {
     src: faotech,
@@ -28,56 +79,6 @@ export const experienceData: ExperienceItems[] = [
       "Utilized Axios to implement RESTful APIs, enabling seamless communication between the front-end and back-end.",
       "Utilized industry best practices and stayed up-to-date with the latest front-end technologies.",
       "Received great feedback from the Project Manager and Team Lead.",
-    ],
-    skills: [
-      {
-        label: "React.js",
-        icon: "teenyicons:react-solid",
-      },
-      {
-        label: "React Native",
-        icon: "teenyicons:react-solid",
-      },
-      {
-        label: "Next.js",
-        icon: "teenyicons:nextjs-solid",
-      },
-      {
-        label: "Redux Toolkit",
-        icon: "akar-icons:redux-fill",
-      },
-      {
-        label: "Axios",
-        icon: "simple-icons:axios",
-      },
-      {
-        label: "Git",
-        icon: "teenyicons:git-solid",
-      },
-      {
-        label: "TypeScript",
-        icon: "teenyicons:typescript-solid",
-      },
-      {
-        label: "JavaScript",
-        icon: "teenyicons:javascript-solid",
-      },
-      {
-        label: "Tailwind CSS",
-        icon: "teenyicons:tailwind-solid",
-      },
-      {
-        label: "Ant Design",
-        icon: "simple-icons:antdesign",
-      },
-      {
-        label: "MUI",
-        icon: "simple-icons:mui",
-      },
-      {
-        label: "Styled Components",
-        icon: "file-icons:styledcomponents",
-      },
     ],
   },
 ];
