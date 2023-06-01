@@ -49,9 +49,9 @@ export default function Footer(): React.JSX.Element {
               target="_blank"
               key={i}
               href={e?.href}
-              className="themedText hover:themedText2nd text-xl xl:text-2xl hover:scale-110 hover:themedShadowGlowed"
+              className="hover:scale-110 hover:themedShadowGlowed themedText hover:themedText2nd"
             >
-              <Icon icon={e?.icon} />
+              <Icon icon={e?.icon} width={25} />
             </a>
           );
         })}

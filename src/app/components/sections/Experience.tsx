@@ -15,30 +15,22 @@ export default function Experience(): React.JSX.Element {
         return (
           <div
             key={i}
-            className="flex justify-between flex-wrap lg:flex-nowrap gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            <section className="w-full lg:w-[30%] flex flex-col gap-4">
+            <section className="flex flex-col gap-4 col-span-1 md:col-span-2 lg:col-span-1">
               <div className="flex gap-4 items-center">
-                <Image src={e?.src} alt={e?.label} className="w-24 md:w-32" />
+                <Image src={e?.src} alt={e?.label} className="w-24" />
                 <div className="flex flex-col gap-1">
                   <h4>{e?.label}</h4>
-                  <label className="hover:themedShadowGlowed">{e?.as}</label>
+                  <label className="hover:themedShadowGlowed lg:text-sm">
+                    {e?.as}
+                  </label>
                   <small className="px-2 py-0.5 rounded-md themedBg2nd themedTextInverse">
                     {e?.since}
                   </small>
                 </div>
               </div>
-              <a
-                href={e?.href}
-                target="_blank"
-                className="btn w-full justify-center"
-              >
-                <span>
-                  <Icon icon="ph:globe" width={20} />
-                </span>
-                Visit {e?.label}
-              </a>
-              <ul className="flex flex-wrap gap-3">
+              <ul className="flex flex-wrap gap-3 themedText text-sm">
                 {e?.skills?.map((skill, skillsIndex: number) => {
                   return (
                     <li key={skillsIndex} className="flex gap-1.5 items-center">
@@ -50,24 +42,39 @@ export default function Experience(): React.JSX.Element {
                   );
                 })}
               </ul>
-            </section>
-            <section className="w-full lg:w-[70%] md:flex-row flex-col-reverse flex gap-6">
-              <article className="flex flex-col gap-4 w-full lg:w-[60%]">
-                <p>{e?.companyDetails}</p>
-                <ul className="flex flex-col list-disc pl-6">
-                  {e?.moreDetails?.map((detail, indexDetail: number) => {
-                    return <li key={indexDetail}>{detail}</li>;
-                  })}
-                </ul>
-              </article>
-              <div className="w-full lg:w-[40%] h-full">
-                <Image
-                  src={e?.src2}
-                  alt={e?.label}
-                  className="w-full object-cover rounded-md aspect-square md:h-full themedShadowGlowed2 animate"
-                />
+              <div className="flex gap-2 md:self-start self-end">
+                {e?.links?.map((link, linkIndex) => {
+                  return (
+                    <a
+                      key={linkIndex}
+                      href={link?.href}
+                      target="_blank"
+                      className="btnSmaller px-2"
+                    >
+                      <span>
+                        <Icon icon={link?.icon} width={20} />
+                      </span>
+                    </a>
+                  );
+                })}
               </div>
             </section>
+            <article className="flex flex-col gap-4 col-span-1 lg:col-span-2 sm:order-2 order-last">
+              <p>{e?.companyDetails}</p>
+              <ul className="flex flex-col list-disc pl-6 themedText">
+                {e?.moreDetails?.map((detail, indexDetail: number) => {
+                  return <li key={indexDetail}>{detail}</li>;
+                })}
+              </ul>
+            </article>
+
+            <div className="h-full col-span-1 sm:order-last order-2">
+              <Image
+                src={e?.src2}
+                alt={e?.label}
+                className="w-full object-cover rounded-md aspect-square md:h-full themedShadowGlowed2 animate"
+              />
+            </div>
           </div>
         );
       })}

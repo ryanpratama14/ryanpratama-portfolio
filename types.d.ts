@@ -18,9 +18,9 @@ type PortfolioItems = {
 
 type ExperienceItems = {
   label: string;
-  href: string;
   since: string;
   skills: SkillsItems[];
+  links?: LinksItems[];
   src?: StaticImageData;
   src2?: StaticImageData;
   as: string;
@@ -31,4 +31,9 @@ type ExperienceItems = {
 type SkillsItems = {
   label?: string;
   icon?: string | IconifyIcon;
+};
+
+type LinksItems = {
+  icon?: string | IconifyIcon;
+  href?: string;
 };

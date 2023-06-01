@@ -31,8 +31,7 @@ label {
   h5 {
     @apply text-lg md:text-xl lg:text-2xl font-medium themedTextAlternate;
   }
-  p,
-  ul {
+  p {
     @apply text-base font-normal themedText;
   }
   label {

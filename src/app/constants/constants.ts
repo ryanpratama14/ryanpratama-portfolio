@@ -6,7 +6,16 @@ export const experienceData: ExperienceItems[] = [
     src: faotech,
     src2: faotech2,
     label: "faoTech",
-    href: "https://faotech.dev/",
+    links: [
+      {
+        icon: "ph:globe",
+        href: "https://faotech.dev",
+      },
+      {
+        icon: "mdi:linkedin",
+        href: "https://www.linkedin.com/company/faotech",
+      },
+    ],
     since: "september 2022 - present",
     as: "Front-End Developer",
     companyDetails:
