@@ -7,7 +7,7 @@ export default function Experience(): React.JSX.Element {
   return (
     <section
       id="experience"
-      className="flex flex-col justify-center gap-12 min-h-screen main-padding"
+      className="flex flex-col justify-center gap-6 lg:gap-12 min-h-screen main-padding"
     >
       <h1>Experience</h1>
       <div className="flex flex-col-reverse gap-x-16 gap-y-12">
