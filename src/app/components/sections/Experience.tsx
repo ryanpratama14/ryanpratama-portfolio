@@ -39,11 +39,11 @@ export default function Experience(): React.JSX.Element {
                   })}
                 </ul>
               </article>
-              <div className="aspect-square md:h-full col-span-1 sm:order-last order-2 relative">
+              <div className="max-md:aspect-square lg:h-full col-span-1 sm:order-last order-2 relative">
                 <Image
                   src={e?.src2}
                   alt={e?.label}
-                  className="w-full h-full object-cover rounded-md shadow-[0px_0px_5px_1px_#b53d95] dark:shadow-[0px_0px_5px_1px_#57e6d9] animate"
+                  className="w-full h-full absolute object-cover rounded-md shadow-[0px_0px_5px_1px_#b53d95] dark:shadow-[0px_0px_5px_1px_#57e6d9] animate"
                 />
                 <div className="absolute flex items-center justify-center top-0 w-full h-full opacity-0 hover:opacity-100 themedBg2ndOpacity rounded-md">
                   <div className="flex gap-2">
