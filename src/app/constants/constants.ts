@@ -23,11 +23,11 @@ export const experienceData: ExperienceItems[] = [
     skills: [
       {
         label: "React.js",
-        icon: "mdi:react",
+        icon: "teenyicons:react-solid",
       },
       {
         label: "React Native",
-        icon: "mdi:react",
+        icon: "teenyicons:react-solid",
       },
       {
         label: "Next.js",
@@ -43,7 +43,7 @@ export const experienceData: ExperienceItems[] = [
       },
       {
         label: "Git",
-        icon: "mdi:git",
+        icon: "teenyicons:git-solid",
       },
       {
         label: "TypeScript",
@@ -55,7 +55,7 @@ export const experienceData: ExperienceItems[] = [
       },
       {
         label: "Tailwind CSS",
-        icon: "mdi:tailwind",
+        icon: "teenyicons:tailwind-solid",
       },
       {
         label: "Ant Design",
