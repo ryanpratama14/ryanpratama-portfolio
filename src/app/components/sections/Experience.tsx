@@ -18,7 +18,7 @@ export default function Experience(): React.JSX.Element {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             >
               <section className="flex flex-col gap-4 col-span-1 md:col-span-2 lg:col-span-1">
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-2 items-center">
                   <Image src={e?.src} alt={e?.label} className="w-24" />
                   <div className="flex flex-col gap-1">
                     <h4>{e?.label}</h4>
@@ -70,12 +70,11 @@ export default function Experience(): React.JSX.Element {
                   })}
                 </ul>
               </article>
-
               <div className="h-full col-span-1 sm:order-last order-2">
                 <Image
                   src={e?.src2}
                   alt={e?.label}
-                  className="w-full object-cover rounded-md aspect-square md:h-full themedShadowGlowed2 animate"
+                  className="w-full object-cover rounded-md aspect-square md:h-full shadow-[0px_0px_10px_1px_#b53d95] dark:shadow-[0px_0px_10px_1px_#57e6d9] animate"
                 />
               </div>
             </div>

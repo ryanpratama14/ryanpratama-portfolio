@@ -14,7 +14,7 @@ export default function About(): React.JSX.Element {
           <p>
             In September 2022, I joined a free programming course taught by my
             Indonesian friend in his apartment in Kazan, Russia. Along with
-            other students, we learned the basics of programming and eventually
+            other students, we learned the basics of JavaScript and eventually
             formed a software house startup called{" "}
             <span>
               <a
