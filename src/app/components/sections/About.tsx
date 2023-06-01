@@ -9,7 +9,7 @@ export default function About(): React.JSX.Element {
       id="about"
     >
       <div className="flex justify-between md:flex-nowrap flex-wrap items-center gap-x-12 lg:gap-x-24 gap-y-12">
-        <div className="flex flex-col gap-6 w-full md:w-[70%] lg:w-[50%]">
+        <div className="flex flex-col gap-6 w-full md:w-[60%] lg:w-[50%]">
           <h1>About Me</h1>
           <p>
             In September 2022, I joined a free programming course taught by my
@@ -32,7 +32,7 @@ export default function About(): React.JSX.Element {
             development and decided to specialize in this field.
           </p>
         </div>
-        <div className="w-full flex items-center justify-center gap-2 md:w-[30%] lg:w-[50%]">
+        <div className="w-full flex items-center justify-center gap-2 w-[40%] lg::w-[50%]">
           <div className="relative group md:w-full w-[95%] translate-x-3 lg:translate-x-0">
             <Image
               src={ryan}

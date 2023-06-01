@@ -42,6 +42,12 @@ export default function Main(): React.JSX.Element {
             })}
           </ul>
         </div>
+        <a href="#contact" className="btn">
+          <span>
+            <Icon icon="solar:file-smile-bold" width={20} />
+          </span>{" "}
+          Say Hi
+        </a>
       </div>
     </section>
   );
