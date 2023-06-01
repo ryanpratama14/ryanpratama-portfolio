@@ -25,6 +25,7 @@ type ExperienceItems = {
   as: string;
   companyDetails?: string;
   moreDetails?: string[];
+  location?: string;
 };
 
 type SkillsItems = {

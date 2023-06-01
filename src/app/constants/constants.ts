@@ -54,6 +54,7 @@ export const skillsData: SkillsItems[] = [
 
 export const experienceData: ExperienceItems[] = [
   {
+    location: "Kazan, Russia (remote)",
     src: faotech,
     src2: faotech2,
     label: "faoTech",
