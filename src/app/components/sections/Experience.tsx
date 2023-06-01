@@ -34,14 +34,14 @@ export default function Experience(): React.JSX.Element {
                 className="btn w-full justify-center"
               >
                 <span>
-                  <Icon icon="ph:globe-fill" width={25} />
+                  <Icon icon="ph:globe" width={20} />
                 </span>
                 Visit {e?.label}
               </a>
-              <ul className="flex flex-wrap gap-4">
+              <ul className="flex flex-wrap gap-3">
                 {e?.skills?.map((skill, skillsIndex: number) => {
                   return (
-                    <li key={skillsIndex} className="flex gap-1 items-center">
+                    <li key={skillsIndex} className="flex gap-1.5 items-center">
                       <span>
                         <Icon width={20} icon={skill?.icon} />
                       </span>
