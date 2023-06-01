@@ -25,10 +25,10 @@ export default function Main(): React.JSX.Element {
         </div>
         <div className="flex flex-col gap-3 w-full lg:w-[75%] xl:w-[50%]">
           <h5 className="italic">Tech Stacks</h5>
-          <ul className="flex flex-wrap gap-3 themedText text-sm">
+          <ul className="flex flex-wrap gap-3 themedText">
             {skillsData?.map((skill, index: number) => {
               return (
-                <li key={index} className="flex gap-1.5 items-center">
+                <li key={index} className="flex gap-1.5 items-center underline">
                   <span>
                     <Icon
                       width={20}
