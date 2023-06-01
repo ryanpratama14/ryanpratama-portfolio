@@ -5,7 +5,7 @@ import { linkSocial } from "../constants/constants";
 
 export default function SocialMedia(): React.JSX.Element {
   return (
-    <section className="fixed left-0 bottom-0 px-normal group">
+    <section className="fixed right-0 bottom-0 px-normal group">
       <div className="flex justify-center items-center flex-col gap-4">
         <div className="flex flex-col justify-center items-center gap-3 md:gap-4">
           <p className="group-hover:scale-125 group-hover:translate-y-0 translate-y-10 scale-0 -300 animate">

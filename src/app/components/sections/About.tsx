@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function About(): React.JSX.Element {
   return (
     <section
-      className="min-h-screen px-normal lg:px-longer3 flex justify-center flex-col gap-24"
+      className="min-h-screen padx flex justify-center flex-col gap-24"
       id="about"
     >
       <div className="flex justify-between lg:flex-nowrap flex-wrap items-center gap-x-24 gap-y-12">

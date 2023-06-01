@@ -6,7 +6,6 @@ import Template from "./template";
 // components
 import Navbar from "./components/navbar/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
-import SocialMedia from "./components/SocialMedia";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
           {children}
           <Footer />
           <ScrollToTop />
-          <SocialMedia />
         </Template>
       </body>
     </html>
