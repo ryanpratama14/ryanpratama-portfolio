@@ -10,7 +10,9 @@ export default function Main(): React.JSX.Element {
       <div className="flex flex-col gap-6">
         <div className="flex flex-col">
           <label className="xl:text-xl">Hi! My name is</label>
-          <h1 className="-translate-x-[0.2rem]">Ryan</h1>
+          <h1 className="-translate-x-[0.1rem] md:-translate-x-[0.185rem]">
+            Ryan
+          </h1>
         </div>
         <div className="flex flex-col gap-3">
           <AnimatedText text="I create digital products for the internet" />
