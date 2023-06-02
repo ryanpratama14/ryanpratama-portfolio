@@ -35,7 +35,7 @@ export default function Navbar(): React.JSX.Element {
 
   return (
     <nav
-      className={`animate shadow-md backdrop-blur-[3px] flex justify-between sticky w-full top-0 px-normal py-3 z-[5] md:py-4 ${
+      className={`animate shadow-md backdrop-blur-[3px] flex justify-between fixed w-full top-0 px-normal py-3 z-[5] md:py-4 ${
         visible ? "translate-x-0" : "-translate-y-56"
       }`}
     >
