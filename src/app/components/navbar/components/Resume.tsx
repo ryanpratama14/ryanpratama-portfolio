@@ -1,47 +1,25 @@
 import React from "react";
-import { Menu, Transition } from "@headlessui/react";
 import { Icon } from "@iconify/react";
-import { portfolioData } from "@/app/constants/constants";
 
 export default function Resume(): React.JSX.Element {
   return (
-    <Menu as="div" className="relative inline-block">
-      <Menu.Button className="btnSpecial">
-        <span>
-          <Icon icon="mdi:resume" width={20} />
-        </span>
-        Resume
-      </Menu.Button>
-      <Transition
-        as={React.Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="absolute left-0 mt-6 origin-top-right flex flex-col gap-3 rounded-md focus:outline-none">
-          {portfolioData?.map((e, i: number) => {
-            return (
-              <Menu.Item key={i}>
-                <a
-                  href={e?.href}
-                  target="_blank"
-                  className="btnSmaller w-full cursor-pointer"
-                >
-                  <div className="flex gap-2 w-full items-center">
-                    <div className="px-1 py-0 btnSpecial text-sm">
-                      {e?.icon}
-                    </div>
-                    {e?.label}
-                  </div>
-                </a>
-              </Menu.Item>
-            );
-          })}
-        </Menu.Items>
-      </Transition>
-    </Menu>
+    <a
+      href="/resume.pdf"
+      target="_blank"
+      className="flex gap-3 h-full items-center group"
+    >
+      <Icon
+        icon="pepicons-pencil:cv-circle"
+        width={32}
+        className="rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 transition-transform duration-300"
+      />
+      <div className="relative h-full flex items-center">
+        <span className="cursor-pointer z-[2] drop-shadow">Resume</span>
+        <div className="-skew-x-[16deg] absolute top-0 w-full h-full flex justify-center items-center z-[1]">
+          <div className="w-6 h-full bg-turquoise group-hover:bg-bluedarker animate" />
+          <div className="w-2 h-full bg-bluedarker group-hover:bg-white animate" />
+        </div>
+      </div>
+    </a>
   );
 }

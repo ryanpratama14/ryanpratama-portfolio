@@ -1,46 +1,34 @@
 import { Icon } from "@iconify/react";
 import React from "react";
-import AnimatedUnderlinedText from "../AnimatedUnderlinedText";
+import GradientText from "../GradientText";
+import { linkSocial } from "@/app/constants/constants";
 
 export default function Contact(): React.JSX.Element {
   return (
     <section
       id="contact"
-      className="main-padding min-h-screen flex justify-center text-center"
+      className="relative main-padding min-h-screen flex flex-col gap-6 justify-center"
     >
-      <div className="flex group flex-col gap-6 justify-center items-center">
-        <h1>Contact Me</h1>
-        <p className="w-full md:w-[60%] xl:w-[40%]">
-          I am actively seeking new opportunities at the moment and would be
-          open to hearing about any potential opportunities that may be
-          available. Please feel free to reach out to me if you have any leads
-          or if you would like to discuss potential collaborations.
-        </p>
-        <div className="flex flex-col gap-3 justify-center items-center">
-          <a
-            href="mailto:ru.ryanpratama@gmail.com"
-            target="_blank"
-            className="btn"
-          >
-            <span>
-              <Icon icon="ic:outline-email" width={20} />
-            </span>
-            Email Me
-          </a>
-          <p className="relative">
-            or text me instead on{" "}
+      <div className="max-xl:hidden absolute left-44 top-36 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" />
+      <GradientText text1="Contact" text2="Me" />
+      <p className="xl:w-[80%]">
+        I am actively seeking new opportunities at the moment and would be open
+        to hearing about any potential opportunities that may be available.
+        Please feel free to reach out to me if you have any leads or if you
+        would like to discuss potential collaborations.
+      </p>
+      <div className="self-end flex gap-2">
+        {linkSocial?.map((e, i: number) => {
+          return (
             <a
-              href="https://t.me/ryanpratama14"
-              target="_blank"
-              className="themedText2nd hover:underline font-semibold"
+              key={i}
+              href={e?.href}
+              className="hover:drop-shadow-[0px_0px_2px_#ffffff] rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate"
             >
-              Telegram
+              <Icon icon={e?.icon} width={35} />
             </a>
-            <span className="drop-shadow scale-0 group-hover:scale-150 absolute ml-3 animate">
-              🚀
-            </span>
-          </p>
-        </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ export default function Footer(): React.JSX.Element {
             <a
               href="mailto:ru.ryanpratama@gmail.com"
               target="_blank"
-              className="themedText2nd font-semibold"
+              className="hover:drop-shadow-[0px_0px_2px_#ffffff] font-semibold"
             >
               Ryan
             </a>
@@ -25,7 +25,7 @@ export default function Footer(): React.JSX.Element {
             <a
               href="https://nextjs.org/"
               target="_blank"
-              className="themedText2nd font-semibold"
+              className="hover:drop-shadow-[0px_0px_2px_#ffffff] font-semibold"
             >
               Next.js
             </a>
@@ -35,26 +35,12 @@ export default function Footer(): React.JSX.Element {
             <a
               href="https://tailwindcss.com/"
               target="_blank"
-              className="themedText2nd font-semibold"
+              className="hover:drop-shadow-[0px_0px_2px_#ffffff] font-semibold"
             >
               Tailwind CSS
             </a>
           </span>
         </p>
-      </div>
-      <div className="flex gap-2 items-center">
-        {linkSocial?.map((e, i: number) => {
-          return (
-            <a
-              target="_blank"
-              key={i}
-              href={e?.href}
-              className="hover:scale-110 hover:themedShadowGlowed themedText hover:themedText2nd"
-            >
-              <Icon icon={e?.icon} width={25} />
-            </a>
-          );
-        })}
       </div>
     </footer>
   );

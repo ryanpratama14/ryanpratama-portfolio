@@ -33,7 +33,7 @@ const ScrollToTop = (): React.JSX.Element => {
     >
       <div
         onClick={LoadToTop}
-        className="block themedText cursor-pointer hover:scale-105 hover:-translate-y-1"
+        className="block animate cursor-pointer hover:scale-105 hover:-translate-y-1"
       >
         <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
       </div>

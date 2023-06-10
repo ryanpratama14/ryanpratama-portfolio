@@ -1,53 +1,54 @@
 import React from "react";
-import AnimatedText from "../AnimatedText";
-import { Icon } from "@iconify/react";
-import { skillsData } from "@/app/constants/constants";
-import AnimatedUnderlinedText from "../AnimatedUnderlinedText";
+import ryan from "../../../../public/assets/ryan.png";
+import Image from "next/image";
+import GradientText from "../GradientText";
 
 export default function Main(): React.JSX.Element {
   return (
-    <section className="flex flex-col justify-center main-padding min-h-screen">
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col">
-          <label className="xl:text-xl">Hi! My name is</label>
-          <h1 className="-translate-x-[0.1rem] md:-translate-x-[0.185rem]">
-            Ryan
-          </h1>
+    <section className="relative flex flex-col justify-center main-padding min-h-screen">
+      {/* bullets */}
+      <div className="max-xl:hidden absolute left-44 top-44 w-72 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10" />
+      <div className="max-xl:hidden absolute right-56 top-36 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
+      <div className="max-xl:hidden absolute left-96 bottom-36 w-56 aspect-square rounded-full  bg-blue/30 blur-3xl -z-10" />
+      <div />
+      <div className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-y-20">
+        <div className="w-full lg:w-[50%] flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <GradientText text1="Front-End" text2="Developer" />
+            <h1 className="-translate-x-1">RYAN</h1>
+            <p>
+              A front-end developer specializing in building intuitive web
+              applications with engaging user interfaces. I utilize the React.js
+              framework to develop efficient, scalable and maintainable frontend
+              applications.
+            </p>
+          </div>
+          <div className="flex gap-6 items-center">
+            <a
+              href="#contact"
+              className="relative group font-semibold h-10 w-44 flex items-center justify-center from-bluedarker to-turquoise bg-gradient-to-r rounded-3xl"
+            >
+              <div className="absolute top-0 group-hover:h-full group-hover:w-full h-0 w-0 bg-white animate rounded-3xl" />
+              <span className="animate drop-shadow z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br from-turquoise to-bluedarker">
+                Contact Me
+              </span>
+            </a>
+            <a href="#about" className="text-gray hover:text-white animate">
+              Learn More
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-3">
-          <AnimatedText text="I create digital products for the internet" />
-          <p className="w-full md:w-[75%] xl:w-[50%]">
-            A front-end developer specializing in building intuitive web
-            applications with engaging user interfaces. I utilize the React.js
-            framework to develop efficient, scalable and maintainable frontend
-            applications.
-          </p>
+        <div className="w-full lg:w-[50%] group relative">
+          <div className="animate group-hover:translate-y-8 absolute top-0 w-full h-[18rem] md:h-[30rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
+          <div className="animate -translate-y-12 translate-x-4 first-line:absolute top-0 w-full h-[18rem] md:h-[30rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
+          <div className="animate group-hover:translate-y-8 absolute top-0 w-full h-[18rem] md:h-[30rem] bg-transparent polygon drop-shadow-xl">
+            <Image
+              src={ryan}
+              alt="Ryan"
+              className="absolute top-0 w-full h-full object-contain"
+            />
+          </div>
         </div>
-        <div className="flex flex-col gap-3 w-full md:w-[75%] xl:w-[50%]">
-          <h5 className="italic">Tech Stacks</h5>
-          <ul className="flex flex-wrap gap-3 themedText">
-            {skillsData?.map((skill, index: number) => {
-              return (
-                <li key={index} className="flex gap-1.5 items-center">
-                  <span>
-                    <Icon
-                      width={20}
-                      icon={skill?.icon}
-                      className="themedText2nd"
-                    />
-                  </span>
-                  {skill?.label}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <a href="#contact" className="btn">
-          <span>
-            <Icon icon="solar:file-smile-bold" width={20} />
-          </span>{" "}
-          Say Hi
-        </a>
       </div>
     </section>
   );
