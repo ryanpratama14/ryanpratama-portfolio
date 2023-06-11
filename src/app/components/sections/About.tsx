@@ -16,7 +16,7 @@ export default function About(): React.JSX.Element {
           <label>Ryan Pratama</label>
           <label>23 Years Old</label>
           <label>Indonesian</label>
-          <div className="absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" />
+          <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" />
         </div>
         <p className="xl:w-[80%]">
           In September 2022, I joined a free programming course taught by my
@@ -56,7 +56,7 @@ export default function About(): React.JSX.Element {
               <div className="relative h-16 md:h-[5.5rem] flex items-center">
                 <div className="-z-10 absolute w-0 group-hover:w-full animate h-full group-hover:bg-gradient-to-r from-turquoise" />
                 <article className="pl-4 pr-6 py-2">
-                  <h5 className="drop-shadow flex items-center gap-2">
+                  <h5 className="flex items-center gap-2">
                     {e?.label}
                     <span className="group-hover:scale-100 scale-0 p">
                       <Icon icon="mingcute:external-link-fill" />
