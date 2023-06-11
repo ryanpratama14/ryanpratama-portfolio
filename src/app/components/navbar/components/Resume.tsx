@@ -10,8 +10,7 @@ export default function Resume(): React.JSX.Element {
     >
       <Icon
         icon="pepicons-pencil:cv-circle"
-        width={30}
-        className="rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 transition-transform duration-300"
+        className="md:text-4xl text-3xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 transition-transform duration-300"
       />
       <div className="relative h-full flex items-center">
         <span className="cursor-pointer z-[2] drop-shadow label text-lg">
