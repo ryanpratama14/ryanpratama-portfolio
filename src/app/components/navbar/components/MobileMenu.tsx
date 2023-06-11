@@ -6,7 +6,7 @@ import { navbarData } from "@/app/constants/constants";
 export default function MobileMenu(): React.JSX.Element {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
-      <Menu.Button className="border-white font-semibold border-[1px] flex items-center gap-1.5 py-1 px-4 active:scale-95 outline-none rounded-3xl w-fit">
+      <Menu.Button className="border-white font-semibold border-[1px] flex items-center gap-1.5 py-1 px-4 outline-none rounded-3xl w-fit">
         <Icon icon="ri:menu-3-fill" width={20} />
       </Menu.Button>
       <Transition
