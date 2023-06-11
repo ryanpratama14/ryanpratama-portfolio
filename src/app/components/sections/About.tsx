@@ -12,11 +12,11 @@ export default function About(): React.JSX.Element {
     >
       <GradientText text1="About" text2="Me" bigger />
       <div className="flex flex-col gap-4">
-        <div className="flex gap-4 relative">
+        <div className="flex gap-4 relative w-fit">
           <label>Ryan Pratama</label>
           <label>23 Years Old</label>
           <label>Indonesian</label>
-          <div className="absolute bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-4 blur-3xl w-96" />
+          <div className="absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" />
         </div>
         <p className="xl:w-[80%]">
           In September 2022, I joined a free programming course taught by my
