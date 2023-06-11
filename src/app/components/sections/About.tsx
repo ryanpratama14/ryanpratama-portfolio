@@ -6,18 +6,18 @@ import Image from "next/image";
 
 export default function About(): React.JSX.Element {
   return (
-    <section
+    <article
       className="min-h-screen main-padding flex justify-center flex-col gap-6"
       id="about"
     >
       <GradientText text1="About" text2="Me" bigger />
-      <div className="flex flex-col gap-4">
-        <div className="flex gap-4 relative w-fit">
+      <section className="flex flex-col gap-4">
+        <header className="flex gap-4 relative w-fit">
           <label>Ryan Pratama</label>
           <label>23 Years Old</label>
           <label>Indonesian</label>
           {/* <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" /> */}
-        </div>
+        </header>
         <p className="xl:w-[80%]">
           In September 2022, I joined a free programming course taught by my
           Indonesian friend in his apartment in Kazan, Russia. Along with other
@@ -26,8 +26,8 @@ export default function About(): React.JSX.Element {
           my skills, I discovered a passion for front-end development and
           decided to specialize in this field.
         </p>
-      </div>
-      <div className="xl:w-[70%] flex flex-wrap gap-4">
+      </section>
+      <section className="xl:w-[70%] flex flex-wrap gap-4">
         {skillsData?.map((e, i: number) => {
           return (
             <p key={i} className="flex gap-2 items-center">
@@ -38,10 +38,10 @@ export default function About(): React.JSX.Element {
             </p>
           );
         })}
-      </div>
+      </section>
 
       <h4 className="italic">Experience</h4>
-      <div className="flex justify-between flex-wrap gap-6">
+      <nav className="flex justify-between flex-wrap gap-6">
         {experienceData?.map((e, i: number) => {
           return (
             <a
@@ -55,7 +55,7 @@ export default function About(): React.JSX.Element {
               </div>
               <div className="relative h-16 md:h-[5.5rem] flex items-center">
                 <div className="-z-10 absolute w-0 group-hover:w-full animate h-full group-hover:bg-gradient-to-r from-turquoise" />
-                <article className="pl-4 pr-7 py-2">
+                <section className="pl-4 pr-7 py-2">
                   <h5 className="flex items-center drop-shadow gap-2">
                     {e?.label}
                     <span className="group-hover:scale-100 scale-0 p">
@@ -65,12 +65,12 @@ export default function About(): React.JSX.Element {
                   <small className="text-gray group-hover:text-white animate font-medium">
                     {e?.since}
                   </small>
-                </article>
+                </section>
               </div>
             </a>
           );
         })}
-      </div>
-    </section>
+      </nav>
+    </article>
   );
 }

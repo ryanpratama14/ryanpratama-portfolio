@@ -5,7 +5,7 @@ import { linkSocial } from "@/app/constants/constants";
 
 export default function Contact(): React.JSX.Element {
   return (
-    <section
+    <article
       id="contact"
       className="relative main-padding min-h-screen flex flex-col gap-6 justify-center"
     >
@@ -17,7 +17,7 @@ export default function Contact(): React.JSX.Element {
         Please feel free to reach out to me if you have any leads or if you
         would like to discuss potential collaborations.
       </p>
-      <div className="self-end flex gap-2">
+      <nav className="self-end flex gap-2">
         {linkSocial?.map((e, i: number) => {
           return (
             <a
@@ -29,7 +29,7 @@ export default function Contact(): React.JSX.Element {
             </a>
           );
         })}
-      </div>
-    </section>
+      </nav>
+    </article>
   );
 }

@@ -5,7 +5,7 @@ import { projectsData } from "@/app/constants/constants";
 
 export default function Projects(): React.JSX.Element {
   return (
-    <section
+    <article
       className="relative flex-col gap-12 flex justify-center items-center main-padding"
       id="projects"
     >
@@ -18,24 +18,24 @@ export default function Projects(): React.JSX.Element {
         bigger
         className="text-center"
       />
-      <article className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal">
         {projectsData?.map((e, i: number) => {
           return (
             <figure className={`relative`} key={i}>
               <Image src={e?.src} alt={e?.title} />
-              <div className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
+              <figure className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
                 {/* <Image src={e?.icon} alt={e?.title} className="w-12" /> */}
-              </div>
-              <div className="flex px-8 flex-col items-center justify-center gap-6 absolute animate w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
+              </figure>
+              <section className="flex px-8 flex-col items-center justify-center gap-6 absolute animate w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
                 <h4 className="drop-shadow md:h3 h2 text-center">{e?.title}</h4>
-                <div className="flex flex-col gap-2">
+                <header className="flex flex-col gap-2">
                   <p className="pSmaller">{e?.desc}</p>
                   <ul className="list-disc pSmaller pl-4">
                     {e?.lists?.map((list, listIndex: number) => {
                       return <li key={listIndex}>{list}</li>;
                     })}
                   </ul>
-                </div>
+                </header>
                 <a
                   href={e?.href}
                   target="_blank"
@@ -46,11 +46,11 @@ export default function Projects(): React.JSX.Element {
                   </span>
                   <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate" />
                 </a>
-              </div>
+              </section>
             </figure>
           );
         })}
-      </article>
-    </section>
+      </section>
+    </article>
   );
 }

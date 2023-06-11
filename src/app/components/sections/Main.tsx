@@ -5,15 +5,14 @@ import GradientText from "../GradientText";
 
 export default function Main(): React.JSX.Element {
   return (
-    <section className="relative flex flex-col justify-center main-padding min-h-screen">
+    <article className="relative flex flex-col justify-center main-padding min-h-screen">
       {/* bullets */}
       {/* <div className="max-xl:hidden absolute left-44 top-44 w-72 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10" />
       <div className="max-xl:hidden absolute right-56 top-36 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
       <div className="max-xl:hidden absolute left-96 bottom-36 w-56 aspect-square rounded-full  bg-blue/30 blur-3xl -z-10" /> */}
-      <div />
-      <div className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
-        <div className="w-full lg:w-[50%] flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
+      <section className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
+        <section className="w-full lg:w-[50%] flex flex-col gap-6">
+          <header className="flex flex-col gap-2">
             <GradientText text1="Front-End" text2="Developer" />
             <h1 className="-translate-x-0.5 lg:-translate-x-1">RYAN</h1>
             <p>
@@ -21,8 +20,8 @@ export default function Main(): React.JSX.Element {
               applications with engaging user interfaces that are efficient,
               maintainable, and accessible using the React.js framework.
             </p>
-          </div>
-          <div className="flex gap-6 items-center">
+          </header>
+          <nav className="flex gap-6 items-center">
             <a
               href="#contact"
               className="text-lg relative group font-semibold h-10 w-44 flex items-center justify-center from-bluedarker to-turquoise bg-gradient-to-r rounded-3xl"
@@ -38,9 +37,9 @@ export default function Main(): React.JSX.Element {
             >
               Learn More
             </a>
-          </div>
-        </div>
-        <div className="w-full lg:w-[50%] group relative">
+          </nav>
+        </section>
+        <figure className="w-full lg:w-[50%] group relative">
           <div className="animate group-hover:translate-y-12 translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate -translate-y-6 translate-x-4 first-line:absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate group-hover:translate-y-12 translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] bg-transparent polygon drop-shadow-xl">
@@ -51,8 +50,8 @@ export default function Main(): React.JSX.Element {
               className="absolute top-0 w-full h-full object-contain"
             />
           </div>
-        </div>
-      </div>
-    </section>
+        </figure>
+      </section>
+    </article>
   );
 }
