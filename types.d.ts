@@ -19,7 +19,7 @@ type resumeItems = {
 type ExperienceItems = {
   label: string;
   since: string;
-  links?: LinksItems[];
+  links: LinksItems[];
   src?: StaticImageData;
   src2?: StaticImageData;
   as: string;
