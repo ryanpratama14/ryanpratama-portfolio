@@ -10,7 +10,7 @@ type LinkSocialItems = {
   icon?: string | IconifyIcon;
 };
 
-type PortfolioItems = {
+type resumeItems = {
   href?: string;
   label?: string;
   icon?: string | IconifyIcon;
@@ -36,4 +36,13 @@ type SkillsItems = {
 type LinksItems = {
   icon?: string | IconifyIcon;
   href?: string;
+};
+
+type ProjectItems = {
+  title: string;
+  icon?: StaticImageData;
+  desc?: string;
+  href?: string;
+  lists?: string[];
+  src?: StaticImageData;
 };

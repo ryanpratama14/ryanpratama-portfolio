@@ -24,6 +24,10 @@ label {
   clip-path: polygon(0 20%, 45% 0, 100% 70%, 30% 100%);
 }
 
+.polygonproject {
+  clip-path: polygon(0 20%, 30% 0, 100% 40%, 40% 100%);
+}
+
 @layer base {
   h1 {
     @apply text-6xl md:text-8xl lg:text-9xl font-bold animate;
@@ -93,6 +97,17 @@ label {
   }
 }
 
+.gradient-web {
+  background: rgb(32, 70, 206);
+  background: linear-gradient(
+    90deg,
+    rgba(32, 70, 206, 1) 0%,
+    rgba(87, 230, 217, 1) 25%,
+    rgba(32, 70, 206, 1) 50%,
+    rgba(87, 230, 217, 1) 75%
+  );
+}
+
 .bg-animate {
   background-size: 400% 400%;
   animation: bg-animation 3s infinite ease-in-out;
@@ -108,6 +123,7 @@ label {
     background-position: 0% 30%;
   }
 }
+
 /* 
 .fancy {
   position: relative;

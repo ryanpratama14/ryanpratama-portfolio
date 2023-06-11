@@ -1,6 +1,60 @@
 import faotech from "../../../public/assets/faoTech.png";
 import faotech2 from "../../../public/assets/faoTech2.jpeg";
 
+import kima from "../../../public/assets/kima.png";
+import kima2 from "../../../public/assets/kima2.png";
+
+import turta from "../../../public/assets/turta.png";
+import turta2 from "../../../public/assets/turta2.png";
+
+import belinsky from "../../../public/assets/belinsky.png";
+import belinsky2 from "../../../public/assets/belinsky2.png";
+
+export const projectsData: ProjectItems[] = [
+  {
+    title: "TurunTangan",
+    icon: turta2,
+    src: turta,
+    desc: "TurunTangan is a non-profit youth volunteer movement with more than 70 chapters across Indonesia.",
+    href: "https://turuntangan.id",
+    lists: [
+      "Developed a fully responsive full-stack web app using React.js",
+      "Optimized key content pages for SEO objectives",
+      "Utilized Axios to implement RESTful APIs",
+      "Performed continuous code reviews to maintain high code quality and best practices",
+      "Integrated Tailwind CSS for responsive component-based styling",
+      " Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
+    ],
+  },
+  {
+    title: "KIMA",
+    icon: kima2,
+    src: kima,
+    desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
+    href: "https://kima-fe.vercel.app",
+    lists: [
+      "Developed a fully responsive full-stack web app using React.js",
+      "Optimized key content pages for SEO objectives",
+      "Utilized Axios to implement RESTful APIs",
+      "Conducted routine updates to ensure optimal website performance",
+      "Integrated Tailwind CSS for responsive component-based styling",
+      " Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
+    ],
+  },
+  {
+    title: "Belinsky Production",
+    icon: belinsky2,
+    src: belinsky,
+    desc: "Belinsky is a production house and creative studio that specializes in both professional photography and filmmaking.",
+    href: "https://belinskyproduction.com",
+    lists: [
+      "Developed a fully responsive web app using React.js",
+      "Optimized key content pages for SEO objectives",
+      "Integrated Tailwind CSS for responsive component-based styling",
+    ],
+  },
+];
+
 export const skillsData: SkillsItems[] = [
   {
     label: "React.js",
@@ -107,7 +161,7 @@ export const navbarData: NavbarItems[] = [
   },
 ];
 
-export const portfolioData: PortfolioItems[] = [
+export const resumeData: resumeItems[] = [
   {
     label: "English",
     href: "/resume.pdf",
