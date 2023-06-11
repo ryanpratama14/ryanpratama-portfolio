@@ -11,13 +11,6 @@ html {
   color: white;
 }
 
-img,
-button,
-a,
-label {
-  user-select: none;
-}
-
 /* Vector 3 */
 
 .polygon {
@@ -44,12 +37,11 @@ label {
   h5 {
     @apply text-lg md:text-xl lg:text-2xl font-medium animate;
   }
-  p {
+  p,
+  a {
     @apply text-base xl:text-lg animate;
   }
-  a {
-    @apply text-base xl:text-lg animate active:scale-95;
-  }
+
   label {
     @apply text-base xl:text-lg drop-shadow font-semibold animate;
   }
@@ -77,12 +69,11 @@ label {
   .h5 {
     @apply text-lg md:text-xl lg:text-2xl font-medium animate;
   }
-  .p {
+  .p,
+  .a {
     @apply text-base xl:text-lg animate;
   }
-  .a {
-    @apply text-base xl:text-lg animate active:scale-95;
-  }
+
   .label {
     @apply text-base xl:text-lg drop-shadow font-semibold animate;
   }

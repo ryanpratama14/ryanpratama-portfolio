@@ -42,7 +42,11 @@ export default function About(): React.JSX.Element {
       </div>
       <article className="flex flex-col gap-4">
         <h4 className="italic">Experience</h4>
-        <div className="flex items-center h-full relative shadow w-fit">
+        <a
+          href="https://faotech.dev"
+          target="_blank"
+          className="flex items-center h-full relative shadow w-fit"
+        >
           <div className="flex items-center justify-center p-3 bg-white h-16 md:h-20">
             <Image
               src={faotech}
@@ -51,11 +55,11 @@ export default function About(): React.JSX.Element {
             />
           </div>
           <div className="from-turquoise to-bluedarker bg-gradient-to-r flex flex-col justify-center h-16 md:h-20 px-4 md:px-6">
-            <label>faoTech</label>
+            <label className="cursor-pointer">faoTech</label>
             <p className="text-black">sep 2022 - present</p>
           </div>
           <div className="-z-10 w-full h-full absolute top-0 translate-x-2 translate-y-2 bg-[#323232]" />
-        </div>
+        </a>
       </article>
     </section>
   );
