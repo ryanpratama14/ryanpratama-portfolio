@@ -56,7 +56,7 @@ img {
     @apply transition-all duration-300;
   }
   .main-padding {
-    @apply py-normal px-normal 2xl:px-longer3;
+    @apply py-normal px-normal xl:px-longer 2xl:px-longer3;
   }
   .h1 {
     @apply text-6xl md:text-8xl lg:text-9xl font-bold animate;
