@@ -13,7 +13,7 @@ export default function Resume(): React.JSX.Element {
         className="md:text-4xl text-3xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 transition-transform duration-300"
       />
       <div className="relative h-full flex items-center">
-        <span className="cursor-pointer z-[2] drop-shadow iOS label text-lg">
+        <span className="cursor-pointer z-[2] drop-shadow label text-lg">
           Resume
         </span>
         <div className="-skew-x-[16deg] absolute top-0 w-full h-full flex justify-center items-center z-[1]">

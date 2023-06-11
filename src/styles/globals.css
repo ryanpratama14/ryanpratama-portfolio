@@ -17,10 +17,6 @@ img {
   user-select: none;
 }
 
-.iOS {
-  -webkit-appearance: none;
-}
-
 .polygon {
   clip-path: polygon(0 20%, 45% 0, 100% 70%, 30% 100%);
 }
