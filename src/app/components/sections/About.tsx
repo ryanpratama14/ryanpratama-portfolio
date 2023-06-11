@@ -41,7 +41,7 @@ export default function About(): React.JSX.Element {
       </div>
 
       <h4 className="italic">Experience</h4>
-      <div className="flex flex-wrap gap-6">
+      <div className="flex justify-between flex-wrap gap-6">
         {experienceData?.map((e, i: number) => {
           return (
             <a
