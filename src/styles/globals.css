@@ -11,7 +11,11 @@ html {
   color: white;
 }
 
-/* Vector 3 */
+a,
+label,
+img {
+  user-select: none;
+}
 
 .polygon {
   clip-path: polygon(0 20%, 45% 0, 100% 70%, 30% 100%);
