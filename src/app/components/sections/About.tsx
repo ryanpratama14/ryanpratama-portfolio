@@ -53,14 +53,19 @@ export default function About(): React.JSX.Element {
               <div className="flex items-center justify-center aspect-square p-3 bg-white h-16 md:h-[5.5rem]">
                 <Image src={e?.src} alt={e?.label} className="object-contain" />
               </div>
-              <div className="animate from-turquoise group-hover:to-bluedarker bg-gradient-to-r flex flex-col justify-center h-16 md:h-[5.5rem] px-3 md:px-6">
-                <h5 className="drop-shadow flex items-center gap-2">
-                  {e?.label}
-                  <span className="group-hover:scale-100 scale-0 p">
-                    <Icon icon="mingcute:external-link-fill" />
-                  </span>
-                </h5>
-                <small className="text-black font-medium">{e?.since}</small>
+              <div className="relative h-16 md:h-[5.5rem] flex items-center">
+                <div className="-z-10 absolute w-0 group-hover:w-full animate h-full group-hover:bg-gradient-to-r from-turquoise" />
+                <article className="pl-4 pr-6 py-2">
+                  <h5 className="drop-shadow flex items-center gap-2">
+                    {e?.label}
+                    <span className="group-hover:scale-100 scale-0 p">
+                      <Icon icon="mingcute:external-link-fill" />
+                    </span>
+                  </h5>
+                  <small className="text-gray group-hover:text-white animate font-medium">
+                    {e?.since}
+                  </small>
+                </article>
               </div>
             </a>
           );
