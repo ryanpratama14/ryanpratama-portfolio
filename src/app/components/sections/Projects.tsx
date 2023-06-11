@@ -18,7 +18,7 @@ export default function Projects(): React.JSX.Element {
         bigger
         className="text-center"
       />
-      <article className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-x-36 lg:gap-y-24 md:px-normal">
+      <article className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal">
         {projectsData?.map((e, i: number) => {
           return (
             <figure className={`relative`} key={i}>

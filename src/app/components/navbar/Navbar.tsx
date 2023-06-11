@@ -9,23 +9,25 @@ import { Icon } from "@iconify/react";
 export default function Navbar(): React.JSX.Element {
   // const completion = useReadingProgress();
   const [visible, setVisible] = useState<boolean>(true);
-  const prevScrollY = useRef(0);
+  const lastScrollTop = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (prevScrollY.current > currentScrollY) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-      prevScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener(
+        "scroll",
+        () => {
+          let { scrollY } = window;
+          if (scrollY > lastScrollTop.current) {
+            setVisible(false);
+          } else if (scrollY < lastScrollTop.current) {
+            setVisible(true);
+          }
+          lastScrollTop.current = scrollY <= 0 ? 0 : scrollY;
+        },
+        { passive: true }
+      );
+    }
   }, []);
-
   return (
     <nav
       className={`h-12 md:h-16 animate items-center shadow-md backdrop-blur-[3px] flex justify-between fixed w-full top-0 px-normal xl:px-longer 2xl:px-longer3 z-20 bg-black ${
