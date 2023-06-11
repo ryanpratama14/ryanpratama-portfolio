@@ -12,6 +12,19 @@ import belinsky2 from "../../../public/assets/belinsky2.png";
 
 export const projectsData: ProjectItems[] = [
   {
+    title: "KIMA",
+    icon: kima2,
+    src: kima,
+    desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
+    href: "https://kima-fe.vercel.app",
+    lists: [
+      "Developed a fully responsive full-stack web app using React.js",
+      "Utilized Axios to implement RESTful APIs",
+      "Integrated Tailwind CSS for responsive component-based styling",
+      " Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
+    ],
+  },
+  {
     title: "TurunTangan",
     icon: turta2,
     src: turta,
@@ -20,19 +33,6 @@ export const projectsData: ProjectItems[] = [
     lists: [
       "Developed a fully responsive full-stack web app using React.js",
       "Optimized key content pages for SEO objectives",
-      "Utilized Axios to implement RESTful APIs",
-      "Integrated Tailwind CSS for responsive component-based styling",
-      " Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
-    ],
-  },
-  {
-    title: "KIMA",
-    icon: kima2,
-    src: kima,
-    desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
-    href: "https://kima-fe.vercel.app",
-    lists: [
-      "Developed a fully responsive full-stack web app using React.js",
       "Utilized Axios to implement RESTful APIs",
       "Integrated Tailwind CSS for responsive component-based styling",
       " Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
