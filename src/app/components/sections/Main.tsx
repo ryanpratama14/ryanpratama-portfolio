@@ -15,7 +15,7 @@ export default function Main(): React.JSX.Element {
         <div className="w-full lg:w-[50%] flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <GradientText text1="Front-End" text2="Developer" />
-            <h1 className="-translate-x-1">RYAN</h1>
+            <h1 className="-translate-x-0.5 lg:-translate-x-1">RYAN</h1>
             <p>
               I specialized in creating scalable, intuitive, and responsive web
               applications with engaging user interfaces that are efficient,
