@@ -14,7 +14,7 @@ export default function Resume(): React.JSX.Element {
         className="rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 transition-transform duration-300"
       />
       <div className="relative h-full flex items-center">
-        <span className="cursor-pointer z-[2] drop-shadow">Resume</span>
+        <span className="cursor-pointer z-[2] drop-shadow text-lg">Resume</span>
         <div className="-skew-x-[16deg] absolute top-0 w-full h-full flex justify-center items-center z-[1]">
           <div className="w-6 h-full bg-turquoise group-hover:bg-bluedarker animate" />
           <div className="w-2 h-full bg-bluedarker group-hover:bg-white animate" />

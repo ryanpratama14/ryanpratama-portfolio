@@ -11,7 +11,7 @@ export default function Main(): React.JSX.Element {
       <div className="max-xl:hidden absolute right-56 top-36 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
       <div className="max-xl:hidden absolute left-96 bottom-36 w-56 aspect-square rounded-full  bg-blue/30 blur-3xl -z-10" />
       <div />
-      <div className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-y-20">
+      <div className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
         <div className="w-full lg:w-[50%] flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <GradientText text1="Front-End" text2="Developer" />
@@ -26,19 +26,22 @@ export default function Main(): React.JSX.Element {
           <div className="flex gap-6 items-center">
             <a
               href="#contact"
-              className="relative group font-semibold h-10 w-44 flex items-center justify-center from-bluedarker to-turquoise bg-gradient-to-r rounded-3xl"
+              className="text-lg relative group font-semibold h-10 w-44 flex items-center justify-center from-bluedarker to-turquoise bg-gradient-to-r rounded-3xl"
             >
-              <div className="absolute top-0 group-hover:h-full group-hover:w-full h-0 w-0 bg-white animate rounded-3xl" />
-              <span className="animate drop-shadow z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br from-turquoise to-bluedarker">
+              <div className="absolute w-full h-full opacity-0 group-hover:opacity-100 bg-white animate rounded-3xl" />
+              <span className="animate drop-shadow z-[1] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br from-turquoise to-bluedarker">
                 Contact Me
               </span>
             </a>
-            <a href="#about" className="text-gray hover:text-white animate">
+            <a
+              href="#about"
+              className="text-gray hover:text-white animate text-lg"
+            >
               Learn More
             </a>
           </div>
         </div>
-        <div className="w-full lg:w-[50%] group relative">
+        <div className="w-full lg:w-[50%] group relative translate-y-6">
           <div className="animate group-hover:translate-y-8 absolute top-0 w-full h-[18rem] md:h-[30rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate -translate-y-12 translate-x-4 first-line:absolute top-0 w-full h-[18rem] md:h-[30rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate group-hover:translate-y-8 absolute top-0 w-full h-[18rem] md:h-[30rem] bg-transparent polygon drop-shadow-xl">

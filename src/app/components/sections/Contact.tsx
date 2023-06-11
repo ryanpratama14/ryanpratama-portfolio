@@ -10,7 +10,7 @@ export default function Contact(): React.JSX.Element {
       className="relative main-padding min-h-screen flex flex-col gap-6 justify-center"
     >
       <div className="max-xl:hidden absolute left-44 top-36 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" />
-      <GradientText text1="Contact" text2="Me" />
+      <GradientText text1="Contact" text2="Me" bigger />
       <p className="xl:w-[80%]">
         I am actively seeking new opportunities at the moment and would be open
         to hearing about any potential opportunities that may be available.
@@ -23,7 +23,7 @@ export default function Contact(): React.JSX.Element {
             <a
               key={i}
               href={e?.href}
-              className="hover:drop-shadow-[0px_0px_2px_#ffffff] rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate"
+              className="hover:shadowGlowed rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110"
             >
               <Icon icon={e?.icon} width={35} />
             </a>

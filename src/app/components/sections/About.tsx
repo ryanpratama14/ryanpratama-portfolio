@@ -10,12 +10,12 @@ export default function About(): React.JSX.Element {
       className="min-h-screen main-padding flex justify-center flex-col gap-6"
       id="about"
     >
-      <GradientText text1="About" text2="Me" />
+      <GradientText text1="About" text2="Me" bigger />
       <div className="flex flex-col gap-4">
         <div className="flex gap-4">
-          <p className="font-semibold">Ryan Pratama</p>
-          <p className="font-semibold">23 Years Old</p>
-          <p className="font-semibold">Indonesian</p>
+          <label>Ryan Pratama</label>
+          <label>23 Years Old</label>
+          <label>Indonesian</label>
         </div>
         <p className="xl:w-[80%]">
           In September 2022, I joined a free programming course taught by my
@@ -29,12 +29,12 @@ export default function About(): React.JSX.Element {
       <div className="xl:w-[70%] flex flex-wrap gap-4">
         {skillsData?.map((e, i: number) => {
           return (
-            <div key={i} className="flex gap-2 items-center">
+            <p key={i} className="flex gap-2 items-center">
               <span className="text-turquoise">
                 <Icon icon={e?.icon} width={25} />
               </span>
               <span className="text-graydarker">{e.label}</span>
-            </div>
+            </p>
           );
         })}
       </div>

@@ -11,15 +11,8 @@ export default function GradientText({
   text2,
   bigger,
 }: Props): React.JSX.Element {
-  return bigger ? (
-    <h1>
-      {text1}{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-br from-turquoise to-bluedarker">
-        {text2}
-      </span>
-    </h1>
-  ) : (
-    <h2>
+  return (
+    <h2 className={`lg:h2 md:text-5xl  ${bigger ? "text-4xl" : "text-3xl"}`}>
       {text1}{" "}
       <span className="text-transparent bg-clip-text bg-gradient-to-br from-turquoise to-bluedarker">
         {text2}

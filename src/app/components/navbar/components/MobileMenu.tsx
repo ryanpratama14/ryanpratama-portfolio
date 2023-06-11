@@ -24,7 +24,7 @@ export default function MobileMenu(): React.JSX.Element {
               <Menu.Item key={i}>
                 <a
                   href={e?.href}
-                  className="flex gap-2 items-center px-4 py-0.5 rounded-3xl border-[1px] border-white bg-black hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#ffffff]"
+                  className="flex text-lg gap-2 items-center px-4 py-0.5 rounded-3xl border-[1px] border-white bg-black hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#ffffff]"
                 >
                   <span>
                     <Icon icon={e?.icon} width={20} />

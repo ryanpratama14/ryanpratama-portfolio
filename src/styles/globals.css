@@ -26,65 +26,70 @@ label {
 
 @layer base {
   h1 {
-    @apply text-6xl md:text-8xl lg:text-9xl font-bold;
+    @apply text-6xl md:text-8xl lg:text-9xl font-bold animate;
   }
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold animate;
   }
   h3 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold animate;
   }
   h4 {
-    @apply text-xl md:text-2xl lg:text-3xl font-medium;
+    @apply text-xl md:text-2xl lg:text-3xl font-medium animate;
   }
   h5 {
-    @apply text-lg md:text-xl lg:text-2xl font-medium;
+    @apply text-lg md:text-xl lg:text-2xl font-medium animate;
   }
   p {
-    @apply text-base xl:text-lg;
+    @apply text-base xl:text-lg animate;
   }
   a {
-    @apply text-lg animate active:scale-95;
+    @apply text-base xl:text-lg animate active:scale-95;
   }
   label {
-    @apply drop-shadow font-medium;
+    @apply text-base xl:text-lg drop-shadow font-semibold animate;
   }
 }
 
 @layer components {
-  .main-padding {
-    @apply py-normal px-normal 2xl:px-longer3;
-  }
-  .label {
-    @apply drop-shadow font-medium;
-  }
   .animate {
     @apply transition-all duration-300;
   }
+  .main-padding {
+    @apply py-normal px-normal 2xl:px-longer3;
+  }
   .h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl font-bold;
+    @apply text-6xl md:text-8xl lg:text-9xl font-bold animate;
   }
   .h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold animate;
   }
   .h3 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold animate;
   }
   .h4 {
-    @apply text-xl md:text-2xl lg:text-3xl font-medium;
+    @apply text-xl md:text-2xl lg:text-3xl font-medium animate;
   }
   .h5 {
-    @apply text-lg md:text-xl lg:text-2xl font-medium;
+    @apply text-lg md:text-xl lg:text-2xl font-medium animate;
   }
-  .p,
+  .p {
+    @apply text-base xl:text-lg animate;
+  }
   .a {
-    @apply text-base xl:text-lg;
+    @apply text-base xl:text-lg animate active:scale-95;
+  }
+  .label {
+    @apply text-base xl:text-lg drop-shadow font-semibold animate;
   }
   .pSmaller {
     @apply text-sm font-normal;
   }
   .pSmaller2 {
     @apply text-xs font-normal;
+  }
+  .shadowGlowed {
+    @apply drop-shadow-[0px_0px_2px_#ffffff];
   }
 }
 
