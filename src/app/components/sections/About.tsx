@@ -42,24 +42,26 @@ export default function About(): React.JSX.Element {
       </div>
       <article className="flex flex-col gap-4">
         <h4 className="italic">Experience</h4>
-        <a
-          href="https://faotech.dev"
-          target="_blank"
-          className="flex items-center h-full relative shadow w-fit"
-        >
-          <div className="flex items-center justify-center p-3 bg-white h-16 md:h-20">
-            <Image
-              src={faotech}
-              alt="faoTech"
-              className="object-contain aspect-square w-12 md:w-14"
-            />
-          </div>
-          <div className="from-turquoise to-bluedarker bg-gradient-to-r flex flex-col justify-center h-16 md:h-20 px-4 md:px-6">
-            <label className="cursor-pointer">faoTech</label>
-            <p className="text-black">sep 2022 - present</p>
-          </div>
-          <div className="-z-10 w-full h-full absolute top-0 translate-x-2 translate-y-2 bg-[#323232]" />
-        </a>
+        <div className="flex flex-wrap gap-6">
+          <a
+            href="https://faotech.dev"
+            target="_blank"
+            className="flex items-center h-full relative shadow w-fit"
+          >
+            <div className="flex items-center justify-center p-3 bg-white h-16 md:h-20">
+              <Image
+                src={faotech}
+                alt="faoTech"
+                className="object-contain aspect-square w-10 md:w-14"
+              />
+            </div>
+            <div className="from-turquoise to-bluedarker bg-gradient-to-r flex flex-col justify-center h-16 md:h-20 px-3 md:px-6">
+              <h5 className="cursor-pointer drop-shadow">faoTech</h5>
+              <small className="text-black">sep 2022 - present</small>
+            </div>
+            <div className="-z-10 w-full h-full absolute top-0 translate-x-2 translate-y-2 bg-[#323232]" />
+          </a>
+        </div>
       </article>
     </section>
   );
