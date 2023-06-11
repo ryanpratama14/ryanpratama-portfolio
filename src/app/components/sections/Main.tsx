@@ -47,7 +47,7 @@ export default function Main(): React.JSX.Element {
             <Image
               priority
               src={ryan}
-              alt="Ryan"
+              alt="Ryan Pratama"
               className="absolute top-0 w-full h-full object-contain"
             />
           </div>

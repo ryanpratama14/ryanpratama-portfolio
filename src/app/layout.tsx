@@ -25,7 +25,7 @@ type Props = {
 export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={poppins.className} suppressHydrationWarning={true}>
         <Navbar />
         {children}
         <Footer />

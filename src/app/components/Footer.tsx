@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import { linkSocial } from "../constants/constants";
-import { Icon } from "@iconify/react";
 
 export default function Footer(): React.JSX.Element {
   return (

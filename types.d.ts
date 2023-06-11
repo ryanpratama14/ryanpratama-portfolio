@@ -1,48 +1,48 @@
 type NavbarItems = {
-  label?: string;
-  icon?: string | IconifyIcon;
-  href?: string;
+  label: string;
+  icon: string | IconifyIcon;
+  href: string;
 };
 
 type LinkSocialItems = {
-  href?: string;
-  label?: string;
-  icon?: string | IconifyIcon;
+  href: string;
+  label: string;
+  icon: string | IconifyIcon;
 };
 
 type resumeItems = {
-  href?: string;
-  label?: string;
-  icon?: string | IconifyIcon;
+  href: string;
+  label: string;
+  icon: string | IconifyIcon;
 };
 
 type ExperienceItems = {
   label: string;
   since: string;
   links: LinksItems[];
-  src?: StaticImageData;
-  src2?: StaticImageData;
+  src: StaticImageData;
+  src2: StaticImageData;
   as: string;
-  companyDetails?: string;
-  moreDetails?: string[];
-  location?: string;
+  companyDetails: string;
+  moreDetails: string[];
+  location: string;
 };
 
 type SkillsItems = {
-  label?: string;
-  icon?: string | IconifyIcon;
+  label: string;
+  icon: string | IconifyIcon;
 };
 
 type LinksItems = {
-  icon?: string | IconifyIcon;
-  href?: string;
+  icon: string | IconifyIcon;
+  href: string;
 };
 
 type ProjectItems = {
   title: string;
-  icon?: StaticImageData;
-  desc?: string;
-  href?: string;
-  lists?: string[];
-  src?: StaticImageData;
+  icon: StaticImageData;
+  desc: string;
+  href: string;
+  lists: string[];
+  src: StaticImageData;
 };
