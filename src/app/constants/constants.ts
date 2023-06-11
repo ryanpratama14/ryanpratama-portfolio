@@ -97,12 +97,12 @@ export const navbarData: NavbarItems[] = [
   // },
   {
     href: "#projects",
-    icon: "ant-design:project-outlined",
+    icon: "mdi:local-cafe-outline",
     label: "Projects",
   },
   {
     href: "#contact",
-    icon: "material-symbols:contact-emergency-outline",
+    icon: "mdi:contact-outline",
     label: "Contact",
   },
 ];

@@ -1,25 +1,25 @@
-// "use client";
+"use client";
 
-// import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-// export interface LanguageState {
-//   lang: string;
-// }
+export interface LanguageState {
+  lang: string;
+}
 
-// const initialState: LanguageState = {
-//   lang: "en",
-// };
+const initialState: LanguageState = {
+  lang: "en",
+};
 
-// export const languageSlice = createSlice({
-//   name: "lang",
-//   initialState,
-//   reducers: {
-//     changeLanguage: (state, action) => {
-//       state.lang = action.payload.value;
-//     },
-//   },
-// });
+export const languageSlice = createSlice({
+  name: "lang",
+  initialState,
+  reducers: {
+    changeLanguage: (state, action) => {
+      state.lang = action.payload.value;
+    },
+  },
+});
 
-// export const { changeLanguage } = languageSlice.actions;
+export const { changeLanguage } = languageSlice.actions;
 
-// export default languageSlice.reducer;
+export default languageSlice.reducer;

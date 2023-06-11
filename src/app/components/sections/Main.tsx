@@ -17,10 +17,9 @@ export default function Main(): React.JSX.Element {
             <GradientText text1="Front-End" text2="Developer" />
             <h1 className="-translate-x-1">RYAN</h1>
             <p>
-              A front-end developer specializing in building intuitive web
-              applications with engaging user interfaces. I utilize the React.js
-              framework to develop efficient, scalable and maintainable frontend
-              applications.
+              I specialized in creating scalable, intuitive, and responsive web
+              applications with engaging user interfaces that are efficient,
+              maintainable, and accessible using the React.js framework.
             </p>
           </div>
           <div className="flex gap-6 items-center">
@@ -46,6 +45,7 @@ export default function Main(): React.JSX.Element {
           <div className="animate -translate-y-12 translate-x-4 first-line:absolute top-0 w-full h-[18rem] md:h-[30rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate group-hover:translate-y-8 absolute top-0 w-full h-[18rem] md:h-[30rem] bg-transparent polygon drop-shadow-xl">
             <Image
+              priority
               src={ryan}
               alt="Ryan"
               className="absolute top-0 w-full h-full object-contain"

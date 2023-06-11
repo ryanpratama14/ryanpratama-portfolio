@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import React from "react";
 import { Metadata } from "next";
-import Template from "./template";
 
 // components
 import Navbar from "./components/navbar/Navbar";
@@ -21,12 +20,10 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en">
       <body>
-        <Template>
-          <Navbar />
-          {children}
-          <Footer />
-          <ScrollToTop />
-        </Template>
+        <Navbar />
+        {children}
+        <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

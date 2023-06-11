@@ -1,11 +1,11 @@
 "use client";
 
 import { configureStore } from "@reduxjs/toolkit";
-// import languageReducer from "./features/languageSlice";
+import languageReducer from "./features/languageSlice";
 
 export const store = configureStore({
   reducer: {
-    // lang: languageReducer,
+    lang: languageReducer,
   },
 });
 
