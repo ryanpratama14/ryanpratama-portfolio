@@ -27,7 +27,7 @@ export default function Projects(): React.JSX.Element {
                 {/* <Image src={e?.icon} alt={e?.title} className="w-12" /> */}
               </div>
               <div className="flex px-8 flex-col items-center justify-center gap-6 absolute animate w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
-                <h4 className="drop-shadow md:h3 h2">{e?.title}</h4>
+                <h4 className="drop-shadow iOS md:h3 h2">{e?.title}</h4>
                 <div className="flex flex-col gap-2">
                   <p className="pSmaller">{e?.desc}</p>
                   <ul className="list-disc pSmaller pl-4">
