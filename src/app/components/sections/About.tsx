@@ -56,7 +56,7 @@ export default function About(): React.JSX.Element {
               <div className="relative h-16 md:h-[5.5rem] flex items-center">
                 <div className="-z-10 absolute w-0 group-hover:w-full animate h-full group-hover:bg-gradient-to-r from-turquoise" />
                 <article className="pl-4 pr-6 py-2">
-                  <h5 className="flex items-center gap-2">
+                  <h5 className="flex items-center drop-shadow gap-2">
                     {e?.label}
                     <span className="group-hover:scale-100 scale-0 p">
                       <Icon icon="mingcute:external-link-fill" />
