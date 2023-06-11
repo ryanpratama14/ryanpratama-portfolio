@@ -53,7 +53,7 @@ export default function About(): React.JSX.Element {
               <div className="flex items-center justify-center aspect-square p-3 bg-white h-16 md:h-[5.5rem]">
                 <Image src={e?.src} alt={e?.label} className="object-contain" />
               </div>
-              <div className="from-turquoise hover:to-bluedarker to- bg-gradient-to-r flex flex-col justify-center h-16 md:h-[5.5rem] px-3 md:px-6">
+              <div className="animate from-turquoise group-hover:to-bluedarker bg-gradient-to-r flex flex-col justify-center h-16 md:h-[5.5rem] px-3 md:px-6">
                 <h5 className="drop-shadow flex items-center gap-2">
                   {e?.label}
                   <span className="group-hover:scale-100 scale-0 p">
