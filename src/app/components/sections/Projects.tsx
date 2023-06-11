@@ -9,13 +9,15 @@ export default function Projects(): React.JSX.Element {
       className="relative flex-col gap-12 flex justify-center items-center main-padding"
       id="projects"
     >
+      {/* bullets */}
+      <div className="max-xl:hidden absolute left-56 top-24 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
+      <div className="max-xl:hidden absolute right-56 top-[45rem] w-56 aspect-square rounded-full  bg-bluedarker/30 blur-3xl -z-10" />
       <GradientText
         text1="Featured"
         text2="Projects"
         bigger
         className="text-center"
       />
-
       <article className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal">
         {projectsData?.map((e, i: number) => {
           return (
@@ -39,7 +41,7 @@ export default function Projects(): React.JSX.Element {
                   target="_blank"
                   className="group relative w-32 h-9 group"
                 >
-                  <span className="animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[1px] border-white w-full h-full absolute top-0 flex justify-center items-center">
+                  <span className="animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute top-0 flex justify-center items-center">
                     Visit Web
                   </span>
                   <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate" />
