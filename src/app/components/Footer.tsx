@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 
 export default function Footer(): React.JSX.Element {
   return (
-    <footer className="px-normal pb-24 pt-6 flex flex-col gap-2 justify-center items-center">
+    <footer className="px-normal pb-20 pt-6 flex flex-col gap-2 justify-center items-center">
       <div className="flex flex-col items-center justify-center text-center">
         <p>
           Built by{" "}

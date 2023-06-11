@@ -26,7 +26,7 @@ const ScrollToTop = (): React.JSX.Element => {
       className={`animate
         ${
           visible
-            ? "flex scale-100 translate-y-0 justify-center items-center fixed bottom-6 right-0 z-10 w-full"
+            ? "flex scale-100 translate-y-0 justify-center items-center fixed bottom-4 right-0 z-10 w-full"
             : "scale-0 translate-y-12"
         }
       `}
