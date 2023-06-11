@@ -16,6 +16,7 @@ export default function NotFound(): React.JSX.Element {
           />
           <Icon
             icon="ooui:article-not-found-ltr"
+            rotate={2}
             className="text-bluedarker"
             width={100}
           />
