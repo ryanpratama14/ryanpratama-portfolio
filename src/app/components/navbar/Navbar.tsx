@@ -4,6 +4,7 @@ import Resume from "./components/Resume";
 import MobileMenu from "./components/MobileMenu";
 // import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { navbarData } from "../../constants/constants";
+import { Icon } from "@iconify/react";
 
 export default function Navbar(): React.JSX.Element {
   // const completion = useReadingProgress();
@@ -30,15 +31,18 @@ export default function Navbar(): React.JSX.Element {
 
   return (
     <nav
-      className={`h-12 md:h-14 animate items-center shadow-md backdrop-blur-[3px] flex justify-between fixed w-full top-0 px-normal 2xl:px-longer3 z-10 bg-black ${
+      className={`h-12 md:h-16 animate items-center shadow-md backdrop-blur-[3px] flex justify-between fixed w-full top-0 px-normal 2xl:px-longer3 z-10 bg-black ${
         visible ? "translate-x-0" : "-translate-y-56"
       }`}
     >
       <Resume />
-      <div className="flex gap-16">
+      <div className="flex gap-4">
         {navbarData?.map((e, i: number) => {
           return (
-            <a key={i} href={e?.href} className="md:flex hidden">
+            <a key={i} href={e?.href} className="md:flex hidden btn-nav">
+              <span>
+                <Icon icon={e?.icon} width={20} />
+              </span>
               {e?.label}
             </a>
           );
