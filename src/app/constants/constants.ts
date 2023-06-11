@@ -193,7 +193,7 @@ export const linkSocial: LinkSocialItems[] = [
     icon: "ph:telegram-logo",
   },
   {
-    href: "https://wa.me/+79961005242",
+    href: "https://wa.me/+79961005202",
     label: "WhatsApp",
     icon: "mdi:whatsapp",
   },
