@@ -1,6 +1,6 @@
 import "../styles/globals.css";
-import { Poppins } from "next/font/google";
 import React from "react";
+import { Poppins } from "next/font/google";
 import { Metadata } from "next";
 
 // components
@@ -25,11 +25,11 @@ type Props = {
 export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en">
-      <body className={poppins.className} suppressHydrationWarning={true}>
+      <body className={poppins.className}>
         <Navbar />
         {children}
-        <Footer />
         <ScrollToTop />
+        <Footer />
       </body>
     </html>
   );
