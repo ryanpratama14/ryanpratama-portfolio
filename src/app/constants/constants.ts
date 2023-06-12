@@ -176,30 +176,36 @@ export const linkSocial: LinkSocialItems[] = [
     href: "mailto:ru.ryanpratama@gmail.com",
     label: "Email",
     icon: "mdi:email-outline",
+    color: "#57E6D9",
   },
   {
     href: "https://github.com/ryanpratama14",
     label: "GitHub",
     icon: "mdi:github",
+    color: "#2046CE",
   },
   {
     href: "https://www.linkedin.com/in/ryanpratama14/",
     label: "LinkedIn",
     icon: "mdi:linkedin",
+    color: "#338DCE",
   },
   {
     href: "https://t.me/ryanpratama14",
     label: "Telegram",
     icon: "ph:telegram-logo",
+    color: "#57E6D9",
   },
   {
     href: "https://wa.me/+79961005202",
     label: "WhatsApp",
     icon: "mdi:whatsapp",
+    color: "#2046CE",
   },
   {
     href: "https://www.instagram.com/ryanpratama14/",
     label: "Instagram",
     icon: "mdi:instagram",
+    color: "#338DCE",
   },
 ];

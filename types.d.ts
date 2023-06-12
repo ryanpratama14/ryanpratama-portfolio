@@ -8,6 +8,7 @@ type LinkSocialItems = {
   href: string;
   label: string;
   icon: string | IconifyIcon;
+  color: string;
 };
 
 type resumeItems = {

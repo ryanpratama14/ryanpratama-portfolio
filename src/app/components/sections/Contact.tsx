@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import React from "react";
 import GradientText from "../GradientText";
 import { linkSocial } from "@/app/constants/constants";
+import { SkewLoader } from "react-spinners";
 
 export default function Contact(): React.JSX.Element {
   return (
@@ -17,15 +18,21 @@ export default function Contact(): React.JSX.Element {
         Please feel free to reach out to me if you have any leads or if you
         would like to discuss potential collaborations.
       </p>
-      <nav className="self-end flex gap-2">
+
+      <nav className="flex gap-2 self-end">
         {linkSocial?.map((e, i: number) => {
           return (
             <a
               key={i}
               href={e?.href}
-              className="hover:shadowGlowed rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110"
+              className="flex flex-col items-center hover:shadowGlowed"
             >
-              <Icon icon={e?.icon} width={35} />
+              <span className="rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate">
+                <Icon icon={e?.icon} width={35} />
+              </span>
+              <span>
+                <SkewLoader color={e?.color} size={10} />
+              </span>
             </a>
           );
         })}
