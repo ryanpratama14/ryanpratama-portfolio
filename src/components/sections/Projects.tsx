@@ -1,7 +1,7 @@
 import React from "react";
 import GradientText from "../GradientText";
 import Image from "next/image";
-import { projectsData } from "@/app/constants/constants";
+import { projectsData } from "@/constants/constants";
 
 export default function Projects(): React.JSX.Element {
   return (

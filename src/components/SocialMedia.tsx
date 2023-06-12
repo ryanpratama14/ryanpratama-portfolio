@@ -1,7 +1,7 @@
 "use client";
 import { Icon } from "@iconify/react";
 import React from "react";
-import { linkSocial } from "../constants/constants";
+import { linkSocial } from "@/constants/constants";
 
 export default function SocialMedia(): React.JSX.Element {
   return (

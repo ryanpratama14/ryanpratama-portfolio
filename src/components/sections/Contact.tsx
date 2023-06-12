@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import React from "react";
 import GradientText from "../GradientText";
-import { linkSocial } from "@/app/constants/constants";
+import { linkSocial } from "@/constants/constants";
 import { SkewLoader } from "react-spinners";
 
 export default function Contact(): React.JSX.Element {

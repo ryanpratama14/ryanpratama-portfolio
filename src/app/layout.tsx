@@ -4,9 +4,9 @@ import { Poppins } from "next/font/google";
 import { Metadata } from "next";
 
 // components
-import Navbar from "./components/navbar/Navbar";
-import ScrollToTop from "./components/ScrollToTop";
-import Footer from "./components/Footer";
+import Navbar from "../components/navbar/Navbar";
+import ScrollToTop from "../components/ScrollToTop";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Ryan's Next App",

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
-import TransitionEffect from "./components/TransitionEffect";
+import { store } from "@/global/store";
+import TransitionEffect from "../components/TransitionEffect";
 
 type Props = {
   children: React.ReactNode;

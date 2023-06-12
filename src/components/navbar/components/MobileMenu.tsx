@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Icon } from "@iconify/react";
-import { navbarData } from "@/app/constants/constants";
+import { navbarData } from "@/constants/constants";
 
 export default function MobileMenu(): React.JSX.Element {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { experienceData, skillsData } from "@/app/constants/constants";
+import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
 import GradientText from "../GradientText";
 import Image from "next/image";
