@@ -19,9 +19,9 @@ export const projectsData: ProjectItems[] = [
     href: "https://kima-fe.vercel.app",
     lists: [
       "Developed a fully responsive full-stack web app using React.js",
-      "Utilized Axios to consume RESTful APIs",
+      "Utilized Axios library to perform HTTP requests and consume RESTful APIs, including handling of errors and responses",
       "Integrated Tailwind CSS for responsive component-based styling",
-      " Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
+      "Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
     ],
   },
   {
@@ -33,9 +33,9 @@ export const projectsData: ProjectItems[] = [
     lists: [
       "Developed a fully responsive full-stack web app using React.js",
       "Optimized key content pages for SEO objectives",
-      "Utilized Axios to consume RESTful APIs",
+      "Utilized Axios library to perform HTTP requests and consume RESTful APIs, including handling of errors and responses",
       "Integrated Tailwind CSS for responsive component-based styling",
-      " Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
+      "Leveraged Redux Toolkit to implement a global state management solution, centralizing mutable state and logic",
     ],
   },
   {
