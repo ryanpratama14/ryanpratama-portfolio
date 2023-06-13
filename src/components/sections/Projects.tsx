@@ -26,11 +26,11 @@ export default function Projects(): React.JSX.Element {
               <figure className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
                 {/* <Image src={e?.icon} alt={e?.title} className="w-12" /> */}
               </figure>
-              <section className="flex px-8 flex-col items-center justify-center gap-6 absolute animate w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
-                <h4 className="drop-shadow md:h3 h2 text-center">{e?.title}</h4>
+              <section className="flex px-6 md:px-longer2 lg:px-8 flex-col items-center justify-center gap-6 absolute animate w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
+                <h2 className="drop-shadow text-center lg:h3">{e?.title}</h2>
                 <header className="flex flex-col gap-2">
-                  <p className="pSmaller">{e?.desc}</p>
-                  <ul className="list-disc pSmaller pl-4">
+                  <p className="custom-text-size">{e?.desc}</p>
+                  <ul className="custom-text-size list-disc pl-4">
                     {e?.lists?.map((list, listIndex: number) => {
                       return <li key={listIndex}>{list}</li>;
                     })}

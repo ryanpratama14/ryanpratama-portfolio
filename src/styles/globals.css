@@ -83,6 +83,9 @@ img {
   .pSmaller2 {
     @apply text-xs font-normal;
   }
+  .custom-text-size {
+    @apply text-sm md:text-lg lg:text-sm xl:text-base;
+  }
   .shadowGlowed {
     @apply drop-shadow-[0px_0px_2px_#ffffff];
   }
