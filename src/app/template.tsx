@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function Template({ children }: Props): React.JSX.Element {
+export default function Providers({ children }: Props): React.JSX.Element {
   return (
     <Provider store={store}>
       <TransitionEffect />
