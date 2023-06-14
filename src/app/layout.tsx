@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import React from "react";
-import { Poppins, Montserrat } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Metadata } from "next";
 
 // components

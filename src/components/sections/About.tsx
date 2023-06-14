@@ -1,8 +1,8 @@
 import React from "react";
+import Image from "next/image";
+import GradientText from "../GradientText";
 import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
-import GradientText from "../GradientText";
-import Image from "next/image";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
