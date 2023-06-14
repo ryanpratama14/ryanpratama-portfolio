@@ -34,11 +34,14 @@ export default function About(): React.JSX.Element {
         </p>
       </section>
       <section
-        className={`${montserrat.className} xl:w-[70%] flex flex-wrap gap-4`}
+        className={`${montserrat.className} md:w-[80%] lg:w-[70%] flex flex-wrap gap-3`}
       >
         {skillsData?.map((e, i: number) => {
           return (
-            <p key={i} className="flex gap-2 items-center">
+            <p
+              key={i}
+              className="flex gap-3 text-sm xl:text-base items-center font-medium"
+            >
               <span className="text-turquoise">
                 <Icon icon={e?.icon} width={25} />
               </span>
