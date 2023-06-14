@@ -2,12 +2,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import Resume from "./components/Resume";
 import MobileMenu from "./components/MobileMenu";
-// import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { navbarData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
+import { useTypedSelector } from "@/global/store";
 
 export default function Navbar(): React.JSX.Element {
-  // const completion = useReadingProgress();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
 

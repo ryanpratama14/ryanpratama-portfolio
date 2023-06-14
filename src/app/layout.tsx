@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import Navbar from "../components/navbar/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/Footer";
+import Providers from "./template";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Ryan's Next App",
@@ -26,10 +28,12 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar />
-        {children}
-        <ScrollToTop />
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <ScrollToTop />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
