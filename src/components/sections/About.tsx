@@ -3,6 +3,12 @@ import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
 import GradientText from "../GradientText";
 import Image from "next/image";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function About(): React.JSX.Element {
   return (
@@ -12,7 +18,7 @@ export default function About(): React.JSX.Element {
     >
       <GradientText text1="About" text2="Me" bigger />
       <section className="flex flex-col gap-4">
-        <header className="flex gap-4 relative w-fit">
+        <header className={`${montserrat.className} flex gap-4 relative w-fit`}>
           <label>Ryan Pratama</label>
           <label>23 Years Old</label>
           <label>Indonesian</label>
@@ -27,7 +33,9 @@ export default function About(): React.JSX.Element {
           decided to specialize in this field.
         </p>
       </section>
-      <section className="xl:w-[70%] flex flex-wrap gap-4">
+      <section
+        className={`${montserrat.className} xl:w-[70%] flex flex-wrap gap-4`}
+      >
         {skillsData?.map((e, i: number) => {
           return (
             <p key={i} className="flex gap-2 items-center">
@@ -62,7 +70,9 @@ export default function About(): React.JSX.Element {
                       <Icon icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
-                  <small className="text-gray group-hover:text-white animate font-medium">
+                  <small
+                    className={`${montserrat.className} text-gray group-hover:text-white animate font-medium`}
+                  >
                     {e?.since}
                   </small>
                 </section>
