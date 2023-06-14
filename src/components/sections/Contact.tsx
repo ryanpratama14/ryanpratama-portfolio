@@ -10,7 +10,7 @@ export default function Contact(): React.JSX.Element {
       id="contact"
       className="relative main-padding min-h-screen flex flex-col gap-6 justify-center"
     >
-      {/* <div className="max-xl:hidden absolute left-44 top-36 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" /> */}
+      <div className="max-xl:hidden absolute left-44 top-36 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" />
       <GradientText text1="Contact" text2="Me" bigger />
       <p className="md:w-[80%] lg:w-[70%] xl:w-[65%]">
         I am actively seeking new opportunities at the moment and would be open

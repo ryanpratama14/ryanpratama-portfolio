@@ -7,9 +7,9 @@ export default function Main(): React.JSX.Element {
   return (
     <article className="relative flex flex-col justify-center main-padding min-h-screen">
       {/* bullets */}
-      {/* <div className="max-xl:hidden absolute left-44 top-44 w-72 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10" />
+      <div className="max-xl:hidden absolute left-44 top-44 w-72 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10" />
       <div className="max-xl:hidden absolute right-56 top-36 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
-      <div className="max-xl:hidden absolute left-96 bottom-36 w-56 aspect-square rounded-full  bg-blue/30 blur-3xl -z-10" /> */}
+      <div className="max-xl:hidden absolute left-96 bottom-36 w-56 aspect-square rounded-full  bg-blue/30 blur-3xl -z-10" />
       <section className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
         <section className="w-full lg:w-[50%] flex flex-col gap-6">
           <header className="flex flex-col gap-2">

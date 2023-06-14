@@ -10,8 +10,8 @@ export default function Projects(): React.JSX.Element {
       id="projects"
     >
       {/* bullets */}
-      {/* <div className="max-xl:hidden absolute left-56 top-24 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
-      <div className="max-xl:hidden absolute right-56 top-[45rem] w-56 aspect-square rounded-full  bg-bluedarker/30 blur-3xl -z-10" /> */}
+      <div className="max-xl:hidden absolute left-56 top-24 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
+      <div className="max-xl:hidden absolute right-56 top-[45rem] w-56 aspect-square rounded-full  bg-bluedarker/30 blur-3xl -z-10" />
       <GradientText
         text1="Featured"
         text2="Projects"
