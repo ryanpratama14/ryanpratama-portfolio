@@ -18,7 +18,7 @@ export default function MobileMenu(): React.JSX.Element {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform -translate-y-2 opacity-0"
       >
-        <Menu.Items className="absolute right-0 mt-6 flex flex-col gap-3 rounded-3xl focus:outline-none">
+        <Menu.Items className="absolute right-0 mt-6 flex flex-col gap-3">
           {navbarData?.map((e, i: number) => {
             return (
               <Menu.Item key={i}>
