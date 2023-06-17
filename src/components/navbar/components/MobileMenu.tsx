@@ -11,12 +11,12 @@ export default function MobileMenu(): React.JSX.Element {
       </Menu.Button>
       <Transition
         as={React.Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
+        enter="transition duration-300"
+        enterFrom="transform -translate-y-2 opacity-0"
         enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
+        leave="transition duration-300"
         leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
+        leaveTo="transform -translate-y-2 opacity-0"
       >
         <Menu.Items className="absolute right-0 mt-6 flex flex-col gap-3 rounded-3xl focus:outline-none">
           {navbarData?.map((e, i: number) => {
