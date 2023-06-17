@@ -6,7 +6,7 @@ import { resumeData } from "@/constants/constants";
 export default function Resume(): React.JSX.Element {
   return (
     <Menu as="div" className="relative inline-block h-full">
-      <Menu.Button className="flex gap-3 h-full items-center group">
+      <Menu.Button className="flex gap-3 h-full items-center group select-none">
         <Icon
           icon="pepicons-pencil:cv-circle"
           className="text-4xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 transition-transform duration-300"
