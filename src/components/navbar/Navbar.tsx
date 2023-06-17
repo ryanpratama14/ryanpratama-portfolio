@@ -4,7 +4,6 @@ import Resume from "./components/Resume";
 import MobileMenu from "./components/MobileMenu";
 import { navbarData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
-import { useTypedSelector } from "@/global/store";
 
 export default function Navbar(): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(true);
@@ -30,7 +29,7 @@ export default function Navbar(): React.JSX.Element {
 
   return (
     <nav
-      className={`h-12 md:h-16 animate items-center shadow-md backdrop-blur-[3px] flex justify-between fixed w-full top-0 px-normal xl:px-longer 2xl:px-longer3 z-20 bg-black ${
+      className={`h-14 md:h-16 animate items-center shadow-md backdrop-blur-[3px] flex justify-between fixed w-full top-0 px-normal xl:px-longer 2xl:px-longer3 z-20 bg-black ${
         visible ? "translate-x-0" : "-translate-y-56"
       }`}
     >
