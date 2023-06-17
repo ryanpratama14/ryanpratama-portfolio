@@ -30,7 +30,7 @@ export default function Resume(): React.JSX.Element {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0"
       >
-        <Menu.Items className="outline-none absolute left-0 mt-4 flex gap-2">
+        <Menu.Items className="outline-none absolute left-0 mt-3 flex gap-2">
           {resumeData?.map((e, i: number) => {
             return (
               <Menu.Item key={i}>
