@@ -37,7 +37,7 @@ export default function Resume(): React.JSX.Element {
                 <a
                   href={e?.href}
                   target="_blank"
-                  className={`rounded-full animate font-semibold flex justify-center items-center w-9 md:w-12 aspect-square ${
+                  className={`shadow-xl rounded-full animate font-semibold flex justify-center items-center w-9 md:w-12 aspect-square ${
                     e?.icon === "EN"
                       ? "bg-bluedarker text-white hover:bg-white hover:text-black "
                       : "bg-turquoise text-black hover:bg-black hover:text-white"
