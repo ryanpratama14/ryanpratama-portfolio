@@ -29,8 +29,8 @@ export default function About(): React.JSX.Element {
           Indonesian friend in his apartment in Kazan, Russia. Along with other
           students, we learned the basics of JavaScript and eventually formed a
           software house startup called faoTech in January 2023. As I developed
-          my skills, I discovered a passion for front-end development and
-          decided to specialize in this field.
+          my skills, I discovered a passion for frontend development and decided
+          to specialize in this field.
         </p>
       </section>
       <section

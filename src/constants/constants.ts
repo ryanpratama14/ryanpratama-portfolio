@@ -124,7 +124,7 @@ export const experienceData: ExperienceItems[] = [
       },
     ],
     since: "sep 2022 - present",
-    as: "Front-End Engineer",
+    as: "Frontend Engineer",
     companyDetails:
       "Indonesian-based software house company. Our unique combination of Indonesian and Russian educational backgrounds allows us to serve clients from diverse industries and locations, and we are open to new projects worldwide.",
     moreDetails: [
@@ -132,8 +132,8 @@ export const experienceData: ExperienceItems[] = [
       "Optimized key content pages for SEO objectives.",
       "Created reusable JavaScript functions and JSX components that sped up the development process.",
       "Conducted routine updates to ensure optimal website performance.",
-      "Utilized Axios to implement RESTful APIs, enabling seamless communication between the front-end and back-end.",
-      "Utilized industry best practices and stayed up-to-date with the latest front-end technologies.",
+      "Utilized Axios to implement RESTful APIs, enabling seamless communication between the frontend and backend.",
+      "Utilized industry best practices and stayed up-to-date with the latest frontend technologies.",
       "Received great feedback from the Project Manager and Team Lead.",
     ],
   },

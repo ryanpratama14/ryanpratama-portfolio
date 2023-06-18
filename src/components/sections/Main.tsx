@@ -13,7 +13,7 @@ export default function Main(): React.JSX.Element {
       <section className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
         <section className="w-full lg:w-[50%] flex flex-col gap-6">
           <header className="flex flex-col gap-2">
-            <GradientText text1="Front-End" text2="Engineer" />
+            <GradientText text1="Frontend" text2="Engineer" />
             <h1 className="-translate-x-0.5 lg:-translate-x-1">RYAN</h1>
             <p>
               I specialized in creating scalable, intuitive, and responsive web
