@@ -124,7 +124,7 @@ export const experienceData: ExperienceItems[] = [
       },
     ],
     since: "sep 2022 - present",
-    as: "Front-End Developer",
+    as: "Front-End Engineer",
     companyDetails:
       "Indonesian-based software house company. Our unique combination of Indonesian and Russian educational backgrounds allows us to serve clients from diverse industries and locations, and we are open to new projects worldwide.",
     moreDetails: [
