@@ -54,7 +54,7 @@ export const projectsData: ProjectItems[] = [
 
 export const skillsData: SkillsItems[] = [
   {
-    label: "React.js",
+    label: "React",
     icon: "teenyicons:react-solid",
   },
   {
@@ -68,6 +68,10 @@ export const skillsData: SkillsItems[] = [
   {
     label: "Redux Toolkit",
     icon: "akar-icons:redux-fill",
+  },
+  {
+    label: "Vite",
+    icon: "file-icons:vite",
   },
   {
     label: "Axios",

@@ -18,10 +18,10 @@ export default function Projects(): React.JSX.Element {
         bigger
         className="text-center"
       />
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal 2xl:px-longer">
         {projectsData?.map((e, i: number) => {
           return (
-            <figure className={`relative`} key={i}>
+            <figure className="relative" key={i}>
               <Image src={e?.src} alt={e?.title} />
               <figure className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
                 {/* <Image src={e?.icon} alt={e?.title} className="w-12" /> */}
