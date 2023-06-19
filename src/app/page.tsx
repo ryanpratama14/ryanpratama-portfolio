@@ -9,11 +9,11 @@ import Main from "../components/sections/Main";
 
 export default function Home(): React.JSX.Element {
   return (
-    <React.Fragment>
+    <main>
       <Main />
       <About />
       <Projects />
       <Contact />
-    </React.Fragment>
+    </main>
   );
 }
