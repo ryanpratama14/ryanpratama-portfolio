@@ -18,7 +18,7 @@ export const projectsData: ProjectItems[] = [
     desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
     href: "https://kima-fe.vercel.app",
     lists: [
-      "Developed a fully responsive full-stack web app using React.js",
+      "Developed a fully responsive full-stack web app using React",
       "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
       "Integrated Tailwind CSS for responsive component-based styling",
       "Leveraged Redux Toolkit to implement a global state management solution",
@@ -31,7 +31,7 @@ export const projectsData: ProjectItems[] = [
     desc: "TurunTangan is a non-profit youth volunteer movement with more than 70 chapters across Indonesia.",
     href: "https://turuntangan.id",
     lists: [
-      "Developed a fully responsive full-stack web app using React.js",
+      "Developed a fully responsive full-stack web app using React",
       "Optimized key content pages for SEO objectives",
       "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
       "Integrated Tailwind CSS for responsive component-based styling",
@@ -45,7 +45,7 @@ export const projectsData: ProjectItems[] = [
     desc: "Belinsky is a production house and creative studio that specializes in both professional photography and filmmaking.",
     href: "https://belinskyproduction.com",
     lists: [
-      "Developed a fully responsive web app using React.js",
+      "Developed a fully responsive web app using React",
       "Optimized key content pages for SEO objectives",
       "Integrated Tailwind CSS for responsive component-based styling",
     ],
@@ -128,7 +128,7 @@ export const experienceData: ExperienceItems[] = [
     companyDetails:
       "Indonesian-based software house company. Our unique combination of Indonesian and Russian educational backgrounds allows us to serve clients from diverse industries and locations, and we are open to new projects worldwide.",
     moreDetails: [
-      "Developed 3 fully responsive web apps as using React.js.",
+      "Developed 3 fully responsive web apps as using React.",
       "Optimized key content pages for SEO objectives.",
       "Created reusable JavaScript functions and JSX components that sped up the development process.",
       "Conducted routine updates to ensure optimal website performance.",

@@ -18,7 +18,7 @@ export default function Main(): React.JSX.Element {
             <p>
               I specialized in creating scalable, intuitive, and responsive web
               applications with engaging user interfaces that are efficient,
-              maintainable, and accessible using the React.js framework.
+              maintainable, and accessible using the React library.
             </p>
           </header>
           <nav className="flex gap-6 items-center">
