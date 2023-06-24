@@ -3,12 +3,7 @@ import Image from "next/image";
 import GradientText from "../GradientText";
 import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+import { montserrat } from "@/styles/fonts";
 
 export default function About(): React.JSX.Element {
   return (

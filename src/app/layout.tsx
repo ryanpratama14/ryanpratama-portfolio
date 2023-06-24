@@ -1,6 +1,6 @@
-import "../styles/globals.css";
 import React from "react";
-import { Poppins } from "next/font/google";
+import "@/styles/globals.css";
+import { poppins } from "@/styles/fonts";
 import { Metadata } from "next";
 
 // components
@@ -13,11 +13,6 @@ export const metadata: Metadata = {
   title: "Ryan's Next App",
   description: "Welcome to: Ryan's Portfolio",
 };
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 type Props = {
   children: React.ReactNode;
