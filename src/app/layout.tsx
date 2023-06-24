@@ -1,13 +1,12 @@
-import React from "react";
 import "@/styles/globals.css";
-import { poppins } from "@/styles/fonts";
+import React from "react";
 import { Metadata } from "next";
 
 // components
-import Navbar from "../components/navbar/Navbar";
-import ScrollToTop from "../components/ScrollToTop";
-import Footer from "../components/Footer";
-import Providers from "./template";
+import ReduxProvider from "@/global/ReduxProvider";
+import Navbar from "@/components/navbar/Navbar";
+import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Ryan's Next App",
@@ -21,13 +20,13 @@ type Props = {
 export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <Providers>
+      <body>
+        <ReduxProvider>
           <Navbar />
           {children}
           <ScrollToTop />
           <Footer />
-        </Providers>
+        </ReduxProvider>
       </body>
     </html>
   );

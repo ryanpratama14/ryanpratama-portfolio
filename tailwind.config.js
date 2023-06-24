@@ -50,6 +50,10 @@ module.exports = {
         longer9: "24vw",
         longer10: "26vw",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [],

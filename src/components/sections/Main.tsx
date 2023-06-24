@@ -1,7 +1,7 @@
 import React from "react";
 import ryan from "../../../public/assets/ryan.png";
 import Image from "next/image";
-import GradientText from "../GradientText";
+import GradientText from "@/components/GradientText";
 
 export default function Main(): React.JSX.Element {
   return (

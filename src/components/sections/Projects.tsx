@@ -1,5 +1,5 @@
 import React from "react";
-import GradientText from "../GradientText";
+import GradientText from "@/components/GradientText";
 import Image from "next/image";
 import { projectsData } from "@/constants/constants";
 

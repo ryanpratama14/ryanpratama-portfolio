@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import GradientText from "../GradientText";
+import GradientText from "@/components/GradientText";
 import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
-import { montserrat } from "@/styles/fonts";
 
 export default function About(): React.JSX.Element {
   return (
@@ -13,7 +12,7 @@ export default function About(): React.JSX.Element {
     >
       <GradientText text1="About" text2="Me" bigger />
       <section className="flex flex-col gap-4">
-        <header className={`${montserrat.className} flex gap-4 relative w-fit`}>
+        <header className="font-montserrat flex gap-4 relative w-fit">
           <label>Ryan Pratama</label>
           <label>23 Years Old</label>
           <label>Indonesian</label>
@@ -28,9 +27,7 @@ export default function About(): React.JSX.Element {
           to specialize in this field.
         </p>
       </section>
-      <section
-        className={`${montserrat.className} md:w-[80%] lg:w-[70%] flex flex-wrap gap-3`}
-      >
+      <section className="font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-3">
         {skillsData?.map((e, i: number) => {
           return (
             <p
@@ -68,9 +65,7 @@ export default function About(): React.JSX.Element {
                       <Icon icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
-                  <small
-                    className={`${montserrat.className} text-gray group-hover:text-white animate font-medium`}
-                  >
+                  <small className="font-montserrat text-gray group-hover:text-white animate font-medium">
                     {e?.since}
                   </small>
                 </section>
