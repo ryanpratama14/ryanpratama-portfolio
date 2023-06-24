@@ -22,22 +22,14 @@ const ScrollToTop = (): React.JSX.Element => {
   }, []);
 
   return (
-    <div
-      className={`animate
-        ${
-          visible
-            ? "flex scale-100 translate-y-0 justify-center items-center fixed bottom-5 right-0 z-10 w-full"
-            : "scale-0 translate-y-12"
-        }
-      `}
+    <button
+      onClick={LoadToTop}
+      className={`animate fixed bottom-4 left-[50%] z-10 ${
+        visible ? "scale-100 hover:scale-110 hover:-translate-y-2" : "scale-0 "
+      }`}
     >
-      <div
-        onClick={LoadToTop}
-        className="block animate cursor-pointer hover:scale-105 hover:-translate-y-1"
-      >
-        <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
-      </div>
-    </div>
+      <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
+    </button>
   );
 };
 
