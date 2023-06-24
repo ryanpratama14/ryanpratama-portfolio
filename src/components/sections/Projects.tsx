@@ -24,7 +24,11 @@ export default function Projects(): React.JSX.Element {
             <figure className="relative" key={i}>
               <Image src={e?.src} alt={e?.title} />
               <figure className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
-                {/* <Image src={e?.icon} alt={e?.title} className="w-12" /> */}
+                <Image
+                  src={e?.icon}
+                  alt={e?.title}
+                  className="w-[50%] -translate-x-1"
+                />
               </figure>
               <section className="flex px-6 md:px-longer2 lg:px-8 flex-col items-center justify-center gap-6 absolute animate w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
                 <h2 className="drop-shadow text-center lg:h3">{e?.title}</h2>
