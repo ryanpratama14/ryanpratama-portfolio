@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
   background-image: url("/assets/noise.png");
   background-color: #202020;
   color: white;
-  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 a,
