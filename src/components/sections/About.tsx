@@ -31,12 +31,12 @@ export default function About(): React.JSX.Element {
           return (
             <p
               key={i}
-              className="flex gap-3 text-sm xl:text-base items-center font-medium"
+              className="flex gap-3 text-sm xl:text-base items-center font-medium text-graydarker"
             >
               <span className="text-turquoise">
                 <Icon icon={e?.icon} width={25} />
               </span>
-              <span className="text-graydarker">{e.label}</span>
+              {e?.label}
             </p>
           );
         })}
