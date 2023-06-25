@@ -5,6 +5,7 @@ import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import Main from "@/components/sections/Main";
+import { DotLoader } from "react-spinners";
 
 export default function Home(): React.JSX.Element {
   return (
