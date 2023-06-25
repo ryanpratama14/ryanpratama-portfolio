@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Resume from "./components/Resume";
 import MobileMenu from "./components/MobileMenu";
 import { navbarData } from "@/constants/constants";

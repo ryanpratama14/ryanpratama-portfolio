@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useLocalStorage from "@/hooks/UseLocalStorage";
 import { Icon } from "@iconify/react";
 

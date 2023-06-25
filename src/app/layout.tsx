@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import React from "react";
 import { Metadata } from "next";
 
 // components

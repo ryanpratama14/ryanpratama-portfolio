@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { DotLoader } from "react-spinners";
 
 export default function Loading(): React.JSX.Element {

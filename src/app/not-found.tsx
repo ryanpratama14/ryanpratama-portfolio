@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import Contact from "@/components/sections/Contact";

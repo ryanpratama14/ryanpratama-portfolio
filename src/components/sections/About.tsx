@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import GradientText from "@/components/GradientText";
 import { experienceData, skillsData } from "@/constants/constants";

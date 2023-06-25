@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Icon } from "@iconify/react";
 import { navbarData } from "@/constants/constants";
@@ -10,7 +10,7 @@ export default function MobileMenu(): React.JSX.Element {
         <Icon icon="ri:menu-3-fill" width={20} />
       </Menu.Button>
       <Transition
-        as={React.Fragment}
+        as={Fragment}
         enter="transition duration-300"
         enterFrom="transform -translate-y-2 opacity-0"
         enterTo="transform opacity-100 scale-100"
