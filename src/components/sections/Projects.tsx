@@ -1,6 +1,7 @@
 import GradientText from "@/components/GradientText";
 import Image from "next/image";
 import { projectsData } from "@/constants/constants";
+import LazyImage from "../LazyImage";
 
 export default function Projects(): React.JSX.Element {
   return (
@@ -21,14 +22,17 @@ export default function Projects(): React.JSX.Element {
         {projectsData?.map((e, i: number) => {
           return (
             <figure className="relative" key={i}>
-              <Image src={e?.src} alt={e?.title} />
+              <Image
+                src={e?.src}
+                alt={e?.title}
+                placeholder="blur"
+                blurDataURL={e?.blurUrl}
+              />
               <figure className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
                 <Image
                   priority
                   src={e?.icon}
                   alt={e?.title}
-                  placeholder="blur"
-                  blurDataURL={e?.blurUrl}
                   className="w-[50%] -translate-x-1"
                 />
               </figure>
