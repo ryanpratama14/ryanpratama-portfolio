@@ -22,7 +22,6 @@ type ExperienceItems = {
   since: string;
   links: LinksItems[];
   src: StaticImageData;
-  src2: StaticImageData;
   as: string;
   companyDetails: string;
   moreDetails: string[];

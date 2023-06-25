@@ -1,13 +1,12 @@
 import faotech from "@/assets/faoTech.png";
-import faotech2 from "@/assets/faoTech2.jpeg";
 
-import kima from "@/assets/kima.png";
+import kima from "@/assets/kima.jpg";
 import kima2 from "@/assets/kima2.png";
 
-import turta from "@/assets/turta.png";
+import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 
-import belinsky from "@/assets/belinsky.png";
+import belinsky from "@/assets/belinsky.jpg";
 import belinsky2 from "@/assets/belinsky2.png";
 
 export const projectsData: ProjectItems[] = [
@@ -115,7 +114,6 @@ export const experienceData: ExperienceItems[] = [
   {
     location: "Kazan, Russia (remote)",
     src: faotech,
-    src2: faotech2,
     label: "faoTech",
     links: [
       {

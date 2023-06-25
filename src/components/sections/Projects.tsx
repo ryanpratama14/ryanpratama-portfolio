@@ -20,8 +20,12 @@ export default function Projects(): React.JSX.Element {
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal 2xl:px-longer">
         {projectsData?.map((e, i: number) => {
           return (
-            <figure className="relative" key={i}>
-              <Img src={e?.src} alt={e?.title} />
+            <figure className="relative drop-shadow" key={i}>
+              <Img
+                src={e?.src}
+                alt={e?.title}
+                className="object-cover w-full h-full"
+              />
               <figure className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
                 <Img
                   src={e?.icon}

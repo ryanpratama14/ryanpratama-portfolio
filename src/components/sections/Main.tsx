@@ -44,6 +44,7 @@ export default function Main(): React.JSX.Element {
           <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] bg-transparent polygon drop-shadow-xl">
             <Img
               src={ryan}
+              priority={true}
               alt="Ryan Pratama"
               className="absolute top-0 w-full h-full object-contain"
             />

@@ -4,15 +4,21 @@ type Props = {
   alt: string;
   src: StaticImageData;
   className?: string;
+  priority?: boolean;
 };
 
-export default function Img({ alt, src, className }: Props): React.JSX.Element {
+export default function Img({
+  alt,
+  src,
+  className,
+  priority,
+}: Props): React.JSX.Element {
   return (
     <Image
       alt={alt}
       src={src}
       placeholder="blur"
-      priority={true}
+      priority={priority}
       className={className}
     />
   );
