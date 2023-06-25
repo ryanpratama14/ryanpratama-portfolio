@@ -27,6 +27,8 @@ export default function Projects(): React.JSX.Element {
                   priority
                   src={e?.icon}
                   alt={e?.title}
+                  placeholder="blur"
+                  blurDataURL={e?.blurUrl}
                   className="w-[50%] -translate-x-1"
                 />
               </figure>

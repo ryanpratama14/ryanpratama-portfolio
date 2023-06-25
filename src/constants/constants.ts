@@ -15,6 +15,7 @@ export const projectsData: ProjectItems[] = [
     title: "KIMA",
     icon: kima2,
     src: kima,
+    blurUrl: "LHO;0%NN~VM{-i?vs+IU^$S701s:",
     desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
     href: "https://kima-fe.vercel.app",
     lists: [
@@ -28,6 +29,7 @@ export const projectsData: ProjectItems[] = [
     title: "TurunTangan",
     icon: turta2,
     src: turta,
+    blurUrl: "LTNR.dRPD4xu%3VsWBM{.mMyRPog",
     desc: "TurunTangan is a non-profit youth volunteer movement with more than 70 chapters across Indonesia.",
     href: "https://turuntangan.id",
     lists: [
@@ -42,6 +44,7 @@ export const projectsData: ProjectItems[] = [
     title: "Belinsky Production",
     icon: belinsky2,
     src: belinsky,
+    blurUrl: "LOJH?t?u-:ROx]MwM_t5~W?bIURj",
     desc: "Belinsky is a production house and creative studio that specializes in both professional photography and filmmaking.",
     href: "https://belinskyproduction.com",
     lists: [
