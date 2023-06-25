@@ -57,6 +57,9 @@ img {
   .animate {
     @apply transition-all duration-300;
   }
+  .animate-longer {
+    @apply transition-all duration-500;
+  }
   .main-padding {
     @apply py-normal px-normal xl:px-longer 2xl:px-longer3;
   }

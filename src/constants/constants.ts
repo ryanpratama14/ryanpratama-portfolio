@@ -105,6 +105,10 @@ export const skillsData: SkillsItems[] = [
     label: "Styled Components",
     icon: "file-icons:styledcomponents",
   },
+  {
+    label: "Framer Motion",
+    icon: "teenyicons:framer-outline",
+  },
 ];
 
 export const experienceData: ExperienceItems[] = [
