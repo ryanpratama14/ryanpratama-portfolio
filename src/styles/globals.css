@@ -4,7 +4,7 @@
 
 html {
   font-family: var(--font-poppins);
-  background-image: url("/assets/noise.png");
+  background-image: url("/noise.png");
   background-color: #202020;
   color: white;
   scroll-behavior: smooth;

@@ -1,14 +1,14 @@
-import faotech from "../../public/assets/faoTech.png";
-import faotech2 from "../../public/assets/faoTech2.jpeg";
+import faotech from "@/assets/faoTech.png";
+import faotech2 from "@/assets/faoTech2.jpeg";
 
-import kima from "../../public/assets/kima.png";
-import kima2 from "../../public/assets/kima2.png";
+import kima from "@/assets/kima.png";
+import kima2 from "@/assets/kima2.png";
 
-import turta from "../../public/assets/turta.png";
-import turta2 from "../../public/assets/turta2.png";
+import turta from "@/assets/turta.png";
+import turta2 from "@/assets/turta2.png";
 
-import belinsky from "../../public/assets/belinsky.png";
-import belinsky2 from "../../public/assets/belinsky2.png";
+import belinsky from "@/assets/belinsky.png";
+import belinsky2 from "@/assets/belinsky2.png";
 
 export const projectsData: ProjectItems[] = [
   {

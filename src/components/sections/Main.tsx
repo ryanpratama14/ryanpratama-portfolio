@@ -1,4 +1,4 @@
-import ryan from "../../../public/assets/ryan.png";
+import ryan from "@/assets/ryan.png";
 import Image from "next/image";
 import GradientText from "@/components/GradientText";
 
