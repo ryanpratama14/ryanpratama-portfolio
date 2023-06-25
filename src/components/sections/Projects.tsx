@@ -20,7 +20,7 @@ export default function Projects(): React.JSX.Element {
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal 2xl:px-longer">
         {projectsData?.map((e, i: number) => {
           return (
-            <figure className="relative drop-shadow" key={i}>
+            <figure className="relative shadow" key={i}>
               <Img
                 src={e?.src}
                 alt={e?.title}
@@ -33,7 +33,7 @@ export default function Projects(): React.JSX.Element {
                   className="w-[50%] -translate-x-1"
                 />
               </figure>
-              <section className="flex px-6 md:px-longer2 lg:px-8 flex-col items-center justify-center gap-6 absolute animate w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
+              <section className="flex px-6 md:px-longer2 lg:px-8 flex-col items-center justify-center gap-6 absolute animate-longer w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
                 <h2 className="drop-shadow text-center lg:h3">{e?.title}</h2>
                 <header className="flex flex-col gap-2">
                   <p className="custom-text-size">{e?.desc}</p>
