@@ -46,5 +46,4 @@ type ProjectItems = {
   href: string;
   lists: string[];
   src: StaticImageData;
-  blurUrl?: string;
 };
