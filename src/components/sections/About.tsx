@@ -1,7 +1,7 @@
-import Image from "next/image";
 import GradientText from "@/components/GradientText";
 import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
+import Img from "@/components/Img";
 
 export default function About(): React.JSX.Element {
   return (
@@ -53,7 +53,7 @@ export default function About(): React.JSX.Element {
               className="flex group items-center h-full hover:shadow-[-8px_8px_0px_0px_#323232] hover:translate-x-2 hover:-translate-y-2 w-fit"
             >
               <div className="flex items-center justify-center aspect-square p-3 bg-white h-16 md:h-[5.5rem]">
-                <Image src={e?.src} alt={e?.label} className="object-contain" />
+                <Img src={e?.src} alt={e?.label} className="object-contain" />
               </div>
               <div className="relative h-16 md:h-[5.5rem] flex items-center">
                 <div className="-z-10 absolute w-0 group-hover:w-full animate h-full group-hover:bg-gradient-to-r from-turquoise" />

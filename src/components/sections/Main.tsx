@@ -1,6 +1,6 @@
 import ryan from "@/assets/ryan.png";
-import Image from "next/image";
 import GradientText from "@/components/GradientText";
+import Img from "@/components/Img";
 
 export default function Main(): React.JSX.Element {
   return (
@@ -42,8 +42,7 @@ export default function Main(): React.JSX.Element {
           <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate -translate-y-6 translate-x-4 first-line:absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] bg-transparent polygon drop-shadow-xl">
-            <Image
-              priority={true}
+            <Img
               src={ryan}
               alt="Ryan Pratama"
               className="absolute top-0 w-full h-full object-contain"
