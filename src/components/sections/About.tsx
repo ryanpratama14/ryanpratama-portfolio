@@ -26,7 +26,7 @@ export default function About(): React.JSX.Element {
           to specialize in this field.
         </p>
       </section>
-      <section className="font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-3">
+      <section className="font-montserrat md:w-[80%] lg:w-[60%] flex flex-wrap gap-3">
         {skillsData?.map((e, i: number) => {
           return (
             <p
