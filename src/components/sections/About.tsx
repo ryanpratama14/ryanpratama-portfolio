@@ -62,11 +62,11 @@ export default function About(): React.JSX.Element {
               target="_blank"
               className="flex group items-center h-full hover:shadow-[-6px_6px_0px_0px_#323232] hover:translate-x-0.5 hover:-translate-y-0.5"
             >
-              <div className="-z-10 absolute w-0 group-hover:w-full animate h-full bg-gradient-to-r from-turquoise" />
               <figure className="flex items-center justify-center aspect-square p-3 bg-white md:h-24 h-20">
                 <Img src={e.src} alt={e.label} className="object-contain" />
               </figure>
-              <section className="relative md:h-24 h-20 flex items-center">
+              <section className="relative md:h-24 h-20 flex items-center w-full">
+                <div className="-z-10 absolute w-0 group-hover:w-full animate-longer h-full bg-gradient-to-r from-turquoise" />
                 <header className="w-full flex flex-col px-4">
                   <h5 className="flex items-center drop-shadow gap-2">
                     {e.label}
@@ -74,7 +74,7 @@ export default function About(): React.JSX.Element {
                       <Icon icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
-                  <small className="italic font-montserrat text-gray group-hover:text-white animate font-medium">
+                  <small className="italic font-montserrat text-gray group-hover:text-white animate-longer font-medium">
                     {e.since}
                   </small>
                 </header>
