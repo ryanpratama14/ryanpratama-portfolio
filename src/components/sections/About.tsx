@@ -2,7 +2,6 @@ import GradientText from "@/components/GradientText";
 import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
 import Img from "@/components/Img";
-import { Fragment } from "react";
 
 const identityData: string[] = ["Ryan Pratama", "23 yo", "Indonesian"];
 
@@ -16,7 +15,11 @@ export default function About(): React.JSX.Element {
       <section className="flex flex-col gap-4">
         <header className="font-montserrat flex relative w-fit divide-x justify-between gap-3">
           {identityData.map((e, i: number) => {
-            return <label className={`${i !== 0 && "pl-3"}`}>{e}</label>;
+            return (
+              <label key={i} className={`${i !== 0 && "pl-3"}`}>
+                {e}
+              </label>
+            );
           })}
           <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" />
         </header>
