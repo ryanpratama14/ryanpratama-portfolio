@@ -52,7 +52,7 @@ export default function About(): React.JSX.Element {
         })}
       </section>
 
-      <h4 className="italic">Experience</h4>
+      <h4>Experience</h4>
       <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
         {experienceData.map((e, i: number) => {
           return (
@@ -74,7 +74,7 @@ export default function About(): React.JSX.Element {
                       <Icon icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
-                  <small className="font-montserrat text-gray group-hover:text-white animate font-medium">
+                  <small className="italic font-montserrat text-gray group-hover:text-white animate font-medium">
                     {e.since}
                   </small>
                 </header>

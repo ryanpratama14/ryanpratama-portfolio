@@ -1,11 +1,8 @@
 import faotech from "@/assets/faoTech.png";
-
 import kima from "@/assets/kima.jpg";
 import kima2 from "@/assets/kima2.png";
-
 import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
-
 import belinsky from "@/assets/belinsky.jpg";
 import belinsky2 from "@/assets/belinsky2.png";
 
@@ -125,11 +122,6 @@ export const navbarData: NavbarItems[] = [
     icon: "mdi:about-circle-outline",
     label: "About",
   },
-  // {
-  //   href: "#experience",
-  //   icon: "icon-park-outline:journey",
-  //   label: "Experience",
-  // },
   {
     href: "#projects",
     icon: "mdi:local-cafe-outline",
