@@ -33,26 +33,28 @@ export default function Projects(): React.JSX.Element {
                   className="w-[50%] -translate-x-1"
                 />
               </figure>
-              <section className="flex px-6 md:px-longer2 lg:px-8 flex-col items-center justify-center gap-5 absolute animate-longer w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
-                <h2 className="drop-shadow text-center lg:h3">{e?.title}</h2>
-                <header className="flex flex-col gap-2">
-                  <p className="custom-text-size">{e?.desc}</p>
-                  <ul className="custom-text-size list-disc pl-4">
-                    {e?.lists?.map((list, listIndex: number) => {
-                      return <li key={listIndex}>{list}</li>;
-                    })}
-                  </ul>
-                </header>
-                <a
-                  href={e?.href}
-                  target="_blank"
-                  className="group relative w-32 h-9 group"
-                >
-                  <span className="animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute top-0 flex justify-center items-center">
-                    Visit Web
-                  </span>
-                  <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate" />
-                </a>
+              <section className="flex justify-center px-6 md:px-longer2 lg:px-8 absolute animate-longer w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
+                <section className="flex flex-col justify-center items-center gap-5 -translate-y-2">
+                  <h2 className="drop-shadow text-center lg:h3">{e?.title}</h2>
+                  <header className="flex flex-col gap-2">
+                    <p className="custom-text-size">{e?.desc}</p>
+                    <ul className="custom-text-size list-disc pl-4">
+                      {e?.lists?.map((list, listIndex: number) => {
+                        return <li key={listIndex}>{list}</li>;
+                      })}
+                    </ul>
+                  </header>
+                  <a
+                    href={e?.href}
+                    target="_blank"
+                    className="group relative w-32 h-9 group"
+                  >
+                    <span className="animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute flex justify-center items-center">
+                      Visit Web
+                    </span>
+                    <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate" />
+                  </a>
+                </section>
               </section>
             </figure>
           );

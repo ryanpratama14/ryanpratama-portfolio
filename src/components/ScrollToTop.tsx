@@ -25,7 +25,7 @@ const ScrollToTop = (): React.JSX.Element => {
     <button
       onClick={LoadToTop}
       className={`animate fixed bottom-4 hover:scale-110 hover:-translate-y-1 -translate-x-[50%] left-[50%] z-10 ${
-        visible ? "scale-100" : "scale-0"
+        !visible && "scale-0 translate-y-full"
       }`}
     >
       <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />

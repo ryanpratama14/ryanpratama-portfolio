@@ -24,11 +24,11 @@ export default function Resume(): React.JSX.Element {
       <Transition
         as={Fragment}
         enter="transition duration-300"
-        enterFrom="transform -translate-y-4 opacity-0"
+        enterFrom="transform -translate-y-2 opacity-0"
         enterTo="transform opacity-100 scale-100"
         leave="transition duration-300"
         leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0"
+        leaveTo="transform -translate-y-2 opacity-0"
       >
         <Menu.Items className="outline-none absolute left-0 mt-3 flex gap-2">
           {resumeData?.map((e, i: number) => {
