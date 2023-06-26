@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface LanguageState {
+type LanguageState = {
   lang: string;
-}
+};
 
 const initialState: LanguageState = {
   lang: "en",
