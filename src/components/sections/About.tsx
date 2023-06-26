@@ -3,7 +3,11 @@ import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
 import Img from "@/components/Img";
 
-const identityData: string[] = ["Ryan Pratama", "23 yo", "Indonesian"];
+const identityData: string[] = [
+  "👋 Ryan Pratama",
+  "🙎‍♂️ 23 yo",
+  "🇮🇩 Jakarta, Indonesia",
+];
 
 export default function About(): React.JSX.Element {
   return (
