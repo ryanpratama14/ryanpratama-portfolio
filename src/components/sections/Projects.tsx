@@ -18,34 +18,34 @@ export default function Projects(): React.JSX.Element {
         className="text-center"
       />
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-x-36 lg:gap-y-24 md:px-normal 2xl:px-longer">
-        {projectsData?.map((e, i: number) => {
+        {projectsData.map((e, i: number) => {
           return (
             <figure className="relative shadow" key={i}>
               <Img
-                src={e?.src}
-                alt={e?.title}
+                src={e.src}
+                alt={e.title}
                 className="object-cover w-full h-full"
               />
               <figure className="absolute flex items-center justify-center z-10 -bottom-14 left-0 md:-bottom-8 md:-left-20 polygonproject w-44 aspect-[5/3] from-bluedarker to-turquoise bg-gradient-to-b">
                 <Img
-                  src={e?.icon}
-                  alt={e?.title}
+                  src={e.icon}
+                  alt={e.title}
                   className="w-[50%] -translate-x-1"
                 />
               </figure>
               <section className="flex justify-center px-6 md:px-longer2 lg:px-8 absolute animate-longer w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
                 <section className="flex flex-col justify-center items-center gap-5 -translate-y-2">
-                  <h2 className="drop-shadow text-center lg:h3">{e?.title}</h2>
+                  <h2 className="drop-shadow text-center lg:h3">{e.title}</h2>
                   <header className="flex flex-col gap-2">
-                    <p className="custom-text-size">{e?.desc}</p>
+                    <p className="custom-text-size">{e.desc}</p>
                     <ul className="custom-text-size list-disc pl-4">
-                      {e?.lists?.map((list, listIndex: number) => {
+                      {e.lists.map((list, listIndex: number) => {
                         return <li key={listIndex}>{list}</li>;
                       })}
                     </ul>
                   </header>
                   <a
-                    href={e?.href}
+                    href={e.href}
                     target="_blank"
                     className="group relative w-32 h-9 group"
                   >

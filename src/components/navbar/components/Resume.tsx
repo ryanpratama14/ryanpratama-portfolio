@@ -31,19 +31,19 @@ export default function Resume(): React.JSX.Element {
         leaveTo="transform -translate-y-2 opacity-0"
       >
         <Menu.Items className="outline-none absolute left-0 mt-3 flex gap-2">
-          {resumeData?.map((e, i: number) => {
+          {resumeData.map((e, i: number) => {
             return (
               <Menu.Item key={i}>
                 <a
-                  href={e?.href}
+                  href={e.href}
                   target="_blank"
                   className={`shadow-xl rounded-full animate font-semibold flex justify-center items-center w-9 md:w-12 aspect-square ${
-                    e?.icon === "EN"
+                    e.icon === "EN"
                       ? "bg-bluedarker text-white hover:bg-white hover:text-black "
                       : "bg-turquoise text-black hover:bg-black hover:text-white"
                   }`}
                 >
-                  {e?.icon}
+                  {e.icon}
                 </a>
               </Menu.Item>
             );

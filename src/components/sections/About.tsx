@@ -37,48 +37,48 @@ export default function About(): React.JSX.Element {
         </p>
       </section>
       <section className="font-montserrat md:w-[80%] lg:w-[60%] flex flex-wrap gap-3">
-        {skillsData?.map((e, i: number) => {
+        {skillsData.map((e, i: number) => {
           return (
             <p
               key={i}
               className="flex gap-3 text-sm xl:text-base items-center font-medium text-graydarker"
             >
               <span className="text-turquoise">
-                <Icon icon={e?.icon} width={25} />
+                <Icon icon={e.icon} width={25} />
               </span>
-              {e?.label}
+              {e.label}
             </p>
           );
         })}
       </section>
 
       <h4 className="italic">Experience</h4>
-      <nav className="flex justify-between flex-wrap gap-6">
-        {experienceData?.map((e, i: number) => {
+      <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
+        {experienceData.map((e, i: number) => {
           return (
             <a
               key={i}
-              href={e?.links[0]?.href}
+              href={e.link}
               target="_blank"
-              className="flex group items-center h-full hover:shadow-[-8px_8px_0px_0px_#323232] hover:translate-x-2 hover:-translate-y-2 w-fit"
+              className="flex group items-center h-full hover:shadow-[-6px_6px_0px_0px_#323232] hover:translate-x-0.5 hover:-translate-y-0.5"
             >
-              <div className="flex items-center justify-center aspect-square p-3 bg-white h-16 md:h-[5.5rem]">
-                <Img src={e?.src} alt={e?.label} className="object-contain" />
-              </div>
-              <div className="relative h-16 md:h-[5.5rem] flex items-center">
-                <div className="-z-10 absolute w-0 group-hover:w-full animate h-full group-hover:bg-gradient-to-r from-turquoise" />
-                <section className="pl-4 pr-7 py-2">
+              <div className="-z-10 absolute w-0 group-hover:w-full animate h-full bg-gradient-to-r from-turquoise" />
+              <figure className="flex items-center justify-center aspect-square p-3 bg-white md:h-24 h-20">
+                <Img src={e.src} alt={e.label} className="object-contain" />
+              </figure>
+              <section className="relative md:h-24 h-20 flex items-center">
+                <header className="w-full flex flex-col px-4">
                   <h5 className="flex items-center drop-shadow gap-2">
-                    {e?.label}
-                    <span className="group-hover:scale-100 scale-0 p">
+                    {e.label}
+                    <span className="group-hover:opacity-100 opacity-0 group-hover:-translate-x-0 -translate-x-full p">
                       <Icon icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
                   <small className="font-montserrat text-gray group-hover:text-white animate font-medium">
-                    {e?.since}
+                    {e.since}
                   </small>
-                </section>
-              </div>
+                </header>
+              </section>
             </a>
           );
         })}

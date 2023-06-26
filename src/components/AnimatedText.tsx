@@ -41,7 +41,7 @@ export default function AnimatedText({
       animate="animate"
       className={`${className} inline-block`}
     >
-      {text?.split(" ")?.map((e: string, i: number) => {
+      {text?.split(" ").map((e: string, i: number) => {
         return (
           <motion.span key={i} variants={singleWord} className="inline-block">
             {e}&nbsp;

@@ -35,13 +35,13 @@ export default function Navbar(): React.JSX.Element {
     >
       <Resume />
       <section className="flex gap-4">
-        {navbarData?.map((e, i: number) => {
+        {navbarData.map((e, i: number) => {
           return (
-            <a key={i} href={e?.href} className="md:flex hidden btn-nav">
+            <a key={i} href={e.href} className="md:flex hidden btn-nav">
               <span>
-                <Icon icon={e?.icon} width={20} />
+                <Icon icon={e.icon} width={20} />
               </span>
-              {e?.label}
+              {e.label}
             </a>
           );
         })}

@@ -18,14 +18,10 @@ type resumeItems = {
 };
 
 type ExperienceItems = {
-  label: string;
-  since: string;
-  links: LinksItems[];
   src: StaticImageData;
-  as: string;
-  companyDetails: string;
-  moreDetails: string[];
-  location: string;
+  label: string;
+  link: string;
+  since: string;
 };
 
 type SkillsItems = {

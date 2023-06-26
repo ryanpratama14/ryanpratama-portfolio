@@ -10,15 +10,15 @@ export default function SocialMedia(): React.JSX.Element {
           <p className="group-hover:scale-125 group-hover:translate-y-0 translate-y-10 scale-0 -300 animate">
             👋
           </p>
-          {linkSocial?.map((e, i: number) => {
+          {linkSocial.map((e, i: number) => {
             return (
               <a
                 target="_blank"
                 key={i}
-                href={e?.href}
+                href={e.href}
                 className="themedText hover:themedText2nd text-xl xl:text-2xl hover:scale-110 hover:themedShadowGlowed"
               >
-                <Icon icon={e?.icon} />
+                <Icon icon={e.icon} />
               </a>
             );
           })}

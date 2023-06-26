@@ -18,18 +18,18 @@ export default function Contact(): React.JSX.Element {
         would like to discuss potential collaborations.
       </p>
       <nav className="flex gap-2 self-end">
-        {linkSocial?.map((e, i: number) => {
+        {linkSocial.map((e, i: number) => {
           return (
             <a
               key={i}
-              href={e?.href}
+              href={e.href}
               className="flex flex-col items-center hover:shadowGlowed"
             >
               <span className="rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate-longer">
-                <Icon icon={e?.icon} width={35} />
+                <Icon icon={e.icon} width={35} />
               </span>
               <span>
-                <SkewLoader color={e?.color} size={10} />
+                <SkewLoader color={e.color} size={10} />
               </span>
             </a>
           );

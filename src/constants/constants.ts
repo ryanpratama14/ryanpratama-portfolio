@@ -106,38 +106,16 @@ export const skillsData: SkillsItems[] = [
   },
   {
     label: "Framer Motion",
-    icon: "teenyicons:framer-outline",
+    icon: "teenyicons:framer-solid",
   },
 ];
 
 export const experienceData: ExperienceItems[] = [
   {
-    location: "Kazan, Russia (remote)",
     src: faotech,
     label: "faoTech",
-    links: [
-      {
-        icon: "ph:globe",
-        href: "https://faotech.dev",
-      },
-      {
-        icon: "mdi:linkedin",
-        href: "https://www.linkedin.com/company/faotech",
-      },
-    ],
+    link: "https://faotech.dev",
     since: "sep 2022 - present",
-    as: "Frontend Engineer",
-    companyDetails:
-      "Indonesian-based software house company. Our unique combination of Indonesian and Russian educational backgrounds allows us to serve clients from diverse industries and locations, and we are open to new projects worldwide.",
-    moreDetails: [
-      "Developed 3 fully responsive web apps as using React.",
-      "Optimized key content pages for SEO objectives.",
-      "Created reusable JavaScript functions and JSX components that sped up the development process.",
-      "Conducted routine updates to ensure optimal website performance.",
-      "Utilized Axios to implement RESTful APIs, enabling seamless communication between the frontend and backend.",
-      "Utilized industry best practices and stayed up-to-date with the latest frontend technologies.",
-      "Received great feedback from the Project Manager and Team Lead.",
-    ],
   },
 ];
 
