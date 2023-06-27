@@ -13,10 +13,10 @@ export default function About(): React.JSX.Element {
     >
       <GradientText text1="About" text2="Me" bigger />
       <section className="flex flex-col gap-4">
-        <header className="font-montserrat flex relative w-fit divide-x justify-between gap-3">
+        <header className="font-montserrat flex relative w-fit divide-x justify-between gap-2">
           {identityData.map((e, i: number) => {
             return (
-              <label key={i} className={`${i !== 0 && "pl-3"}`}>
+              <label key={i} className={`${i !== 0 && "pl-2"}`}>
                 {e}
               </label>
             );
@@ -32,7 +32,7 @@ export default function About(): React.JSX.Element {
           to specialize in this field.
         </p>
       </section>
-      <section className="font-montserrat md:w-[80%] lg:w-[60%] flex flex-wrap gap-3">
+      <section className="font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-3">
         {skillsData.map((e, i: number) => {
           return (
             <p
