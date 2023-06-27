@@ -54,7 +54,7 @@ export default function Main(): React.JSX.Element {
               className="absolute top-0 w-full h-full object-contain"
             />
           </div> */}
-          <Img src={bg} alt="Ryan Pratama" />
+          <Img src={bg} alt="Ryan Pratama" priority={true} />
         </figure>
       </section>
     </article>
