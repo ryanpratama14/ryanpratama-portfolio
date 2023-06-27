@@ -21,7 +21,7 @@ export default function About(): React.JSX.Element {
               </label>
             );
           })}
-          <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" />
+          {/* <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" /> */}
         </header>
         <p className="xl:w-[80%]">
           In September 2022, I joined a free programming course taught by my
