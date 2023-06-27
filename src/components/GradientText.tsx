@@ -14,7 +14,7 @@ export default function GradientText({
   return (
     <h2
       className={`${
-        bigger ? "text-5xl md:text-6xl" : "text-3xl md:text-5xl"
+        bigger ? "text-4xl md:text-5xl" : "text-3xl md:text-5xl"
       } ${className}`}
     >
       {text1}{" "}

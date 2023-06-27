@@ -6,7 +6,6 @@ import { Metadata } from "next";
 import ReduxProvider from "@/global/ReduxProvider";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
-import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,7 +38,6 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
           <Navbar />
           {children}
           <ScrollToTop />
-          <Footer />
         </ReduxProvider>
       </body>
     </html>

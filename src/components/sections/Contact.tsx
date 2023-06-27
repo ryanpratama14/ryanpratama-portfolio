@@ -7,7 +7,7 @@ export default function Contact(): React.JSX.Element {
   return (
     <article
       id="contact"
-      className="relative main-padding min-h-screen flex flex-col gap-6 justify-center"
+      className="relative main-padding min-h-[60vh] flex flex-col gap-6 justify-center"
     >
       <div className="max-xl:hidden absolute left-44 top-36 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" />
       <GradientText text1="Contact" text2="Me" bigger />
@@ -27,9 +27,6 @@ export default function Contact(): React.JSX.Element {
             >
               <span className="rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate-longer">
                 <Icon icon={e.icon} width={35} />
-              </span>
-              <span>
-                <SkewLoader color={e.color} size={10} />
               </span>
             </a>
           );
