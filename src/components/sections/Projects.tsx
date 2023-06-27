@@ -17,7 +17,7 @@ export default function Projects(): React.JSX.Element {
         bigger
         className="text-center"
       />
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-[5.5rem] lg:gap-x-36 lg:gap-y-20 md:px-normal 2xl:px-longer">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-y-20 lg:gap-x-32 md:px-normal 2xl:px-longer">
         {projectsData.map((e, i: number) => {
           return (
             <figure className="relative shadow" key={i}>
