@@ -56,7 +56,7 @@ export default function About(): React.JSX.Element {
               key={i}
               href={e.link}
               target="_blank"
-              className="flex group items-center h-full hover:shadow-[-6px_6px_0px_0px_#323232] hover:translate-x-0.5 hover:-translate-y-0.5"
+              className="flex group items-center hover:shadow-[-6px_6px_0px_0px_#323232] hover:translate-x-0.5 hover:-translate-y-0.5"
             >
               <figure className="flex items-center justify-center aspect-square p-3 bg-white md:h-24 h-20">
                 <Img src={e.src} alt={e.label} className="object-contain" />
