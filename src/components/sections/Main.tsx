@@ -1,4 +1,4 @@
-import ryan from "@/assets/ryan.png";
+import bg from "@/assets/bg.png";
 import GradientText from "@/components/GradientText";
 import Img from "@/components/Img";
 
@@ -13,7 +13,12 @@ export default function Main(): React.JSX.Element {
         <section className="w-full lg:w-[50%] flex flex-col gap-6">
           <header className="flex flex-col gap-2">
             <GradientText text1="Frontend" text2="Engineer" />
-            <h1 className="-translate-x-0.5 lg:-translate-x-1">RYAN</h1>
+            <h1 className="-translate-x-0.5 lg:-translate-x-1.5 w-full">
+              <span>RYAN</span>
+              <span className="max-xl:hidden absolute translate-x-6 pratama">
+                PRATAMA!
+              </span>
+            </h1>
             <p>
               I specialized in creating scalable, intuitive, and responsive web
               applications with engaging user interfaces that are efficient,
@@ -39,7 +44,7 @@ export default function Main(): React.JSX.Element {
           </nav>
         </section>
         <figure className="w-full lg:w-[50%] relative">
-          <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
+          {/* <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate -translate-y-6 translate-x-4 first-line:absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
           <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] bg-transparent polygon drop-shadow-xl">
             <Img
@@ -48,7 +53,8 @@ export default function Main(): React.JSX.Element {
               alt="Ryan Pratama"
               className="absolute top-0 w-full h-full object-contain"
             />
-          </div>
+          </div> */}
+          <Img src={bg} alt="Ryan Pratama" />
         </figure>
       </section>
     </article>
