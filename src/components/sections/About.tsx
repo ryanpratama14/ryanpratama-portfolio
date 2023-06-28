@@ -62,7 +62,7 @@ export default function About(): React.JSX.Element {
                 <Img src={e.src} alt={e.label} className="object-contain" />
               </figure>
               <section className="relative md:h-24 h-20 flex items-center w-full">
-                <div className="-z-10 absolute w-0 group-hover:w-full animate-longer h-full bg-gradient-to-r from-turquoise" />
+                <div className="-z-10 absolute w-0 group-hover:w-full animate-longer h-full bg-gradient-to-br from-turquoise" />
                 <header className="w-full flex flex-col px-4">
                   <h5 className="flex items-center drop-shadow gap-2">
                     {e.label}

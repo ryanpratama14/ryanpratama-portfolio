@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { LoadToTop } from "@/utils/utils";
 
-const ScrollToTop = (): React.JSX.Element => {
+export default function ScrollToTop(): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
@@ -31,6 +31,4 @@ const ScrollToTop = (): React.JSX.Element => {
       <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
     </button>
   );
-};
-
-export default ScrollToTop;
+}
