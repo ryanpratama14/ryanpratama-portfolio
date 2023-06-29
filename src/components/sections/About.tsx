@@ -2,6 +2,7 @@ import GradientText from "@/components/GradientText";
 import { experienceData, skillsData } from "@/constants/constants";
 import { Icon } from "@iconify/react";
 import Img from "@/components/Img";
+import Link from "next/link";
 
 const identityData: string[] = ["Ryan Pratama", "23 yo", "Jakarta, Indonesia"];
 
@@ -52,7 +53,7 @@ export default function About(): React.JSX.Element {
       <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
         {experienceData.map((e, i: number) => {
           return (
-            <a
+            <Link
               key={i}
               href={e.link}
               target="_blank"
@@ -75,7 +76,7 @@ export default function About(): React.JSX.Element {
                   </small>
                 </header>
               </section>
-            </a>
+            </Link>
           );
         })}
       </nav>

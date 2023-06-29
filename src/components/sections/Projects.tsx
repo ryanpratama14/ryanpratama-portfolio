@@ -1,6 +1,7 @@
 import GradientText from "@/components/GradientText";
 import { projectsData } from "@/constants/constants";
 import Img from "@/components/Img";
+import Link from "next/link";
 
 export default function Projects(): React.JSX.Element {
   return (
@@ -44,7 +45,7 @@ export default function Projects(): React.JSX.Element {
                       })}
                     </ul>
                   </header>
-                  <a
+                  <Link
                     href={e.href}
                     target="_blank"
                     className="group relative w-32 h-9 group"
@@ -53,7 +54,7 @@ export default function Projects(): React.JSX.Element {
                       Visit Web
                     </span>
                     <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate" />
-                  </a>
+                  </Link>
                 </section>
               </section>
             </figure>
