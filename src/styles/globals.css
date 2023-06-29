@@ -10,7 +10,6 @@ html {
 }
 
 a,
-label,
 img {
   user-select: none;
 }
@@ -85,9 +84,6 @@ img {
   .p,
   .a {
     @apply text-base xl:text-lg animate;
-  }
-  .label {
-    @apply text-base xl:text-lg drop-shadow font-semibold animate;
   }
   .pSmaller {
     @apply text-sm font-normal;

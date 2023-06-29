@@ -14,12 +14,17 @@ export default function About(): React.JSX.Element {
     >
       <GradientText text1="About" text2="Me" bigger />
       <section className="flex flex-col gap-4">
-        <header className="font-montserrat flex relative w-fit divide-x justify-between gap-2">
+        <header className="flex relative w-fit divide-x justify-between gap-2">
           {identityData.map((e, i: number) => {
             return (
-              <label key={i} className={`${i !== 0 && "pl-2"}`}>
+              <p
+                key={i}
+                className={`font-montserrat drop-shadow font-semibold ${
+                  i !== 0 && "pl-2"
+                }`}
+              >
                 {e}
-              </label>
+              </p>
             );
           })}
           {/* <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" /> */}
