@@ -5,11 +5,11 @@ import { resumeData } from "@/constants/constants";
 
 export default function Resume(): React.JSX.Element {
   return (
-    <Menu as="div" className="relative inline-block h-full">
+    <Menu as="section" className="relative inline-block h-full">
       <Menu.Button className="outline-none flex gap-3 h-full items-center group select-none">
         <Icon
           icon="pepicons-pencil:cv-circle"
-          className="text-3xl md:text-4xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 transition-transform duration-300"
+          className="text-3xl md:text-4xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 animate"
         />
         <header className="relative h-full flex items-center">
           <span className="cursor-pointer z-[2] text-lg label">Resume</span>
@@ -35,9 +35,9 @@ export default function Resume(): React.JSX.Element {
                 <a
                   href={e.href}
                   target="_blank"
-                  className={`shadow-xl rounded-full animate font-semibold flex justify-center items-center w-9 md:w-12 aspect-square ${
+                  className={`shadow-xl rounded-full font-semibold flex justify-center items-center w-9 md:w-12 aspect-square ${
                     e.icon === "EN"
-                      ? "bg-bluedarker text-white hover:bg-white hover:text-black "
+                      ? "bg-bluedarker text-white hover:bg-white hover:text-black"
                       : "bg-turquoise text-black hover:bg-black hover:text-white"
                   }`}
                 >
