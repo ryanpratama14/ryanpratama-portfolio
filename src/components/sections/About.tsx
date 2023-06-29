@@ -19,9 +19,7 @@ export default function About(): React.JSX.Element {
             return (
               <p
                 key={i}
-                className={`font-montserrat drop-shadow font-semibold ${
-                  i !== 0 && "pl-2"
-                }`}
+                className={`font-montserrat label ${i !== 0 && "pl-2"}`}
               >
                 {e}
               </p>
