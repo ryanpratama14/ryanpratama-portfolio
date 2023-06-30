@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Icon } from "@iconify/react";
 import { resumeData } from "@/constants/constants";
+import Link from "next/link";
 
 export default function Resume(): React.JSX.Element {
   return (
@@ -32,7 +33,7 @@ export default function Resume(): React.JSX.Element {
           {resumeData.map((e, i: number) => {
             return (
               <Menu.Item key={i}>
-                <a
+                <Link
                   href={e.href}
                   target="_blank"
                   className={`shadow-xl rounded-full font-semibold flex justify-center items-center w-9 md:w-12 aspect-square ${
@@ -42,7 +43,7 @@ export default function Resume(): React.JSX.Element {
                   }`}
                 >
                   {e.icon}
-                </a>
+                </Link>
               </Menu.Item>
             );
           })}
