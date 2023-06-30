@@ -1,10 +1,12 @@
 import GradientText from "@/components/GradientText";
-import { experienceData, skillsData } from "@/constants/constants";
+import {
+  experienceData,
+  identityData,
+  skillsData,
+} from "@/constants/constants";
 import { Icon } from "@iconify/react";
 import Img from "@/components/Img";
 import Link from "next/link";
-
-const identityData: string[] = ["Ryan Pratama", "23 yo", "Jakarta, Indonesia"];
 
 export default function About(): React.JSX.Element {
   return (
@@ -36,7 +38,9 @@ export default function About(): React.JSX.Element {
           to specialize in this field.
         </p>
       </section>
-      <section className="font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-3">
+      <section
+        className={`font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-3`}
+      >
         {skillsData.map((e, i: number) => {
           return (
             <p
@@ -74,7 +78,9 @@ export default function About(): React.JSX.Element {
                       <Icon icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
-                  <small className="italic font-montserrat text-gray group-hover:text-white animate-longer font-medium">
+                  <small
+                    className={`font-montserrat italic text-gray group-hover:text-white animate-longer font-medium`}
+                  >
                     {e.since}
                   </small>
                 </header>

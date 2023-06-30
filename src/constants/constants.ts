@@ -6,6 +6,12 @@ import turta2 from "@/assets/turta2.png";
 import belinsky from "@/assets/belinsky.jpg";
 import belinsky2 from "@/assets/belinsky2.png";
 
+export const identityData: string[] = [
+  "Ryan Pratama",
+  "23 yo",
+  "Jakarta, Indonesia",
+];
+
 export const projectsData: ProjectItems[] = [
   {
     title: "KIMA",
