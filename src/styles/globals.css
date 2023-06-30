@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url("/noise.png");
+}
+
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply text-white bg-black font-poppins;
+  }
   h1 {
     @apply text-6xl md:text-8xl lg:text-9xl xl:text-[9rem] 2xl:text-[9.5rem] font-bold animate;
   }
@@ -74,18 +84,6 @@
   .btn-nav {
     @apply flex text-lg gap-2 items-center px-4 py-0.5 rounded-3xl border-[1px] border-white bg-black hover:translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[-2px_2px_0px_0px_#ffffff];
   }
-}
-
-html {
-  background-image: url("/noise.png");
-  background-color: #202020;
-  color: white;
-  scroll-behavior: smooth;
-}
-
-a,
-img {
-  user-select: none;
 }
 
 .pratama {

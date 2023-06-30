@@ -33,7 +33,7 @@ const montserrat = Montserrat({
 export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
-      <body className="font-poppins">
+      <body>
         <ReduxProvider>
           <Navbar />
           {children}
