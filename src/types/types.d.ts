@@ -28,11 +28,6 @@ type SkillsItems = {
   icon: string | IconifyIcon;
 };
 
-type LinksItems = {
-  icon: string | IconifyIcon;
-  href: string;
-};
-
 type ProjectItems = {
   title: string;
   icon: StaticImageData;
