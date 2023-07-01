@@ -3,7 +3,7 @@ import { Poppins, Montserrat } from "next/font/google";
 import { Metadata } from "next";
 
 // components
-import ReduxProvider from "@/global/ReduxProvider";
+import TransitionProvider from "@/global/TransitionProvider";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -34,11 +34,11 @@ export default function RootLayout({ children }: Props): React.JSX.Element {
   return (
     <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
       <body>
-        <ReduxProvider>
+        <TransitionProvider>
           <Navbar />
           {children}
           <ScrollToTop />
-        </ReduxProvider>
+        </TransitionProvider>
       </body>
     </html>
   );
