@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import useLocalStorage from "@/hooks/UseLocalStorage";
-import { Icon } from "@iconify/react";
+import Iconify from "@/components/Iconify";
 
 export default function Theme(): React.JSX.Element {
   const [theme, setTheme] = useLocalStorage("theme", "dark");
@@ -14,11 +14,11 @@ export default function Theme(): React.JSX.Element {
   }, [theme]);
 
   return (
-    <div
+    <section
       className="flex justify-center items-center cursor-pointer themedText"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
-      <Icon
+      <Iconify
         width={25}
         icon={`${
           theme === "dark"
@@ -26,6 +26,6 @@ export default function Theme(): React.JSX.Element {
             : "material-symbols:dark-mode-outline-rounded"
         }`}
       />
-    </div>
+    </section>
   );
 }

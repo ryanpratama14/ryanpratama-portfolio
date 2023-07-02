@@ -1,5 +1,5 @@
-import { Icon } from "@iconify/react";
 import GradientText from "@/components/GradientText";
+import Iconify from "@/components/Iconify";
 import { linkSocial } from "@/constants/constants";
 import Link from "next/link";
 
@@ -27,7 +27,7 @@ export default function Contact(): React.JSX.Element {
               className="flex flex-col items-center hover:shadowGlowed"
             >
               <span className="rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate-longer">
-                <Icon icon={e.icon} width={35} />
+                <Iconify icon={e.icon} width={35} />
               </span>
             </Link>
           );

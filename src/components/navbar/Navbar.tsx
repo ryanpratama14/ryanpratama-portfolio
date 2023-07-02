@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Resume from "./components/Resume";
 import MobileMenu from "./components/MobileMenu";
 import { navbarData } from "@/constants/constants";
-import { Icon } from "@iconify/react";
+import Iconify from "@/components/Iconify";
 
 export default function Navbar(): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(true);
@@ -39,7 +39,7 @@ export default function Navbar(): React.JSX.Element {
           return (
             <a key={i} href={e.href} className="md:flex hidden btn-nav">
               <span>
-                <Icon icon={e.icon} width={20} />
+                <Iconify icon={e.icon} width={20} />
               </span>
               {e.label}
             </a>

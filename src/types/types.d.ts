@@ -1,19 +1,19 @@
 type NavbarItems = {
   label: string;
-  icon: string | IconifyIcon;
+  icon: string;
   href: string;
 };
 
 type LinkSocialItems = {
   href: string;
   label: string;
-  icon: string | IconifyIcon;
+  icon: string;
 };
 
 type resumeItems = {
   href: string;
   label: string;
-  icon: string | IconifyIcon;
+  icon: string;
 };
 
 type ExperienceItems = {
@@ -25,7 +25,7 @@ type ExperienceItems = {
 
 type SkillsItems = {
   label: string;
-  icon: string | IconifyIcon;
+  icon: string;
 };
 
 type ProjectItems = {

@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { Icon } from "@iconify/react";
 import { navbarData } from "@/constants/constants";
+import Iconify from "@/components/Iconify";
 
 export default function MobileMenu(): React.JSX.Element {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
       <Menu.Button className="border-white font-semibold border-[1px] flex items-center gap-1.5 py-1 px-4 outline-none rounded-3xl w-fit">
-        <Icon icon="ri:menu-3-fill" width={20} />
+        <Iconify icon="ri:menu-3-fill" width={20} />
       </Menu.Button>
       <Transition
         as={Fragment}
@@ -24,7 +24,7 @@ export default function MobileMenu(): React.JSX.Element {
               <Menu.Item key={i}>
                 <a href={e.href} className="btn-nav">
                   <span>
-                    <Icon icon={e.icon} width={20} />
+                    <Iconify icon={e.icon} width={20} />
                   </span>
                   {e.label}
                 </a>

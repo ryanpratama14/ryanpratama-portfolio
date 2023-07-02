@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
 import { LoadToTop } from "@/utils/utils";
+import Iconify from "@/components/Iconify";
 
 export default function ScrollToTop(): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(false);
@@ -28,7 +28,7 @@ export default function ScrollToTop(): React.JSX.Element {
         !visible && "scale-0 translate-y-full"
       }`}
     >
-      <Icon icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
+      <Iconify icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
     </button>
   );
 }

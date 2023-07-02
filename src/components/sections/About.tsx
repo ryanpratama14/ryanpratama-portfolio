@@ -4,8 +4,8 @@ import {
   identityData,
   skillsData,
 } from "@/constants/constants";
-import { Icon } from "@iconify/react";
 import Img from "@/components/Img";
+import Iconify from "@/components/Iconify";
 import Link from "next/link";
 
 export default function About(): React.JSX.Element {
@@ -48,7 +48,7 @@ export default function About(): React.JSX.Element {
               className="flex gap-3 text-sm xl:text-base items-center font-medium text-graydarker"
             >
               <span className="text-turquoise">
-                <Icon icon={e.icon} width={25} />
+                <Iconify icon={e.icon} width={25} />
               </span>
               {e.label}
             </p>
@@ -75,7 +75,7 @@ export default function About(): React.JSX.Element {
                   <h5 className="flex items-center drop-shadow gap-2">
                     {e.label}
                     <span className="group-hover:opacity-100 opacity-0 group-hover:-translate-x-0 -translate-x-full p">
-                      <Icon icon="mingcute:external-link-fill" />
+                      <Iconify icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
                   <small

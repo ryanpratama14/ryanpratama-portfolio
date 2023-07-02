@@ -1,25 +1,24 @@
-"use client";
-import { Icon } from "@iconify/react";
 import Link from "next/link";
 import Contact from "@/components/sections/Contact";
+import Iconify from "@/components/Iconify";
 
 export default function NotFound(): React.JSX.Element {
   return (
     <main>
       <article className="min-h-screen flex flex-col justify-center items-center gap-8">
         <section className="flex gap-2">
-          <Icon
+          <Iconify
             icon="ooui:article-not-found-ltr"
             className="text-turquoise"
             width={100}
           />
-          <Icon
+          <Iconify
             icon="ooui:article-not-found-ltr"
             rotate={2}
             className="text-bluedarker"
             width={100}
           />
-          <Icon
+          <Iconify
             icon="ooui:article-not-found-ltr"
             className="text-blue"
             width={100}

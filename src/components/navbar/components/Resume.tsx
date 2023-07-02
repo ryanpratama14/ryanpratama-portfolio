@@ -1,14 +1,14 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { Icon } from "@iconify/react";
 import { resumeData } from "@/constants/constants";
 import Link from "next/link";
+import Iconify from "@/components/Iconify";
 
 export default function Resume(): React.JSX.Element {
   return (
     <Menu as="section" className="relative inline-block h-full">
       <Menu.Button className="outline-none flex gap-3 h-full items-center group select-none">
-        <Icon
+        <Iconify
           icon="pepicons-pencil:cv-circle"
           className="text-3xl md:text-4xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 animate"
         />
