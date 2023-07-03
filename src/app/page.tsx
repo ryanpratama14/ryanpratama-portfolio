@@ -9,7 +9,7 @@ export default function Home(): React.JSX.Element {
       <Main />
       <About />
       <Projects />
-      <Contact className="min-h-[60vh]" />
+      <Contact />
     </main>
   );
 }

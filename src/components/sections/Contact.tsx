@@ -4,22 +4,20 @@ import { linkSocial } from "@/constants/constants";
 import Link from "next/link";
 
 type Props = {
-  className?: string;
   isMain?: boolean;
 };
 
-export default function Contact({
-  className,
-  isMain = true,
-}: Props): React.JSX.Element {
+export default function Contact({ isMain = true }: Props): React.JSX.Element {
   return (
     <article
       id="contact"
-      className={`relative main-padding flex flex-col gap-6 justify-center ${className}`}
+      className={`relative main-padding flex flex-col gap-6 justify-center ${
+        isMain ? "min-h-[60vh]" : "min-h-[50vh]"
+      }`}
     >
       <div
         className={`
-      ${isMain ? "top-32" : "top-12"}
+      ${isMain ? "top-36" : "top-12"}
       max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10`}
       />
       <GradientText text1="Contact" text2="Me" bigger />
