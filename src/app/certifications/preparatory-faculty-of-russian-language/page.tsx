@@ -1,7 +1,6 @@
 import { Metadata } from "next";
-import Img from "@/components/Img";
 import podfak from "@/assets/podfak.jpeg";
-import Contact from "@/components/sections/Contact";
+import Certification from "@/components/Certification";
 
 export const metadata: Metadata = {
   title: "Preparatory Faculty of Russian Language Certification, Ryan Pratama",
@@ -10,15 +9,10 @@ export const metadata: Metadata = {
 
 export default function PreparatoryFacultyCertification(): React.JSX.Element {
   return (
-    <main className="flex flex-col items-center justify-center ">
-      <figure className="main-padding md:pt-longer">
-        <Img
-          src={podfak}
-          alt="Preparatory Faculty of Russian Language Certification, Ryan Pratama"
-          className="rounded-md shadow-glowed-2"
-        />
-      </figure>
-      <Contact isMain={false} />
-    </main>
+    <Certification
+      src={podfak}
+      alt="Preparatory Faculty of Russian Language Certification, Ryan Pratama"
+      title="Preparatory Faculty of Russian Language"
+    />
   );
 }
