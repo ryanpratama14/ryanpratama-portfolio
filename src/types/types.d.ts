@@ -36,3 +36,7 @@ type ProjectItems = {
   lists: string[];
   src: StaticImageData;
 };
+
+type ReactNodeProps = {
+  children: React.ReactNode;
+};

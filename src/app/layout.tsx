@@ -26,11 +26,9 @@ export const metadata: Metadata = {
   description: "Welcome to: Ryan's Portfolio",
 };
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export default function RootLayout({ children }: Props): React.JSX.Element {
+export default function RootLayout({
+  children,
+}: ReactNodeProps): React.JSX.Element {
   return (
     <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
       <body>
