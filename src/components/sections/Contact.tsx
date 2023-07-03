@@ -3,13 +3,25 @@ import Iconify from "@/components/Iconify";
 import { linkSocial } from "@/constants/constants";
 import Link from "next/link";
 
-export default function Contact(): React.JSX.Element {
+type Props = {
+  className?: string;
+  isMain?: boolean;
+};
+
+export default function Contact({
+  className,
+  isMain = true,
+}: Props): React.JSX.Element {
   return (
     <article
       id="contact"
-      className="relative main-padding min-h-[60vh] flex flex-col gap-6 justify-center"
+      className={`relative main-padding flex flex-col gap-6 justify-center ${className}`}
     >
-      <div className="max-xl:hidden absolute left-44 top-36 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" />
+      <div
+        className={`
+      ${isMain ? "top-32" : "top-12"}
+      max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10`}
+      />
       <GradientText text1="Contact" text2="Me" bigger />
       <p className="md:w-[80%] lg:w-[70%] xl:w-[65%]">
         I am actively seeking new opportunities at the moment and would be open
@@ -24,7 +36,7 @@ export default function Contact(): React.JSX.Element {
               key={i}
               href={e.href}
               target="_blank"
-              className="flex flex-col items-center hover:shadowGlowed"
+              className="flex flex-col items-center hover:shadow-glowed"
             >
               <span className="rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate-longer">
                 <Iconify icon={e.icon} width={35} />

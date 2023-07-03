@@ -8,7 +8,7 @@ export default function Footer(): React.JSX.Element {
             <a
               href="mailto:ru.ryanpratama@gmail.com"
               target="_blank"
-              className="hover:shadowGlowed font-semibold"
+              className="hover:shadow-glowed font-semibold"
             >
               Ryan
             </a>
@@ -20,7 +20,7 @@ export default function Footer(): React.JSX.Element {
             <a
               href="https://nextjs.org/"
               target="_blank"
-              className="hover:shadowGlowed font-semibold"
+              className="hover:shadow-glowed font-semibold"
             >
               Next.js
             </a>
@@ -30,7 +30,7 @@ export default function Footer(): React.JSX.Element {
             <a
               href="https://tailwindcss.com/"
               target="_blank"
-              className="hover:shadowGlowed font-semibold"
+              className="hover:shadow-glowed font-semibold"
             >
               Tailwind CSS
             </a>
