@@ -79,7 +79,7 @@ export default function About(): React.JSX.Element {
                     </span>
                   </h5>
                   <small
-                    className={`font-montserrat italic text-gray group-hover:text-white animate-longer font-medium`}
+                    className={`font-montserrat italic text-gray group-hover:text-white font-medium`}
                   >
                     {e.since}
                   </small>

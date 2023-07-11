@@ -32,6 +32,9 @@ body {
   a {
     @apply text-base xl:text-lg animate;
   }
+  small {
+    @apply animate;
+  }
   a,
   img {
     @apply select-none;
