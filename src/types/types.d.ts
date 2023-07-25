@@ -21,6 +21,7 @@ type ExperienceItems = {
   label: string;
   link: string;
   since: string;
+  location: string;
 };
 
 type SkillsItems = {
