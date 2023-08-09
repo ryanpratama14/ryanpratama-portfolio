@@ -16,6 +16,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
+    "eslint-config-next": "^13.4.13",
     "framer-motion": "^10.15.1",
     "next": "^13.4.13",
     "postcss": "8.4.27",
@@ -27,7 +28,6 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@iconify/react": "^4.1.1",
-    "eslint-config-next": "^13.4.13"
+    "@iconify/react": "^4.1.1"
   }
 }
