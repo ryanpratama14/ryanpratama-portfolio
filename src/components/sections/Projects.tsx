@@ -51,7 +51,7 @@ export default function Projects(): React.JSX.Element {
                     className="group relative w-32 h-9 group"
                   >
                     <span className="animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute flex justify-center items-center">
-                      {/* Visit Web */}
+                      Visit Web
                     </span>
                     <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate" />
                   </Link>
