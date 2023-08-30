@@ -123,7 +123,7 @@ export const experienceData: ExperienceItems[] = [
     src: nutechIntegrasi,
     label: "Nutech Integasi",
     link: "https://www.nutech-integrasi.com",
-    since: "sep 2022 - present",
+    since: "aug 2022 - present",
     location: "Jakarta, Indonesia",
   },
   {
