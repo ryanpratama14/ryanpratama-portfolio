@@ -81,7 +81,7 @@ export default function About(): React.JSX.Element {
                   <small
                     className={`font-montserrat italic text-gray group-hover:text-white font-medium`}
                   >
-                    {e.since}
+                    {e.since} - {e.till ? e.till : "present"}
                   </small>
                   <small className={`font-montserrat font-medium`}>
                     {e.location}

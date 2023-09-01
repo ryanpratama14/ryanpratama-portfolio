@@ -22,6 +22,7 @@ type ExperienceItems = {
   link: string;
   since: string;
   location: string;
+  till: string;
 };
 
 type SkillsItems = {

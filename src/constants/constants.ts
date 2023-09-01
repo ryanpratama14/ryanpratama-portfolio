@@ -1,5 +1,5 @@
 import faotech from "@/assets/faoTech.png";
-import nutechIntegrasi from "@/assets/nutechIntegrasi.jpeg";
+import nutech from "@/assets/nutechIntegrasi.jpeg";
 import kima from "@/assets/kima.jpg";
 import kima2 from "@/assets/kima2.png";
 import turta from "@/assets/turta.jpg";
@@ -120,17 +120,19 @@ export const skillsData: SkillsItems[] = [
 
 export const experienceData: ExperienceItems[] = [
   {
-    src: nutechIntegrasi,
+    src: nutech,
     label: "Nutech Integasi",
     link: "https://www.nutech-integrasi.com",
-    since: "aug 2022 - present",
+    since: "aug 2022",
+    till: "",
     location: "Jakarta, Indonesia",
   },
   {
     src: faotech,
     label: "faoTech",
     link: "https://faotech.dev",
-    since: "sep 2022 - present",
+    since: "sep 2022",
+    till: "",
     location: "Remote",
   },
 ];
