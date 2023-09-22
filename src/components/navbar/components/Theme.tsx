@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 import Iconify from "@/components/Iconify";
-import UseLocalStorage from "@/hooks/UseLocalStorage";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 export default function Theme(): React.JSX.Element {
-  const [theme, setTheme] = UseLocalStorage("theme", "dark");
+  const [theme, setTheme] = useLocalStorage("theme", "dark");
 
   useEffect(() => {
     if (theme === "dark") {
