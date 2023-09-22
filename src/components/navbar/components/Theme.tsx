@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import useLocalStorage from "@/hooks/UseLocalStorage";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import Iconify from "@/components/Iconify";
 
 export default function Theme(): React.JSX.Element {
