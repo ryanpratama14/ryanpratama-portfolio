@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import Iconify from "@/components/Iconify";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
