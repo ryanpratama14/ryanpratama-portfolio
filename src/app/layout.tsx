@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Metadata } from "next";
 
 // components
-import TransitionProvider from "@/global/TransitionProvider";
+import Providers from "@/global/Providers";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -17,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TransitionProvider>
+        <Providers>
           <Navbar />
-          {children}
+          <main>{children}</main>
           <ScrollToTop />
-        </TransitionProvider>
+        </Providers>
       </body>
     </html>
   );
