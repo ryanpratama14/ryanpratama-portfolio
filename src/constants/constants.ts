@@ -73,7 +73,7 @@ export const skillsData: SkillsItems[] = [
     icon: "akar-icons:redux-fill",
   },
   {
-    label: "React Query",
+    label: "TanStack Query",
     icon: "simple-icons:reactquery",
   },
   {
