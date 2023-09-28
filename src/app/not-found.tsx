@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Contact from "@/components/sections/Contact";
 import Iconify from "@/components/Iconify";
+import { Fragment } from "react";
 
 export default function NotFound(): React.JSX.Element {
   return (
-    <main>
+    <Fragment>
       <article className="min-h-screen flex flex-col justify-center items-center gap-8">
         <section className="flex gap-2">
           <Iconify
@@ -30,6 +31,6 @@ export default function NotFound(): React.JSX.Element {
         </Link>
       </article>
       <Contact />
-    </main>
+    </Fragment>
   );
 }

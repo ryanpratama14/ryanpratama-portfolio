@@ -180,7 +180,7 @@ export const linkSocial: LinkSocialItems[] = [
     icon: "mdi:github",
   },
   {
-    href: "https://www.linkedin.com/in/ryanpratama14/",
+    href: "https://www.linkedin.com/in/ryanpratama14",
     label: "LinkedIn",
     icon: "mdi:linkedin",
   },
@@ -190,12 +190,12 @@ export const linkSocial: LinkSocialItems[] = [
     icon: "ph:telegram-logo",
   },
   {
-    href: "https://wa.me/+79961005202",
+    href: "https://wa.me/+6281210425333",
     label: "WhatsApp",
     icon: "mdi:whatsapp",
   },
   {
-    href: "https://www.instagram.com/ryanpratama14/",
+    href: "https://www.instagram.com/ryanpratama14",
     label: "Instagram",
     icon: "mdi:instagram",
   },
