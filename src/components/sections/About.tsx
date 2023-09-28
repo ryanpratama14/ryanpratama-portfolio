@@ -66,10 +66,10 @@ export default function About(): React.JSX.Element {
               target="_blank"
               className="flex group items-center hover:shadow-[-6px_6px_0px_0px_#323232] hover:translate-x-0.5 hover:-translate-y-0.5"
             >
-              <figure className="flex items-center justify-center aspect-square p-3 bg-white md:h-[6.75rem] h-24">
+              <figure className="flex items-center justify-center aspect-square p-3 bg-white md:h-[7rem] h-24">
                 <Img src={e.src} alt={e.label} className="object-contain" />
               </figure>
-              <section className="relative md:h-[6.75rem] h-24 flex items-center w-full">
+              <section className="relative md:h-[7rem] h-24 flex items-center w-full">
                 <div className="-z-10 absolute w-0 group-hover:w-full animate-longer h-full bg-gradient-to-br from-turquoise" />
                 <header className="w-full flex flex-col px-4">
                   <h5 className="flex items-center drop-shadow gap-2">
