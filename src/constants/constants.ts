@@ -121,7 +121,7 @@ export const skillsData: SkillsItems[] = [
 export const experienceData: ExperienceItems[] = [
   {
     src: nutech,
-    label: "Nutech Integasi",
+    label: "Nutech Integrasi",
     link: "https://www.nutech-integrasi.com",
     since: "aug 2022",
     till: "",
