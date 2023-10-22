@@ -18,8 +18,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Navbar />
-          <main>{children}</main>
+          <main>
+            <Navbar />
+            {children}
+          </main>
           <ScrollToTop />
         </Providers>
       </body>
