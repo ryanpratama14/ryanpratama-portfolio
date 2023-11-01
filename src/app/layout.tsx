@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
+import { Montserrat, Poppins } from "next/font/google";
 
 // components
 import Providers from "@/global/Providers";
@@ -11,11 +12,25 @@ export const metadata: Metadata = {
   description: "Welcome to: Ryan's Portfolio",
 };
 
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: ReactNodeProps): React.JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
       <body>
         <Providers>
           <main>

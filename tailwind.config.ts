@@ -52,8 +52,8 @@ const config: Config = {
         longer10: "26vw",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
+        poppins: ["var(--font-poppins)"],
+        montserrat: ["var(--font-montserrat)"],
       },
     },
   },
