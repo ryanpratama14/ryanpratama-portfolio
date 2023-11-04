@@ -8,7 +8,7 @@ import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Ryan's Next App",
+  title: "Ryan Pratama's Portfolio",
   description: "Welcome to: Ryan's Portfolio",
   manifest: "/manifest.json",
 };
