@@ -10,6 +10,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 export const metadata: Metadata = {
   title: "Ryan's Next App",
   description: "Welcome to: Ryan's Portfolio",
+  manifest: "/manifest.json",
 };
 
 const poppins = Poppins({
