@@ -10,20 +10,11 @@ type Props = {
   title: string;
 };
 
-export default function Certification({
-  src,
-  alt,
-  title,
-}: Props): React.JSX.Element {
+export default function Certification({ src, alt, title }: Props): React.JSX.Element {
   return (
     <main className="flex flex-col">
       <figure className="main-padding md:pt-longer flex flex-col items-center justify-center gap-6">
-        <GradientText
-          bigger
-          text1={title}
-          text2="Certification"
-          className="text-center"
-        />
+        <GradientText bigger text1={title} text2="Certification" className="text-center" />
         <Img src={src} alt={alt} className="rounded-md shadow-glowed-2" />
       </figure>
       <section className="min-h-[10vh] flex justify-center items-center">
