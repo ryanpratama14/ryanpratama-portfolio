@@ -7,19 +7,6 @@ type Props = {
   priority?: boolean;
 };
 
-export default function Img({
-  alt,
-  src,
-  className,
-  priority,
-}: Props): React.JSX.Element {
-  return (
-    <Image
-      alt={alt}
-      src={src}
-      placeholder="blur"
-      priority={priority}
-      className={className}
-    />
-  );
+export default function Img({ alt, src, className, priority }: Props): React.JSX.Element {
+  return <Image alt={alt} src={src} placeholder="blur" priority={priority} className={className} />;
 }

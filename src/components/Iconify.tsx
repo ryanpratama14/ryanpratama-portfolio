@@ -8,13 +8,6 @@ type Props = {
   rotate?: number;
 };
 
-export default function Iconify({
-  icon,
-  width,
-  className,
-  rotate,
-}: Props): React.JSX.Element {
-  return (
-    <Icon icon={icon} width={width} rotate={rotate} className={className} />
-  );
+export default function Iconify({ icon, width, className, rotate }: Props): React.JSX.Element {
+  return <Icon icon={icon} width={width} rotate={rotate} className={className} />;
 }
