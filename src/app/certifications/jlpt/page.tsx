@@ -8,11 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function JlptCertification(): React.JSX.Element {
-  return (
-    <Certification
-      src={jlpt}
-      alt="JLPT N4 Certification, Ryan Pratama"
-      title="JLPT N4"
-    />
-  );
+  return <Certification src={jlpt} alt="JLPT N4 Certification, Ryan Pratama" title="JLPT N4" />;
 }

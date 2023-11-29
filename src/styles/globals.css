@@ -96,6 +96,10 @@ body {
   }
 }
 
+.text-perry {
+  text-wrap: balance;
+}
+
 .pratama {
   -webkit-text-stroke-color: white;
   -webkit-text-fill-color: transparent;

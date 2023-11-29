@@ -27,9 +27,7 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-export default function RootLayout({
-  children,
-}: ReactNodeProps): React.JSX.Element {
+export default function RootLayout({ children }: ReactNodeProps): React.JSX.Element {
   return (
     <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
       <body>

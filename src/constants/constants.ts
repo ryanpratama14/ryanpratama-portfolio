@@ -7,11 +7,7 @@ import turta2 from "@/assets/turta2.png";
 import belinsky from "@/assets/belinsky.jpg";
 import belinsky2 from "@/assets/belinsky2.png";
 
-export const identityData: string[] = [
-  "Ryan Pratama",
-  "23 yo",
-  "Jakarta, Indonesia",
-];
+export const identityData: string[] = ["Ryan Pratama", "23 yo", "Jakarta, Indonesia"];
 
 export const projectsData: ProjectItems[] = [
   {
@@ -57,11 +53,11 @@ export const projectsData: ProjectItems[] = [
 
 export const skillsData: SkillsItems[] = [
   {
-    label: "React",
-    icon: "teenyicons:react-solid",
+    label: "T3 Stack",
+    icon: "bi:stack",
   },
   {
-    label: "React Native",
+    label: "React / Native",
     icon: "teenyicons:react-solid",
   },
   {
@@ -69,20 +65,36 @@ export const skillsData: SkillsItems[] = [
     icon: "teenyicons:nextjs-solid",
   },
   {
+    label: "i18next",
+    icon: "simple-icons:i18next",
+  },
+  {
     label: "Redux Toolkit",
     icon: "akar-icons:redux-fill",
+  },
+  {
+    label: "Zod",
+    icon: "simple-icons:zod",
   },
   {
     label: "tRPC",
     icon: "devicon-plain:trpc",
   },
   {
-    label: "TanStack Query",
-    icon: "simple-icons:reactquery",
+    label: "Prisma ORM",
+    icon: "simple-icons:prisma",
   },
   {
-    label: "Vite",
-    icon: "file-icons:vite",
+    label: "PostgreSQL",
+    icon: "akar-icons:postgresql-fill",
+  },
+  {
+    label: "MongoDB",
+    icon: "teenyicons:mongodb-solid",
+  },
+  {
+    label: "TanStack Query",
+    icon: "simple-icons:reactquery",
   },
   {
     label: "Axios",

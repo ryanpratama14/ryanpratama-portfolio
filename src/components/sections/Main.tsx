@@ -12,17 +12,14 @@ export default function Main(): React.JSX.Element {
       <section className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
         <section className="w-full lg:w-[50%] flex flex-col gap-6">
           <header className="flex flex-col gap-2">
-            <GradientText text1="Frontend" text2="Engineer" />
+            <GradientText text1="Fullstack / Frontend" text2="Engineer" />
             <h1 className="-translate-x-0.5 lg:-translate-x-1.5 w-full">
               <span>RYAN</span>
-              <span className="max-xl:hidden absolute translate-x-6 pratama">
-                PRATAMA!
-              </span>
+              <span className="max-xl:hidden absolute translate-x-6 pratama">PRATAMA!</span>
             </h1>
-            <p>
-              I specialized in creating scalable, intuitive, and responsive web
-              applications with engaging user interfaces that are efficient,
-              maintainable, and accessible using the React library.
+            <p className="text-balance">
+              I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces
+              that are efficient, maintainable, and accessible using The T3 Stack.
             </p>
           </header>
           <nav className="flex gap-6 items-center">
@@ -35,10 +32,7 @@ export default function Main(): React.JSX.Element {
                 Contact Me
               </span>
             </a>
-            <a
-              href="#about"
-              className="text-gray hover:text-white animate text-lg"
-            >
+            <a href="#about" className="text-gray hover:text-white animate text-lg">
               Learn More
             </a>
           </nav>

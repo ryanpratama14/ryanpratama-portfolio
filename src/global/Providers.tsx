@@ -4,9 +4,7 @@
 import { Fragment } from "react";
 import TransitionEffect from "@/components/TransitionEffect";
 
-export default function Providers({
-  children,
-}: ReactNodeProps): React.JSX.Element {
+export default function Providers({ children }: ReactNodeProps): React.JSX.Element {
   return (
     // <Provider store={store}>
     <Fragment>
