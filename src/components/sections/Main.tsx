@@ -1,6 +1,8 @@
 import bg from "@/assets/bg.png";
 import GradientText from "@/components/GradientText";
 import Img from "@/components/Img";
+import Iconify from "@/components/Iconify";
+import Link from "next/link";
 
 export default function Main(): React.JSX.Element {
   return (
@@ -17,9 +19,21 @@ export default function Main(): React.JSX.Element {
               <span>RYAN</span>
               <span className="max-xl:hidden absolute translate-x-6 pratama">PRATAMA!</span>
             </h1>
-            <p className="text-balance">
+            <p className="text-pretty">
               I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces
-              that are efficient, maintainable, and accessible using The T3 Stack.
+              that are efficient, maintainable, and accessible using the{" "}
+              <span className="relative group">
+                <Link href="https://create.t3.gg/en/introduction" target="_blank">
+                  <b>T3 Stack</b>
+                  <Iconify
+                    width={15}
+                    className="animate absolute centered-right opacity-0 group-hover:opacity-100 group-hover:translate-x-6"
+                    icon="mingcute:external-link-fill"
+                  />
+                </Link>
+                <span className="absolute centered-bottom translate-y-0.5 w-0 group-hover:w-full bg-white h-0.5 animate" />
+              </span>
+              .
             </p>
           </header>
           <nav className="flex gap-6 items-center">
