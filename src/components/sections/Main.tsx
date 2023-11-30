@@ -22,7 +22,7 @@ export default function Main(): React.JSX.Element {
             <p className="text-pretty">
               I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces
               that are efficient, maintainable, and accessible using the{" "}
-              <span className="relative group">
+              <span className="relative group inline-block">
                 <Link href="https://create.t3.gg/en/introduction" target="_blank">
                   <b>T3 Stack</b>
                   <Iconify
