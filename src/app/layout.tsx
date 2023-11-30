@@ -16,7 +16,7 @@ import { generateSEO } from "@/utils/utils";
 
 const title = "Ryan Pratama's Portfolio";
 const description =
-  "I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces that are efficient, maintainable, and accessible using the T3 Stack.";
+  "Ryan Pratama - Fullstack / Frontend Engineer. I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces that are efficient, maintainable, and accessible using the T3 Stack.";
 const url = "https://ryanpratama.dev";
 
 export const metadata = generateSEO(title, description, url);
