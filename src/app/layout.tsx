@@ -6,12 +6,20 @@ import { Montserrat, Poppins } from "next/font/google";
 import Providers from "@/global/Providers";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
+import { generateSEO } from "@/utils/utils";
 
-export const metadata: Metadata = {
-  title: "Ryan Pratama's Portfolio",
-  description: "Welcome to: Ryan's Portfolio",
-  manifest: "/manifest.json",
-};
+// export const metadata: Metadata = {
+//   title: "Ryan Pratama's Portfolio",
+//   description: "Welcome to: Ryan's Portfolio",
+//   manifest: "/manifest.json",
+// };
+
+const title = "Ryan Pratama's Portfolio";
+const description =
+  "I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces that are efficient, maintainable, and accessible using the T3 Stack.";
+const url = "https://ryanpratama.dev";
+
+export const metadata = generateSEO(title, description, url);
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
