@@ -17,11 +17,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
   title: {
     default: title,
-    template: title,
+    template: `%s | ${title}`,
   },
   description,
   openGraph: {
-    title,
+    title: {
+      default: title,
+      template: `%s | ${title}`,
+    },
     description,
     url: env.NEXT_PUBLIC_WEBSITE_URL,
     siteName: title,
