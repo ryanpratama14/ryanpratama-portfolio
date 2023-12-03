@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { env } from "@/env";
 import { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 
@@ -6,20 +7,40 @@ import { Montserrat, Poppins } from "next/font/google";
 import Providers from "@/global/Providers";
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
-import { generateSEO } from "@/utils/utils";
-
-// export const metadata: Metadata = {
-//   title: "Ryan Pratama's Portfolio",
-//   description: "Welcome to: Ryan's Portfolio",
-//   manifest: "/manifest.json",
-// };
 
 const title = "Ryan Pratama's Portfolio";
 const description =
   "Ryan Pratama - Fullstack / Frontend Engineer. I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces that are efficient, maintainable, and accessible using the T3 Stack.";
-const url = "https://ryanpratama.dev";
 
-export const metadata: Metadata = { manifest: "/manifest.json", ...generateSEO(title, description, url) };
+export const metadata: Metadata = {
+  manifest: "/manifest.json",
+  metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
+  title: {
+    default: title,
+    template: title,
+  },
+  description,
+  openGraph: {
+    title,
+    description,
+    url: env.NEXT_PUBLIC_WEBSITE_URL,
+    siteName: title,
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  twitter: { title, card: "summary_large_image" },
+};
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
