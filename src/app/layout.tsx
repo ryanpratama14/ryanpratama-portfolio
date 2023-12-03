@@ -19,7 +19,7 @@ const description =
   "Ryan Pratama - Fullstack / Frontend Engineer. I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces that are efficient, maintainable, and accessible using the T3 Stack.";
 const url = "https://ryanpratama.dev";
 
-export const metadata = generateSEO(title, description, url);
+export const metadata: Metadata = { manifest: "/manifest.json", ...generateSEO(title, description, url) };
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

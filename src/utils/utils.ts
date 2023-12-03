@@ -11,7 +11,6 @@ export const LoadToTop = () => {
 
 export const generateSEO = (title: string, description: string, url: string): Metadata => {
   return {
-    manifest: "/manifest.json",
     title,
     description,
     openGraph: {
