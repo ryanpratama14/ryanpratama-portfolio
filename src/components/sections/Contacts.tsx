@@ -13,11 +13,7 @@ export default function Contacts({ isMain = true }: Props): React.JSX.Element {
       id="contacts"
       className={`relative main-padding flex flex-col gap-6 justify-center ${isMain ? "min-h-[40vh]" : "min-h-[50vh]"}`}
     >
-      <div
-        className={`${
-          isMain ? "top-36" : "top-12"
-        } max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10`}
-      />
+      <div className={`top-12 max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10`} />
       <GradientText text1="More" text2="Contacts" bigger />
       <p className="md:w-[80%] lg:w-[70%] xl:w-[65%]">
         I am actively seeking new opportunities at the moment and would be open to hearing about any potential opportunities

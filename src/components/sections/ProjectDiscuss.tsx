@@ -34,7 +34,8 @@ export default function ProjectDiscuss(): React.JSX.Element {
   return (
     <Fragment>
       <SuccessModal reset={reset} show={showModal} onClose={() => setShowModal(false)} />
-      <article id="contact" className="mt-8 main-padding gap-6 md:gap-12 flex flex-col justify-center min-h-[60vh]">
+      <article id="contact" className="mt-8 main-padding gap-6 md:gap-12 flex flex-col justify-center min-h-[60vh] relative">
+        <div className={`max-xl:hidden absolute centered-left translate-x-80 w-80 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10`} />
         <GradientText text1="Discuss" text2="Your Project" bigger />
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-center gap-4 w-full">
           <section className="flex flex-col gap-2 w-full md:w-[50%]">
