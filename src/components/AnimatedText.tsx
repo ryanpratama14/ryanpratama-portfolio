@@ -5,10 +5,7 @@ type Props = {
   className?: string;
 };
 
-export default function AnimatedText({
-  text,
-  className,
-}: Props): React.JSX.Element {
+export default function AnimatedText({ text, className }: Props): React.JSX.Element {
   const quote = {
     initial: {
       opacity: 1,
@@ -35,12 +32,7 @@ export default function AnimatedText({
     },
   };
   return (
-    <motion.h3
-      variants={quote}
-      initial="initial"
-      animate="animate"
-      className={`${className} inline-block`}
-    >
+    <motion.h3 variants={quote} initial="initial" animate="animate" className={`${className} inline-block`}>
       {text?.split(" ").map((e: string, i: number) => {
         return (
           <motion.span key={i} variants={singleWord} className="inline-block">
