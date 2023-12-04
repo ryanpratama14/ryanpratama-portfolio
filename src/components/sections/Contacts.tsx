@@ -7,18 +7,18 @@ type Props = {
   isMain?: boolean;
 };
 
-export default function Contact({ isMain = true }: Props): React.JSX.Element {
+export default function Contacts({ isMain = true }: Props): React.JSX.Element {
   return (
     <article
-      id="contact"
-      className={`relative main-padding flex flex-col gap-6 justify-center ${isMain ? "min-h-[60vh]" : "min-h-[50vh]"}`}
+      id="contacts"
+      className={`relative main-padding flex flex-col gap-6 justify-center ${isMain ? "min-h-[40vh]" : "min-h-[50vh]"}`}
     >
       <div
-        className={`
-      ${isMain ? "top-36" : "top-12"}
-      max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10`}
+        className={`${
+          isMain ? "top-36" : "top-12"
+        } max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10`}
       />
-      <GradientText text1="Contact" text2="Me" bigger />
+      <GradientText text1="More" text2="Contacts" bigger />
       <p className="md:w-[80%] lg:w-[70%] xl:w-[65%]">
         I am actively seeking new opportunities at the moment and would be open to hearing about any potential opportunities
         that may be available. Please feel free to reach out to me if you have any leads or if you would like to discuss

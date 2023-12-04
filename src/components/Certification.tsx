@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import Contact from "./sections/Contact";
+import Contact from "./sections/Contacts";
 import Img from "./Img";
 import GradientText from "./GradientText";
 import Link from "next/link";

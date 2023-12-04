@@ -1,16 +1,15 @@
 "use client";
-// import { Provider } from "react-redux";
-// import { store } from "./store";
-import { Fragment } from "react";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import TransitionEffect from "@/components/TransitionEffect";
+
+const queryClient = new QueryClient();
 
 export default function Providers({ children }: ReactNodeProps): React.JSX.Element {
   return (
-    // <Provider store={store}>
-    <Fragment>
+    <QueryClientProvider client={queryClient}>
       <TransitionEffect />
       {children}
-    </Fragment>
-    // </Provider>
+    </QueryClientProvider>
   );
 }

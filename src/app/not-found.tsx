@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Contact from "@/components/sections/Contact";
+import Contact from "@/components/sections/Contacts";
 import Iconify from "@/components/Iconify";
 import { Fragment } from "react";
 

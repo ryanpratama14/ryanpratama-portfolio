@@ -29,7 +29,7 @@ export default function Projects(): React.JSX.Element {
                       })}
                     </ul>
                   </header>
-                  <Link href={e.href} target="_blank" className="group relative w-32 h-9 group">
+                  <Link href={e.href} target="_blank" className="relative w-32 h-9 group">
                     <span className="animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute flex justify-center items-center">
                       Visit Web
                     </span>

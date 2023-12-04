@@ -1,8 +1,9 @@
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
-import Contact from "@/components/sections/Contact";
+import Contacts from "@/components/sections/Contacts";
 import Main from "@/components/sections/Main";
 import { Fragment } from "react";
+import ProjectDiscuss from "@/components/sections/ProjectDiscuss";
 
 export default function Home(): React.JSX.Element {
   return (
@@ -10,7 +11,8 @@ export default function Home(): React.JSX.Element {
       <Main />
       <About />
       <Projects />
-      <Contact />
+      <ProjectDiscuss />
+      <Contacts />
     </Fragment>
   );
 }

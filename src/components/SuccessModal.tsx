@@ -1,0 +1,71 @@
+"use client";
+
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+
+type Props = {
+  show: boolean;
+  onClose: () => void;
+  reset: () => void;
+};
+
+export default function SuccessModal({ show, onClose, reset }: Props) {
+  return (
+    <Transition appear show={show} as={Fragment}>
+      <Dialog as="div" className="relative z-10" onClose={onClose}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black/60" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 overflow-y-auto text-black">
+          <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="flex flex-col gap-2 w-full max-w-md transform overflow-hidden rounded-md bg-white p-6 text-left shadow-xl animate">
+                <Dialog.Title as="h5" className="h5">
+                  Email sent successfully
+                </Dialog.Title>
+
+                <p className="text-black">
+                  Thank you for contacting me regarding the project. I appreciate your message and will get back to you as
+                  soon as possible to discuss further details.
+                </p>
+
+                <section className="flex items-center justify-center mt-2">
+                  <section className="relative group ">
+                    <button
+                      type="button"
+                      className="w-fit px-4 py-2 animate group-hover:text-white border-2 border-black group-hover:border-transparent rounded-md"
+                      onClick={() => {
+                        reset();
+                        onClose();
+                      }}
+                    >
+                      Got it, thanks!
+                    </button>
+                    <div className="rounded-md centered -z-10 absolute h-0 w-0 group-hover:h-full group-hover:w-full animate bg-bluedarker" />
+                  </section>
+                </section>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition>
+  );
+}

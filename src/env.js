@@ -8,6 +8,9 @@ export const env = createEnv({
    */
   server: {
     NEXT_PUBLIC_WEBSITE_URL: z.string(),
+    RESEND_API_KEY: z.string(),
+    RESEND_EMAIL_TO: z.string(),
+    RESEND_EMAIL_FROM: z.string(),
   },
 
   /**
@@ -25,6 +28,9 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NEXT_PUBLIC_WEBSITE_URL: process.env.NEXT_PUBLIC_WEBSITE_URL,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    RESEND_EMAIL_TO: process.env.RESEND_EMAIL_TO,
+    RESEND_EMAIL_FROM: process.env.RESEND_EMAIL_FROM,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
