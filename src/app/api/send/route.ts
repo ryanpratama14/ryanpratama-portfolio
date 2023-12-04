@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: `Ryan <${env.RESEND_EMAIL_FROM}>`,
       to: env.RESEND_EMAIL_TO,
-      subject: "Project dicussion from my portfolio website",
+      subject: "NEW PROJECT ALERT!",
       react: EmailTemplate({ email, description, name }),
     });
     if (error) return NextResponse.json({ error });
