@@ -19,9 +19,7 @@ export default function ProjectDiscuss(): React.JSX.Element {
     resolver: zodResolver(projectInputSchema),
   });
 
-  const onSubmit: SubmitHandler<ProjectInput> = (data) => {
-    sendEmail(data);
-  };
+  const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
   const { mutate: sendEmail, isPending } = useMutation({
     mutationFn: async (data: ProjectInput) => {
@@ -30,9 +28,7 @@ export default function ProjectDiscuss(): React.JSX.Element {
         body: JSON.stringify(data),
       });
     },
-    onSuccess: () => {
-      setShowModal(true);
-    },
+    onSuccess: () => setShowModal(true),
   });
 
   return (
