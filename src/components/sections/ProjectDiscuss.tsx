@@ -64,7 +64,7 @@ export default function ProjectDiscuss(): React.JSX.Element {
               className={`border-2 ${errors.description ? "border-red-400" : "border-transparent"}`}
               {...register("description")}
               rows={5}
-              placeholder="Description..."
+              placeholder="Hi, I want to talk about my proje..."
             />
             {errors.description ? <small className="drop-shadow text-red-400">{errors.description.message}</small> : null}
           </section>
