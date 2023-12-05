@@ -25,7 +25,7 @@ export default function ScrollToTop(): React.JSX.Element {
   return (
     <button
       onClick={LoadToTop}
-      className={`animate fixed bottom-4 hover:scale-110 hover:-translate-y-1 -translate-x-[50%] left-[50%] z-10 ${
+      className={`animate fixed px-normal left-0 bottom-0 md:centered-bottom -translate-y-4 hover:scale-110 hover:-translate-y-6 z-10 ${
         !visible && "scale-0 translate-y-full"
       }`}
     >
