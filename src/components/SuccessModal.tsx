@@ -6,10 +6,9 @@ import { Fragment } from "react";
 type Props = {
   show: boolean;
   onClose: () => void;
-  reset: () => void;
 };
 
-export default function SuccessModal({ show, onClose, reset }: Props) {
+export default function SuccessModal({ show, onClose }: Props) {
   return (
     <Transition appear show={show} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
@@ -51,10 +50,7 @@ export default function SuccessModal({ show, onClose, reset }: Props) {
                     <button
                       type="button"
                       className="w-fit px-4 py-2 animate group-hover:text-white border-2 border-black group-hover:border-transparent rounded-md"
-                      onClick={() => {
-                        reset();
-                        onClose();
-                      }}
+                      onClick={onClose}
                     >
                       Got it, thanks!
                     </button>
