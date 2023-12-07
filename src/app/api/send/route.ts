@@ -15,13 +15,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(validation.error.errors, { status: 400 });
     }
 
-    const { name, email, description } = validation.data;
-
     const { data, error } = await resend.emails.send({
       from: `Ryan <${env.RESEND_EMAIL_FROM}>`,
       to: env.RESEND_EMAIL_TO,
       subject: "NEW PROJECT ALERT!",
-      react: EmailTemplate({ email, description, name }),
+      react: EmailTemplate(validation.data),
     });
     if (error) return NextResponse.json({ error });
     return NextResponse.json({ data });
