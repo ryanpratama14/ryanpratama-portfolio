@@ -15,18 +15,13 @@ export default function ProjectDiscuss(): React.JSX.Element {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ProjectInput>({
-    resolver: zodResolver(projectInputSchema),
-  });
+  } = useForm<ProjectInput>({ resolver: zodResolver(projectInputSchema) });
 
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
   const { mutate: sendEmail, isPending } = useMutation({
     mutationFn: async (data: ProjectInput) => {
-      await fetch("/api/send", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+      await fetch("/api/send", { method: "POST", body: JSON.stringify(data) });
     },
     onSuccess: () => setShowModal(true),
   });
