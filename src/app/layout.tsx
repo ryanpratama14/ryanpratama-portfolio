@@ -62,7 +62,7 @@ const montserrat = Montserrat({
 export default function RootLayout({ children }: ReactNodeProps): React.JSX.Element {
   return (
     <html lang="en" className={`${poppins.variable} ${montserrat.variable}`}>
-      <body>
+      <body className="text-white bg-black font-poppins">
         <Providers>
           <main>
             <Navbar />

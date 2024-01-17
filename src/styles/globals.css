@@ -10,9 +10,6 @@ body {
   html {
     @apply scroll-smooth;
   }
-  body {
-    @apply text-white bg-black font-poppins;
-  }
   h1 {
     @apply text-6xl md:text-8xl lg:text-9xl xl:text-[9rem] 2xl:text-[9.5rem] font-bold animate;
   }
