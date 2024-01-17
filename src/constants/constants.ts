@@ -6,10 +6,26 @@ import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 import belinsky from "@/assets/belinsky.jpg";
 import belinsky2 from "@/assets/belinsky2.png";
+import hebronstar from "@/assets/hebronstar.jpg";
+import hebronstar2 from "@/assets/hebronstar2.png";
 
 export const identityData: string[] = ["Ryan Pratama", "23 yo", "Jakarta, Indonesia"];
 
 export const projectsData: ProjectItems[] = [
+  {
+    title: "Hebronstar Strategy Consultants",
+    icon: hebronstar2,
+    src: hebronstar,
+    desc: "Hebronstar is a Korean consulting firm catering to diverse global services and industries.",
+    href: "https://hebronstar.com/en",
+    lists: [
+      "Developed a fullstack fully responsive web app using React",
+      "Implemented internationalization using i18next for multi-language support",
+      "Utilized TanStack Query with Axios to perform HTTP requests and consume RESTful APIs",
+      "Integrated Tailwind CSS for responsive component-based styling",
+      "Leveraged Redux Toolkit to implement a global state management solution",
+    ],
+  },
   {
     title: "KIMA",
     icon: kima2,
