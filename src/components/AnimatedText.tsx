@@ -33,9 +33,9 @@ export default function AnimatedText({ text, className }: Props): React.JSX.Elem
   };
   return (
     <motion.h3 variants={quote} initial="initial" animate="animate" className={`${className} inline-block`}>
-      {text?.split(" ").map((e: string, i: number) => {
+      {text?.split(" ").map((e: string) => {
         return (
-          <motion.span key={i} variants={singleWord} className="inline-block">
+          <motion.span key={e} variants={singleWord} className="inline-block">
             {e}&nbsp;
           </motion.span>
         );

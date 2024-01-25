@@ -41,8 +41,8 @@ export default function SuccessModal({ show, onClose }: Props) {
                 </Dialog.Title>
 
                 <p className="text-black">
-                  Thank you for contacting me regarding the project. I appreciate your message and will get back to you as
-                  soon as possible to discuss further details.
+                  Thank you for contacting me regarding the project. I appreciate your message and will get back to you as soon as
+                  possible to discuss further details.
                 </p>
 
                 <section className="flex items-center justify-center mt-2">
