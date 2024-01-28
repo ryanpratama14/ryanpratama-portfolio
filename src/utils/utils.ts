@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const LoadToTop = () => {
   if (typeof window !== "undefined") {

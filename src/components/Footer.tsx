@@ -5,7 +5,7 @@ export default function Footer(): React.JSX.Element {
         <p>
           Built by{" "}
           <span>
-            <a href="mailto:ru.ryanpratama@gmail.com" target="_blank" className="hover:shadow-glowed font-semibold">
+            <a href="mailto:ru.ryanpratama@gmail.com" target="_blank" rel="noreferrer" className="hover:shadow-glowed font-semibold">
               Ryan
             </a>
           </span>
@@ -13,13 +13,13 @@ export default function Footer(): React.JSX.Element {
         <p>
           Special thanks to{" "}
           <span>
-            <a href="https://nextjs.org/" target="_blank" className="hover:shadow-glowed font-semibold">
+            <a href="https://nextjs.org/" target="_blank" rel="noreferrer" className="hover:shadow-glowed font-semibold">
               Next.js
             </a>
           </span>{" "}
           &{" "}
           <span>
-            <a href="https://tailwindcss.com/" target="_blank" className="hover:shadow-glowed font-semibold">
+            <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer" className="hover:shadow-glowed font-semibold">
               Tailwind CSS
             </a>
           </span>

@@ -1,7 +1,7 @@
 import GradientText from "@/components/GradientText";
-import { experienceData, identityData, skillsData } from "@/constants/constants";
-import Img from "@/components/Img";
 import Iconify from "@/components/Iconify";
+import Img from "@/components/Img";
+import { experienceData, identityData, skillsData } from "@/constants/constants";
 import Link from "next/link";
 
 export default function About(): React.JSX.Element {
@@ -20,13 +20,13 @@ export default function About(): React.JSX.Element {
           {/* <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" /> */}
         </header>
         <p className="xl:w-[80%]">
-          In September 2022, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan,
-          Russia. Along with other students, we learned the basics of JavaScript and eventually formed a software house
-          startup called faoTech in January 2023. As I developed my skills, I discovered a passion for frontend development
-          and decided to specialize in this field.
+          In September 2022, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan, Russia. Along
+          with other students, we learned the basics of JavaScript and eventually formed a software house startup called faoTech in
+          January 2023. As I developed my skills, I discovered a passion for frontend development and decided to specialize in this
+          field.
         </p>
       </section>
-      <section className={`font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-y-3 gap-x-4`}>
+      <section className="font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-y-3 gap-x-4">
         {skillsData.map((e) => {
           return (
             <p key={e.icon} className="flex gap-2 text-sm xl:text-base items-center font-medium text-graydarker">
@@ -61,10 +61,10 @@ export default function About(): React.JSX.Element {
                       <Iconify icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
-                  <small className={`font-montserrat italic text-gray group-hover:text-white font-medium`}>
+                  <small className="font-montserrat italic text-gray group-hover:text-white font-medium">
                     {e.since} - {e.till ? e.till : "present"}
                   </small>
-                  <small className={`font-montserrat font-medium`}>{e.location}</small>
+                  <small className="font-montserrat font-medium">{e.location}</small>
                 </header>
               </section>
             </Link>

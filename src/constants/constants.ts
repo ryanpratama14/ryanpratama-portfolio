@@ -1,13 +1,14 @@
-import faotech from "@/assets/faoTech.png";
-import nutech from "@/assets/nutechIntegrasi.jpeg";
-import kima from "@/assets/kima.jpg";
-import kima2 from "@/assets/kima2.png";
-import turta from "@/assets/turta.jpg";
-import turta2 from "@/assets/turta2.png";
 import belinsky from "@/assets/belinsky.jpg";
 import belinsky2 from "@/assets/belinsky2.png";
+import faotech from "@/assets/faoTech.png";
 import hebronstar from "@/assets/hebronstar.jpg";
 import hebronstar2 from "@/assets/hebronstar2.png";
+import kima from "@/assets/kima.jpg";
+import kima2 from "@/assets/kima2.png";
+import mandiri1 from "@/assets/mandiri1.jpg";
+import nutech from "@/assets/nutechIntegrasi.jpeg";
+import turta from "@/assets/turta.jpg";
+import turta2 from "@/assets/turta2.png";
 
 export const identityData: string[] = ["Ryan Pratama", "23 yo", "Jakarta, Indonesia"];
 
@@ -59,6 +60,18 @@ export const projectsData: ProjectItems[] = [
     src: belinsky,
     desc: "Belinsky is a production house and creative studio that specializes in both professional photography and filmmaking.",
     href: "https://belinskyproduction.com",
+    lists: [
+      "Developed a static fully responsive web app using React",
+      "Optimized key content pages for SEO objectives",
+      "Integrated Tailwind CSS for responsive component-based styling",
+    ],
+  },
+  {
+    title: "Synergy Perdana Mandiri",
+    icon: belinsky2,
+    src: mandiri1,
+    desc: "A trading company specializing in general and chemicals trading.",
+    href: "https://www.sinergyperdanamandiri.com",
     lists: [
       "Developed a static fully responsive web app using React",
       "Optimized key content pages for SEO objectives",

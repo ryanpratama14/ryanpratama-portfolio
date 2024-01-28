@@ -1,8 +1,8 @@
-import { StaticImageData } from "next/image";
-import Contact from "./sections/Contacts";
-import Img from "./Img";
-import GradientText from "./GradientText";
+import type { StaticImageData } from "next/image";
 import Link from "next/link";
+import GradientText from "./GradientText";
+import Img from "./Img";
+import Contact from "./sections/Contacts";
 
 type Props = {
   src: StaticImageData;

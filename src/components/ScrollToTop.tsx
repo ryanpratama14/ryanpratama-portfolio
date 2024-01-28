@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { LoadToTop } from "@/utils/utils";
 import Iconify from "@/components/Iconify";
+import { LoadToTop } from "@/utils/utils";
+import { useEffect, useState } from "react";
 
 export default function ScrollToTop(): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(false);
@@ -24,6 +24,7 @@ export default function ScrollToTop(): React.JSX.Element {
 
   return (
     <button
+      type="button"
       onClick={LoadToTop}
       className={`animate fixed px-normal left-0 bottom-0 md:centered-bottom -translate-y-4 hover:scale-110 hover:-translate-y-6 z-10 ${
         !visible && "scale-0 translate-y-full"

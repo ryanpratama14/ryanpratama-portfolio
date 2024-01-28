@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
-import Resume from "./components/Resume";
-import MobileMenu from "./components/MobileMenu";
-import { navbarData } from "@/constants/constants";
 import Iconify from "@/components/Iconify";
+import { navbarData } from "@/constants/constants";
+import { useEffect, useRef, useState } from "react";
+import MobileMenu from "./components/MobileMenu";
+import Resume from "./components/Resume";
 
 export default function Navbar(): React.JSX.Element {
   const [visible, setVisible] = useState<boolean>(true);
@@ -14,7 +14,7 @@ export default function Navbar(): React.JSX.Element {
       window.addEventListener(
         "scroll",
         () => {
-          let { scrollY } = window;
+          const { scrollY } = window;
           if (scrollY > lastScrollTop.current) {
             setVisible(false);
           } else if (scrollY < lastScrollTop.current) {
@@ -22,7 +22,7 @@ export default function Navbar(): React.JSX.Element {
           }
           lastScrollTop.current = scrollY <= 0 ? 0 : scrollY;
         },
-        { passive: true }
+        { passive: true },
       );
     }
   }, []);
