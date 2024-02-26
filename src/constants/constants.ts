@@ -45,7 +45,7 @@ export const projectsData: ProjectItems[] = [
     icon: turta2,
     src: turta,
     desc: "TurunTangan is a non-profit youth volunteer movement with more than 70 chapters across Indonesia.",
-    href: "https://turuntangan.id",
+    href: "https://gerakanturuntangan.com",
     lists: [
       "Developed a fullstack fully responsive web app using React",
       "Optimized key content pages for SEO objectives",
