@@ -5,6 +5,7 @@ import { LANGUAGES, getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Providers from "./providers";
@@ -64,11 +65,12 @@ export default function RootLayout({ children, params }: Props) {
     <html lang={params.lang} className={montserrat.variable}>
       <body className="text-white bg-black font-montserrat">
         <Analytics />
+        <SpeedInsights />
+        <Navbar t={t} />
         <Providers>
-          <Navbar t={t} />
           <main>{children}</main>
-          <ScrollToTop />
         </Providers>
+        <ScrollToTop />
       </body>
     </html>
   );
