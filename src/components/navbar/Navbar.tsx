@@ -53,7 +53,7 @@ export default function Navbar({ t }: Props) {
       )}
     >
       <section className="flex gap-4 h-full items-center">
-        <MobileMenu />
+        <MobileMenu t={t} />
         <Resume t={t} />
       </section>
       <section className="flex gap-4 items-center">
@@ -63,7 +63,7 @@ export default function Navbar({ t }: Props) {
               <span>
                 <Iconify icon={e.icon} width={20} />
               </span>
-              {e.label}
+              {t.NAVBAR_DATA[e.label]}
             </a>
           );
         })}

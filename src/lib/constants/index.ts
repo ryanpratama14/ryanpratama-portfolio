@@ -189,17 +189,17 @@ export const navbarData: NavbarItems[] = [
   {
     href: "#about",
     icon: "mdi:about-circle-outline",
-    label: "About",
+    label: "about",
   },
   {
     href: "#projects",
     icon: "mdi:local-cafe-outline",
-    label: "Projects",
+    label: "projects",
   },
   {
     href: "#contact",
     icon: "mdi:contact-outline",
-    label: "Contact",
+    label: "contacts",
   },
 ];
 

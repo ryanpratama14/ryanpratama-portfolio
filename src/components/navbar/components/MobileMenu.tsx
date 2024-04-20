@@ -1,9 +1,12 @@
 import Iconify from "@/components/Iconify";
 import { navbarData } from "@/lib/constants";
+import type { Dictionary } from "@/types";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-export default function MobileMenu() {
+type Props = { t: Dictionary };
+
+export default function MobileMenu({ t }: Props) {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
       <Menu.Button className="flex items-center">
@@ -26,7 +29,7 @@ export default function MobileMenu() {
                   <span>
                     <Iconify icon={e.icon} width={20} />
                   </span>
-                  {e.label}
+                  {t.NAVBAR_DATA[e.label]}
                 </a>
               </Menu.Item>
             );

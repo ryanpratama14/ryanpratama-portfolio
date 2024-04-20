@@ -14,9 +14,9 @@ export const ru: Dictionary = {
   },
 
   NAVBAR_DATA: {
-    about: "About",
-    projects: "Projects",
-    contacts: "Contacts",
+    about: "Обо мне",
+    projects: "Проекты",
+    contacts: "Контакты",
   },
 
   SECTIONS: {

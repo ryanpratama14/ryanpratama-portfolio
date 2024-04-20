@@ -7,18 +7,12 @@ export type Dictionary = typeof en;
 export type DictionaryKey = keyof typeof en;
 
 export type NavbarItems = {
-  label: string;
+  label: keyof Dictionary["NAVBAR_DATA"];
   icon: string;
   href: string;
 };
 
 export type LinkSocialItems = {
-  href: string;
-  label: string;
-  icon: string;
-};
-
-export type resumeItems = {
   href: string;
   label: string;
   icon: string;
