@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/noise.png");
+  background-image: url("/assets/noise.png");
 }
 
 @layer base {
