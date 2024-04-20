@@ -49,7 +49,8 @@ const config: Config = {
         longer10: "26vw",
       },
       fontFamily: {
-        montserrat: ["var(--font-montserrat)", ...fontFamily.sans],
+        notosans: ["var(--font-notosans)", ...fontFamily.sans],
+        notosansJP: ["var(--font-notosansJP)", ...fontFamily.sans],
       },
     },
   },

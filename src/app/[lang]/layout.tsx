@@ -1,13 +1,14 @@
 import ScrollToTop from "@/components/ScrollToTop";
 import Navbar from "@/components/navbar/Navbar";
 import { env } from "@/env";
+import { cn } from "@/lib/functions";
 import { LANGUAGES, getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
 import Providers from "./providers";
 
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
@@ -51,10 +52,16 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   };
 }
 
-const montserrat = Montserrat({
+const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-notosans",
+  display: "swap",
+});
+
+const notosansJP = Noto_Sans_JP({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-notosansJP",
   display: "swap",
 });
 
@@ -62,10 +69,11 @@ type Props = { params: { lang: Lang }; children: React.ReactNode };
 
 export default function RootLayout({ children, params }: Props) {
   const t = getDictionary(params.lang);
+  const isJapanese = params.lang === "ja";
 
   return (
-    <html lang={params.lang} className={montserrat.variable}>
-      <body className="text-white bg-black font-montserrat">
+    <html lang={params.lang} className={`${notosans.variable} ${notosansJP.variable}`}>
+      <body className={cn("text-white bg-black font-notosans", { "font-notosansJP": isJapanese })}>
         <Analytics />
         <SpeedInsights />
         <Navbar t={t} />

@@ -19,7 +19,7 @@ export default function Main({ t }: Props) {
               text1={t.PERSONAL_DATA.softwareEngineer.split(" ")[0] ?? ""}
               text2={t.PERSONAL_DATA.softwareEngineer.split(" ")[1] ?? ""}
             />
-            <h1 className="-translate-x-0.5 lg:-translate-x-1.5 w-full uppercase">
+            <h1 className="-translate-x-1 lg:-translate-x-2.5 w-full uppercase">
               <span>{t.PERSONAL_DATA.fullName.split(" ")[0]}</span>
               <span className="max-xl:hidden absolute translate-x-6 pratama">{t.PERSONAL_DATA.fullName.split(" ")[1]}!</span>
             </h1>
