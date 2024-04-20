@@ -66,7 +66,7 @@ export default function About({ t, lang }: Props) {
                         month: "short",
                         year: "numeric",
                       })}{" "}
-                      - {e.till || t.SECTIONS.present}
+                      — {e.till || t.SECTIONS.present}
                     </small>
                     <small className="font-medium">{t.LOCATIONS[e.location]}</small>
                   </header>

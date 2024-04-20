@@ -1,11 +1,11 @@
 import { en } from "@/lib/dictionaries/en";
-import { jp } from "@/lib/dictionaries/jp";
+import { ja } from "@/lib/dictionaries/ja";
 import { ru } from "@/lib/dictionaries/ru";
 import type { Dictionary, Lang } from "@/types";
 
-export const LANGS = ["jp", "en", "ru"] as const;
+export const LANGS = ["ja", "en", "ru"] as const;
 export const DEFAULT_LANG: Lang = "en";
-export const DICTIONARIES = { en, jp, ru };
+export const DICTIONARIES = { en, ja, ru };
 export const DEFAULT_DICTIONARY = DICTIONARIES[DEFAULT_LANG];
 
 export const LANGUAGES: Record<Lang, { label: string; value: Lang; flag: string; locale: string; dictionary: Dictionary }> = {
@@ -16,12 +16,12 @@ export const LANGUAGES: Record<Lang, { label: string; value: Lang; flag: string;
     dictionary: DICTIONARIES.en,
     locale: "en-US",
   },
-  jp: {
+  ja: {
     flag: "🇯🇵",
     label: "日本語",
-    value: "jp",
-    dictionary: DICTIONARIES.jp,
-    locale: "jp-JP",
+    value: "ja",
+    dictionary: DICTIONARIES.ja,
+    locale: "ja-JP",
   },
   ru: {
     flag: "🇷🇺",

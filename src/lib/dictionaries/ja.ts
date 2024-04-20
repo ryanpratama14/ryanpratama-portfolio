@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/types";
 
-export const jp: Dictionary = {
+export const ja: Dictionary = {
   PERSONAL_DATA: {
     fullName: "Ryan Pratama",
     summary:
