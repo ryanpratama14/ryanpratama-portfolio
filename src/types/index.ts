@@ -1,0 +1,48 @@
+import type { en } from "@/lib/dictionaries/en";
+import type { LANGS } from "@/lib/internationalization";
+import type { StaticImageData } from "next/image";
+
+export type Lang = (typeof LANGS)[number];
+export type Dictionary = typeof en;
+export type DictionaryKey = keyof typeof en;
+
+export type NavbarItems = {
+  label: string;
+  icon: string;
+  href: string;
+};
+
+export type LinkSocialItems = {
+  href: string;
+  label: string;
+  icon: string;
+};
+
+export type resumeItems = {
+  href: string;
+  label: string;
+  icon: string;
+};
+
+export type ExperienceItems = {
+  src: StaticImageData;
+  label: string;
+  link: string;
+  since: string;
+  location: string;
+  till: string;
+};
+
+export type SkillsItems = {
+  label: string;
+  icon: string;
+};
+
+export type ProjectItems = {
+  title: string;
+  icon: StaticImageData;
+  desc: string;
+  href: string;
+  lists: string[];
+  src: StaticImageData;
+};
