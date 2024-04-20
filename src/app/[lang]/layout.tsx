@@ -1,7 +1,7 @@
 import ScrollToTop from "@/components/ScrollToTop";
 import Navbar from "@/components/navbar/Navbar";
 import { env } from "@/env";
-import { getDictionary } from "@/lib/internationalization";
+import { LANGUAGES, getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
       description,
       url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}`,
       siteName: title,
-      locale: params.lang,
+      locale: LANGUAGES[params.lang].locale,
       type: "website",
     },
     robots: {

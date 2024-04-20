@@ -3,6 +3,7 @@ import Iconify from "@/components/Iconify";
 import Img from "@/components/Img";
 import { experienceData, getIdendityData, skillsData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
+import { LANGUAGES } from "@/lib/internationalization";
 import type { Dictionary, Lang } from "@/types";
 import Link from "next/link";
 
@@ -60,7 +61,7 @@ export default function About({ t, lang }: Props) {
                     </span>
                   </h5>
                   <small className="italic text-gray group-hover:text-white font-medium">
-                    {e.since.toLocaleDateString(lang, {
+                    {e.since.toLocaleDateString(LANGUAGES[lang].locale, {
                       month: "short",
                       year: "numeric",
                     })}{" "}
