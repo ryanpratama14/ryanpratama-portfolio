@@ -3,7 +3,7 @@
 import Iconify from "@/components/Iconify";
 import { navbarData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { LANGUAGE_OPTIONS } from "@/lib/internationalization";
+import { DICTIONARIES, LANGUAGE_OPTIONS } from "@/lib/internationalization";
 import type { Dictionary, Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -79,6 +79,9 @@ export default function Navbar({ t }: Props) {
                 href={changeLang(e.value)}
                 type="button"
               >
+                <span className="sr-only">
+                  {`${DICTIONARIES[e.value].PERSONAL_DATA.fullName}\n\n${DICTIONARIES[e.value].PERSONAL_DATA.summary}`}
+                </span>
                 {e.flag}
               </Link>
             );
