@@ -25,7 +25,7 @@ export default function Contacts({ isMain = true, t }: Props) {
               <span className="rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate-longer">
                 <Iconify icon={e.icon} width={35} />
               </span>
-              <span className="sr-only">{`${e.label}\n\n${t.PERSONAL_DATA.fullName}\n\n${t.PERSONAL_DATA.summary}`}</span>
+              <span className="sr-only">{e.label}</span>
             </Link>
           );
         })}

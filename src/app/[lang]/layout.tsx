@@ -11,9 +11,11 @@ import { Montserrat } from "next/font/google";
 import Providers from "./providers";
 
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isJapanese = params.lang === "ja";
   const t = getDictionary(params.lang).PERSONAL_DATA;
-  const title = `${t.fullName} — ${t.softwareEngineer}`;
-  const description = `${title}\n\n${t.summary}`;
+
+  const title = `${t.fullName} — ${isJapanese ? t.softwareEngineer.split(" ").join("") : t.softwareEngineer}`;
+  const description = `${title} ${t.summary}`;
 
   return {
     manifest: "/manifest.json",

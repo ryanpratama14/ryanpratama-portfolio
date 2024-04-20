@@ -32,6 +32,6 @@ export const LANGUAGES: Record<Lang, { label: string; value: Lang; flag: string;
   },
 };
 
-export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, { dictionary, ...e }]) => ({ ...e }));
+export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...e }));
 
 export const getDictionary = (lang: Lang): Dictionary => LANGUAGES[lang].dictionary;
