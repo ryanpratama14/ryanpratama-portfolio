@@ -9,7 +9,7 @@ type Props = { t: Dictionary };
 export default function MobileMenu({ t }: Props) {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
-      <Menu.Button className="flex items-center">
+      <Menu.Button className="flex items-center outline-none">
         <Iconify icon="ri:menu-3-fill" width={25} rotate={2} />
       </Menu.Button>
       <Transition
@@ -21,7 +21,7 @@ export default function MobileMenu({ t }: Props) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform -translate-y-2 opacity-0"
       >
-        <Menu.Items className="absolute left-0 mt-6 flex flex-col gap-3">
+        <Menu.Items className="outline-none absolute left-0 mt-6 flex flex-col gap-3">
           {navbarData.map((e) => {
             return (
               <Menu.Item key={e.href}>
