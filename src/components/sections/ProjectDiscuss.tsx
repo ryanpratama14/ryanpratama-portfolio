@@ -40,7 +40,7 @@ export default function ProjectDiscuss({ t }: Props) {
           reset();
         }}
       />
-      <article id="contact" className="mt-8 main-padding gap-6 md:gap-12 flex flex-col justify-center min-h-[60vh] relative">
+      <article id="contact" className="mt-8 main-padding gap-6 flex flex-col justify-center min-h-[60vh] relative">
         <div className="max-xl:hidden absolute centered-left translate-x-80 w-80 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10" />
         <GradientText
           text1={t.SECTIONS.dicussYourProject.split(" ")[0] ?? ""}
