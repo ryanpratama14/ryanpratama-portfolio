@@ -28,8 +28,8 @@ export type ExperienceItems = {
   src: StaticImageData;
   label: string;
   link: string;
-  since: string;
-  location: string;
+  since: Date;
+  location: keyof Dictionary["LOCATIONS"];
   till: string;
 };
 

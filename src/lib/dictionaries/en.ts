@@ -18,6 +18,8 @@ export const en = {
   },
 
   SECTIONS: {
+    backToHomepage: "Back to Homepage",
+    present: "Present",
     resume: "Résumé",
     aboutMe: "About Me",
     featuredProjects: "Featured Projects",
@@ -25,7 +27,7 @@ export const en = {
     moreContactsDescription:
       "I am actively seeking new opportunities at the moment and would be open to hearing about any potential opportunities that may be available. Please feel free to reach out to me if you have any leads or if you would like to discuss potential collaborations.",
     dicussYourProject: "Discuss Your Project",
-    professionalExperiences: "Professional Experiences",
+    professionalExperience: "Professional Experience",
     visitProject: "Visit Project",
   },
 

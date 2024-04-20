@@ -11,7 +11,7 @@ import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 
 // types
-import type { Dictionary, ExperienceItems, LinkSocialItems, NavbarItems, ProjectItems, SkillsItems, resumeItems } from "@/types";
+import type { Dictionary, ExperienceItems, LinkSocialItems, NavbarItems, ProjectItems, SkillsItems } from "@/types";
 
 export const getIdendityData = (t: Dictionary) => [t.PERSONAL_DATA.fullName, t.PERSONAL_DATA.age, t.LOCATIONS.jakarta];
 
@@ -171,17 +171,17 @@ export const experienceData: ExperienceItems[] = [
     src: nutech,
     label: "Nutech Integrasi",
     link: "https://www.nutech-integrasi.com",
-    since: "aug 2023",
+    since: new Date(2023, 8),
     till: "",
-    location: "Jakarta, Indonesia",
+    location: "jakarta",
   },
   {
     src: faotech,
     label: "faoTech",
     link: "https://faotech.dev",
-    since: "sep 2022",
+    since: new Date(2022, 9),
     till: "",
-    location: "Remote",
+    location: "remote",
   },
 ];
 
@@ -200,19 +200,6 @@ export const navbarData: NavbarItems[] = [
     href: "#contact",
     icon: "mdi:contact-outline",
     label: "Contact",
-  },
-];
-
-export const resumeData: resumeItems[] = [
-  {
-    label: "English",
-    href: "/resume.pdf",
-    icon: "EN",
-  },
-  {
-    label: "Russian",
-    href: "/resume_rus.pdf",
-    icon: "RU",
   },
 ];
 

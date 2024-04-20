@@ -1,6 +1,7 @@
 import GradientText from "@/components/GradientText";
 import Iconify from "@/components/Iconify";
 import { linkSocial } from "@/lib/constants";
+import { cn } from "@/lib/functions";
 import type { Dictionary } from "@/types";
 import Link from "next/link";
 
@@ -10,7 +11,9 @@ export default function Contacts({ isMain = true, t }: Props) {
   return (
     <article
       id="contacts"
-      className={`relative main-padding flex flex-col gap-6 justify-center ${isMain ? "min-h-[40vh]" : "min-h-[50vh]"}`}
+      className={cn("relative main-padding flex flex-col gap-6 justify-center min-h-[50vh]", {
+        "min-h-[40vh]": isMain,
+      })}
     >
       <div className="top-12 max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" />
       <GradientText text1={t.SECTIONS.moreContacts.split(" ")[0] ?? ""} text2={t.SECTIONS.moreContacts.split(" ")[1] ?? ""} bigger />

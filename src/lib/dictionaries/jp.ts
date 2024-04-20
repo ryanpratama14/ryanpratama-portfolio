@@ -20,6 +20,8 @@ export const jp: Dictionary = {
   },
 
   SECTIONS: {
+    backToHomepage: "ホームページに戻る",
+    present: "現時点",
     resume: "職務経歴書",
     aboutMe: "About Me",
     featuredProjects: "Featured Projects",
@@ -27,7 +29,7 @@ export const jp: Dictionary = {
     moreContactsDescription:
       "私は現在、新しい機会を積極的に探しており、利用可能な可能性のある潜在的な機会については喜んで聞きたいと思っています。 見込み客がいる場合、またはコラボレーションの可能性について話し合いたい場合は、お気軽にご連絡ください。",
     dicussYourProject: "Discuss Your Project",
-    professionalExperiences: "専門的な経験",
+    professionalExperience: "専門的な経験",
     visitProject: "プロジェクト訪問",
   },
 

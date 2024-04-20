@@ -3,12 +3,12 @@ import Iconify from "@/components/Iconify";
 import Img from "@/components/Img";
 import { experienceData, getIdendityData, skillsData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import type { Dictionary } from "@/types";
+import type { Dictionary, Lang } from "@/types";
 import Link from "next/link";
 
-type Props = { t: Dictionary };
+type Props = { t: Dictionary; lang: Lang };
 
-export default function About({ t }: Props) {
+export default function About({ t, lang }: Props) {
   return (
     <article className="min-h-screen main-padding flex justify-center flex-col gap-6" id="about">
       <GradientText text1={t.SECTIONS.aboutMe.split(" ")[0] ?? ""} text2={t.SECTIONS.aboutMe.split(" ")[1] ?? ""} bigger />
@@ -37,7 +37,7 @@ export default function About({ t }: Props) {
         })}
       </section>
 
-      <h4>{t.SECTIONS.professionalExperiences}</h4>
+      <h4>{t.SECTIONS.professionalExperience}</h4>
       <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
         {experienceData.map((e) => {
           return (
@@ -60,9 +60,13 @@ export default function About({ t }: Props) {
                     </span>
                   </h5>
                   <small className="italic text-gray group-hover:text-white font-medium">
-                    {e.since} - {e.till ? e.till : "present"}
+                    {e.since.toLocaleDateString(lang, {
+                      month: "short",
+                      year: "numeric",
+                    })}{" "}
+                    - {e.till || t.SECTIONS.present}
                   </small>
-                  <small className="font-medium">{e.location}</small>
+                  <small className="font-medium">{t.LOCATIONS[e.location]}</small>
                 </header>
               </section>
             </Link>

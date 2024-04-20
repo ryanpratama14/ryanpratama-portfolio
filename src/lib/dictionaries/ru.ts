@@ -20,14 +20,16 @@ export const ru: Dictionary = {
   },
 
   SECTIONS: {
+    backToHomepage: "На главную страницу",
+    present: "настоящее время",
     resume: "Резюме",
     aboutMe: "Обо мне",
     featuredProjects: "Выделенные проекты",
     moreContacts: "Ещё контакты",
     moreContactsDescription:
       "В данный момент я активно ищу новые возможности и буду рад услышать о любых потенциальных возможностях, которые могут быть доступны. Пожалуйста, не стесняйтесь обращаться ко мне, если у вас есть какие-либо идеи или вы хотите обсудить потенциальное сотрудничество.",
-    dicussYourProject: "Обсудите ваш проект",
-    professionalExperiences: "Опыт работы",
+    dicussYourProject: "Обсудим ваш проект?",
+    professionalExperience: "Опыт работы",
     visitProject: "Посетить проект",
   },
 
