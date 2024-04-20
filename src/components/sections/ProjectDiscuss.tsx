@@ -8,7 +8,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import GradientText from "../GradientText";
 import SuccessModal from "../SuccessModal";
 
-export default function ProjectDiscuss(): React.JSX.Element {
+export default function ProjectDiscuss() {
   const [showModal, setShowModal] = useState(false);
   const {
     register,

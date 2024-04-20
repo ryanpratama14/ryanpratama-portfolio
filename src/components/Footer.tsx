@@ -1,4 +1,4 @@
-export default function Footer(): React.JSX.Element {
+export default function Footer() {
   return (
     <footer className="px-normal pb-20 pt-6 flex flex-col gap-2 justify-center items-center">
       <section className="flex flex-col items-center justify-center text-center">

@@ -1,7 +1,7 @@
 import Iconify from "@/components/Iconify";
 import Link from "next/link";
 
-export default function Resume(): React.JSX.Element {
+export default function Resume() {
   return (
     <Link
       href="/resume.pdf"

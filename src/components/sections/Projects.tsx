@@ -3,7 +3,7 @@ import Img from "@/components/Img";
 import { projectsData } from "@/lib/constants";
 import Link from "next/link";
 
-export default function Projects(): React.JSX.Element {
+export default function Projects() {
   return (
     <article className="relative flex-col gap-6 md:gap-12 flex justify-center items-center main-padding" id="projects">
       {/* bullets */}

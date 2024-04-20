@@ -62,7 +62,7 @@ const montserrat = Montserrat({
 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
-export default function RootLayout({ children, params }: Props): React.JSX.Element {
+export default function RootLayout({ children, params }: Props) {
   return (
     <html lang={params.lang} className={`${poppins.variable} ${montserrat.variable}`}>
       <body className="text-white bg-black font-poppins">

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Contact from "@/components/sections/Contacts";
 import Iconify from "@/components/Iconify";
+import Contact from "@/components/sections/Contacts";
+import Link from "next/link";
 import { Fragment } from "react";
 
-export default function NotFound(): React.JSX.Element {
+export default function NotFound() {
   return (
     <Fragment>
       <article className="min-h-screen flex flex-col justify-center items-center gap-8">

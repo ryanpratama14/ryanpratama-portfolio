@@ -5,7 +5,7 @@ type Props = {
   className?: string;
 };
 
-export default function AnimatedText({ text, className }: Props): React.JSX.Element {
+export default function AnimatedText({ text, className }: Props) {
   const quote = {
     initial: {
       opacity: 1,

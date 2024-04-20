@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./components/MobileMenu";
 import Resume from "./components/Resume";
 
-export default function Navbar(): React.JSX.Element {
+export default function Navbar() {
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
 

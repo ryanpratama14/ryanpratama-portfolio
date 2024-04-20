@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Welcome to: Ryan's Portfolio",
 };
 
-export default function PreparatoryFacultyCertification(): React.JSX.Element {
+export default function PreparatoryFacultyCertification() {
   return (
     <Certification
       src={podfak}

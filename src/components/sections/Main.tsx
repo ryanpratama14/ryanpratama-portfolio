@@ -4,7 +4,7 @@ import Iconify from "@/components/Iconify";
 import Img from "@/components/Img";
 import Link from "next/link";
 
-export default function Main(): React.JSX.Element {
+export default function Main() {
   return (
     <article className="relative flex flex-col justify-center main-padding min-h-screen">
       {/* bullets */}

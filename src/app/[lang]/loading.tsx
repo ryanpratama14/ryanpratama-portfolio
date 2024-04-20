@@ -1,7 +1,7 @@
 "use client";
 import { DotLoader } from "react-spinners";
 
-export default function Loading(): React.JSX.Element {
+export default function Loading() {
   return (
     <section className="min-h-screen flex gap-4 justify-center items-center">
       <DotLoader color="#57E6D9" size={80} />

@@ -4,7 +4,7 @@ import Img from "@/components/Img";
 import { experienceData, identityData, skillsData } from "@/lib/constants";
 import Link from "next/link";
 
-export default function About(): React.JSX.Element {
+export default function About() {
   return (
     <article className="min-h-screen main-padding flex justify-center flex-col gap-6" id="about">
       <GradientText text1="About" text2="Me" bigger />

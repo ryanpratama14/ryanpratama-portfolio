@@ -3,7 +3,7 @@ import { navbarData } from "@/lib/constants";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-export default function MobileMenu(): React.JSX.Element {
+export default function MobileMenu() {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
       <Menu.Button className="border-white font-semibold border-[1px] flex items-center gap-1.5 py-1 px-4 outline-none rounded-3xl w-fit">

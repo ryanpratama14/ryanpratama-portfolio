@@ -10,7 +10,7 @@ type Props = {
   title: string;
 };
 
-export default function Certification({ src, alt, title }: Props): React.JSX.Element {
+export default function Certification({ src, alt, title }: Props) {
   return (
     <main className="flex flex-col">
       <figure className="main-padding md:pt-longer flex flex-col items-center justify-center gap-6">

@@ -4,7 +4,7 @@ import Iconify from "@/components/Iconify";
 import { LoadToTop } from "@/lib/functions";
 import { useEffect, useState } from "react";
 
-export default function ScrollToTop(): React.JSX.Element {
+export default function ScrollToTop() {
   const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {

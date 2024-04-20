@@ -1,7 +1,7 @@
-import { Fragment } from "react";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
 
-export default function TransitionEffect(): React.JSX.Element {
+export default function TransitionEffect() {
   return (
     <Fragment>
       <motion.section

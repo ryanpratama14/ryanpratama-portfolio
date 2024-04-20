@@ -5,7 +5,7 @@ import Link from "next/link";
 
 type Props = { isMain?: boolean };
 
-export default function Contacts({ isMain = true }: Props): React.JSX.Element {
+export default function Contacts({ isMain = true }: Props) {
   return (
     <article
       id="contacts"

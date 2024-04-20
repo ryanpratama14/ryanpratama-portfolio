@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   description: "Welcome to: Ryan's Portfolio",
 };
 
-export default function JlptCertification(): React.JSX.Element {
+export default function JlptCertification() {
   return <Certification src={jlpt} alt="JLPT N4 Certification, Ryan Pratama" title="JLPT N4" />;
 }
