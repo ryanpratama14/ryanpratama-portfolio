@@ -1,10 +1,11 @@
 import bg from "@/assets/bg.png";
 import GradientText from "@/components/GradientText";
-import Iconify from "@/components/Iconify";
 import Img from "@/components/Img";
-import Link from "next/link";
+import type { Dictionary } from "@/types";
 
-export default function Main() {
+type Props = { t: Dictionary };
+
+export default function Main({ t }: Props) {
   return (
     <article className="relative flex flex-col justify-center main-padding min-h-screen">
       {/* bullets */}
@@ -14,27 +15,15 @@ export default function Main() {
       <section className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
         <section className="w-full lg:w-[50%] flex flex-col gap-6">
           <header className="flex flex-col gap-2">
-            <GradientText text1="Fullstack / Frontend" text2="Engineer" />
-            <h1 className="-translate-x-0.5 lg:-translate-x-1.5 w-full">
-              <span>RYAN</span>
-              <span className="max-xl:hidden absolute translate-x-6 pratama">PRATAMA!</span>
+            <GradientText
+              text1={t.PERSONAL_DATA.softwareEngineer.split(" ")[0] ?? ""}
+              text2={t.PERSONAL_DATA.softwareEngineer.split(" ")[1] ?? ""}
+            />
+            <h1 className="-translate-x-0.5 lg:-translate-x-1.5 w-full uppercase">
+              <span>{t.PERSONAL_DATA.fullName.split(" ")[0]}</span>
+              <span className="max-xl:hidden absolute translate-x-6 pratama">{t.PERSONAL_DATA.fullName.split(" ")[1]}!</span>
             </h1>
-            <p className="text-pretty">
-              I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces that are
-              efficient, maintainable, and accessible using the{" "}
-              <span className="relative group inline-block">
-                <Link href="https://create.t3.gg/en/introduction" target="_blank">
-                  <b>T3 Stack</b>
-                  <Iconify
-                    width={15}
-                    className="animate absolute centered-right opacity-0 group-hover:opacity-100 group-hover:translate-x-6"
-                    icon="mingcute:external-link-fill"
-                  />
-                </Link>
-                <span className="absolute centered-bottom translate-y-0.5 w-0 group-hover:w-full bg-white h-0.5 animate" />
-              </span>
-              .
-            </p>
+            <p>{t.PERSONAL_DATA.summary}</p>
           </header>
           <nav className="flex gap-6 items-center">
             <a
@@ -43,26 +32,16 @@ export default function Main() {
             >
               <div className="absolute w-full h-full opacity-0 group-hover:opacity-100 bg-white animate rounded-3xl" />
               <span className="animate drop-shadow z-[1] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br from-turquoise to-bluedarker">
-                Contact Me
+                {t.PERSONAL_DATA.contactMe}
               </span>
             </a>
             <a href="#about" className="text-gray hover:text-white animate text-lg">
-              Learn More
+              {t.PERSONAL_DATA.learnMore}
             </a>
           </nav>
         </section>
         <figure className="w-full lg:w-[50%] relative">
-          {/* <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
-          <div className="animate -translate-y-6 translate-x-4 first-line:absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] from-bluedarker to-turquoise bg-gradient-to-b polygon drop-shadow-xl" />
-          <div className="animate translate-y-6 absolute top-0 w-full h-[15rem] md:h-[30rem] lg:h-[25rem] bg-transparent polygon drop-shadow-xl">
-            <Img
-              src={ryan}
-              priority={true}
-              alt="Ryan Pratama"
-              className="absolute top-0 w-full h-full object-contain"
-            />
-          </div> */}
-          <Img src={bg} alt="Ryan Pratama" priority={true} />
+          <Img src={bg} alt={t.PERSONAL_DATA.fullName} priority={true} />
         </figure>
       </section>
     </article>

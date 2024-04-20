@@ -2,13 +2,28 @@
 
 import Iconify from "@/components/Iconify";
 import { navbarData } from "@/lib/constants";
+import { cn } from "@/lib/functions";
+import { LANGUAGE_OPTIONS } from "@/lib/internationalization";
+import type { Dictionary, Lang } from "@/types";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./components/MobileMenu";
 import Resume from "./components/Resume";
 
-export default function Navbar() {
+type Props = { t: Dictionary };
+
+export default function Navbar({ t }: Props) {
+  const pathname = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
+
+  const changeLang = (lang: Lang) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = lang;
+    return segments.join("/");
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -34,8 +49,11 @@ export default function Navbar() {
         !visible && "-translate-y-full"
       }`}
     >
-      <Resume />
-      <section className="flex gap-4">
+      <section className="flex gap-4 h-full items-center">
+        <MobileMenu />
+        <Resume t={t} />
+      </section>
+      <section className="flex gap-4 items-center">
         {navbarData.map((e) => {
           return (
             <a key={e.href} href={e.href} className="md:flex hidden btn-nav">
@@ -46,7 +64,23 @@ export default function Navbar() {
             </a>
           );
         })}
-        <MobileMenu />
+        <section className="flex items-center">
+          {LANGUAGE_OPTIONS.map((e) => {
+            const isActive = (pathname.split("/")[1] as Lang) === e.value;
+            return (
+              <Link
+                className={cn("text-2xl px-2 rounded-md", {
+                  "bg-white shadow": isActive,
+                })}
+                key={e.value}
+                href={changeLang(e.value)}
+                type="button"
+              >
+                {e.flag}
+              </Link>
+            );
+          })}
+        </section>
       </section>
     </nav>
   );

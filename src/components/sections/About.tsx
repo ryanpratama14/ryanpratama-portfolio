@@ -1,32 +1,30 @@
 import GradientText from "@/components/GradientText";
 import Iconify from "@/components/Iconify";
 import Img from "@/components/Img";
-import { experienceData, identityData, skillsData } from "@/lib/constants";
+import { experienceData, getIdendityData, skillsData } from "@/lib/constants";
+import { cn } from "@/lib/functions";
+import type { Dictionary } from "@/types";
 import Link from "next/link";
 
-export default function About() {
+type Props = { t: Dictionary };
+
+export default function About({ t }: Props) {
   return (
     <article className="min-h-screen main-padding flex justify-center flex-col gap-6" id="about">
-      <GradientText text1="About" text2="Me" bigger />
+      <GradientText text1={t.SECTIONS.aboutMe.split(" ")[0] ?? ""} text2={t.SECTIONS.aboutMe.split(" ")[1] ?? ""} bigger />
       <section className="flex flex-col gap-4">
         <header className="flex relative w-fit divide-x justify-between gap-2">
-          {identityData.map((e, i) => {
+          {getIdendityData(t).map((e, i) => {
             return (
-              <p key={e} className={`font-montserrat label ${i !== 0 && "pl-2"}`}>
+              <p key={e} className={cn("font-monserrat label", { "pl-2": i !== 0 })}>
                 {e}
               </p>
             );
           })}
-          {/* <div className="max-xl:hidden absolute -z-10 bottom-0 from-bluedarker via-blue to-turquoise bg-gradient-to-r h-full w-full blur-3xl" /> */}
         </header>
-        <p className="xl:w-[80%]">
-          In September 2022, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan, Russia. Along
-          with other students, we learned the basics of JavaScript and eventually formed a software house startup called faoTech in
-          January 2023. As I developed my skills, I discovered a passion for frontend development and decided to specialize in this
-          field.
-        </p>
+        <p className="xl:w-[80%]">{t.PERSONAL_DATA.about}</p>
       </section>
-      <section className="font-montserrat md:w-[80%] lg:w-[70%] flex flex-wrap gap-y-3 gap-x-4">
+      <section className="md:w-[80%] lg:w-[70%] flex flex-wrap gap-y-3 gap-x-4">
         {skillsData.map((e) => {
           return (
             <p key={e.icon} className="flex gap-2 text-sm xl:text-base items-center font-medium text-graydarker">
@@ -39,7 +37,7 @@ export default function About() {
         })}
       </section>
 
-      <h4>Experience</h4>
+      <h4>{t.SECTIONS.professionalExperiences}</h4>
       <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
         {experienceData.map((e) => {
           return (
@@ -61,10 +59,10 @@ export default function About() {
                       <Iconify icon="mingcute:external-link-fill" />
                     </span>
                   </h5>
-                  <small className="font-montserrat italic text-gray group-hover:text-white font-medium">
+                  <small className="italic text-gray group-hover:text-white font-medium">
                     {e.since} - {e.till ? e.till : "present"}
                   </small>
-                  <small className="font-montserrat font-medium">{e.location}</small>
+                  <small className="font-medium">{e.location}</small>
                 </header>
               </section>
             </Link>

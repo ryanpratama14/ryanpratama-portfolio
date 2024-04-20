@@ -25,6 +25,9 @@ body {
   h5 {
     @apply text-lg md:text-xl lg:text-2xl font-medium animate;
   }
+  p {
+    @apply lg:text-balance;
+  }
   p,
   a {
     @apply text-base xl:text-lg animate;
@@ -114,10 +117,6 @@ body {
   .centered-horizontal {
     @apply left-1/2 -translate-x-1/2;
   }
-}
-
-.text-pretty {
-  text-wrap: pretty;
 }
 
 .pratama {

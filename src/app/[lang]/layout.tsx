@@ -1,17 +1,18 @@
 import ScrollToTop from "@/components/ScrollToTop";
 import Navbar from "@/components/navbar/Navbar";
 import { env } from "@/env";
+import { getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
-import { Montserrat, Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Providers from "./providers";
 
-const title = "Ryan Pratama's Portfolio";
-const description =
-  "Ryan Pratama - Fullstack / Frontend Engineer. I specialized in creating scalable, intuitive, and responsive web applications with engaging user interfaces that are efficient, maintainable, and accessible using the T3 Stack.";
-
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const t = getDictionary(params.lang).PERSONAL_DATA;
+  const title = `${t.fullName} — ${t.softwareEngineer}`;
+  const description = `${title}\n\n${t.summary}`;
+
   return {
     manifest: "/manifest.json",
     metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
@@ -46,13 +47,6 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   };
 }
 
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
@@ -63,14 +57,16 @@ const montserrat = Montserrat({
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
 export default function RootLayout({ children, params }: Props) {
+  const t = getDictionary(params.lang);
+
   return (
-    <html lang={params.lang} className={`${poppins.variable} ${montserrat.variable}`}>
-      <body className="text-white bg-black font-poppins">
-        <Navbar />
+    <html lang={params.lang} className={montserrat.variable}>
+      <body className="text-white bg-black font-montserrat">
         <Providers>
+          <Navbar t={t} />
           <main>{children}</main>
+          <ScrollToTop />
         </Providers>
-        <ScrollToTop />
       </body>
     </html>
   );

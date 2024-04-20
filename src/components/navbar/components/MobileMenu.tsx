@@ -6,8 +6,8 @@ import { Fragment } from "react";
 export default function MobileMenu() {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
-      <Menu.Button className="border-white font-semibold border-[1px] flex items-center gap-1.5 py-1 px-4 outline-none rounded-3xl w-fit">
-        <Iconify icon="ri:menu-3-fill" width={20} />
+      <Menu.Button className="flex items-center">
+        <Iconify icon="ri:menu-3-fill" width={25} rotate={2} />
       </Menu.Button>
       <Transition
         as={Fragment}
@@ -18,7 +18,7 @@ export default function MobileMenu() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform -translate-y-2 opacity-0"
       >
-        <Menu.Items className="absolute right-0 mt-6 flex flex-col gap-3">
+        <Menu.Items className="absolute left-0 mt-6 flex flex-col gap-3">
           {navbarData.map((e) => {
             return (
               <Menu.Item key={e.href}>

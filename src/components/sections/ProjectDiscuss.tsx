@@ -1,6 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/functions";
 import { type ProjectInput, projectInputSchema } from "@/schema";
+import type { Dictionary } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { Fragment, useState } from "react";
@@ -8,14 +10,16 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import GradientText from "../GradientText";
 import SuccessModal from "../SuccessModal";
 
-export default function ProjectDiscuss() {
+type Props = { t: Dictionary };
+
+export default function ProjectDiscuss({ t }: Props) {
   const [showModal, setShowModal] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ProjectInput>({ resolver: zodResolver(projectInputSchema) });
+  } = useForm<ProjectInput>({ resolver: zodResolver(projectInputSchema(t)) });
 
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
@@ -29,6 +33,7 @@ export default function ProjectDiscuss() {
   return (
     <Fragment>
       <SuccessModal
+        t={t}
         show={showModal}
         onClose={() => {
           setShowModal(false);
@@ -37,33 +42,37 @@ export default function ProjectDiscuss() {
       />
       <article id="contact" className="mt-8 main-padding gap-6 md:gap-12 flex flex-col justify-center min-h-[60vh] relative">
         <div className="max-xl:hidden absolute centered-left translate-x-80 w-80 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10" />
-        <GradientText text1="Discuss" text2="Your Project" bigger />
+        <GradientText
+          text1={t.SECTIONS.dicussYourProject.split(" ")[0] ?? ""}
+          text2={`${t.SECTIONS.dicussYourProject.split(" ")[1]} ${t.SECTIONS.dicussYourProject.split(" ")[2]}`}
+          bigger
+        />
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-center gap-4 w-full">
           <section className="flex flex-col gap-2 w-full md:w-[50%]">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">{t.DISCUSS_YOUR_PROJECT.name.label}</label>
             <input
-              className={`border-2 ${errors.name ? "border-red-400" : "border-transparent"}`}
+              className={cn("border-2 border-transparent", { "border-red-400": errors.name })}
               {...register("name")}
-              placeholder="John Doe"
+              placeholder={t.DISCUSS_YOUR_PROJECT.name.placeholder}
             />
             {errors.name ? <small className="drop-shadow text-red-400">{errors.name.message}</small> : null}
           </section>
           <section className="flex flex-col gap-2 w-full md:w-[50%]">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t.DISCUSS_YOUR_PROJECT.email.label}</label>
             <input
               {...register("email")}
-              placeholder="johndoe@gmail.com"
-              className={`border-2 ${errors.email ? "border-red-400" : "border-transparent"}`}
+              placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
+              className={cn("border-2 border-transparent", { "border-red-400": errors.email })}
             />
             {errors.email ? <small className="drop-shadow text-red-400">{errors.email.message}</small> : null}
           </section>
           <section className="flex flex-col gap-2 w-full md:w-[50%]">
-            <label htmlFor="description">Project Description</label>
+            <label htmlFor="description">{t.DISCUSS_YOUR_PROJECT.projectDescription.label}</label>
             <textarea
-              className={`border-2 ${errors.description ? "border-red-400" : "border-transparent"}`}
+              className={cn("border-2 border-transparent", { "border-red-400": errors.description })}
               {...register("description")}
               rows={5}
-              placeholder="Hi, I want to talk about my proje..."
+              placeholder={t.DISCUSS_YOUR_PROJECT.projectDescription.placeholder}
             />
             {errors.description ? <small className="drop-shadow text-red-400">{errors.description.message}</small> : null}
           </section>
@@ -71,16 +80,17 @@ export default function ProjectDiscuss() {
             <button
               disabled={isPending}
               type="submit"
-              className={`${
-                isPending ? "opacity-0" : ""
-              } animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute flex justify-center items-center`}
+              className={cn(
+                "animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute flex justify-center items-center",
+                { "opacity-0": isPending },
+              )}
             >
-              Submit
+              {t.DISCUSS_YOUR_PROJECT.submit}
             </button>
             <div
-              className={`animate ${
-                isPending ? "" : "opacity-0"
-              } group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate`}
+              className={cn("group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate", {
+                "opacity-0": !isPending,
+              })}
             />
           </section>
         </form>

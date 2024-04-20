@@ -1,12 +1,13 @@
 "use client";
-import { DotLoader } from "react-spinners";
+
+import { PulseLoader } from "react-spinners";
 
 export default function Loading() {
   return (
-    <section className="min-h-screen flex gap-4 justify-center items-center">
-      <DotLoader color="#57E6D9" size={80} />
-      <DotLoader color="#2046CE" size={80} />
-      <DotLoader color="#338DCE" size={80} />
+    <section className="min-h-screen flex flex-col gap-6 justify-center items-center">
+      <PulseLoader color="#57E6D9" size={30} />
+      <PulseLoader color="#2046CE" size={30} />
+      <PulseLoader color="#338DCE" size={30} />
     </section>
   );
 }

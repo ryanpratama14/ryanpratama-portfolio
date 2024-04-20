@@ -11,9 +11,9 @@ import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 
 // types
-import type { ExperienceItems, LinkSocialItems, NavbarItems, ProjectItems, SkillsItems, resumeItems } from "@/types";
+import type { Dictionary, ExperienceItems, LinkSocialItems, NavbarItems, ProjectItems, SkillsItems, resumeItems } from "@/types";
 
-export const identityData: string[] = ["Ryan Pratama", "23 yo", "Jakarta, Indonesia"];
+export const getIdendityData = (t: Dictionary) => [t.PERSONAL_DATA.fullName, t.PERSONAL_DATA.age, t.LOCATIONS.jakarta];
 
 export const projectsData: ProjectItems[] = [
   {

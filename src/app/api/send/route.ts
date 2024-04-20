@@ -1,10 +1,16 @@
 import { env } from "@/env";
 import EmailTemplate from "@/lib/emails/EmailTemplate";
-import { projectInputSchema } from "@/schema";
 import { type NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { z } from "zod";
 
 const resend = new Resend(env.RESEND_API_KEY);
+
+const projectInputSchema = z.object({
+  name: z.string().min(1),
+  email: z.string().email(),
+  description: z.string().min(5),
+});
 
 export async function POST(req: NextRequest) {
   try {
