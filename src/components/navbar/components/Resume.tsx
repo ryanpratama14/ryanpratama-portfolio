@@ -1,12 +1,11 @@
 import Iconify from "@/components/Iconify";
 import type { Dictionary } from "@/types";
-import Link from "next/link";
 
 type Props = { t: Dictionary };
 
 export default function Resume({ t }: Props) {
   return (
-    <Link
+    <a
       href="/resume.pdf"
       target="_blank"
       rel="noreferrer"
@@ -24,6 +23,6 @@ export default function Resume({ t }: Props) {
           <div className="w-2 h-full bg-bluedarker group-hover:bg-white animate" />
         </div>
       </header>
-    </Link>
+    </a>
   );
 }
