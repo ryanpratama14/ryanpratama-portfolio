@@ -10,7 +10,8 @@
         "noUnusedImports": "error",
         "noUnusedVariables": "error",
         "noUnusedLabels": "error"
-      }
+      },
+      "suspicious": { "noAssignInExpressions": "off" }
     }
   },
   "formatter": {
