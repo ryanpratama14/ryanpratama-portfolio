@@ -1,21 +1,16 @@
 import { env } from "@/env";
 import EmailTemplate from "@/lib/emails/EmailTemplate";
+import { getDictionary } from "@/lib/internationalization";
+import { type ProjectInput, projectInputSchema } from "@/schema";
 import { type NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { z } from "zod";
 
 const resend = new Resend(env.RESEND_API_KEY);
 
-const projectInputSchema = z.object({
-  name: z.string().min(1),
-  email: z.string().email(),
-  description: z.string().min(5),
-});
-
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const validation = projectInputSchema.safeParse(body);
+    const body = (await req.json()) as ProjectInput;
+    const validation = projectInputSchema(getDictionary(body.lang)).safeParse(body);
 
     if (!validation.success) {
       return NextResponse.json(validation.error.errors, { status: 400 });

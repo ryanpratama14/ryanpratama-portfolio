@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/functions";
 import { type ProjectInput, projectInputSchema } from "@/schema";
-import type { Dictionary } from "@/types";
+import type { Dictionary, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { Fragment, useState } from "react";
@@ -10,16 +10,16 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import GradientText from "../GradientText";
 import SuccessModal from "../SuccessModal";
 
-type Props = { t: Dictionary };
+type Props = { t: Dictionary; lang: Lang };
 
-export default function ProjectDiscuss({ t }: Props) {
+export default function ProjectDiscuss({ t, lang }: Props) {
   const [showModal, setShowModal] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ProjectInput>({ resolver: zodResolver(projectInputSchema(t)) });
+  } = useForm<ProjectInput>({ resolver: zodResolver(projectInputSchema(t)), defaultValues: { lang } });
 
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 

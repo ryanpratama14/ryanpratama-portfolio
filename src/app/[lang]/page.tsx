@@ -17,7 +17,7 @@ export default function Home({ params }: Props) {
       <Main t={t} />
       <About t={t} lang={params.lang} />
       <Projects t={t} />
-      <ProjectDiscuss t={t} />
+      <ProjectDiscuss t={t} lang={params.lang} />
       <Contacts t={t} />
     </Fragment>
   );
