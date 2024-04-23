@@ -2,7 +2,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Navbar from "@/components/navbar/Navbar";
 import { env } from "@/env";
 import { cn } from "@/lib/functions";
-import { LANGUAGES, getDictionary } from "@/lib/internationalization";
+import { LANGS, LANGUAGES, getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
@@ -10,6 +10,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
 import Providers from "./providers";
+
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
+}
 
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
   const isJapanese = params.lang === "ja";
