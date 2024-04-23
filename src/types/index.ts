@@ -24,7 +24,7 @@ export type ExperienceItems = {
   link: string;
   since: Date;
   location: keyof Dictionary["LOCATIONS"];
-  till: string;
+  till: string | null;
 };
 
 export type SkillsItems = {

@@ -172,7 +172,7 @@ export const experienceData: ExperienceItems[] = [
     label: "Nutech Integrasi",
     link: "https://www.nutech-integrasi.com",
     since: new Date(2023, 7),
-    till: "",
+    till: null,
     location: "jakarta",
   },
   {
@@ -180,7 +180,7 @@ export const experienceData: ExperienceItems[] = [
     label: "faoTech",
     link: "https://faotech.dev",
     since: new Date(2022, 8),
-    till: "",
+    till: null,
     location: "remote",
   },
 ];
@@ -205,7 +205,7 @@ export const navbarData: NavbarItems[] = [
 
 export const linkSocial: LinkSocialItems[] = [
   {
-    href: "mailto:ru.ryanpratama@gmail.com",
+    href: "mailto:ryanpratama.dev@gmail.com",
     label: "Email",
     icon: "mdi:email-outline",
   },
