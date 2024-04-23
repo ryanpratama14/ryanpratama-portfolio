@@ -21,7 +21,7 @@ export const ja: Dictionary = {
 
   SECTIONS: {
     backToHomepage: "ホームページに戻る",
-    present: "現時点",
+    present: "現在",
     resume: "職務経歴書",
     aboutMe: "About Me",
     featuredProjects: "Featured Projects",
