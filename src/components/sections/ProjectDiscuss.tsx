@@ -24,9 +24,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
   const { mutate: sendEmail, isPending } = useMutation({
-    mutationFn: async (data: ProjectInput) => {
-      await fetch("/api/send", { method: "POST", body: JSON.stringify(data) });
-    },
+    mutationFn: async (data: ProjectInput) => await fetch("/api/send", { method: "POST", body: JSON.stringify(data) }),
     onSuccess: () => setShowModal(true),
   });
 
