@@ -46,7 +46,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           bigger
         />
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-center gap-4 w-full">
-          <section className="flex flex-col gap-2 w-full md:w-[50%]">
+          <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="name">{t.DISCUSS_YOUR_PROJECT.name.label}</label>
             <input
               className={cn("border-2 border-transparent", { "border-red-400": errors.name })}
@@ -55,7 +55,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
             />
             {errors.name ? <small className="drop-shadow text-red-400">{errors.name.message}</small> : null}
           </section>
-          <section className="flex flex-col gap-2 w-full md:w-[50%]">
+          <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="email">{t.DISCUSS_YOUR_PROJECT.email.label}</label>
             <input
               {...register("email")}
@@ -64,7 +64,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
             />
             {errors.email ? <small className="drop-shadow text-red-400">{errors.email.message}</small> : null}
           </section>
-          <section className="flex flex-col gap-2 w-full md:w-[50%]">
+          <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="description">{t.DISCUSS_YOUR_PROJECT.projectDescription.label}</label>
             <textarea
               className={cn("border-2 border-transparent", { "border-red-400": errors.description })}
