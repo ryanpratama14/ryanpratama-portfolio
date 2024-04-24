@@ -24,7 +24,6 @@ const getLang = (request: NextRequest) => {
 };
 
 export const middleware = (request: NextRequest) => {
-  const response = NextResponse.next();
   const pathname = request.nextUrl.pathname;
   const storedLang = request.cookies.get("lang")?.value as Lang | undefined;
   const lang: Lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
@@ -33,7 +32,6 @@ export const middleware = (request: NextRequest) => {
     const newPath = `/${lang}${pathname.startsWith("/") ? "" : "/"}${pathname}`;
     return NextResponse.redirect(new URL(newPath, request.url));
   }
-  return response;
 };
 
 export const config = {
