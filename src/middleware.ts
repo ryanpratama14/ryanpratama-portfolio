@@ -13,22 +13,22 @@ const getLangFromPathname = (pathname: string) => {
   return undefined;
 };
 
-const getLang = (request: NextRequest): string => {
+const getLang = (request: NextRequest) => {
   const headers = new Headers(request.headers);
   const acceptLanguage = headers.get("accept-language");
   if (acceptLanguage) headers.set("accept-language", acceptLanguage.replaceAll("_", "-"));
   const headersObject = Object.fromEntries(headers.entries());
   const languages = new Negotiator({ headers: headersObject }).languages();
   if (languages.includes("*")) return DEFAULT_LANG;
-  return match(languages, LANGS, DEFAULT_LANG);
+  return match(languages, LANGS, DEFAULT_LANG) as Lang;
 };
 
 export const middleware = (request: NextRequest) => {
-  const pathname = request.nextUrl.pathname;
-  const storedLang = request.cookies.get("lang")?.value as Lang;
-  const lang: Lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
   const response = NextResponse.next();
-  response.cookies.set("lang", lang, { httpOnly: true, sameSite: "lax" });
+  const pathname = request.nextUrl.pathname;
+  const storedLang = request.cookies.get("lang")?.value as Lang | undefined;
+  const lang: Lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
+  if (!storedLang) response.cookies.set("lang", lang, { httpOnly: true, sameSite: "lax" });
   const pathnameMissing = LANGS.every((lang) => !pathname.startsWith(`/${lang}/`) && pathname !== `/${lang}`);
   if (pathnameMissing) {
     const newPath = `/${lang}${pathname.startsWith("/") ? "" : "/"}${pathname}`;

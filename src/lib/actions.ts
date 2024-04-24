@@ -1,7 +1,8 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import type { Lang } from "@/types";
+import { cookies } from "next/headers";
 
-export const clearCache = async () => {
-  revalidatePath("/");
+export const setCookieLang = async (lang: Lang) => {
+  cookies().set("lang", lang);
 };
