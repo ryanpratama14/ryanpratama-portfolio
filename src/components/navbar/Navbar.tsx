@@ -11,9 +11,9 @@ import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./components/MobileMenu";
 import Resume from "./components/Resume";
 
-type Props = { t: Dictionary };
+type Props = { t: Dictionary; clearCache: () => Promise<void> };
 
-export default function Navbar({ t }: Props) {
+export default function Navbar({ t, clearCache }: Props) {
   const pathname = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
@@ -22,6 +22,7 @@ export default function Navbar({ t }: Props) {
     if (!pathname) return "/";
     const segments = pathname.split("/");
     segments[1] = lang;
+
     return segments.join("/");
   };
 
@@ -72,6 +73,7 @@ export default function Navbar({ t }: Props) {
             const isActive = (pathname.split("/")[1] as Lang) === e.value;
             return (
               <Link
+                onClick={async () => !isActive && (await clearCache())}
                 className={cn("text-2xl px-2 rounded-md", {
                   "bg-white shadow": isActive,
                 })}

@@ -1,6 +1,7 @@
 import ScrollToTop from "@/components/ScrollToTop";
 import Navbar from "@/components/navbar/Navbar";
 import { env } from "@/env";
+import { clearCache } from "@/lib/actions";
 import { cn } from "@/lib/functions";
 import { LANGS, LANGUAGES, getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
@@ -81,7 +82,7 @@ export default function RootLayout({ children, params }: Props) {
       <body className={cn("text-white bg-black font-notosans", { "font-notosansJP": isJapanese })}>
         <Analytics />
         <SpeedInsights />
-        <Navbar t={t} />
+        <Navbar t={t} clearCache={clearCache} />
         <Providers>
           <main>{children}</main>
         </Providers>
