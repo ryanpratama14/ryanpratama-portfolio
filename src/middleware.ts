@@ -1,4 +1,5 @@
 import { DEFAULT_LANG, LANGS } from "@/lib/internationalization";
+import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
@@ -24,8 +25,8 @@ const getLang = (request: NextRequest): string => {
 
 export const middleware = (request: NextRequest) => {
   const pathname = request.nextUrl.pathname;
-  const storedLang = request.cookies.get("lang")?.value;
-  const lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
+  const storedLang = request.cookies.get("lang")?.value as Lang;
+  const lang: Lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
   const response = NextResponse.next();
   response.cookies.set("lang", lang, { httpOnly: true, sameSite: "lax" });
   const pathnameMissing = LANGS.every((lang) => !pathname.startsWith(`/${lang}/`) && pathname !== `/${lang}`);
