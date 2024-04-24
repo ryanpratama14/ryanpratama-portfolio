@@ -11,9 +11,9 @@ import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./components/MobileMenu";
 import Resume from "./components/Resume";
 
-type Props = { t: Dictionary; setCookieLang: (lang: Lang) => Promise<void> };
+type Props = { t: Dictionary; setCookieLang: (lang: Lang) => Promise<void>; lang: Lang };
 
-export default function Navbar({ t, setCookieLang }: Props) {
+export default function Navbar({ t, lang, setCookieLang }: Props) {
   const pathname = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
@@ -25,6 +25,7 @@ export default function Navbar({ t, setCookieLang }: Props) {
     return segments.join("/");
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener(
@@ -40,8 +41,9 @@ export default function Navbar({ t, setCookieLang }: Props) {
         },
         { passive: true },
       );
+      setCookieLang(lang);
     }
-  }, []);
+  }, [lang]);
 
   return (
     <nav
@@ -72,7 +74,6 @@ export default function Navbar({ t, setCookieLang }: Props) {
             const isActive = (pathname.split("/")[1] as Lang) === e.value;
             return (
               <Link
-                onClick={async () => !isActive && (await setCookieLang(e.value))}
                 className={cn("text-2xl px-2 rounded-md", {
                   "bg-white shadow": isActive,
                 })}

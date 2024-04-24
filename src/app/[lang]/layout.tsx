@@ -73,7 +73,7 @@ const notosansJP = Noto_Sans_JP({
 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
-export default function RootLayout({ children, params }: Props) {
+export default async function RootLayout({ children, params }: Props) {
   const t = getDictionary(params.lang);
   const isJapanese = params.lang === "ja";
 
@@ -82,7 +82,7 @@ export default function RootLayout({ children, params }: Props) {
       <body className={cn("text-white bg-black font-notosans", { "font-notosansJP": isJapanese })}>
         <Analytics />
         <SpeedInsights />
-        <Navbar t={t} setCookieLang={setCookieLang} />
+        <Navbar t={t} setCookieLang={setCookieLang} lang={params.lang} />
         <Providers>
           <main>{children}</main>
         </Providers>
