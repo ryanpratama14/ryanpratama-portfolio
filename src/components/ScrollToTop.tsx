@@ -16,12 +16,11 @@ export default function ScrollToTop() {
     }
   };
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", toggleVisible);
     }
-  }, []);
+  }, [toggleVisible]);
 
   return (
     <button
