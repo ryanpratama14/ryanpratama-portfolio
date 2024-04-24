@@ -3,6 +3,6 @@ import { twMerge } from "tailwind-merge";
 
 export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs));
 
-export const LoadToTop = () => {
+export const loadToTop = () => {
   if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
 };

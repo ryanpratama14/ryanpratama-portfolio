@@ -1,7 +1,7 @@
 "use client";
 
 import Iconify from "@/components/Iconify";
-import { LoadToTop, cn } from "@/lib/functions";
+import { cn, loadToTop } from "@/lib/functions";
 import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
@@ -25,7 +25,7 @@ export default function ScrollToTop() {
   return (
     <button
       type="button"
-      onClick={LoadToTop}
+      onClick={loadToTop}
       className={cn(
         "animate fixed px-normal left-0 bottom-0 md:centered-bottom -translate-y-4 hover:scale-110 hover:-translate-y-6 z-10",
         {
