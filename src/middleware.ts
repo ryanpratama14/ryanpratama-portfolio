@@ -27,7 +27,7 @@ export const middleware = (request: NextRequest) => {
   const storedLang = request.cookies.get("lang")?.value;
   const lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
   const response = NextResponse.next();
-  if (lang !== storedLang) response.cookies.set("lang", lang, { httpOnly: true, sameSite: "lax" });
+  response.cookies.set("lang", lang, { httpOnly: true, sameSite: "lax" });
   const pathnameMissing = LANGS.every((lang) => !pathname.startsWith(`/${lang}/`) && pathname !== `/${lang}`);
   if (pathnameMissing) {
     const newPath = `/${lang}${pathname.startsWith("/") ? "" : "/"}${pathname}`;
