@@ -11,9 +11,9 @@ import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./components/MobileMenu";
 import Resume from "./components/Resume";
 
-type Props = { t: Dictionary; setCookieLang: (lang: Lang) => Promise<void>; lang: Lang };
+type Props = { t: Dictionary; setCookieLang: (lang: Lang) => Promise<void>; lang: Lang; prevLang: Lang };
 
-export default function Navbar({ t, lang, setCookieLang }: Props) {
+export default function Navbar({ t, lang, prevLang, setCookieLang }: Props) {
   const pathname = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
@@ -25,7 +25,6 @@ export default function Navbar({ t, lang, setCookieLang }: Props) {
     return segments.join("/");
   };
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener(
@@ -41,9 +40,12 @@ export default function Navbar({ t, lang, setCookieLang }: Props) {
         },
         { passive: true },
       );
-      setCookieLang(lang);
     }
-  }, [lang]);
+  }, []);
+
+  useEffect(() => {
+    if (prevLang !== lang) setCookieLang(lang);
+  }, [lang, prevLang, setCookieLang]);
 
   return (
     <nav

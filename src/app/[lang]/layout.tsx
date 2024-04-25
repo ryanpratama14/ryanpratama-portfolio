@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
+import { cookies } from "next/headers";
 import Providers from "./providers";
 
 export function generateStaticParams() {
@@ -82,7 +83,7 @@ export default async function RootLayout({ children, params }: Props) {
       <body className={cn("text-white bg-black font-notosans", { "font-notosansJP": isJapanese })}>
         <Analytics />
         <SpeedInsights />
-        <Navbar t={t} setCookieLang={setCookieLang} lang={params.lang} />
+        <Navbar t={t} setCookieLang={setCookieLang} lang={params.lang} prevLang={cookies().get("lang")?.value as Lang} />
         <Providers>
           <main>{children}</main>
         </Providers>
