@@ -83,7 +83,7 @@ export default async function RootLayout({ children, params }: Props) {
       <body className={cn("text-white bg-black font-notosans", { "font-notosansJP": isJapanese })}>
         <Analytics />
         <SpeedInsights />
-        <Navbar t={t} setCookieLang={setCookieLang} lang={params.lang} prevLang={cookies().get("lang")?.value as Lang} />
+        <Navbar t={t} setCookieLang={setCookieLang} lang={params.lang} storedLang={cookies().get("lang")?.value as Lang | undefined} />
         <Providers>
           <main>{children}</main>
         </Providers>

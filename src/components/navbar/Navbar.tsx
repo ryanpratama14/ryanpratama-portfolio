@@ -11,9 +11,9 @@ import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./components/MobileMenu";
 import Resume from "./components/Resume";
 
-type Props = { t: Dictionary; setCookieLang: (lang: Lang) => Promise<void>; lang: Lang; prevLang: Lang };
+type Props = { t: Dictionary; setCookieLang: (lang: Lang) => Promise<void>; lang: Lang; storedLang: Lang | undefined };
 
-export default function Navbar({ t, lang, prevLang, setCookieLang }: Props) {
+export default function Navbar({ t, lang, storedLang, setCookieLang }: Props) {
   const pathname = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
@@ -44,8 +44,8 @@ export default function Navbar({ t, lang, prevLang, setCookieLang }: Props) {
   }, []);
 
   useEffect(() => {
-    if (prevLang !== lang) setCookieLang(lang);
-  }, [lang, prevLang, setCookieLang]);
+    if (storedLang !== lang || !storedLang) setCookieLang(lang);
+  }, [lang, storedLang, setCookieLang]);
 
   return (
     <nav
