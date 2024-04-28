@@ -39,7 +39,9 @@ export default function About({ t, lang }: Props) {
       </section>
 
       <section className="space-y-4">
-        <h4>{t.SECTIONS.professionalExperience}</h4>
+        <header>
+          <h4>{t.SECTIONS.professionalExperience}</h4>
+        </header>
         <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
           {experienceData.map((e) => {
             return (

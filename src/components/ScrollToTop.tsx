@@ -33,6 +33,7 @@ export default function ScrollToTop() {
         },
       )}
     >
+      <span className="sr-only">Load to top button</span>
       <Iconify icon="material-symbols:arrow-back-ios" rotate={1} width={30} />
     </button>
   );
