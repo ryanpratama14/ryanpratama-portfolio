@@ -49,6 +49,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="name">{t.DISCUSS_YOUR_PROJECT.name.label}</label>
             <input
+              autoComplete="name"
               id="name"
               className={cn("border-2 border-transparent", { "border-red-400": errors.name })}
               {...register("name")}
@@ -59,6 +60,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="email">{t.DISCUSS_YOUR_PROJECT.email.label}</label>
             <input
+              autoComplete="off"
               id="email"
               {...register("email")}
               placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
