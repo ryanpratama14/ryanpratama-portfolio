@@ -49,6 +49,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="name">{t.DISCUSS_YOUR_PROJECT.name.label}</label>
             <input
+              id="name"
               className={cn("border-2 border-transparent", { "border-red-400": errors.name })}
               {...register("name")}
               placeholder={t.DISCUSS_YOUR_PROJECT.name.placeholder}
@@ -58,6 +59,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="email">{t.DISCUSS_YOUR_PROJECT.email.label}</label>
             <input
+              id="email"
               {...register("email")}
               placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
               className={cn("border-2 border-transparent", { "border-red-400": errors.email })}
@@ -67,6 +69,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="description">{t.DISCUSS_YOUR_PROJECT.projectDescription.label}</label>
             <textarea
+              id="description"
               className={cn("border-2 border-transparent", { "border-red-400": errors.description })}
               {...register("description")}
               rows={5}
