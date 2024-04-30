@@ -11,11 +11,11 @@ import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 
 // types
-import type { Dictionary, ExperienceItems, LinkSocialItems, NavbarItems, ProjectItems, SkillsItems } from "@/types";
+import type { Dictionary, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
 export const getIdendityData = (t: Dictionary) => [t.PERSONAL_DATA.fullName, t.PERSONAL_DATA.age, t.LOCATIONS.jakarta];
 
-export const projectsData: ProjectItems[] = [
+export const projectsData: ProjectItem[] = [
   {
     title: "Hebronstar Strategy Consultants",
     icon: hebronstar2,
@@ -83,7 +83,7 @@ export const projectsData: ProjectItems[] = [
   },
 ];
 
-export const skillsData: SkillsItems[] = [
+export const skillsData: SkillsItem[] = [
   {
     label: "T3 Stack",
     icon: "bi:stack",
@@ -166,7 +166,7 @@ export const skillsData: SkillsItems[] = [
   },
 ];
 
-export const experienceData: ExperienceItems[] = [
+export const experienceData: ExperienceItem[] = [
   {
     src: nutech,
     label: "Nutech Integrasi",
@@ -185,7 +185,7 @@ export const experienceData: ExperienceItems[] = [
   },
 ];
 
-export const navbarData: NavbarItems[] = [
+export const navbarData: NavbarItem[] = [
   {
     href: "#about",
     icon: "mdi:about-circle-outline",
@@ -203,7 +203,7 @@ export const navbarData: NavbarItems[] = [
   },
 ];
 
-export const linkSocial: LinkSocialItems[] = [
+export const linkSocial: LinkSocialItem[] = [
   {
     href: "mailto:ryanpratama.dev@gmail.com",
     label: "Email",

@@ -6,19 +6,19 @@ export type Lang = (typeof LANGS)[number];
 export type Dictionary = typeof en;
 export type DictionaryKey = keyof typeof en;
 
-export type NavbarItems = {
+export type NavbarItem = {
   label: keyof Dictionary["NAVBAR_DATA"];
   icon: string;
   href: string;
 };
 
-export type LinkSocialItems = {
+export type LinkSocialItem = {
   href: string;
   label: string;
   icon: string;
 };
 
-export type ExperienceItems = {
+export type ExperienceItem = {
   src: StaticImageData;
   label: string;
   link: string;
@@ -27,12 +27,12 @@ export type ExperienceItems = {
   till: string | null;
 };
 
-export type SkillsItems = {
+export type SkillsItem = {
   label: string;
   icon: string;
 };
 
-export type ProjectItems = {
+export type ProjectItem = {
   title: string;
   icon: StaticImageData;
   desc: string;

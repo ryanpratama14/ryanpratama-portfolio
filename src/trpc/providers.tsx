@@ -1,5 +1,6 @@
 "use client";
 
+import TransitionEffect from "@/components/TransitionEffect";
 import type { AppRouter } from "@/server/api/root";
 import { getBaseUrl, transformer } from "@/trpc/shared";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -45,7 +46,8 @@ export default function Providers({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
       <api.Provider client={trpcClient} queryClient={queryClient}>
-        {children}
+        <main>{children}</main>
+        <TransitionEffect />
       </api.Provider>
     </QueryClientProvider>
   );

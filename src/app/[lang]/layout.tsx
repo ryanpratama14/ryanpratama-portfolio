@@ -5,13 +5,13 @@ import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/functions";
 import { LANGS, LANGUAGES, getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
+import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
 import { cookies } from "next/headers";
-import Providers from "../../trpc/providers";
 
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
@@ -84,9 +84,7 @@ export default async function RootLayout({ children, params }: Props) {
         <Analytics />
         <SpeedInsights />
         <Navbar t={t} setCookieLang={setCookieLang} lang={params.lang} storedLang={cookies().get("lang")?.value as Lang | undefined} />
-        <Providers>
-          <main>{children}</main>
-        </Providers>
+        <Providers>{children}</Providers>
         <ScrollToTop />
       </body>
     </html>
