@@ -1,5 +1,6 @@
 import "server-only";
 
+// import {createCaller} from "@/server/api/root"
 import { type AppRouter, appRouter } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
 import { TRPCClientError, createTRPCClient, loggerLink } from "@trpc/client";
@@ -43,3 +44,5 @@ export const api = createTRPCClient<AppRouter>({
         }),
   ],
 });
+
+// export const api = createCaller(createContext);
