@@ -1,17 +1,23 @@
 import { env } from "@/env";
+import EmailTemplate from "@/lib/emails/EmailTemplate";
 import { DEFAULT_DICTIONARY } from "@/lib/internationalization";
 import { projectInputSchema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
-import { getBaseUrl } from "@/trpc/shared";
 import { TRPCError } from "@trpc/server";
+import { Resend } from "resend";
+
+const resend = new Resend(env.RESEND_API_KEY);
 
 export const emailRouter = createTRPCRouter({
   send: publicProcedure.input(projectInputSchema(DEFAULT_DICTIONARY)).mutation(async ({ input }) => {
-    const res = await fetch(`${env.NODE_ENV === "development" ? getBaseUrl() : env.NEXT_PUBLIC_WEBSITE_URL}/api/send`, {
-      method: "POST",
-      body: JSON.stringify(input),
+    const { data, error } = await resend.emails.send({
+      from: `Ryan <${env.RESEND_EMAIL_FROM}>`,
+      to: env.RESEND_EMAIL_TO,
+      subject: "NEW PROJECT ALERT!",
+      react: EmailTemplate(input),
     });
-    if (!res.ok) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: await res.json() });
-    return await res.json();
+
+    if (error) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: error.message });
+    return data;
   }),
 });
