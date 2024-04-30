@@ -1,10 +1,12 @@
 import ScrollToTop from "@/components/ScrollToTop";
+import TransitionEffect from "@/components/TransitionEffect";
 import Navbar from "@/components/navbar/Navbar";
 import { env } from "@/env";
 import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/functions";
 import { LANGS, LANGUAGES, getDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
+import "@/styles/stylesheet.css";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
@@ -86,6 +88,7 @@ export default async function RootLayout({ children, params }: Props) {
         <Navbar t={t} setCookieLang={setCookieLang} lang={params.lang} storedLang={cookies().get("lang")?.value as Lang | undefined} />
         <Providers>{children}</Providers>
         <ScrollToTop />
+        <TransitionEffect />
       </body>
     </html>
   );
