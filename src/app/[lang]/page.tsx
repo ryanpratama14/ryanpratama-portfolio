@@ -9,7 +9,7 @@ import { Fragment } from "react";
 
 type Props = { params: { lang: Lang } };
 
-export default function Home({ params }: Props) {
+export default async function Home({ params }: Props) {
   const t = getDictionary(params.lang);
 
   return (

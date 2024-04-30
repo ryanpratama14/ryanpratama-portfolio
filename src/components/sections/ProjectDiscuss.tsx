@@ -1,10 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/functions";
-import { type ProjectInput, projectInputSchema } from "@/schema";
+import { type ProjectInput, projectInputSchema } from "@/server/api/schema";
+import { api } from "@/trpc/providers";
 import type { Dictionary, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { Fragment, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import GradientText from "../GradientText";
@@ -23,10 +23,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
 
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
-  const { mutate: sendEmail, isPending } = useMutation({
-    mutationFn: async (data: ProjectInput) => await fetch("/api/send", { method: "POST", body: JSON.stringify(data) }),
-    onSuccess: () => setShowModal(true),
-  });
+  const { mutate: sendEmail, isPending } = api.email.sendEmail.useMutation({ onSuccess: () => setShowModal(true) });
 
   return (
     <Fragment>

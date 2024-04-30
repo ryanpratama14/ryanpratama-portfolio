@@ -1,7 +1,7 @@
 import { env } from "@/env";
 import EmailTemplate from "@/lib/emails/EmailTemplate";
 import { getDictionary } from "@/lib/internationalization";
-import { type ProjectInput, projectInputSchema } from "@/schema";
+import { type ProjectInput, projectInputSchema } from "@/server/api/schema";
 import { type NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 

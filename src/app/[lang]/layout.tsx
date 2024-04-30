@@ -11,7 +11,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
 import { cookies } from "next/headers";
-import Providers from "./providers";
+import Providers from "../../trpc/providers";
 
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
