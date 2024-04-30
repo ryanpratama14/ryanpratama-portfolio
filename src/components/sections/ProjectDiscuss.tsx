@@ -25,6 +25,8 @@ export default function ProjectDiscuss({ t, lang }: Props) {
 
   const { mutate: sendEmail, isPending } = api.email.sendEmail.useMutation({ onSuccess: () => setShowModal(true) });
 
+  console.log(process.env.VERCEL_URL);
+
   return (
     <Fragment>
       <SuccessModal
