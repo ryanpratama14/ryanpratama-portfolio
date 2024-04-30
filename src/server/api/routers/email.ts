@@ -7,7 +7,7 @@ import { TRPCError } from "@trpc/server";
 
 export const emailRouter = createTRPCRouter({
   send: publicProcedure.input(projectInputSchema(DEFAULT_DICTIONARY)).mutation(async ({ input }) => {
-    const res = await fetch(`${getBaseUrl() ?? env.NEXT_PUBLIC_WEBSITE_URL}/api/send`, {
+    const res = await fetch(`${env.NODE_ENV === "development" ? getBaseUrl() : env.NEXT_PUBLIC_WEBSITE_URL}/api/send`, {
       method: "POST",
       body: JSON.stringify(input),
     });
