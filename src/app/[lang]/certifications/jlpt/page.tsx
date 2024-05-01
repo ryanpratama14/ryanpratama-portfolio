@@ -12,5 +12,13 @@ export const metadata: Metadata = {
 type Props = { params: { lang: Lang } };
 
 export default function JlptCertification({ params }: Props) {
-  return <Certification t={getDictionary(params.lang)} src={jlpt} alt="JLPT N4 Certification, Ryan Pratama" title="JLPT N4" />;
+  return (
+    <Certification
+      lang={params.lang}
+      t={getDictionary(params.lang)}
+      src={jlpt}
+      alt="JLPT N4 Certification, Ryan Pratama"
+      title="JLPT N4"
+    />
+  );
 }

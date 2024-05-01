@@ -14,6 +14,7 @@ type Props = { params: { lang: Lang } };
 export default function PreparatoryFacultyCertification({ params }: Props) {
   return (
     <Certification
+      lang={params.lang}
       t={getDictionary(params.lang)}
       src={podfak}
       alt="Preparatory Faculty of Russian Language Certification, Ryan Pratama"

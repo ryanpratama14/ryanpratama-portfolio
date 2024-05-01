@@ -21,7 +21,13 @@ export default function Contacts({ isMain = true, t }: Props) {
       <nav className="flex gap-2 self-end">
         {linkSocial.map((e) => {
           return (
-            <Link key={e.href} href={e.href} target="_blank" className="flex flex-col items-center hover:shadow-glowed">
+            <Link
+              key={e.href}
+              href={e.href}
+              rel="noreferrer"
+              target="_blank"
+              className="flex flex-col items-center hover:shadow-glowed"
+            >
               <span className="rotate-[10deg] hover:rotate-0 hover:-translate-y-1 hover:scale-110 animate-longer">
                 <Iconify icon={e.icon} width={35} />
               </span>

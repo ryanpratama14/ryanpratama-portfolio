@@ -35,11 +35,11 @@ export default function Projects({ t }: Props) {
                       })}
                     </ul>
                   </header>
-                  <Link href={e.href} target="_blank" className="relative w-52 h-9 group">
-                    <span className="animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute flex justify-center items-center">
+                  <Link href={e.href} target="_blank" className="relative group flex" rel="noreferrer">
+                    <span className="animate text-center flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white size-full px-4 py-1">
                       {t.SECTIONS.visitProject}
                     </span>
-                    <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate" />
+                    <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 left-0 -z-10 size-full gradient-web bg-animate" />
                   </Link>
                 </section>
               </section>
