@@ -60,13 +60,13 @@ body {
 
 .transition-element-2 {
   animation: slide-in 1s ease-in;
-  animation-delay: 0.15s;
+  animation-delay: 0.2s;
   z-index: 40;
 }
 
 .transition-element-3 {
   animation: slide-in 1s ease-in;
-  animation-delay: 0.3s;
+  animation-delay: 0.4s;
   z-index: 30;
 }
 

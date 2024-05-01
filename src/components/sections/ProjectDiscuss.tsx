@@ -1,5 +1,6 @@
 "use client";
 
+import Input from "@/components/Input";
 import { cn } from "@/lib/functions";
 import { type ProjectInput, projectInputSchema } from "@/server/api/schema";
 import { api } from "@/trpc/providers";
@@ -43,28 +44,21 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           bigger
         />
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-center gap-4 w-full">
-          <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
-            <label htmlFor="name">{t.DISCUSS_YOUR_PROJECT.name.label}</label>
-            <input
-              autoComplete="name"
-              id="name"
-              className={cn("border-2 border-transparent", { "border-red-400": errors.name })}
-              {...register("name")}
-              placeholder={t.DISCUSS_YOUR_PROJECT.name.placeholder}
-            />
-            {errors.name ? <small className="drop-shadow text-red-400">{errors.name.message}</small> : null}
-          </section>
-          <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
-            <label htmlFor="email">{t.DISCUSS_YOUR_PROJECT.email.label}</label>
-            <input
-              autoComplete="off"
-              id="email"
-              {...register("email")}
-              placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
-              className={cn("border-2 border-transparent", { "border-red-400": errors.email })}
-            />
-            {errors.email ? <small className="drop-shadow text-red-400">{errors.email.message}</small> : null}
-          </section>
+          <Input
+            error={errors.name?.message ?? ""}
+            autoComplete="name"
+            label={t.DISCUSS_YOUR_PROJECT.name.label}
+            {...register("name")}
+            placeholder={t.DISCUSS_YOUR_PROJECT.name.placeholder}
+          />
+          <Input
+            error={errors.email?.message ?? ""}
+            autoComplete="email"
+            label={t.DISCUSS_YOUR_PROJECT.email.label}
+            {...register("email")}
+            placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
+          />
+
           <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
             <label htmlFor="description">{t.DISCUSS_YOUR_PROJECT.projectDescription.label}</label>
             <textarea
@@ -74,7 +68,9 @@ export default function ProjectDiscuss({ t, lang }: Props) {
               rows={5}
               placeholder={t.DISCUSS_YOUR_PROJECT.projectDescription.placeholder}
             />
-            {errors.description ? <small className="drop-shadow text-red-400">{errors.description.message}</small> : null}
+            <small className={cn("drop-shadow text-red-400", { "opacity-0 -translate-y-2 -z-10": !errors?.description?.message })}>
+              {errors?.description?.message}
+            </small>
           </section>
           <section className="relative w-32 h-9 group mt-4">
             <button
