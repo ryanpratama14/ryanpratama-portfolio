@@ -1,9 +1,9 @@
+import GradientText from "@/components/GradientText";
+import Img from "@/components/Img";
+import Contact from "@/components/sections/Contacts";
 import type { Dictionary, Lang } from "@/types";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
-import GradientText from "./GradientText";
-import Img from "./Img";
-import Contact from "./sections/Contacts";
 
 type Props = {
   src: StaticImageData;

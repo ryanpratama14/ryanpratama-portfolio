@@ -1,6 +1,9 @@
 "use client";
 
+import GradientText from "@/components/GradientText";
 import Input from "@/components/Input";
+import SuccessModal from "@/components/SuccessModal";
+import TextArea from "@/components/TextArea";
 import { cn } from "@/lib/functions";
 import { type ProjectInput, projectInputSchema } from "@/server/api/schema";
 import { api } from "@/trpc/providers";
@@ -8,8 +11,6 @@ import type { Dictionary, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
-import GradientText from "../GradientText";
-import SuccessModal from "../SuccessModal";
 
 type Props = { t: Dictionary; lang: Lang };
 
@@ -45,33 +46,28 @@ export default function ProjectDiscuss({ t, lang }: Props) {
         />
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-center gap-4 w-full">
           <Input
+            {...register("name")}
             error={errors.name?.message ?? ""}
             autoComplete="name"
             label={t.DISCUSS_YOUR_PROJECT.name.label}
-            {...register("name")}
             placeholder={t.DISCUSS_YOUR_PROJECT.name.placeholder}
           />
           <Input
+            {...register("email")}
             error={errors.email?.message ?? ""}
             autoComplete="email"
             label={t.DISCUSS_YOUR_PROJECT.email.label}
-            {...register("email")}
             placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
           />
 
-          <section className="flex flex-col gap-0.5 w-full md:w-[50%]">
-            <label htmlFor="description">{t.DISCUSS_YOUR_PROJECT.projectDescription.label}</label>
-            <textarea
-              id="description"
-              className={cn("border-2 border-transparent", { "border-red-400": errors.description })}
-              {...register("description")}
-              rows={5}
-              placeholder={t.DISCUSS_YOUR_PROJECT.projectDescription.placeholder}
-            />
-            <small className={cn("drop-shadow text-red-400", { "opacity-0 -translate-y-2 -z-10": !errors?.description?.message })}>
-              {errors?.description?.message}
-            </small>
-          </section>
+          <TextArea
+            {...register("description")}
+            rows={5}
+            placeholder={t.DISCUSS_YOUR_PROJECT.projectDescription.placeholder}
+            label={t.DISCUSS_YOUR_PROJECT.projectDescription.label}
+            error={errors.description?.message ?? ""}
+          />
+
           <section className="relative w-32 h-9 group mt-4">
             <button
               disabled={isPending}
