@@ -1,7 +1,8 @@
 import GradientText from "@/components/GradientText";
 import Img from "@/components/Img";
 import Contact from "@/components/sections/Contacts";
-import type { Dictionary, Lang } from "@/types";
+import { useDictionary } from "@/lib/internationalization";
+import type { Lang } from "@/types";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
 
@@ -9,13 +10,15 @@ type Props = {
   src: StaticImageData;
   alt: string;
   title: string;
-  t: Dictionary;
+
   lang: Lang;
 };
 
-export default function Certification({ src, alt, title, t, lang }: Props) {
+export default function Certification({ src, alt, title, lang }: Props) {
+  const t = useDictionary(lang);
+
   return (
-    <main className="flex flex-col">
+    <article className="flex flex-col">
       <figure className="main-padding md:pt-longer flex flex-col items-center justify-center gap-6">
         <GradientText bigger text1={title} text2="Certification" className="text-center" />
         <Img src={src} alt={alt} className="rounded-md shadow-glowed-2" />
@@ -26,6 +29,6 @@ export default function Certification({ src, alt, title, t, lang }: Props) {
         </Link>
       </section>
       <Contact t={t} isMain={false} />
-    </main>
+    </article>
   );
 }

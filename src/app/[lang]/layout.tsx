@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar/Navbar";
 import { env } from "@/env";
 import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/functions";
-import { LANGS, LANGUAGES, getDictionary } from "@/lib/internationalization";
+import { LANGS, LANGUAGES, useDictionary } from "@/lib/internationalization";
 import "@/styles/globals.css";
 import "@/styles/stylesheet.css";
 import Providers from "@/trpc/providers";
@@ -21,7 +21,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
   const isJapanese = params.lang === "ja";
-  const t = getDictionary(params.lang).PERSONAL_DATA;
+  const t = useDictionary(params.lang).PERSONAL_DATA;
 
   const title = `${t.fullName} — ${isJapanese ? t.softwareEngineer.split(" ").join("") : t.softwareEngineer}`;
   const description = `${title} ${t.summary}`;
@@ -77,7 +77,7 @@ const notosansJP = Noto_Sans_JP({
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
 export default async function RootLayout({ children, params }: Props) {
-  const t = getDictionary(params.lang);
+  const t = useDictionary(params.lang);
   const isJapanese = params.lang === "ja";
 
   return (
