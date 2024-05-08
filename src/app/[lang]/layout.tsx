@@ -15,11 +15,8 @@ import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
 import { cookies } from "next/headers";
 
-export function generateStaticParams() {
-  return LANGS.map((lang) => ({ lang }));
-}
-
-export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+export const generateStaticParams = () => LANGS.map((lang) => ({ lang }));
+export const generateMetadata = async ({ params }: { params: { lang: Lang } }): Promise<Metadata> => {
   const isJapanese = params.lang === "ja";
   const t = useDictionary(params.lang).PERSONAL_DATA;
 
@@ -58,7 +55,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     },
     twitter: { title, card: "summary_large_image", description },
   };
-}
+};
 
 const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -81,8 +78,12 @@ export default async function RootLayout({ children, params }: Props) {
   const isJapanese = params.lang === "ja";
 
   return (
-    <html lang={params.lang} className={`${notosans.variable} ${notosansJP.variable}`}>
-      <body className={cn("text-white bg-black font-notosans", { "font-notosansJP": isJapanese })}>
+    <html lang={params.lang}>
+      <body
+        className={cn(`text-white bg-black font-notosans ${notosans.variable} ${notosansJP.variable}`, {
+          "font-notosansJP": isJapanese,
+        })}
+      >
         <Analytics />
         <SpeedInsights />
         <Navbar
@@ -91,9 +92,11 @@ export default async function RootLayout({ children, params }: Props) {
           lang={params.lang}
           storedLang={(cookies().get("lang")?.value as Lang) ?? undefined}
         />
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <TransitionEffect />
+        </Providers>
         <ScrollToTop />
-        <TransitionEffect />
       </body>
     </html>
   );

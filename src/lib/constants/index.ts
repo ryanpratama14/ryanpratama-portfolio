@@ -113,7 +113,11 @@ export const skillsData: SkillsItem[] = [
     icon: "devicon-plain:trpc",
   },
   {
-    label: "Prisma ORM",
+    label: "Drizzle",
+    icon: "simple-icons:drizzle",
+  },
+  {
+    label: "Prisma",
     icon: "simple-icons:prisma",
   },
   {
