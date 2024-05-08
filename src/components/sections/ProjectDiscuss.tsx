@@ -44,7 +44,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
           text2={`${t.SECTIONS.dicussYourProject.split(" ")[1]} ${t.SECTIONS.dicussYourProject.split(" ")[2]}`}
           bigger
         />
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-center gap-4 w-full">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-end gap-4 md:w-[50%] w-full">
           <Input
             {...register("name")}
             error={errors.name?.message ?? ""}
@@ -59,7 +59,6 @@ export default function ProjectDiscuss({ t, lang }: Props) {
             label={t.DISCUSS_YOUR_PROJECT.email.label}
             placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
           />
-
           <TextArea
             {...register("description")}
             rows={5}
@@ -68,23 +67,21 @@ export default function ProjectDiscuss({ t, lang }: Props) {
             error={errors.description?.message ?? ""}
           />
 
-          <section className="relative w-32 h-9 group mt-4">
-            <button
-              disabled={isPending}
-              type="submit"
+          <button type="submit" disabled={isPending} className="relative group flex w-fit">
+            <span
               className={cn(
-                "animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white w-full h-full absolute flex justify-center items-center",
+                "animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white px-8 py-1 size-full",
                 { "opacity-0": isPending },
               )}
             >
               {t.DISCUSS_YOUR_PROJECT.submit}
-            </button>
+            </span>
             <div
               className={cn("group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate", {
                 "opacity-0": !isPending,
               })}
             />
-          </section>
+          </button>
         </form>
       </article>
     </Fragment>

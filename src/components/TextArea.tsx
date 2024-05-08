@@ -10,7 +10,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ label, error, ..
   const id = useId();
 
   return (
-    <section className={cn("w-full md:w-[50%]", { "gap-0.5 flex flex-col": label })}>
+    <section className={cn("w-full", { "gap-0.5 flex flex-col": label })}>
       <label className="text-left text-gray2 p" htmlFor={id}>
         {label}
       </label>

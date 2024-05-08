@@ -42,7 +42,7 @@ export default function SuccessModal({ show, onClose, t }: Props) {
                   {t.DISCUSS_YOUR_PROJECT.formSent}
                 </DialogTitle>
 
-                <p className="text-black">{t.DISCUSS_YOUR_PROJECT.thankYou}</p>
+                <p className="text-black text-pretty">{t.DISCUSS_YOUR_PROJECT.thankYou}</p>
 
                 <section className="flex items-center justify-center mt-2">
                   <section className="relative group ">
