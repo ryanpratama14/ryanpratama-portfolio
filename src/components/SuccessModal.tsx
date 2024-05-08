@@ -1,7 +1,7 @@
 "use client";
 
 import type { Dictionary } from "@/types";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { Fragment } from "react";
 
 type Props = {
@@ -14,7 +14,7 @@ export default function SuccessModal({ show, onClose, t }: Props) {
   return (
     <Transition appear show={show} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
-        <Transition.Child
+        <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
           enterFrom="opacity-0"
@@ -24,11 +24,11 @@ export default function SuccessModal({ show, onClose, t }: Props) {
           leaveTo="opacity-0"
         >
           <div className="fixed inset-0 bg-black/60" />
-        </Transition.Child>
+        </TransitionChild>
 
         <div className="fixed inset-0 overflow-y-auto text-black">
           <div className="flex min-h-full items-center justify-center p-4 text-center">
-            <Transition.Child
+            <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 scale-95"
@@ -37,10 +37,10 @@ export default function SuccessModal({ show, onClose, t }: Props) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="flex flex-col gap-2 w-full max-w-md transform overflow-hidden rounded-md bg-white p-6 text-left shadow-xl animate">
-                <Dialog.Title as="h5" className="h5">
+              <DialogPanel className="flex flex-col gap-2 w-full max-w-md transform overflow-hidden rounded-md bg-white p-6 text-left shadow-xl animate">
+                <DialogTitle as="h5" className="h5">
                   {t.DISCUSS_YOUR_PROJECT.formSent}
-                </Dialog.Title>
+                </DialogTitle>
 
                 <p className="text-black">{t.DISCUSS_YOUR_PROJECT.thankYou}</p>
 
@@ -56,8 +56,8 @@ export default function SuccessModal({ show, onClose, t }: Props) {
                     <div className="rounded-md centered -z-10 absolute h-0 w-0 group-hover:h-full group-hover:w-full animate bg-bluedarker" />
                   </section>
                 </section>
-              </Dialog.Panel>
-            </Transition.Child>
+              </DialogPanel>
+            </TransitionChild>
           </div>
         </div>
       </Dialog>

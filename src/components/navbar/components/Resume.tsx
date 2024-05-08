@@ -16,13 +16,13 @@ export default function Resume({ t }: Props) {
         icon="pepicons-pencil:cv-circle"
         className="text-3xl md:text-4xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 animate"
       />
-      <header className="relative h-full flex items-center">
+      <section className="relative h-full flex items-center">
         <span className="cursor-pointer z-[2] text-lg label">{t.SECTIONS.resume}</span>
         <div className="-skew-x-[16deg] absolute top-0 w-full h-full flex justify-center items-center z-[1]">
           <div className="w-6 h-full bg-turquoise group-hover:bg-bluedarker animate" />
           <div className="w-2 h-full bg-bluedarker group-hover:bg-white animate" />
         </div>
-      </header>
+      </section>
     </a>
   );
 }

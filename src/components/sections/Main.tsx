@@ -14,7 +14,7 @@ export default function Main({ t }: Props) {
       <div className="max-xl:hidden absolute left-96 bottom-36 w-56 aspect-square rounded-full  bg-blue/30 blur-3xl -z-10" />
       <section className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
         <section className="w-full lg:w-[50%] flex flex-col gap-6">
-          <header className="flex flex-col gap-2">
+          <section className="flex flex-col gap-2">
             <GradientText
               text1={t.PERSONAL_DATA.softwareEngineer.split(" ")[0] ?? ""}
               text2={t.PERSONAL_DATA.softwareEngineer.split(" ")[1] ?? ""}
@@ -24,7 +24,7 @@ export default function Main({ t }: Props) {
               <span className="max-xl:hidden absolute translate-x-6 pratama">{t.PERSONAL_DATA.fullName.split(" ")[1]}!</span>
             </h1>
             <p>{t.PERSONAL_DATA.summary}</p>
-          </header>
+          </section>
           <nav className="flex gap-6 items-center">
             <a
               href="#contact"

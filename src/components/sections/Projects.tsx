@@ -27,14 +27,14 @@ export default function Projects({ t }: Props) {
               <section className="rounded-md flex justify-center px-6 xl:px-10 absolute animate-longer w-full h-full opacity-0 hover:opacity-100 bg-[#343434]/80 top-0 backdrop-blur">
                 <section className="flex flex-col justify-center items-center gap-5 -translate-y-2">
                   <h2 className="drop-shadow text-center md:h3 xl:h5 !font-semibold">{e.title}</h2>
-                  <header className="flex flex-col gap-2">
+                  <section className="flex flex-col gap-2">
                     <p className="custom-text-size">{e.desc}</p>
                     <ul className="custom-text-size list-disc pl-4">
                       {e.lists.map((list) => {
                         return <li key={list}>{list}</li>;
                       })}
                     </ul>
-                  </header>
+                  </section>
                   <Link href={e.href} target="_blank" className="relative group flex" rel="noreferrer">
                     <span className="animate text-center flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white size-full px-4 py-1">
                       {t.SECTIONS.visitProject}

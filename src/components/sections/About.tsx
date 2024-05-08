@@ -14,7 +14,7 @@ export default function About({ t, lang }: Props) {
     <article className="min-h-screen main-padding space-y-6" id="about">
       <GradientText text1={t.SECTIONS.aboutMe.split(" ")[0] ?? ""} text2={t.SECTIONS.aboutMe.split(" ")[1] ?? ""} bigger />
       <section className="space-y-1">
-        <header className="flex relative w-fit divide-x justify-between gap-2">
+        <section className="flex relative w-fit divide-x justify-between gap-2">
           {getIdendityData(t).map((e, i) => {
             return (
               <p key={e} className={cn("font-monserrat label", { "pl-2": i !== 0 })}>
@@ -22,7 +22,7 @@ export default function About({ t, lang }: Props) {
               </p>
             );
           })}
-        </header>
+        </section>
         <p className="xl:w-[80%]">{t.PERSONAL_DATA.about}</p>
       </section>
       <section className="md:w-[80%] lg:w-[70%] flex flex-wrap gap-y-3 gap-x-4">
@@ -39,9 +39,7 @@ export default function About({ t, lang }: Props) {
       </section>
 
       <section className="space-y-4">
-        <header>
-          <h4>{t.SECTIONS.professionalExperience}</h4>
-        </header>
+        <h4>{t.SECTIONS.professionalExperience}</h4>
         <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
           {experienceData.map((e) => {
             return (
@@ -56,7 +54,7 @@ export default function About({ t, lang }: Props) {
                 </figure>
                 <section className="relative md:h-[7rem] h-24 flex items-center w-full">
                   <div className="-z-10 absolute w-0 group-hover:w-full animate-longer h-full bg-gradient-to-br from-turquoise" />
-                  <header className="w-full flex flex-col px-4">
+                  <section className="w-full flex flex-col px-4">
                     <h5 className="flex items-center drop-shadow gap-2">
                       {e.label}
                       <span className="group-hover:opacity-100 opacity-0 group-hover:-translate-x-0 -translate-x-full p">
@@ -71,7 +69,7 @@ export default function About({ t, lang }: Props) {
                       — {e.till ?? t.SECTIONS.present}
                     </small>
                     <small className="font-medium">{t.LOCATIONS[e.location]}</small>
-                  </header>
+                  </section>
                 </section>
               </Link>
             );
