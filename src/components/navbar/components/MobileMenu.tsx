@@ -1,7 +1,7 @@
 import Iconify from "@/components/Iconify";
 import { navbarData } from "@/lib/constants";
 import type { Dictionary } from "@/types";
-import { Menu, Transition } from "@headlessui/react";
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 type Props = { t: Dictionary };
@@ -9,9 +9,9 @@ type Props = { t: Dictionary };
 export default function MobileMenu({ t }: Props) {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
-      <Menu.Button className="flex items-center outline-none">
+      <MenuButton className="flex items-center outline-none">
         <Iconify icon="ri:menu-3-fill" width={25} rotate={2} />
-      </Menu.Button>
+      </MenuButton>
       <Transition
         as={Fragment}
         enter="transition duration-300"
@@ -21,20 +21,20 @@ export default function MobileMenu({ t }: Props) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform -translate-y-2 opacity-0"
       >
-        <Menu.Items className="outline-none absolute left-0 mt-6 flex flex-col gap-3">
+        <MenuItems className="outline-none absolute left-0 mt-6 flex flex-col gap-3">
           {navbarData.map((e) => {
             return (
-              <Menu.Item key={e.href}>
+              <MenuItem key={e.href}>
                 <a href={e.href} className="btn-nav">
                   <span>
                     <Iconify icon={e.icon} width={20} />
                   </span>
                   {t.NAVBAR_DATA[e.label]}
                 </a>
-              </Menu.Item>
+              </MenuItem>
             );
           })}
-        </Menu.Items>
+        </MenuItems>
       </Transition>
     </Menu>
   );
