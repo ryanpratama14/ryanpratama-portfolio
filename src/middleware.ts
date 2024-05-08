@@ -19,14 +19,15 @@ const getLang = (request: NextRequest) => {
   if (acceptLanguage) headers.set("accept-language", acceptLanguage.replaceAll("_", "-"));
   const headersObject = Object.fromEntries(headers.entries());
   const languages = new Negotiator({ headers: headersObject }).languages();
-  if (languages.includes("*")) return DEFAULT_LANG;
-  return match(languages, LANGS, DEFAULT_LANG) as Lang;
+  const matchedLang = match(languages, LANGS, DEFAULT_LANG);
+  if (LANGS.includes(matchedLang as Lang)) return matchedLang;
+  return DEFAULT_LANG;
 };
 
 export const middleware = (request: NextRequest) => {
   const pathname = request.nextUrl.pathname;
   const storedLang = request.cookies.get("lang")?.value as Lang | undefined;
-  const lang: Lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
+  const lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
   const pathnameMissing = LANGS.every((lang) => !pathname.startsWith(`/${lang}/`) && pathname !== `/${lang}`);
   if (pathnameMissing) {
     const newPath = `/${lang}${pathname.startsWith("/") ? "" : "/"}${pathname}`;

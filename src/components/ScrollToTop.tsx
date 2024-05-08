@@ -1,7 +1,7 @@
 "use client";
 
 import Iconify from "@/components/Iconify";
-import { cn, loadToTop } from "@/lib/functions";
+import { cn, isClient, loadToTop } from "@/lib/functions";
 import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
@@ -17,9 +17,7 @@ export default function ScrollToTop() {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", toggleVisible);
-    }
+    if (isClient) window.addEventListener("scroll", toggleVisible);
   }, [toggleVisible]);
 
   return (

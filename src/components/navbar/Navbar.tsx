@@ -2,7 +2,7 @@
 
 import Iconify from "@/components/Iconify";
 import { navbarData } from "@/lib/constants";
-import { cn } from "@/lib/functions";
+import { cn, isClient } from "@/lib/functions";
 import { LANGUAGE_OPTIONS } from "@/lib/internationalization";
 import type { Dictionary, Lang } from "@/types";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export default function Navbar({ t, lang, storedLang, setCookieLang }: Props) {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (isClient) {
       window.addEventListener(
         "scroll",
         () => {

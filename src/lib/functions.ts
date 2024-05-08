@@ -5,8 +5,10 @@ import { DEFAULT_LANG, LANGUAGES } from "./internationalization";
 
 export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs));
 
+export const isClient = typeof window !== "undefined";
+
 export const loadToTop = () => {
-  if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+  if (isClient) window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 export const consoleError = (error: string) => {
