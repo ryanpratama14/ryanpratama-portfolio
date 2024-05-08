@@ -25,15 +25,15 @@ export default function About({ t, lang }: Props) {
         </section>
         <p className="xl:w-[80%]">{t.PERSONAL_DATA.about}</p>
       </section>
-      <section className="md:w-[80%] lg:w-[70%] flex flex-wrap gap-y-3 gap-x-4">
+      <section className="md:w-[80%] lg:w-[70%] flex flex-wrap gap-3">
         {skillsData.map((e) => {
           return (
-            <p key={e.icon} className="flex gap-2 text-sm xl:text-base items-center font-medium text-graydarker">
+            <section key={e.icon} className="flex gap-2 text-sm xl:text-base items-center font-medium text-graydarker">
               <span className="text-turquoise">
-                <Iconify icon={e.icon} width={25} />
+                <Iconify icon={e.icon} width={22.5} />
               </span>
               {e.label}
-            </p>
+            </section>
           );
         })}
       </section>

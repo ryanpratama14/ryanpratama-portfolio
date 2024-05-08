@@ -109,6 +109,10 @@ export const skillsData: SkillsItem[] = [
     icon: "simple-icons:zod",
   },
   {
+    label: "React Hook Form",
+    icon: "simple-icons:reacthookform",
+  },
+  {
     label: "tRPC",
     icon: "devicon-plain:trpc",
   },
@@ -167,6 +171,10 @@ export const skillsData: SkillsItem[] = [
   {
     label: "Framer Motion",
     icon: "teenyicons:framer-solid",
+  },
+  {
+    label: "Resend",
+    icon: "simple-icons:resend",
   },
 ];
 
