@@ -1,9 +1,8 @@
 import Iconify from "@/components/Iconify";
-import type { Dictionary } from "@/types";
 
-type Props = { t: Dictionary };
+type Props = { title: string };
 
-export default function Resume({ t }: Props) {
+export default function Resume({ title }: Props) {
   return (
     <a
       href="/resume.pdf"
@@ -17,7 +16,7 @@ export default function Resume({ t }: Props) {
         className="text-3xl md:text-4xl rotate-[16deg] group-hover:rotate-0 group-hover:scale-110 animate"
       />
       <section className="relative h-full flex items-center">
-        <span className="cursor-pointer z-[2] text-lg label">{t.SECTIONS.resume}</span>
+        <span className="cursor-pointer z-[2] text-lg label">{title}</span>
         <div className="-skew-x-[16deg] absolute top-0 w-full h-full flex justify-center items-center z-[1]">
           <div className="w-6 h-full bg-turquoise group-hover:bg-bluedarker animate" />
           <div className="w-2 h-full bg-bluedarker group-hover:bg-white animate" />

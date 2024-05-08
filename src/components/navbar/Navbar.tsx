@@ -51,14 +51,12 @@ export default function Navbar({ t, lang, storedLang, setCookieLang }: Props) {
     <nav
       className={cn(
         "h-12 md:h-16 animate items-center shadow-md backdrop-blur-[3px] flex justify-between sticky lg:fixed w-full top-0 px-normal xl:px-longer 2xl:px-longer3 z-20 bg-black",
-        {
-          "-translate-y-full": !visible,
-        },
+        { "-translate-y-full": !visible },
       )}
     >
       <section className="flex gap-4 h-full items-center">
         <MobileMenu t={t} />
-        <Resume t={t} />
+        <Resume title={t.SECTIONS.resume} />
       </section>
       <section className="flex gap-4 items-center">
         {navbarData.map((e) => {
@@ -76,9 +74,7 @@ export default function Navbar({ t, lang, storedLang, setCookieLang }: Props) {
             const isActive = (pathname.split("/")[1] as Lang) === e.value;
             return (
               <Link
-                className={cn("text-2xl px-2 rounded-md", {
-                  "bg-white shadow": isActive,
-                })}
+                className={cn("text-2xl px-2 rounded-md", { "bg-white shadow": isActive })}
                 key={e.value}
                 href={changeLang(e.value)}
                 type="button"
