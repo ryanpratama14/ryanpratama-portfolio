@@ -92,10 +92,8 @@ export default async function RootLayout({ children, params }: Props) {
           lang={params.lang}
           storedLang={(cookies().get("lang")?.value as Lang) ?? undefined}
         />
-        <Providers>
-          {children}
-          <TransitionEffect />
-        </Providers>
+        <Providers>{children}</Providers>
+        <TransitionEffect />
         <ScrollToTop />
       </body>
     </html>
