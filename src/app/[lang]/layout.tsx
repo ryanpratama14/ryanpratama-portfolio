@@ -5,8 +5,6 @@ import { env } from "@/env";
 import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/functions";
 import { LANGS, LANGUAGES, useDictionary } from "@/lib/internationalization";
-import "@/styles/globals.css";
-import "@/styles/stylesheet.css";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
@@ -14,6 +12,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_JP } from "next/font/google";
 import { cookies } from "next/headers";
+
+// styles
+import "@/styles/globals.css";
+import "@/styles/stylesheet.css";
 
 export const generateStaticParams = () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async ({ params }: { params: { lang: Lang } }): Promise<Metadata> => {
