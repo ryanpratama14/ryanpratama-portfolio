@@ -27,7 +27,7 @@ export const ja: Dictionary = {
     featuredProjects: "Featured Projects",
     moreContacts: "More Contacts",
     moreContactsDescription:
-      "私は現在、新しい機会を積極的に探しており、利用可能な可能性のある潜在的な機会については喜んで聞きたいと思っています。 見込み客がいる場合、またはコラボレーションの可能性について話し合いたい場合は、お気軽にご連絡ください。",
+      "現在、新しい機会を積極的に探しており、利用可能な可能性のある潜在的な機会については喜んで聞きたいと思っています。 見込み客がいる場合、またはコラボレーションの可能性について話し合いたい場合は、お気軽にご連絡ください。",
     dicussYourProject: "Discuss Your Project",
     professionalExperience: "職歴",
     visitProject: "プロジェクト訪問",
