@@ -5,7 +5,7 @@ import Input from "@/components/Input";
 import SuccessModal from "@/components/SuccessModal";
 import TextArea from "@/components/TextArea";
 import { cn } from "@/lib/functions";
-import { type ProjectInput, projectInputSchema } from "@/server/api/schema";
+import { type ProjectInput, schema } from "@/server/api/schema";
 import { api } from "@/trpc/providers";
 import type { Dictionary, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,7 +21,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ProjectInput>({ resolver: zodResolver(projectInputSchema(t)), defaultValues: { lang } });
+  } = useForm<ProjectInput>({ resolver: zodResolver(schema.email.send(t)), defaultValues: { lang } });
 
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
