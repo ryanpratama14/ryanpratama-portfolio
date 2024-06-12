@@ -18,3 +18,5 @@ export const consoleError = (error: string) => {
       .toLocaleTimeString(LANGUAGES[DEFAULT_LANG].locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" })} 👉 ${error}`,
   );
 };
+
+export const copyData = <T>(data: T): T => structuredClone(data);

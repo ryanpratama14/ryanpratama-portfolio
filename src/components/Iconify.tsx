@@ -1,13 +1,7 @@
 "use client";
-import { Icon } from "@iconify/react";
 
-type Props = {
-  icon: string;
-  width?: number;
-  className?: string;
-  rotate?: number;
-};
+import { Icon, type IconProps } from "@iconify/react";
 
-export default function Iconify({ icon, width, className, rotate }: Props) {
-  return <Icon icon={icon} width={width} rotate={rotate} className={className} />;
+export default function Iconify({ ...props }: IconProps) {
+  return <Icon {...props} />;
 }
