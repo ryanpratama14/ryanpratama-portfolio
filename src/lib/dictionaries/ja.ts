@@ -4,7 +4,7 @@ export const ja: Dictionary = {
   PERSONAL_DATA: {
     fullName: "Ryan Pratama",
     summary:
-      "Next.js と React Native を使用した Web アプリケーションとモバイル アプリケーションの両方の開発に 2 年以上の専門知識を持つ、経験豊富なソフトウェア エンジニア。 業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
+      "フロントエンド開発を専門とする経験豊富なソフトウェア エンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
     softwareEngineer: "ソフトウェア エンジニア",
     contactMe: "Contact Me",
     learnMore: "Learn More",

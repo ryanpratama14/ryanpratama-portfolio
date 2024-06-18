@@ -2,7 +2,7 @@ export const en = {
   PERSONAL_DATA: {
     fullName: "Ryan Pratama",
     summary:
-      "Experienced Software Engineer with over 2 years of expertise in developing both web and mobile applications using Next.js and React Native. Skilled in crafting high-quality solutions tailored to client requirements, with a commitment to staying updated on industry trends and emerging technologies.",
+      "Experienced Software Engineer specializing in frontend development. Skilled in crafting high-quality solutions tailored to client requirements, with a commitment to staying updated on industry trends and emerging technologies.",
     softwareEngineer: "Software Engineer",
     contactMe: "Contact Me",
     learnMore: "Learn More",
