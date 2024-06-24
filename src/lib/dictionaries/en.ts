@@ -8,7 +8,7 @@ export const en = {
     learnMore: "Learn More",
     age: "23 yo",
     about:
-      "In my third semester at university, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan, Russia. Along with other students, we learned the basics of JavaScript and eventually formed a software house startup called faoTech in 2022. As I developed my skills, I discovered a passion for full-stack development and decided to specialize in this field.",
+      "In my third semester at university, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan, Russia. Along with other students, we learned the basics of JavaScript and eventually formed a software house startup called faoTech in 2022. As I developed my skills, I discovered a passion for frontend development and decided to specialize in this field.",
   },
 
   NAVBAR_DATA: {
