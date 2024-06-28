@@ -7,36 +7,36 @@ export type Dictionary = typeof en;
 export type DictionaryKey = keyof typeof en;
 
 export type NavbarItem = {
-  label: keyof Dictionary["NAVBAR_DATA"];
-  icon: string;
-  href: string;
+	label: keyof Dictionary["NAVBAR_DATA"];
+	icon: string;
+	href: string;
 };
 
 export type LinkSocialItem = {
-  href: string;
-  label: string;
-  icon: string;
+	href: string;
+	label: string;
+	icon: string;
 };
 
 export type ExperienceItem = {
-  src: StaticImageData;
-  label: string;
-  link: string;
-  since: Date;
-  location: keyof Dictionary["LOCATIONS"];
-  till: string | null;
+	src: StaticImageData;
+	label: string;
+	link: string;
+	since: Date;
+	location: keyof Dictionary["LOCATIONS"];
+	till: Date | null;
 };
 
 export type SkillsItem = {
-  label: string;
-  icon: string;
+	label: string;
+	icon: string;
 };
 
 export type ProjectItem = {
-  title: string;
-  icon: StaticImageData;
-  desc: string;
-  href: string;
-  lists: string[];
-  src: StaticImageData;
+	title: string;
+	icon: StaticImageData;
+	desc: string;
+	href: string;
+	lists: string[];
+	src: StaticImageData;
 };
