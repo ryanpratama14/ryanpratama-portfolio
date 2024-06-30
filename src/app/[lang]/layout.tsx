@@ -28,16 +28,10 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
   return {
     manifest: "/manifest.json",
     metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
-    title: {
-      default: title,
-      template: `%s | ${title}`,
-    },
+    title: { default: title, template: `%s | ${title}` },
     description,
     openGraph: {
-      title: {
-        default: title,
-        template: `%s | ${title}`,
-      },
+      title: { default: title, template: `%s | ${title}` },
       description,
       url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${params.lang}`,
       siteName: title,
