@@ -3,13 +3,11 @@ import dayjs from "dayjs";
 import { twMerge } from "tailwind-merge";
 import { DEFAULT_LANGUAGE } from "./internationalization";
 
-export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs));
-
 export const isClient = typeof window !== "undefined";
-
-export const loadToTop = () => {
-  if (isClient) window.scrollTo({ top: 0, behavior: "smooth" });
-};
+export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs));
+export const loadToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+export const copyData = <T>(data: T): T => structuredClone(data);
+export const formatDate = (date: Date, locale: string) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
 
 export const consoleError = (error: string) => {
   console.error(
@@ -17,6 +15,8 @@ export const consoleError = (error: string) => {
   );
 };
 
-export const copyData = <T>(data: T): T => structuredClone(data);
-
-export const formatDate = (date: Date, locale: string) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
+export const getBaseUrl = () => {
+  if (isClient) return window.location.origin;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+};

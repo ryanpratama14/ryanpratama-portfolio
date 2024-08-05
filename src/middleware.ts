@@ -25,7 +25,7 @@ const getLang = (request: NextRequest) => {
 export const middleware = (request: NextRequest) => {
   const pathname = request.nextUrl.pathname;
   const storedLang = request.cookies.get("lang")?.value as Lang | undefined;
-  const lang: Lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
+  const lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
   const pathnameMissing = LANGS.every((lang) => !pathname.startsWith(`/${lang}/`) && pathname !== `/${lang}`);
   if (pathnameMissing) {
     const newPath = `/${lang}${pathname.startsWith("/") ? "" : "/"}${pathname}`;

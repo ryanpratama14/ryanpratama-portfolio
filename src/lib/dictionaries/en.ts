@@ -34,6 +34,7 @@ export const en = {
   LOCATIONS: {
     jakarta: "Jakarta, Indonesia",
     remote: "Remote",
+    tokyo: "Tokyo, Japan",
   },
 
   DISCUSS_YOUR_PROJECT: {

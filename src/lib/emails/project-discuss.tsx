@@ -1,7 +1,7 @@
 import type { ProjectInput } from "@/server/api/schema";
 import { Body, Container, Head, Html, Tailwind, Text } from "@react-email/components";
 
-export default function EmailTemplate({ name, email, description, lang }: ProjectInput) {
+export default function ProjectDiscuss({ name, email, description, lang }: ProjectInput) {
   return (
     <Html>
       <Head />

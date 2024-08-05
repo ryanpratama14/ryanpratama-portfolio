@@ -16,7 +16,7 @@ export default function About({ t, lang, locale }: Props) {
         <section className="flex relative w-fit divide-x justify-between gap-2">
           {getIdendityData(t, lang).map((e, i) => {
             return (
-              <p key={e} className={cn("font-monserrat label", { "pl-2": i !== 0 })}>
+              <p key={e} className={cn("label", { "pl-2": i !== 0 })}>
                 {e}
               </p>
             );

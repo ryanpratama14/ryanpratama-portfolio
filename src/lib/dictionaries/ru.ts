@@ -36,6 +36,7 @@ export const ru: Dictionary = {
   LOCATIONS: {
     jakarta: "Джакарта, Индонезия",
     remote: "Удалённо",
+    tokyo: "Токио, Япония",
   },
 
   DISCUSS_YOUR_PROJECT: {

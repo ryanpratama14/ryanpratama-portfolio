@@ -1,17 +1,9 @@
-import { isClient } from "@/lib/functions";
 import type { AppRouter } from "@/server/api/root";
 import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
 import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
 import SuperJSON from "superjson";
 
 export const transformer = SuperJSON;
-
-export const getBaseUrl = () => {
-  if (isClient) return window.location.origin;
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return `http://localhost:${process.env.PORT ?? 3000}`;
-};
-
 export const THROW_TRPC_OK = (code: TRPC_OK_CODE_KEY, message?: string) => ({ code, message: message ?? OK_MESSAGES[code] });
 export const THROW_TRPC_ERROR = (code: TRPC_ERROR_CODE_KEY, message?: string) => {
   throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });

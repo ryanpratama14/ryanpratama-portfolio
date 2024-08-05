@@ -16,8 +16,7 @@ import turta2 from "@/assets/turta2.png";
 import type { Dictionary, ExperienceItem, Lang, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
 export const getIdendityData = (t: Dictionary, lang: Lang) => {
-  const isJapanese = lang === "ja";
-  const age = isJapanese ? t.PERSONAL_DATA.age : ` ${t.PERSONAL_DATA.age}`;
+  const age = lang === "ja" ? t.PERSONAL_DATA.age : ` ${t.PERSONAL_DATA.age}`;
   return [t.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, t.LOCATIONS.jakarta];
 };
 
@@ -120,7 +119,7 @@ export const experienceData: ExperienceItem[] = [
     src: nutech,
     label: "Nutech Integrasi",
     link: "https://www.nutech-integrasi.com",
-    since: new Date(2023, 7),
+    since: dayjs("2023-08").toDate(),
     till: null,
     location: "jakarta",
   },
@@ -128,8 +127,8 @@ export const experienceData: ExperienceItem[] = [
     src: faotech,
     label: "faoTech",
     link: "https://faotech.dev",
-    since: new Date(2022, 8),
-    till: new Date(2023, 7),
+    since: dayjs("2022-09").toDate(),
+    till: dayjs("2023-08").toDate(),
     location: "remote",
   },
 ];

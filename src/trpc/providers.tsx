@@ -1,7 +1,8 @@
 "use client";
 
+import { getBaseUrl } from "@/lib/functions";
 import type { AppRouter } from "@/server/api/root";
-import { getBaseUrl, transformer } from "@/trpc/shared";
+import { transformer } from "@/trpc/shared";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { unstable_httpBatchStreamLink as httpBatchStreamLink, loggerLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";

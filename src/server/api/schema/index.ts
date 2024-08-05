@@ -4,7 +4,7 @@ import { z } from "zod";
 
 export class schema {
   static email = class {
-    static send = (t: Dictionary) => {
+    static projectDiscuss = (t: Dictionary) => {
       return z.object({
         name: z.string().min(1, t.DISCUSS_YOUR_PROJECT.name.error),
         email: z.string().email(t.DISCUSS_YOUR_PROJECT.email.error),
@@ -15,4 +15,4 @@ export class schema {
   };
 }
 
-export type ProjectInput = z.input<ReturnType<typeof schema.email.send>>;
+export type ProjectInput = z.input<ReturnType<typeof schema.email.projectDiscuss>>;

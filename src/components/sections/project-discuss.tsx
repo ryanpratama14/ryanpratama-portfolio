@@ -21,11 +21,11 @@ export default function ProjectDiscuss({ t, lang }: Props) {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ProjectInput>({ resolver: zodResolver(schema.email.send(t)), defaultValues: { lang } });
+  } = useForm<ProjectInput>({ resolver: zodResolver(schema.email.projectDiscuss(t)), defaultValues: { lang } });
 
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
-  const { mutate: sendEmail, isPending } = api.email.send.useMutation({ onSuccess: () => setShowModal(true) });
+  const { mutate: sendEmail, isPending } = api.email.projectDiscuss.useMutation({ onSuccess: () => setShowModal(true) });
 
   return (
     <Fragment>
