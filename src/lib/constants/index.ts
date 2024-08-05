@@ -134,52 +134,16 @@ export const experienceData: ExperienceItem[] = [
 ];
 
 export const navbarData: NavbarItem[] = [
-  {
-    href: "#about",
-    icon: "mdi:about-circle-outline",
-    label: "about",
-  },
-  {
-    href: "#projects",
-    icon: "mdi:local-cafe-outline",
-    label: "projects",
-  },
-  {
-    href: "#contact",
-    icon: "mdi:contact-outline",
-    label: "contacts",
-  },
+  { href: "#about", icon: "mdi:about-circle-outline", label: "about" },
+  { href: "#projects", icon: "mdi:local-cafe-outline", label: "projects" },
+  { href: "#contact", icon: "mdi:contact-outline", label: "contacts" },
 ];
 
 export const linkSocial: LinkSocialItem[] = [
-  {
-    href: "mailto:ryanpratama.dev@gmail.com",
-    label: "Email",
-    icon: "mdi:email-outline",
-  },
-  {
-    href: "https://github.com/ryanpratama14",
-    label: "GitHub",
-    icon: "mdi:github",
-  },
-  {
-    href: "https://www.linkedin.com/in/ryanpratama14",
-    label: "LinkedIn",
-    icon: "mdi:linkedin",
-  },
-  {
-    href: "https://t.me/ryanpratama14",
-    label: "Telegram",
-    icon: "ph:telegram-logo",
-  },
-  {
-    href: "https://wa.me/+6281210425333",
-    label: "WhatsApp",
-    icon: "mdi:whatsapp",
-  },
-  {
-    href: "https://www.instagram.com/ryanpratama14",
-    label: "Instagram",
-    icon: "mdi:instagram",
-  },
+  { href: "mailto:ryanpratama.dev@gmail.com", label: "Email", icon: "mdi:email-outline" },
+  { href: "https://github.com/ryanpratama14", label: "GitHub", icon: "mdi:github" },
+  { href: "https://www.linkedin.com/in/ryanpratama14", label: "LinkedIn", icon: "mdi:linkedin" },
+  { href: "https://t.me/ryanpratama14", label: "Telegram", icon: "ph:telegram-logo" },
+  { href: "https://wa.me/+6281210425333", label: "WhatsApp", icon: "mdi:whatsapp" },
+  { href: "https://www.instagram.com/ryanpratama14", label: "Instagram", icon: "mdi:instagram" },
 ];

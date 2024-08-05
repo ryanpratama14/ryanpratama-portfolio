@@ -27,7 +27,7 @@ export default function About({ t, lang, locale }: Props) {
       <section className="md:w-[80%] lg:w-[70%] flex flex-wrap gap-3">
         {skillsData.map((e) => {
           return (
-            <section key={e.icon} className="flex gap-2 text-sm xl:text-base items-center font-medium text-graydarker">
+            <section key={e.label} className="flex gap-2 text-sm xl:text-base items-center font-medium text-graydarker">
               <span className="text-turquoise">
                 <Iconify icon={e.icon} width={22.5} />
               </span>
