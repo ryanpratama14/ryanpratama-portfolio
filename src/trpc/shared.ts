@@ -1,0 +1,50 @@
+import { isClient } from "@/lib/functions";
+import type { AppRouter } from "@/server/api/root";
+import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
+import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
+import SuperJSON from "superjson";
+
+export const transformer = SuperJSON;
+
+export const getBaseUrl = () => {
+  if (isClient) return window.location.origin;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+};
+
+export const THROW_TRPC_OK = (code: TRPC_OK_CODE_KEY, message?: string) => ({ code, message: message ?? OK_MESSAGES[code] });
+export const THROW_TRPC_ERROR = (code: TRPC_ERROR_CODE_KEY, message?: string) => {
+  throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
+};
+
+const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {
+  PARSE_ERROR: "Error parsing the request. Please check the syntax of your request.",
+  BAD_REQUEST: "Invalid request. Please provide valid request parameters.",
+  INTERNAL_SERVER_ERROR: "Internal server error. Please try again later.",
+  NOT_IMPLEMENTED: "Feature not implemented. This functionality is currently unavailable.",
+  UNAUTHORIZED: "Unauthorized access. Please authenticate to access this resource.",
+  FORBIDDEN: "Access forbidden. You do not have permission to access this resource.",
+  NOT_FOUND: "Resource not found. The requested resource does not exist.",
+  METHOD_NOT_SUPPORTED: "HTTP method not supported. Please use a supported HTTP method.",
+  UNSUPPORTED_MEDIA_TYPE: "Media type not supported. Please use a supported media type.",
+  TIMEOUT: "Request timeout. The server did not receive a timely response.",
+  CONFLICT: "Conflict in resource state. There is a conflict with the current state of the resource.",
+  PRECONDITION_FAILED: "Precondition failed for the request. Please meet the required conditions.",
+  PAYLOAD_TOO_LARGE: "Request payload too large. The size of the request payload exceeds the limit.",
+  UNPROCESSABLE_CONTENT: "Unprocessable request content. The request content is not valid or cannot be processed.",
+  TOO_MANY_REQUESTS: "Too many requests. Please try again later.",
+  CLIENT_CLOSED_REQUEST: "Client closed the request. The client terminated the request unexpectedly.",
+};
+
+const OK_MESSAGES: Record<TRPC_OK_CODE_KEY, string> = {
+  OK: "OK",
+  CREATED: "Resource created successfully.",
+  ACCEPTED: "Request accepted.",
+  NO_CONTENT: "No content available.",
+  RESET_CONTENT: "Reset content successful.",
+  PARTIAL_CONTENT: "Partial content received successfully.",
+};
+
+export type TRPC_OK_CODE_KEY = "OK" | "CREATED" | "ACCEPTED" | "NO_CONTENT" | "RESET_CONTENT" | "PARTIAL_CONTENT";
+export type RouterInputs = inferRouterInputs<AppRouter>;
+export type RouterOutputs = inferRouterOutputs<AppRouter>;
