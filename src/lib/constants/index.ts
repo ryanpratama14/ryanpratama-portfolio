@@ -1,3 +1,4 @@
+import { isJapanese } from "@/lib/functions";
 import dayjs from "dayjs";
 
 import belinsky from "@/assets/belinsky.jpg";
@@ -15,7 +16,7 @@ import turta2 from "@/assets/turta2.png";
 import type { Dictionary, ExperienceItem, Lang, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
 export const getIdendityData = (t: Dictionary, lang: Lang) => {
-  const age = lang === "ja" ? t.PERSONAL_DATA.age : ` ${t.PERSONAL_DATA.age}`;
+  const age = isJapanese(lang) ? t.PERSONAL_DATA.age : ` ${t.PERSONAL_DATA.age}`;
   return [t.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, t.LOCATIONS.jakarta];
 };
 
