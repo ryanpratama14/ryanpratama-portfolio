@@ -47,26 +47,24 @@ export default function ProjectDiscuss({ t, lang }: Props) {
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-end gap-4 md:w-[50%] w-full">
           <Input
             {...register("name")}
-            error={errors.name?.message ?? ""}
+            error={errors.name?.message}
             autoComplete="name"
             label={t.DISCUSS_YOUR_PROJECT.name.label}
             placeholder={t.DISCUSS_YOUR_PROJECT.name.placeholder}
           />
           <Input
             {...register("email")}
-            error={errors.email?.message ?? ""}
+            error={errors.email?.message}
             autoComplete="email"
             label={t.DISCUSS_YOUR_PROJECT.email.label}
             placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
           />
           <TextArea
             {...register("description")}
-            rows={5}
             placeholder={t.DISCUSS_YOUR_PROJECT.projectDescription.placeholder}
             label={t.DISCUSS_YOUR_PROJECT.projectDescription.label}
-            error={errors.description?.message ?? ""}
+            error={errors.description?.message}
           />
-
           <button type="submit" disabled={isPending} className="relative group flex w-fit">
             <span
               className={cn(

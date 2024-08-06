@@ -12,7 +12,6 @@ import nutech from "@/assets/nutech.jpeg";
 import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 
-// types
 import type { Dictionary, ExperienceItem, Lang, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
 export const getIdendityData = (t: Dictionary, lang: Lang) => {

@@ -2,6 +2,11 @@ body {
   background-image: url("/assets/noise.png");
 }
 
+textarea {
+  field-sizing: content;
+  min-height: 4lh;
+}
+
 .pratama {
   -webkit-text-stroke-color: white;
   -webkit-text-fill-color: transparent;

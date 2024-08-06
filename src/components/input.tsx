@@ -2,7 +2,7 @@ import { cn } from "@/lib/functions";
 import { type ComponentProps, forwardRef, useId } from "react";
 
 type InputProps = ComponentProps<"input"> & {
-  error: string;
+  error: string | undefined;
   label: string;
 };
 
