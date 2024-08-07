@@ -1,4 +1,4 @@
-import type { Dictionary } from "@/types";
+import type { Dictionary, DictionaryDynamic } from "@/types";
 
 export const ru: Dictionary = {
   PERSONAL_DATA: {
@@ -62,4 +62,8 @@ export const ru: Dictionary = {
       placeholder: "Привет, хотел бы обсудить про новый проект...",
     },
   },
+};
+
+export const ru_dynamic: DictionaryDynamic = {
+  hello: (name: string) => `Hello ${name}`,
 };

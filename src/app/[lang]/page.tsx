@@ -9,7 +9,7 @@ import { Fragment } from "react";
 
 type Props = { params: { lang: Lang } };
 
-export default async function Home({ params }: Props) {
+export default function Home({ params }: Props) {
   const { t, locale, lang } = useLanguage(params.lang);
 
   return (

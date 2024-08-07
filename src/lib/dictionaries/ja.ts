@@ -1,4 +1,4 @@
-import type { Dictionary } from "@/types";
+import type { Dictionary, DictionaryDynamic } from "@/types";
 
 export const ja: Dictionary = {
   PERSONAL_DATA: {
@@ -62,4 +62,8 @@ export const ja: Dictionary = {
       placeholder: "こんにちは、プロジェクトの内容は...",
     },
   },
+};
+
+export const ja_dynamic: DictionaryDynamic = {
+  hello: (name: string) => `こんにちは、${name}さん`,
 };

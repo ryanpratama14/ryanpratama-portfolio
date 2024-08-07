@@ -60,3 +60,7 @@ export const en = {
     },
   },
 };
+
+export const en_dynamic = {
+  hello: (name: string) => `Hello ${name}`,
+};
