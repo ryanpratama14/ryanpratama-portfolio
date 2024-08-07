@@ -7,21 +7,21 @@ import TextArea from "@/components/text-area";
 import { cn } from "@/lib/functions";
 import { type ProjectInput, schema } from "@/server/api/schema";
 import { api } from "@/trpc/providers";
-import type { Dictionary, Lang } from "@/types";
+import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
-type Props = { t: Dictionary; lang: Lang };
+type Props = { s: DictionaryStatic; lang: Lang };
 
-export default function ProjectDiscuss({ t, lang }: Props) {
+export default function ProjectDiscuss({ s, lang }: Props) {
   const [showModal, setShowModal] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ProjectInput>({ resolver: zodResolver(schema.email.projectDiscuss(t)), defaultValues: { lang } });
+  } = useForm<ProjectInput>({ resolver: zodResolver(schema.email.projectDiscuss(s)), defaultValues: { lang } });
 
   const onSubmit: SubmitHandler<ProjectInput> = (data) => sendEmail(data);
 
@@ -30,7 +30,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
   return (
     <Fragment>
       <SuccessModal
-        t={t}
+        s={s}
         show={showModal}
         onClose={() => {
           setShowModal(false);
@@ -40,8 +40,8 @@ export default function ProjectDiscuss({ t, lang }: Props) {
       <article id="contact" className="mt-8 main-padding gap-6 flex flex-col justify-center min-h-[60vh] relative">
         <div className="max-xl:hidden absolute centered-left translate-x-80 w-80 aspect-square rounded-full bg-bluedarker/30 blur-3xl -z-10" />
         <GradientText
-          text1={t.SECTIONS.dicussYourProject.split(" ")[0] ?? ""}
-          text2={`${t.SECTIONS.dicussYourProject.split(" ")[1]} ${t.SECTIONS.dicussYourProject.split(" ")[2]}`}
+          text1={s.SECTIONS.dicussYourProject.split(" ")[0] ?? ""}
+          text2={`${s.SECTIONS.dicussYourProject.split(" ")[1]} ${s.SECTIONS.dicussYourProject.split(" ")[2]}`}
           bigger
         />
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-md:items-end gap-4 md:w-[50%] w-full">
@@ -49,20 +49,20 @@ export default function ProjectDiscuss({ t, lang }: Props) {
             {...register("name")}
             error={errors.name?.message}
             autoComplete="name"
-            label={t.DISCUSS_YOUR_PROJECT.name.label}
-            placeholder={t.DISCUSS_YOUR_PROJECT.name.placeholder}
+            label={s.DISCUSS_YOUR_PROJECT.name.label}
+            placeholder={s.DISCUSS_YOUR_PROJECT.name.placeholder}
           />
           <Input
             {...register("email")}
             error={errors.email?.message}
             autoComplete="email"
-            label={t.DISCUSS_YOUR_PROJECT.email.label}
-            placeholder={t.DISCUSS_YOUR_PROJECT.email.placeholder}
+            label={s.DISCUSS_YOUR_PROJECT.email.label}
+            placeholder={s.DISCUSS_YOUR_PROJECT.email.placeholder}
           />
           <TextArea
             {...register("description")}
-            placeholder={t.DISCUSS_YOUR_PROJECT.projectDescription.placeholder}
-            label={t.DISCUSS_YOUR_PROJECT.projectDescription.label}
+            placeholder={s.DISCUSS_YOUR_PROJECT.projectDescription.placeholder}
+            label={s.DISCUSS_YOUR_PROJECT.projectDescription.label}
             error={errors.description?.message}
           />
           <button type="submit" disabled={isPending} className="relative group flex w-fit">
@@ -72,7 +72,7 @@ export default function ProjectDiscuss({ t, lang }: Props) {
                 { "opacity-0": isPending },
               )}
             >
-              {t.DISCUSS_YOUR_PROJECT.submit}
+              {s.DISCUSS_YOUR_PROJECT.submit}
             </span>
             <div
               className={cn("group-hover:opacity-100 absolute top-0 -z-10 w-full h-full gradient-web bg-animate", {

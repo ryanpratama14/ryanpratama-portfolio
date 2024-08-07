@@ -4,16 +4,21 @@ import Iconify from "@/components/iconify";
 import { navbarData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { LANGUAGE_OPTIONS } from "@/lib/internationalization";
-import type { Dictionary, Lang } from "@/types";
+import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./components/mobile-menu";
 import Resume from "./components/resume";
 
-type Props = { t: Dictionary; setCookie: (name: string, value: string) => Promise<void>; lang: Lang; storedLang: Lang | undefined };
+type Props = {
+  s: DictionaryStatic;
+  setCookie: (name: string, value: string) => Promise<void>;
+  lang: Lang;
+  storedLang: Lang | undefined;
+};
 
-export default function Navbar({ t, lang, storedLang, setCookie }: Props) {
+export default function Navbar({ s, lang, storedLang, setCookie }: Props) {
   const pathname = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
@@ -50,8 +55,8 @@ export default function Navbar({ t, lang, storedLang, setCookie }: Props) {
       )}
     >
       <section className="flex gap-4 h-full items-center">
-        <MobileMenu t={t} />
-        <Resume title={t.SECTIONS.resume} />
+        <MobileMenu s={s} />
+        <Resume title={s.SECTIONS.resume} />
       </section>
       <section className="flex gap-4 items-center">
         {navbarData.map((e) => {
@@ -60,7 +65,7 @@ export default function Navbar({ t, lang, storedLang, setCookie }: Props) {
               <span>
                 <Iconify icon={e.icon} width={20} />
               </span>
-              {t.NAVBAR_DATA[e.label]}
+              {s.NAVBAR_DATA[e.label]}
             </a>
           );
         })}
@@ -76,7 +81,7 @@ export default function Navbar({ t, lang, storedLang, setCookie }: Props) {
                     type="button"
                   >
                     <span className="sr-only">
-                      {e.t.PERSONAL_DATA.fullName} {e.t.PERSONAL_DATA.summary}
+                      {e.s.PERSONAL_DATA.fullName} {e.s.PERSONAL_DATA.summary}
                     </span>
                     {e.flag}
                   </Link>

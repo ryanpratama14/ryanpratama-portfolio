@@ -13,11 +13,11 @@ import nutech from "@/assets/nutech.jpeg";
 import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 
-import type { Dictionary, ExperienceItem, Lang, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
+import type { DictionaryStatic, ExperienceItem, Lang, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
-export const getIdendityData = (t: Dictionary, lang: Lang) => {
-  const age = isJapanese(lang) ? t.PERSONAL_DATA.age : ` ${t.PERSONAL_DATA.age}`;
-  return [t.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, t.LOCATIONS.jakarta];
+export const getIdendityData = (s: DictionaryStatic, lang: Lang) => {
+  const age = isJapanese(lang) ? s.PERSONAL_DATA.age : ` ${s.PERSONAL_DATA.age}`;
+  return [s.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, s.LOCATIONS.jakarta];
 };
 
 export const projectsData: ProjectItem[] = [

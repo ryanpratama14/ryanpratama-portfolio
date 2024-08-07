@@ -24,7 +24,7 @@ const notosans = Noto_Sans({
 export const generateStaticParams = () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async ({ params }: { params: { lang: Lang } }): Promise<Metadata> => {
   const {
-    t: { PERSONAL_DATA: me },
+    s: { PERSONAL_DATA: me },
     locale,
     lang,
   } = useLanguage(params.lang);
@@ -57,7 +57,7 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
 export default function RootLayout({ children, params }: Props) {
-  const { t, lang } = useLanguage(params.lang);
+  const { s, lang } = useLanguage(params.lang);
   const storedLang = cookies().get("lang")?.value as Lang | undefined;
 
   return (
@@ -65,7 +65,7 @@ export default function RootLayout({ children, params }: Props) {
       <body>
         <Analytics />
         <SpeedInsights />
-        <Navbar t={t} lang={lang} setCookie={setCookie} storedLang={storedLang} />
+        <Navbar s={s} lang={lang} setCookie={setCookie} storedLang={storedLang} />
         <Providers>
           <main>{children}</main>
         </Providers>

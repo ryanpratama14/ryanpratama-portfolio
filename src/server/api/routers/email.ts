@@ -7,7 +7,7 @@ import { THROW_TRPC_ERROR, THROW_TRPC_OK } from "@/trpc/shared";
 import { Resend } from "resend";
 
 export const email = createTRPCRouter({
-  projectDiscuss: publicProcedure.input(schema.email.projectDiscuss(DEFAULT_LANGUAGE.t)).mutation(async ({ input }) => {
+  projectDiscuss: publicProcedure.input(schema.email.projectDiscuss(DEFAULT_LANGUAGE.s)).mutation(async ({ input }) => {
     const { data, error } = await new Resend(env.RESEND_API_KEY).emails.send({
       from: `Ryan <${env.RESEND_EMAIL_FROM}>`,
       to: env.RESEND_EMAIL_TO,
