@@ -19,13 +19,13 @@ type Props = {
 };
 
 export default function Navbar({ s, lang, storedLang, setCookie }: Props) {
-  const pathname = usePathname();
+  const path = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
 
-  const changeLang = (targetLang: Lang) => {
-    if (!pathname) return "/";
-    const segments = pathname.split("/");
+  const changeLang = (targetLang: Lang): string => {
+    if (!path) return "/";
+    const segments = path.split("/");
     segments[1] = targetLang;
     return segments.join("/");
   };

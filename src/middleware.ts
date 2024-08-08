@@ -1,4 +1,4 @@
-import { DEFAULT_LANG, LANGS } from "@/lib/internationalization";
+import { DEFAULT_LANG, LANGS, isLangMissing } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
@@ -6,8 +6,8 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-const getLangFromPathname = (pathname: string) => {
-  const lang = pathname.split("/")[1];
+const getLangFromPath = (path: string) => {
+  const lang = path.split("/")[1];
   const validation = z.enum(LANGS).safeParse(lang);
   if (validation.success) return validation.data;
   return undefined;
@@ -23,14 +23,11 @@ const getLang = (request: NextRequest) => {
 };
 
 export const middleware = (request: NextRequest) => {
-  const pathname = request.nextUrl.pathname;
+  const path = request.nextUrl.pathname;
   const storedLang = request.cookies.get("lang")?.value as Lang | undefined;
-  const lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
-  const pathnameMissing = LANGS.every((lang) => !pathname.startsWith(`/${lang}/`) && pathname !== `/${lang}`);
-  if (pathnameMissing) {
-    const newPath = `/${lang}${pathname.startsWith("/") ? "" : "/"}${pathname}`;
-    return NextResponse.redirect(new URL(newPath, request.url));
-  }
+  const lang = getLangFromPath(path) ?? storedLang ?? getLang(request);
+  const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, request.url);
+  if (isLangMissing(path)) return NextResponse.redirect(newUrl);
 };
 
 export const config = {
