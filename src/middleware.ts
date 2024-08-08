@@ -1,10 +1,12 @@
-import { DEFAULT_LANG, LANGS, isLangMissing } from "@/lib/internationalization";
+import { DEFAULT_LANG, LANGS } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
+
+const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
 
 const getLangFromPath = (path: string) => {
   const lang = path.split("/")[1];

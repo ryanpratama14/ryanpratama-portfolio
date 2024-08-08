@@ -13,4 +13,3 @@ export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...
 export const DEFAULT_LANG: Lang = "en";
 export const DEFAULT_LANGUAGE = LANGUAGES[DEFAULT_LANG];
 export const useLanguage = (lang: Lang) => LANGUAGES[lang];
-export const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
