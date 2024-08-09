@@ -26,6 +26,9 @@ const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {
   UNPROCESSABLE_CONTENT: "Unprocessable request content. The request content is not valid or cannot be processed.",
   TOO_MANY_REQUESTS: "Too many requests. Please try again later.",
   CLIENT_CLOSED_REQUEST: "Client closed the request. The client terminated the request unexpectedly.",
+  BAD_GATEWAY: "Bad gateway. The server received an invalid response from the upstream server.",
+  SERVICE_UNAVAILABLE: "Service unavailable. The server is currently unable to handle the request.",
+  GATEWAY_TIMEOUT: "Gateway timeout. The server did not receive a timely response from the upstream server.",
 };
 
 const OK_MESSAGES: Record<TRPC_OK_CODE_KEY, string> = {
