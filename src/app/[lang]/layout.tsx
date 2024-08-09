@@ -21,7 +21,7 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-export const generateStaticParams = () => LANGS.map((lang) => ({ lang }));
+export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async ({ params }: { params: { lang: Lang } }): Promise<Metadata> => {
   const {
     s: { PERSONAL_DATA: me },
