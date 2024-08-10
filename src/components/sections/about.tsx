@@ -4,14 +4,13 @@ import Img from "@/components/img";
 import { experienceData, getIdendityData, skillsData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { useLanguageFn } from "@/lib/internationalization";
-import type { Language } from "@/types";
+import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
 
-type Props = { language: Language };
+type Props = { s: DictionaryStatic; lang: Lang; isJapanese: boolean };
 
-export default function About({ language }: Props) {
-  const { lang, s, isJapanese } = language;
-  const { formatDate } = useLanguageFn(lang);
+export default function About({ s, lang, isJapanese }: Props) {
+  const { formatMonth } = useLanguageFn(lang);
 
   return (
     <article className="min-h-screen main-padding space-y-6" id="about">
@@ -65,7 +64,7 @@ export default function About({ language }: Props) {
                       </span>
                     </h5>
                     <small className="italic text-gray group-hover:text-white font-medium">
-                      {formatDate(e.since)} — {e.till ? formatDate(e.till) : s.SECTIONS.present}
+                      {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : s.SECTIONS.present}
                     </small>
                     <small className="font-medium">{s.LOCATIONS[e.location]}</small>
                   </section>
