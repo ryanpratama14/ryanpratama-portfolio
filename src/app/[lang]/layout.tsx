@@ -31,7 +31,7 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
 
   const title = `${me.fullName} — ${isJapanese(lang) ? me.softwareEngineer.split(" ").join("") : me.softwareEngineer}`;
   const description = `${title} ${me.summary}`;
-  const url = `${getBaseUrl()}/${lang}`;
+  const url = getBaseUrl(lang);
 
   return {
     manifest: "/manifest.json",

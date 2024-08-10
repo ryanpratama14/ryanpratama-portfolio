@@ -13,8 +13,9 @@ export const copyData = <T>(data: T): T => structuredClone(data);
 export const formatDate = (date: Date, locale: string) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
 export const consoleError = (error: string) => console.error(`❌ ${currentTime} 👉 ${error}`);
 
-export const getBaseUrl = () => {
-  if (isClient) return window.location.origin;
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return `http://localhost:${process.env.PORT ?? 3000}`;
+export const getBaseUrl = (lang?: Lang) => {
+  const addLang = () => (lang ? `/${lang}` : "");
+  if (isClient) return `${window.location.origin}${addLang()}`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}${addLang()}`;
+  return `http://localhost:${process.env.PORT ?? 3000}${addLang()}`;
 };
