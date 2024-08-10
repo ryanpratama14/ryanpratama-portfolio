@@ -67,10 +67,9 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           />
           <button type="submit" disabled={isPending} className="relative group flex w-fit">
             <span
-              className={cn(
-                "animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white px-8 py-1 size-full",
-                { "opacity-0": isPending },
-              )}
+              className={cn("animate group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white px-8 py-1 size-full", {
+                "opacity-0": isPending,
+              })}
             >
               {s.DISCUSS_YOUR_PROJECT.submit}
             </span>

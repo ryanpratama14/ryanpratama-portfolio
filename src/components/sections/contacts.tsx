@@ -11,9 +11,7 @@ export default function Contacts({ isMain = true, s }: Props) {
   return (
     <article
       id="contacts"
-      className={cn("relative main-padding flex flex-col gap-6 justify-center min-h-[50vh]", {
-        "min-h-[40vh]": isMain,
-      })}
+      className={cn("relative main-padding flex flex-col gap-6 justify-center min-h-[50vh]", { "min-h-[40vh]": isMain })}
     >
       <div className="top-12 max-xl:hidden absolute left-44 w-72 aspect-square rounded-full bg-blue/30 blur-3xl -z-10" />
       <GradientText text1={s.SECTIONS.moreContacts.split(" ")[0] ?? ""} text2={s.SECTIONS.moreContacts.split(" ")[1] ?? ""} bigger />

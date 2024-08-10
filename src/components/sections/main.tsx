@@ -15,10 +15,7 @@ export default function Main({ s }: Props) {
       <section className="flex justify-between items-center flex-wrap lg:flex-nowrap gap-x-6 gap-y-16">
         <section className="w-full lg:w-[50%] flex flex-col gap-6">
           <section className="flex flex-col gap-2">
-            <GradientText
-              text1={s.PERSONAL_DATA.softwareEngineer.split(" ")[0] ?? ""}
-              text2={s.PERSONAL_DATA.softwareEngineer.split(" ")[1] ?? ""}
-            />
+            <GradientText text1={s.PERSONAL_DATA.softwareEngineer.split(" ")[0] ?? ""} text2={s.PERSONAL_DATA.softwareEngineer.split(" ")[1] ?? ""} />
             <h1 className="-translate-x-1 lg:-translate-x-2.5 w-full uppercase">
               <span>{s.PERSONAL_DATA.fullName.split(" ")[0]}</span>
               <span className="max-xl:hidden absolute translate-x-6 pratama">{s.PERSONAL_DATA.fullName.split(" ")[1]}!</span>

@@ -1,4 +1,4 @@
-import { DEFAULT_LANG, LANGS } from "@/internationalization";
+import { DEFAULT_LANG, LANGS } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";

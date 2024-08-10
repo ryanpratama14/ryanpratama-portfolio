@@ -1,4 +1,3 @@
-import { isJapanese } from "@/lib/functions";
 import dayjs from "dayjs";
 
 import belinsky from "@/assets/belinsky.jpg";
@@ -13,10 +12,10 @@ import nutech from "@/assets/nutech.jpeg";
 import turta from "@/assets/turta.jpg";
 import turta2 from "@/assets/turta2.png";
 
-import type { DictionaryStatic, ExperienceItem, Lang, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
+import type { DictionaryStatic, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
-export const getIdendityData = (s: DictionaryStatic, lang: Lang) => {
-  const age = isJapanese(lang) ? s.PERSONAL_DATA.age : ` ${s.PERSONAL_DATA.age}`;
+export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
+  const age = isJapanese ? s.PERSONAL_DATA.age : ` ${s.PERSONAL_DATA.age}`;
   return [s.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, s.LOCATIONS.jakarta];
 };
 

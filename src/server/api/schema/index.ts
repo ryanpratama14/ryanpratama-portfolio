@@ -1,4 +1,4 @@
-import { LANGS } from "@/internationalization";
+import { LANGS } from "@/lib/internationalization";
 import type { DictionaryStatic } from "@/types";
 import { z } from "zod";
 

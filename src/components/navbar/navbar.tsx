@@ -1,9 +1,9 @@
 "use client";
 
 import Iconify from "@/components/iconify";
-import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { navbarData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
+import { LANGUAGE_OPTIONS, useLanguageFn } from "@/lib/internationalization";
 import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -19,16 +19,10 @@ type Props = {
 };
 
 export default function Navbar({ s, lang, storedLang, setCookie }: Props) {
+  const { changeLang } = useLanguageFn(lang);
   const path = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
-
-  const changeLang = (targetLang: Lang): string => {
-    if (!path) return "/";
-    const segments = path.split("/");
-    segments[1] = targetLang;
-    return segments.join("/");
-  };
 
   useEffect(() => {
     window.addEventListener(
@@ -76,7 +70,7 @@ export default function Navbar({ s, lang, storedLang, setCookie }: Props) {
               <Link
                 className={cn("text-2xl px-2 rounded-md", { "bg-white shadow": isActive })}
                 key={e.lang}
-                href={changeLang(e.lang)}
+                href={changeLang(e.lang, path)}
                 type="button"
               >
                 <span className="sr-only">

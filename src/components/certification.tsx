@@ -1,7 +1,7 @@
 import GradientText from "@/components/gradient-text";
 import Img from "@/components/img";
 import Contact from "@/components/sections/contacts";
-import { useLanguage } from "@/internationalization";
+import { useLanguage } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";

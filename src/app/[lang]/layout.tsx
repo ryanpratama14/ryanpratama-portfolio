@@ -1,9 +1,8 @@
 import Navbar from "@/components/navbar/navbar";
 import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
-import { LANGS, useLanguage } from "@/internationalization";
 import { setCookie } from "@/lib/actions";
-import { getBaseUrl, isJapanese } from "@/lib/functions";
+import { LANGS, useLanguage } from "@/lib/internationalization";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
@@ -26,12 +25,12 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
   const {
     s: { PERSONAL_DATA: me },
     locale,
-    lang,
+    isJapanese,
+    baseUrl: url,
   } = useLanguage(params.lang);
 
-  const title = `${me.fullName} — ${isJapanese(lang) ? me.softwareEngineer.split(" ").join("") : me.softwareEngineer}`;
+  const title = `${me.fullName} — ${isJapanese ? me.softwareEngineer.split(" ").join("") : me.softwareEngineer}`;
   const description = `${title} ${me.summary}`;
-  const url = getBaseUrl(lang);
 
   return {
     manifest: "/manifest.json",
