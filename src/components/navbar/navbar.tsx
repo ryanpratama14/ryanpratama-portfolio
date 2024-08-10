@@ -1,9 +1,9 @@
 "use client";
 
 import Iconify from "@/components/iconify";
+import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { navbarData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { LANGUAGE_OPTIONS } from "@/lib/internationalization";
 import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

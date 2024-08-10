@@ -1,4 +1,4 @@
-import { DEFAULT_LANG, LANGS } from "@/lib/internationalization";
+import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
@@ -32,6 +32,4 @@ export const middleware = (request: NextRequest) => {
   if (isLangMissing(path)) return NextResponse.redirect(newUrl);
 };
 
-export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|resume.pdf|manifest.json|icons/*|assets/*|favicons/*).*)"],
-};
+export const config = { matcher: ["/", "/((?!api|_next|_vercel|.*\\..*).*)", "/(en|ja|ru)/:path*"] };

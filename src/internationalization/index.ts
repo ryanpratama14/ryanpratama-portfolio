@@ -1,7 +1,7 @@
-import { en } from "@/lib/dictionaries/en";
-import { ja } from "@/lib/dictionaries/ja";
-import { ru } from "@/lib/dictionaries/ru";
 import type { Lang, Language } from "@/types";
+import { en } from "./dictionaries/en";
+import { ja } from "./dictionaries/ja";
+import { ru } from "./dictionaries/ru";
 
 export const LANGS = ["ja", "en", "ru"] as const;
 export const LANGUAGES: Language = {

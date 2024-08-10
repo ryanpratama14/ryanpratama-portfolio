@@ -1,5 +1,5 @@
-import type { en } from "@/lib/dictionaries/en";
-import type { LANGS } from "@/lib/internationalization";
+import type { LANGS } from "@/internationalization";
+import type { en } from "@/internationalization/dictionaries/en";
 import type { IconifyIcon } from "@iconify/react/dist/iconify.js";
 import type { StaticImageData } from "next/image";
 
