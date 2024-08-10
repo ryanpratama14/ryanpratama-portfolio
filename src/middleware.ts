@@ -15,8 +15,8 @@ const getLangFromPath = (path: string) => {
   return undefined;
 };
 
-const getLang = (request: NextRequest) => {
-  const headers = new Headers(request.headers);
+const getLang = (req: NextRequest) => {
+  const headers = new Headers(req.headers);
   const acceptLanguage = headers.get("accept-language");
   if (acceptLanguage) headers.set("accept-language", acceptLanguage.replaceAll("_", "-"));
   const headersObject = Object.fromEntries(headers.entries());
@@ -24,11 +24,11 @@ const getLang = (request: NextRequest) => {
   return match(languages, LANGS, DEFAULT_LANG) as Lang;
 };
 
-export const middleware = (request: NextRequest) => {
-  const path = request.nextUrl.pathname;
-  const storedLang = request.cookies.get("lang")?.value as Lang | undefined;
-  const lang = getLangFromPath(path) ?? storedLang ?? getLang(request);
-  const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, request.url);
+export const middleware = (req: NextRequest) => {
+  const path = req.nextUrl.pathname;
+  const storedLang = req.cookies.get("lang")?.value as Lang | undefined;
+  const lang = getLangFromPath(path) ?? storedLang ?? getLang(req);
+  const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
   if (isLangMissing(path)) return NextResponse.redirect(newUrl);
 };
 
