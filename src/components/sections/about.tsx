@@ -7,10 +7,10 @@ import { useLanguageFn } from "@/lib/internationalization";
 import type { Language } from "@/types";
 import Link from "next/link";
 
-type Props = { t: Language };
+type Props = { language: Language };
 
-export default function About({ t }: Props) {
-  const { lang, s, isJapanese } = t;
+export default function About({ language }: Props) {
+  const { lang, s, isJapanese } = language;
   const { formatDate } = useLanguageFn(lang);
 
   return (

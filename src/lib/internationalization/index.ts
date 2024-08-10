@@ -18,9 +18,10 @@ export const DEFAULT_LANGUAGE = LANGUAGES[DEFAULT_LANG];
 export const useLanguage = (lang: Lang) => {
   const { d, ...rest } = LANGUAGES[lang];
   const isJapanese = lang === "ja";
+  const isDefaultLang = lang === DEFAULT_LANG;
   const baseUrl = getBaseUrl(lang);
 
-  return { ...rest, isJapanese, baseUrl };
+  return { ...rest, isJapanese, isDefaultLang, baseUrl };
 };
 
 export const useLanguageFn = (lang: Lang) => {
@@ -32,6 +33,7 @@ export const useLanguageFn = (lang: Lang) => {
     segments[1] = targetLang;
     return segments.join("/");
   };
+  const getUrl = (path: string) => `${getBaseUrl()}${path}`;
 
-  return { d, formatDate, changeLang };
+  return { d, formatDate, changeLang, getUrl };
 };

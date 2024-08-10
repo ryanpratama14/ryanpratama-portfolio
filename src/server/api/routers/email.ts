@@ -1,6 +1,6 @@
 import { env } from "@/env";
-import { DEFAULT_LANGUAGE } from "@/internationalization";
 import ProjectDiscuss from "@/lib/emails/project-discuss";
+import { DEFAULT_LANGUAGE } from "@/lib/internationalization";
 import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { THROW_TRPC_ERROR, THROW_TRPC_OK } from "@/trpc/shared";
