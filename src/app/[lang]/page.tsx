@@ -11,15 +11,15 @@ type Props = { params: { lang: Lang } };
 
 export default function Home({ params }: Props) {
   const language = useLanguage(params.lang);
-  const { t, lang, fn } = language;
+  const { s, lang } = language;
 
   return (
     <Fragment>
-      <Main t={t} fn={fn} />
+      <Main s={s} />
       <About language={language} />
-      <Projects t={t} />
-      <ProjectDiscuss t={t} lang={lang} />
-      <Contacts t={t} />
+      <Projects s={s} />
+      <ProjectDiscuss s={s} lang={lang} />
+      <Contacts s={s} />
     </Fragment>
   );
 }

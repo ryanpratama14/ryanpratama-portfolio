@@ -12,13 +12,13 @@ import MobileMenu from "./components/mobile-menu";
 import Resume from "./components/resume";
 
 type Props = {
-  t: DictionaryStatic;
+  s: DictionaryStatic;
   setCookie: (name: string, value: string) => Promise<void>;
   lang: Lang;
   storedLang: Lang | undefined;
 };
 
-export default function Navbar({ t, lang, storedLang, setCookie }: Props) {
+export default function Navbar({ s, lang, storedLang, setCookie }: Props) {
   const path = usePathname();
   const [visible, setVisible] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
@@ -55,8 +55,8 @@ export default function Navbar({ t, lang, storedLang, setCookie }: Props) {
       )}
     >
       <section className="flex gap-4 h-full items-center">
-        <MobileMenu t={t} />
-        <Resume title={t.SECTIONS.resume} />
+        <MobileMenu s={s} />
+        <Resume title={s.SECTIONS.resume} />
       </section>
       <section className="flex gap-4 items-center">
         {navbarData.map((e) => {
@@ -65,7 +65,7 @@ export default function Navbar({ t, lang, storedLang, setCookie }: Props) {
               <span>
                 <Iconify icon={e.icon} width={20} />
               </span>
-              {t.NAVBAR_DATA[e.label]}
+              {s.NAVBAR_DATA[e.label]}
             </a>
           );
         })}

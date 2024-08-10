@@ -4,9 +4,9 @@ import type { DictionaryStatic } from "@/types";
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-type Props = { t: DictionaryStatic };
+type Props = { s: DictionaryStatic };
 
-export default function MobileMenu({ t }: Props) {
+export default function MobileMenu({ s }: Props) {
   return (
     <Menu as="div" className="relative inline-block md:hidden">
       <MenuButton className="flex items-center outline-none">
@@ -29,7 +29,7 @@ export default function MobileMenu({ t }: Props) {
                   <span>
                     <Iconify icon={e.icon} width={20} />
                   </span>
-                  {t.NAVBAR_DATA[e.label]}
+                  {s.NAVBAR_DATA[e.label]}
                 </a>
               </MenuItem>
             );

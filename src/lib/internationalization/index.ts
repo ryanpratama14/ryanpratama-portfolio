@@ -16,18 +16,21 @@ export const DEFAULT_LANGUAGE = LANGUAGES[DEFAULT_LANG];
 
 export const useLanguage = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
-  const { locale, currency } = rest;
 
-  // bases
   const isJapanese = lang === "ja";
   const isDefaultLang = lang === DEFAULT_LANG;
   const baseUrl = getBaseUrl(lang);
 
-  // functions
+  return { ...rest, s: t.static, isJapanese, isDefaultLang, baseUrl, fn: useLanguageFn(lang) };
+};
+
+export const useLanguageFn = (lang: Lang) => {
+  const { t, locale, currency } = LANGUAGES[lang];
+
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
   const getUrl = (path: string) => `${getBaseUrl()}${path}`;
 
-  return { ...rest, t: t.static, isJapanese, isDefaultLang, baseUrl, fn: { t: t.dynamic, formatMonth, formatDate, formatCurrency, getUrl } };
+  return { d: t.dynamic, formatMonth, formatDate, formatCurrency, getUrl };
 };

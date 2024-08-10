@@ -9,14 +9,14 @@ import Link from "next/link";
 type Props = { language: Language };
 
 export default function About({ language }: Props) {
-  const { fn, t, isJapanese } = language;
+  const { fn, s, isJapanese } = language;
 
   return (
     <article className="min-h-screen main-padding space-y-6" id="about">
-      <GradientText text1={t.SECTIONS.aboutMe.split(" ")[0] ?? ""} text2={t.SECTIONS.aboutMe.split(" ")[1] ?? ""} bigger />
+      <GradientText text1={s.SECTIONS.aboutMe.split(" ")[0] ?? ""} text2={s.SECTIONS.aboutMe.split(" ")[1] ?? ""} bigger />
       <section className="space-y-1">
         <section className="flex relative w-fit divide-x justify-between gap-2">
-          {getIdendityData(t, isJapanese).map((e, i) => {
+          {getIdendityData(s, isJapanese).map((e, i) => {
             return (
               <p key={e} className={cn("label", { "pl-2": i !== 0 })}>
                 {e}
@@ -24,7 +24,7 @@ export default function About({ language }: Props) {
             );
           })}
         </section>
-        <p className="xl:w-[80%]">{t.PERSONAL_DATA.about}</p>
+        <p className="xl:w-[80%]">{s.PERSONAL_DATA.about}</p>
       </section>
       <section className="md:w-[80%] lg:w-[70%] flex flex-wrap gap-3">
         {skillsData.map((e) => {
@@ -40,7 +40,7 @@ export default function About({ language }: Props) {
       </section>
 
       <section className="space-y-4">
-        <h4>{t.SECTIONS.professionalExperience}</h4>
+        <h4>{s.SECTIONS.professionalExperience}</h4>
         <nav className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-6">
           {experienceData.map((e) => {
             return (
@@ -63,9 +63,9 @@ export default function About({ language }: Props) {
                       </span>
                     </h5>
                     <small className="italic text-gray group-hover:text-white font-medium">
-                      {fn.formatMonth(e.since)} — {e.till ? fn.formatMonth(e.till) : t.SECTIONS.present}
+                      {fn.formatMonth(e.since)} — {e.till ? fn.formatMonth(e.till) : s.SECTIONS.present}
                     </small>
-                    <small className="font-medium">{t.LOCATIONS[e.location]}</small>
+                    <small className="font-medium">{s.LOCATIONS[e.location]}</small>
                   </section>
                 </section>
               </Link>
