@@ -32,4 +32,4 @@ export const middleware = (request: NextRequest) => {
   if (isLangMissing(path)) return NextResponse.redirect(newUrl);
 };
 
-export const config = { matcher: ["/", "/((?!api|_next|_vercel|.*\\..*).*)", "/(en|ja|ru)/:path*"] };
+export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };
