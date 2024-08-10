@@ -4,17 +4,17 @@ import { projectsData } from "@/lib/constants";
 import type { DictionaryStatic } from "@/types";
 import Link from "next/link";
 
-type Props = { s: DictionaryStatic };
+type Props = { t: DictionaryStatic };
 
-export default function Projects({ s }: Props) {
+export default function Projects({ t }: Props) {
   return (
     <article className="relative flex-col gap-6 md:gap-12 flex justify-center items-center main-padding" id="projects">
       {/* bullets */}
       <div className="max-xl:hidden absolute left-56 top-24 w-56 aspect-square rounded-full  bg-turquoise/30 blur-3xl -z-10" />
       <div className="max-xl:hidden absolute right-56 top-[45rem] w-56 aspect-square rounded-full  bg-bluedarker/30 blur-3xl -z-10" />
       <GradientText
-        text1={s.SECTIONS.featuredProjects.split(" ")[0] ?? ""}
-        text2={s.SECTIONS.featuredProjects.split(" ")[1] ?? ""}
+        text1={t.SECTIONS.featuredProjects.split(" ")[0] ?? ""}
+        text2={t.SECTIONS.featuredProjects.split(" ")[1] ?? ""}
         bigger
         className="text-center"
       />
@@ -37,7 +37,7 @@ export default function Projects({ s }: Props) {
                   </section>
                   <Link href={e.href} target="_blank" className="relative group flex" rel="noreferrer">
                     <span className="animate text-center flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-1 border-[2px] border-white size-full px-4 py-1">
-                      {s.SECTIONS.visitProject}
+                      {t.SECTIONS.visitProject}
                     </span>
                     <div className="animate opacity-0 group-hover:opacity-100 absolute top-0 left-0 -z-10 size-full gradient-web bg-animate" />
                   </Link>

@@ -1,4 +1,4 @@
-import type { LANGS, useLanguage, useLanguageFn } from "@/lib/internationalization";
+import type { LANGS, useLanguage } from "@/lib/internationalization";
 import type { IconifyIcon } from "@iconify/react/dist/iconify.js";
 import type { StaticImageData } from "next/image";
 import type { en } from "#/dictionaries/en";
@@ -8,7 +8,7 @@ export type Dictionary = typeof en;
 export type DictionaryStatic = typeof en.static;
 export type DictionaryDynamic = typeof en.dynamic;
 export type Language = ReturnType<typeof useLanguage>;
-export type LanguageFn = ReturnType<typeof useLanguageFn>;
+export type LanguageFn = Pick<Language, "fn">["fn"];
 
 export type NavbarItem = {
   label: keyof DictionaryStatic["NAVBAR_DATA"];

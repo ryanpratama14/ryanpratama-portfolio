@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function Certification({ src, alt, title, lang }: Props) {
-  const { s } = useLanguage(lang);
+  const { t } = useLanguage(lang);
 
   return (
     <article className="flex flex-col">
@@ -24,10 +24,10 @@ export default function Certification({ src, alt, title, lang }: Props) {
       </figure>
       <section className="min-h-[10vh] flex justify-center items-center">
         <Link className="btn-nav px-6 py-2 w-fit" href={`/${lang}`}>
-          {s.SECTIONS.backToHomepage}
+          {t.SECTIONS.backToHomepage}
         </Link>
       </section>
-      <Contact s={s} isMain={false} />
+      <Contact t={t} isMain={false} />
     </article>
   );
 }

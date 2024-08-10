@@ -14,9 +14,9 @@ import turta2 from "@/assets/turta2.png";
 
 import type { DictionaryStatic, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
-export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
-  const age = isJapanese ? s.PERSONAL_DATA.age : ` ${s.PERSONAL_DATA.age}`;
-  return [s.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, s.LOCATIONS.jakarta];
+export const getIdendityData = (t: DictionaryStatic, isJapanese: boolean) => {
+  const age = isJapanese ? t.PERSONAL_DATA.age : ` ${t.PERSONAL_DATA.age}`;
+  return [t.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, t.LOCATIONS.jakarta];
 };
 
 export const projectsData: ProjectItem[] = [
