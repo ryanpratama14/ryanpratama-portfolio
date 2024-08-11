@@ -5,8 +5,8 @@ import type { en } from "#/dictionaries/en";
 
 export type Lang = (typeof LANGS)[number];
 export type Dictionary = typeof en;
-export type DictionaryStatic = typeof en.static;
-export type DictionaryDynamic = typeof en.dynamic;
+export type DictionaryStatic = typeof en.s;
+export type DictionaryDynamic = typeof en.d;
 export type Language = ReturnType<typeof useLanguage>;
 export type LanguageFn = ReturnType<typeof useLanguageFn>;
 

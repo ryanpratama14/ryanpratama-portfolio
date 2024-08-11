@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/types";
 
 export const ru: Dictionary = {
-  static: {
+  s: {
     PERSONAL_DATA: {
       fullName: "Риан Пратама",
       summary:
@@ -42,8 +42,7 @@ export const ru: Dictionary = {
 
     DISCUSS_YOUR_PROJECT: {
       formSent: "Заявка успешно отправлена",
-      thankYou:
-        "Спасибо за обращение по проекту. Я благодарю вас за сообщение и свяжусь с вами как можно скорее, чтобы обсудить дальнейшие детали.",
+      thankYou: "Спасибо за обращение по проекту. Я благодарю вас за сообщение и свяжусь с вами как можно скорее, чтобы обсудить дальнейшие детали.",
       gotIt: "Понял, спасибо!",
 
       submit: "Отправить",
@@ -64,7 +63,7 @@ export const ru: Dictionary = {
       },
     },
   },
-  dynamic: {
+  d: {
     hello: (name: string) => `Hello ${name}`,
   },
 };

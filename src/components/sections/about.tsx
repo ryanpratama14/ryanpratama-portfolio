@@ -9,7 +9,11 @@ import Link from "next/link";
 type Props = { language: Language };
 
 export default function About({ language }: Props) {
-  const { fn, s, isJapanese } = language;
+  const {
+    fn: { formatMonth },
+    s,
+    isJapanese,
+  } = language;
 
   return (
     <article className="min-h-screen main-padding space-y-6" id="about">
@@ -63,7 +67,7 @@ export default function About({ language }: Props) {
                       </span>
                     </h5>
                     <small className="italic text-gray group-hover:text-white font-medium">
-                      {fn.formatMonth(e.since)} — {e.till ? fn.formatMonth(e.till) : s.SECTIONS.present}
+                      {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : s.SECTIONS.present}
                     </small>
                     <small className="font-medium">{s.LOCATIONS[e.location]}</small>
                   </section>

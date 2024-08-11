@@ -70,14 +70,20 @@ export default function Navbar({ s, lang, storedLang, setCookie }: Props) {
           );
         })}
         <section className="flex items-center">
-          {LANGUAGE_OPTIONS.map((e) => {
-            const isActive = lang === e.lang;
+          {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag }) => {
+            const isActive = lang === targetLang;
+
             return (
-              <Link className={cn("text-2xl px-2 rounded-md", { "bg-white shadow": isActive })} key={e.lang} href={changeLang(e.lang)} type="button">
+              <Link
+                className={cn("text-2xl px-2 rounded-md", { "bg-white shadow": isActive })}
+                key={targetLang}
+                href={changeLang(targetLang)}
+                type="button"
+              >
                 <span className="sr-only">
-                  {e.t.static.PERSONAL_DATA.fullName} {e.t.static.PERSONAL_DATA.summary}
+                  {s.PERSONAL_DATA.fullName} {s.PERSONAL_DATA.summary}
                 </span>
-                {e.flag}
+                {flag}
               </Link>
             );
           })}

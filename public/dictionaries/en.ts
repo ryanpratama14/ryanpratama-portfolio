@@ -1,5 +1,5 @@
 export const en = {
-  static: {
+  s: {
     PERSONAL_DATA: {
       fullName: "Ryan Pratama",
       summary:
@@ -62,7 +62,7 @@ export const en = {
     },
   },
 
-  dynamic: {
+  d: {
     hello: (name: string) => `Hello ${name}`,
   },
 };

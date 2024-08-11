@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/types";
 
 export const ja: Dictionary = {
-  static: {
+  s: {
     PERSONAL_DATA: {
       fullName: "Ryan Pratama",
       summary:
@@ -65,7 +65,7 @@ export const ja: Dictionary = {
     },
   },
 
-  dynamic: {
+  d: {
     hello: (name: string) => `こんにちは、${name}さん`,
   },
 };
