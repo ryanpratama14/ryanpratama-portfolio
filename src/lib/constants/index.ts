@@ -1,18 +1,24 @@
 import dayjs from "dayjs";
 
 import belinsky from "@/assets/belinsky.jpg";
-import belinsky2 from "@/assets/belinsky2.png";
-import faotech from "@/assets/faoTech.png";
+import faotech from "@/assets/faotech.png";
 import hebronstar from "@/assets/hebronstar.jpg";
-import hebronstar2 from "@/assets/hebronstar2.png";
 import kima from "@/assets/kima.jpg";
-import kima2 from "@/assets/kima2.png";
-import mandiri1 from "@/assets/mandiri1.jpg";
+import mandiri from "@/assets/mandiri.jpg";
 import nutech from "@/assets/nutech.jpeg";
 import turta from "@/assets/turta.jpg";
-import turta2 from "@/assets/turta2.png";
 
 import type { DictionaryStatic, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
+
+const PHOTOS = {
+  belinsky,
+  faotech,
+  hebronstar,
+  kima,
+  mandiri,
+  nutech,
+  turta,
+};
 
 export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
   const age = isJapanese ? s.PERSONAL_DATA.age : ` ${s.PERSONAL_DATA.age}`;
@@ -22,8 +28,7 @@ export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
 export const projectsData: ProjectItem[] = [
   {
     title: "Hebronstar Strategy Consultants",
-    icon: hebronstar2,
-    src: hebronstar,
+    src: PHOTOS.hebronstar,
     desc: "Hebronstar is a Korean consulting firm catering to diverse global services and industries.",
     href: "https://hebronstar.com/en",
     lists: [
@@ -36,8 +41,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     title: "KIMA",
-    icon: kima2,
-    src: kima,
+    src: PHOTOS.kima,
     desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
     href: "https://kima-fe.vercel.app",
     lists: [
@@ -49,8 +53,8 @@ export const projectsData: ProjectItem[] = [
   },
   {
     title: "TurunTangan",
-    icon: turta2,
-    src: turta,
+
+    src: PHOTOS.turta,
     desc: "TurunTangan is a non-profit youth volunteer movement with more than 70 chapters across Indonesia.",
     href: "https://gerakanturuntangan.com",
     lists: [
@@ -63,8 +67,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     title: "Belinsky Production",
-    icon: belinsky2,
-    src: belinsky,
+    src: PHOTOS.belinsky,
     desc: "Belinsky is a production house and creative studio that specializes in both professional photography and filmmaking.",
     href: "https://belinskyproduction.com",
     lists: [
@@ -75,8 +78,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     title: "Synergy Perdana Mandiri",
-    icon: belinsky2,
-    src: mandiri1,
+    src: PHOTOS.mandiri,
     desc: "A trading company specializing in general and chemicals trading.",
     href: "https://www.sinergyperdanamandiri.com",
     lists: [

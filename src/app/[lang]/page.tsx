@@ -10,13 +10,12 @@ import { Fragment } from "react";
 type Props = { params: { lang: Lang } };
 
 export default function Home({ params }: Props) {
-  const language = useLanguage(params.lang);
-  const { s, lang } = language;
+  const { s, lang, ...rest } = useLanguage(params.lang);
 
   return (
     <Fragment>
       <Main s={s} />
-      <About language={language} />
+      <About language={{ s, lang, ...rest }} />
       <Projects s={s} />
       <ProjectDiscuss s={s} lang={lang} />
       <Contacts s={s} />

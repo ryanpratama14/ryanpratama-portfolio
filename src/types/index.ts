@@ -38,7 +38,6 @@ export type SkillsItem = {
 
 export type ProjectItem = {
   title: string;
-  icon: StaticImageData;
   desc: string;
   href: string;
   lists: string[];

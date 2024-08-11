@@ -72,7 +72,6 @@ export default function Navbar({ s, lang, storedLang, setCookie }: Props) {
         <section className="flex items-center">
           {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag }) => {
             const isActive = lang === targetLang;
-
             return (
               <Link
                 className={cn("text-2xl px-2 rounded-md", { "bg-white shadow": isActive })}
