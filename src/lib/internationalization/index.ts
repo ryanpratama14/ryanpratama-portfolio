@@ -23,7 +23,7 @@ export const useLanguage = (lang: Lang) => {
   const baseUrl = getBaseUrl(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
 
-  return { ...rest, s, isJapanese, isDefaultLang, baseUrl, currentTime, fn: useLanguageFn(lang) };
+  return { ...rest, s, isJapanese, isDefaultLang, baseUrl, currentTime };
 };
 
 export const useLanguageFn = (lang: Lang) => {
@@ -35,5 +35,5 @@ export const useLanguageFn = (lang: Lang) => {
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
 
-  return { d, formatMonth, formatDate, formatCurrency };
+  return { ...rest, d, formatMonth, formatDate, formatCurrency };
 };
