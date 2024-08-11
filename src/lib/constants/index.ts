@@ -11,8 +11,8 @@ import turta from "@/assets/turta.jpg";
 import type { DictionaryStatic, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 
 const PHOTOS = {
-  LOGO: { nutech, faotech },
-  PROJECT: { belinsky, hebronstar, kima, mandiri, turta },
+  logo: { nutech, faotech },
+  project: { belinsky, hebronstar, kima, mandiri, turta },
 };
 
 export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
@@ -23,7 +23,7 @@ export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
 export const projectsData: ProjectItem[] = [
   {
     title: "Hebronstar Strategy Consultants",
-    src: PHOTOS.PROJECT.hebronstar,
+    src: PHOTOS.project.hebronstar,
     desc: "Hebronstar is a Korean consulting firm catering to diverse global services and industries.",
     href: "https://hebronstar.com/en",
     lists: [
@@ -36,7 +36,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     title: "KIMA",
-    src: PHOTOS.PROJECT.kima,
+    src: PHOTOS.project.kima,
     desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
     href: "https://kima-fe.vercel.app",
     lists: [
@@ -49,7 +49,7 @@ export const projectsData: ProjectItem[] = [
   {
     title: "TurunTangan",
 
-    src: PHOTOS.PROJECT.turta,
+    src: PHOTOS.project.turta,
     desc: "TurunTangan is a non-profit youth volunteer movement with more than 70 chapters across Indonesia.",
     href: "https://gerakanturuntangan.com",
     lists: [
@@ -62,7 +62,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     title: "Belinsky Production",
-    src: PHOTOS.PROJECT.belinsky,
+    src: PHOTOS.project.belinsky,
     desc: "Belinsky is a production house and creative studio that specializes in both professional photography and filmmaking.",
     href: "https://belinskyproduction.com",
     lists: [
@@ -73,7 +73,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     title: "Synergy Perdana Mandiri",
-    src: PHOTOS.PROJECT.mandiri,
+    src: PHOTOS.project.mandiri,
     desc: "A trading company specializing in general and chemicals trading.",
     href: "https://www.sinergyperdanamandiri.com",
     lists: [
@@ -112,7 +112,7 @@ export const skillsData: SkillsItem[] = [
 
 export const experienceData: ExperienceItem[] = [
   {
-    src: PHOTOS.LOGO.nutech,
+    src: PHOTOS.logo.nutech,
     label: "Nutech Integrasi",
     link: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
@@ -120,7 +120,7 @@ export const experienceData: ExperienceItem[] = [
     location: "jakarta",
   },
   {
-    src: PHOTOS.LOGO.faotech,
+    src: PHOTOS.logo.faotech,
     label: "faoTech",
     link: "https://faotech.dev",
     since: dayjs("2022-09").toDate(),
