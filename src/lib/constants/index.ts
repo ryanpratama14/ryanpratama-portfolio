@@ -1,21 +1,25 @@
+import type { CertificationItem, DictionaryStatic, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
 import dayjs from "dayjs";
 
+// projects
 import belinsky from "@/assets/belinsky.jpg";
 import hebronstar from "@/assets/hebronstar.jpg";
-import jlpt from "@/assets/jlpt.jpeg";
 import kima from "@/assets/kima.jpg";
-import faotech from "@/assets/logo-faotech.png";
-import nutech from "@/assets/logo-nutech.jpeg";
 import mandiri from "@/assets/mandiri.jpg";
-import podfak from "@/assets/podfak.jpeg";
 import turta from "@/assets/turta.jpg";
 
-import type { CertificationItem, DictionaryStatic, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
+// certifications
+import n4 from "@/assets/jlpt-n4.jpeg";
+import podfak from "@/assets/podfak.jpeg";
+
+// logos
+import faotech from "@/assets/logo-faotech.png";
+import nutech from "@/assets/logo-nutech.jpeg";
 
 const PHOTOS = {
   logo: { nutech, faotech },
   project: { belinsky, hebronstar, kima, mandiri, turta },
-  certifications: { jlpt, podfak },
+  certifications: { n4, podfak },
 };
 
 export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
@@ -24,7 +28,7 @@ export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
 };
 
 export const certificationsData: CertificationItem[] = [
-  { name: "jlpt-n4", src: PHOTOS.certifications.jlpt, alt: "JLPT N4 Certification, Ryan Pratama", title: "JLPT N4" },
+  { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", title: "JLPT N4" },
   {
     name: "preparatory-faculty-of-russian-language",
     src: PHOTOS.certifications.podfak,
