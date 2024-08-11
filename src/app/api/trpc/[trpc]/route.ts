@@ -1,10 +1,12 @@
 import { env } from "@/env";
-import { consoleError } from "@/lib/functions";
+import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
 import { appRouter } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import type { NextRequest } from "next/server";
 
+const { currentTime } = useLanguage(DEFAULT_LANG);
+const consoleError = (error: string) => console.error(`❌ ${currentTime} 👉 ${error}`);
 const createContext = async (req: NextRequest) => createTRPCContext({ headers: req.headers });
 
 const handler = (req: NextRequest) =>
