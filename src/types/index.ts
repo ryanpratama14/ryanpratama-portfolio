@@ -43,3 +43,10 @@ export type ProjectItem = {
   lists: string[];
   src: StaticImageData;
 };
+
+export type CertificationItem = {
+  name: string;
+  src: StaticImageData;
+  alt: string;
+  title: string;
+};
