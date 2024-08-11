@@ -14,3 +14,5 @@ export const getBaseUrl = (lang?: Lang) => {
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}${addLang()}`;
   return `http://localhost:${process.env.PORT ?? 3000}${addLang()}`;
 };
+
+export const getCurrentUrl = (path: string) => `${getBaseUrl()}${path}`;

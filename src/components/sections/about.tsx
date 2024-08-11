@@ -3,17 +3,14 @@ import Iconify from "@/components/iconify";
 import Img from "@/components/img";
 import { experienceData, getIdendityData, skillsData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import type { Language } from "@/types";
+import { useLanguageFn } from "@/lib/internationalization";
+import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
 
-type Props = { language: Language };
+type Props = { s: DictionaryStatic; lang: Lang; isJapanese: boolean };
 
-export default function About({ language }: Props) {
-  const {
-    fn: { formatMonth },
-    s,
-    isJapanese,
-  } = language;
+export default function About({ s, lang, isJapanese }: Props) {
+  const { formatMonth } = useLanguageFn(lang);
 
   return (
     <article className="min-h-screen main-padding space-y-6" id="about">
