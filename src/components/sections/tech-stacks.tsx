@@ -27,12 +27,12 @@ export default function TechStacks({ s }: Props) {
     );
   };
 
-  const data = Object.keys(TECH_STACKS) as Array<keyof TechStack>;
+  const keys = Object.keys(TECH_STACKS) as Array<keyof TechStack>;
 
   return (
     <article>
       <MenuTitle title={s.MENUS.techstacks} />
-      {data.map((e) => {
+      {keys.map((e) => {
         return <TechStack name={e} key={e} />;
       })}
     </article>
