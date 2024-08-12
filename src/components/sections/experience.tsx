@@ -26,8 +26,8 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
               <section className="flex justify-between items-center w-full px-3 gap-2">
                 <section className="flex flex-col">
                   <small className="font-medium">{s.PERSONAL_DATA.position[e.position]}</small>
-                  <small className="text-graydarker">
-                    {e.label} • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
+                  <small className="text-graydarker lg:text-base text-xs">
+                    <b className="font-medium">{e.label}</b> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
                   </small>
                 </section>
                 <Iconify icon="bxs:up-arrow" rotate={2} width={15} color={COLORS.gray} className="animate group-open:rotate-180" />
