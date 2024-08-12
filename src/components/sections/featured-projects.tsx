@@ -29,8 +29,8 @@ export default function FeaturedProjects({ s }: Props) {
         {PROJECTS.map((e) => {
           return (
             <SwiperSlide key={e.title}>
-              <section className="aspect-[4/5] relative group">
-                <section className="absolute left-0 top-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-4 lg:px-8">
+              <section className="aspect-[4/5] relative group overflow-hidden">
+                <section className="z-10 absolute left-0 top-0 w-full group-hover:h-full h-0 opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-4 lg:px-8">
                   <small className="text-pretty">{e.desc}</small>
                   <ul>
                     {e.lists.map((list) => (
@@ -41,7 +41,7 @@ export default function FeaturedProjects({ s }: Props) {
                     {s.SECTIONS.visitProject}
                   </Link>
                 </section>
-                <Img src={e.src} alt={e.desc} className="object-cover size-full" />
+                <Img src={e.src} alt={e.desc} className="object-cover size-full group-hover:scale-[1.1] animate" />
               </section>
             </SwiperSlide>
           );

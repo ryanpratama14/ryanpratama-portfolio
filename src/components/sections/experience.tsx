@@ -23,7 +23,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
                   <section className="w-16 md:w-20 aspect-square relative bg-white p-2 flex items-center justify-center">
                     <Img src={e.src} className="object-contain" alt={e.label} />
                   </section>
-                  <section className="pl-2 md:pl-4 flex flex-col">
+                  <section className="pl-3 flex flex-col">
                     <small className="font-medium">{s.PERSONAL_DATA.position[e.position]}</small>
                     <small className="text-graydarker lg:text-base text-xs">
                       <b className="font-medium">{e.label}</b> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
