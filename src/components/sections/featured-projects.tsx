@@ -31,7 +31,7 @@ export default function FeaturedProjects({ s }: Props) {
             <SwiperSlide key={e.title}>
               <section className="aspect-[4/5] relative group">
                 <section className="absolute left-0 top-0 size-full opacity-0 group-hover:opacity-100 bg-black/80 animate flex flex-col items-center justify-center gap-1.5 px-4 lg:px-8">
-                  <p className="text-pretty">{e.desc}</p>
+                  <small className="text-pretty">{e.desc}</small>
                   <ul className="list-disc ml-4">
                     {e.lists.map((list) => (
                       <li key={list}>{list}</li>
