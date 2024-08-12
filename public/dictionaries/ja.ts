@@ -30,7 +30,7 @@ export const ja: Dictionary = {
         programmingLanguages: "開発言語",
         librariesFrameworks: "フレームワーク",
         db: "DB",
-        learning: "自己学習。。。",
+        learning: "自己学習...",
       },
     },
 

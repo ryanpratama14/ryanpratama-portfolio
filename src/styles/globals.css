@@ -84,7 +84,7 @@
   }
   input,
   textarea {
-    @apply text-sm lg:text-base px-2.5 p-1.5 bg-graydarker/20 placeholder:text-graydarker text-white rounded-md outline-none;
+    @apply text-sm lg:text-base px-2.5 p-1.5 bg-graydarker/20 placeholder:text-graydarker text-white rounded-md outline-none focus:outline-none;
   }
   article {
     @apply flex flex-col gap-2.5;

@@ -7,50 +7,12 @@ textarea {
   min-height: 4lh;
 }
 
-.transition-element {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  width: 100%;
-  height: 100%;
-}
-
-.transition-element-1 {
-  animation: slide-in 1s ease-in;
-  animation-delay: 0s;
-  z-index: 50;
-}
-
-.transition-element-2 {
-  animation: slide-in 1s ease-in;
-  animation-delay: 0.2s;
-  z-index: 40;
-}
-
-.transition-element-3 {
-  animation: slide-in 1s ease-in;
-  animation-delay: 0.4s;
-  z-index: 30;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    width: 100%;
-  }
-  to {
-    transform: translateX(0%);
-    width: 0%;
-  }
-}
-
 .swiper-scrollbar {
   --swiper-scrollbar-drag-bg-color: #d4d4d4 !important;
   --swiper-scrollbar-border-radius: 0px;
   margin-left: 0px !important;
   padding-left: 0px !important;
-  height: 2px !important;
+  height: 1px !important;
   width: 100% !important;
   background: none !important;
   bottom: 0 !important;

@@ -1,11 +1,13 @@
 "use client";
 
+import TransitionEffect from "@/components/transition-effect";
 import { getBaseUrl } from "@/lib/functions";
 import type { AppRouter } from "@/server/api/root";
 import { transformer } from "@/trpc/shared";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { unstable_httpBatchStreamLink as httpBatchStreamLink, loggerLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { createQueryClient } from "./query-client";
 
@@ -45,7 +47,10 @@ export default function Providers({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
       <api.Provider client={trpcClient} queryClient={queryClient}>
-        {children}
+        <AnimatePresence>
+          {children}
+          <TransitionEffect />
+        </AnimatePresence>
       </api.Provider>
     </QueryClientProvider>
   );

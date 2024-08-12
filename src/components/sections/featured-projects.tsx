@@ -18,7 +18,7 @@ export default function FeaturedProjects({ s }: Props) {
       <Swiper
         modules={[Autoplay, Mousewheel, Scrollbar]}
         mousewheel={{ forceToAxis: true }}
-        autoplay={{ delay: 2500, pauseOnMouseEnter: true, stopOnLastSlide: false, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, pauseOnMouseEnter: true, stopOnLastSlide: false, disableOnInteraction: false }}
         scrollbar={{ draggable: true, el: ".swiper-scrollbar" }}
         className="w-full"
         simulateTouch={false}
@@ -39,7 +39,7 @@ export default function FeaturedProjects({ s }: Props) {
                       ))}
                     </ul>
                   </section>
-                  <Link target="_blank" href={e.href} className="box-button mt-2 group-hover:translate-y-0 translate-y-6 !duration-700">
+                  <Link target="_blank" href={e.href} className="box-button mt-2 group-hover:translate-y-0 translate-y-6">
                     {s.SECTIONS.visitProject}
                   </Link>
                 </section>

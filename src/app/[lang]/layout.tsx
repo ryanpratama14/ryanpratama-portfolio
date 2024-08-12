@@ -1,5 +1,4 @@
 import ScrollToTop from "@/components/scroll-to-top";
-import TransitionEffect from "@/components/transition-effect";
 import { LANGS, useLanguage } from "@/lib/internationalization";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
@@ -66,7 +65,6 @@ export default function RootLayout({ children, params }: Props) {
         <Providers>
           <main className="pt-shorter pb-24 px-shorter lg:xl-longer xl:px-longer4 animate flex flex-col gap-4">{children}</main>
         </Providers>
-        <TransitionEffect />
         <ScrollToTop />
       </body>
     </html>
