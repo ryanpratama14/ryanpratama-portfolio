@@ -5,7 +5,7 @@ import Iconify from "@/components/iconify";
 import Img from "@/components/img";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { LANGUAGE_OPTIONS } from "@/lib/internationalization";
+import { DEFAULT_LANG, LANGUAGE_OPTIONS, useLanguage } from "@/lib/internationalization";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
@@ -18,9 +18,10 @@ type Props = {
   isJapanese: boolean;
   setCookie: (name: string, value: string) => Promise<void>;
   storedLang: Lang | undefined;
+  isDefaultLang: boolean;
 };
 
-export default function Profile({ s, lang, isJapanese, setCookie, storedLang }: Props) {
+export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie, storedLang }: Props) {
   const path = usePathname();
 
   const changeLang = (targetLang: Lang): string => {
@@ -60,16 +61,19 @@ export default function Profile({ s, lang, isJapanese, setCookie, storedLang }: 
 
   return (
     <Fragment>
-      <section className="flex items-center gap-4 lg:gap-6">
+      <section className="flex items-center gap-3 lg:gap-6">
         <Img
           src={avatar}
           alt={s.PERSONAL_DATA.fullName}
           priority
-          className="shadow-md object-top object-cover size-24 lg:size-32 aspect-square rounded-full"
+          className="shadow-md object-top object-cover size-[4.75rem] lg:size-32 aspect-square rounded-full"
         />
         <section className="flex justify-between w-full items-start">
-          <section className="space-y-1">
-            <h1>{s.PERSONAL_DATA.fullName}</h1>
+          <section className="md:space-y-1">
+            <section>
+              <h1 className="-translate-x-[0.085rem]">{s.PERSONAL_DATA.fullName}</h1>
+              {isDefaultLang ? null : <div className="text-xs -translate-y-[0.05rem]">{useLanguage(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</div>}
+            </section>
             <p className="text-gray">{s.PERSONAL_DATA.softwareEngineer}</p>
             <section className="hidden md:flex gap-y-2 gap-x-4 flex-wrap">
               <ProfileData />

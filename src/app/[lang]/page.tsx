@@ -15,12 +15,12 @@ import { Fragment } from "react";
 type Props = { params: { lang: Lang } };
 
 export default function Home({ params }: Props) {
-  const { s, lang, isJapanese } = useLanguage(params.lang);
+  const { s, lang, isJapanese, isDefaultLang } = useLanguage(params.lang);
   const storedLang = cookies().get("lang")?.value as Lang | undefined;
 
   return (
     <Fragment>
-      <Profile lang={lang} s={s} isJapanese={isJapanese} setCookie={setCookie} storedLang={storedLang} />
+      <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} setCookie={setCookie} storedLang={storedLang} />
       <Contacts s={s} />
       <About s={s} />
       <TechStacks s={s} />

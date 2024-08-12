@@ -3,7 +3,7 @@ import type { Dictionary } from "@/types";
 export const ja: Dictionary = {
   s: {
     PERSONAL_DATA: {
-      fullName: "Ryan Pratama・ライアン プラタマ",
+      fullName: "ライアン・プラタマ",
       summary:
         "フロントエンド開発を専門とする経験豊富なソフトウェア エンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
       softwareEngineer: "ソフトウェアエンジニア",
