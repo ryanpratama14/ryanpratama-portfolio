@@ -38,8 +38,8 @@ export default function SuccessModal({ show, onClose, s }: Props) {
               leaveTo="opacity-0 scale-95"
             >
               <DialogPanel className="flex flex-col gap-2 w-full max-w-md transform overflow-hidden rounded-md p-6 text-left shadow-xl animate bg-black">
-                <DialogTitle as="p" className="p text-white">
-                  {s.DISCUSS_YOUR_PROJECT.formSent}
+                <DialogTitle as="section" className="text-white">
+                  <p>{s.DISCUSS_YOUR_PROJECT.formSent}</p>
                 </DialogTitle>
 
                 <small className="text-gray text-pretty">{s.DISCUSS_YOUR_PROJECT.thankYou}</small>
