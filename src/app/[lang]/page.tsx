@@ -9,6 +9,7 @@ import { setCookie } from "@/lib/actions";
 import { useLanguage } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { cookies } from "next/headers";
+import { Fragment } from "react";
 
 type Props = { params: { lang: Lang } };
 
@@ -17,7 +18,7 @@ export default function Home({ params }: Props) {
   const storedLang = cookies().get("lang")?.value as Lang | undefined;
 
   return (
-    <main className="p-shorter lg:px-longer5 animate flex flex-col gap-6">
+    <Fragment>
       <Profile lang={lang} s={s} isJapanese={isJapanese} setCookie={setCookie} storedLang={storedLang} />
       <Contacts s={s} />
       <About s={s} />
@@ -25,6 +26,6 @@ export default function Home({ params }: Props) {
       <Experience s={s} lang={lang} />
       <ProjectDiscuss s={s} lang={lang} />
       <UpdatedAt s={s} lang={lang} />
-    </main>
+    </Fragment>
   );
 }

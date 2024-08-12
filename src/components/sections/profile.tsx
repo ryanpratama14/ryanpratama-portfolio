@@ -75,7 +75,6 @@ export default function Profile({ s, lang, isJapanese, setCookie, storedLang }: 
               <ProfileData />
             </section>
           </section>
-
           <section className="flex items-center">
             {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag }) => {
               const isActive = lang === targetLang;
