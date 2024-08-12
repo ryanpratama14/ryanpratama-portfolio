@@ -14,7 +14,7 @@ export default function Contacts({ s }: Props) {
         {CONTACTS.map((e) => {
           return (
             <Link key={e.label} href={e.href} target="_blank" className="box">
-              <Iconify icon={e.icon} width={15} />
+              <Iconify icon={e.icon} width={17} />
               <small>{e.label}</small>
             </Link>
           );

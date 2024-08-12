@@ -14,7 +14,10 @@ export default function TechStacks({ s }: Props) {
           {TECH_STACKS[name].map((e) => {
             return (
               <section key={e.label} className="box-techstacks">
-                <Iconify icon={e.icon} width={12.5} />
+                <section className="flex items-center gap-1">
+                  <Iconify icon={e.icon} width={13} />
+                  {e.icon2 ? <Iconify icon={e.icon2} width={13} /> : null}
+                </section>
                 <div className="lg:text-sm text-xs">{e.label}</div>
               </section>
             );

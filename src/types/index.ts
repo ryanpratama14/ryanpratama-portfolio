@@ -27,7 +27,10 @@ export type Experience = {
   duty: string[];
 };
 
-export type TechStack = Record<keyof DictionaryStatic["MENUS"]["TECH_STACKS"], { label: string; icon: IconifyIcon | string }[]>;
+export type TechStack = Record<
+  keyof DictionaryStatic["MENUS"]["TECH_STACKS"],
+  { label: string; icon: IconifyIcon | string; icon2?: IconifyIcon | string }[]
+>;
 
 export type Project = {
   title: string;

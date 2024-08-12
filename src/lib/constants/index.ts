@@ -114,14 +114,14 @@ export const TECH_STACKS: TechStack = {
   programmingLanguages: [
     { label: "TypeScript", icon: "teenyicons:typescript-solid" },
     { label: "JavaScript", icon: "teenyicons:javascript-solid" },
-    { label: "HTML5", icon: "akar-icons:html-fill" },
-    { label: "CSS 3", icon: "akar-icons:css-fill" },
+    { label: "HTML", icon: "akar-icons:html-fill" },
+    { label: "CSS", icon: "akar-icons:css-fill" },
   ],
 
   librariesFrameworks: [
     { label: "T3 Stack", icon: "bi:stack" },
-    { label: "React / Native", icon: "teenyicons:react-solid" },
-    { label: "Next.js", icon: "teenyicons:nextjs-solid" },
+    { label: "React / Next.js", icon: "teenyicons:react-solid", icon2: "teenyicons:nextjs-solid" },
+    { label: "React Native", icon: "tabler:brand-react-native" },
     { label: "tRPC", icon: "devicon-plain:trpc" },
     { label: "Node.js", icon: "akar-icons:node-fill" },
     { label: "Express.js", icon: "simple-icons:express" },
@@ -152,9 +152,10 @@ export const TECH_STACKS: TechStack = {
   ],
 
   learning: [
-    { label: "Flutter", icon: "material-symbols:flutter" },
     { label: "Swift", icon: "simple-icons:swift" },
+    { label: "Flutter", icon: "material-symbols:flutter" },
     { label: "Go", icon: "simple-icons:go" },
+    { label: "Vue / Nuxt.js", icon: "mdi:vuejs", icon2: "file-icons:nuxt" },
   ],
 };
 
