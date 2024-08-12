@@ -31,14 +31,14 @@ export default function FeaturedProjects({ s }: Props) {
             <SwiperSlide key={e.title}>
               <section className="aspect-[4/5] relative group overflow-hidden rounded-md mb-2">
                 <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-4 lg:px-8">
-                  <section className="group-hover:translate-y-0 -translate-y-6 animate">
-                    <small className="text-pretty">{e.desc}</small>
-                    <ul>
-                      {e.lists.map((list) => (
-                        <li key={list}>{list}</li>
-                      ))}
-                    </ul>
-                  </section>
+                  <small className="text-pretty">{e.desc}</small>
+
+                  <ul className="group-hover:translate-y-0 -translate-y-6 animate">
+                    {e.lists.map((list) => (
+                      <li key={list}>{list}</li>
+                    ))}
+                  </ul>
+
                   <Link target="_blank" href={e.href} className="box-button mt-2 group-hover:translate-y-0 translate-y-6">
                     {s.SECTIONS.visitProject}
                   </Link>
