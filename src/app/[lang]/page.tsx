@@ -5,7 +5,7 @@ import FeaturedProjects from "@/components/sections/featured-projects";
 import Profile from "@/components/sections/profile";
 import ProjectDiscuss from "@/components/sections/project-discuss";
 import TechStacks from "@/components/sections/tech-stacks";
-import UpdatedAt from "@/components/sections/updated-at";
+import UpdatedOn from "@/components/sections/updated-on";
 import { setCookie } from "@/lib/actions";
 import { useLanguage } from "@/lib/internationalization";
 import type { Lang } from "@/types";
@@ -27,7 +27,7 @@ export default function Home({ params }: Props) {
       <Experience s={s} lang={lang} />
       <FeaturedProjects s={s} />
       <ProjectDiscuss s={s} lang={lang} />
-      <UpdatedAt s={s} lang={lang} />
+      <UpdatedOn s={s} lang={lang} />
     </Fragment>
   );
 }

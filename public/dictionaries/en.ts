@@ -21,7 +21,7 @@ export const en = {
       contacts: "Contacts",
       experience: "Experience",
       techstacks: "Tech Stacks",
-      updatedAt: "Updated at",
+      updatedOn: "Updated on",
       discussProject: "Discuss Your Project",
 
       TECH_STACKS: {

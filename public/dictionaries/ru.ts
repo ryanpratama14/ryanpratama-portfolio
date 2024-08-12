@@ -22,7 +22,7 @@ export const ru: Dictionary = {
       contacts: "Контакты",
       experience: "Опыт работы",
       techstacks: "Технологические стеки",
-      updatedAt: "Обновлено",
+      updatedOn: "Обновлено",
       discussProject: "Обсудим ваш проект?",
 
       TECH_STACKS: {
