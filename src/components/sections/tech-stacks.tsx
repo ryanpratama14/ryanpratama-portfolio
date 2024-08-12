@@ -24,12 +24,14 @@ export default function TechStacks({ s }: Props) {
     );
   };
 
+  const data = Object.keys(TECH_STACKS) as Array<keyof TechStack>;
+
   return (
     <article>
       <MenuTitle title={s.MENUS.techstacks} />
-      <TechStack name="programmingLanguages" />
-      <TechStack name="librariesFrameworks" />
-      <TechStack name="db" />
+      {data.map((e) => {
+        return <TechStack name={e} key={e} />;
+      })}
     </article>
   );
 }
