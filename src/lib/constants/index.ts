@@ -23,10 +23,10 @@ const PHOTOS = {
 };
 
 export const getProfileData = (s: DictionaryStatic, isJapanese: boolean) => {
-  const addSpace = (text: string) => (isJapanese ? text : ` ${text}`);
+  const addCounter = (text: string) => (isJapanese ? text : ` ${text}`);
 
-  const age = `${dayjs().diff(dayjs("2000-07-14"), "year")}${addSpace(s.PERSONAL_DATA.age)}`;
-  const yoe = `${(dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1)}${addSpace(s.SECTIONS.yearsExperience)}`;
+  const age = `${dayjs().diff(dayjs("2000-07-14"), "year")}${addCounter(s.PERSONAL_DATA.age)}`;
+  const yoe = `${(dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1)}${addCounter(s.SECTIONS.yearsExperience)}`;
 
   return [
     { href: "/resume.pdf", icon: "mdi:resume", title: s.SECTIONS.resume },
@@ -114,19 +114,22 @@ export const TECH_STACKS: TechStack = {
   programmingLanguages: [
     { label: "TypeScript", icon: "teenyicons:typescript-solid" },
     { label: "JavaScript", icon: "teenyicons:javascript-solid" },
-    { label: "HTML", icon: "akar-icons:html-fill" },
-    { label: "CSS", icon: "akar-icons:css-fill" },
+    { label: "HTML5", icon: "akar-icons:html-fill" },
+    { label: "CSS 3", icon: "akar-icons:css-fill" },
   ],
 
   librariesFrameworks: [
     { label: "T3 Stack", icon: "bi:stack" },
     { label: "React / Native", icon: "teenyicons:react-solid" },
     { label: "Next.js", icon: "teenyicons:nextjs-solid" },
+    { label: "tRPC", icon: "devicon-plain:trpc" },
+    { label: "Node.js", icon: "akar-icons:node-fill" },
+    { label: "Express.js", icon: "simple-icons:express" },
+    { label: "Hono", icon: "simple-icons:hono" },
     { label: "i18next", icon: "simple-icons:i18next" },
     { label: "Redux Toolkit", icon: "akar-icons:redux-fill" },
     { label: "Zod", icon: "simple-icons:zod" },
     { label: "React Hook Form", icon: "simple-icons:reacthookform" },
-    { label: "tRPC", icon: "devicon-plain:trpc" },
     { label: "Drizzle", icon: "simple-icons:drizzle" },
     { label: "Prisma", icon: "simple-icons:prisma" },
     { label: "TanStack Query", icon: "simple-icons:reactquery" },
@@ -137,6 +140,8 @@ export const TECH_STACKS: TechStack = {
     { label: "Styled Components", icon: "file-icons:styledcomponents" },
     { label: "Framer Motion", icon: "teenyicons:framer-solid" },
     { label: "Resend", icon: "simple-icons:resend" },
+    { label: "js-PDF / React-pdf", icon: "tabler:pdf" },
+    { label: "ExcelJS", icon: "ant-design:file-excel-filled" },
   ],
 
   db: [

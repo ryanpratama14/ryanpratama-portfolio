@@ -34,9 +34,7 @@ export default function FeaturedProjects({ s }: Props) {
                   <p className="text-pretty">{e.desc}</p>
                   <ul className="list-disc ml-4">
                     {e.lists.map((list) => (
-                      <li key={list} className="lg:text-base text-sm">
-                        {list}
-                      </li>
+                      <li key={list}>{list}</li>
                     ))}
                   </ul>
                   <Link target="_blank" href={e.href} className="box-button mt-2">

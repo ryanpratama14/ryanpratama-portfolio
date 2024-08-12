@@ -36,9 +36,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
 
             <ul className="ml-4 list-disc animate mt-2">
               {e.duty.map((duty) => (
-                <li key={duty} className="text-sm lg:text-base">
-                  {duty}
-                </li>
+                <li key={duty}>{duty}</li>
               ))}
             </ul>
           </details>

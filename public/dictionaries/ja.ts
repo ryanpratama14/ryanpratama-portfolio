@@ -26,9 +26,9 @@ export const ja: Dictionary = {
       discussProject: "Discuss Your Project",
 
       TECH_STACKS: {
-        programmingLanguages: "Programming Languages",
-        librariesFrameworks: "Libraries & Frameworks",
-        db: "Databases",
+        programmingLanguages: "開発言語",
+        librariesFrameworks: "フレームワーク",
+        db: "DB",
       },
     },
 

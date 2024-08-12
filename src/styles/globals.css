@@ -10,27 +10,24 @@
     @apply text-white bg-black font-notosans;
   }
   h1 {
-    @apply text-xl md:text-2xl lg:text-3xl font-bold animate;
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
   }
   h2 {
-    @apply text-lg md:text-xl lg:text-2xl font-semibold animate;
+    @apply text-lg md:text-xl lg:text-2xl font-semibold;
   }
   h3 {
-    @apply text-base md:text-lg lg:text-xl font-medium animate;
-  }
-  p,
-  a {
-    @apply animate lg:text-lg;
+    @apply text-base md:text-lg lg:text-xl font-medium;
   }
   small {
-    @apply animate lg:text-base;
+    @apply lg:text-base;
   }
   a,
   img {
     @apply select-none;
   }
-  button {
-    @apply animate;
+
+  li {
+    @apply text-sm lg:text-base;
   }
   input,
   textarea {
@@ -38,6 +35,21 @@
   }
   article {
     @apply flex flex-col gap-2.5;
+  }
+
+  a,
+  li,
+  ul,
+  button,
+  small,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply animate;
   }
 }
 
@@ -59,20 +71,20 @@
   }
   /* typography */
   .h1 {
-    @apply text-xl md:text-2xl lg:text-3xl font-bold animate;
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
   }
   .h2 {
-    @apply text-lg md:text-xl lg:text-2xl font-semibold animate;
+    @apply text-lg md:text-xl lg:text-2xl font-semibold;
   }
   .h3 {
-    @apply text-base md:text-lg lg:text-xl font-medium animate;
+    @apply text-base md:text-lg lg:text-xl font-medium;
   }
   .p,
   .a {
-    @apply animate lg:text-lg;
+    @apply lg:text-lg;
   }
   .small {
-    @apply animate lg:text-base;
+    @apply lg:text-base;
   }
   /* fixed positions for absolute or fixed position */
   .centered {
