@@ -3,34 +3,41 @@ import type { Dictionary } from "@/types";
 export const ru: Dictionary = {
   s: {
     PERSONAL_DATA: {
+      position: {
+        softwareEngineerFullstack: "Software Engineer, Fullstack",
+        softwareEngineerFrontend: "Software Engineer, Frontend",
+      },
       fullName: "Риан Пратама",
       summary:
         "Software Engineer, специализирующийся на фронтенд-разработке. Обладаю навыками разработки высококачественных решений, адаптированных к требованиям клиентов, и стремится быть в курсе тенденций отрасли и новейших технологий.",
       softwareEngineer: "Software Engineer",
-      contactMe: "Свяжиться",
-      learnMore: "Узнать больше",
       age: "г.",
       about:
         "На третьем курсе университета я присоединился к бесплатному курсу программирования, который вел мой индонезийский друг в своей квартире в Казани, Россия. Вместе с другими студентами я изучил основы JavaScript, и мы в конечном итоге основали стартап-разработчика программного обеспечения под названием faoTech в 2022 году. Развивая свои навыки, я обнаружил в себе страсть к frontend-разработке и решил специализироваться в этой области.",
     },
+    MENUS: {
+      about: "About",
+      projects: "Projects",
+      contacts: "Contacts",
+      experience: "Опыт работы",
+      techstacks: "Технологические стеки",
+      updatedAt: "Обновлено",
+      discussProject: "Обсудим ваш проект?",
 
-    NAVBAR_DATA: {
-      about: "Обо мне",
-      projects: "Проекты",
-      contacts: "Контакты",
+      TECH_STACKS: {
+        programmingLanguages: "Programming Languages",
+        librariesFrameworks: "Libraries & Frameworks",
+        db: "Databases",
+      },
     },
 
     SECTIONS: {
+      yearsExperience: "года опыта",
       backToHomepage: "На главную страницу",
       present: "настоящее время",
       resume: "Резюме",
       aboutMe: "Обо мне",
       featuredProjects: "Выделенные проекты",
-      moreContacts: "Ещё контакты",
-      moreContactsDescription:
-        "В данный момент я активно ищу новые возможности и буду рад услышать о любых потенциальных возможностях, которые могут быть доступны. Пожалуйста, не стесняйтесь обращаться ко мне, если у вас есть какие-либо идеи или вы хотите обсудить потенциальное сотрудничество.",
-      dicussYourProject: "Обсудим ваш проект?",
-      professionalExperience: "Опыт работы",
       visitProject: "Посетить проект",
     },
 
@@ -48,18 +55,15 @@ export const ru: Dictionary = {
       submit: "Отправить",
       name: {
         error: "Введите Ваше имя",
-        label: "Имя",
-        placeholder: "Дима",
+        placeholder: "Имя",
       },
       email: {
         error: "Предоставьте действительный адрес электронной почты",
-        label: "Электронная почта",
-        placeholder: "dima@gmail.com",
+        placeholder: "Электронная почта",
       },
       projectDescription: {
         error: "Предоставьте более подробное описание проекта",
-        label: "О проекте",
-        placeholder: "Привет, хотел бы обсудить про новый проект...",
+        placeholder: "О проекте",
       },
     },
   },

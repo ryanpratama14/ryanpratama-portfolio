@@ -1,4 +1,4 @@
-import type { CertificationItem, DictionaryStatic, ExperienceItem, LinkSocialItem, NavbarItem, ProjectItem, SkillsItem } from "@/types";
+import type { Certification, Contact, DictionaryStatic, Experience, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 // projects
@@ -22,12 +22,21 @@ const PHOTOS = {
   certifications: { n4, podfak },
 };
 
-export const getIdendityData = (s: DictionaryStatic, isJapanese: boolean) => {
-  const age = isJapanese ? s.PERSONAL_DATA.age : ` ${s.PERSONAL_DATA.age}`;
-  return [s.PERSONAL_DATA.fullName, `${dayjs().diff(dayjs("2000-07-14"), "year")}${age}`, s.LOCATIONS.jakarta];
+export const getProfileData = (s: DictionaryStatic, isJapanese: boolean) => {
+  const addSpace = (text: string) => (isJapanese ? text : ` ${text}`);
+
+  const age = `${dayjs().diff(dayjs("2000-07-14"), "year")}${addSpace(s.PERSONAL_DATA.age)}`;
+  const yoe = `${(dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1)}${addSpace(s.SECTIONS.yearsExperience)}`;
+
+  return [
+    { href: "/resume.pdf", icon: "mdi:resume", title: s.SECTIONS.resume },
+    { icon: "mdi:location", title: s.LOCATIONS.jakarta },
+    { icon: "mdi:work", title: yoe },
+    { icon: "mdi:person", title: age },
+  ];
 };
 
-export const certificationsData: CertificationItem[] = [
+export const CERTIFICATIONS: Certification[] = [
   { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", title: "JLPT N4" },
   {
     name: "preparatory-faculty-of-russian-language",
@@ -37,7 +46,7 @@ export const certificationsData: CertificationItem[] = [
   },
 ];
 
-export const projectsData: ProjectItem[] = [
+export const PROJECTS: Project[] = [
   {
     title: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
@@ -101,33 +110,43 @@ export const projectsData: ProjectItem[] = [
   },
 ];
 
-export const skillsData: SkillsItem[] = [
-  { label: "T3 Stack", icon: "bi:stack" },
-  { label: "React / Native", icon: "teenyicons:react-solid" },
-  { label: "Next.js", icon: "teenyicons:nextjs-solid" },
-  { label: "i18next", icon: "simple-icons:i18next" },
-  { label: "Redux Toolkit", icon: "akar-icons:redux-fill" },
-  { label: "Zod", icon: "simple-icons:zod" },
-  { label: "React Hook Form", icon: "simple-icons:reacthookform" },
-  { label: "tRPC", icon: "devicon-plain:trpc" },
-  { label: "Drizzle", icon: "simple-icons:drizzle" },
-  { label: "Prisma", icon: "simple-icons:prisma" },
-  { label: "PostgreSQL", icon: "akar-icons:postgresql-fill" },
-  { label: "MongoDB", icon: "teenyicons:mongodb-solid" },
-  { label: "TanStack Query", icon: "simple-icons:reactquery" },
-  { label: "Axios", icon: "simple-icons:axios" },
-  { label: "Git", icon: "teenyicons:git-solid" },
-  { label: "TypeScript", icon: "teenyicons:typescript-solid" },
-  { label: "JavaScript", icon: "teenyicons:javascript-solid" },
-  { label: "Tailwind CSS", icon: "teenyicons:tailwind-solid" },
-  { label: "Ant Design", icon: "simple-icons:antdesign" },
-  { label: "MUI", icon: "simple-icons:mui" },
-  { label: "Styled Components", icon: "file-icons:styledcomponents" },
-  { label: "Framer Motion", icon: "teenyicons:framer-solid" },
-  { label: "Resend", icon: "simple-icons:resend" },
-];
+export const TECH_STACKS: TechStack = {
+  programmingLanguages: [
+    { label: "TypeScript", icon: "teenyicons:typescript-solid" },
+    { label: "JavaScript", icon: "teenyicons:javascript-solid" },
+    { label: "HTML", icon: "akar-icons:html-fill" },
+    { label: "CSS", icon: "akar-icons:css-fill" },
+  ],
 
-export const experienceData: ExperienceItem[] = [
+  librariesFrameworks: [
+    { label: "T3 Stack", icon: "bi:stack" },
+    { label: "React / Native", icon: "teenyicons:react-solid" },
+    { label: "Next.js", icon: "teenyicons:nextjs-solid" },
+    { label: "i18next", icon: "simple-icons:i18next" },
+    { label: "Redux Toolkit", icon: "akar-icons:redux-fill" },
+    { label: "Zod", icon: "simple-icons:zod" },
+    { label: "React Hook Form", icon: "simple-icons:reacthookform" },
+    { label: "tRPC", icon: "devicon-plain:trpc" },
+    { label: "Drizzle", icon: "simple-icons:drizzle" },
+    { label: "Prisma", icon: "simple-icons:prisma" },
+    { label: "TanStack Query", icon: "simple-icons:reactquery" },
+    { label: "Axios", icon: "simple-icons:axios" },
+    { label: "Tailwind CSS", icon: "teenyicons:tailwind-solid" },
+    { label: "Ant Design", icon: "simple-icons:antdesign" },
+    { label: "MUI", icon: "simple-icons:mui" },
+    { label: "Styled Components", icon: "file-icons:styledcomponents" },
+    { label: "Framer Motion", icon: "teenyicons:framer-solid" },
+    { label: "Resend", icon: "simple-icons:resend" },
+  ],
+
+  db: [
+    { label: "PostgreSQL", icon: "akar-icons:postgresql-fill" },
+    { label: "MySQL", icon: "simple-icons:mysql" },
+    { label: "MongoDB", icon: "teenyicons:mongodb-solid" },
+  ],
+};
+
+export const EXPERIENCES: Experience[] = [
   {
     src: PHOTOS.logo.nutech,
     label: "Nutech Integrasi",
@@ -135,6 +154,19 @@ export const experienceData: ExperienceItem[] = [
     since: dayjs("2023-08").toDate(),
     till: null,
     location: "jakarta",
+    position: "softwareEngineerFrontend",
+    duty: [
+      "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
+      "Created 25+ document formats and implemented PDF/XLSX rendering using React-pdf, jsPDF and ExcelJS.",
+      "Collaborated with cross-functional teams, including backend and QA engineers.",
+      "Maintained regular and effective communication with the system analyst.",
+      "Utilized Git and Jira for prioritizing enhancements and bug fixes.",
+      "Implemented seamless integration of RESTful APIs using Axios.",
+      "Ensured app quality with comprehensive testing: unit, integration, and end-to-end.",
+      "Built fully responsive user interfaces primarily with Ant Design.",
+      "Collaborated with UI/UX designers to implement visually compelling and intuitive interfaces.",
+      "Crafted comprehensive documentation, aiding stakeholder understanding and future maintenance.",
+    ],
   },
   {
     src: PHOTOS.logo.faotech,
@@ -143,16 +175,21 @@ export const experienceData: ExperienceItem[] = [
     since: dayjs("2022-09").toDate(),
     till: dayjs("2023-08").toDate(),
     location: "remote",
+    position: "softwareEngineerFullstack",
+    duty: [
+      "Built responsive web apps compatible across devices, integrating loading animations for enhanced engagement.",
+      "Collaborated with UI/UX designers to create visually compelling interfaces for seamless user experience.",
+      "Spearheaded Backend development, including API creation and integration.",
+      "Proficient in CRUD operations and data manipulation for seamless communication with Backend systems.",
+      "Implemented essential authorization features like login, registration, and password recovery.",
+      "Designed and implemented admin panels with full functionality.",
+      "Optimized content pages for high SEO scores using Google Analytics.",
+      "Implemented internationalization support with i18next framework for enhanced accessibility",
+    ],
   },
 ];
 
-export const navbarData: NavbarItem[] = [
-  { href: "#about", icon: "mdi:about-circle-outline", label: "about" },
-  { href: "#projects", icon: "mdi:local-cafe-outline", label: "projects" },
-  { href: "#contact", icon: "mdi:contact-outline", label: "contacts" },
-];
-
-export const linkSocial: LinkSocialItem[] = [
+export const CONTACTS: Contact[] = [
   { href: "mailto:ryanpratama.dev@gmail.com", label: "Email", icon: "mdi:email-outline" },
   { href: "https://github.com/ryanpratama14", label: "GitHub", icon: "mdi:github" },
   { href: "https://www.linkedin.com/in/ryanpratama14", label: "LinkedIn", icon: "mdi:linkedin" },

@@ -10,33 +10,26 @@ export type DictionaryDynamic = typeof en.d;
 export type Language = ReturnType<typeof useLanguage>;
 export type LanguageFn = ReturnType<typeof useLanguageFn>;
 
-export type NavbarItem = {
-  label: keyof DictionaryStatic["NAVBAR_DATA"];
-  icon: IconifyIcon | string;
-  href: string;
-};
-
-export type LinkSocialItem = {
+export type Contact = {
   href: string;
   label: string;
   icon: IconifyIcon | string;
 };
 
-export type ExperienceItem = {
+export type Experience = {
   src: StaticImageData;
   label: string;
   link: string;
   since: Date;
   location: keyof DictionaryStatic["LOCATIONS"];
   till: Date | null;
+  position: keyof DictionaryStatic["PERSONAL_DATA"]["position"];
+  duty: string[];
 };
 
-export type SkillsItem = {
-  label: string;
-  icon: IconifyIcon | string;
-};
+export type TechStack = Record<keyof DictionaryStatic["MENUS"]["TECH_STACKS"], { label: string; icon: IconifyIcon | string }[]>;
 
-export type ProjectItem = {
+export type Project = {
   title: string;
   desc: string;
   href: string;
@@ -44,7 +37,7 @@ export type ProjectItem = {
   src: StaticImageData;
 };
 
-export type CertificationItem = {
+export type Certification = {
   name: string;
   src: StaticImageData;
   alt: string;

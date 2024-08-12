@@ -1,7 +1,5 @@
-import Navbar from "@/components/navbar/navbar";
 import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
-import { setCookie } from "@/lib/actions";
 import { LANGS, useLanguage } from "@/lib/internationalization";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
@@ -9,7 +7,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
-import { cookies } from "next/headers";
 import "@/styles/globals.css";
 import "@/styles/stylesheet.css";
 
@@ -25,11 +22,10 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
   const {
     s: { PERSONAL_DATA: me },
     locale,
-    isJapanese,
     baseUrl: url,
   } = useLanguage(params.lang);
 
-  const title = `${me.fullName} — ${isJapanese ? me.softwareEngineer.split(" ").join("") : me.softwareEngineer}`;
+  const title = `${me.fullName} — ${me.softwareEngineer}`;
   const description = `${title} ${me.summary}`;
 
   return {
@@ -56,18 +52,12 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
 export default function RootLayout({ children, params }: Props) {
-  const { s, lang } = useLanguage(params.lang);
-  const storedLang = cookies().get("lang")?.value as Lang | undefined;
-
   return (
-    <html lang={lang} className={notosans.variable}>
+    <html lang={params.lang} className={notosans.variable}>
       <body>
         <Analytics />
         <SpeedInsights />
-        <Navbar s={s} lang={lang} setCookie={setCookie} storedLang={storedLang} />
-        <Providers>
-          <main>{children}</main>
-        </Providers>
+        <Providers>{children}</Providers>
         <TransitionEffect />
         <ScrollToTop />
       </body>

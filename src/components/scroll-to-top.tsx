@@ -22,7 +22,7 @@ export default function ScrollToTop() {
       type="button"
       onClick={loadToTop}
       className={cn(
-        "animate fixed px-normal left-0 bottom-0 md:centered-bottom -translate-y-4 hover:scale-110 hover:-translate-y-6 z-10",
+        "animate fixed px-shorter lg:px-longer5 max-md:right-0 max-md:bottom-0 md:centered-bottom -translate-y-4 hover:scale-110 hover:-translate-y-6 z-10",
         { "scale-0 translate-y-full": !visible },
       )}
     >
