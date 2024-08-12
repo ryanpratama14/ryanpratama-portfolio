@@ -140,7 +140,7 @@ export const TECH_STACKS: TechStack = {
     { label: "Styled Components", icon: "file-icons:styledcomponents" },
     { label: "Framer Motion", icon: "teenyicons:framer-solid" },
     { label: "Resend", icon: "simple-icons:resend" },
-    { label: "js-PDF / React-pdf", icon: "tabler:pdf" },
+    { label: "js-PDF / React-pdf", icon: "mingcute:pdf-fill" },
     { label: "ExcelJS", icon: "ant-design:file-excel-filled" },
   ],
 
