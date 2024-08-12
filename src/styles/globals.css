@@ -19,7 +19,7 @@
     @apply text-base md:text-lg lg:text-xl font-medium;
   }
   small {
-    @apply lg:text-base;
+    @apply text-sm lg:text-base;
   }
   a,
   img {
@@ -68,23 +68,6 @@
   }
   .box-techstacks {
     @apply rounded-md bg-graydarker/20 text-white flex gap-2 items-center px-2 py-0.5;
-  }
-  /* typography */
-  .h1 {
-    @apply text-xl md:text-2xl lg:text-3xl font-bold;
-  }
-  .h2 {
-    @apply text-lg md:text-xl lg:text-2xl font-semibold;
-  }
-  .h3 {
-    @apply text-base md:text-lg lg:text-xl font-medium;
-  }
-  .p,
-  .a {
-    @apply lg:text-lg;
-  }
-  .small {
-    @apply lg:text-base;
   }
   /* fixed positions for absolute or fixed position */
   .centered {

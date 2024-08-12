@@ -15,7 +15,7 @@ export default function TechStacks({ s }: Props) {
             return (
               <section key={e.label} className="box-techstacks">
                 <Iconify icon={e.icon} width={12.5} />
-                <small className="lg:text-sm text-xs">{e.label}</small>
+                <div className="lg:text-sm text-xs">{e.label}</div>
               </section>
             );
           })}

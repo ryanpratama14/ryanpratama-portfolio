@@ -1,7 +1,7 @@
+import MenuTitle from "@/components/menu-title";
 import { useLanguageFn } from "@/lib/internationalization";
 import type { DictionaryStatic, Lang } from "@/types";
 import dayjs from "dayjs";
-import MenuTitle from "../menu-title";
 
 type Props = { lang: Lang; s: DictionaryStatic };
 
