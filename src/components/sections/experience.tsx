@@ -20,7 +20,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
             <AccordionItem value={e.label}>
               <AccordionTrigger>
                 <section className="flex items-center text-left relative cursor-pointer animate w-full">
-                  <section className="w-16 md:w-20 aspect-square relative bg-white p-2 flex items-center justify-center rounded-md">
+                  <section className="w-16 md:w-20 aspect-square relative bg-white p-2 flex items-center justify-center rounded-l-md">
                     <Img src={e.src} className="object-contain" alt={e.label} />
                   </section>
                   <section className="pl-3 flex flex-col">
