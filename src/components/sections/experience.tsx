@@ -23,9 +23,9 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
                 <Img src={e.src} className="object-contain" alt={e.label} />
               </section>
 
-              <section className="flex justify-between items-center w-full px-3">
-                <section className="space-y-2">
-                  <p className="font-medium">{s.PERSONAL_DATA.position[e.position]}</p>
+              <section className="flex justify-between items-center w-full px-3 gap-2">
+                <section className="flex flex-col">
+                  <small className="font-medium">{s.PERSONAL_DATA.position[e.position]}</small>
                   <small className="text-graydarker">
                     {e.label} • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
                   </small>
@@ -34,7 +34,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
               </section>
             </summary>
 
-            <ul className="ml-4 list-disc animate mt-2">
+            <ul className="ml-5 list-disc animate mt-2">
               {e.duty.map((duty) => (
                 <li key={duty}>{duty}</li>
               ))}

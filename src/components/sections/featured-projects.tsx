@@ -18,7 +18,7 @@ export default function FeaturedProjects({ s }: Props) {
       <Swiper
         modules={[Autoplay, Mousewheel, Scrollbar]}
         mousewheel={{ forceToAxis: true }}
-        autoplay={{ delay: 1500, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 2500, pauseOnMouseEnter: true, stopOnLastSlide: false, disableOnInteraction: false }}
         scrollbar={{ draggable: true }}
         className="w-full"
         simulateTouch={false}
@@ -30,9 +30,9 @@ export default function FeaturedProjects({ s }: Props) {
           return (
             <SwiperSlide key={e.title}>
               <section className="aspect-[4/5] relative group">
-                <section className="absolute left-0 top-0 size-full opacity-0 group-hover:opacity-100 bg-black/80 animate flex flex-col items-center justify-center gap-1.5 px-4 lg:px-8">
+                <section className="absolute left-0 top-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-4 lg:px-8">
                   <small className="text-pretty">{e.desc}</small>
-                  <ul className="list-disc ml-4">
+                  <ul className="list-disc ml-5">
                     {e.lists.map((list) => (
                       <li key={list}>{list}</li>
                     ))}
