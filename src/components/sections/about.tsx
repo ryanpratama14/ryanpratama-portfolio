@@ -7,7 +7,7 @@ export default function About({ s }: Props) {
   return (
     <article>
       <MenuTitle title={s.MENUS.about} />
-      <p className="text-pretty">{s.PERSONAL_DATA.about}</p>
+      <small>{s.PERSONAL_DATA.summary}</small>
     </article>
   );
 }
