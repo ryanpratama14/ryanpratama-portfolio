@@ -25,7 +25,7 @@ export default function CertificationPage({ params }: Props) {
       <Profile lang={lang} s={s} isJapanese={isJapanese} setCookie={setCookie} storedLang={storedLang} />
       <Contacts s={s} />
 
-      <article className="main-padding">
+      <article>
         <MenuTitle title={data.title} />
         <Img alt={data.alt} src={data.src} />
       </article>

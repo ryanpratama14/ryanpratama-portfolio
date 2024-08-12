@@ -16,7 +16,7 @@ export const en = {
 
     MENUS: {
       about: "About",
-      projects: "Projects",
+      featuredProjects: "Featured Projects",
       contacts: "Contacts",
       experience: "Experience",
       techstacks: "Tech Stacks",
@@ -35,8 +35,6 @@ export const en = {
       backToHomepage: "Back to Homepage",
       present: "Present",
       resume: "Résumé",
-      aboutMe: "About Me",
-      featuredProjects: "Featured Projects",
       visitProject: "Visit Project",
     },
 

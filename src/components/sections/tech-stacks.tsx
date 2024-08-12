@@ -1,7 +1,7 @@
+import Iconify from "@/components/iconify";
+import MenuTitle from "@/components/menu-title";
 import { TECH_STACKS } from "@/lib/constants";
 import type { DictionaryStatic, TechStack } from "@/types";
-import Iconify from "../iconify";
-import MenuTitle from "../menu-title";
 
 type Props = { s: DictionaryStatic };
 
@@ -25,7 +25,7 @@ export default function TechStacks({ s }: Props) {
   };
 
   return (
-    <article className="main-padding">
+    <article>
       <MenuTitle title={s.MENUS.techstacks} />
       <TechStack name="programmingLanguages" />
       <TechStack name="librariesFrameworks" />

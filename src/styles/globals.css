@@ -36,6 +36,9 @@
   textarea {
     @apply text-sm lg:text-base px-2.5 p-1.5 bg-graydarker/20 text-white rounded-md outline-none;
   }
+  article {
+    @apply flex flex-col gap-2.5;
+  }
 }
 
 @layer components {
@@ -45,11 +48,8 @@
   .animate-longer {
     @apply transition-all duration-500;
   }
-  .main-padding {
-    @apply flex flex-col gap-2.5;
-  }
   .box-button {
-    @apply rounded-md bg-blue-600 text-white px-4 py-2;
+    @apply rounded-md bg-blue-600 text-white px-4 py-1;
   }
   .box {
     @apply rounded-md bg-graydarker/20 text-white flex gap-2 items-center px-2.5 py-0.5 hover:translate-y-1;

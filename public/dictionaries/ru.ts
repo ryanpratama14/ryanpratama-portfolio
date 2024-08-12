@@ -17,7 +17,7 @@ export const ru: Dictionary = {
     },
     MENUS: {
       about: "About",
-      projects: "Projects",
+      featuredProjects: "Выделенные проекты",
       contacts: "Contacts",
       experience: "Опыт работы",
       techstacks: "Технологические стеки",
@@ -36,8 +36,7 @@ export const ru: Dictionary = {
       backToHomepage: "На главную страницу",
       present: "настоящее время",
       resume: "Резюме",
-      aboutMe: "Обо мне",
-      featuredProjects: "Выделенные проекты",
+
       visitProject: "Посетить проект",
     },
 

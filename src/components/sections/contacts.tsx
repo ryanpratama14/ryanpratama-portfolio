@@ -1,14 +1,14 @@
+import Iconify from "@/components/iconify";
+import MenuTitle from "@/components/menu-title";
 import { CONTACTS } from "@/lib/constants";
 import type { DictionaryStatic } from "@/types";
 import Link from "next/link";
-import Iconify from "../iconify";
-import MenuTitle from "../menu-title";
 
 type Props = { s: DictionaryStatic };
 
 export default function Contacts({ s }: Props) {
   return (
-    <article className="main-padding">
+    <article>
       <MenuTitle title={s.MENUS.contacts} />
       <section className="flex gap-2 flex-wrap">
         {CONTACTS.map((e) => {

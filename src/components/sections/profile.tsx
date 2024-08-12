@@ -1,6 +1,7 @@
 "use client";
 
 import avatar from "@/assets/avatar.jpg";
+import Iconify from "@/components/iconify";
 import Img from "@/components/img";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
@@ -10,7 +11,6 @@ import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect } from "react";
-import Iconify from "../iconify";
 
 type Props = {
   lang: Lang;
@@ -60,7 +60,7 @@ export default function Profile({ s, lang, isJapanese, setCookie, storedLang }: 
 
   return (
     <Fragment>
-      <article className="flex items-center gap-4 lg:gap-6">
+      <section className="flex items-center gap-4 lg:gap-6">
         <Img
           src={avatar}
           alt={s.PERSONAL_DATA.fullName}
@@ -94,7 +94,7 @@ export default function Profile({ s, lang, isJapanese, setCookie, storedLang }: 
             })}
           </section>
         </section>
-      </article>
+      </section>
 
       <section className="flex md:hidden gap-y-2 gap-x-4 flex-wrap">
         <ProfileData />

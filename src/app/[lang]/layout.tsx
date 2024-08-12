@@ -6,9 +6,15 @@ import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+
+// styles
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/stylesheet.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

@@ -1,6 +1,7 @@
 import About from "@/components/sections/about";
 import Contacts from "@/components/sections/contacts";
 import Experience from "@/components/sections/experience";
+import FeaturedProjects from "@/components/sections/featured-projects";
 import Profile from "@/components/sections/profile";
 import ProjectDiscuss from "@/components/sections/project-discuss";
 import TechStacks from "@/components/sections/tech-stacks";
@@ -24,6 +25,7 @@ export default function Home({ params }: Props) {
       <About s={s} />
       <TechStacks s={s} />
       <Experience s={s} lang={lang} />
+      <FeaturedProjects s={s} />
       <ProjectDiscuss s={s} lang={lang} />
       <UpdatedAt s={s} lang={lang} />
     </Fragment>

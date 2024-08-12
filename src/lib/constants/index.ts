@@ -76,7 +76,7 @@ export const PROJECTS: Project[] = [
     title: "TurunTangan",
 
     src: PHOTOS.project.turta,
-    desc: "TurunTangan is a non-profit youth volunteer movement with more than 70 chapters across Indonesia.",
+    desc: "TurunTangan is a non-profit youth volunteer movement with more than 100 chapters across Indonesia.",
     href: "https://gerakanturuntangan.com",
     lists: [
       "Developed a fullstack fully responsive web app using React",

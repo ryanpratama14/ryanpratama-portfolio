@@ -19,7 +19,7 @@ export const ja: Dictionary = {
     MENUS: {
       experience: "職歴",
       about: "About",
-      projects: "Projects",
+      featuredProjects: "Featured Projects",
       contacts: "Contacts",
       techstacks: "Tech Stacks",
       updatedAt: "Updated at",
@@ -37,8 +37,6 @@ export const ja: Dictionary = {
       backToHomepage: "ホームページに戻る",
       present: "現在",
       resume: "職務経歴書",
-      aboutMe: "About Me",
-      featuredProjects: "Featured Projects",
       visitProject: "プロジェクト訪問",
     },
 
