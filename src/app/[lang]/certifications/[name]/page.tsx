@@ -26,7 +26,7 @@ export default function CertificationPage({ params }: Props) {
           {s.SECTIONS.backToHomepage}
         </Link>
       </section>
-      <Contacts s={s} isMain={false} />
+      <Contacts s={s} />
     </article>
   );
 }
