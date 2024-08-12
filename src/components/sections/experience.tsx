@@ -1,9 +1,8 @@
-import Iconify from "@/components/iconify";
 import Img from "@/components/img";
 import MenuTitle from "@/components/menu-title";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { EXPERIENCES } from "@/lib/constants";
 import { useLanguageFn } from "@/lib/internationalization";
-import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
 
 type Props = { s: DictionaryStatic; lang: Lang };
@@ -17,29 +16,30 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
 
       {EXPERIENCES.map((e) => {
         return (
-          <details className="flex flex-col gap-2 group" key={e.label}>
-            <summary className="flex items-center text-left relative cursor-pointer group-open:bg-graydarker/20 animate">
-              <section className="w-20 aspect-square relative bg-white p-2 flex items-center justify-center">
-                <Img src={e.src} className="object-contain" alt={e.label} />
-              </section>
-
-              <section className="flex justify-between items-center w-full px-3 gap-2">
-                <section className="flex flex-col">
-                  <small className="font-medium">{s.PERSONAL_DATA.position[e.position]}</small>
-                  <small className="text-graydarker lg:text-base text-xs">
-                    <b className="font-medium">{e.label}</b> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
-                  </small>
+          <Accordion key={e.label} type="multiple">
+            <AccordionItem value={e.label}>
+              <AccordionTrigger>
+                <section className="flex items-center text-left relative cursor-pointer group-open:bg-graydarker/20 animate">
+                  <section className="w-16 md:w-20 aspect-square relative bg-white p-2 flex items-center justify-center">
+                    <Img src={e.src} className="object-contain" alt={e.label} />
+                  </section>
+                  <section className="pl-2 md:pl-4 flex flex-col">
+                    <small className="font-medium">{s.PERSONAL_DATA.position[e.position]}</small>
+                    <small className="text-graydarker lg:text-base text-xs">
+                      <b className="font-medium">{e.label}</b> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
+                    </small>
+                  </section>
                 </section>
-                <Iconify icon="bxs:up-arrow" rotate={2} width={15} color={COLORS.gray} className="animate group-open:rotate-180" />
-              </section>
-            </summary>
-
-            <ul className="mt-2">
-              {e.duty.map((duty) => (
-                <li key={duty}>{duty}</li>
-              ))}
-            </ul>
-          </details>
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul className="mt-2">
+                  {e.duty.map((duty) => (
+                    <li key={duty}>{duty}</li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         );
       })}
     </article>
