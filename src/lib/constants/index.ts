@@ -135,9 +135,10 @@ export const TECH_STACKS: TechStack = {
     { label: "TanStack Query", icon: "simple-icons:reactquery" },
     { label: "Axios", icon: "simple-icons:axios" },
     { label: "Tailwind CSS", icon: "teenyicons:tailwind-solid" },
+    { label: "shadcn/ui", icon: "simple-icons:shadcnui" },
+    { label: "styled-components", icon: "file-icons:styledcomponents" },
     { label: "Ant Design", icon: "simple-icons:antdesign" },
     { label: "MUI", icon: "simple-icons:mui" },
-    { label: "Styled Components", icon: "file-icons:styledcomponents" },
     { label: "Framer Motion", icon: "teenyicons:framer-solid" },
     { label: "Resend", icon: "simple-icons:resend" },
     { label: "js-PDF / React-pdf", icon: "mingcute:pdf-fill" },
@@ -148,6 +149,12 @@ export const TECH_STACKS: TechStack = {
     { label: "PostgreSQL", icon: "akar-icons:postgresql-fill" },
     { label: "MySQL", icon: "simple-icons:mysql" },
     { label: "MongoDB", icon: "teenyicons:mongodb-solid" },
+  ],
+
+  learning: [
+    { label: "Flutter", icon: "material-symbols:flutter" },
+    { label: "Swift", icon: "simple-icons:swift" },
+    { label: "Go", icon: "simple-icons:go" },
   ],
 };
 

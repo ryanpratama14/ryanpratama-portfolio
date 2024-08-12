@@ -26,6 +26,7 @@ export const ru: Dictionary = {
       discussProject: "Обсудим ваш проект?",
 
       TECH_STACKS: {
+        learning: "Изучаю...",
         programmingLanguages: "Языки программирования",
         librariesFrameworks: "Библиотеки и фреймворки",
         db: "Базы данных",

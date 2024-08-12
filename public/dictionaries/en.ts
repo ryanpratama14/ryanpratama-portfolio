@@ -28,6 +28,7 @@ export const en = {
         programmingLanguages: "Programming Languages",
         librariesFrameworks: "Libraries & Frameworks",
         db: "Databases",
+        learning: "Learning...",
       },
     },
 
