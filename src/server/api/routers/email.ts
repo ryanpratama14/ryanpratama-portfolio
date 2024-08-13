@@ -1,5 +1,5 @@
 import { env } from "@/env";
-import ProjectDiscuss from "@/lib/emails/project-discuss";
+import Message from "@/lib/emails/message";
 import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
 import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
@@ -10,12 +10,12 @@ const { s } = useLanguage(DEFAULT_LANG);
 const resend = new Resend(env.RESEND_API_KEY);
 
 export const email = createTRPCRouter({
-  projectDiscuss: publicProcedure.input(schema.email.projectDiscuss(s)).mutation(async ({ input }) => {
+  message: publicProcedure.input(schema.email.message(s)).mutation(async ({ input }) => {
     const { data, error } = await resend.emails.send({
       from: `Ryan <${env.RESEND_EMAIL_FROM}>`,
       to: env.RESEND_EMAIL_TO,
-      subject: "NEW PROJECT ALERT!",
-      react: ProjectDiscuss(input),
+      subject: "NEW MESSAGE ALERT!",
+      react: Message(input),
     });
 
     if (error) return THROW_TRPC_ERROR("INTERNAL_SERVER_ERROR", error.message);

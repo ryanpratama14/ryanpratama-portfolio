@@ -1,7 +1,7 @@
-import type { ProjectInput } from "@/server/api/schema";
+import type { MessageInput } from "@/server/api/schema";
 import { Body, Container, Head, Html, Tailwind, Text } from "@react-email/components";
 
-export default function ProjectDiscuss({ name, email, description, lang }: ProjectInput) {
+export default function Message({ name, email, message, lang }: MessageInput) {
   return (
     <Html>
       <Head />
@@ -10,7 +10,7 @@ export default function ProjectDiscuss({ name, email, description, lang }: Proje
           <Container className="border border-solid border-[#eaeaea] rounded w-[36rem] px-6 *:text-xl">
             <Text>Name: {name}</Text>
             <Text>Email: {email}</Text>
-            <Text className="whitespace-pre-line">Description: {description}</Text>
+            <Text className="whitespace-pre-line">Message: {message}</Text>
             <Text>Lang: {lang}</Text>
           </Container>
         </Body>

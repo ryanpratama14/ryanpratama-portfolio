@@ -22,9 +22,9 @@ export const ja: Dictionary = {
       about: "About",
       featuredProjects: "Featured Projects",
       contacts: "Contacts",
-      techstacks: "Tech Stacks",
+      techstacks: "Tech Stack",
       updatedOn: "Updated on",
-      discussProject: "Discuss Your Project",
+      message: "Send a message",
 
       TECH_STACKS: {
         programmingLanguages: "開発言語",
@@ -63,9 +63,9 @@ export const ja: Dictionary = {
         error: "有効なメールアドレスを入力してください",
         placeholder: "メール",
       },
-      projectDescription: {
-        error: "プロジェクトの詳細な説明を入力してください",
-        placeholder: "プロジェクトの説明",
+      message: {
+        error: "より詳細なメッセージを提供してください",
+        placeholder: "メッセージ",
       },
     },
   },

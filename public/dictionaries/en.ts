@@ -17,16 +17,16 @@ export const en = {
 
     MENUS: {
       about: "About",
-      featuredProjects: "Featured Projects",
+      featuredProjects: "Featured projects",
       contacts: "Contacts",
       experience: "Experience",
-      techstacks: "Tech Stacks",
+      techstacks: "Tech stack",
       updatedOn: "Updated on",
-      discussProject: "Discuss Your Project",
+      message: "Send a message",
 
       TECH_STACKS: {
-        programmingLanguages: "Programming Languages",
-        librariesFrameworks: "Libraries & Frameworks",
+        programmingLanguages: "Programming languages",
+        librariesFrameworks: "Libraries & frameworks",
         db: "Databases",
         learning: "Learning...",
       },
@@ -34,10 +34,10 @@ export const en = {
 
     SECTIONS: {
       yearsExperience: "years' experience",
-      backToHomepage: "Back to Homepage",
+      backToHomepage: "Back to homepage",
       present: "Present",
       resume: "Résumé",
-      visitProject: "Visit Project",
+      visitProject: "Visit project",
     },
 
     LOCATIONS: {
@@ -51,7 +51,7 @@ export const en = {
       thankYou:
         "Thank you for contacting me regarding the project. I appreciate your message and will get back to you as soon as possible to discuss further details.",
       gotIt: "Got it, thanks!",
-      submit: "Submit",
+      submit: "Send",
       name: {
         placeholder: "Name",
         error: "Enter your name",
@@ -60,9 +60,9 @@ export const en = {
         placeholder: "Email",
         error: "Provide a valid email",
       },
-      projectDescription: {
-        placeholder: "Project Description",
-        error: "Provide a more detailed project description",
+      message: {
+        placeholder: "Message",
+        error: "Provide a more detailed message",
       },
     },
   },

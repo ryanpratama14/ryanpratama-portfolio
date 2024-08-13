@@ -2,8 +2,8 @@ import About from "@/components/sections/about";
 import Contacts from "@/components/sections/contacts";
 import Experience from "@/components/sections/experience";
 import FeaturedProjects from "@/components/sections/featured-projects";
+import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import ProjectDiscuss from "@/components/sections/project-discuss";
 import TechStacks from "@/components/sections/tech-stacks";
 import UpdatedOn from "@/components/sections/updated-on";
 import { setCookie } from "@/lib/actions";
@@ -26,7 +26,7 @@ export default function Home({ params }: Props) {
       <TechStacks s={s} />
       <Experience s={s} lang={lang} />
       <FeaturedProjects s={s} />
-      <ProjectDiscuss s={s} lang={lang} />
+      <Message s={s} lang={lang} />
       <UpdatedOn s={s} lang={lang} />
     </Fragment>
   );

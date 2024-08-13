@@ -21,9 +21,9 @@ export const ru: Dictionary = {
       featuredProjects: "Выделенные проекты",
       contacts: "Контакты",
       experience: "Опыт работы",
-      techstacks: "Технологические стеки",
+      techstacks: "Технологический стек",
       updatedOn: "Обновлено",
-      discussProject: "Обсудим ваш проект?",
+      message: "Отправить сообщение",
 
       TECH_STACKS: {
         learning: "Изучаю...",
@@ -62,9 +62,9 @@ export const ru: Dictionary = {
         error: "Предоставьте действительный адрес электронной почты",
         placeholder: "Электронная почта",
       },
-      projectDescription: {
-        error: "Предоставьте более подробное описание проекта",
-        placeholder: "О проекте",
+      message: {
+        error: "Предоставьте более подробное сообщение",
+        placeholder: "Сообщение",
       },
     },
   },
