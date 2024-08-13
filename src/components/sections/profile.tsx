@@ -66,12 +66,12 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
           src={avatar}
           alt={s.PERSONAL_DATA.fullName}
           priority
-          className="border-2 border-gray shadow-xl object-top object-cover size-[4.75rem] lg:size-32 aspect-square rounded-full"
+          className="border-2 border-gray shadow-xl object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-full"
         />
         <section className="flex justify-between w-full items-start">
           <section className="flex flex-col md:gap-1">
             <section>
-              <h1 className="-translate-x-[0.085rem]">{s.PERSONAL_DATA.fullName}</h1>
+              <h1>{s.PERSONAL_DATA.fullName}</h1>
               {isDefaultLang ? null : <div className="text-xs -translate-y-[0.05rem]">{useLanguage(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</div>}
             </section>
             <small className="text-gray font-medium">{s.PERSONAL_DATA.softwareEngineer}</small>

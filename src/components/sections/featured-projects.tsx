@@ -23,8 +23,8 @@ export default function FeaturedProjects({ s }: Props) {
         className="w-full"
         simulateTouch={false}
         spaceBetween={10}
-        slidesPerView={1.15}
-        breakpoints={{ 768: { slidesPerView: 2.15 }, 1024: { slidesPerView: 2.65 }, 1280: { slidesPerView: 3.15 } }}
+        slidesPerView={1.25}
+        breakpoints={{ 768: { slidesPerView: 2.25 }, 1024: { slidesPerView: 2.5 }, 1536: { slidesPerView: 3.25 } }}
       >
         {PROJECTS.map((e) => {
           return (
