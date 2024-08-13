@@ -1,6 +1,5 @@
 "use client";
 
-import TransitionEffect from "@/components/transition-effect";
 import { getBaseUrl } from "@/lib/functions";
 import type { AppRouter } from "@/server/api/root";
 import { transformer } from "@/trpc/shared";
@@ -47,7 +46,6 @@ export default function Providers({ children }: Props) {
     <QueryClientProvider client={queryClient}>
       <api.Provider client={trpcClient} queryClient={queryClient}>
         {children}
-        <TransitionEffect />
       </api.Provider>
     </QueryClientProvider>
   );

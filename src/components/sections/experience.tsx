@@ -26,7 +26,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
                   <section className="pl-2.5 md:pl-3 flex flex-col">
                     <small className="font-medium">{s.PERSONAL_DATA.position[e.position]}</small>
                     <small className="text-graydarker lg:text-base text-xs">
-                      <b className="font-medium">{e.label}</b> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
+                      <span className="font-medium">{e.label}</span> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
                     </small>
                   </section>
                 </section>

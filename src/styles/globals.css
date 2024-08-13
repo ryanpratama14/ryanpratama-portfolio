@@ -117,10 +117,10 @@
     @apply text-sm lg:text-base bg-blue-600 text-white px-4 py-1 shadow-xl;
   }
   .box {
-    @apply rounded-md bg-graydarker/20 text-white flex gap-1.5 items-center px-2.5 py-0.5 hover:scale-[1.05] shadow-xl;
+    @apply rounded-md bg-graydarker/20 text-white flex gap-1.5 items-center px-2.5 py-0.5 hover:scale-[1.075] shadow-xl;
   }
   .box-techstacks {
-    @apply rounded-md bg-graydarker/20 text-white flex gap-1.5 items-center px-2 py-0.5 hover:scale-[1.05] animate shadow-xl;
+    @apply rounded-md bg-graydarker/20 text-white flex gap-1.5 items-center px-2 py-0.5 hover:scale-[1.075] animate shadow-xl;
   }
   /* fixed positions for absolute or fixed position */
   .centered {

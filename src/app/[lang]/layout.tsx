@@ -14,6 +14,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import TransitionEffect from "@/components/transition-effect";
 
 const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -65,6 +66,7 @@ export default function RootLayout({ children, params }: Props) {
         <Providers>
           <main className="pt-shorter pb-24 px-shorter 2xl:px-longer3 animate flex flex-col gap-4">{children}</main>
         </Providers>
+        <TransitionEffect />
         <ScrollToTop />
       </body>
     </html>
