@@ -19,17 +19,17 @@ export const ja: Dictionary = {
 
     MENUS: {
       experience: "職歴",
-      about: "About",
-      featuredProjects: "Featured projects",
-      contacts: "Contacts",
-      techstacks: "Tech stack",
-      updatedOn: "Updated on",
-      message: "Send a message",
+      about: "私について",
+      featuredProjects: "注目のプロジェクト",
+      contacts: "連絡先",
+      techstacks: "技術スタック",
+      updatedOn: "に更新",
+      message: "メッセージを送信する",
 
       TECH_STACKS: {
         programmingLanguages: "開発言語",
         librariesFrameworks: "フレームワーク",
-        db: "DB",
+        db: "データベース",
         learning: "自己学習",
       },
     },
