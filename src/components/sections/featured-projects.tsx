@@ -15,7 +15,6 @@ export default function FeaturedProjects({ s }: Props) {
   return (
     <article>
       <MenuTitle title={s.MENUS.featuredProjects} />
-
       <Swiper
         modules={[Autoplay, Mousewheel, Scrollbar]}
         mousewheel={{ forceToAxis: true }}
@@ -25,20 +24,22 @@ export default function FeaturedProjects({ s }: Props) {
         simulateTouch={false}
         spaceBetween={10}
         slidesPerView={1.25}
-        breakpoints={{ 768: { slidesPerView: 2.25 }, 1280: { slidesPerView: 2.75 }, 1536: { slidesPerView: 3.25 } }}
+        breakpoints={{ 768: { slidesPerView: 2.5 }, 1536: { slidesPerView: 2.65 }, 2056: { slidesPerView: 3.5 } }}
       >
         {PROJECTS.map((e) => {
           return (
             <SwiperSlide key={e.title}>
               <section className="aspect-[4/5] relative group overflow-hidden rounded-md mb-2">
-                <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-4 lg:px-8">
+                <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-4 md:px-6">
                   <Text>
                     <p className="text-pretty">{e.desc}</p>
                   </Text>
 
                   <ul className="group-hover:translate-y-0 -translate-y-6 animate">
                     {e.lists.map((list) => (
-                      <li key={list}>{list}</li>
+                      <li key={list} className="lg:text-[0.9rem] lg:leading-5">
+                        {list}
+                      </li>
                     ))}
                   </ul>
 

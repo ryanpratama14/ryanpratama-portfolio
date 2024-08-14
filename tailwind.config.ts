@@ -109,6 +109,9 @@ const config = {
       fontFamily: {
         notosans: ["var(--font-notosans)", ...fontFamily.sans],
       },
+      screens: {
+        "3xl": "2056px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -69,7 +69,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
           src={avatar}
           alt={s.PERSONAL_DATA.fullName}
           priority
-          className="border-2 border-gray shadow-xl object-top object-cover size-16 md:size-32 aspect-square rounded-full"
+          className="animate border-2 border-gray shadow-xl object-top object-cover size-16 md:size-32 aspect-square rounded-full"
         />
         <section className="flex justify-between w-full items-start">
           <section className="flex flex-col md:gap-0.5">
