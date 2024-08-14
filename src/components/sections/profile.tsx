@@ -64,7 +64,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
 
   return (
     <Fragment>
-      <section className="flex items-center gap-2 md:gap-5">
+      <section className="flex items-center gap-3 md:gap-5">
         <Img
           src={avatar}
           alt={s.PERSONAL_DATA.fullName}
