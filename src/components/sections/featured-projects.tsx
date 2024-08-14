@@ -30,7 +30,7 @@ export default function FeaturedProjects({ s }: Props) {
           return (
             <SwiperSlide key={e.title}>
               <section className="aspect-[4/5] relative group overflow-hidden rounded-md mb-2">
-                <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-4 md:px-6">
+                <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-6">
                   <Text>
                     <p className="text-pretty">{e.desc}</p>
                   </Text>
