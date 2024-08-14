@@ -33,12 +33,12 @@ export default function FeaturedProjects({ s }: Props) {
                 <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
                   <section className="p-5 md:p-6 w-full absolute centered-top flex flex-col gap-1.5">
                     <Text>
-                      <p className="text-pretty leading-4 lg:leading-5">{e.desc}</p>
+                      <p className="text-pretty leading-4 lg:leading-5 font-medium">{e.desc}</p>
                     </Text>
 
                     <ul className="animate -translate-x-3 group-hover:translate-x-0">
                       {e.lists.map((list) => (
-                        <li key={list} className="lg:text-[0.9rem] lg:leading-5">
+                        <li key={list} className="lg:text-[0.9rem] lg:leading-5 text-white/90">
                           {list}
                         </li>
                       ))}
