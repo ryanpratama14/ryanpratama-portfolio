@@ -29,14 +29,14 @@ export default function FeaturedProjects({ s }: Props) {
         {PROJECTS.map((e) => {
           return (
             <SwiperSlide key={e.title}>
-              <section className="aspect-[4/5] relative group overflow-hidden rounded-md mb-2">
+              <section className="aspect-[4.1/5] md:aspect-[4/5] relative group overflow-hidden rounded-md mb-2">
                 <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
-                  <section className="p-4 md:p-6 w-full absolute centered-top flex flex-col gap-1">
+                  <section className="p-4 md:p-6 w-full absolute centered-top flex flex-col gap-1.5">
                     <Text>
-                      <p className="text-pretty">{e.desc}</p>
+                      <p className="text-pretty leading-5">{e.desc}</p>
                     </Text>
 
-                    <ul className="animate -translate-y-2 group-hover:translate-y-0">
+                    <ul className="animate -translate-x-3 group-hover:translate-x-0">
                       {e.lists.map((list) => (
                         <li key={list} className="lg:text-[0.9rem] lg:leading-5">
                           {list}
