@@ -18,7 +18,7 @@ type Props = { params: { lang: Lang } };
 export default function Home({ params }: Props) {
   const { s, lang, isJapanese, isDefaultLang } = useLanguage(params.lang);
   const { formatDate } = useLanguageFn(lang);
-  const updatedOn = `${s.MENUS.updatedOn} ${formatDate(dayjs("2024-08-14").toDate())}`;
+  const updatedOn = `${s.MENUS.updatedOn} ${formatDate(dayjs("2024-08-15").toDate())}`;
   const storedLang = cookies().get("lang")?.value as Lang | undefined;
 
   return (

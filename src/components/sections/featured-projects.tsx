@@ -24,31 +24,28 @@ export default function FeaturedProjects({ s }: Props) {
         simulateTouch={false}
         spaceBetween={10}
         slidesPerView={1.25}
-        breakpoints={{ 768: { slidesPerView: 2.4 }, 1536: { slidesPerView: 2.65 }, 2056: { slidesPerView: 3.5 } }}
+        breakpoints={{ 768: { slidesPerView: 2.5 }, 1536: { slidesPerView: 3 }, 2056: { slidesPerView: 3.5 } }}
       >
         {PROJECTS.map((e) => {
           return (
             <SwiperSlide key={e.title}>
-              <section className="aspect-[4/5] relative group overflow-hidden rounded-md mb-2">
+              <section className="aspect-square relative group overflow-hidden rounded-md mb-2">
                 <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
-                  <section className="p-5 md:p-6 w-full absolute centered-top flex flex-col gap-1.5">
-                    <Text>
-                      <p className="text-pretty leading-4 lg:leading-5 font-medium">{e.desc}</p>
-                    </Text>
+                  <Text className="text-center px-4 w-full absolute centered font-medium text-balance">
+                    <p>{e.desc}</p>
+                  </Text>
 
-                    <ul className="animate -translate-x-3 group-hover:translate-x-0">
-                      {e.lists.map((list) => (
-                        <li key={list} className="lg:text-[0.9rem] lg:leading-5 text-white/90">
-                          {list}
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <Link target="_blank" href={e.href} className="group-hover:mb-5 md:group-hover:mb-6 box-button absolute centered-bottom">
+                  <Link target="_blank" href={e.href} className="w-fit group-hover:mb-6 box-button absolute centered-bottom">
                     <Text>{s.SECTIONS.visitProject}</Text>
                   </Link>
+
+                  <ul className="sr-only">
+                    {e.lists.map((list) => (
+                      <li key={list}>{list}</li>
+                    ))}
+                  </ul>
                 </section>
+
                 <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate" />
               </section>
             </SwiperSlide>

@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
-    desc: "Hebronstar is a Korean consulting firm catering to diverse global services and industries.",
+    desc: "Hebronstar Strategy Consultants, a Korean consulting firm catering to diverse global services and industries.",
     href: "https://hebronstar.com/en",
     lists: [
       "Developed a fullstack fully responsive web app using React",
@@ -61,22 +61,9 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "KIMA",
-    src: PHOTOS.project.kima,
-    desc: "KIMA is a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
-    href: "https://kima-fe.vercel.app",
-    lists: [
-      "Developed a fullstack fully responsive web app using React",
-      "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
-      "Integrated Tailwind CSS for responsive component-based styling",
-      "Leveraged Redux Toolkit to implement a global state management solution",
-    ],
-  },
-  {
     title: "TurunTangan",
-
     src: PHOTOS.project.turta,
-    desc: "TurunTangan is a non-profit youth volunteer movement with more than 100 chapters across Indonesia.",
+    desc: "TurunTangan, a non-profit youth volunteer movement with more than 100 chapters across Indonesia.",
     href: "https://gerakanturuntangan.com",
     lists: [
       "Developed a fullstack fully responsive web app using React",
@@ -87,9 +74,22 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: "KIMA",
+    src: PHOTOS.project.kima,
+    desc: "KIMA, a digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
+    href: "https://kima-fe.vercel.app",
+    lists: [
+      "Developed a fullstack fully responsive web app using React",
+      "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
+      "Integrated Tailwind CSS for responsive component-based styling",
+      "Leveraged Redux Toolkit to implement a global state management solution",
+    ],
+  },
+
+  {
     title: "Belinsky Production",
     src: PHOTOS.project.belinsky,
-    desc: "Belinsky is a production house and creative studio that specializes in both professional photography and filmmaking.",
+    desc: "Belinsky, a production house and creative studio that specializes in both professional photography and filmmaking.",
     href: "https://belinskyproduction.com",
     lists: [
       "Developed a static fully responsive web app using React",
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Synergy Perdana Mandiri",
     src: PHOTOS.project.mandiri,
-    desc: "A trading company specializing in general and chemicals trading.",
+    desc: "Synergy Perdana Mandiri, a trading company specializing in general and chemicals trading.",
     href: "https://www.sinergyperdanamandiri.com",
     lists: [
       "Developed a static fully responsive web app using React",
