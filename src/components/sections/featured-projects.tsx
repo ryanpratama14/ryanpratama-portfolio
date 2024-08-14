@@ -24,7 +24,7 @@ export default function FeaturedProjects({ s }: Props) {
         simulateTouch={false}
         spaceBetween={10}
         slidesPerView={1.25}
-        breakpoints={{ 768: { slidesPerView: 2.5 }, 1536: { slidesPerView: 2.65 }, 2056: { slidesPerView: 3.5 } }}
+        breakpoints={{ 768: { slidesPerView: 2.4 }, 1536: { slidesPerView: 2.65 }, 2056: { slidesPerView: 3.5 } }}
       >
         {PROJECTS.map((e) => {
           return (
