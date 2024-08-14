@@ -30,20 +30,22 @@ export default function FeaturedProjects({ s }: Props) {
           return (
             <SwiperSlide key={e.title}>
               <section className="aspect-[4/5] relative group overflow-hidden rounded-md mb-2">
-                <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate flex flex-col items-center justify-center gap-1.5 px-6">
-                  <Text>
-                    <p className="text-pretty">{e.desc}</p>
-                  </Text>
+                <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
+                  <section className="p-4 md:p-6 w-full absolute centered-top flex flex-col gap-1">
+                    <Text>
+                      <p className="text-pretty">{e.desc}</p>
+                    </Text>
 
-                  <ul className="group-hover:translate-y-0 -translate-y-6 animate">
-                    {e.lists.map((list) => (
-                      <li key={list} className="lg:text-[0.9rem] lg:leading-5">
-                        {list}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="animate -translate-y-2 group-hover:translate-y-0">
+                      {e.lists.map((list) => (
+                        <li key={list} className="lg:text-[0.9rem] lg:leading-5">
+                          {list}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
 
-                  <Link target="_blank" href={e.href} className="box-button mt-2 group-hover:translate-y-0 translate-y-6">
+                  <Link target="_blank" href={e.href} className="group-hover:mb-4 md:group-hover:mb-6 box-button absolute centered-bottom">
                     <Text>{s.SECTIONS.visitProject}</Text>
                   </Link>
                 </section>
