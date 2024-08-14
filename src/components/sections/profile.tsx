@@ -72,7 +72,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
           className="border-2 border-gray shadow-xl object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-full"
         />
         <section className="flex justify-between w-full items-start">
-          <section className="flex flex-col gap-0.5">
+          <section className="flex flex-col md:gap-0.5">
             <section className="flex flex-col">
               <Text as="heading">
                 <h1>{s.PERSONAL_DATA.fullName}</h1>

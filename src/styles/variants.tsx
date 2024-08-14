@@ -9,7 +9,7 @@ export const VARIANTS = {
         menuTitle: "text-base lg:text-lg font-medium",
         contentTitle: "text-base",
         content: "text-sm lg:text-base",
-        list: "text-xs lg:text-base",
+        small: "text-xs lg:text-base",
         techstack: "text-xs lg:text-sm",
       },
       color: {

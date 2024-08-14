@@ -38,9 +38,7 @@ export default function FeaturedProjects({ s }: Props) {
 
                   <ul className="group-hover:translate-y-0 -translate-y-6 animate">
                     {e.lists.map((list) => (
-                      <li key={list}>
-                        <Text as="list">{list}</Text>
-                      </li>
+                      <li key={list}>{list}</li>
                     ))}
                   </ul>
 

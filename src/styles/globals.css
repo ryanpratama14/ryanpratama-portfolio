@@ -68,7 +68,7 @@
     @apply select-none;
   }
   ul {
-    @apply ml-5 list-disc text-pretty;
+    @apply text-xs lg:text-base ml-5 list-disc text-pretty;
   }
   input,
   textarea {

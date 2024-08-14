@@ -29,7 +29,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
                       <p>{s.PERSONAL_DATA.position[e.position]}</p>
                     </Text>
 
-                    <Text color="graydarker" as="list">
+                    <Text color="graydarker" as="small">
                       <span className="font-medium">{e.label}</span> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
                     </Text>
                   </section>
@@ -38,9 +38,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
               <AccordionContent>
                 <ul className="mt-2">
                   {e.duty.map((duty) => (
-                    <li key={duty}>
-                      <Text as="list">{duty}</Text>
-                    </li>
+                    <li key={duty}>{duty}</li>
                   ))}
                 </ul>
               </AccordionContent>
