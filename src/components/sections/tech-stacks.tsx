@@ -13,11 +13,11 @@ export default function TechStacks({ s }: Props) {
         <Text color="graydarker">
           <p>{s.MENUS.TECH_STACKS[name]}</p>
         </Text>
-        <section className="flex gap-2 flex-wrap">
+        <section className="flex gap-1 md:gap-2 flex-wrap">
           {TECH_STACKS[name].map((e) => {
             return (
               <section key={e.label} className="box-techstacks">
-                <section className="flex items-center gap-1">
+                <section className="flex items-center gap-0.5">
                   <Iconify icon={e.icon} width={13} />
                   {e.icon2 ? <Iconify icon={e.icon2} width={13} /> : null}
                 </section>
