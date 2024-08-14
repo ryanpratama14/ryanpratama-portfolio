@@ -33,7 +33,7 @@ export const en = {
     },
 
     SECTIONS: {
-      yearsExperience: "years' experience",
+      yearsExperience: "YoE",
       backToHomepage: "Back to homepage",
       present: "Present",
       resume: "Résumé",

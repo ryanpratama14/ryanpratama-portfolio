@@ -87,7 +87,7 @@
     @apply transition-all duration-500;
   }
   .box-button {
-    @apply bg-blue-600 px-4 py-1 shadow-xl animate;
+    @apply font-medium bg-blue-600 px-4 py-1 shadow-xl animate;
   }
   .box-contacts {
     @apply rounded-md bg-graydarker/20 flex gap-1.5 items-center px-2.5 py-0.5 hover:scale-[1.075] shadow-xl animate;

@@ -52,7 +52,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
       }
 
       return (
-        <section key={e.title} className="flex gap-1 items-center">
+        <section key={e.title} className="flex gap-0.5 items-center">
           <Data />
         </section>
       );
@@ -64,12 +64,12 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
 
   return (
     <Fragment>
-      <section className="flex items-center gap-3 lg:gap-6">
+      <section className="flex items-center gap-2 md:gap-5">
         <Img
           src={avatar}
           alt={s.PERSONAL_DATA.fullName}
           priority
-          className="border-2 border-gray shadow-xl object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-full"
+          className="border-2 border-gray shadow-xl object-top object-cover size-16 md:size-32 aspect-square rounded-full"
         />
         <section className="flex justify-between w-full items-start">
           <section className="flex flex-col md:gap-0.5">
@@ -88,7 +88,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
               <h2>{s.PERSONAL_DATA.softwareEngineer}</h2>
             </Text>
 
-            <section className="hidden md:flex gap-y-2 gap-x-4 flex-wrap -translate-x-0.5">
+            <section className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
               <ProfileData />
             </section>
           </section>
@@ -115,7 +115,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
         </section>
       </section>
 
-      <section className="flex md:hidden gap-y-2 gap-x-4 flex-wrap">
+      <section className="flex md:hidden gap-y-1 gap-x-2 flex-wrap">
         <ProfileData />
       </section>
     </Fragment>
