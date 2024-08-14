@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, error, ty
 
   return (
     <section className="gap-0.5 flex flex-col w-full">
-      <label className="hidden" htmlFor={id}>
+      <label className="sr-only" htmlFor={id}>
         {placeholder}
       </label>
       <input placeholder={placeholder} ref={ref} {...rest} id={id} type={type ?? "text"} />

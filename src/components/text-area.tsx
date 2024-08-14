@@ -11,7 +11,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, err
 
   return (
     <section className="gap-0.5 flex flex-col w-full">
-      <label className="hidden" htmlFor={id}>
+      <label className="sr-only" htmlFor={id}>
         {placeholder}
       </label>
       <textarea placeholder={placeholder} {...rest} ref={ref} id={id} />
