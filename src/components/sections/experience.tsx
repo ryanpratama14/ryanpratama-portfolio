@@ -1,5 +1,6 @@
 import Img from "@/components/img";
 import MenuTitle from "@/components/menu-title";
+import Text from "@/components/text";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { EXPERIENCES } from "@/lib/constants";
 import { useLanguageFn } from "@/lib/internationalization";
@@ -24,17 +25,22 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
                     <Img src={e.src} className="object-contain" alt={e.label} />
                   </section>
                   <section className="pl-2.5 md:pl-3 flex flex-col">
-                    <small className="font-medium">{s.PERSONAL_DATA.position[e.position]}</small>
-                    <small className="text-graydarker lg:text-base text-xs">
+                    <Text>
+                      <p>{s.PERSONAL_DATA.position[e.position]}</p>
+                    </Text>
+
+                    <Text color="graydarker" as="list">
                       <span className="font-medium">{e.label}</span> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
-                    </small>
+                    </Text>
                   </section>
                 </section>
               </AccordionTrigger>
               <AccordionContent>
                 <ul className="mt-2">
                   {e.duty.map((duty) => (
-                    <li key={duty}>{duty}</li>
+                    <li key={duty}>
+                      <Text as="list">{duty}</Text>
+                    </li>
                   ))}
                 </ul>
               </AccordionContent>

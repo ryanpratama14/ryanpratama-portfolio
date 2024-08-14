@@ -1,5 +1,6 @@
 "use client";
 
+import Text from "@/components/text";
 import type { DictionaryStatic } from "@/types";
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { Fragment } from "react";
@@ -38,16 +39,20 @@ export default function SuccessModal({ show, onClose, s }: Props) {
               leaveTo="opacity-0 scale-95"
             >
               <DialogPanel className="flex flex-col gap-2 w-full max-w-md transform overflow-hidden rounded-md p-6 text-left shadow-xl animate bg-black">
-                <DialogTitle as="section" className="text-white">
-                  <p>{s.DISCUSS_YOUR_PROJECT.formSent}</p>
+                <DialogTitle as="section">
+                  <Text as="contentTitle">
+                    <p>{s.DISCUSS_YOUR_PROJECT.formSent}</p>
+                  </Text>
                 </DialogTitle>
 
-                <small className="text-gray text-pretty">{s.DISCUSS_YOUR_PROJECT.thankYou}</small>
+                <Text color="gray">
+                  <p className="text-pretty">{s.DISCUSS_YOUR_PROJECT.thankYou}</p>
+                </Text>
 
                 <section className="flex items-center justify-center mt-2">
                   <section className="relative group ">
                     <button type="button" className="box-button" onClick={onClose}>
-                      {s.DISCUSS_YOUR_PROJECT.gotIt}
+                      <Text>{s.DISCUSS_YOUR_PROJECT.gotIt}</Text>
                     </button>
                     <div className="rounded-md centered -z-10 absolute h-0 w-0 group-hover:h-full group-hover:w-full animate bg-bluedarker" />
                   </section>

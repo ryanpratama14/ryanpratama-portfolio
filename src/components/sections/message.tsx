@@ -3,6 +3,7 @@
 import Input from "@/components/input";
 import MenuTitle from "@/components/menu-title";
 import SuccessModal from "@/components/success-modal";
+import Text from "@/components/text";
 import TextArea from "@/components/text-area";
 import { type MessageInput, schema } from "@/server/api/schema";
 import { api } from "@/trpc/providers";
@@ -44,7 +45,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           <Input {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={s.DISCUSS_YOUR_PROJECT.email.placeholder} />
           <TextArea {...register("message")} placeholder={s.DISCUSS_YOUR_PROJECT.message.placeholder} error={errors.message?.message} />
           <button disabled={isPending} type="submit" className="box-button max-md:w-full">
-            {isPending ? <PulseLoader size={5} color="white" /> : s.DISCUSS_YOUR_PROJECT.submit}
+            {isPending ? <PulseLoader size={5} color="white" /> : <Text>{s.DISCUSS_YOUR_PROJECT.submit}</Text>}
           </button>
         </form>
       </article>

@@ -3,6 +3,7 @@
 import avatar from "@/assets/avatar.jpg";
 import Iconify from "@/components/iconify";
 import Img from "@/components/img";
+import Text from "@/components/text";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { DEFAULT_LANG, LANGUAGE_OPTIONS, useLanguage } from "@/lib/internationalization";
@@ -36,7 +37,9 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
       const Data = () => (
         <Fragment>
           <Iconify icon={e.icon} width={20} color={COLORS.gray} />
-          <small className={cn("text-graydarker", { "hover:underline": e.href })}>{e.title}</small>
+          <Text color="graydarker">
+            <p className={cn({ "hover:underline": e.href })}>{e.title}</p>
+          </Text>
         </Fragment>
       );
 
@@ -69,12 +72,22 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
           className="border-2 border-gray shadow-xl object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-full"
         />
         <section className="flex justify-between w-full items-start">
-          <section className="flex flex-col md:gap-1">
-            <section>
-              <h1>{s.PERSONAL_DATA.fullName}</h1>
-              {isDefaultLang ? null : <div className="text-xs -translate-y-[0.05rem]">{useLanguage(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</div>}
+          <section className="flex flex-col gap-0.5">
+            <section className="flex flex-col">
+              <Text as="heading">
+                <h1>{s.PERSONAL_DATA.fullName}</h1>
+              </Text>
+              {isDefaultLang ? null : (
+                <Text as="techstack" className="-translate-y-0.5">
+                  {useLanguage(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
+                </Text>
+              )}
             </section>
-            <small className="text-gray font-medium">{s.PERSONAL_DATA.softwareEngineer}</small>
+
+            <Text as="contentTitle" color="gray">
+              <h2>{s.PERSONAL_DATA.softwareEngineer}</h2>
+            </Text>
+
             <section className="hidden md:flex gap-y-2 gap-x-4 flex-wrap -translate-x-0.5">
               <ProfileData />
             </section>

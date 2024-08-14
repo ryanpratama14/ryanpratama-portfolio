@@ -20,9 +20,9 @@ export const ja: Dictionary = {
     MENUS: {
       experience: "職歴",
       about: "About",
-      featuredProjects: "Featured Projects",
+      featuredProjects: "Featured projects",
       contacts: "Contacts",
-      techstacks: "Tech Stack",
+      techstacks: "Tech stack",
       updatedOn: "Updated on",
       message: "Send a message",
 

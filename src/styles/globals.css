@@ -63,46 +63,19 @@
   body {
     @apply text-white bg-black font-notosans;
   }
-  h1 {
-    @apply text-xl md:text-2xl lg:text-3xl font-bold;
-  }
-  h2 {
-    @apply text-lg md:text-xl lg:text-2xl font-semibold;
-  }
-  h3 {
-    @apply text-base md:text-lg lg:text-xl font-medium;
-  }
-  small {
-    @apply text-sm lg:text-base;
-  }
   a,
   img {
     @apply select-none;
   }
   ul {
-    @apply ml-5 list-disc text-gray text-xs md:text-sm lg:text-base text-pretty;
+    @apply ml-5 list-disc text-pretty;
   }
   input,
   textarea {
-    @apply text-sm lg:text-base px-2.5 p-1.5 bg-graydarker/20 placeholder:text-graydarker text-white rounded-md outline-none focus:outline-none;
+    @apply text-sm lg:text-base px-2.5 p-1.5 bg-graydarker/20 placeholder:text-graydarker rounded-md outline-none focus:outline-none;
   }
   article {
     @apply flex flex-col gap-2.5;
-  }
-
-  a,
-  li,
-  ul,
-  button,
-  small,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    @apply animate;
   }
 }
 
@@ -114,13 +87,13 @@
     @apply transition-all duration-500;
   }
   .box-button {
-    @apply text-sm lg:text-base bg-blue-600 text-white px-4 py-1 shadow-xl;
+    @apply bg-blue-600 px-4 py-1 shadow-xl animate;
   }
-  .box {
-    @apply rounded-md bg-graydarker/20 text-white flex gap-1.5 items-center px-2.5 py-0.5 hover:scale-[1.075] shadow-xl;
+  .box-contacts {
+    @apply rounded-md bg-graydarker/20 flex gap-1.5 items-center px-2.5 py-0.5 hover:scale-[1.075] shadow-xl animate;
   }
   .box-techstacks {
-    @apply rounded-md bg-graydarker/20 text-white flex gap-1.5 items-center px-2 py-0.5 hover:scale-[1.075] animate shadow-xl;
+    @apply rounded-md bg-graydarker/20 flex gap-1.5 items-center px-2 py-0.5 hover:scale-[1.075] shadow-xl animate;
   }
   /* fixed positions for absolute or fixed position */
   .centered {
