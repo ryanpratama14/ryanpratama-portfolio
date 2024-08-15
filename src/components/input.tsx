@@ -1,5 +1,6 @@
 import Text from "@/components/text";
 import { cn } from "@/lib/functions";
+import { VARIANTS } from "@/styles/variants";
 import { type ComponentProps, forwardRef, useId } from "react";
 
 type InputProps = ComponentProps<"input"> & {
@@ -15,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, error, ty
       <label className="sr-only" htmlFor={id}>
         {placeholder}
       </label>
-      <input placeholder={placeholder} ref={ref} {...rest} id={id} type={type ?? "text"} />
+      <input className={VARIANTS.Input()} placeholder={placeholder} ref={ref} {...rest} id={id} type={type ?? "text"} />
       <Text className={cn("drop-shadow", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
         {error}
       </Text>

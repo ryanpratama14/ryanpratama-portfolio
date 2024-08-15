@@ -1,5 +1,5 @@
+import Container from "@/components/container";
 import Img from "@/components/img";
-import MenuTitle from "@/components/menu-title";
 import Text from "@/components/text";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { EXPERIENCES } from "@/lib/constants";
@@ -12,9 +12,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
   const { formatMonth } = useLanguageFn(lang);
 
   return (
-    <article>
-      <MenuTitle title={s.MENUS.experience} />
-
+    <Container title={s.MENUS.experience}>
       {EXPERIENCES.map((e) => {
         return (
           <Accordion key={e.label} type="multiple">
@@ -46,6 +44,6 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
           </Accordion>
         );
       })}
-    </article>
+    </Container>
   );
 }

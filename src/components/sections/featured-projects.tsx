@@ -1,9 +1,11 @@
 "use client";
 
+import Container from "@/components/container";
 import Img from "@/components/img";
-import MenuTitle from "@/components/menu-title";
 import Text from "@/components/text";
 import { PROJECTS } from "@/lib/constants";
+import { cn } from "@/lib/functions";
+import { VARIANTS } from "@/styles/variants";
 import type { DictionaryStatic } from "@/types";
 import Link from "next/link";
 import { Autoplay, Mousewheel, Scrollbar } from "swiper/modules";
@@ -13,8 +15,7 @@ type Props = { s: DictionaryStatic };
 
 export default function FeaturedProjects({ s }: Props) {
   return (
-    <article>
-      <MenuTitle title={s.MENUS.featuredProjects} />
+    <Container title={s.MENUS.featuredProjects}>
       <Swiper
         modules={[Autoplay, Mousewheel, Scrollbar]}
         mousewheel={{ forceToAxis: true }}
@@ -38,8 +39,8 @@ export default function FeaturedProjects({ s }: Props) {
                     <p>{e.desc}</p>
                   </Text>
 
-                  <Link target="_blank" href={e.href} className="group-hover:mb-5 absolute centered-bottom box-button">
-                    <Text>{s.SECTIONS.visitProject}</Text>
+                  <Link target="_blank" href={e.href} className={cn(VARIANTS.Button({ className: "group-hover:mb-5 absolute centered-bottom" }))}>
+                    {s.SECTIONS.visitProject}
                   </Link>
 
                   <ul className="sr-only">
@@ -56,6 +57,6 @@ export default function FeaturedProjects({ s }: Props) {
         })}
         <div className="swiper-scrollbar" />
       </Swiper>
-    </article>
+    </Container>
   );
 }
