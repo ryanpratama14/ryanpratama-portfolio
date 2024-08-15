@@ -34,7 +34,7 @@ export default function TechStacks({ s }: Props) {
     );
   };
 
-  const keys = Object.keys(TECH_STACKS) as Array<keyof TechStack>;
+  const keys = Object.keys(TECH_STACKS) as (keyof TechStack)[];
 
   return (
     <Container title={s.MENUS.techstacks}>

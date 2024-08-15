@@ -41,14 +41,21 @@ export const useLanguageFn = (lang: Lang) => {
 
 export const useLanguageHelper = () => {
   const validateTargetLang = (targetLang: string | undefined) => z.enum(LANGS).safeParse(targetLang).data;
-
   const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
   const getLangFromPath = (path: string) => validateTargetLang(path.split("/")[1]);
+
   const validateMatchedLang = (matchedLang: string) => {
     const lang = validateTargetLang(matchedLang);
     if (lang) return lang;
     return DEFAULT_LANG;
   };
 
-  return { isLangMissing, getLangFromPath, validateMatchedLang };
+  const changeLang = (targetLang: Lang, path: string) => {
+    if (!path) return "/";
+    const segments = path.split("/");
+    segments[1] = targetLang;
+    return segments.join("/");
+  };
+
+  return { isLangMissing, getLangFromPath, validateMatchedLang, changeLang };
 };

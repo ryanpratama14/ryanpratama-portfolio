@@ -6,7 +6,7 @@ import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { DEFAULT_LANG, LANGUAGE_OPTIONS, useLanguage } from "@/lib/internationalization";
+import { DEFAULT_LANG, LANGUAGE_OPTIONS, useLanguage, useLanguageHelper } from "@/lib/internationalization";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
@@ -23,14 +23,8 @@ type Props = {
 };
 
 export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie, storedLang }: Props) {
+  const { changeLang } = useLanguageHelper();
   const path = usePathname();
-
-  const changeLang = (targetLang: Lang): string => {
-    if (!path) return "/";
-    const segments = path.split("/");
-    segments[1] = targetLang;
-    return segments.join("/");
-  };
 
   const ProfileData = () =>
     getProfileData(s, isJapanese).map((e) => {
@@ -101,7 +95,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
                     "bg-graydarker/20 border-gray shadow-xl": isActive,
                   })}
                   key={targetLang}
-                  href={changeLang(targetLang)}
+                  href={changeLang(targetLang, path)}
                   type="button"
                 >
                   <span className="sr-only">
