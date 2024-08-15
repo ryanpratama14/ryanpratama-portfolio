@@ -17,7 +17,7 @@ import { PulseLoader } from "react-spinners";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const {
     register,
     handleSubmit,
