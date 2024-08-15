@@ -21,7 +21,9 @@ const getLang = (req: NextRequest) => {
   if (acceptLanguage) headers.set("accept-language", acceptLanguage.replaceAll("_", "-"));
   const headersObject = Object.fromEntries(headers.entries());
   const languages = new Negotiator({ headers: headersObject }).languages();
-  return match(languages, LANGS, DEFAULT_LANG) as Lang;
+  const validation = z.enum(LANGS).safeParse(match(languages, LANGS, DEFAULT_LANG));
+  if (validation.success) return validation.data;
+  return DEFAULT_LANG;
 };
 
 export const middleware = (req: NextRequest) => {
