@@ -42,16 +42,16 @@ export default function FeaturedProjects({ s }: Props) {
                   <Link target="_blank" href={e.href} className={cn(VARIANTS.Button({ className: "group-hover:mb-5 absolute centered-bottom" }))}>
                     {s.SECTIONS.visitProject}
                   </Link>
-
-                  <ul className="sr-only">
-                    {e.lists.map((list) => (
-                      <li key={list}>{list}</li>
-                    ))}
-                  </ul>
                 </section>
 
                 <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate" />
               </section>
+
+              <ul className="sr-only">
+                {e.lists.map((list) => (
+                  <li key={list}>{list}</li>
+                ))}
+              </ul>
             </SwiperSlide>
           );
         })}

@@ -48,7 +48,6 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           reset();
         }}
       />
-      Ï Ï
     </Fragment>
   );
 }
