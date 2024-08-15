@@ -20,7 +20,6 @@ export const ru: Dictionary = {
       featuredProjects: "Выделенные проекты",
       contacts: "Контакты",
       experience: "Опыт работы",
-      techstacks: "Технологический стек",
       updatedOn: "Обновлено",
       message: "Отправить сообщение",
 

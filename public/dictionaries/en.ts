@@ -19,7 +19,6 @@ export const en = {
       featuredProjects: "Featured projects",
       contacts: "Contacts",
       experience: "Experience",
-      techstacks: "Tech stack",
       updatedOn: "Updated on",
       message: "Send a message",
 

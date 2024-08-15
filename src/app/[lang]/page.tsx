@@ -5,7 +5,6 @@ import Experience from "@/components/sections/experience";
 import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import TechStacks from "@/components/sections/tech-stacks";
 import { setCookie } from "@/lib/actions";
 import { useLanguage, useLanguageFn } from "@/lib/internationalization";
 import type { Lang } from "@/types";
@@ -27,7 +26,6 @@ export default function Home({ params }: Props) {
       <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} setCookie={setCookie} storedLang={storedLang} />
       <Contacts s={s} />
       <About s={s} />
-      <TechStacks s={s} />
       <Experience s={s} lang={lang} />
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />

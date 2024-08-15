@@ -33,7 +33,7 @@ export const VARIANTS = {
   }),
 
   Button: tv({
-    base: "rounded-full font-medium bg-blue-600 px-4 py-1 shadow-xl animate w-max active:scale-95 animate text-sm lg:text-base",
+    base: "rounded-full disabled:hover:bg-blue-600 hover:bg-blue-800 font-medium bg-blue-600 px-4 py-1 shadow-xl animate w-max active:scale-95 animate text-sm lg:text-base",
   }),
 
   Input: tv({
@@ -45,7 +45,7 @@ export const VARIANTS = {
     variants: {
       style: {
         contact: "gap-1.5 px-2 py-0.5 hover:scale-[1.075]",
-        techstack: "gap-1 px-1.5 py-0.5",
+        techstack: "gap-1 px-1.5 py-0.5 hover:scale-[1.05]",
       },
     },
   }),

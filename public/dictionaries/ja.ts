@@ -21,7 +21,6 @@ export const ja: Dictionary = {
       about: "私について",
       featuredProjects: "注目のプロジェクト",
       contacts: "連絡先",
-      techstacks: "技術スタック",
       updatedOn: "に更新",
       message: "メッセージを送信する",
 
