@@ -7,7 +7,7 @@ import { setCookie } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { useLanguage } from "@/lib/internationalization";
-import { VARIANTS } from "@/styles/variants";
+import { VARIANTS } from "@/styles";
 import type { Lang } from "@/types";
 import { cookies } from "next/headers";
 import Link from "next/link";

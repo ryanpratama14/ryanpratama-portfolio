@@ -37,7 +37,7 @@ export const getProfileData = (s: DictionaryStatic, isJapanese: boolean) => {
 };
 
 export const CERTIFICATIONS: Certification[] = [
-  { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", title: "JLPT N4" },
+  { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", title: "Japanese-Language Proficiency Test N4" },
   {
     name: "preparatory-faculty-of-russian-language",
     src: PHOTOS.certifications.podfak,
