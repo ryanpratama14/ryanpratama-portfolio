@@ -1,14 +1,13 @@
-import Text from "@/components/text";
+import Text from "@/components/html/text";
 import { cn } from "@/lib/functions";
 import { VARIANTS } from "@/styles/variants";
 import { type ComponentProps, forwardRef, useId } from "react";
 
-type InputProps = ComponentProps<"input"> & {
+type InputProps = ComponentProps<"textarea"> & {
   error: string | undefined;
-  placeholder: string;
 };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, error, type, ...rest }, ref) => {
+const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, error, ...rest }, ref) => {
   const id = useId();
 
   return (
@@ -16,7 +15,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, error, ty
       <label className="sr-only" htmlFor={id}>
         {placeholder}
       </label>
-      <input className={VARIANTS.Input()} placeholder={placeholder} ref={ref} {...rest} id={id} type={type ?? "text"} />
+      <textarea className={VARIANTS.Input()} placeholder={placeholder} {...rest} ref={ref} id={id} />
       <Text className={cn("drop-shadow", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
         {error}
       </Text>
@@ -24,4 +23,4 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, error, ty
   );
 });
 
-export default Input;
+export default TextArea;

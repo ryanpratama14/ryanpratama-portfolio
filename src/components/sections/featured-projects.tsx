@@ -1,8 +1,8 @@
 "use client";
 
 import Container from "@/components/container";
-import Img from "@/components/img";
-import Text from "@/components/text";
+import Img from "@/components/html/img";
+import Text from "@/components/html/text";
 import { PROJECTS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { VARIANTS } from "@/styles/variants";

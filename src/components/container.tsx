@@ -1,4 +1,4 @@
-import Text from "@/components/text";
+import Text from "@/components/html/text";
 
 type Props = { title: string; children?: React.ReactNode };
 

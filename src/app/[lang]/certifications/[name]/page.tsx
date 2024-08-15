@@ -1,6 +1,7 @@
-import Img from "@/components/img";
-import MenuTitle from "@/components/menu-title";
+import Container from "@/components/container";
+import Img from "@/components/html/img";
 import Contacts from "@/components/sections/contacts";
+import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { setCookie } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";
@@ -15,7 +16,7 @@ type Props = { params: { lang: Lang; name: string } };
 
 export default function CertificationPage({ params }: Props) {
   const data = CERTIFICATIONS.find((e) => e.name === params.name);
-  if (!data) redirect("/");
+  if (!data) redirect(`/${params.lang}`);
 
   const { s, lang, isJapanese, isDefaultLang } = useLanguage(params.lang);
   const storedLang = cookies().get("lang")?.value as Lang | undefined;
@@ -25,14 +26,14 @@ export default function CertificationPage({ params }: Props) {
       <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} setCookie={setCookie} storedLang={storedLang} />
       <Contacts s={s} />
 
-      <article>
-        <MenuTitle title={data.title} />
+      <Container title={data.title}>
         <Img alt={data.alt} src={data.src} />
-      </article>
+      </Container>
 
       <Link href={`/${lang}`} className="box-button w-fit mx-auto">
         {s.SECTIONS.backToHomepage}
       </Link>
+      <Message s={s} lang={lang} />
     </Fragment>
   );
 }

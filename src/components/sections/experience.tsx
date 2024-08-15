@@ -1,6 +1,6 @@
 import Container from "@/components/container";
-import Img from "@/components/img";
-import Text from "@/components/text";
+import Img from "@/components/html/img";
+import Text from "@/components/html/text";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { EXPERIENCES } from "@/lib/constants";
 import { useLanguageFn } from "@/lib/internationalization";

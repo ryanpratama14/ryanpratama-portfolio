@@ -1,6 +1,6 @@
 import Container from "@/components/container";
-import Iconify from "@/components/iconify";
-import Text from "@/components/text";
+import Iconify from "@/components/html/iconify";
+import Text from "@/components/html/text";
 import { TECH_STACKS } from "@/lib/constants";
 import { VARIANTS } from "@/styles/variants";
 import type { DictionaryStatic, TechStack } from "@/types";

@@ -1,6 +1,6 @@
 "use client";
 
-import Text from "@/components/text";
+import Text from "@/components/html/text";
 import type { DictionaryStatic } from "@/types";
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { Fragment } from "react";

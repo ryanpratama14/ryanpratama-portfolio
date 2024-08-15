@@ -1,5 +1,5 @@
 import Container from "@/components/container";
-import Text from "@/components/text";
+import Text from "@/components/html/text";
 import type { DictionaryStatic } from "@/types";
 
 type Props = { s: DictionaryStatic };

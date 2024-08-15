@@ -1,6 +1,6 @@
 "use client";
 
-import Iconify from "@/components/iconify";
+import Iconify from "@/components/html/iconify";
 import { cn } from "@/lib/functions";
 import { COLORS } from "@/styles";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";

@@ -1,6 +1,6 @@
 "use client";
 
-import Iconify from "@/components/iconify";
+import Iconify from "@/components/html/iconify";
 import { cn, loadToTop } from "@/lib/functions";
 import { useEffect, useState } from "react";
 

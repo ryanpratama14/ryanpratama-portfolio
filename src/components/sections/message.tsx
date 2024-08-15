@@ -1,9 +1,9 @@
 "use client";
 
 import Container from "@/components/container";
-import Input from "@/components/input";
+import Input from "@/components/html/input";
+import TextArea from "@/components/html/text-area";
 import SuccessModal from "@/components/success-modal";
-import TextArea from "@/components/text-area";
 import { cn } from "@/lib/functions";
 import { type MessageInput, schema } from "@/server/api/schema";
 import { VARIANTS } from "@/styles/variants";

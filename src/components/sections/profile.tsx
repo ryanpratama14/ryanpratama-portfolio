@@ -1,9 +1,9 @@
 "use client";
 
 import avatar from "@/assets/avatar.jpg";
-import Iconify from "@/components/iconify";
-import Img from "@/components/img";
-import Text from "@/components/text";
+import Iconify from "@/components/html/iconify";
+import Img from "@/components/html/img";
+import Text from "@/components/html/text";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { DEFAULT_LANG, LANGUAGE_OPTIONS, useLanguage } from "@/lib/internationalization";
