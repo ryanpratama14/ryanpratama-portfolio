@@ -2,12 +2,11 @@
 
 import { getBaseUrl } from "@/lib/functions";
 import type { AppRouter } from "@/server/api/root";
-import { transformer } from "@/trpc/shared";
+import { createQueryClient, transformer } from "@/trpc/shared";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { unstable_httpBatchStreamLink as httpBatchStreamLink, loggerLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
 import { useState } from "react";
-import { createQueryClient } from "./query-client";
 
 let clientQueryClientSingleton: QueryClient | undefined = undefined;
 

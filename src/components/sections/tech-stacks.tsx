@@ -2,7 +2,7 @@ import Container from "@/components/container";
 import Iconify from "@/components/html/iconify";
 import Text from "@/components/html/text";
 import { TECH_STACKS } from "@/lib/constants";
-import { VARIANTS } from "@/styles/variants";
+import { VARIANTS } from "@/styles";
 import type { DictionaryStatic, TechStack } from "@/types";
 
 type Props = { s: DictionaryStatic };

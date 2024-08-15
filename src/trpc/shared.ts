@@ -1,4 +1,5 @@
 import type { AppRouter } from "@/server/api/root";
+import { QueryClient, defaultShouldDehydrateQuery } from "@tanstack/react-query";
 import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
 import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
 import SuperJSON from "superjson";
@@ -7,6 +8,19 @@ export const transformer = SuperJSON;
 export const THROW_TRPC_OK = (code: TRPC_OK_CODE_KEY, message?: string) => ({ code, message: message ?? OK_MESSAGES[code] });
 export const THROW_TRPC_ERROR = (code: TRPC_ERROR_CODE_KEY, message?: string) => {
   throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
+};
+
+export const createQueryClient = () => {
+  return new QueryClient({
+    defaultOptions: {
+      queries: { staleTime: 30 * 1000 },
+      dehydrate: {
+        serializeData: transformer.serialize,
+        shouldDehydrateQuery: (query) => defaultShouldDehydrateQuery(query) || query.state.status === "pending",
+      },
+      hydrate: { deserializeData: transformer.deserialize },
+    },
+  });
 };
 
 const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {

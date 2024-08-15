@@ -1,6 +1,6 @@
 import Text from "@/components/html/text";
 import { cn } from "@/lib/functions";
-import { VARIANTS } from "@/styles/variants";
+import { VARIANTS } from "@/styles";
 import { type ComponentProps, forwardRef, useId } from "react";
 
 type InputProps = ComponentProps<"textarea"> & {

@@ -2,7 +2,7 @@ import Container from "@/components//container";
 import Iconify from "@/components/html/iconify";
 import Text from "@/components/html/text";
 import { CONTACTS } from "@/lib/constants";
-import { VARIANTS } from "@/styles/variants";
+import { VARIANTS } from "@/styles";
 import type { DictionaryStatic } from "@/types";
 import Link from "next/link";
 

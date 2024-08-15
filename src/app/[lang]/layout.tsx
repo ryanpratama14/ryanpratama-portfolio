@@ -1,4 +1,5 @@
 import ScrollToTop from "@/components/scroll-to-top";
+import TransitionEffect from "@/components/transition-effect";
 import { LANGS, useLanguage } from "@/lib/internationalization";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
@@ -9,12 +10,10 @@ import type { Metadata } from "next";
 // styles
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
-import "@/styles/stylesheet.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import TransitionEffect from "@/components/transition-effect";
 
 const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

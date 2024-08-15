@@ -36,7 +36,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
     getProfileData(s, isJapanese).map((e) => {
       const Data = () => (
         <Fragment>
-          <Iconify icon={e.icon} width={20} color={COLORS.gray} />
+          <Iconify icon={e.icon} width={17.5} color={COLORS.gray} />
           <Text color="graydarker">
             <p className={cn({ "hover:underline": e.href })}>{e.title}</p>
           </Text>

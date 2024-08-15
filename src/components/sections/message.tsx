@@ -6,7 +6,7 @@ import TextArea from "@/components/html/text-area";
 import SuccessModal from "@/components/success-modal";
 import { cn } from "@/lib/functions";
 import { type MessageInput, schema } from "@/server/api/schema";
-import { VARIANTS } from "@/styles/variants";
+import { VARIANTS } from "@/styles";
 import { api } from "@/trpc/providers";
 import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";

@@ -30,8 +30,8 @@ export const getProfileData = (s: DictionaryStatic, isJapanese: boolean) => {
 
   return [
     { href: "/resume.pdf", icon: "mdi:resume", title: s.SECTIONS.resume },
-    { icon: "mdi:location", title: s.LOCATIONS.jakarta },
     { icon: "mdi:work", title: yoe },
+    { icon: "mdi:location", title: s.LOCATIONS.jakarta },
     { icon: "mdi:person", title: age },
   ];
 };
@@ -138,17 +138,18 @@ export const TECH_STACKS: TechStack = {
     { label: "shadcn/ui", icon: "simple-icons:shadcnui" },
     { label: "styled-components", icon: "file-icons:styledcomponents" },
     { label: "Ant Design", icon: "simple-icons:antdesign" },
+    { label: "NextUI", icon: "simple-icons:nextui" },
     { label: "MUI", icon: "simple-icons:mui" },
     { label: "Framer Motion", icon: "teenyicons:framer-solid" },
     { label: "Resend", icon: "simple-icons:resend" },
-    { label: "js-PDF / React-pdf", icon: "mingcute:pdf-fill" },
-    { label: "ExcelJS", icon: "ant-design:file-excel-filled" },
+    { label: "React-pdf / js-PDF", icon: "teenyicons:pdf-solid" },
+    { label: "ExcelJS", icon: "teenyicons:ms-excel-solid" },
   ],
 
   db: [
+    { label: "MongoDB", icon: "teenyicons:mongodb-solid" },
     { label: "PostgreSQL", icon: "akar-icons:postgresql-fill" },
     { label: "MySQL", icon: "simple-icons:mysql" },
-    { label: "MongoDB", icon: "teenyicons:mongodb-solid" },
   ],
 
   learning: [

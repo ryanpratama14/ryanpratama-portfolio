@@ -1,5 +1,5 @@
 import { cn } from "@/lib/functions";
-import { VARIANTS } from "@/styles/variants";
+import { VARIANTS } from "@/styles";
 import { type ComponentProps, forwardRef } from "react";
 import type { VariantProps } from "tailwind-variants";
 

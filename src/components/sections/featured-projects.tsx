@@ -5,7 +5,7 @@ import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import { PROJECTS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { VARIANTS } from "@/styles/variants";
+import { VARIANTS } from "@/styles";
 import type { DictionaryStatic } from "@/types";
 import Link from "next/link";
 import { Autoplay, Mousewheel, Scrollbar } from "swiper/modules";
