@@ -11,13 +11,14 @@ import { api } from "@/trpc/providers";
 import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment, useState } from "react";
-import { type SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { PulseLoader } from "react-spinners";
 
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
   const [showModal, setShowModal] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -25,23 +26,12 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang } });
 
-  const onSubmit: SubmitHandler<MessageInput> = (data) => sendEmail(data);
-
-  const { mutate: sendEmail, isPending } = api.email.message.useMutation({ onSuccess: () => setShowModal(true) });
+  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setShowModal(true) });
 
   return (
     <Fragment>
-      <SuccessModal
-        s={s}
-        show={showModal}
-        onClose={() => {
-          setShowModal(false);
-          reset();
-        }}
-      />
-
       <Container title={s.MENUS.message}>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 items-start">
+        <form onSubmit={handleSubmit((data) => sendMessage(data))} className="flex flex-col gap-3 items-start">
           <Input {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={s.DISCUSS_YOUR_PROJECT.name.placeholder} />
           <Input {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={s.DISCUSS_YOUR_PROJECT.email.placeholder} />
           <TextArea {...register("message")} placeholder={s.DISCUSS_YOUR_PROJECT.message.placeholder} error={errors.message?.message} />
@@ -50,6 +40,15 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           </button>
         </form>
       </Container>
+      <SuccessModal
+        s={s}
+        show={showModal}
+        onClose={() => {
+          setShowModal(false);
+          reset();
+        }}
+      />
+      Ï Ï
     </Fragment>
   );
 }

@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
-    desc: "A Korean consulting firm catering to diverse global services and industries.",
+    desc: "A Korean consulting firm that provides global services and industries, featuring a career microsite, admin dashboard, and landing pages for advertising job openings and managing candidate applications.",
     href: "https://hebronstar.com/en",
     lists: [
       "Developed a fullstack fully responsive web app using React",
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
   {
     title: "TurunTangan",
     src: PHOTOS.project.turta,
-    desc: "A non-profit youth volunteer movement with more than 100 chapters across Indonesia.",
+    desc: "Indonesia's largest non-profit youth volunteer network with 100+ chapters, including an admin dashboard to manage volunteers, view and manage site content, and automate their volunteer network and operations.",
     href: "https://gerakanturuntangan.com",
     lists: [
       "Developed a fullstack fully responsive web app using React",
@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Belinsky Production",
     src: PHOTOS.project.belinsky,
-    desc: "A production house and creative studio that specializes in both professional photography and filmmaking.",
+    desc: "A production house and creative studio specializing in professional photography and filmmaking, showcasing their services, creative works, and client projects to attract new clients.",
     href: "https://belinskyproduction.com",
     lists: [
       "Developed a static fully responsive web app using React",
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Synergy Perdana Mandiri",
     src: PHOTOS.project.mandiri,
-    desc: "A trading company specializing in general and chemicals trading.",
+    desc: "A trading company specializing in general and chemicals trading, providing company and product information to customers in the fertilizer and chemical industries.",
     href: "https://www.sinergyperdanamandiri.com",
     lists: [
       "Developed a static fully responsive web app using React",
