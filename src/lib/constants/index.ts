@@ -48,7 +48,7 @@ export const CERTIFICATIONS: Certification[] = [
 
 export const PROJECTS: Project[] = [
   {
-    title: "Hebronstar",
+    title: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
     desc: "A Korean consulting firm catering to diverse global services and industries.",
     href: "https://hebronstar.com/en",
