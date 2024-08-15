@@ -1,6 +1,8 @@
 "use client";
 
 import Text from "@/components/html/text";
+import { cn } from "@/lib/functions";
+import { VARIANTS } from "@/styles";
 import type { DictionaryStatic } from "@/types";
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
 import { Fragment } from "react";
@@ -14,7 +16,7 @@ type Props = {
 export default function SuccessModal({ show, onClose, s }: Props) {
   return (
     <Transition appear show={show} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
+      <Dialog as="div" className="relative z-50" onClose={onClose}>
         <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
@@ -38,25 +40,19 @@ export default function SuccessModal({ show, onClose, s }: Props) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <DialogPanel className="flex flex-col gap-2 w-full max-w-md transform overflow-hidden rounded-md p-6 text-left shadow-xl animate bg-black">
+              <DialogPanel className="flex flex-col gap-1 w-full max-w-md transform overflow-hidden rounded-md p-6 text-left shadow-xl animate bg-black border-2 border-graydarker/20">
                 <DialogTitle as="section">
-                  <Text as="contentTitle">
+                  <Text as="contentTitle" className="font-medium">
                     <p>{s.DISCUSS_YOUR_PROJECT.formSent}</p>
                   </Text>
                 </DialogTitle>
 
                 <Text color="gray">
-                  <p className="text-pretty">{s.DISCUSS_YOUR_PROJECT.thankYou}</p>
+                  <p>{s.DISCUSS_YOUR_PROJECT.thankYou}</p>
                 </Text>
-
-                <section className="flex items-center justify-center mt-2">
-                  <section className="relative group ">
-                    <button type="button" className="box-button" onClick={onClose}>
-                      <Text>{s.DISCUSS_YOUR_PROJECT.gotIt}</Text>
-                    </button>
-                    <div className="rounded-md centered -z-10 absolute h-0 w-0 group-hover:h-full group-hover:w-full animate bg-bluedarker" />
-                  </section>
-                </section>
+                <button type="button" className={cn(VARIANTS.Button({ className: "mt-3 mx-auto" }))} onClick={onClose}>
+                  {s.DISCUSS_YOUR_PROJECT.gotIt}
+                </button>
               </DialogPanel>
             </TransitionChild>
           </div>
