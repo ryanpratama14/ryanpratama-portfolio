@@ -64,7 +64,7 @@ export default function RootLayout({ children, params }: Props) {
         <Analytics />
         <SpeedInsights />
         <Providers>
-          <main className="pt-shorter pb-24 px-shorter xl:px-52 2xl:px-80 3xl:px-96 animate flex flex-col gap-4">{children}</main>
+          <main className="pt-shorter pb-24 px-shorter xl:px-52 2xl:px-96 3xl:px-[32rem] animate flex flex-col gap-4">{children}</main>
         </Providers>
         <TransitionEffect />
         <ScrollToTop />
