@@ -1,19 +1,11 @@
-import { DEFAULT_LANG, LANGS } from "@/lib/internationalization";
+import { DEFAULT_LANG, LANGS, useLanguageHelper } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { z } from "zod";
 
-const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
-
-const getLangFromPath = (path: string) => {
-  const lang = path.split("/")[1];
-  const validation = z.enum(LANGS).safeParse(lang);
-  if (validation.success) return validation.data;
-  return undefined;
-};
+const { getLangFromPath, isLangMissing, validateMatchedLang } = useLanguageHelper();
 
 const getLang = (req: NextRequest) => {
   const headers = new Headers(req.headers);
@@ -21,9 +13,7 @@ const getLang = (req: NextRequest) => {
   if (acceptLanguage) headers.set("accept-language", acceptLanguage.replaceAll("_", "-"));
   const headersObject = Object.fromEntries(headers.entries());
   const languages = new Negotiator({ headers: headersObject }).languages();
-  const validation = z.enum(LANGS).safeParse(match(languages, LANGS, DEFAULT_LANG));
-  if (validation.success) return validation.data;
-  return DEFAULT_LANG;
+  return validateMatchedLang(match(languages, LANGS, DEFAULT_LANG));
 };
 
 export const middleware = (req: NextRequest) => {

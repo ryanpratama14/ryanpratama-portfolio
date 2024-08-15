@@ -1,5 +1,6 @@
 import { getBaseUrl } from "@/lib/functions";
 import type { Dictionary, Lang } from "@/types";
+import { z } from "zod";
 import { en } from "#/dictionaries/en";
 import { ja } from "#/dictionaries/ja";
 import { ru } from "#/dictionaries/ru";
@@ -36,4 +37,18 @@ export const useLanguageFn = (lang: Lang) => {
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
 
   return { ...rest, d, formatMonth, formatDate, formatCurrency };
+};
+
+export const useLanguageHelper = () => {
+  const validateTargetLang = (targetLang: string | undefined) => z.enum(LANGS).safeParse(targetLang).data;
+
+  const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
+  const getLangFromPath = (path: string) => validateTargetLang(path.split("/")[1]);
+  const validateMatchedLang = (matchedLang: string) => {
+    const lang = validateTargetLang(matchedLang);
+    if (lang) return lang;
+    return DEFAULT_LANG;
+  };
+
+  return { isLangMissing, getLangFromPath, validateMatchedLang };
 };
