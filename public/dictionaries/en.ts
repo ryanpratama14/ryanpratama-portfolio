@@ -31,6 +31,7 @@ export const en = {
     },
 
     SECTIONS: {
+      notFound: "This page could not be found",
       yearsExperience: "YoE",
       backToHomepage: "Back to homepage",
       present: "Present",
@@ -44,7 +45,7 @@ export const en = {
       tokyo: "Tokyo, Japan",
     },
 
-    DISCUSS_YOUR_PROJECT: {
+    MESSAGE: {
       formSent: "Form sent successfully",
       thankYou:
         "Thank you for contacting me regarding the project. I appreciate your message and will get back to you as soon as possible to discuss further details.",

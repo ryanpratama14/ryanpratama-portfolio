@@ -18,6 +18,7 @@ type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
   const [showModal, setShowModal] = useState(false);
+  const { MESSAGE: t } = s;
 
   const {
     register,
@@ -32,12 +33,12 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     <Fragment>
       <Container title={s.MENUS.message}>
         <form onSubmit={handleSubmit((data) => sendMessage(data))} className="flex flex-col gap-3 items-start">
-          <Input {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={s.DISCUSS_YOUR_PROJECT.name.placeholder} />
-          <Input {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={s.DISCUSS_YOUR_PROJECT.email.placeholder} />
-          <TextArea {...register("message")} placeholder={s.DISCUSS_YOUR_PROJECT.message.placeholder} error={errors.message?.message} />
+          <Input {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={t.name.placeholder} />
+          <Input {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={t.email.placeholder} />
+          <TextArea {...register("message")} placeholder={t.message.placeholder} error={errors.message?.message} />
           <button disabled={isPending} type="submit" className={cn(VARIANTS.Button({ className: "max-md:w-full" }))}>
-            {isPending ? <PulseLoader size={5} color="white" /> : s.DISCUSS_YOUR_PROJECT.submit}
-            <span className="sr-only">{s.DISCUSS_YOUR_PROJECT.submit}</span>
+            {isPending ? <PulseLoader size={5} color="white" /> : t.submit}
+            <span className="sr-only">{t.submit}</span>
           </button>
         </form>
       </Container>

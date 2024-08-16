@@ -33,6 +33,7 @@ export const ja: Dictionary = {
     },
 
     SECTIONS: {
+      notFound: "ページが見つかりません",
       yearsExperience: "年の経験",
       backToHomepage: "ホームページに戻る",
       present: "現在",
@@ -46,7 +47,7 @@ export const ja: Dictionary = {
       tokyo: "東京、日本",
     },
 
-    DISCUSS_YOUR_PROJECT: {
+    MESSAGE: {
       formSent: "帳票が正常に送信されました",
       thankYou:
         "プロジェクトに関するお問い合わせありがとうございます。メッセージをありがとうございます。できるだけ早く詳細をお話しするためにお返事いたします。",

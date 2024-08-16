@@ -43,15 +43,15 @@ export default function SuccessModal({ show, onClose, s }: Props) {
               <DialogPanel className="flex flex-col gap-1 w-full max-w-md transform overflow-hidden rounded-md p-6 text-left shadow-xl animate bg-black border-2 border-graydarker/20">
                 <DialogTitle as="section">
                   <Text as="contentTitle" className="font-medium">
-                    <p>{s.DISCUSS_YOUR_PROJECT.formSent}</p>
+                    <p>{s.MESSAGE.formSent}</p>
                   </Text>
                 </DialogTitle>
 
                 <Text color="gray">
-                  <p>{s.DISCUSS_YOUR_PROJECT.thankYou}</p>
+                  <p>{s.MESSAGE.thankYou}</p>
                 </Text>
                 <button type="button" className={cn(VARIANTS.Button({ className: "mt-3 mx-auto" }))} onClick={onClose}>
-                  {s.DISCUSS_YOUR_PROJECT.gotIt}
+                  {s.MESSAGE.gotIt}
                 </button>
               </DialogPanel>
             </TransitionChild>

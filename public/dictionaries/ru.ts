@@ -32,6 +32,7 @@ export const ru: Dictionary = {
     },
 
     SECTIONS: {
+      notFound: "Страница не найдена",
       yearsExperience: "года опыта",
       backToHomepage: "На главную страницу",
       present: "настоящее время",
@@ -46,7 +47,7 @@ export const ru: Dictionary = {
       tokyo: "Токио, Япония",
     },
 
-    DISCUSS_YOUR_PROJECT: {
+    MESSAGE: {
       formSent: "Заявка успешно отправлена",
       thankYou: "Спасибо за обращение по проекту. Я благодарю вас за сообщение и свяжусь с вами как можно скорее, чтобы обсудить дальнейшие детали.",
       gotIt: "Понял, спасибо!",
