@@ -4,7 +4,7 @@ import Container from "@/components/container";
 import Input from "@/components/html/input";
 import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
-import { Dialog, DialogClose, DialogContent } from "@/components/ui/dialog";
+import { Modal } from "@/components/modal";
 import { cn } from "@/lib/functions";
 import { type MessageInput, schema } from "@/server/api/schema";
 import { VARIANTS } from "@/styles";
@@ -18,7 +18,7 @@ import { PulseLoader } from "react-spinners";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [open, onOpenChange] = useState(false);
+  const [show, setShow] = useState(false);
   const { MESSAGE: t } = s;
 
   const {
@@ -28,7 +28,12 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang } });
 
-  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => onOpenChange(true) });
+  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setShow(true) });
+
+  const onClose = () => {
+    setShow(false);
+    reset();
+  };
 
   return (
     <Fragment>
@@ -44,21 +49,20 @@ export default function ProjectDiscuss({ s, lang }: Props) {
         </form>
       </Container>
 
-      <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="flex flex-col gap-2">
+      <Modal show={show} onClose={onClose}>
+        <Modal.Body className="text-left flex flex-col gap-1">
           <Text as="menuTitle" className="font-medium">
             <p>{s.MESSAGE.formSent}</p>
           </Text>
-          <Text color="gray">
+
+          <Text color="gray" className="text-pretty">
             <p>{s.MESSAGE.thankYou}</p>
           </Text>
-          <DialogClose className="outline-none focus:outline-none mt-3 w-fit mx-auto">
-            <button onClick={() => reset()} type="button" className={cn(VARIANTS.Button())}>
-              {s.MESSAGE.gotIt}
-            </button>
-          </DialogClose>
-        </DialogContent>
-      </Dialog>
+          <button type="button" className={cn(VARIANTS.Button({ className: "w-full mt-2" }))} onClick={onClose}>
+            {s.MESSAGE.gotIt}
+          </button>
+        </Modal.Body>
+      </Modal>
     </Fragment>
   );
 }
