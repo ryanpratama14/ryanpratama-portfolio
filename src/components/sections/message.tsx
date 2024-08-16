@@ -2,8 +2,9 @@
 
 import Container from "@/components/container";
 import Input from "@/components/html/input";
+import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
-import SuccessModal from "@/components/success-modal";
+import { Dialog, DialogClose, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/functions";
 import { type MessageInput, schema } from "@/server/api/schema";
 import { VARIANTS } from "@/styles";
@@ -17,7 +18,7 @@ import { PulseLoader } from "react-spinners";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [showModal, setShowModal] = useState(false);
+  const [open, onOpenChange] = useState(true);
   const { MESSAGE: t } = s;
 
   const {
@@ -27,7 +28,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang } });
 
-  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setShowModal(true) });
+  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => onOpenChange(true) });
 
   return (
     <Fragment>
@@ -42,14 +43,22 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           </button>
         </form>
       </Container>
-      <SuccessModal
-        s={s}
-        show={showModal}
-        onClose={() => {
-          setShowModal(false);
-          reset();
-        }}
-      />
+
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="flex flex-col gap-2">
+          <Text as="menuTitle" className="font-medium">
+            <p>{s.MESSAGE.formSent}</p>
+          </Text>
+          <Text color="gray">
+            <p>{s.MESSAGE.thankYou}</p>
+          </Text>
+          <DialogClose className="outline-none focus:outline-none mt-3 w-fit mx-auto">
+            <button onClick={() => reset()} type="button" className={cn(VARIANTS.Button())}>
+              {s.MESSAGE.gotIt}
+            </button>
+          </DialogClose>
+        </DialogContent>
+      </Dialog>
     </Fragment>
   );
 }
