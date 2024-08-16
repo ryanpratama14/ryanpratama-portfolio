@@ -5,10 +5,8 @@ import Experience from "@/components/sections/experience";
 import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import { setCookie } from "@/lib/actions";
 import { useLanguage, useLanguageFn } from "@/lib/internationalization";
 import type { Lang } from "@/types";
-import { cookies } from "next/headers";
 import { Fragment } from "react";
 
 type Props = { params: { lang: Lang } };
@@ -19,11 +17,10 @@ export default function Home({ params }: Props) {
 
   const updateDate = formatDate(new Date("2024-08-15"));
   const updatedOn = `${isJapanese ? "" : `${s.MENUS.updatedOn} `}${updateDate}${isJapanese ? s.MENUS.updatedOn : ""}`;
-  const storedLang = cookies().get("lang")?.value as Lang | undefined;
 
   return (
     <Fragment>
-      <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} setCookie={setCookie} storedLang={storedLang} />
+      <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} />
       <Contacts s={s} />
       <About s={s} />
       <Experience s={s} lang={lang} />

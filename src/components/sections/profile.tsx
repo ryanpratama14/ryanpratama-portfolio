@@ -1,31 +1,26 @@
-"use client";
-
 import avatar from "@/assets/avatar.jpg";
 import Iconify from "@/components/html/iconify";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
+import LangSwitcher from "@/components/lang-switcher";
+import { setCookie } from "@/lib/actions";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { DEFAULT_LANG, LANGUAGE_OPTIONS, useLanguage, useLanguageHelper } from "@/lib/internationalization";
+import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
+import { cookies } from "next/headers";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 
 type Props = {
   lang: Lang;
   s: DictionaryStatic;
   isJapanese: boolean;
-  setCookie: (name: string, value: string) => Promise<void>;
-  storedLang: Lang | undefined;
   isDefaultLang: boolean;
 };
 
-export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie, storedLang }: Props) {
-  const { changeLang } = useLanguageHelper();
-  const path = usePathname();
-
+export default function Profile({ s, lang, isDefaultLang, isJapanese }: Props) {
   const ProfileData = () =>
     getProfileData(s, isJapanese).map((e) => {
       const Data = () => (
@@ -51,10 +46,6 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
         </section>
       );
     });
-
-  useEffect(() => {
-    if (storedLang !== lang || !storedLang) setCookie("lang", lang);
-  }, [lang, storedLang, setCookie]);
 
   return (
     <Fragment>
@@ -86,26 +77,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, setCookie,
               <ProfileData />
             </section>
           </section>
-          <section className="flex">
-            {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag }) => {
-              const isActive = lang === targetLang;
-              return (
-                <Link
-                  className={cn("text-2xl leading-3 px-1 py-2 rounded-md border-2 border-transparent", {
-                    "bg-graydarker/20 border-gray shadow-xl": isActive,
-                  })}
-                  key={targetLang}
-                  href={changeLang(targetLang, path)}
-                  type="button"
-                >
-                  <span className="sr-only">
-                    {s.PERSONAL_DATA.fullName} {s.PERSONAL_DATA.softwareEngineer} {s.PERSONAL_DATA.summary}
-                  </span>
-                  {flag}
-                </Link>
-              );
-            })}
-          </section>
+          <LangSwitcher storedLang={cookies().get("lang")?.value as Lang | undefined} lang={lang} setCookie={setCookie} />
         </section>
       </section>
 
