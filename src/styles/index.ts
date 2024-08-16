@@ -37,7 +37,7 @@ export const VARIANTS = {
   }),
 
   Input: tv({
-    base: "text-sm lg:text-base px-2.5 py-1.5 bg-graydarker/20 border-b-[1px] border-transparent focus:border-gray focus:bg-graydarker/30 hover:bg-graydarker/30 animate placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
+    base: "text-sm lg:text-base px-2 py-1 bg-graydarker/20 border-2 border-transparent focus:border-graydarker/20 focus:bg-graydarker/30 hover:bg-graydarker/30 animate placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
   }),
 
   Box: tv({
