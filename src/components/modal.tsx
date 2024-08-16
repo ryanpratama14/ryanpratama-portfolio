@@ -1,8 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/functions";
+import { VARIANTS } from "@/styles";
 import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
-import { Fragment } from "react";
+import { type ElementRef, Fragment, useRef } from "react";
+import Iconify from "./html/iconify";
 
 type Props = {
   show: boolean;
@@ -11,10 +13,12 @@ type Props = {
   className?: string;
 };
 
-export const Modal = ({ show, onClose, children, className }: Props) => {
+const Modal = ({ show, onClose, children, className }: Props) => {
+  const closeButtonRef = useRef<ElementRef<"button">>(null);
+
   return (
     <Transition appear show={show} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={onClose}>
+      <Dialog as="section" className="relative z-50" onClose={onClose}>
         <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
@@ -38,7 +42,18 @@ export const Modal = ({ show, onClose, children, className }: Props) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <DialogPanel className={cn("w-full max-w-md animate rounded-md p-6 shadow-xl bg-black border-2 border-graydarker/20", className)}>
+              <DialogPanel
+                className={cn("relative w-full max-w-md animate rounded-md p-6 shadow-xl bg-black border-2 border-graydarker/20", className)}
+              >
+                <button
+                  onClick={onClose}
+                  ref={closeButtonRef}
+                  type="button"
+                  className={cn(VARIANTS.Button({ style: "close", className: "absolute top-3 right-3" }))}
+                >
+                  <span className="sr-only">Close</span>
+                  <Iconify icon="mdi:close" width={22.5} />
+                </button>
                 {children}
               </DialogPanel>
             </TransitionChild>
@@ -49,6 +64,8 @@ export const Modal = ({ show, onClose, children, className }: Props) => {
   );
 };
 
-Modal.Body = function ModalBody({ children, className }: { children: React.ReactNode; className?: string }) {
+Modal.Body = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return <section className={cn(className)}>{children}</section>;
 };
+
+export default Modal;

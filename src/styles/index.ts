@@ -33,7 +33,16 @@ export const VARIANTS = {
   }),
 
   Button: tv({
-    base: "rounded-full disabled:hover:bg-blue-600 hover:bg-blue-800 font-medium bg-blue-600 px-4 py-1 shadow-xl animate w-max active:scale-95 animate text-sm lg:text-base",
+    base: "animate rounded-full shadow-xl active:scale-95",
+    variants: {
+      style: {
+        reguler: "font-medium px-4 py-1 w-max text-sm lg:text-base disabled:hover:bg-blue-600 bg-blue-600 hover:bg-blue-800",
+        close: "bg-graydarker/20 hover:bg-graydarker/40 p-0.5",
+      },
+    },
+    defaultVariants: {
+      style: "reguler",
+    },
   }),
 
   Input: tv({

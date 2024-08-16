@@ -4,7 +4,7 @@ import Container from "@/components/container";
 import Input from "@/components/html/input";
 import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
-import { Modal } from "@/components/modal";
+import Modal from "@/components/modal";
 import { cn } from "@/lib/functions";
 import { type MessageInput, schema } from "@/server/api/schema";
 import { VARIANTS } from "@/styles";
@@ -18,7 +18,7 @@ import { PulseLoader } from "react-spinners";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const { MESSAGE: t } = s;
 
   const {
@@ -50,17 +50,13 @@ export default function ProjectDiscuss({ s, lang }: Props) {
       </Container>
 
       <Modal show={show} onClose={onClose}>
-        <Modal.Body className="text-left flex flex-col gap-1">
+        <Modal.Body className="space-y-1 text-left">
           <Text as="menuTitle" className="font-medium">
             <p>{s.MESSAGE.formSent}</p>
           </Text>
-
           <Text color="gray" className="text-pretty">
             <p>{s.MESSAGE.thankYou}</p>
           </Text>
-          <button type="button" className={cn(VARIANTS.Button({ className: "w-full mt-2" }))} onClick={onClose}>
-            {s.MESSAGE.gotIt}
-          </button>
         </Modal.Body>
       </Modal>
     </Fragment>
