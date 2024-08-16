@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 
 // styles
+import { VARIANTS } from "@/styles";
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "swiper/css";
@@ -63,7 +64,7 @@ export default function RootLayout({ children, params }: Props) {
         <Analytics />
         <SpeedInsights />
         <Providers>
-          <main className="pt-shorter pb-24 px-shorter xl:px-52 2xl:px-96 3xl:px-[32rem] animate flex flex-col gap-4">{children}</main>
+          <main className={VARIANTS.Main()}>{children}</main>
         </Providers>
         <TransitionEffect />
         <ScrollToTop />

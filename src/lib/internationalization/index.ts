@@ -40,11 +40,11 @@ export const useLanguageFn = (lang: Lang) => {
 };
 
 export const useLanguageHelper = () => {
-  const validateLang = (targetLang: string | undefined) => z.enum(LANGS).safeParse(targetLang).data;
+  const validateLang = (lang: string | undefined) => z.enum(LANGS).safeParse(lang).data;
   const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
   const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);
 
-  const validateMatchedLang = (matchedLang: string) => {
+  const validateMatchedLang = (matchedLang: string | undefined) => {
     const lang = validateLang(matchedLang);
     if (lang) return lang;
     return DEFAULT_LANG;

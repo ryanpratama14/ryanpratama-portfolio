@@ -37,16 +37,20 @@ export const VARIANTS = {
   }),
 
   Input: tv({
-    base: "text-sm lg:text-base px-2.5 py-1.5 bg-graydarker/20 placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
+    base: "text-sm lg:text-base px-2.5 py-1.5 bg-graydarker/20 border-b-[1px] border-transparent focus:border-gray focus:bg-graydarker/30 hover:bg-graydarker/30 animate placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
   }),
 
   Box: tv({
-    base: "rounded-md bg-graydarker/20 flex items-center shadow-xl animate",
+    base: "rounded-md bg-graydarker/20 hover:bg-graydarker/30 flex items-center shadow-xl animate",
     variants: {
       style: {
         contact: "gap-1.5 px-2 py-0.5 hover:scale-[1.075]",
         techstack: "gap-1 px-1.5 py-0.5 hover:scale-[1.05]",
       },
     },
+  }),
+
+  Main: tv({
+    base: "pt-shorter pb-24 px-shorter xl:px-52 2xl:px-96 3xl:px-[32rem] animate flex flex-col gap-4 min-h-screen",
   }),
 };

@@ -18,10 +18,10 @@ type Props = {
   s: DictionaryStatic;
   isJapanese: boolean;
   isDefaultLang: boolean;
-  langSwitcher?: boolean;
+  disableLangSwitcher?: boolean;
 };
 
-export default function Profile({ s, lang, isDefaultLang, isJapanese, langSwitcher = true }: Props) {
+export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLangSwitcher }: Props) {
   const ProfileData = () =>
     getProfileData(s, isJapanese).map((e) => {
       const Data = () => (
@@ -78,9 +78,9 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, langSwitch
               <ProfileData />
             </section>
           </section>
-          {langSwitcher ? (
+          {disableLangSwitcher ? null : (
             <LangSwitcher storedLang={useLanguageHelper().validateLang(cookies().get("lang")?.value)} lang={lang} setCookie={setCookie} />
-          ) : null}
+          )}
         </section>
       </section>
 

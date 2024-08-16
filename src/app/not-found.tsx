@@ -4,9 +4,8 @@ import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import { cn } from "@/lib/functions";
-import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
+import { useLanguage, useLanguageHelper } from "@/lib/internationalization";
 import { VARIANTS } from "@/styles";
-import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
@@ -24,15 +23,16 @@ const notosans = Noto_Sans({
 });
 
 export default function NotFound() {
-  const { s, isDefaultLang, isJapanese, lang } = useLanguage((cookies().get("lang")?.value as Lang | undefined) ?? DEFAULT_LANG);
+  const { validateMatchedLang } = useLanguageHelper();
+  const { s, isDefaultLang, isJapanese, lang } = useLanguage(validateMatchedLang(cookies().get("lang")?.value));
 
   return (
     <html lang={lang} className={notosans.variable}>
       <body>
         <Analytics />
         <SpeedInsights />
-        <main className="pt-shorter pb-24 px-shorter xl:px-52 2xl:px-96 3xl:px-[32rem] animate flex flex-col gap-4 min-h-screen">
-          <Profile langSwitcher={false} s={s} lang={lang} isDefaultLang={isDefaultLang} isJapanese={isJapanese} />
+        <main className={VARIANTS.Main()}>
+          <Profile disableLangSwitcher s={s} lang={lang} isDefaultLang={isDefaultLang} isJapanese={isJapanese} />
           <Contacts s={s} />
           <section className="flex flex-col items-center justify-center mt-6">
             <Iconify icon="ooui:article-not-found-ltr" width={250} />
