@@ -37,6 +37,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           <TextArea {...register("message")} placeholder={s.DISCUSS_YOUR_PROJECT.message.placeholder} error={errors.message?.message} />
           <button disabled={isPending} type="submit" className={cn(VARIANTS.Button({ className: "max-md:w-full" }))}>
             {isPending ? <PulseLoader size={5} color="white" /> : s.DISCUSS_YOUR_PROJECT.submit}
+            <span className="sr-only">{s.DISCUSS_YOUR_PROJECT.submit}</span>
           </button>
         </form>
       </Container>
