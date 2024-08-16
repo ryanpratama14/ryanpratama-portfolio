@@ -6,7 +6,7 @@ import LangSwitcher from "@/components/lang-switcher";
 import { setCookie } from "@/lib/actions";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
+import { DEFAULT_LANG, useLanguage, useLanguageHelper } from "@/lib/internationalization";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
 import { cookies } from "next/headers";
@@ -77,7 +77,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese }: Props) {
               <ProfileData />
             </section>
           </section>
-          <LangSwitcher storedLang={cookies().get("lang")?.value as Lang | undefined} lang={lang} setCookie={setCookie} />
+          <LangSwitcher storedLang={useLanguageHelper().validateLang(cookies().get("lang")?.value)} lang={lang} setCookie={setCookie} />
         </section>
       </section>
 
