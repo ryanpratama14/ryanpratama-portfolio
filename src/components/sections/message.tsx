@@ -18,7 +18,7 @@ import { PulseLoader } from "react-spinners";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [open, onOpenChange] = useState(true);
+  const [open, onOpenChange] = useState(false);
   const { MESSAGE: t } = s;
 
   const {
