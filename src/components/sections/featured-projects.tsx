@@ -32,14 +32,22 @@ export default function FeaturedProjects({ s }: Props) {
             <SwiperSlide key={e.title}>
               <section className="aspect-square relative group overflow-hidden rounded-md mb-2">
                 <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
-                  <Text className="absolute font-semibold top-3 w-full px-3 text-right" as="menuTitle">
+                  <Text
+                    className="flex flex-col gap-0.5 items-end absolute font-semibold top-3 w-full px-3 text-right translate-x-full group-hover:translate-x-0"
+                    as="menuTitle"
+                  >
                     <h1>{e.title}</h1>
+                    <div className="w-6 h-0.5 bg-white" />
                   </Text>
                   <Text className="text-center px-3 w-full absolute centered font-medium text-balance">
                     <p>{e.desc}</p>
                   </Text>
 
-                  <Link target="_blank" href={e.href} className={cn(VARIANTS.Button({ className: "group-hover:mb-5 absolute centered-bottom" }))}>
+                  <Link
+                    target="_blank"
+                    href={e.href}
+                    className={cn(VARIANTS.Button({ className: "group-hover:-translate-y-5 absolute centered-bottom" }))}
+                  >
                     {s.SECTIONS.visitProject}
                   </Link>
                 </section>

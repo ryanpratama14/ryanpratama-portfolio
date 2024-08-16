@@ -28,7 +28,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Iconify icon="bxs:up-arrow" rotate={2} width={13} color={COLORS.gray} className="animate" />
+      <Iconify icon="bxs:up-arrow" rotate={2} width={15} color={COLORS.gray} className="animate" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

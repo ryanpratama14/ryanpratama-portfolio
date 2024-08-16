@@ -16,11 +16,10 @@ type Props = { params: { lang: Lang; name: string } };
 
 export default function CertificationPage({ params }: Props) {
   const { name, lang } = params;
-
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) redirect(`/${lang}`);
 
-  const { s, isJapanese, isDefaultLang } = useLanguage(params.lang);
+  const { s, isJapanese, isDefaultLang } = useLanguage(lang);
 
   return (
     <Fragment>

@@ -32,11 +32,11 @@ export default function ProjectDiscuss({ s, lang }: Props) {
   return (
     <Fragment>
       <Container title={s.MENUS.message}>
-        <form onSubmit={handleSubmit((data) => sendMessage(data))} className="flex flex-col gap-3 items-start">
+        <form onSubmit={handleSubmit((data) => sendMessage(data))} className="flex flex-col gap-2">
           <Input {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={t.name.placeholder} />
           <Input {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={t.email.placeholder} />
           <TextArea {...register("message")} placeholder={t.message.placeholder} error={errors.message?.message} />
-          <button disabled={isPending} type="submit" className={cn(VARIANTS.Button({ className: "max-md:w-full" }))}>
+          <button disabled={isPending} type="submit" className={cn(VARIANTS.Button({ className: "max-md:w-full mt-1" }))}>
             {isPending ? <PulseLoader size={5} color="white" /> : t.submit}
             <span className="sr-only">{t.submit}</span>
           </button>
