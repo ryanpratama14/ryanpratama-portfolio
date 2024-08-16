@@ -49,7 +49,6 @@ export const en = {
       formSent: "Form sent successfully",
       thankYou:
         "Thank you for contacting me regarding the project. I appreciate your message and will get back to you as soon as possible to discuss further details.",
-      gotIt: "Got it, thanks!",
       submit: "Send",
       name: {
         placeholder: "Name",
