@@ -3,6 +3,18 @@ import type { Dictionary } from "@/types";
 export const ru: Dictionary = {
   s: {
     PERSONAL_DATA: {
+      education: {
+        kfu: {
+          title: "Казанский федеральный университет",
+          major: "Бакалавр, менеджмент",
+        },
+      },
+      languages: {
+        en: "Английский",
+        id: "Индонезийский",
+        ru: "Русский",
+        ja: "Японский",
+      },
       position: {
         softwareEngineerFullstack: "Fullstack-разработчик",
         softwareEngineerFrontend: "Frontend-разработчик",
@@ -16,6 +28,7 @@ export const ru: Dictionary = {
         "На третьем курсе университета я присоединился к бесплатному курсу программирования, который вел мой индонезийский друг в своей квартире в Казани, Россия. Вместе с другими студентами я изучил основы JavaScript, и мы в конечном итоге основали стартап-разработчика программного обеспечения под названием faoTech в 2022 году. Развивая свои навыки, я обнаружил в себе страсть к frontend-разработке и решил специализироваться в этой области.",
     },
     MENUS: {
+      additionalInformation: "Дополнительная информация",
       about: "Обо мне",
       featuredProjects: "Выделенные проекты",
       contacts: "Контакты",
@@ -28,6 +41,10 @@ export const ru: Dictionary = {
         programmingLanguages: "Языки программирования",
         librariesFrameworks: "Библиотеки и фреймворки",
         db: "Базы данных",
+      },
+      OTHER: {
+        education: "Education",
+        languages: "Языки",
       },
     },
 

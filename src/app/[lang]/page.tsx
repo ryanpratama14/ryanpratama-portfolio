@@ -1,5 +1,6 @@
 import Container from "@/components/container";
 import About from "@/components/sections/about";
+import AdditionalInformation from "@/components/sections/additional-information";
 import Contacts from "@/components/sections/contacts";
 import Experience from "@/components/sections/experience";
 import FeaturedProjects from "@/components/sections/featured-projects";
@@ -25,6 +26,7 @@ export default function Home({ params }: Props) {
       <About s={s} />
       <Experience s={s} lang={lang} />
       <FeaturedProjects s={s} />
+      <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
       <Message s={s} lang={lang} />
       <Container title={updatedOn} />
     </Fragment>

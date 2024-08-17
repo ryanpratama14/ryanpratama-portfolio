@@ -1,9 +1,9 @@
 import Container from "@/components/container";
+import Iconify from "@/components/html/iconify";
 import Text from "@/components/html/text";
 import { TECH_STACKS } from "@/lib/constants";
 import { VARIANTS } from "@/styles";
 import type { DictionaryStatic, TechStack } from "@/types";
-import Iconify from "../html/iconify";
 
 type Props = { s: DictionaryStatic };
 
@@ -14,7 +14,7 @@ export default function About({ s }: Props) {
         <Text color="graydarker">
           <p>{s.MENUS.TECH_STACKS[name]}</p>
         </Text>
-        <section className="flex gap-1 md:gap-2 flex-wrap">
+        <section className="flex gap-1 md:gap-1.5 flex-wrap">
           {TECH_STACKS[name].map((e) => {
             return (
               <section key={e.label} className={VARIANTS.Box({ style: "techstack" })}>
@@ -23,9 +23,7 @@ export default function About({ s }: Props) {
                   {e.icon2 ? <Iconify icon={e.icon2} width={13} /> : null}
                 </section>
 
-                <Text as="techstack">
-                  <p>{e.label}</p>
-                </Text>
+                <p>{e.label}</p>
               </section>
             );
           })}

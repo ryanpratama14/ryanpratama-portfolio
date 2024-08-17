@@ -19,16 +19,21 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
             <AccordionItem value={e.label}>
               <AccordionTrigger>
                 <section className="flex items-center text-left relative cursor-pointer animate w-full">
-                  <section className="w-14 md:w-16 lg:w-20 aspect-square relative bg-white p-2 flex items-center justify-center rounded-l-md shadow-xl">
+                  <section className="w-16 lg:w-20 aspect-square relative bg-white p-2 flex items-center justify-center rounded-l-md shadow-xl">
                     <Img src={e.src} className="object-contain" alt={e.label} />
                   </section>
                   <section className="pl-2.5 md:pl-3 flex flex-col">
                     <Text>
-                      <p>{s.PERSONAL_DATA.position[e.position]}</p>
+                      <p>{e.label}</p>
                     </Text>
 
+                    <Text color="gray" as="small">
+                      <p className="font-medium">{s.PERSONAL_DATA.position[e.position]}</p>
+                    </Text>
                     <Text color="graydarker" as="small">
-                      <span className="font-medium">{e.label}</span> • {formatMonth(e.since)} - {e.till ? formatMonth(e.till) : s.SECTIONS.present}
+                      <p>
+                        {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : s.SECTIONS.present}
+                      </p>
                     </Text>
                   </section>
                 </section>

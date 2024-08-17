@@ -1,6 +1,18 @@
 export const en = {
   s: {
     PERSONAL_DATA: {
+      education: {
+        kfu: {
+          title: "Kazan Federal University",
+          major: "Bachelor's degree, Management",
+        },
+      },
+      languages: {
+        en: "English",
+        id: "Indonesian",
+        ru: "Russian",
+        ja: "Japanese",
+      },
       position: {
         softwareEngineerFullstack: "Software Engineer, Fullstack",
         softwareEngineerFrontend: "Software Engineer, Frontend",
@@ -21,12 +33,18 @@ export const en = {
       experience: "Experience",
       updatedOn: "Updated on",
       message: "Send a message",
+      additionalInformation: "Additional information",
 
       TECH_STACKS: {
         programmingLanguages: "Programming languages",
         librariesFrameworks: "Libraries & frameworks",
         db: "Databases",
         learning: "Learning...",
+      },
+
+      OTHER: {
+        education: "Education",
+        languages: "Languages",
       },
     },
 

@@ -1,4 +1,4 @@
-import type { Certification, Contact, DictionaryStatic, Experience, Project, TechStack } from "@/types";
+import type { Certification, Contact, DictionaryStatic, Experience, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 // projects
@@ -14,10 +14,11 @@ import podfak from "@/assets/podfak.jpeg";
 
 // logos
 import faotech from "@/assets/logo-faotech.png";
+import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
 
-const PHOTOS = {
-  logo: { nutech, faotech },
+export const PHOTOS = {
+  logo: { nutech, faotech, kfu },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n4, podfak },
 };
@@ -41,6 +42,19 @@ export const getProfileData = (s: DictionaryStatic, isJapanese: boolean) => {
     { icon: "mdi:location", title: s.LOCATIONS.jakarta },
     { icon: "mdi:person", title: age },
   ];
+};
+
+export const OTHERS: Other = {
+  education: [
+    {
+      key: "kfu",
+      href: "https://kpfu.ru",
+      src: PHOTOS.logo.kfu,
+      since: dayjs("2019-09").toDate(),
+      till: dayjs("2023-06").toDate(),
+    },
+  ],
+  languages: ["id", "en", "ja", "ru"],
 };
 
 export const CERTIFICATIONS: Certification[] = [

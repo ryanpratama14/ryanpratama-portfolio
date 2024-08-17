@@ -15,8 +15,7 @@ export const VARIANTS = {
         menuTitle: "text-base lg:text-lg font-semibold",
         contentTitle: "text-base",
         content: "text-sm lg:text-base",
-        small: "text-xs lg:text-base",
-        techstack: "text-xs lg:text-sm",
+        small: "text-xs lg:text-sm",
         mini: "text-xs",
       },
       color: {
@@ -50,11 +49,11 @@ export const VARIANTS = {
   }),
 
   Box: tv({
-    base: "rounded-md bg-graydarker/20 hover:bg-graydarker/40 flex items-center shadow-xl animate",
+    base: "rounded-md bg-graydarker/20 hover:bg-graydarker/40 flex items-center shadow-xl animate hover:scale-[1.05]",
     variants: {
       style: {
-        contact: "gap-1.5 px-2 py-0.5 hover:scale-[1.075]",
-        techstack: "gap-1 px-1.5 py-0.5 hover:scale-[1.075]",
+        contact: "text-sm lg:text-base gap-1 px-2 py-0.5",
+        techstack: "text-[0.7rem] lg:text-sm gap-1 px-1.5 py-0.5",
       },
     },
   }),

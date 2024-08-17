@@ -3,6 +3,18 @@ import type { Dictionary } from "@/types";
 export const ja: Dictionary = {
   s: {
     PERSONAL_DATA: {
+      education: {
+        kfu: {
+          title: "カザン連邦大学",
+          major: "学士号、経営学",
+        },
+      },
+      languages: {
+        en: "英語",
+        id: "インドネシア語",
+        ru: "ロシア語",
+        ja: "日本語",
+      },
       fullName: "ライアン・プラタマ",
       summary:
         "フロントエンド開発を専門とする経験豊富なソフトウェアエンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
@@ -17,6 +29,7 @@ export const ja: Dictionary = {
     },
 
     MENUS: {
+      additionalInformation: "追加情報",
       experience: "職歴",
       about: "私について",
       featuredProjects: "注目のプロジェクト",
@@ -29,6 +42,10 @@ export const ja: Dictionary = {
         librariesFrameworks: "フレームワーク",
         db: "データベース",
         learning: "自己学習",
+      },
+      OTHER: {
+        education: "学歴",
+        languages: "言語",
       },
     },
 

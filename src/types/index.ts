@@ -16,6 +16,11 @@ export type Contact = {
   icon: IconifyIcon | string;
 };
 
+export type Other = {
+  languages: (keyof DictionaryStatic["PERSONAL_DATA"]["languages"])[];
+  education: { key: keyof DictionaryStatic["PERSONAL_DATA"]["education"]; href: string; src: StaticImageData; since: Date; till: Date }[];
+};
+
 export type Experience = {
   src: StaticImageData;
   label: string;
