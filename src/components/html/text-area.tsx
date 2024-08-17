@@ -23,6 +23,6 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, err
   );
 });
 
-TextArea.displayName = "Input";
+TextArea.displayName = "TextArea";
 
 export default TextArea;
