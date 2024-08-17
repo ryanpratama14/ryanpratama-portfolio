@@ -218,7 +218,7 @@ export const EXPERIENCES: Experience[] = [
     location: "remote",
     position: "softwareEngineerFullstack",
     duty: [
-      "Managed a frontend team of 2 to 3 engineers across 3 projects.",
+      "Managed a front-end team of 2 to 3 engineers across 3 projects.",
       "Built responsive web apps compatible across devices, integrating loading animations.",
       "Implemented essential authorization features like login, registration, and account recovery.",
       "Collaborated with UI/UX designers to create visually compelling user interfaces.",
