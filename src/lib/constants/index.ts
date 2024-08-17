@@ -197,14 +197,16 @@ export const EXPERIENCES: Experience[] = [
     duty: [
       "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
       "Created 25+ document formats and implemented PDF/XLSX rendering using React-pdf, jsPDF and ExcelJS.",
-      "Collaborated with cross-functional teams, including backend and QA engineers.",
-      "Maintained regular and effective communication with the system analyst.",
-      "Utilized Git and Jira for prioritizing enhancements and bug fixes.",
-      "Implemented seamless integration of RESTful APIs using Axios.",
       "Ensured app quality with comprehensive testing: unit, integration, and end-to-end.",
-      "Built fully responsive user interfaces primarily with Ant Design.",
+      "Implemented seamless integration of RESTful APIs using Axios.",
+
       "Collaborated with UI/UX designers to implement visually compelling and intuitive interfaces.",
-      "Crafted comprehensive documentation, aiding stakeholder understanding and future maintenance.",
+      "Built fully responsive user interfaces primarily with Ant Design.",
+
+      "Worked with cross-functional teams, including backend and QA engineers.",
+      "Maintained regular and effective communication with system analysts.",
+      "Utilized Git and Jira for prioritizing enhancements and bug fixes.",
+      "Created documentation, aiding stakeholder understanding and future maintenance.",
     ],
   },
   {
@@ -216,16 +218,17 @@ export const EXPERIENCES: Experience[] = [
     location: "remote",
     position: "softwareEngineerFullstack",
     duty: [
-      "Managed a frontend team of 2~3 engineers across 3 projects, ensuring successful project delivery.",
-      "Built responsive web apps compatible across devices, integrating loading animations for enhanced engagement.",
-      "Collaborated with UI/UX designers to create visually compelling interfaces for seamless user experience.",
+      "Managed a frontend team of 2 to 3 engineers across 3 projects.",
+      "Built responsive web apps compatible across devices, integrating loading animations.",
+      "Implemented essential authorization features like login, registration, and account recovery.",
+      "Collaborated with UI/UX designers to create visually compelling user interfaces.",
+      "Integrated internationalization support with i18next framework.",
+
       "Spearheaded back-end development, including API development, server-side logic, and database management.",
-      "Optimized RESTful APIs and tRPC endpoints for efficient data retrieval and manipulation.",
-      "Proficient in CRUD operations and data manipulation for smooth communication with back-end systems.",
-      "Implemented essential authorization features like login, registration, and password recovery.",
-      "Integrated internationalization support with i18next framework for improved accessibility",
-      "Created and maintained comprehensive documentation to facilitate understanding with stakeholders.",
-      "Provided ongoing maintenance and support for applications, ensuring performance.",
+      "Proficient in CRUD operations and optimized RESTful API endpoints.",
+
+      "Maintained comprehensive documentation to facilitate understanding with stakeholders.",
+      "Provided ongoing maintenance and support for applications.",
     ],
   },
 ];
