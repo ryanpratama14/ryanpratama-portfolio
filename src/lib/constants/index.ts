@@ -200,10 +200,10 @@ export const EXPERIENCES: Experience[] = [
       "Ensured app quality with comprehensive testing: unit, integration, and end-to-end.",
       "Implemented seamless integration of RESTful APIs using Axios.",
 
-      "Collaborated with UI/UX designers to implement visually compelling and intuitive interfaces.",
       "Built fully responsive user interfaces primarily with Ant Design.",
+      "Collaborated with UI/UX designers to implement visually compelling and intuitive interfaces.",
 
-      "Worked with cross-functional teams, including backend and QA engineers.",
+      "Worked with cross-functional teams, including back-end and QA engineers.",
       "Maintained regular and effective communication with system analysts.",
       "Utilized Git and Jira for prioritizing enhancements and bug fixes.",
       "Created documentation, aiding stakeholder understanding and future maintenance.",
