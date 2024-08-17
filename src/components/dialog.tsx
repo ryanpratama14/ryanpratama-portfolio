@@ -1,11 +1,11 @@
 "use client";
 
+import Button from "@/components/html/button";
 import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { DialogPanel, Dialog as HeadlessDialog, Transition, TransitionChild } from "@headlessui/react";
 import { type ComponentProps, Fragment } from "react";
-import Button from "./html/button";
 
 type Props = ComponentProps<"section"> & {
   show: boolean;
