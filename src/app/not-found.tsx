@@ -6,12 +6,12 @@ import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import { ICONS } from "@/lib/constants";
 import { useLanguage, useLanguageHelper } from "@/lib/internationalization";
-import { VARIANTS } from "@/styles";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
 
 // styles
+import { VARIANTS } from "@/styles";
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
 
@@ -23,8 +23,7 @@ const notosans = Noto_Sans({
 });
 
 export default function NotFound() {
-  const { validateMatchedLang } = useLanguageHelper();
-  const { s, isDefaultLang, isJapanese, lang } = useLanguage(validateMatchedLang(cookies().get("lang")?.value));
+  const { s, isDefaultLang, isJapanese, lang } = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value));
 
   return (
     <html lang={lang} className={notosans.variable}>

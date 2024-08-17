@@ -54,7 +54,7 @@ export const VARIANTS = {
     variants: {
       style: {
         contact: "gap-1.5 px-2 py-0.5 hover:scale-[1.075]",
-        techstack: "gap-1 px-1.5 py-0.5 hover:scale-[1.05]",
+        techstack: "gap-1 px-1.5 py-0.5 hover:scale-[1.075]",
       },
     },
   }),
