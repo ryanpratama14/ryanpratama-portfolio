@@ -1,21 +1,18 @@
 "use client";
 
+import Iconify from "@/components/html/iconify";
 import { cn } from "@/lib/functions";
 import { VARIANTS } from "@/styles";
 import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
-import { type ElementRef, Fragment, useRef } from "react";
-import Iconify from "./html/iconify";
+import { type ComponentProps, Fragment } from "react";
 
-type Props = {
+type Props = ComponentProps<"section"> & {
   show: boolean;
   onClose: () => void;
-  children: React.ReactNode;
-  className?: string;
+  classNameDiv?: string;
 };
 
-const Modal = ({ show, onClose, children, className }: Props) => {
-  const closeButtonRef = useRef<ElementRef<"button">>(null);
-
+export default function Modal({ show, onClose, children, className, classNameDiv, ...rest }: Props) {
   return (
     <Transition appear show={show} as={Fragment}>
       <Dialog as="section" className="relative z-50" onClose={onClose}>
@@ -43,18 +40,15 @@ const Modal = ({ show, onClose, children, className }: Props) => {
               leaveTo="opacity-0 scale-95"
             >
               <DialogPanel
-                className={cn("relative w-full max-w-md animate rounded-md p-6 shadow-xl bg-black border-2 border-graydarker/20", className)}
+                className={cn("w-full max-w-md relative animate rounded-md p-6 shadow-xl bg-black border-2 border-graydarker/20", classNameDiv)}
               >
-                <button
-                  onClick={onClose}
-                  ref={closeButtonRef}
-                  type="button"
-                  className={cn(VARIANTS.Button({ style: "close", className: "absolute top-3 right-3" }))}
-                >
+                <button onClick={onClose} type="button" className={cn(VARIANTS.Button({ style: "close", className: "absolute top-3 right-3" }))}>
                   <span className="sr-only">Close</span>
                   <Iconify icon="mdi:close" width={22.5} />
                 </button>
-                {children}
+                <section {...rest} className={cn(className)}>
+                  {children}
+                </section>
               </DialogPanel>
             </TransitionChild>
           </div>
@@ -62,10 +56,4 @@ const Modal = ({ show, onClose, children, className }: Props) => {
       </Dialog>
     </Transition>
   );
-};
-
-Modal.Body = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  return <section className={cn(className)}>{children}</section>;
-};
-
-export default Modal;
+}

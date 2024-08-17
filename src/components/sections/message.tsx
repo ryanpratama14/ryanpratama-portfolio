@@ -18,7 +18,7 @@ import { PulseLoader } from "react-spinners";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const { MESSAGE: t } = s;
 
   const {
@@ -29,11 +29,6 @@ export default function ProjectDiscuss({ s, lang }: Props) {
   } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang } });
 
   const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setShow(true) });
-
-  const onClose = () => {
-    setShow(false);
-    reset();
-  };
 
   return (
     <Fragment>
@@ -49,15 +44,20 @@ export default function ProjectDiscuss({ s, lang }: Props) {
         </form>
       </Container>
 
-      <Modal show={show} onClose={onClose}>
-        <Modal.Body className="space-y-1 text-left">
-          <Text as="menuTitle" className="font-medium">
-            <p>{s.MESSAGE.formSent}</p>
-          </Text>
-          <Text color="gray" className="text-pretty">
-            <p>{s.MESSAGE.thankYou}</p>
-          </Text>
-        </Modal.Body>
+      <Modal
+        show={show}
+        onClose={() => {
+          setShow(false);
+          reset();
+        }}
+        className="space-y-1 text-left"
+      >
+        <Text as="menuTitle" className="font-medium">
+          <p>{s.MESSAGE.formSent}</p>
+        </Text>
+        <Text color="gray" className="text-pretty">
+          <p>{s.MESSAGE.thankYou}</p>
+        </Text>
       </Modal>
     </Fragment>
   );
