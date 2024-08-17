@@ -48,11 +48,11 @@ export const ja: Dictionary = {
     },
 
     MESSAGE: {
-      formSent: "帳票が正常に送信されました",
+      sent: "メッセージは正常に送信されました",
       thankYou:
         "プロジェクトに関するお問い合わせありがとうございます。メッセージをありがとうございます。できるだけ早く詳細をお話しするためにお返事いたします。",
 
-      submit: "提出する",
+      send: "提出する",
       name: {
         error: "名前を入力してください",
         placeholder: "名前",

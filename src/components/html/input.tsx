@@ -3,12 +3,12 @@ import { cn } from "@/lib/functions";
 import { VARIANTS } from "@/styles";
 import { type ComponentProps, forwardRef, useId } from "react";
 
-type InputProps = ComponentProps<"input"> & {
+type Props = ComponentProps<"input"> & {
   error: string | undefined;
   placeholder: string;
 };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, error, type, ...rest }, ref) => {
+const Input = forwardRef<HTMLInputElement, Props>(({ placeholder, error, type, ...rest }, ref) => {
   const id = useId();
 
   return (
@@ -23,5 +23,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, error, ty
     </section>
   );
 });
+
+Input.displayName = "Input";
 
 export default Input;

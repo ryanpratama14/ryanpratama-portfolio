@@ -13,4 +13,6 @@ const Text = forwardRef<HTMLDivElement, Props>(({ children, className, as, color
   );
 });
 
+Text.displayName = "Text";
+
 export default Text;

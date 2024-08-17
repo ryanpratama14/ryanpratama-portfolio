@@ -10,9 +10,6 @@ import { useEffect } from "react";
 type Props = { storedLang: Lang | undefined; lang: Lang; setCookie: (name: string, value: string) => Promise<void> };
 
 export default function LangSwitcher({ storedLang, setCookie, lang }: Props) {
-  const path = usePathname();
-  const { changeLang } = useLanguageHelper();
-
   useEffect(() => {
     if (storedLang !== lang || !storedLang) setCookie("lang", lang);
   }, [lang, storedLang, setCookie]);
@@ -27,7 +24,7 @@ export default function LangSwitcher({ storedLang, setCookie, lang }: Props) {
               "bg-graydarker/20 border-gray shadow-xl": isActive,
             })}
             key={targetLang}
-            href={changeLang(targetLang, path)}
+            href={useLanguageHelper().changeLang(targetLang, usePathname())}
             type="button"
           >
             <span className="sr-only">

@@ -1,24 +1,22 @@
 "use client";
 
 import Container from "@/components/container";
+import Dialog from "@/components/dialog";
+import Button from "@/components/html/button";
 import Input from "@/components/html/input";
 import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
-import Modal from "@/components/modal";
-import { cn } from "@/lib/functions";
 import { type MessageInput, schema } from "@/server/api/schema";
-import { VARIANTS } from "@/styles";
 import { api } from "@/trpc/providers";
 import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
-import { PulseLoader } from "react-spinners";
 
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const { MESSAGE: t } = s;
 
   const {
@@ -28,7 +26,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang } });
 
-  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setShow(true) });
+  const { mutate: sendMessage, isPending: disabled } = api.email.message.useMutation({ onSuccess: () => setShow(true) });
 
   return (
     <Fragment>
@@ -37,14 +35,13 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           <Input {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={t.name.placeholder} />
           <Input {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={t.email.placeholder} />
           <TextArea {...register("message")} placeholder={t.message.placeholder} error={errors.message?.message} />
-          <button disabled={isPending} type="submit" className={cn(VARIANTS.Button({ className: "max-md:w-full mt-1" }))}>
-            {isPending ? <PulseLoader size={5} color="white" /> : t.submit}
-            <span className="sr-only">{t.submit}</span>
-          </button>
+          <Button disabled={disabled} type="submit" className="max-md:w-full mt-1">
+            {t.send}
+          </Button>
         </form>
       </Container>
 
-      <Modal
+      <Dialog
         show={show}
         onClose={() => {
           setShow(false);
@@ -53,12 +50,12 @@ export default function ProjectDiscuss({ s, lang }: Props) {
         className="space-y-1 text-left"
       >
         <Text as="menuTitle" className="font-medium">
-          <p>{s.MESSAGE.formSent}</p>
+          <p>{s.MESSAGE.sent}</p>
         </Text>
         <Text color="gray" className="text-pretty">
           <p>{s.MESSAGE.thankYou}</p>
         </Text>
-      </Modal>
+      </Dialog>
     </Fragment>
   );
 }

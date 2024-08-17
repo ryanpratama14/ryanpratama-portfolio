@@ -3,20 +3,21 @@
 import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { VARIANTS } from "@/styles";
-import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
+import { DialogPanel, Dialog as HeadlessDialog, Transition, TransitionChild } from "@headlessui/react";
 import { type ComponentProps, Fragment } from "react";
+import Button from "./html/button";
 
 type Props = ComponentProps<"section"> & {
   show: boolean;
   onClose: () => void;
-  classNameDiv?: string;
+  children: React.ReactNode;
+  classNameDialog?: string;
 };
 
-export default function Modal({ show, onClose, children, className, classNameDiv, ...rest }: Props) {
+export default function Dialog({ show, onClose, children, className, classNameDialog, ...rest }: Props) {
   return (
     <Transition appear show={show} as={Fragment}>
-      <Dialog as="section" className="relative z-50" onClose={onClose}>
+      <HeadlessDialog as="section" className="relative z-50" onClose={onClose}>
         <TransitionChild
           as={Fragment}
           enter="ease-out duration-300"
@@ -41,12 +42,11 @@ export default function Modal({ show, onClose, children, className, classNameDiv
               leaveTo="opacity-0 scale-95"
             >
               <DialogPanel
-                className={cn("w-full max-w-md relative animate rounded-md p-6 shadow-xl bg-black border-2 border-graydarker/20", classNameDiv)}
+                className={cn("w-full max-w-md relative animate rounded-md p-6 shadow-xl bg-black border-2 border-graydarker/20", classNameDialog)}
               >
-                <button onClick={onClose} type="button" className={cn(VARIANTS.Button({ style: "close", className: "absolute top-3 right-3" }))}>
-                  <span className="sr-only">Close</span>
+                <Button onClick={onClose} style="close" className="absolute top-3 right-3">
                   <Iconify icon={ICONS.close} width={22.5} />
-                </button>
+                </Button>
                 <section {...rest} className={cn(className)}>
                   {children}
                 </section>
@@ -54,7 +54,7 @@ export default function Modal({ show, onClose, children, className, classNameDiv
             </TransitionChild>
           </div>
         </div>
-      </Dialog>
+      </HeadlessDialog>
     </Transition>
   );
 }
