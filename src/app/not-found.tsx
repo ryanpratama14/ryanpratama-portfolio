@@ -3,6 +3,7 @@ import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
+import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { useLanguage, useLanguageHelper } from "@/lib/internationalization";
 import { VARIANTS } from "@/styles";
@@ -35,7 +36,7 @@ export default function NotFound() {
           <Profile disableLangSwitcher s={s} lang={lang} isDefaultLang={isDefaultLang} isJapanese={isJapanese} />
           <Contacts s={s} />
           <section className="flex flex-col items-center justify-center mt-6">
-            <Iconify icon="ooui:article-not-found-ltr" width={250} />
+            <Iconify icon={ICONS.notFound} width={250} />
             <Text as="heading">
               <h1>{s.SECTIONS.notFound}</h1>
             </Text>

@@ -46,7 +46,7 @@ export default function FeaturedProjects({ s }: Props) {
                   <Link
                     target="_blank"
                     href={e.href}
-                    className={cn(VARIANTS.Button({ className: "group-hover:-translate-y-5 absolute centered-bottom" }))}
+                    className={cn(VARIANTS.Button({ className: "mb-5 group-hover:scale-100 scale-0 absolute centered-bottom" }))}
                   >
                     {s.SECTIONS.visitProject}
                   </Link>

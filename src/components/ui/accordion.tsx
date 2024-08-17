@@ -1,6 +1,7 @@
 "use client";
 
 import Iconify from "@/components/html/iconify";
+import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
 import { COLORS } from "@/styles";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
@@ -28,7 +29,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Iconify icon="bxs:up-arrow" rotate={2} width={15} color={COLORS.gray} className="animate" />
+      <Iconify icon={ICONS.accordionArrow} rotate={2} width={15} color={COLORS.gray} className="animate" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

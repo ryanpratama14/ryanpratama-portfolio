@@ -22,6 +22,13 @@ const PHOTOS = {
   certifications: { n4, podfak },
 };
 
+export const ICONS = {
+  notFound: "ooui:article-not-found-ltr",
+  close: "mdi:close",
+  arrow: "material-symbols:arrow-back-ios",
+  accordionArrow: "bxs:up-arrow",
+};
+
 export const getProfileData = (s: DictionaryStatic, isJapanese: boolean) => {
   const addCounter = (text: string) => (isJapanese ? text : ` ${text}`);
 
