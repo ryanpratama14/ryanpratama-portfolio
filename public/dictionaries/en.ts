@@ -14,8 +14,8 @@ export const en = {
         ja: "Japanese",
       },
       position: {
-        softwareEngineerFullstack: "Software Engineer, Frontend & Backend",
-        softwareEngineerFrontend: "Software Engineer, Frontend",
+        softwareEngineerFullstack: "Full-stack Engineer",
+        softwareEngineerFrontend: "Frontend Engineer",
       },
       fullName: "Ryan Pratama",
       summary:
@@ -36,10 +36,10 @@ export const en = {
       additionalInformation: "Additional Information",
 
       TECH_STACKS: {
-        programmingLanguages: "Programming languages",
-        librariesFrameworks: "Libraries & frameworks",
+        programmingLanguages: "Programming Languages",
+        librariesFrameworks: "Libraries & Frameworks",
         db: "Databases",
-        learning: "Learning...",
+        learning: "I'm learning...",
       },
 
       OTHER: {

@@ -20,8 +20,8 @@ export const ja: Dictionary = {
         "フロントエンド開発を専門とする経験豊富なソフトウェアエンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
       softwareEngineer: "ソフトウェアエンジニア",
       position: {
-        softwareEngineerFullstack: "ソフトウェアエンジニア、フルスタック",
-        softwareEngineerFrontend: "ソフトウェアエンジニア、フロントエンド",
+        softwareEngineerFullstack: "フルスタックエンジニア",
+        softwareEngineerFrontend: "フロントエンドエンジニア",
       },
       age: "歳",
       about:
