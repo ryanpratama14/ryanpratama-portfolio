@@ -20,11 +20,12 @@ export const useLanguage = (lang: Lang) => {
 
   const { locale } = rest;
   const isJapanese = lang === "ja";
+  const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
   const baseUrl = getBaseUrl(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
 
-  return { ...rest, s, isJapanese, isDefaultLang, baseUrl, currentTime };
+  return { ...rest, s, isJapanese, isRussian, isDefaultLang, baseUrl, currentTime };
 };
 
 export const useLanguageFn = (lang: Lang) => {

@@ -1,3 +1,4 @@
+import { genreateRussianAge } from "@/lib/functions";
 import type { Certification, Contact, DictionaryStatic, Experience, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
@@ -30,11 +31,14 @@ export const ICONS = {
   accordionArrow: "bxs:up-arrow",
 };
 
-export const getProfileData = (s: DictionaryStatic, isJapanese: boolean) => {
+export const getProfileData = ({ s, isJapanese, isRussian }: { s: DictionaryStatic; isJapanese: boolean; isRussian: boolean }) => {
   const addCounter = (text: string) => (isJapanese ? text : ` ${text}`);
 
-  const age = `${dayjs().diff(dayjs("2000-07-14"), "year")}${addCounter(s.PERSONAL_DATA.age)}`;
-  const yoe = `${(dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1)}${addCounter(s.SECTIONS.yearsExperience)}`;
+  const calculatedAge = dayjs().diff(dayjs("2000-07-14"), "year");
+  const calculatedYoe = (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1);
+
+  const age = `${calculatedAge}${isRussian ? ` ${genreateRussianAge(calculatedAge)}` : addCounter(s.PERSONAL_DATA.age)}`;
+  const yoe = `${calculatedYoe}${addCounter(s.SECTIONS.yearsExperience)}`;
 
   return [
     { href: "/resume.pdf", icon: "mdi:resume", title: s.SECTIONS.resume },
@@ -74,7 +78,7 @@ export const PROJECTS: Project[] = [
     desc: "A Korean consulting firm that provides global services and industries, featuring a career microsite, admin dashboard, and landing pages for advertising job openings and managing candidate applications.",
     href: "https://hebronstar.com/en",
     lists: [
-      "Developed a fullstack fully responsive web app using React",
+      "Developed a full-stack fully responsive web app using React",
       "Implemented internationalization using i18next for multi-language support",
       "Utilized TanStack Query with Axios to perform HTTP requests and consume RESTful APIs",
       "Integrated Tailwind CSS for responsive component-based styling",
@@ -87,7 +91,7 @@ export const PROJECTS: Project[] = [
     desc: "Indonesia's largest non-profit youth volunteer network with 100+ chapters, including an admin dashboard to manage volunteers, view and manage site content, and automate their volunteer network and operations.",
     href: "https://gerakanturuntangan.com",
     lists: [
-      "Developed a fullstack fully responsive web app using React",
+      "Developed a full-stack fully responsive web app using React",
       "Optimized key content pages for SEO objectives",
       "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
       "Integrated Tailwind CSS for responsive component-based styling",
@@ -100,7 +104,7 @@ export const PROJECTS: Project[] = [
     desc: "A digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
     href: "https://kima-fe.vercel.app",
     lists: [
-      "Developed a fullstack fully responsive web app using React",
+      "Developed a full-stack fully responsive web app using React",
       "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
       "Integrated Tailwind CSS for responsive component-based styling",
       "Leveraged Redux Toolkit to implement a global state management solution",

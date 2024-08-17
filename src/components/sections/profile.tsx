@@ -17,13 +17,14 @@ type Props = {
   lang: Lang;
   s: DictionaryStatic;
   isJapanese: boolean;
+  isRussian: boolean;
   isDefaultLang: boolean;
   disableLangSwitcher?: boolean;
 };
 
-export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLangSwitcher }: Props) {
+export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLangSwitcher, isRussian }: Props) {
   const ProfileData = () =>
-    getProfileData(s, isJapanese).map((e) => {
+    getProfileData({ s, isJapanese, isRussian }).map((e) => {
       const Data = () => (
         <Fragment>
           <Iconify icon={e.icon} width={17.5} color={COLORS.gray} />
@@ -84,7 +85,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLan
         </section>
       </section>
 
-      <section className="flex md:hidden gap-y-1 gap-x-2 flex-wrap">
+      <section className="flex md:hidden gap-y-1 gap-x-2 flex-wrap -mb-2">
         <ProfileData />
       </section>
     </Fragment>

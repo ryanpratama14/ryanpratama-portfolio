@@ -13,15 +13,15 @@ import { Fragment } from "react";
 type Props = { params: { lang: Lang } };
 
 export default function Home({ params }: Props) {
-  const { s, lang, isJapanese, isDefaultLang } = useLanguage(params.lang);
+  const { s, lang, isJapanese, isRussian, isDefaultLang } = useLanguage(params.lang);
   const { formatDate } = useLanguageFn(params.lang);
 
-  const updateDate = formatDate(new Date("2024-08-17"));
+  const updateDate = formatDate(new Date("2024-08-18"));
   const updatedOn = `${isJapanese ? "" : `${s.MENUS.updatedOn} `}${updateDate}${isJapanese ? s.MENUS.updatedOn : ""}`;
 
   return (
     <Fragment>
-      <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} />
+      <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} isRussian={isRussian} />
       <Contacts s={s} />
       <About s={s} />
       <Experience s={s} lang={lang} />

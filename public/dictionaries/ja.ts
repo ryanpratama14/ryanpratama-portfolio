@@ -59,9 +59,9 @@ export const ja: Dictionary = {
     },
 
     LOCATIONS: {
-      jakarta: "ジャカルタ、インドネシア",
+      jakarta: "ジャカルタ",
       remote: "リモート",
-      tokyo: "東京、日本",
+      tokyo: "東京",
     },
 
     MESSAGE: {

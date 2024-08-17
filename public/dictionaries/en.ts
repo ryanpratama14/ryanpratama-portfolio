@@ -14,7 +14,7 @@ export const en = {
         ja: "Japanese",
       },
       position: {
-        softwareEngineerFullstack: "Software Engineer, Fullstack",
+        softwareEngineerFullstack: "Software Engineer, Frontend & Backend",
         softwareEngineerFrontend: "Software Engineer, Frontend",
       },
       fullName: "Ryan Pratama",
@@ -58,9 +58,9 @@ export const en = {
     },
 
     LOCATIONS: {
-      jakarta: "Jakarta, Indonesia",
+      jakarta: "Jakarta",
       remote: "Remote",
-      tokyo: "Tokyo, Japan",
+      tokyo: "Tokyo",
     },
 
     MESSAGE: {
