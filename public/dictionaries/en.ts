@@ -28,12 +28,12 @@ export const en = {
 
     MENUS: {
       about: "About",
-      featuredProjects: "Featured projects",
+      featuredProjects: "Featured Projects",
       contacts: "Contacts",
       experience: "Experience",
       updatedOn: "Updated on",
-      message: "Send a message",
-      additionalInformation: "Additional information",
+      message: "Let's Connect!",
+      additionalInformation: "Additional Information",
 
       TECH_STACKS: {
         programmingLanguages: "Programming languages",

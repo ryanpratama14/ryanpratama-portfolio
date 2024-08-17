@@ -34,7 +34,7 @@ export const ru: Dictionary = {
       contacts: "Контакты",
       experience: "Опыт работы",
       updatedOn: "Обновлено",
-      message: "Отправить сообщение",
+      message: "Давайте свяжемся!",
 
       TECH_STACKS: {
         learning: "Изучаю...",

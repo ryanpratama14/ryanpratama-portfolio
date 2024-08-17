@@ -35,7 +35,7 @@ export const ja: Dictionary = {
       featuredProjects: "注目のプロジェクト",
       contacts: "連絡先",
       updatedOn: "に更新",
-      message: "メッセージを送信する",
+      message: "繋がりましょう！",
 
       TECH_STACKS: {
         programmingLanguages: "開発言語",
