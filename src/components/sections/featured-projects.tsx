@@ -6,7 +6,7 @@ import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import { PROJECTS } from "@/lib/constants";
 import type { DictionaryStatic } from "@/types";
-import { Autoplay, Mousewheel, Scrollbar } from "swiper/modules";
+import { Mousewheel, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 type Props = { s: DictionaryStatic };
@@ -15,12 +15,10 @@ export default function FeaturedProjects({ s }: Props) {
   return (
     <Container title={s.MENUS.featuredProjects}>
       <Swiper
-        modules={[Autoplay, Mousewheel, Scrollbar]}
+        modules={[Mousewheel, Scrollbar]}
         mousewheel={{ forceToAxis: true }}
-        autoplay={{ delay: 3000, pauseOnMouseEnter: true, stopOnLastSlide: false, disableOnInteraction: false }}
         scrollbar={{ draggable: true, el: ".swiper-scrollbar" }}
         className="w-full"
-        simulateTouch={false}
         spaceBetween={10}
         slidesPerView={1.25}
         breakpoints={{ 768: { slidesPerView: 2.5 }, 2056: { slidesPerView: 2.75 } }}

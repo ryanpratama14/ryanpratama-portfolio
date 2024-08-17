@@ -112,7 +112,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    title: "Belinsky Production",
+    title: "Belinsky",
     src: PHOTOS.project.belinsky,
     desc: "A production house and creative studio specializing in professional photography and filmmaking, showcasing their services, creative works, and client projects to attract new clients.",
     href: "https://belinskyproduction.com",
