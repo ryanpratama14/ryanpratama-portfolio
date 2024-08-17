@@ -10,7 +10,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({ style, type, className, d
   return (
     <button disabled={disabled} {...rest} ref={ref} type={type ?? "button"} className={cn(VARIANTS.Button({ className, style }))}>
       {disabled ? <PulseLoader size={5} color="white" /> : children}
-      <span className="sr-only">Button</span>
+      <span className="sr-only">{children}</span>
     </button>
   );
 });

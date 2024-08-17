@@ -2,12 +2,10 @@
 
 import Container from "@/components/container";
 import Img from "@/components/html/img";
+import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import { PROJECTS } from "@/lib/constants";
-import { cn } from "@/lib/functions";
-import { VARIANTS } from "@/styles";
 import type { DictionaryStatic } from "@/types";
-import Link from "next/link";
 import { Autoplay, Mousewheel, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -43,13 +41,9 @@ export default function FeaturedProjects({ s }: Props) {
                     <p>{e.desc}</p>
                   </Text>
 
-                  <Link
-                    target="_blank"
-                    href={e.href}
-                    className={cn(VARIANTS.Button({ className: "mb-5 group-hover:scale-100 scale-0 absolute centered-bottom" }))}
-                  >
+                  <LinkButton target="_blank" href={e.href} className="mb-5 group-hover:scale-100 scale-0 absolute centered-bottom">
                     {s.SECTIONS.visitProject}
-                  </Link>
+                  </LinkButton>
                 </section>
 
                 <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate" />

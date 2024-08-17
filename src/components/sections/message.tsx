@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const { MESSAGE: t } = s;
 
   const {

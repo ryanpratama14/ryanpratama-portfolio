@@ -1,16 +1,15 @@
 import Iconify from "@/components/html/iconify";
+import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import { ICONS } from "@/lib/constants";
-import { cn } from "@/lib/functions";
 import { useLanguage, useLanguageHelper } from "@/lib/internationalization";
 import { VARIANTS } from "@/styles";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
-import Link from "next/link";
 
 // styles
 import { Noto_Sans } from "next/font/google";
@@ -41,9 +40,9 @@ export default function NotFound() {
               <h1>{s.SECTIONS.notFound}</h1>
             </Text>
 
-            <Link href={`/${lang}`} className={cn(VARIANTS.Button({ className: "mt-6" }))}>
+            <LinkButton lang={lang} href="" className="mt-6">
               {s.SECTIONS.backToHomepage}
-            </Link>
+            </LinkButton>
           </section>
         </main>
 

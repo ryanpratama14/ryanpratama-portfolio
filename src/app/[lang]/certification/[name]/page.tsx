@@ -1,14 +1,12 @@
 import Container from "@/components/container";
 import Img from "@/components/html/img";
+import LinkButton from "@/components/html/link-button";
 import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { cn } from "@/lib/functions";
 import { useLanguage } from "@/lib/internationalization";
-import { VARIANTS } from "@/styles";
 import type { Lang } from "@/types";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Fragment } from "react";
 
@@ -30,9 +28,9 @@ export default function CertificationPage({ params }: Props) {
         <Img alt={data.alt} src={data.src} />
       </Container>
 
-      <Link href={`/${lang}`} className={cn(VARIANTS.Button({ className: "mx-auto" }))}>
+      <LinkButton href="" lang={lang} className="mx-auto">
         {s.SECTIONS.backToHomepage}
-      </Link>
+      </LinkButton>
       <Message s={s} lang={lang} />
     </Fragment>
   );
