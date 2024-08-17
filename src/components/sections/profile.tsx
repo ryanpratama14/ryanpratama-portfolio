@@ -64,7 +64,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLan
                 <h1>{s.PERSONAL_DATA.fullName}</h1>
               </Text>
               {isDefaultLang ? null : (
-                <Text as="techstack" className="-translate-y-0.5">
+                <Text as="small" className="-translate-y-0.5">
                   {useLanguage(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
                 </Text>
               )}
