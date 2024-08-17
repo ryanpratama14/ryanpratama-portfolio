@@ -1,6 +1,6 @@
 import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
-import { LANGS, useLanguage } from "@/lib/internationalization";
+import { LANGS, LANGUAGE_OPTIONS, useLanguage } from "@/lib/internationalization";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
@@ -32,7 +32,14 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
   } = useLanguage(params.lang);
 
   const title = `${me.fullName} — ${me.softwareEngineer}`;
-  const description = `${title} ${me.summary}`;
+  const description = LANGUAGE_OPTIONS.map((e) => {
+    const {
+      t: {
+        s: { PERSONAL_DATA: me2 },
+      },
+    } = e;
+    return `${me2.fullName} — ${me2.softwareEngineer} ${me2.summary}`;
+  }).join(" ");
 
   return {
     manifest: "/manifest.json",
