@@ -1,16 +1,12 @@
 import Container from "@/components/container";
-import Img from "@/components/html/img";
+import HistoryCard from "@/components/history-card";
 import Text from "@/components/html/text";
 import { ICONS, OTHERS } from "@/lib/constants";
-import { useLanguageFn } from "@/lib/internationalization";
 import type { DictionaryStatic, Lang } from "@/types";
-import Link from "next/link";
-import Iconify from "../html/iconify";
 
 type Props = { s: DictionaryStatic; lang: Lang; isJapanese: boolean };
 
 export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
-  const { formatMonth } = useLanguageFn(lang);
   const { education: edu } = s.PERSONAL_DATA;
 
   return (
@@ -31,26 +27,18 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
           </Text>
           {OTHERS.education.map((e) => {
             return (
-              <section key={e.key} className="flex items-center">
-                <Img src={e.src} alt={edu[e.key].title} className="w-16 lg:w-20 aspect-square rounded-l-md shadow-xl" />
-                <section className="pl-2.5 md:pl-3 flex flex-col">
-                  <Link target="_blank" href={e.href} className="flex items-center gap-1 md:gap-1.5">
-                    <Text className="hover:underline">
-                      <p>{edu[e.key].title}</p>
-                    </Text>
-                    <Iconify icon={ICONS.link} width={12} />
-                  </Link>
-
-                  <Text color="gray" as="small">
-                    <p className="font-medium">{edu[e.key].major}</p>
-                  </Text>
-                  <Text color="graydarker" as="small">
-                    <p>
-                      {formatMonth(e.since)} — {formatMonth(e.till)}
-                    </p>
-                  </Text>
-                </section>
-              </section>
+              <HistoryCard
+                hasSquarePhoto
+                key={e.key}
+                label={edu[e.key].title}
+                icon={ICONS.link}
+                href={e.href}
+                since={e.since}
+                till={e.till}
+                src={e.src}
+                lang={lang}
+                description={edu[e.key].major}
+              />
             );
           })}
         </section>
