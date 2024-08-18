@@ -16,7 +16,7 @@ export default function LangSwitcher({ storedLang, setCookie, lang }: Props) {
 
   return (
     <section className="flex">
-      {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag }) => {
+      {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag, label }) => {
         const isActive = lang === targetLang;
         return (
           <Link
@@ -27,9 +27,7 @@ export default function LangSwitcher({ storedLang, setCookie, lang }: Props) {
             href={useLanguageHelper().changeLang(targetLang, usePathname())}
             type="button"
           >
-            <span className="sr-only">
-              {s.PERSONAL_DATA.fullName} {s.PERSONAL_DATA.softwareEngineer} {s.PERSONAL_DATA.summary}
-            </span>
+            <span className="sr-only">{`[${label} — ${targetLang}]: ${s.PERSONAL_DATA.fullName}. ${s.PERSONAL_DATA.softwareEngineer}. ${s.PERSONAL_DATA.summary}`}</span>
             {flag}
           </Link>
         );

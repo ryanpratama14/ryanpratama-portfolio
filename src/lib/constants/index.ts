@@ -174,6 +174,7 @@ export const TECH_STACKS: TechStack = {
 };
 
 export const OTHERS: Other = {
+  languages: ["id", "en", "ja", "ru"],
   education: [
     {
       key: "kfu",
@@ -184,8 +185,6 @@ export const OTHERS: Other = {
       hasSquarePhoto: true,
     },
   ],
-
-  languages: ["id", "en", "ja", "ru"],
 };
 
 export const EXPERIENCES: History[] = [
