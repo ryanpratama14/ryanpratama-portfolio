@@ -45,7 +45,7 @@ export const VARIANTS = {
   }),
 
   Input: tv({
-    base: "bg-graydarker/20 disabled:bg-graydarker/10 hover:bg-graydarker/30 focus:bg-graydarker/30 disabled:cursor-not-allowed text-sm md:text-base px-2 py-1 border-2 border-transparent focus:border-graydarker/40 animate placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
+    base: "bg-graydarker/20 disabled:bg-graydarker/10 hover:bg-graydarker/30 focus:bg-graydarker/30 disabled:cursor-not-allowed text-sm md:text-base px-2 py-1 border-[1.5px] border-transparent focus:border-graydarker/40 animate placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
   }),
 
   Box: tv({
