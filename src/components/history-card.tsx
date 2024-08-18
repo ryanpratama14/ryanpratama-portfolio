@@ -33,7 +33,7 @@ export default function HistoryCard({ data, lang, className, s }: Props) {
         <section className="pl-2.5 md:pl-3 flex flex-col">
           <section className="flex items-center gap-1 translate-x-[0.075rem]">
             <Iconify icon={ICONS.link} width={12} />
-            <Link target="_blank" href={e.href} className={cn(VARIANTS.Text({ as: "content", className: "hover:underline" }))}>
+            <Link target="_blank" href={e.href} className={cn(VARIANTS.Text({ as: "content", className: "font-medium hover:underline" }))}>
               {e.label}
             </Link>
           </section>

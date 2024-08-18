@@ -1,6 +1,7 @@
 import Container from "@/components/container";
 import HistoryCard from "@/components/history-card";
 import Text from "@/components/html/text";
+import { Accordion } from "@/components/ui/accordion";
 import { OTHERS } from "@/lib/constants";
 import type { DictionaryStatic, Lang } from "@/types";
 
@@ -23,10 +24,11 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
           <Text color="graydarker">
             <p>{s.MENUS.OTHER.education}</p>
           </Text>
-
-          {OTHERS.education.map((e) => {
-            return <HistoryCard s={s} key={e.key} data={e} lang={lang} />;
-          })}
+          <Accordion type="multiple" className="space-y-2.5">
+            {OTHERS.education.map((e) => {
+              return <HistoryCard s={s} key={e.key} data={e} lang={lang} />;
+            })}
+          </Accordion>
         </section>
       </section>
     </Container>
