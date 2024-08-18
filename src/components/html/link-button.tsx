@@ -8,10 +8,10 @@ import type { VariantProps } from "tailwind-variants";
 type Props = LinkProps & ComponentProps<"a"> & VariantProps<typeof VARIANTS.Button> & { children: React.ReactNode; lang?: Lang };
 
 const LinkButton = ({ children, className, style, href, lang, ...rest }: Props) => {
-  const addLang = () => (lang ? `/${lang}` : "");
+  const link = lang ? `/${lang}${href}` : href;
 
   return (
-    <Link href={`${addLang()}${href}`} {...rest} className={cn(VARIANTS.Button({ className, style }))}>
+    <Link href={link} {...rest} className={cn(VARIANTS.Button({ className, style }))}>
       {children}
       <span className="sr-only">{children}</span>
     </Link>
