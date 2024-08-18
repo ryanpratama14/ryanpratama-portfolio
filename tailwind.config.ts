@@ -18,6 +18,11 @@ const config = {
         black: "#202020",
         gray: "#d4d4d4",
         graydarker: "#AEAEAE",
+        grayborder: "rgb(174,174,174,50%)",
+        graybg: "rgb(174,174,174,20%)",
+        grayhover: "rgb(174,174,174,40%)",
+        graydisabled: "rgb(174,174,174,10%)",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
