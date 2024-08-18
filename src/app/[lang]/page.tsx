@@ -26,8 +26,8 @@ export default function Home({ params }: Props) {
       <About s={s} />
       <Experience s={s} lang={lang} />
       <FeaturedProjects s={s} />
-      <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
       <Message s={s} lang={lang} />
+      <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
       <Container title={updatedOn} />
     </Fragment>
   );

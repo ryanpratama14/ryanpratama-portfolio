@@ -86,18 +86,6 @@ export const PROJECTS: Project[] = [
       "Leveraged Redux Toolkit to implement a global state management solution",
     ],
   },
-  {
-    label: "KIMA",
-    src: PHOTOS.project.kima,
-    desc: "A digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
-    href: "https://kima-fe.vercel.app",
-    lists: [
-      "Developed a full-stack fully responsive web app using React",
-      "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
-      "Integrated Tailwind CSS for responsive component-based styling",
-      "Leveraged Redux Toolkit to implement a global state management solution",
-    ],
-  },
 
   {
     label: "Belinsky",
@@ -119,6 +107,18 @@ export const PROJECTS: Project[] = [
       "Developed a static fully responsive web app using React",
       "Optimized key content pages for SEO objectives",
       "Integrated Tailwind CSS for responsive component-based styling",
+    ],
+  },
+  {
+    label: "KIMA",
+    src: PHOTOS.project.kima,
+    desc: "A digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
+    href: "https://kima-fe.vercel.app",
+    lists: [
+      "Developed a full-stack fully responsive web app using React",
+      "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
+      "Integrated Tailwind CSS for responsive component-based styling",
+      "Leveraged Redux Toolkit to implement a global state management solution",
     ],
   },
 ];

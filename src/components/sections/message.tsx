@@ -26,16 +26,16 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang } });
 
-  const { mutate: sendMessage, isPending: disabled } = api.email.message.useMutation({ onSuccess: () => setOpen(true) });
+  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setOpen(true) });
 
   return (
     <Fragment>
       <Container title={s.MENUS.message}>
         <form onSubmit={handleSubmit((data) => sendMessage(data))} className="flex flex-col gap-2">
-          <Input {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={t.name.placeholder} />
-          <Input {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={t.email.placeholder} />
-          <TextArea {...register("message")} placeholder={t.message.placeholder} error={errors.message?.message} />
-          <Button disabled={disabled} type="submit" className="max-md:w-full mt-1">
+          <Input disabled={isPending} {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={t.name.placeholder} />
+          <Input disabled={isPending} {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={t.email.placeholder} />
+          <TextArea disabled={isPending} {...register("message")} placeholder={t.message.placeholder} error={errors.message?.message} />
+          <Button disabled={isPending} type="submit" className="max-md:w-full mt-1">
             {t.send}
           </Button>
         </form>
