@@ -85,7 +85,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLan
         </section>
       </section>
 
-      <section className="flex md:hidden gap-y-1 gap-x-2 flex-wrap -mb-2">
+      <section className="flex md:hidden gap-y-1 gap-x-2 flex-wrap -mb-2 -translate-x-0.5">
         <ProfileData />
       </section>
     </Fragment>

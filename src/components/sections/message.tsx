@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [show, setShow] = useState(false);
+  const [open, setOpen] = useState(false);
   const { MESSAGE: t } = s;
 
   const {
@@ -26,7 +26,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang } });
 
-  const { mutate: sendMessage, isPending: disabled } = api.email.message.useMutation({ onSuccess: () => setShow(true) });
+  const { mutate: sendMessage, isPending: disabled } = api.email.message.useMutation({ onSuccess: () => setOpen(true) });
 
   return (
     <Fragment>
@@ -42,9 +42,9 @@ export default function ProjectDiscuss({ s, lang }: Props) {
       </Container>
 
       <Dialog
-        show={show}
+        open={open}
         onClose={() => {
-          setShow(false);
+          setOpen(false);
           reset();
         }}
         className="space-y-1 text-left"

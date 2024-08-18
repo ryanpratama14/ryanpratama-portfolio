@@ -59,7 +59,7 @@ export default function HistoryCard({ data, lang, className, s }: Props) {
           </AccordionTrigger>
           <AccordionContent>
             <ul className="mt-2">
-              {e.duty?.map((duty) => (
+              {e.duty.map((duty) => (
                 <li key={duty}>{duty}</li>
               ))}
             </ul>
