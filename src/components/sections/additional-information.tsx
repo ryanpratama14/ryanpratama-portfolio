@@ -1,14 +1,12 @@
 import Container from "@/components/container";
 import HistoryCard from "@/components/history-card";
 import Text from "@/components/html/text";
-import { ICONS, OTHERS } from "@/lib/constants";
+import { OTHERS } from "@/lib/constants";
 import type { DictionaryStatic, Lang } from "@/types";
 
 type Props = { s: DictionaryStatic; lang: Lang; isJapanese: boolean };
 
 export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
-  const { education: edu } = s.PERSONAL_DATA;
-
   return (
     <Container title={s.MENUS.additionalInformation}>
       <section className="flex flex-col gap-2">
@@ -26,21 +24,7 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
             <p>{s.MENUS.OTHER.education}</p>
           </Text>
           {OTHERS.education.map((e) => {
-            return (
-              <HistoryCard
-                s={s}
-                hasSquarePhoto
-                key={e.key}
-                label={edu[e.key].title}
-                icon={ICONS.link}
-                href={e.href}
-                since={e.since}
-                till={e.till}
-                src={e.src}
-                lang={lang}
-                description={edu[e.key].major}
-              />
-            );
+            return <HistoryCard s={s} key={e.key} data={e} lang={lang} />;
           })}
         </section>
       </section>

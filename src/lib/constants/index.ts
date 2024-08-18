@@ -1,5 +1,5 @@
 import { genreateRussianAge } from "@/lib/functions";
-import type { Certification, Contact, DictionaryStatic, Experience, Other, Project, TechStack } from "@/types";
+import type { Certification, Contact, DictionaryStatic, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 // projects
@@ -47,19 +47,6 @@ export const getProfileData = ({ s, isJapanese, isRussian }: { s: DictionaryStat
     { icon: "mdi:location", title: s.LOCATIONS.jakarta },
     { icon: "mdi:person", title: age },
   ];
-};
-
-export const OTHERS: Other = {
-  education: [
-    {
-      key: "kfu",
-      href: "https://kpfu.ru",
-      src: PHOTOS.logo.kfu,
-      since: dayjs("2019-09").toDate(),
-      till: dayjs("2023-06").toDate(),
-    },
-  ],
-  languages: ["id", "en", "ja", "ru"],
 };
 
 export const CERTIFICATIONS: Certification[] = [
@@ -186,15 +173,28 @@ export const TECH_STACKS: TechStack = {
   ],
 };
 
-export const EXPERIENCES: Experience[] = [
+export const OTHERS: Other = {
+  education: [
+    {
+      key: "kfu",
+      href: "https://kpfu.ru",
+      src: PHOTOS.logo.kfu,
+      since: dayjs("2019-09").toDate(),
+      till: dayjs("2023-06").toDate(),
+      hasSquarePhoto: true,
+    },
+  ],
+
+  languages: ["id", "en", "ja", "ru"],
+};
+
+export const EXPERIENCES: History[] = [
   {
+    key: "nutech",
     src: PHOTOS.logo.nutech,
-    label: "PT Nutech Integrasi",
     href: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
     till: null,
-    location: "jakarta",
-    position: "softwareEngineerFrontend",
     duty: [
       "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
       "Created 25+ document formats and implemented PDF/XLSX rendering using React-pdf, jsPDF and ExcelJS.",
@@ -211,13 +211,11 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
+    key: "faotech",
     src: PHOTOS.logo.faotech,
-    label: "faoTech",
     href: "https://faotech.dev",
     since: dayjs("2022-09").toDate(),
     till: dayjs("2023-08").toDate(),
-    location: "remote",
-    position: "softwareEngineerFullstack",
     duty: [
       "Managed a front-end team of 2 to 3 engineers across 3 projects.",
       "Built responsive web apps compatible across devices, integrating loading animations.",

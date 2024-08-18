@@ -3,22 +3,28 @@ import type { Dictionary } from "@/types";
 export const ru: Dictionary = {
   s: {
     PERSONAL_DATA: {
-      education: {
+      history: {
         kfu: {
-          title: "Казанский федеральный университет",
-          major: "Бакалавр, менеджмент",
+          label: "Казанский федеральный университет",
+          desc: "Бакалавр, менеджмент",
+        },
+        nutech: {
+          label: "PT Nutech Integrasi",
+          desc: "Фронтенд-разработчик",
+        },
+        faotech: {
+          label: "faoTech",
+          desc: "Фулстек-разработчик",
         },
       },
+
       languages: {
         en: "Английский",
         id: "Индонезийский",
         ru: "Русский",
         ja: "Японский",
       },
-      position: {
-        softwareEngineerFullstack: "Фулстек-разработчик",
-        softwareEngineerFrontend: "Фронтенд-разработчик",
-      },
+
       fullName: "Риан Пратама",
       summary:
         "Инженер-программист, специализирующийся на фронтенд-разработке. Обладаю навыками разработки высококачественных решений, адаптированных к требованиям клиентов, и стремится быть в курсе тенденций отрасли и новейших технологий.",

@@ -16,22 +16,6 @@ export type Contact = {
   icon: IconifyIcon | string;
 };
 
-export type Other = {
-  languages: (keyof DictionaryStatic["PERSONAL_DATA"]["languages"])[];
-  education: { key: keyof DictionaryStatic["PERSONAL_DATA"]["education"]; href: string; src: StaticImageData; since: Date; till: Date }[];
-};
-
-export type Experience = {
-  src: StaticImageData;
-  label: string;
-  href: string;
-  since: Date;
-  location: keyof DictionaryStatic["LOCATIONS"];
-  till: Date | null;
-  position: keyof DictionaryStatic["PERSONAL_DATA"]["position"];
-  duty: string[];
-};
-
 export type TechStack = Record<
   keyof DictionaryStatic["MENUS"]["TECH_STACKS"],
   { label: string; icon: IconifyIcon | string; icon2?: IconifyIcon | string }[]
@@ -50,4 +34,19 @@ export type Certification = {
   src: StaticImageData;
   alt: string;
   label: string;
+};
+
+export type Other = {
+  languages: (keyof DictionaryStatic["PERSONAL_DATA"]["languages"])[];
+  education: History[];
+};
+
+export type History = {
+  hasSquarePhoto?: boolean;
+  key: keyof DictionaryStatic["PERSONAL_DATA"]["history"];
+  src: StaticImageData;
+  href: string;
+  since: Date;
+  till: Date | null;
+  duty?: string[];
 };

@@ -1,22 +1,28 @@
 export const en = {
   s: {
     PERSONAL_DATA: {
-      education: {
+      history: {
         kfu: {
-          title: "Kazan Federal University",
-          major: "Bachelor's degree, Management",
+          label: "Kazan Federal University",
+          desc: "Bachelor's degree, Management",
+        },
+        nutech: {
+          label: "PT Nutech Integrasi",
+          desc: "Front-end Engineer",
+        },
+        faotech: {
+          label: "faoTech",
+          desc: "Full-stack Engineer",
         },
       },
+
       languages: {
         en: "English",
         id: "Indonesian",
         ru: "Russian",
         ja: "Japanese",
       },
-      position: {
-        softwareEngineerFullstack: "Full-stack Engineer",
-        softwareEngineerFrontend: "Front-end Engineer",
-      },
+
       fullName: "Ryan Pratama",
       summary:
         "Experienced Software Engineer specializing in front-end development. Skilled in crafting high-quality solutions tailored to client requirements, with a commitment to staying updated on industry trends and emerging technologies.",

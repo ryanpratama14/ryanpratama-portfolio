@@ -3,12 +3,21 @@ import type { Dictionary } from "@/types";
 export const ja: Dictionary = {
   s: {
     PERSONAL_DATA: {
-      education: {
+      history: {
         kfu: {
-          title: "カザン連邦大学",
-          major: "学士号、経営学",
+          label: "カザン連邦大学",
+          desc: "学士号、経営学",
+        },
+        nutech: {
+          label: "PT Nutech Integrasi",
+          desc: "フロントエンドエンジニア",
+        },
+        faotech: {
+          label: "faoTech",
+          desc: "フルスタックエンジニア",
         },
       },
+
       languages: {
         en: "英語",
         id: "インドネシア語",
@@ -19,10 +28,6 @@ export const ja: Dictionary = {
       summary:
         "フロントエンド開発を専門とする経験豊富なソフトウェアエンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
       softwareEngineer: "ソフトウェアエンジニア",
-      position: {
-        softwareEngineerFullstack: "フルスタックエンジニア",
-        softwareEngineerFrontend: "フロントエンドエンジニア",
-      },
       age: "歳",
       about:
         "大学の3学期目に、ロシアのカザンにあるインドネシア人の友人のアパートで行われた無料のプログラミングコースに参加しました。他の学生たちと一緒にJavaScriptの基本を学び、最終的に2022年にfaoTechというソフトウェアハウスのスタートアップを設立しました。スキルを磨くうちに、フロントエンド開発に情熱を感じ、この分野に特化することを決めました。",
