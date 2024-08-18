@@ -23,6 +23,7 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
           <Text color="graydarker">
             <p>{s.MENUS.OTHER.education}</p>
           </Text>
+
           {OTHERS.education.map((e) => {
             return <HistoryCard s={s} key={e.key} data={e} lang={lang} />;
           })}
