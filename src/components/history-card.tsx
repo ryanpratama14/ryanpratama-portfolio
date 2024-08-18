@@ -2,9 +2,9 @@ import Iconify from "@/components/html/iconify";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import { cn } from "@/lib/functions";
-import { useLanguage, useLanguageFn } from "@/lib/internationalization";
+import { useLanguageFn } from "@/lib/internationalization";
 import { VARIANTS } from "@/styles";
-import type { Lang } from "@/types";
+import type { DictionaryStatic, Lang } from "@/types";
 import type { IconifyIcon } from "@iconify/react/dist/iconify.js";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -14,16 +14,17 @@ type Props = {
   icon: IconifyIcon | string;
   label: string;
   lang: Lang;
+  s: DictionaryStatic;
   since: Date;
-  till?: Date | null;
+  till: Date | null;
   description: string;
   href: string;
+
   hasSquarePhoto?: boolean;
   className?: string;
 };
 
 export default function HistoryCard(e: Props) {
-  const { s } = useLanguage(e.lang);
   const { formatMonth } = useLanguageFn(e.lang);
 
   return (
@@ -47,7 +48,7 @@ export default function HistoryCard(e: Props) {
         </Text>
         <Text color="graydarker" as="small">
           <p>
-            {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : s.SECTIONS.present}
+            {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : e.s.SECTIONS.present}
           </p>
         </Text>
       </section>

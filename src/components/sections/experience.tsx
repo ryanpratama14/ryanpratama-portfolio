@@ -15,6 +15,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
             <AccordionItem value={e.label}>
               <AccordionTrigger>
                 <HistoryCard
+                  s={s}
                   label={e.label}
                   icon={ICONS.link}
                   href={e.href}

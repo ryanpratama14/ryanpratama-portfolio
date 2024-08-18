@@ -28,6 +28,7 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
           {OTHERS.education.map((e) => {
             return (
               <HistoryCard
+                s={s}
                 hasSquarePhoto
                 key={e.key}
                 label={edu[e.key].title}
