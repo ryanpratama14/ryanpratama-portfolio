@@ -29,6 +29,7 @@ export const ICONS = {
   close: "mdi:close",
   arrow: "material-symbols:arrow-back-ios",
   accordionArrow: "bxs:up-arrow",
+  link: "fa-solid:external-link-alt",
 };
 
 export const getProfileData = ({ s, isJapanese, isRussian }: { s: DictionaryStatic; isJapanese: boolean; isRussian: boolean }) => {
@@ -62,18 +63,18 @@ export const OTHERS: Other = {
 };
 
 export const CERTIFICATIONS: Certification[] = [
-  { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", title: "Japanese-Language Proficiency Test N4" },
+  { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", label: "Japanese-Language Proficiency Test N4" },
   {
     name: "preparatory-faculty-of-russian-language",
     src: PHOTOS.certifications.podfak,
     alt: "Preparatory Faculty of Russian Language Certification, Ryan Pratama",
-    title: "Preparatory Faculty of Russian Language",
+    label: "Preparatory Faculty of Russian Language",
   },
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "Hebronstar Strategy Consultants",
+    label: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
     desc: "A Korean consulting firm that provides global services and industries, featuring a career microsite, admin dashboard, and landing pages for advertising job openings and managing candidate applications.",
     href: "https://hebronstar.com/en",
@@ -86,7 +87,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "TurunTangan",
+    label: "TurunTangan",
     src: PHOTOS.project.turta,
     desc: "Indonesia's largest non-profit youth volunteer network with 100+ chapters, including an admin dashboard to manage volunteers, view and manage site content, and automate their volunteer network and operations.",
     href: "https://gerakanturuntangan.com",
@@ -99,7 +100,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "KIMA",
+    label: "KIMA",
     src: PHOTOS.project.kima,
     desc: "A digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
     href: "https://kima-fe.vercel.app",
@@ -112,7 +113,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    title: "Belinsky",
+    label: "Belinsky",
     src: PHOTOS.project.belinsky,
     desc: "A production house and creative studio specializing in professional photography and filmmaking, showcasing their services, creative works, and client projects to attract new clients.",
     href: "https://belinskyproduction.com",
@@ -123,7 +124,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "Synergy Perdana Mandiri",
+    label: "Synergy Perdana Mandiri",
     src: PHOTOS.project.mandiri,
     desc: "A trading company specializing in general and chemicals trading, providing company and product information to customers in the fertilizer and chemical industries.",
     href: "https://www.sinergyperdanamandiri.com",
@@ -188,8 +189,8 @@ export const TECH_STACKS: TechStack = {
 export const EXPERIENCES: Experience[] = [
   {
     src: PHOTOS.logo.nutech,
-    label: "Nutech Integrasi",
-    link: "https://www.nutech-integrasi.com",
+    label: "PT Nutech Integrasi",
+    href: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
     till: null,
     location: "jakarta",
@@ -212,7 +213,7 @@ export const EXPERIENCES: Experience[] = [
   {
     src: PHOTOS.logo.faotech,
     label: "faoTech",
-    link: "https://faotech.dev",
+    href: "https://faotech.dev",
     since: dayjs("2022-09").toDate(),
     till: dayjs("2023-08").toDate(),
     location: "remote",

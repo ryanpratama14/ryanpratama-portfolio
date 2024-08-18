@@ -1,9 +1,11 @@
 import Container from "@/components/container";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
-import { OTHERS } from "@/lib/constants";
+import { ICONS, OTHERS } from "@/lib/constants";
 import { useLanguageFn } from "@/lib/internationalization";
 import type { DictionaryStatic, Lang } from "@/types";
+import Link from "next/link";
+import Iconify from "../html/iconify";
 
 type Props = { s: DictionaryStatic; lang: Lang; isJapanese: boolean };
 
@@ -32,9 +34,13 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
               <section key={e.key} className="flex items-center">
                 <Img src={e.src} alt={edu[e.key].title} className="w-16 lg:w-20 aspect-square rounded-l-md shadow-xl" />
                 <section className="pl-2.5 md:pl-3 flex flex-col">
-                  <Text>
-                    <p>{edu[e.key].title}</p>
-                  </Text>
+                  <Link target="_blank" href={e.href} className="flex items-center gap-1 md:gap-1.5">
+                    <Text className="hover:underline">
+                      <p>{edu[e.key].title}</p>
+                    </Text>
+                    <Iconify icon={ICONS.link} width={12} />
+                  </Link>
+
                   <Text color="gray" as="small">
                     <p className="font-medium">{edu[e.key].major}</p>
                   </Text>

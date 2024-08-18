@@ -24,7 +24,7 @@ export default function CertificationPage({ params }: Props) {
       <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} isRussian={isRussian} />
       <Contacts s={s} />
 
-      <Container title={data.title}>
+      <Container title={data.label}>
         <Img alt={data.alt} src={data.src} />
       </Container>
 

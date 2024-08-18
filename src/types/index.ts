@@ -24,7 +24,7 @@ export type Other = {
 export type Experience = {
   src: StaticImageData;
   label: string;
-  link: string;
+  href: string;
   since: Date;
   location: keyof DictionaryStatic["LOCATIONS"];
   till: Date | null;
@@ -38,7 +38,7 @@ export type TechStack = Record<
 >;
 
 export type Project = {
-  title: string;
+  label: string;
   desc: string;
   href: string;
   lists: string[];
@@ -49,5 +49,5 @@ export type Certification = {
   name: string;
   src: StaticImageData;
   alt: string;
-  title: string;
+  label: string;
 };
