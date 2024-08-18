@@ -49,7 +49,7 @@ export const VARIANTS = {
   }),
 
   Box: tv({
-    base: "border-[0.75px] border-grayborder rounded-md bg-graybg hover:bg-grayhover flex items-center shadow-xl animate hover:scale-[1.025] md:hover:scale-[1.05]",
+    base: "rounded-md bg-graybg hover:bg-grayhover flex items-center shadow-xl animate hover:scale-[1.025] md:hover:scale-[1.05]",
     variants: {
       style: {
         contact: "text-sm md:text-base gap-1 px-2 py-0.5",

@@ -25,7 +25,7 @@ export default function Dialog({ open, onClose, children, className, classNameDi
       <DialogPanel
         transition
         className={cn(
-          "data-[closed]:scale-90 data-[closed]:translate-y-6 animate w-full max-w-md relative rounded-md p-6 shadow-xl bg-black border-[1px] border-grayborder",
+          "data-[closed]:scale-90 data-[closed]:translate-y-6 animate w-full max-w-md relative rounded-md p-6 shadow-xl bg-black border-1 border-grayborder",
           classNameDialog,
         )}
       >

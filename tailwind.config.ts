@@ -18,9 +18,9 @@ const config = {
         black: "#202020",
         gray: "#d4d4d4",
         graydarker: "#AEAEAE",
-        grayborder: "rgb(174,174,174,50%)",
+        grayborder: "rgb(174,174,174,40%)",
         graybg: "rgb(174,174,174,20%)",
-        grayhover: "rgb(174,174,174,40%)",
+        grayhover: "rgb(174,174,174,30%)",
         graydisabled: "rgb(174,174,174,10%)",
 
         border: "hsl(var(--border))",
@@ -116,6 +116,9 @@ const config = {
       },
       screens: {
         "3xl": "2056px",
+      },
+      borderWidth: {
+        1: "1px",
       },
     },
   },

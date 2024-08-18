@@ -20,8 +20,8 @@ export default function LangSwitcher({ storedLang, setCookie, lang }: Props) {
         const isActive = lang === targetLang;
         return (
           <Link
-            className={cn("text-2xl leading-3 px-1 py-2 rounded-md border-2 border-transparent", {
-              "bg-graybg border-gray shadow-xl": isActive,
+            className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
+              "bg-graybg border-graydarker shadow-xl": isActive,
             })}
             key={targetLang}
             href={useLanguageHelper().changeLang(targetLang, usePathname())}
