@@ -36,7 +36,7 @@ export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLan
 
       if (e.href) {
         return (
-          <Link target="_blank" href={e.href} key={e.title} className="flex gap-1 items-center">
+          <Link target="_blank" href={e.href} key={e.title} className="flex gap-0.5 items-center">
             <Data />
           </Link>
         );
