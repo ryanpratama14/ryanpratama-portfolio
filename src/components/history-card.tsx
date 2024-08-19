@@ -24,9 +24,9 @@ export default function HistoryCard({ data, lang, className, s }: Props) {
     return (
       <section className={cn("flex items-center text-left", className)}>
         {e.hasSquarePhoto ? (
-          <Img src={e.src} alt={e.label} className="w-16 md:w-20 aspect-square rounded-l-md shadow-xl" />
+          <Img src={e.src} alt={e.label} className="w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow-xl" />
         ) : (
-          <section className="w-16 md:w-20 aspect-square relative bg-white p-2 flex items-center justify-center rounded-l-md shadow-xl">
+          <section className="w-[4.25rem] md:w-[5.25rem] aspect-square relative bg-white p-2 flex items-center justify-center rounded-l-md shadow-xl">
             <Img src={e.src} className="object-contain" alt={e.label} />
           </section>
         )}
@@ -37,8 +37,8 @@ export default function HistoryCard({ data, lang, className, s }: Props) {
               {e.label}
             </Link>
           </section>
-          <Text color="gray" as="small">
-            <p className="font-semibold">{e.desc}</p>
+          <Text color="gray">
+            <p className="font-medium">{e.desc}</p>
           </Text>
           <Text color="graydarker" as="small">
             <p>
