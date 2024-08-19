@@ -17,7 +17,7 @@ export default function Home({ params }: Props) {
   const { formatDate } = useLanguageFn(params.lang);
 
   const updateDate = formatDate(new Date("2024-08-18"));
-  const updatedOn = `${isJapanese ? "" : `${s.MENUS.updatedOn} `}${updateDate}${isJapanese ? s.MENUS.updatedOn : ""}`;
+  const updatedOn = isJapanese ? `${updateDate}${s.MENUS.updatedOn}` : `${s.MENUS.updatedOn} ${updateDate}`;
 
   return (
     <Fragment>

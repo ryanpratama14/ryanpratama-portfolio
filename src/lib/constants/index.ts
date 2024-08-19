@@ -1,5 +1,5 @@
-import { genreateRussianAge } from "@/lib/functions";
-import type { Certification, Contact, DictionaryStatic, History, Other, Project, TechStack } from "@/types";
+import { getRussianAgeCounter } from "@/lib/functions";
+import type { Certification, Contact, DictionaryStatic, History, Other, Profile, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 // projects
@@ -32,14 +32,14 @@ export const ICONS = {
   link: "fa-solid:external-link-alt",
 };
 
-export const getProfileData = ({ s, isJapanese, isRussian }: { s: DictionaryStatic; isJapanese: boolean; isRussian: boolean }) => {
-  const addCounter = (text: string) => (isJapanese ? text : ` ${text}`);
+export const getProfileData = ({ s, isJapanese, isRussian }: { s: DictionaryStatic; isJapanese: boolean; isRussian: boolean }): Profile[] => {
+  const determineCounter = (text: string) => (isJapanese ? text : ` ${text}`);
 
   const calculatedAge = dayjs().diff(dayjs("2000-07-14"), "year");
   const calculatedYoe = (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1);
 
-  const age = `${calculatedAge}${isRussian ? ` ${genreateRussianAge(calculatedAge)}` : addCounter(s.PERSONAL_DATA.age)}`;
-  const yoe = `${calculatedYoe}${addCounter(s.SECTIONS.yearsExperience)}`;
+  const age = `${calculatedAge}${determineCounter(isRussian ? getRussianAgeCounter(calculatedAge) : s.PERSONAL_DATA.age)}`;
+  const yoe = `${calculatedYoe}${determineCounter(s.SECTIONS.yearsExperience)}`;
 
   return [
     { href: "/resume.pdf", icon: "mdi:resume", title: s.SECTIONS.resume },

@@ -2,8 +2,7 @@ import type { Lang } from "@/types";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-const isClient = typeof window !== "undefined";
-
+export const isClient = typeof window !== "undefined";
 export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs));
 export const loadToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 export const copyData = <T>(data: T): T => structuredClone(data);
@@ -17,7 +16,7 @@ export const getBaseUrl = (lang?: Lang) => {
 
 export const getCurrentUrl = (path: string) => `${getBaseUrl()}${path}`;
 
-export const genreateRussianAge = (age: number) => {
+export const getRussianAgeCounter = (age: number) => {
   let txt = "";
   let count = age % 100;
 
