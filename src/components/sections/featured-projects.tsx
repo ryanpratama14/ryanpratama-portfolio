@@ -27,7 +27,7 @@ export default function FeaturedProjects({ s }: Props) {
         {PROJECTS.map((e) => {
           return (
             <SwiperSlide key={e.label}>
-              <section className="aspect-square relative group overflow-hidden rounded-md mb-2">
+              <section className="mb-2 aspect-square relative group overflow-hidden rounded-md">
                 <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
                   <Text
                     className="flex flex-col gap-0.5 items-end absolute font-semibold top-3 w-full px-3 text-right translate-x-full group-hover:translate-x-0"
