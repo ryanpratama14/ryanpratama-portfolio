@@ -1,3 +1,4 @@
+import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
 import type { AppRouter } from "@/server/api/root";
 import { QueryClient, defaultShouldDehydrateQuery } from "@tanstack/react-query";
 import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
@@ -5,11 +6,6 @@ import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
 import SuperJSON from "superjson";
 
 export const transformer = SuperJSON;
-export const THROW_TRPC_OK = (code: TRPC_OK_CODE_KEY, message?: string) => ({ code, message: message ?? OK_MESSAGES[code] });
-export const THROW_TRPC_ERROR = (code: TRPC_ERROR_CODE_KEY, message?: string) => {
-  throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
-};
-
 export const createQueryClient = () => {
   return new QueryClient({
     defaultOptions: {
@@ -21,6 +17,27 @@ export const createQueryClient = () => {
       hydrate: { deserializeData: transformer.deserialize },
     },
   });
+};
+
+const log = `${useLanguage(DEFAULT_LANG).currentTime} 👉`;
+export const CONSOLE_TRPC = {
+  log: (message: string) => console.log(`🔵 ${log} ${message}`),
+  ok: (message: string) => console.log(`🟢 ${log} ${message}`),
+  error: (message: string) => console.error(`🔴 ${log} ${message}`),
+};
+
+export const THROW_TRPC = {
+  ok: ({ code, message, input }: { code: TRPC_OK_CODE_KEY; message?: string; input?: unknown }) => {
+    CONSOLE_TRPC.ok("tRPC success");
+    if (input) CONSOLE_TRPC.ok(`input: ${JSON.stringify(input) ?? null}`);
+    CONSOLE_TRPC.ok(`code: ${code}`);
+    CONSOLE_TRPC.ok(`message: ${message ?? OK_MESSAGES[code]}`);
+    return { code, message: message ?? OK_MESSAGES[code] };
+  },
+
+  error: ({ code, message }: { code: TRPC_ERROR_CODE_KEY; message?: string }) => {
+    throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
+  },
 };
 
 const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {

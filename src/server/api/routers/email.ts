@@ -3,7 +3,7 @@ import { env } from "@/env";
 import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
 import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
-import { THROW_TRPC_ERROR, THROW_TRPC_OK } from "@/trpc/shared";
+import { THROW_TRPC } from "@/trpc/shared";
 import { Resend } from "resend";
 
 const { s } = useLanguage(DEFAULT_LANG);
@@ -18,7 +18,7 @@ export const email = createTRPCRouter({
       react: Message(input),
     });
 
-    if (error) return THROW_TRPC_ERROR("INTERNAL_SERVER_ERROR", error.message);
-    return { data, ...THROW_TRPC_OK("OK") };
+    if (error) return THROW_TRPC.error({ code: "INTERNAL_SERVER_ERROR", message: error.message });
+    return { data, ...THROW_TRPC.ok({ code: "OK" }) };
   }),
 });
