@@ -40,12 +40,12 @@ export default function FeaturedProjects({ s }: Props) {
                     <p>{e.desc}</p>
                   </Text>
 
-                  <LinkButton target="_blank" href={e.href} className="mb-5 group-hover:scale-100 scale-0 absolute centered-bottom">
+                  <LinkButton target="_blank" href={e.href} className="translate-y-full group-hover:-translate-y-5 absolute centered-bottom">
                     {s.SECTIONS.visitProject}
                   </LinkButton>
                 </section>
 
-                <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate" />
+                <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate-longer" />
               </section>
 
               <ul className="sr-only">
