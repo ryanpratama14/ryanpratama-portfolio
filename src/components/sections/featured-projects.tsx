@@ -40,7 +40,7 @@ export default function FeaturedProjects({ s }: Props) {
                     <p>{e.desc}</p>
                   </Text>
 
-                  <LinkButton target="_blank" href={e.href} className="translate-y-full group-hover:-translate-y-5 absolute centered-bottom">
+                  <LinkButton href={e.href} className="translate-y-full group-hover:-translate-y-5 absolute centered-bottom">
                     {s.SECTIONS.visitProject}
                   </LinkButton>
                 </section>

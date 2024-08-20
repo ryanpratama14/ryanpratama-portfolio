@@ -4,7 +4,7 @@ import Button from "@/components/html/button";
 import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { DialogPanel, Dialog as HeadlessDialog } from "@headlessui/react";
+import { DialogPanel, Dialog as DialogParent } from "@headlessui/react";
 import type { ComponentProps } from "react";
 
 type Props = ComponentProps<"section"> & {
@@ -16,7 +16,7 @@ type Props = ComponentProps<"section"> & {
 
 export default function Dialog({ open, onClose, children, className, classNameDialog, ...rest }: Props) {
   return (
-    <HeadlessDialog
+    <DialogParent
       open={open}
       onClose={onClose}
       transition
@@ -36,6 +36,6 @@ export default function Dialog({ open, onClose, children, className, classNameDi
           {children}
         </section>
       </DialogPanel>
-    </HeadlessDialog>
+    </DialogParent>
   );
 }

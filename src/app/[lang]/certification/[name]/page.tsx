@@ -7,7 +7,7 @@ import Profile from "@/components/sections/profile";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { useLanguage } from "@/lib/internationalization";
 import type { Lang } from "@/types";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
 type Props = { params: { lang: Lang; name: string } };
@@ -15,7 +15,7 @@ type Props = { params: { lang: Lang; name: string } };
 export default function CertificationPage({ params }: Props) {
   const { name, lang } = params;
   const data = CERTIFICATIONS.find((e) => e.name === name);
-  if (!data) redirect(`/${lang}`);
+  if (!data) notFound();
 
   const { s, isJapanese, isRussian, isDefaultLang } = useLanguage(lang);
 
