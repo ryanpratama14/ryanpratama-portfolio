@@ -13,23 +13,23 @@ type Props = {
   data: History;
   lang: Lang;
   s: DictionaryStatic;
-  className?: string;
 };
 
-export default function HistoryCard({ data, lang, className, s }: Props) {
+export default function HistoryCard({ data, lang, s }: Props) {
   const { formatMonth } = useLanguageFn(lang);
   const e = { ...s.PERSONAL_DATA.history[data.key], ...data };
 
   const Card = () => {
     return (
-      <section className={cn("flex items-center text-left", className)}>
-        {e.hasSquarePhoto ? (
-          <Img src={e.src} alt={e.label} className="w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow-xl" />
-        ) : (
-          <section className="w-[4.25rem] md:w-[5.25rem] aspect-square relative bg-white p-2 flex items-center justify-center rounded-l-md shadow-xl">
-            <Img src={e.src} className="object-contain" alt={e.label} />
-          </section>
-        )}
+      <section className="flex items-center text-left">
+        <section
+          className={cn("w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow-xl", {
+            "p-2 flex items-center justify-center bg-white": !e.hasSquarePhoto,
+          })}
+        >
+          <Img src={e.src} alt={e.label} className={cn({ "object-cointain": !e.hasSquarePhoto, "size-full rounded-l-md": e.hasSquarePhoto })} />
+        </section>
+
         <section className="pl-2.5 md:pl-3 flex flex-col">
           <section className="flex items-center gap-1 translate-x-[0.085rem]">
             <Iconify icon={ICONS.link} width={12} />

@@ -21,7 +21,7 @@ export const createQueryClient = () => {
 
 const log = `${useLanguage(DEFAULT_LANG).currentTime} 👉`;
 export const CONSOLE_TRPC = {
-  log: (message: string) => console.log(`🔵 ${log} ${message}`),
+  info: (message: string) => console.info(`🔵 ${log} ${message}`),
   ok: (message: string) => console.log(`🟢 ${log} ${message}`),
   error: (message: string) => console.error(`🔴 ${log} ${message}`),
 };
