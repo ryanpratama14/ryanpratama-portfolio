@@ -6,7 +6,7 @@ import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { THROW_TRPC } from "@/trpc/shared";
 import { Resend } from "resend";
 
-const { s } = useLang(DEFAULT_LANG).statics;
+const { s } = useLang(DEFAULT_LANG);
 const resend = new Resend(env.RESEND_API_KEY);
 
 export const email = createTRPCRouter({

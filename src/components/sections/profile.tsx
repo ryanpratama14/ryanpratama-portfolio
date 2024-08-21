@@ -64,7 +64,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
               </Text>
               {isDefaultLang ? null : (
                 <Text as="small" className="-translate-y-0.5">
-                  {useLang(DEFAULT_LANG).statics.s.PERSONAL_DATA.fullName}
+                  {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
                 </Text>
               )}
             </section>

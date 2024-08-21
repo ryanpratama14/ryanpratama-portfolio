@@ -25,6 +25,7 @@ export const useLang = (lang: Lang) => {
   const isJapanese = lang === "ja";
   const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
+  const baseUrl = getBaseUrl(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
   const ageCounter = isRussian ? getRussianAgeCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
@@ -35,8 +36,10 @@ export const useLang = (lang: Lang) => {
   const formatCounter = (counter: string) => (isJapanese ? counter : ` ${counter}`);
 
   return {
-    statics: { ...rest, s, isJapanese, isRussian, isDefaultLang, baseUrl: getBaseUrl(lang), currentTime, ageCounter },
-    functions: { d, formatMonth, formatDate, formatCurrency, formatCounter },
+    s,
+    d,
+    statics: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrl, currentTime, ageCounter },
+    functions: { formatMonth, formatDate, formatCurrency, formatCounter },
   };
 };
 

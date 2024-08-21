@@ -13,10 +13,11 @@ import { Fragment } from "react";
 type Props = { params: { lang: Lang } };
 
 export default function Home({ params }: Props) {
-  const { statics, functions } = useLang(params.lang);
-
-  const { s, lang, isJapanese, isDefaultLang } = statics;
-  const { formatDate } = functions;
+  const {
+    s,
+    statics: { lang, isJapanese, isDefaultLang },
+    functions: { formatDate },
+  } = useLang(params.lang);
 
   const updateDate = formatDate(new Date("2024-08-18"));
   const updatedOn = isJapanese ? `${updateDate}${s.MENUS.updatedOn}` : `${s.MENUS.updatedOn} ${updateDate}`;

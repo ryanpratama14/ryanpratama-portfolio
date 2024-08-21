@@ -19,19 +19,17 @@ import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
 
 export const getProfileData = (lang: Lang): Profile[] => {
-  const { statics, functions } = useLang(lang);
-
-  const { ageCounter, s } = statics;
-  const { formatCounter } = functions;
-
-  const ageLabel = `${PERSONALS.age}${formatCounter(ageCounter)}`;
-  const yoeLabel = `${PERSONALS.yoe}${formatCounter(s.SECTIONS.yearsExperience)}`;
+  const {
+    s,
+    statics: { ageCounter },
+    functions: { formatCounter },
+  } = useLang(lang);
 
   return [
     { href: "/resume.pdf", icon: "mdi:resume", label: s.SECTIONS.resume },
-    { icon: "mdi:work", label: yoeLabel },
+    { icon: "mdi:work", label: `${PERSONALS.yoe}${formatCounter(s.SECTIONS.yearsExperience)}` },
     { icon: "mdi:location", label: s.LOCATIONS.jakarta },
-    { icon: "mdi:person", label: ageLabel },
+    { icon: "mdi:person", label: `${PERSONALS.age}${formatCounter(ageCounter)}` },
   ];
 };
 
