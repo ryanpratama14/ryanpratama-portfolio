@@ -13,6 +13,7 @@ export const LANGUAGES: Record<Lang, { flag: string; label: string; t: Dictionar
   ru: { flag: "🇷🇺", label: "Русский", lang: "ru", locale: "ru-RU", currency: "RUR", t: ru },
 };
 export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...e }));
+export const MOCK_WORD = "CUSTOMIZED";
 
 export const useLanguage = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
