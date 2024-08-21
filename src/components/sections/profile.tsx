@@ -14,36 +14,34 @@ import Link from "next/link";
 import { Fragment } from "react";
 
 type Props = {
-  lang: Lang;
   s: DictionaryStatic;
-  isJapanese: boolean;
-  isRussian: boolean;
+  lang: Lang;
   isDefaultLang: boolean;
   disableLangSwitcher?: boolean;
 };
 
-export default function Profile({ s, lang, isDefaultLang, isJapanese, disableLangSwitcher, isRussian }: Props) {
+export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }: Props) {
   const ProfileData = () =>
-    getProfileData({ s, isJapanese, isRussian }).map((e) => {
+    getProfileData(lang).map((e) => {
       const Data = () => (
         <Fragment>
           <Iconify icon={e.icon} width={17.5} color={COLORS.gray} />
           <Text color="graydarker">
-            <p className={cn({ "hover:underline": e.href })}>{e.title}</p>
+            <p className={cn({ "hover:underline": e.href })}>{e.label}</p>
           </Text>
         </Fragment>
       );
 
       if (e.href) {
         return (
-          <Link target="_blank" href={e.href} key={e.title} className="flex gap-0.5 items-center">
+          <Link target="_blank" href={e.href} key={e.label} className="flex gap-0.5 items-center">
             <Data />
           </Link>
         );
       }
 
       return (
-        <section key={e.title} className="flex gap-0.5 items-center">
+        <section key={e.label} className="flex gap-0.5 items-center">
           <Data />
         </section>
       );

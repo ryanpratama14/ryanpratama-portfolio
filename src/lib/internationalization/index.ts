@@ -1,4 +1,6 @@
+import { PERSONALS } from "@/lib/constants";
 import { getBaseUrl } from "@/lib/functions";
+import { getRussianAgeCounter } from "@/lib/internationalization/helpers";
 import type { Dictionary, Lang } from "@/types";
 import { z } from "zod";
 import { en } from "#/dictionaries/en";
@@ -13,7 +15,6 @@ export const LANGUAGES: Record<Lang, { flag: string; label: string; t: Dictionar
   ru: { flag: "🇷🇺", label: "Русский", lang: "ru", locale: "ru-RU", currency: "RUR", t: ru },
 };
 export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...e }));
-export const MOCK_WORD = "CUSTOMIZED";
 
 export const useLanguage = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
@@ -25,8 +26,9 @@ export const useLanguage = (lang: Lang) => {
   const isDefaultLang = lang === DEFAULT_LANG;
   const baseUrl = getBaseUrl(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  const ageCounter = isRussian ? getRussianAgeCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
-  return { ...rest, s, isJapanese, isRussian, isDefaultLang, baseUrl, currentTime };
+  return { ...rest, s, isJapanese, isRussian, isDefaultLang, baseUrl, currentTime, ageCounter };
 };
 
 export const useLanguageFn = (lang: Lang) => {

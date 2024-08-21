@@ -1,5 +1,5 @@
-import { getRussianAgeCounter } from "@/lib/functions";
-import type { Certification, Contact, DictionaryStatic, History, Other, Profile, Project, TechStack } from "@/types";
+import { useLanguage } from "@/lib/internationalization";
+import type { Certification, Contact, History, Lang, Other, Profile, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 // projects
@@ -18,6 +18,27 @@ import faotech from "@/assets/logo-faotech.png";
 import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
 
+export const getProfileData = (lang: Lang): Profile[] => {
+  const { isJapanese, ageCounter, s } = useLanguage(lang);
+
+  const determineCounter = (text: string) => (isJapanese ? text : ` ${text}`);
+
+  const ageLabel = `${PERSONALS.age}${determineCounter(ageCounter)}`;
+  const yoeLabel = `${PERSONALS.yoe}${determineCounter(s.SECTIONS.yearsExperience)}`;
+
+  return [
+    { href: "/resume.pdf", icon: "mdi:resume", label: s.SECTIONS.resume },
+    { icon: "mdi:work", label: yoeLabel },
+    { icon: "mdi:location", label: s.LOCATIONS.jakarta },
+    { icon: "mdi:person", label: ageLabel },
+  ];
+};
+
+export const PERSONALS = {
+  age: dayjs().diff(dayjs("2000-07-14"), "year"),
+  yoe: (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1),
+};
+
 export const PHOTOS = {
   logo: { nutech, faotech, kfu },
   project: { belinsky, hebronstar, kima, mandiri, turta },
@@ -30,23 +51,6 @@ export const ICONS = {
   arrow: "material-symbols:arrow-back-ios",
   accordionArrow: "bxs:up-arrow",
   link: "fa-solid:external-link-alt",
-};
-
-export const getProfileData = ({ s, isJapanese, isRussian }: { s: DictionaryStatic; isJapanese: boolean; isRussian: boolean }): Profile[] => {
-  const determineCounter = (text: string) => (isJapanese ? text : ` ${text}`);
-
-  const calculatedAge = dayjs().diff(dayjs("2000-07-14"), "year");
-  const calculatedYoe = (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1);
-
-  const age = `${calculatedAge}${determineCounter(isRussian ? getRussianAgeCounter(calculatedAge) : s.PERSONAL_DATA.age)}`;
-  const yoe = `${calculatedYoe}${determineCounter(s.SECTIONS.yearsExperience)}`;
-
-  return [
-    { href: "/resume.pdf", icon: "mdi:resume", title: s.SECTIONS.resume },
-    { icon: "mdi:work", title: yoe },
-    { icon: "mdi:location", title: s.LOCATIONS.jakarta },
-    { icon: "mdi:person", title: age },
-  ];
 };
 
 export const CERTIFICATIONS: Certification[] = [

@@ -17,11 +17,11 @@ export default function CertificationPage({ params }: Props) {
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 
-  const { s, isJapanese, isRussian, isDefaultLang } = useLanguage(lang);
+  const { s, isDefaultLang } = useLanguage(lang);
 
   return (
     <Fragment>
-      <Profile isDefaultLang={isDefaultLang} lang={lang} s={s} isJapanese={isJapanese} isRussian={isRussian} />
+      <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
 
       <Container title={data.label}>

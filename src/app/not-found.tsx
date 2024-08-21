@@ -23,7 +23,8 @@ const notosans = Noto_Sans({
 });
 
 export default function NotFound() {
-  const { s, isDefaultLang, isJapanese, isRussian, lang } = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value));
+  const language = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value));
+  const { s, lang, isDefaultLang } = language;
 
   return (
     <html lang={lang} className={notosans.variable}>
@@ -31,7 +32,7 @@ export default function NotFound() {
         <Analytics />
         <SpeedInsights />
         <main className={VARIANTS.Main()}>
-          <Profile disableLangSwitcher s={s} lang={lang} isDefaultLang={isDefaultLang} isJapanese={isJapanese} isRussian={isRussian} />
+          <Profile disableLangSwitcher s={s} lang={lang} isDefaultLang={isDefaultLang} />
           <Contacts s={s} />
           <section className="flex flex-col items-center justify-center mt-6">
             <Iconify icon={ICONS.notFound} width={250} />
