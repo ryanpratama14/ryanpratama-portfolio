@@ -5,7 +5,7 @@ import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import { ICONS } from "@/lib/constants";
-import { useLanguage, useLanguageHelper } from "@/lib/internationalization";
+import { useLang, useLangHelper } from "@/lib/internationalization";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
@@ -23,8 +23,7 @@ const notosans = Noto_Sans({
 });
 
 export default function NotFound() {
-  const language = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value));
-  const { s, lang, isDefaultLang } = language;
+  const { s, lang, isDefaultLang } = useLang(useLangHelper().validateMatchedLang(cookies().get("lang")?.value)).statics;
 
   return (
     <html lang={lang} className={notosans.variable}>

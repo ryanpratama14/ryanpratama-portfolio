@@ -11,7 +11,7 @@ export default function ProfessionalExperiences({ s, lang }: Props) {
     <Container title={s.MENUS.experience}>
       <Accordion type="multiple" className="space-y-2.5">
         {EXPERIENCES.map((e) => {
-          return <HistoryCard key={e.key} s={s} data={e} lang={lang} />;
+          return <HistoryCard key={e.key} data={e} lang={lang} />;
         })}
       </Accordion>
     </Container>

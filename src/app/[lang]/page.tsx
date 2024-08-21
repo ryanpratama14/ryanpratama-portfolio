@@ -6,15 +6,17 @@ import Experience from "@/components/sections/experience";
 import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import { useLanguage, useLanguageFn } from "@/lib/internationalization";
+import { useLang } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { Fragment } from "react";
 
 type Props = { params: { lang: Lang } };
 
 export default function Home({ params }: Props) {
-  const { s, lang, isJapanese, isDefaultLang } = useLanguage(params.lang);
-  const { formatDate } = useLanguageFn(params.lang);
+  const { statics, functions } = useLang(params.lang);
+
+  const { s, lang, isJapanese, isDefaultLang } = statics;
+  const { formatDate } = functions;
 
   const updateDate = formatDate(new Date("2024-08-18"));
   const updatedOn = isJapanese ? `${updateDate}${s.MENUS.updatedOn}` : `${s.MENUS.updatedOn} ${updateDate}`;

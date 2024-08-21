@@ -1,4 +1,4 @@
-import { useLanguage } from "@/lib/internationalization";
+import { useLang } from "@/lib/internationalization";
 import type { Certification, Contact, History, Lang, Other, Profile, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
@@ -19,12 +19,13 @@ import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
 
 export const getProfileData = (lang: Lang): Profile[] => {
-  const { isJapanese, ageCounter, s } = useLanguage(lang);
+  const { statics, functions } = useLang(lang);
 
-  const determineCounter = (text: string) => (isJapanese ? text : ` ${text}`);
+  const { ageCounter, s } = statics;
+  const { formatCounter } = functions;
 
-  const ageLabel = `${PERSONALS.age}${determineCounter(ageCounter)}`;
-  const yoeLabel = `${PERSONALS.yoe}${determineCounter(s.SECTIONS.yearsExperience)}`;
+  const ageLabel = `${PERSONALS.age}${formatCounter(ageCounter)}`;
+  const yoeLabel = `${PERSONALS.yoe}${formatCounter(s.SECTIONS.yearsExperience)}`;
 
   return [
     { href: "/resume.pdf", icon: "mdi:resume", label: s.SECTIONS.resume },

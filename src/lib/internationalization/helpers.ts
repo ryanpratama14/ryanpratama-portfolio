@@ -1,19 +1,19 @@
 export const getRussianAgeCounter = (age: number) => {
-  let txt = "";
+  let counter = "";
   let count = age % 100;
 
   if (count >= 5 && count <= 20) {
-    txt = "лет";
+    counter = "лет";
   } else {
     count = age % 10;
     if (count === 1) {
-      txt = "год";
+      counter = "год";
     } else if (count >= 2 && count <= 4) {
-      txt = "года";
+      counter = "года";
     } else {
-      txt = "лет";
+      counter = "лет";
     }
   }
 
-  return txt;
+  return counter;
 };

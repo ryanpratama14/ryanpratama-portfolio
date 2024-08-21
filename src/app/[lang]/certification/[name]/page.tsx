@@ -5,7 +5,7 @@ import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { useLanguage } from "@/lib/internationalization";
+import { useLang } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
@@ -17,7 +17,7 @@ export default function CertificationPage({ params }: Props) {
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 
-  const { s, isDefaultLang } = useLanguage(lang);
+  const { s, isDefaultLang } = useLang(lang).statics;
 
   return (
     <Fragment>

@@ -16,34 +16,31 @@ export const LANGUAGES: Record<Lang, { flag: string; label: string; t: Dictionar
 };
 export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...e }));
 
-export const useLanguage = (lang: Lang) => {
+export const useLang = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
-  const { s } = t;
+  const { d, s } = t;
+  const { locale, currency } = rest;
 
-  const { locale } = rest;
+  // statics
   const isJapanese = lang === "ja";
   const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
-  const baseUrl = getBaseUrl(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
   const ageCounter = isRussian ? getRussianAgeCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
-  return { ...rest, s, isJapanese, isRussian, isDefaultLang, baseUrl, currentTime, ageCounter };
-};
-
-export const useLanguageFn = (lang: Lang) => {
-  const { t, ...rest } = LANGUAGES[lang];
-  const { d } = t;
-
-  const { locale, currency } = rest;
+  // functions
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
+  const formatCounter = (counter: string) => (isJapanese ? counter : ` ${counter}`);
 
-  return { ...rest, d, formatMonth, formatDate, formatCurrency };
+  return {
+    statics: { ...rest, s, isJapanese, isRussian, isDefaultLang, baseUrl: getBaseUrl(lang), currentTime, ageCounter },
+    functions: { d, formatMonth, formatDate, formatCurrency, formatCounter },
+  };
 };
 
-export const useLanguageHelper = () => {
+export const useLangHelper = () => {
   const validateLang = (lang: string | undefined) => z.enum(LANGS).safeParse(lang).data;
   const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
   const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);

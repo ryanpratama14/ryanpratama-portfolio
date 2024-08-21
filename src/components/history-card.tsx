@@ -4,19 +4,21 @@ import Text from "@/components/html/text";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { useLanguageFn } from "@/lib/internationalization";
+import { useLang } from "@/lib/internationalization";
 import { VARIANTS } from "@/styles";
-import type { DictionaryStatic, History, Lang } from "@/types";
+import type { History, Lang } from "@/types";
 import Link from "next/link";
 
 type Props = {
   data: History;
   lang: Lang;
-  s: DictionaryStatic;
 };
 
-export default function HistoryCard({ data, lang, s }: Props) {
-  const { formatMonth } = useLanguageFn(lang);
+export default function HistoryCard({ data, lang }: Props) {
+  const { functions, statics } = useLang(lang);
+  const { formatMonth } = functions;
+  const { s } = statics;
+
   const e = { ...s.PERSONAL_DATA.history[data.key], ...data };
 
   const Card = () => {
