@@ -1,6 +1,5 @@
 import type { LANGS } from "@/internationalization";
 import type { useLanguage } from "@/internationalization/functions";
-import type { IconifyIcon } from "@iconify/react/dist/iconify.js";
 import type { StaticImageData } from "next/image";
 import type { en } from "#/dictionaries/en";
 
@@ -12,10 +11,11 @@ export type Language = ReturnType<typeof useLanguage>;
 export type LanguageConst = ReturnType<typeof useLanguage>["const"];
 export type LanguageFunc = ReturnType<typeof useLanguage>["func"];
 
-export type Profile = { href?: string; icon: IconifyIcon | string; label: string };
-export type Contact = { href: string; label: string; icon: IconifyIcon | string };
+export type Profile = { href?: string; icon: string; label: string };
+export type Contact = { href: string; label: string; icon: string };
 export type Project = { label: string; desc: string; href: string; lists: string[]; src: StaticImageData };
 export type Certification = { name: string; src: StaticImageData; alt: string; label: string };
+export type TechStack = Record<keyof DictionaryStatic["MENUS"]["TECH_STACKS"], { label: string; icon: string; icon2?: string }[]>;
 export type Other = { languages: (keyof DictionaryStatic["PERSONAL_DATA"]["languages"])[]; education: History[] };
 
 export type History = {
@@ -27,8 +27,3 @@ export type History = {
   till: Date | null;
   duty?: string[];
 };
-
-export type TechStack = Record<
-  keyof DictionaryStatic["MENUS"]["TECH_STACKS"],
-  { label: string; icon: IconifyIcon | string; icon2?: IconifyIcon | string }[]
->;

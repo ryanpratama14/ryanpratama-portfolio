@@ -1,5 +1,5 @@
 import { useLanguage } from "@/internationalization/functions";
-import { PERSONALS } from "@/lib/constants";
+import { ICONS, PERSONALS } from "@/lib/constants";
 import type { Lang, Profile } from "@/types";
 
 export const getProfileData = (lang: Lang): Profile[] => {
@@ -10,9 +10,9 @@ export const getProfileData = (lang: Lang): Profile[] => {
   } = useLanguage(lang);
 
   return [
-    { href: "/resume.pdf", icon: "mdi:resume", label: s.SECTIONS.resume },
-    { icon: "mdi:work", label: `${PERSONALS.yoe}${formatCounter(s.SECTIONS.yearsExperience)}` },
-    { icon: "mdi:location", label: s.LOCATIONS.jakarta },
-    { icon: "mdi:person", label: `${PERSONALS.age}${formatCounter(ageCounter)}` },
+    { href: "/resume.pdf", icon: ICONS.resume, label: s.SECTIONS.resume },
+    { icon: ICONS.yoe, label: `${PERSONALS.yoe}${formatCounter(s.SECTIONS.yearsExperience)}` },
+    { icon: ICONS.location, label: s.LOCATIONS.jakarta },
+    { icon: ICONS.age, label: `${PERSONALS.age}${formatCounter(ageCounter)}` },
   ];
 };
