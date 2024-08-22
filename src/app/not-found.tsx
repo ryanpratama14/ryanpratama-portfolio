@@ -5,7 +5,7 @@ import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import { ICONS } from "@/lib/constants";
-import { useLang, useLangHelper } from "@/lib/internationalization";
+import { useLanguage, useLanguageHelper } from "@/lib/internationalization";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
@@ -26,7 +26,7 @@ export default function NotFound() {
   const {
     s,
     statics: { lang, isDefaultLang },
-  } = useLang(useLangHelper().validateMatchedLang(cookies().get("lang")?.value));
+  } = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value));
 
   return (
     <html lang={lang} className={notosans.variable}>

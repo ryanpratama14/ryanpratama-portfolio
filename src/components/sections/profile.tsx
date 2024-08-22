@@ -6,7 +6,7 @@ import LangSwitcher from "@/components/lang-switcher";
 import { setCookie } from "@/lib/actions";
 import { getProfileData } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { DEFAULT_LANG, useLang, useLangHelper } from "@/lib/internationalization";
+import { DEFAULT_LANG, useLanguage, useLanguageHelper } from "@/lib/internationalization";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
 import { cookies } from "next/headers";
@@ -64,7 +64,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
               </Text>
               {isDefaultLang ? null : (
                 <Text as="small" className="-translate-y-0.5">
-                  {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
+                  {useLanguage(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
                 </Text>
               )}
             </section>
@@ -78,7 +78,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
             </section>
           </section>
           {disableLangSwitcher ? null : (
-            <LangSwitcher storedLang={useLangHelper().validateLang(cookies().get("lang")?.value)} lang={lang} setCookie={setCookie} />
+            <LangSwitcher storedLang={useLanguageHelper().validateLang(cookies().get("lang")?.value)} lang={lang} setCookie={setCookie} />
           )}
         </section>
       </section>

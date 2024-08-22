@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/functions";
-import { LANGUAGE_OPTIONS, useLangHelper } from "@/lib/internationalization";
+import { LANGUAGE_OPTIONS, useLanguageHelper } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,7 +24,7 @@ export default function LangSwitcher({ storedLang, setCookie, lang }: Props) {
               "bg-graybg border-graydarker shadow-xl": isActive,
             })}
             key={targetLang}
-            href={useLangHelper().changeLang(targetLang, usePathname())}
+            href={useLanguageHelper().changeLang(targetLang, usePathname())}
             type="button"
           >
             <span className="sr-only">{`[${label} — ${targetLang}]: ${s.PERSONAL_DATA.fullName}. ${s.PERSONAL_DATA.softwareEngineer}. ${s.PERSONAL_DATA.summary}`}</span>

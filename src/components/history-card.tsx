@@ -4,7 +4,7 @@ import Text from "@/components/html/text";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/functions";
-import { useLang } from "@/lib/internationalization";
+import { useLanguage } from "@/lib/internationalization";
 import { VARIANTS } from "@/styles";
 import type { DictionaryStatic, History, Lang } from "@/types";
 import Link from "next/link";
@@ -18,7 +18,7 @@ type Props = {
 export default function HistoryCard({ data, lang, s }: Props) {
   const {
     functions: { formatMonth },
-  } = useLang(lang);
+  } = useLanguage(lang);
 
   const e = { ...s.PERSONAL_DATA.history[data.key], ...data };
 

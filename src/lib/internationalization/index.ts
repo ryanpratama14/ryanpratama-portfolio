@@ -16,7 +16,7 @@ export const LANGUAGES: Record<Lang, { flag: string; label: string; t: Dictionar
 };
 export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...e }));
 
-export const useLang = (lang: Lang) => {
+export const useLanguage = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
   const { d, s } = t;
   const { locale, currency } = rest;
@@ -43,7 +43,7 @@ export const useLang = (lang: Lang) => {
   };
 };
 
-export const useLangHelper = () => {
+export const useLanguageHelper = () => {
   const validateLang = (lang: string | undefined) => z.enum(LANGS).safeParse(lang).data;
   const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
   const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);

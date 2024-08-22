@@ -1,11 +1,11 @@
-import { DEFAULT_LANG, LANGS, useLangHelper } from "@/lib/internationalization";
+import { DEFAULT_LANG, LANGS, useLanguageHelper } from "@/lib/internationalization";
 import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const { getLangFromPath, isLangMissing, validateMatchedLang, validateLang } = useLangHelper();
+const { getLangFromPath, isLangMissing, validateMatchedLang, validateLang } = useLanguageHelper();
 
 const getLang = (req: NextRequest) => {
   const headers = new Headers(req.headers);

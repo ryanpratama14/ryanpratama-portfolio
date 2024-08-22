@@ -1,4 +1,4 @@
-import { useLang } from "@/lib/internationalization";
+import { useLanguage } from "@/lib/internationalization";
 import type { Certification, Contact, History, Lang, Other, Profile, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
@@ -23,7 +23,7 @@ export const getProfileData = (lang: Lang): Profile[] => {
     s,
     statics: { ageCounter },
     functions: { formatCounter },
-  } = useLang(lang);
+  } = useLanguage(lang);
 
   return [
     { href: "/resume.pdf", icon: "mdi:resume", label: s.SECTIONS.resume },

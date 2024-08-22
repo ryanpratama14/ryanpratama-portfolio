@@ -1,12 +1,12 @@
 import Message from "@/components/emails/message";
 import { env } from "@/env";
-import { DEFAULT_LANG, useLang } from "@/lib/internationalization";
+import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
 import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { THROW_TRPC } from "@/trpc/shared";
 import { Resend } from "resend";
 
-const { s } = useLang(DEFAULT_LANG);
+const { s } = useLanguage(DEFAULT_LANG);
 const resend = new Resend(env.RESEND_API_KEY);
 
 export const email = createTRPCRouter({
