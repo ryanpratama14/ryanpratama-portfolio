@@ -1,6 +1,6 @@
 import { PERSONALS } from "@/lib/constants";
-import { getBaseUrl } from "@/lib/functions";
-import { getRussianAgeCounter } from "@/lib/internationalization/helpers";
+import { URLS } from "@/lib/functions";
+import { getRussianYearCounter } from "@/lib/internationalization/helpers";
 import type { Dictionary, Lang } from "@/types";
 import { z } from "zod";
 import { en } from "#/dictionaries/en";
@@ -25,9 +25,9 @@ export const useLanguage = (lang: Lang) => {
   const isJapanese = lang === "ja";
   const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
-  const baseUrl = getBaseUrl(lang);
+  const baseUrlWithLang = URLS.base(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-  const ageCounter = isRussian ? getRussianAgeCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
+  const ageCounter = isRussian ? getRussianYearCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
   // functions
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
@@ -38,7 +38,7 @@ export const useLanguage = (lang: Lang) => {
   return {
     s,
     d,
-    statics: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrl, currentTime, ageCounter },
+    statics: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrlWithLang, currentTime, ageCounter },
     functions: { formatMonth, formatDate, formatCurrency, formatCounter },
   };
 };

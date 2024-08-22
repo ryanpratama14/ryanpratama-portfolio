@@ -1,4 +1,4 @@
-export const getRussianAgeCounter = (age: number) => {
+export const getRussianYearCounter = (age: number) => {
   let counter = "";
   let count = age % 100;
 
