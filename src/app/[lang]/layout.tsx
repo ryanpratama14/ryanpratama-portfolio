@@ -1,11 +1,13 @@
 import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
+import { env } from "@/env";
 import { LANGS, LANGUAGE_OPTIONS, useLanguage } from "@/lib/internationalization";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+import { Fragment } from "react";
 
 // styles
 import { VARIANTS } from "@/styles";
@@ -63,17 +65,27 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
+const VercelApps = () => {
+  if (env.NODE_ENV !== "production") return <Fragment />;
+
+  return (
+    <Fragment>
+      <Analytics />
+      <SpeedInsights />
+    </Fragment>
+  );
+};
+
 export default function RootLayout({ children, params }: Props) {
   return (
     <html lang={params.lang} className={notosans.variable}>
       <body>
-        <Analytics />
-        <SpeedInsights />
         <Providers>
           <main className={VARIANTS.Main()}>{children}</main>
         </Providers>
         <TransitionEffect />
         <ScrollToTop />
+        <VercelApps />
       </body>
     </html>
   );
