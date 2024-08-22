@@ -64,7 +64,7 @@
     @apply text-white bg-black font-notosans;
   }
   ul {
-    @apply text-xs lg:text-base ml-4 list-disc text-pretty;
+    @apply text-xs md:text-base ml-4 list-disc text-pretty;
   }
 }
 
