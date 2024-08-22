@@ -1,7 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/functions";
-import { LANGUAGE_OPTIONS, useLanguageHelper } from "@/lib/internationalization";
+import { LANGUAGE_OPTIONS } from "@/internationalization";
+import { useLanguageHelper } from "@/internationalization/functions";
+import { cn } from "@/lib/utils";
 import type { Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

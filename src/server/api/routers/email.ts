@@ -1,6 +1,7 @@
 import Message from "@/components/emails/message";
 import { env } from "@/env";
-import { DEFAULT_LANG, useLanguage } from "@/lib/internationalization";
+import { DEFAULT_LANG } from "@/internationalization";
+import { useLanguage } from "@/internationalization/functions";
 import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { THROW_TRPC } from "@/trpc/shared";

@@ -2,7 +2,7 @@
 
 import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
-import { cn } from "@/lib/functions";
+import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import * as React from "react";

@@ -1,5 +1,5 @@
 import Text from "@/components/html/text";
-import { cn } from "@/lib/functions";
+import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
 import { type ComponentProps, forwardRef, useId } from "react";
 

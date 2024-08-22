@@ -1,6 +1,6 @@
 "use client";
 
-import { URLS } from "@/lib/functions";
+import { URLS } from "@/lib/constants";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";

@@ -2,7 +2,7 @@
 
 import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
-import { cn, loadToTop } from "@/lib/functions";
+import { cn, loadToTop } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {

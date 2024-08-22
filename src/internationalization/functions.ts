@@ -1,20 +1,23 @@
-import { PERSONALS } from "@/lib/constants";
-import { URLS } from "@/lib/functions";
-import { getRussianYearCounter } from "@/lib/internationalization/helpers";
-import type { Dictionary, Lang } from "@/types";
+import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
+import { PERSONALS, URLS } from "@/lib/constants";
+import type { Lang } from "@/types";
 import { z } from "zod";
-import { en } from "#/dictionaries/en";
-import { ja } from "#/dictionaries/ja";
-import { ru } from "#/dictionaries/ru";
 
-export const LANGS = ["ja", "en", "ru"] as const;
-export const DEFAULT_LANG: Lang = "en";
-export const LANGUAGES: Record<Lang, { flag: string; label: string; t: Dictionary; locale: string; lang: Lang; currency: string }> = {
-  en: { flag: "🇺🇸", label: "English", lang: "en", locale: "en-US", currency: "USD", t: en },
-  ja: { flag: "🇯🇵", label: "日本語", lang: "ja", locale: "ja-JP", currency: "JPY", t: ja },
-  ru: { flag: "🇷🇺", label: "Русский", lang: "ru", locale: "ru-RU", currency: "RUR", t: ru },
+const getRussianYearCounter = (age: number): string => {
+  const count = age % 100;
+  if (count >= 5 && count <= 20) return "лет";
+
+  switch (age % 10) {
+    case 1:
+      return "год";
+    case 2:
+    case 3:
+    case 4:
+      return "года";
+    default:
+      return "лет";
+  }
 };
-export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...e }));
 
 export const useLanguage = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
@@ -29,7 +32,7 @@ export const useLanguage = (lang: Lang) => {
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
   const ageCounter = isRussian ? getRussianYearCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
-  // fn
+  // func
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
@@ -39,7 +42,7 @@ export const useLanguage = (lang: Lang) => {
     s,
     d,
     const: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrlWithLang, currentTime, ageCounter },
-    fn: { formatMonth, formatDate, formatCurrency, formatCounter },
+    func: { formatMonth, formatDate, formatCurrency, formatCounter },
   };
 };
 

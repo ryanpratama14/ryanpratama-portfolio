@@ -3,7 +3,7 @@
 import Button from "@/components/html/button";
 import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
-import { cn } from "@/lib/functions";
+import { cn } from "@/lib/utils";
 import { Dialog as DialogHead, DialogPanel } from "@headlessui/react";
 import type { ComponentProps } from "react";
 

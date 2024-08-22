@@ -6,7 +6,7 @@ import Experience from "@/components/sections/experience";
 import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import { useLanguage } from "@/lib/internationalization";
+import { useLanguage } from "@/internationalization/functions";
 import type { Lang } from "@/types";
 import { Fragment } from "react";
 
@@ -16,7 +16,7 @@ export default function Home({ params }: Props) {
   const {
     s,
     const: { lang, isJapanese, isDefaultLang },
-    fn: { formatDate },
+    func: { formatDate },
   } = useLanguage(params.lang);
 
   const updateDate = formatDate(new Date("2024-08-18"));

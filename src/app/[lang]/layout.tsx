@@ -1,7 +1,8 @@
 import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
 import { env } from "@/env";
-import { LANGS, LANGUAGE_OPTIONS, useLanguage } from "@/lib/internationalization";
+import { LANGS, LANGUAGE_OPTIONS } from "@/internationalization";
+import { useLanguage } from "@/internationalization/functions";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";

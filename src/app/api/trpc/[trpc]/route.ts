@@ -1,5 +1,5 @@
 import { env } from "@/env";
-import { ENDPOINTS } from "@/lib/functions";
+import { ENDPOINTS } from "@/lib/constants";
 import { appRouter } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
 import { CONSOLE_TRPC } from "@/trpc/shared";

@@ -1,7 +1,6 @@
-import { getDate } from "@/lib/functions";
-import { useLanguage } from "@/lib/internationalization";
-import type { Certification, Contact, History, Lang, Other, Profile, Project, TechStack } from "@/types";
-import { differenceInMonths, differenceInYears } from "date-fns";
+import { getBaseUrl } from "@/lib/utils";
+import type { Certification, Contact, History, Lang, Other, Project, TechStack } from "@/types";
+import dayjs from "dayjs";
 
 // projects
 import belinsky from "@/assets/belinsky.jpg";
@@ -19,24 +18,20 @@ import faotech from "@/assets/logo-faotech.png";
 import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
 
-export const getProfileData = (lang: Lang): Profile[] => {
-  const {
-    s,
-    const: { ageCounter },
-    fn: { formatCounter },
-  } = useLanguage(lang);
+export const ENDPOINTS = {
+  trpc: "/api/trpc",
+};
 
-  return [
-    { href: "/resume.pdf", icon: "mdi:resume", label: s.SECTIONS.resume },
-    { icon: "mdi:work", label: `${PERSONALS.yoe}${formatCounter(s.SECTIONS.yearsExperience)}` },
-    { icon: "mdi:location", label: s.LOCATIONS.jakarta },
-    { icon: "mdi:person", label: `${PERSONALS.age}${formatCounter(ageCounter)}` },
-  ];
+export const URLS = {
+  BASE: getBaseUrl(),
+  BASE_TRPC: `${getBaseUrl()}${ENDPOINTS.trpc}`,
+  BASE_LANG: (lang: Lang) => `${getBaseUrl()}/${lang}`,
+  FULL: (path: string) => `${getBaseUrl()}${path}`,
 };
 
 export const PERSONALS = {
-  age: differenceInYears(getDate(), getDate("2000-07-14")),
-  yoe: (differenceInMonths(getDate(), getDate("2022-09-01")) / 12).toFixed(1),
+  age: dayjs().diff(dayjs("2000-07-14"), "year"),
+  yoe: (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1),
 };
 
 export const PHOTOS = {
@@ -184,8 +179,8 @@ export const OTHERS: Other = {
       key: "kfu",
       href: "https://kpfu.ru",
       src: PHOTOS.logo.kfu,
-      since: getDate("2019-09"),
-      till: getDate("2023-06"),
+      since: dayjs("2019-09").toDate(),
+      till: dayjs("2023-06").toDate(),
       hasSquarePhoto: true,
     },
   ],
@@ -196,7 +191,7 @@ export const EXPERIENCES: History[] = [
     key: "nutech",
     src: PHOTOS.logo.nutech,
     href: "https://www.nutech-integrasi.com",
-    since: getDate("2023-08"),
+    since: dayjs("2023-08").toDate(),
     till: null,
     duty: [
       "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
@@ -217,8 +212,8 @@ export const EXPERIENCES: History[] = [
     key: "faotech",
     src: PHOTOS.logo.faotech,
     href: "https://faotech.dev",
-    since: getDate("2022-09"),
-    till: getDate("2023-08"),
+    since: dayjs("2022-09").toDate(),
+    till: dayjs("2023-08").toDate(),
     duty: [
       "Managed a front-end team of 2 to 3 engineers across 3 projects.",
       "Built responsive web apps compatible across devices, integrating loading animations.",

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/functions";
+import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
 import { type ComponentProps, forwardRef } from "react";
 import { PulseLoader } from "react-spinners";
