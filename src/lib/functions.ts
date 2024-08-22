@@ -7,13 +7,20 @@ export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs));
 export const loadToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 export const copyData = <T>(data: T): T => structuredClone(data);
 
+// url helpers
 const getBaseUrl = () => {
   if (isClient) return `${window.location.origin}`;
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return `http://localhost:${process.env.PORT ?? 3000}`;
 };
 
+export const ENDPOINTS = {
+  trpc: "/api/trpc",
+};
+
 export const URLS = {
-  base: (lang?: Lang) => `${getBaseUrl()}${lang ? `/${lang}` : ""}`,
-  full: (path: string) => `${getBaseUrl()}${path}`,
+  BASE: getBaseUrl(),
+  BASE_TRPC: `${getBaseUrl()}${ENDPOINTS.trpc}`,
+  BASE_LANG: (lang: Lang) => `${getBaseUrl()}/${lang}`,
+  FULL: (path: string) => `${getBaseUrl()}${path}`,
 };

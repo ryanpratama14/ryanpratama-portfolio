@@ -30,7 +30,7 @@ export default function Providers({ children }: Props) {
         }),
         httpBatchStreamLink({
           transformer,
-          url: `${URLS.base()}/api/trpc`,
+          url: URLS.BASE_TRPC,
           headers: () => {
             const headers = new Headers();
             headers.set("x-trpc-source", "nextjs-react");

@@ -25,7 +25,7 @@ export const useLanguage = (lang: Lang) => {
   const isJapanese = lang === "ja";
   const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
-  const baseUrlWithLang = URLS.base(lang);
+  const baseUrlWithLang = URLS.BASE_LANG(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
   const ageCounter = isRussian ? getRussianYearCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
