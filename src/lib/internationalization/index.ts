@@ -21,7 +21,7 @@ export const useLanguage = (lang: Lang) => {
   const { d, s } = t;
   const { locale, currency } = rest;
 
-  // statics
+  // const
   const isJapanese = lang === "ja";
   const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
@@ -29,7 +29,7 @@ export const useLanguage = (lang: Lang) => {
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
   const ageCounter = isRussian ? getRussianYearCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
-  // functions
+  // fn
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
@@ -38,8 +38,8 @@ export const useLanguage = (lang: Lang) => {
   return {
     s,
     d,
-    statics: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrlWithLang, currentTime, ageCounter },
-    functions: { formatMonth, formatDate, formatCurrency, formatCounter },
+    const: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrlWithLang, currentTime, ageCounter },
+    fn: { formatMonth, formatDate, formatCurrency, formatCounter },
   };
 };
 

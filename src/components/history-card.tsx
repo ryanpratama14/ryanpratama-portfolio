@@ -17,7 +17,7 @@ type Props = {
 
 export default function HistoryCard({ data, lang, s }: Props) {
   const {
-    functions: { formatMonth },
+    fn: { formatMonth },
   } = useLanguage(lang);
 
   const e = { ...s.PERSONAL_DATA.history[data.key], ...data };

@@ -19,7 +19,7 @@ export const createQueryClient = () => {
   });
 };
 
-const log = `${useLanguage(DEFAULT_LANG).statics.currentTime} 👉`;
+const log = `${useLanguage(DEFAULT_LANG).const.currentTime} 👉`;
 export const CONSOLE_TRPC = {
   info: (message: string) => console.info(`🔵 ${log} ${message}`),
   ok: (message: string) => console.log(`🟢 ${log} ${message}`),

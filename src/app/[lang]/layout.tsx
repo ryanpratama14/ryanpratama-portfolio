@@ -29,7 +29,7 @@ export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async ({ params }: { params: { lang: Lang } }): Promise<Metadata> => {
   const {
     s: { PERSONAL_DATA: me },
-    statics: { locale, baseUrlWithLang: url },
+    const: { locale, baseUrlWithLang: url },
   } = useLanguage(params.lang);
 
   const title = `${me.fullName} — ${me.softwareEngineer}`;

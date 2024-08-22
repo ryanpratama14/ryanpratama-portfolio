@@ -15,8 +15,8 @@ type Props = { params: { lang: Lang } };
 export default function Home({ params }: Props) {
   const {
     s,
-    statics: { lang, isJapanese, isDefaultLang },
-    functions: { formatDate },
+    const: { lang, isJapanese, isDefaultLang },
+    fn: { formatDate },
   } = useLanguage(params.lang);
 
   const updateDate = formatDate(new Date("2024-08-18"));

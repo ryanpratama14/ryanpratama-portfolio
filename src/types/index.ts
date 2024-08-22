@@ -8,8 +8,8 @@ export type Dictionary = typeof en;
 export type DictionaryStatic = typeof en.s;
 export type DictionaryDynamic = typeof en.d;
 export type Language = ReturnType<typeof useLanguage>;
-export type LanguageStatic = ReturnType<typeof useLanguage>["statics"];
-export type LanguageFunction = ReturnType<typeof useLanguage>["functions"];
+export type LanguageConst = ReturnType<typeof useLanguage>["const"];
+export type LanguageFunction = ReturnType<typeof useLanguage>["fn"];
 
 export type Profile = { href?: string; icon: IconifyIcon | string; label: string };
 export type Contact = { href: string; label: string; icon: IconifyIcon | string };

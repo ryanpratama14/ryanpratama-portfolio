@@ -1,6 +1,7 @@
+import { getDate } from "@/lib/functions";
 import { useLanguage } from "@/lib/internationalization";
 import type { Certification, Contact, History, Lang, Other, Profile, Project, TechStack } from "@/types";
-import dayjs from "dayjs";
+import { differenceInMonths, differenceInYears } from "date-fns";
 
 // projects
 import belinsky from "@/assets/belinsky.jpg";
@@ -21,8 +22,8 @@ import nutech from "@/assets/logo-nutech.jpeg";
 export const getProfileData = (lang: Lang): Profile[] => {
   const {
     s,
-    statics: { ageCounter },
-    functions: { formatCounter },
+    const: { ageCounter },
+    fn: { formatCounter },
   } = useLanguage(lang);
 
   return [
@@ -34,8 +35,8 @@ export const getProfileData = (lang: Lang): Profile[] => {
 };
 
 export const PERSONALS = {
-  age: dayjs().diff(dayjs("2000-07-14"), "year"),
-  yoe: (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1),
+  age: differenceInYears(getDate(), getDate("2000-07-14")),
+  yoe: (differenceInMonths(getDate(), getDate("2022-09-01")) / 12).toFixed(1),
 };
 
 export const PHOTOS = {
@@ -183,8 +184,8 @@ export const OTHERS: Other = {
       key: "kfu",
       href: "https://kpfu.ru",
       src: PHOTOS.logo.kfu,
-      since: dayjs("2019-09").toDate(),
-      till: dayjs("2023-06").toDate(),
+      since: getDate("2019-09"),
+      till: getDate("2023-06"),
       hasSquarePhoto: true,
     },
   ],
@@ -195,7 +196,7 @@ export const EXPERIENCES: History[] = [
     key: "nutech",
     src: PHOTOS.logo.nutech,
     href: "https://www.nutech-integrasi.com",
-    since: dayjs("2023-08").toDate(),
+    since: getDate("2023-08"),
     till: null,
     duty: [
       "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
@@ -216,8 +217,8 @@ export const EXPERIENCES: History[] = [
     key: "faotech",
     src: PHOTOS.logo.faotech,
     href: "https://faotech.dev",
-    since: dayjs("2022-09").toDate(),
-    till: dayjs("2023-08").toDate(),
+    since: getDate("2022-09"),
+    till: getDate("2023-08"),
     duty: [
       "Managed a front-end team of 2 to 3 engineers across 3 projects.",
       "Built responsive web apps compatible across devices, integrating loading animations.",

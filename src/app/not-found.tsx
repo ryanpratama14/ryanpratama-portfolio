@@ -25,7 +25,7 @@ const notosans = Noto_Sans({
 export default function NotFound() {
   const {
     s,
-    statics: { lang, isDefaultLang },
+    const: { lang, isDefaultLang },
   } = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value));
 
   return (

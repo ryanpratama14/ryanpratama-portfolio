@@ -19,7 +19,7 @@ export default function CertificationPage({ params }: Props) {
 
   const {
     s,
-    statics: { isDefaultLang },
+    const: { isDefaultLang },
   } = useLanguage(lang);
 
   return (
