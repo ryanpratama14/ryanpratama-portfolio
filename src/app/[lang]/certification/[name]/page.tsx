@@ -4,22 +4,23 @@ import LinkButton from "@/components/html/link-button";
 import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import { useLanguage } from "@/i18n.functions";
+import { useLanguage } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
-type Props = { params: { locale: Lang; name: string } };
+type Props = { params: { lang: Lang; name: string } };
 
 export default function CertificationPage({ params }: Props) {
-  const data = CERTIFICATIONS.find((e) => e.name === params.name);
+  const { name, lang } = params;
+  const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 
   const {
     s,
-    const: { isDefaultLang, lang },
-  } = useLanguage(params.locale);
+    const: { isDefaultLang },
+  } = useLanguage(lang);
 
   return (
     <Fragment>

@@ -1,12 +1,12 @@
-import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/i18n.config";
+import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import { URLS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import { z } from "zod";
 
-export const useLanguage = (targetLocale: Lang) => {
-  const { t, ...rest } = LANGUAGES[targetLocale];
+export const useLanguage = (lang: Lang) => {
+  const { t, ...rest } = LANGUAGES[lang];
   const { d, s } = t;
-  const { locale, currency, lang } = rest;
+  const { locale, currency } = rest;
 
   // const
   const isJapanese = lang === "ja";
