@@ -22,10 +22,12 @@ const notosans = Noto_Sans({
 });
 
 export default function NotFound() {
+  const storedLang = useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value);
+
   const {
     s,
     const: { lang, isDefaultLang },
-  } = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value));
+  } = useLanguage(storedLang);
 
   return (
     <html lang={lang} className={notosans.variable}>

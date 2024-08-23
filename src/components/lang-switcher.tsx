@@ -6,15 +6,10 @@ import { cn } from "@/lib/utils";
 import type { Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
-type Props = { storedLang: Lang | undefined; lang: Lang; setCookie: (name: string, value: string) => Promise<void> };
+type Props = { lang: Lang };
 
-export default function LangSwitcher({ storedLang, setCookie, lang }: Props) {
-  useEffect(() => {
-    if (storedLang !== lang || !storedLang) setCookie("lang", lang);
-  }, [lang, storedLang, setCookie]);
-
+export default function LangSwitcher({ lang }: Props) {
   return (
     <section className="flex">
       {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag, label }) => {
