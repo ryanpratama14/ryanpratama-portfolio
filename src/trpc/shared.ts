@@ -1,5 +1,5 @@
-import { DEFAULT_LANG } from "@/internationalization";
-import { useLanguage } from "@/internationalization/functions";
+import { DEFAULT_LANG } from "@/i18n.config";
+import { useLanguage } from "@/i18n.functions";
 import type { AppRouter } from "@/server/api/root";
 import { QueryClient, defaultShouldDehydrateQuery } from "@tanstack/react-query";
 import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";

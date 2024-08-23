@@ -1,6 +1,6 @@
-import { en } from "@/internationalization/dictionaries/en";
-import { ja } from "@/internationalization/dictionaries/ja";
-import { ru } from "@/internationalization/dictionaries/ru";
+import { en } from "@/lib/dictionaries/static/en";
+import { ja } from "@/lib/dictionaries/static/ja";
+import { ru } from "@/lib/dictionaries/static/ru";
 import type { Dictionary, Lang } from "@/types";
 
 export const LANGS = ["ja", "en", "ru"] as const;

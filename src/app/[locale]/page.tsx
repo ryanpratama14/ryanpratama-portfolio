@@ -6,18 +6,20 @@ import Experience from "@/components/sections/experience";
 import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import { useLanguage } from "@/internationalization/functions";
+import { useLanguage } from "@/i18n.functions";
 import type { Lang } from "@/types";
+import { unstable_setRequestLocale } from "next-intl/server";
 import { Fragment } from "react";
 
-type Props = { params: { lang: Lang } };
+type Props = { params: { locale: Lang } };
 
 export default function Home({ params }: Props) {
+  unstable_setRequestLocale(params.locale);
   const {
     s,
     const: { lang, isJapanese, isDefaultLang },
     func: { formatDate },
-  } = useLanguage(params.lang);
+  } = useLanguage(params.locale);
 
   const updateDate = formatDate(new Date("2024-08-18"));
   const updatedOn = isJapanese ? `${updateDate}${s.MENUS.updatedOn}` : `${s.MENUS.updatedOn} ${updateDate}`;

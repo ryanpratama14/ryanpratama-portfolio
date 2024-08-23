@@ -1,4 +1,4 @@
-import { getRussianYearCounter } from "@/internationalization/helpers";
+import { getRussianYearCounter } from "@/i18n.helpers";
 import { PERSONALS } from "@/lib/constants";
 import type { Dictionary } from "@/types";
 

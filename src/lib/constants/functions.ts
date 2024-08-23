@@ -1,4 +1,4 @@
-import { useLanguage } from "@/internationalization/functions";
+import { useLanguage } from "@/i18n.functions";
 import { ICONS, PERSONALS } from "@/lib/constants";
 import type { Lang, Profile } from "@/types";
 

@@ -1,6 +1,6 @@
-import type { LANGS } from "@/internationalization";
-import type { en } from "@/internationalization/dictionaries/en";
-import type { useLanguage } from "@/internationalization/functions";
+import type { LANGS } from "@/i18n.config";
+import type { useLanguage } from "@/i18n.functions";
+import type { en } from "@/lib/dictionaries/static/en";
 import type { StaticImageData } from "next/image";
 
 export type Lang = (typeof LANGS)[number];

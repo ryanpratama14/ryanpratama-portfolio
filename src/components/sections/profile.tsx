@@ -3,15 +3,12 @@ import Iconify from "@/components/html/iconify";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
-import { DEFAULT_LANG } from "@/internationalization";
-import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
-import { setCookie } from "@/lib/actions";
-import { COOKIES } from "@/lib/constants";
+import { DEFAULT_LANG } from "@/i18n.config";
+import { useLanguage } from "@/i18n.functions";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
-import { cookies } from "next/headers";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -79,9 +76,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
               <ProfileData />
             </section>
           </section>
-          {disableLangSwitcher ? null : (
-            <LangSwitcher lang={lang} setCookie={setCookie} storedLang={useLanguageHelper().validateLang(cookies().get(COOKIES.lang)?.value)} />
-          )}
+          {disableLangSwitcher ? null : <LangSwitcher lang={lang} />}
         </section>
       </section>
 

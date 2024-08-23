@@ -19,7 +19,7 @@ import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
 
 export const COOKIES = {
-  lang: "lang",
+  lang: "NEXT_LOCALE",
 };
 
 export const ENDPOINTS = {

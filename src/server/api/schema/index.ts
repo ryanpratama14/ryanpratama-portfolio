@@ -1,4 +1,4 @@
-import { LANGS } from "@/internationalization";
+import { LANGS } from "@/i18n.config";
 import type { DictionaryStatic } from "@/types";
 import { z } from "zod";
 

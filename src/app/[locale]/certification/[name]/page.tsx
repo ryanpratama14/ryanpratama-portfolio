@@ -4,7 +4,7 @@ import LinkButton from "@/components/html/link-button";
 import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import { useLanguage } from "@/internationalization/functions";
+import { useLanguage } from "@/i18n.functions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import { notFound } from "next/navigation";

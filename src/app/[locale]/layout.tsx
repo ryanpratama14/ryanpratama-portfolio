@@ -1,11 +1,13 @@
 import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
-import { LANGS, LANGUAGE_OPTIONS } from "@/internationalization";
-import { useLanguage } from "@/internationalization/functions";
+import { LANGS, LANGUAGE_OPTIONS } from "@/i18n.config";
+import { useLanguage } from "@/i18n.functions";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 
 // styles
 import { VARIANTS } from "@/styles";
@@ -23,12 +25,12 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
-export const generateMetadata = async ({ params }: { params: { lang: Lang } }): Promise<Metadata> => {
+export const generateStaticParams = async () => LANGS.map((locale) => ({ locale }));
+export const generateMetadata = async ({ params }: { params: { locale: Lang } }): Promise<Metadata> => {
   const {
     s: { PERSONAL_DATA: me },
     const: { locale, baseUrlWithLang: url },
-  } = useLanguage(params.lang);
+  } = useLanguage(params.locale);
 
   const title = `${me.fullName} — ${me.softwareEngineer}`;
   const description = LANGUAGE_OPTIONS.map((e) => {
@@ -61,15 +63,20 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
   };
 };
 
-type Props = { params: { lang: Lang }; children: React.ReactNode };
+type Props = { params: { locale: Lang }; children: React.ReactNode };
 
-export default function RootLayout({ children, params }: Props) {
+export default async function RootLayout({ children, params }: Props) {
+  unstable_setRequestLocale(params.locale);
+  const messages = await getMessages();
+
   return (
-    <html lang={params.lang} className={notosans.variable}>
+    <html lang={params.locale} className={notosans.variable}>
       <body>
-        <Providers>
-          <main className={VARIANTS.Main()}>{children}</main>
-        </Providers>
+        <NextIntlClientProvider messages={messages}>
+          <Providers>
+            <main className={VARIANTS.Main()}>{children}</main>
+          </Providers>
+        </NextIntlClientProvider>
         <TransitionEffect />
         <ScrollToTop />
         <VercelApps />

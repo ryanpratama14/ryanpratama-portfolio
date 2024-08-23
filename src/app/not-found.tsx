@@ -5,7 +5,7 @@ import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
-import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
+import { useLanguage, useLanguageHelper } from "@/i18n.functions";
 import { COOKIES, ICONS } from "@/lib/constants";
 import { cookies } from "next/headers";
 
