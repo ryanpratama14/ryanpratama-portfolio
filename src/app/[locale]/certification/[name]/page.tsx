@@ -10,17 +10,16 @@ import type { Lang } from "@/types";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
-type Props = { params: { lang: Lang; name: string } };
+type Props = { params: { locale: Lang; name: string } };
 
 export default function CertificationPage({ params }: Props) {
-  const { name, lang } = params;
-  const data = CERTIFICATIONS.find((e) => e.name === name);
+  const data = CERTIFICATIONS.find((e) => e.name === params.name);
   if (!data) notFound();
 
   const {
     s,
-    const: { isDefaultLang },
-  } = useLanguage(lang);
+    const: { isDefaultLang, lang },
+  } = useLanguage(params.locale);
 
   return (
     <Fragment>
