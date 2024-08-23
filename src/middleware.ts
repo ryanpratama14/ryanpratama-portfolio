@@ -1,5 +1,6 @@
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { useLanguageHelper } from "@/internationalization/functions";
+import { COOKIES } from "@/lib/constants";
 import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
@@ -19,11 +20,11 @@ const getLang = (req: NextRequest) => {
 
 export const middleware = (req: NextRequest) => {
   const path = req.nextUrl.pathname;
-  const storedLang = req.cookies.get("lang")?.value as Lang | undefined;
+  const storedLang = req.cookies.get(COOKIES.lang)?.value as Lang | undefined;
   const lang = getLangFromPath(path) ?? storedLang ?? getLang(req);
   const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
   const response = isLangMissing(path) ? NextResponse.redirect(newUrl) : NextResponse.next();
-  if (!validateLang(lang)) response.cookies.set("lang", getLang(req), { httpOnly: true, sameSite: "lax" });
+  if (!validateLang(lang)) response.cookies.set(COOKIES.lang, getLang(req), { httpOnly: true, sameSite: "lax" });
   return response;
 };
 
