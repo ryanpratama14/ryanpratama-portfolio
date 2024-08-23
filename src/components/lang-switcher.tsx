@@ -2,20 +2,14 @@
 
 import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { useLanguageHelper } from "@/internationalization/functions";
-import { COOKIES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import type { Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
-type Props = { lang: Lang; storedLang: Lang | undefined; setCookie: (name: string, value: string) => void };
+type Props = { lang: Lang };
 
-export default function LangSwitcher({ lang, setCookie, storedLang }: Props) {
-  useEffect(() => {
-    if (lang !== storedLang || !storedLang) setCookie(COOKIES.lang, lang);
-  }, [lang, setCookie, storedLang]);
-
+export default function LangSwitcher({ lang }: Props) {
   return (
     <section className="flex">
       {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag, label }) => {
