@@ -6,8 +6,8 @@ import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
-import { COOKIES, ICONS } from "@/lib/constants";
-import { cookies } from "next/headers";
+import { ICONS } from "@/lib/constants";
+import { api } from "@/trpc/server";
 
 // styles
 import { VARIANTS } from "@/styles";
@@ -21,8 +21,8 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-export default function NotFound() {
-  const storedLang = useLanguageHelper().validateMatchedLang(cookies().get(COOKIES.lang)?.value);
+export default async function NotFound() {
+  const storedLang = useLanguageHelper().validateMatchedLang(await api.lang.get());
 
   const {
     s,
