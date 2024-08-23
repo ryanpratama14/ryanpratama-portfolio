@@ -2,42 +2,36 @@
 
 import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { useLanguageHelper } from "@/internationalization/functions";
+import { COOKIES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import type { Lang } from "@/types";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { Fragment } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
-type Props = { lang: Lang };
+type Props = { lang: Lang; setCookie: (name: string, value: string) => void; storedLang: Lang | undefined };
 
-export default function LangSwitcher({ lang }: Props) {
-  const router = useRouter();
-  const path = usePathname();
-  const { changeLang } = useLanguageHelper();
+export default function LangSwitcher({ lang, setCookie, storedLang }: Props) {
+  useEffect(() => {
+    if (!storedLang || storedLang !== lang) setCookie(COOKIES.lang, lang);
+  }, [storedLang, lang, setCookie]);
 
   return (
     <section className="flex">
       {LANGUAGE_OPTIONS.map(({ lang: targetLang, t: { s }, flag, label }) => {
         const isActive = lang === targetLang;
-        const href = changeLang(targetLang, path);
-
         return (
-          <Fragment key={targetLang}>
-            <Link key={targetLang} href={href} className="sr-only" />
-            <button
-              className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
-                "bg-graybg border-graydarker shadow-xl": isActive,
-              })}
-              onClick={() => {
-                router.push(href);
-                router.refresh();
-              }}
-              type="button"
-            >
-              <span className="sr-only">{`[${label} — ${targetLang}]: ${s.PERSONAL_DATA.fullName}. ${s.PERSONAL_DATA.softwareEngineer}. ${s.PERSONAL_DATA.summary}`}</span>
-              {flag}
-            </button>
-          </Fragment>
+          <Link
+            className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
+              "bg-graybg border-graydarker shadow-xl": isActive,
+            })}
+            key={targetLang}
+            href={useLanguageHelper().changeLang(targetLang, usePathname())}
+            type="button"
+          >
+            <span className="sr-only">{`[${label} — ${targetLang}]: ${s.PERSONAL_DATA.fullName}. ${s.PERSONAL_DATA.softwareEngineer}. ${s.PERSONAL_DATA.summary}`}</span>
+            {flag}
+          </Link>
         );
       })}
     </section>
