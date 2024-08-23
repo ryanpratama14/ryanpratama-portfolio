@@ -1,7 +1,7 @@
 import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
-import { LANGS, LANGUAGE_OPTIONS } from "@/i18n.config";
+import { LANGS } from "@/i18n.config";
 import { useLanguage } from "@/i18n.functions";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
@@ -33,14 +33,7 @@ export const generateMetadata = async ({ params }: { params: { locale: Lang } })
   } = useLanguage(params.locale);
 
   const title = `${me.fullName} — ${me.softwareEngineer}`;
-  const description = LANGUAGE_OPTIONS.map((e) => {
-    const {
-      t: {
-        s: { PERSONAL_DATA: me2 },
-      },
-    } = e;
-    return `${me2.fullName} — ${me2.softwareEngineer} ${me2.summary}`;
-  }).join(" ");
+  const description = `${title}. ${me.summary}`;
 
   return {
     manifest: "/manifest.json",
