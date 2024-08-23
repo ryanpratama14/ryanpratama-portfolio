@@ -6,13 +6,13 @@ import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
-import { ICONS } from "@/lib/constants";
-import { api } from "@/trpc/server";
+import { COOKIES, ICONS } from "@/lib/constants";
 
 // styles
 import { VARIANTS } from "@/styles";
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
+import { cookies } from "next/headers";
 
 const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -22,12 +22,10 @@ const notosans = Noto_Sans({
 });
 
 export default async function NotFound() {
-  const storedLang = useLanguageHelper().validateMatchedLang(await api.lang.get());
-
   const {
     s,
     const: { lang, isDefaultLang },
-  } = useLanguage(storedLang);
+  } = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get(COOKIES.lang)?.value));
 
   return (
     <html lang={lang} className={notosans.variable}>
