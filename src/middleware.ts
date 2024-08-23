@@ -24,11 +24,7 @@ export const middleware = (req: NextRequest) => {
   const lang = getLangFromPath(path) ?? storedLang ?? getLang(req);
   const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
   const response = isLangMissing(path) ? NextResponse.redirect(newUrl) : NextResponse.next();
-
-  if (!storedLang || getLangFromPath(path) !== storedLang) {
-    response.cookies.set(COOKIES.lang, !validateLang(lang) ? getLang(req) : lang, { httpOnly: true, sameSite: "lax" });
-  }
-
+  response.cookies.set(COOKIES.lang, !validateLang(lang) ? getLang(req) : lang, { httpOnly: true, sameSite: "lax" });
   return response;
 };
 
