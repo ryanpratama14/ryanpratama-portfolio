@@ -4,10 +4,9 @@ import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
+import VercelApps from "@/components/vercel-apps";
 import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
 
 // styles
@@ -31,14 +30,12 @@ export default function NotFound() {
   return (
     <html lang={lang} className={notosans.variable}>
       <body>
-        <Analytics />
-        <SpeedInsights />
         <main className={VARIANTS.Main()}>
           <Profile disableLangSwitcher s={s} lang={lang} isDefaultLang={isDefaultLang} />
           <Contacts s={s} />
           <section className="flex flex-col items-center justify-center mt-6">
             <Iconify icon={ICONS.notFound} width={250} />
-            <Text as="heading">
+            <Text as="heading" className="text-center">
               <h1>{s.SECTIONS.notFound}</h1>
             </Text>
 
@@ -48,6 +45,7 @@ export default function NotFound() {
           </section>
         </main>
 
+        <VercelApps />
         <TransitionEffect />
       </body>
     </html>
