@@ -6,7 +6,7 @@ import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
-import { ICONS } from "@/lib/constants";
+import { COOKIES, ICONS } from "@/lib/constants";
 import { cookies } from "next/headers";
 
 // styles
@@ -22,7 +22,7 @@ const notosans = Noto_Sans({
 });
 
 export default function NotFound() {
-  const storedLang = useLanguageHelper().validateMatchedLang(cookies().get("lang")?.value);
+  const storedLang = useLanguageHelper().validateMatchedLang(cookies().get(COOKIES.lang)?.value);
 
   const {
     s,

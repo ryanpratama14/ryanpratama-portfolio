@@ -18,6 +18,10 @@ import faotech from "@/assets/logo-faotech.png";
 import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
 
+export const COOKIES = {
+  lang: "lang",
+};
+
 export const ENDPOINTS = {
   trpc: "/api/trpc",
 };
