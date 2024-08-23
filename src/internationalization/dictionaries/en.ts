@@ -27,9 +27,14 @@ export const en = {
       summary:
         "Experienced Software Engineer specializing in front-end development. Skilled in crafting high-quality solutions tailored to client requirements, with a commitment to staying updated on industry trends and emerging technologies.",
       softwareEngineer: "Software Engineer",
-      age: "yo",
+
       about:
         "In my third semester at university, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan, Russia. Along with other students, we learned the basics of JavaScript and eventually formed a software house startup called faoTech in 2022. As I developed my skills, I discovered a passion for front-end development and decided to specialize in this field.",
+    },
+
+    COUNTER: {
+      age: "yo",
+      yearsExperience: "YoE",
     },
 
     MENUS: {
@@ -56,7 +61,7 @@ export const en = {
 
     SECTIONS: {
       notFound: "This page could not be found",
-      yearsExperience: "YoE",
+
       backToHomepage: "Back to homepage",
       present: "Present",
       resume: "Résumé",

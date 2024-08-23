@@ -1,23 +1,7 @@
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
-import { PERSONALS, URLS } from "@/lib/constants";
+import { URLS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import { z } from "zod";
-
-const getRussianYearCounter = (age: number): string => {
-  const count = age % 100;
-  if (count >= 5 && count <= 20) return "лет";
-
-  switch (age % 10) {
-    case 1:
-      return "год";
-    case 2:
-    case 3:
-    case 4:
-      return "года";
-    default:
-      return "лет";
-  }
-};
 
 export const useLanguage = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
@@ -30,7 +14,6 @@ export const useLanguage = (lang: Lang) => {
   const isDefaultLang = lang === DEFAULT_LANG;
   const baseUrlWithLang = URLS.BASE_LANG(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-  const ageCounter = isRussian ? getRussianYearCounter(PERSONALS.age) : s.PERSONAL_DATA.age;
 
   // func
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
@@ -41,7 +24,7 @@ export const useLanguage = (lang: Lang) => {
   return {
     s,
     d,
-    const: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrlWithLang, currentTime, ageCounter },
+    const: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrlWithLang, currentTime },
     func: { formatMonth, formatDate, formatCurrency, formatCounter },
   };
 };

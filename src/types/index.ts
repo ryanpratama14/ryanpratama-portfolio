@@ -1,7 +1,7 @@
 import type { LANGS } from "@/internationalization";
+import type { en } from "@/internationalization/dictionaries/en";
 import type { useLanguage } from "@/internationalization/functions";
 import type { StaticImageData } from "next/image";
-import type { en } from "#/dictionaries/en";
 
 export type Lang = (typeof LANGS)[number];
 export type Dictionary = typeof en;

@@ -28,9 +28,14 @@ export const ja: Dictionary = {
       summary:
         "フロントエンド開発を専門とする経験豊富なソフトウェアエンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
       softwareEngineer: "ソフトウェアエンジニア",
-      age: "歳",
+
       about:
         "大学の3学期目に、ロシアのカザンにあるインドネシア人の友人のアパートで行われた無料のプログラミングコースに参加しました。他の学生たちと一緒にJavaScriptの基本を学び、最終的に2022年にfaoTechというソフトウェアハウスのスタートアップを設立しました。スキルを磨くうちに、フロントエンド開発に情熱を感じ、この分野に特化することを決めました。",
+    },
+
+    COUNTER: {
+      age: "歳",
+      yearsExperience: "年の経験",
     },
 
     MENUS: {
@@ -56,7 +61,7 @@ export const ja: Dictionary = {
 
     SECTIONS: {
       notFound: "ページが見つかりません",
-      yearsExperience: "年の経験",
+
       backToHomepage: "ホームページに戻る",
       present: "現在",
       resume: "職務経歴書",
