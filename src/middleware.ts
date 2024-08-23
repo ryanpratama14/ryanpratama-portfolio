@@ -7,7 +7,7 @@ import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const { getLangFromPath, isLangMissing, validateMatchedLang, validateLang } = useLanguageHelper();
+const { getLangFromPath, isLangMissing, validateMatchedLang } = useLanguageHelper();
 
 const getLang = (req: NextRequest) => {
   const headers = new Headers(req.headers);
@@ -23,9 +23,7 @@ export const middleware = (req: NextRequest) => {
   const storedLang = req.cookies.get(COOKIES.lang)?.value as Lang | undefined;
   const lang = getLangFromPath(path) ?? storedLang ?? getLang(req);
   const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
-  const response = isLangMissing(path) ? NextResponse.redirect(newUrl) : NextResponse.next();
-  response.cookies.set(COOKIES.lang, !validateLang(lang) ? getLang(req) : lang, { httpOnly: true, sameSite: "lax" });
-  return response;
+  if (isLangMissing(path)) return NextResponse.redirect(newUrl);
 };
 
 export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };
