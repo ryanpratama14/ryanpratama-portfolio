@@ -1,13 +1,12 @@
-import { useLanguage } from "@/internationalization/functions";
+import { useLang } from "@/internationalization/functions";
+import { PERSONALS, URLS } from "@/lib/constants";
 import type { Lang } from "@/types";
-import type { Metadata } from "next";
-import { PERSONALS, URLS } from "./constants";
 
-export const getMetadata = (lang: Lang): Metadata => {
+export const getMetadata = (lang: Lang) => {
   const {
     s: { PERSONAL_DATA: me },
     const: { locale },
-  } = useLanguage(lang);
+  } = useLang(lang);
 
   const url = URLS.PRODUCTION.BASE_LANG(lang);
   const title = `${me.fullName} — ${me.softwareEngineer}`;

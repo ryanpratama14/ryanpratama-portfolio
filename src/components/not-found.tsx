@@ -3,7 +3,7 @@ import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
-import { useLanguage } from "@/internationalization/functions";
+import { useLang } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import { Fragment } from "react";
@@ -14,7 +14,7 @@ export default function NotFound({ lang }: Props) {
   const {
     s,
     const: { isDefaultLang },
-  } = useLanguage(lang);
+  } = useLang(lang);
 
   return (
     <Fragment>

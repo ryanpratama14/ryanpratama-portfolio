@@ -4,7 +4,7 @@ import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
-import { useLanguage } from "@/internationalization/functions";
+import { useLang } from "@/internationalization/functions";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
@@ -63,7 +63,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
               </Text>
               {isDefaultLang ? null : (
                 <Text as="small" className="-translate-y-0.5">
-                  {useLanguage(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
+                  {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
                 </Text>
               )}
             </section>

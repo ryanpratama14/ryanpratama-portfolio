@@ -1,4 +1,4 @@
-import { useLanguage } from "@/internationalization/functions";
+import { useLang } from "@/internationalization/functions";
 import { ICONS, PERSONALS } from "@/lib/constants";
 import type { Lang, Profile } from "@/types";
 
@@ -6,7 +6,7 @@ export const getProfileData = (lang: Lang): Profile[] => {
   const {
     s,
     func: { formatCounter },
-  } = useLanguage(lang);
+  } = useLang(lang);
 
   return [
     { href: "/resume.pdf", icon: ICONS.resume, label: s.SECTIONS.resume },

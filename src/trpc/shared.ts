@@ -1,5 +1,5 @@
 import { DEFAULT_LANG } from "@/internationalization";
-import { useLanguage } from "@/internationalization/functions";
+import { useLang } from "@/internationalization/functions";
 import type { AppRouter } from "@/server/api/root";
 import { QueryClient, defaultShouldDehydrateQuery } from "@tanstack/react-query";
 import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
@@ -20,7 +20,7 @@ export const createQueryClient = () => {
   });
 };
 
-const time = `${useLanguage(DEFAULT_LANG).const.currentTime} 👉`;
+const time = `${useLang(DEFAULT_LANG).const.currentTime} 👉`;
 
 export const CONSOLE_TRPC = {
   info: (key: string, message?: unknown) => console.info(`🔵 ${time} ${key}: `, message),

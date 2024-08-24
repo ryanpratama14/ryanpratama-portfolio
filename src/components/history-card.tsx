@@ -2,7 +2,7 @@ import Iconify from "@/components/html/iconify";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useLanguage } from "@/internationalization/functions";
+import { useLang } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
@@ -18,7 +18,7 @@ type Props = {
 export default function HistoryCard({ data, lang, s }: Props) {
   const {
     func: { formatMonth },
-  } = useLanguage(lang);
+  } = useLang(lang);
 
   const e = { ...s.PERSONAL_DATA.history[data.key], ...data };
 

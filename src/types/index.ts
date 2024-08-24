@@ -1,15 +1,16 @@
 import type { LANGS } from "@/internationalization";
 import type { en } from "@/internationalization/dictionaries/en";
-import type { useLanguage } from "@/internationalization/functions";
+import type { useLang } from "@/internationalization/functions";
 import type { StaticImageData } from "next/image";
 
 export type Lang = (typeof LANGS)[number];
+export type LangTarget = Lang | null | undefined | string;
 export type Dictionary = typeof en;
 export type DictionaryStatic = typeof en.s;
 export type DictionaryDynamic = typeof en.d;
-export type Language = ReturnType<typeof useLanguage>;
-export type LanguageConst = ReturnType<typeof useLanguage>["const"];
-export type LanguageFunc = ReturnType<typeof useLanguage>["func"];
+export type Language = ReturnType<typeof useLang>;
+export type LanguageConst = ReturnType<typeof useLang>["const"];
+export type LanguageFunc = ReturnType<typeof useLang>["func"];
 
 export type Profile = { href?: string; icon: string; label: string };
 export type Contact = { href: string; label: string; icon: string };

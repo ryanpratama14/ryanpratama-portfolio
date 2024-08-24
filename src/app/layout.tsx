@@ -2,17 +2,15 @@ import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
-import { useLanguageHelper } from "@/internationalization/functions";
+import { useLangHelper } from "@/internationalization/functions";
 import { getCookieLang, setCookieLang } from "@/lib/actions";
 import { HEADERS } from "@/lib/constants";
 import { getMetadata } from "@/lib/metadata";
 import { VARIANTS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
-import { headers } from "next/headers";
-
-// styles
 import { Noto_Sans } from "next/font/google";
+import { headers } from "next/headers";
 import "@/styles/globals.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -26,8 +24,7 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-const { validateMatchedLang } = useLanguageHelper();
-
+const { validateMatchedLang } = useLangHelper();
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => getMetadata(validateMatchedLang(headers().get(HEADERS.lang)));
 
