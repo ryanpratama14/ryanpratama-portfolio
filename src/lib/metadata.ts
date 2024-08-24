@@ -1,8 +1,9 @@
 import { useLang } from "@/internationalization/functions";
 import { PERSONALS, URLS } from "@/lib/constants";
 import type { Lang } from "@/types";
+import type { Metadata } from "next";
 
-export const getMetadata = (lang: Lang) => {
+export const getMetadata = (lang: Lang): Metadata => {
   const {
     s: { PERSONAL_DATA: me },
     const: { locale },
