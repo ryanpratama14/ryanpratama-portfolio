@@ -1,6 +1,5 @@
 "use client";
 
-import { useLanguageHelper } from "@/internationalization/functions";
 import { URLS } from "@/lib/constants";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
@@ -8,7 +7,6 @@ import type { Lang } from "@/types";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { unstable_httpBatchStreamLink as httpBatchStreamLink, loggerLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 let clientQueryClientSingleton: QueryClient | undefined = undefined;
@@ -20,9 +18,9 @@ const getQueryClient = () => {
 
 export const api = createTRPCReact<AppRouter>();
 
-type Props = { children: React.ReactNode; setCookieLang: (lang: Lang) => Promise<void>; storedLang: Lang | undefined };
+type Props = { children: React.ReactNode; setCookieLang: (lang: Lang) => Promise<void>; storedLang: Lang | undefined; lang: Lang };
 
-export default function TRPCReactProvider({ children, setCookieLang, storedLang }: Props) {
+export default function TRPCReactProvider({ children, setCookieLang, storedLang, lang }: Props) {
   const queryClient = getQueryClient();
 
   const [trpcClient] = useState(() =>
@@ -43,8 +41,6 @@ export default function TRPCReactProvider({ children, setCookieLang, storedLang 
       ],
     }),
   );
-
-  const lang = useLanguageHelper().validateLangFromPath(usePathname());
 
   useEffect(() => {
     if (!storedLang || storedLang !== lang) setCookieLang(lang);

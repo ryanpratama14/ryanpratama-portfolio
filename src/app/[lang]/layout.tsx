@@ -30,7 +30,7 @@ export default async function RootLayout({ children, params }: ChildrenParamsLan
   return (
     <html lang={params.lang} className={notosans.variable}>
       <body>
-        <TRPCReactProvider storedLang={await getCookieLang()} setCookieLang={setCookieLang}>
+        <TRPCReactProvider lang={params.lang} storedLang={await getCookieLang()} setCookieLang={setCookieLang}>
           <main className={VARIANTS.Main()}>{children}</main>
         </TRPCReactProvider>
         <VercelApps />
