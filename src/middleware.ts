@@ -22,8 +22,8 @@ export const middleware = (req: NextRequest) => {
   const lang = getLangFromPath(path) ?? validateLang(req.cookies.get(COOKIES.lang)?.value) ?? getLang(req);
 
   if (isLangMissing(path)) {
-    const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
-    return NextResponse.redirect(newUrl);
+    const newPath = `/${lang}${path.startsWith("/") ? "" : "/"}${path}`;
+    return NextResponse.redirect(new URL(newPath, req.url));
   }
 };
 
