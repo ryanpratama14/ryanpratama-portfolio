@@ -1,13 +1,13 @@
 import Providers from "@/app/providers";
 import { LANGS } from "@/internationalization";
 import { getMetadata } from "@/lib/metadata";
-import type { Lang } from "@/types";
+import type { Children, Lang } from "@/types";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async ({ params }: { params: { lang: Lang } }) => getMetadata(params.lang);
 
-type Props = { children: React.ReactNode };
+type Props = Children & { params: { lang: Lang } };
 
-export default function RootLayout({ children }: Props) {
-  return <Providers>{children}</Providers>;
+export default function RootLayout({ children, params: { lang } }: Props) {
+  return <Providers lang={lang}>{children}</Providers>;
 }

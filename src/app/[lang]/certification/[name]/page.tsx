@@ -13,13 +13,12 @@ import { Fragment } from "react";
 
 type Props = { params: { lang: Lang; name: string } };
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
-  const data = CERTIFICATIONS.find((e) => e.name === params.name);
+export const generateMetadata = async ({ params: { name } }: Props): Promise<Metadata | undefined> => {
+  const data = CERTIFICATIONS.find((e) => e.name === name);
   if (data) return { title: data.label, openGraph: { title: data.label } };
 };
 
-export default function CertificationPage({ params }: Props) {
-  const { name, lang } = params;
+export default function CertificationPage({ params: { name, lang } }: Props) {
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 

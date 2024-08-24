@@ -27,3 +27,5 @@ export type History = {
   till: Date | null;
   duty?: string[];
 };
+
+export type Children = { children: React.ReactNode };

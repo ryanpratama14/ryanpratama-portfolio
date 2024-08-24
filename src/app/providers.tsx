@@ -11,6 +11,7 @@ import { getCookieLang, setCookieLang } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
 import { VARIANTS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
+import type { Lang } from "@/types";
 import { Fragment } from "react";
 
 // styles
@@ -28,7 +29,7 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-type Props = { children: React.ReactNode; notFound?: boolean };
+type Props = { children: React.ReactNode; notFound?: boolean; lang: Lang };
 
 export default async function Providers({ children, notFound }: Props) {
   const storedLang = await getCookieLang();

@@ -10,7 +10,7 @@ export const getMetadata = (lang: Lang): Metadata => {
   } = useLanguage(lang);
 
   const title = `${me.fullName} — ${me.softwareEngineer}`;
-  const description = `${me.fullName}, ${me.summary}`;
+  const description = `${me.fullName}. ${me.summary}`;
   const images = [{ url: URLS.OG_IMAGE, type: "image/png", width: 1200, height: 630, alt: title }];
   const keywords = description.split(" ");
 

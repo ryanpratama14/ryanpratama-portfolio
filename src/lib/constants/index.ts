@@ -31,7 +31,7 @@ export const URLS = {
   BASE_TRPC: `${getBaseUrl()}${ENDPOINTS.trpc}`,
   BASE_LANG: (lang: Lang) => `${getBaseUrl()}/${lang}`,
   FULL: (path: string) => `${getBaseUrl()}${path}`,
-  OG_IMAGE: `${getBaseUrl()}/og.png`,
+  OG_IMAGE: "https://ryanpratama-portfolio.vercel.app/og.png",
 };
 
 export const PERSONALS = {
