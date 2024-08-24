@@ -28,7 +28,7 @@ export const ENDPOINTS = {
 };
 
 export const HEADERS = {
-  path: "x-path",
+  lang: "x-lang",
 };
 
 export const URL = {

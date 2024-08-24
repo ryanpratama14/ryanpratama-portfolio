@@ -2,13 +2,12 @@ import ScrollToTop from "@/components/scroll-to-top";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
-import { useLanguageHelper } from "@/internationalization/functions";
 import { getCookieLang, setCookieLang } from "@/lib/actions";
 import { HEADERS } from "@/lib/constants";
 import { getMetadata } from "@/lib/metadata";
 import { VARIANTS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
-import type { Children } from "@/types";
+import type { Children, Lang } from "@/types";
 import { headers } from "next/headers";
 
 // styles
@@ -26,13 +25,11 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-const { validateLangFromPath } = useLanguageHelper();
-
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
-export const generateMetadata = async () => getMetadata(validateLangFromPath(headers().get(HEADERS.path)));
+export const generateMetadata = async () => getMetadata(headers().get(HEADERS.lang) as Lang);
 
 export default async function RootLayout({ children }: Children) {
-  const lang = validateLangFromPath(headers().get(HEADERS.path));
+  const lang = headers().get(HEADERS.lang) as Lang;
 
   return (
     <html lang={lang} className={notosans.variable}>

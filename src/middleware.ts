@@ -19,10 +19,12 @@ const getLang = (req: NextRequest) => {
 
 export const middleware = (req: NextRequest) => {
   const path = req.nextUrl.pathname;
-  const headers = new Headers(req.headers);
-  headers.set(HEADERS.path, path);
   const lang = getLangFromPath(path) ?? validateLang(req.cookies.get(COOKIES.lang)?.value) ?? getLang(req);
+
+  const headers = new Headers(req.headers);
   const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
+  headers.set(HEADERS.lang, lang);
+
   const response = isLangMissing(path) ? NextResponse.redirect(newUrl) : NextResponse.next({ request: { headers } });
   return response;
 };

@@ -32,7 +32,7 @@ export const useLanguageHelper = () => {
   const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);
 
   const validateLang = (lang: string | undefined) => z.enum(LANGS).safeParse(lang).data;
-  const validateLangFromPath = (path: string | null) => validateMatchedLang(getLangFromPath(path ?? ""));
+  const validateLangFromPath = (path: string) => validateMatchedLang(getLangFromPath(path));
   const validateMatchedLang = (matchedLang: string | undefined) => {
     const lang = validateLang(matchedLang);
     if (lang) return lang;
