@@ -31,11 +31,13 @@ export const URLS = {
   BASE_TRPC: `${getBaseUrl()}${ENDPOINTS.trpc}`,
   BASE_LANG: (lang: Lang) => `${getBaseUrl()}/${lang}`,
   FULL: (path: string) => `${getBaseUrl()}${path}`,
+  OG_IMAGE: `${getBaseUrl()}/og.png`,
 };
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
   yoe: (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1),
+  x: "@totorogoriorio",
 };
 
 export const PHOTOS = {

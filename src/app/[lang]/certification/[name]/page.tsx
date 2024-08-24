@@ -7,10 +7,16 @@ import Profile from "@/components/sections/profile";
 import { useLanguage } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
 type Props = { params: { lang: Lang; name: string } };
+
+export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
+  const data = CERTIFICATIONS.find((e) => e.name === params.name);
+  if (data) return { title: data.label, openGraph: { title: data.label } };
+};
 
 export default function CertificationPage({ params }: Props) {
   const { name, lang } = params;
