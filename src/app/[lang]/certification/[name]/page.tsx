@@ -8,7 +8,7 @@ import { useLanguage } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { Fragment } from "react";
 
 type Props = { params: { lang: Lang; name: string } };
@@ -20,7 +20,7 @@ export const generateMetadata = async ({ params: { name } }: Props): Promise<Met
 
 export default function CertificationPage({ params: { name, lang } }: Props) {
   const data = CERTIFICATIONS.find((e) => e.name === name);
-  if (!data) notFound();
+  if (!data) redirect(`/${lang}`);
 
   const {
     s,

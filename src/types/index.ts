@@ -29,3 +29,5 @@ export type History = {
 };
 
 export type Children = { children: React.ReactNode };
+export type ParamsLang = { params: { lang: Lang } };
+export type ChildrenParamsLang = Children & ParamsLang;
