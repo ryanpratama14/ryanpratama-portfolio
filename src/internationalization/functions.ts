@@ -29,11 +29,10 @@ export const useLanguage = (lang: Lang) => {
 
 export const useLanguageHelper = () => {
   const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
-  const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);
-
-  const validateLang = (lang: string | undefined) => z.enum(LANGS).safeParse(lang).data;
+  const getLangFromPath = (path: string) => validateLang(path?.split("/")[1]);
   const validateLangFromPath = (path: string) => validateMatchedLang(getLangFromPath(path));
-  const validateMatchedLang = (matchedLang: string | undefined) => {
+  const validateLang = (lang: string | undefined | null) => z.enum(LANGS).safeParse(lang).data;
+  const validateMatchedLang = (matchedLang: string | undefined | null) => {
     const lang = validateLang(matchedLang);
     if (lang) return lang;
     return DEFAULT_LANG;
