@@ -11,7 +11,7 @@ export const getMetadata = (lang: Lang): Metadata => {
 
   const url = URLS.PRODUCTION.BASE_LANG(lang);
   const title = `${me.fullName} — ${me.softwareEngineer}`;
-  const description = `${me.fullName}. ${me.summary}`;
+  const description = me.summary;
   const images = [{ url: URLS.PRODUCTION.OG_IMAGE, type: "image/png", width: 1200, height: 630, alt: title }];
   const keywords = description.split(" ");
 
