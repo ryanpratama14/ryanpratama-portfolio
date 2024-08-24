@@ -3,7 +3,6 @@
 import { useLanguageHelper } from "@/internationalization/functions";
 import { URLS } from "@/lib/constants";
 import type { AppRouter } from "@/server/api/root";
-import { VARIANTS } from "@/styles";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import type { Lang } from "@/types";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -23,7 +22,7 @@ export const api = createTRPCReact<AppRouter>();
 
 type Props = { children: React.ReactNode; setCookieLang: (lang: Lang) => Promise<void>; storedLang: Lang | undefined };
 
-export default function Providers({ children, setCookieLang, storedLang }: Props) {
+export default function TRPCReactProvider({ children, setCookieLang, storedLang }: Props) {
   const queryClient = getQueryClient();
 
   const [trpcClient] = useState(() =>
@@ -56,7 +55,7 @@ export default function Providers({ children, setCookieLang, storedLang }: Props
   return (
     <QueryClientProvider client={queryClient}>
       <api.Provider client={trpcClient} queryClient={queryClient}>
-        <main className={VARIANTS.Main()}>{children}</main>
+        {children}
       </api.Provider>
     </QueryClientProvider>
   );

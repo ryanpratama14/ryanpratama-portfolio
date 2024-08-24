@@ -7,7 +7,7 @@ import Input from "@/components/html/input";
 import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
 import { type MessageInput, schema } from "@/server/api/schema";
-import { api } from "@/trpc/providers";
+import { api } from "@/trpc/react";
 import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment, useState } from "react";

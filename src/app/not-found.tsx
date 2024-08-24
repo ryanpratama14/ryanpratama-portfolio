@@ -3,15 +3,13 @@ import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
-import TransitionEffect from "@/components/transition-effect";
-import VercelApps from "@/components/vercel-apps";
 import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
-import { getCookieLang, setCookieLang } from "@/lib/actions";
+import { getCookieLang } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
 import { Noto_Sans } from "next/font/google";
 import { Fragment } from "react";
 import "@/styles/globals.css";
-import Providers from "@/trpc/providers";
+import Providers from "@/app/providers";
 
 const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -50,13 +48,9 @@ export default async function NotFoundPage() {
 
   return (
     <html lang={lang} className={notosans.variable}>
-      <body>
-        <Providers setCookieLang={setCookieLang} storedLang={storedLang}>
-          <NotFound />
-        </Providers>
-        <VercelApps />
-        <TransitionEffect />
-      </body>
+      <Providers>
+        <NotFound />
+      </Providers>
     </html>
   );
 }

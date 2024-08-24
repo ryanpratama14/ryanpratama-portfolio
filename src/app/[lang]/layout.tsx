@@ -1,10 +1,6 @@
-import ScrollToTop from "@/components/scroll-to-top";
-import TransitionEffect from "@/components/transition-effect";
-import VercelApps from "@/components/vercel-apps";
+import Providers from "@/app/providers";
 import { LANGS, LANGUAGE_OPTIONS } from "@/internationalization";
 import { useLanguage } from "@/internationalization/functions";
-import { getCookieLang, setCookieLang } from "@/lib/actions";
-import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 
@@ -63,19 +59,10 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
-export default async function RootLayout({ children, params }: Props) {
-  const storedLang = await getCookieLang();
-
+export default function RootLayout({ children, params }: Props) {
   return (
     <html lang={params.lang} className={notosans.variable}>
-      <body>
-        <Providers setCookieLang={setCookieLang} storedLang={storedLang}>
-          {children}
-        </Providers>
-        <VercelApps />
-        <TransitionEffect />
-        <ScrollToTop />
-      </body>
+      <Providers>{children}</Providers>
     </html>
   );
 }
