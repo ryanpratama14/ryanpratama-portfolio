@@ -16,12 +16,10 @@ const handler = (req: NextRequest) =>
     createContext: () => createContext(req),
     onError:
       env.NODE_ENV === "development"
-        ? ({ path, error, input, type }) => {
-            CONSOLE_TRPC.error("tRPC failed");
-            CONSOLE_TRPC.error(`path: api.${path ?? "<no-path>"}.${type}`);
-            CONSOLE_TRPC.error(`input: ${JSON.stringify(input) ?? null}`);
-            CONSOLE_TRPC.error(`code: ${error?.code ?? null}`);
-            CONSOLE_TRPC.error(`message: ${error?.message ?? null}`);
+        ? ({ error, input }) => {
+            CONSOLE_TRPC.error("code", error?.code);
+            CONSOLE_TRPC.error("input", input);
+            CONSOLE_TRPC.error("message", error?.message);
           }
         : undefined,
   });

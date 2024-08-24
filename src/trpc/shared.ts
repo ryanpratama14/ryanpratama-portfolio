@@ -20,24 +20,30 @@ export const createQueryClient = () => {
   });
 };
 
-const log = `${useLanguage(DEFAULT_LANG).const.currentTime} 👉`;
+const time = `${useLanguage(DEFAULT_LANG).const.currentTime} 👉`;
+
 export const CONSOLE_TRPC = {
-  info: (message: string) => console.info(`🔵 ${log} ${message}`),
-  ok: (message: string) => console.log(`🟢 ${log} ${message}`),
-  error: (message: string) => console.error(`🔴 ${log} ${message}`),
+  info: (key: string, message?: unknown) => console.info(`🔵 ${time} ${key}: `, message),
+  ok: (key: string, message?: unknown) => console.info(`🟢 ${time} ${key}: `, message),
+  error: (key: string, message?: unknown) => console.info(`🔴 ${time} ${key}: `, message),
 };
 
 export const THROW_TRPC = {
-  ok: ({ code, message, input }: { code: TRPC_OK_CODE_KEY; message?: string; input?: unknown }) => {
-    CONSOLE_TRPC.ok("tRPC success");
-    if (input) CONSOLE_TRPC.ok(`input: ${JSON.stringify(input) ?? null}`);
-    CONSOLE_TRPC.ok(`code: ${code}`);
-    CONSOLE_TRPC.ok(`message: ${message ?? OK_MESSAGES[code]}`);
-    return { code, message: message ?? OK_MESSAGES[code] };
+  ok: <Input = unknown, Result = unknown>({
+    code,
+    message = OK_MESSAGES[code],
+    input = null as Input,
+    result = null as Result,
+  }: { code: TRPC_OK_CODE_KEY; message?: string; input?: Input; result?: Result }) => {
+    CONSOLE_TRPC.ok("code", code);
+    CONSOLE_TRPC.ok("input", input);
+    CONSOLE_TRPC.ok("message", message);
+    CONSOLE_TRPC.ok("result", result);
+    return { code, message, input, result };
   },
 
-  error: ({ code, message }: { code: TRPC_ERROR_CODE_KEY; message?: string }) => {
-    throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
+  error: ({ code, message = ERROR_MESSAGES[code] }: { code: TRPC_ERROR_CODE_KEY; message?: string }) => {
+    throw new TRPCError({ code, message });
   },
 };
 

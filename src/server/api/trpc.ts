@@ -13,20 +13,11 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
   },
 });
 
-export const createCallerFactory = t.createCallerFactory;
-export const createTRPCRouter = t.router;
-
-const timingMiddleware = t.middleware(async ({ next, path, type }) => {
-  const start = Date.now();
-  if (t._config.isDev) {
-    const waitMs = Math.floor(Math.random() * 400) + 100;
-    await new Promise((resolve) => setTimeout(resolve, waitMs));
-  }
-  const result = await next();
-  const end = Date.now();
-
-  CONSOLE_TRPC.info(`path: ${path}.${type} took ${end - start}ms to execute`);
-  return result;
+const infoMiddleware = t.middleware(async ({ next, path, type }) => {
+  CONSOLE_TRPC.info("path", `api.${path ?? "<no-path>"}.${type}`);
+  return await next();
 });
 
-export const publicProcedure = t.procedure.use(timingMiddleware);
+export const createCallerFactory = t.createCallerFactory;
+export const createTRPCRouter = t.router;
+export const publicProcedure = t.procedure.use(infoMiddleware);
