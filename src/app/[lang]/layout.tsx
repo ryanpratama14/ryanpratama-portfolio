@@ -3,12 +3,12 @@ import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS, LANGUAGE_OPTIONS } from "@/internationalization";
 import { useLanguage } from "@/internationalization/functions";
+import { getCookieLang, setCookieLang } from "@/lib/actions";
 import Providers from "@/trpc/providers";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 
 // styles
-import { VARIANTS } from "@/styles";
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "swiper/css";
@@ -63,16 +63,16 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
-export default function RootLayout({ children, params }: Props) {
+export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={params.lang} className={notosans.variable}>
       <body>
-        <Providers>
-          <main className={VARIANTS.Main()}>{children}</main>
+        <Providers setCookieLang={setCookieLang} storedLang={await getCookieLang()}>
+          {children}
         </Providers>
+        <VercelApps />
         <TransitionEffect />
         <ScrollToTop />
-        <VercelApps />
       </body>
     </html>
   );

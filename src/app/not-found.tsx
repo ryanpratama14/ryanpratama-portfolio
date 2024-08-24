@@ -6,13 +6,12 @@ import Profile from "@/components/sections/profile";
 import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
-import { COOKIES, ICONS } from "@/lib/constants";
-
-// styles
-import { VARIANTS } from "@/styles";
+import { getCookieLang, setCookieLang } from "@/lib/actions";
+import { ICONS } from "@/lib/constants";
 import { Noto_Sans } from "next/font/google";
+import { Fragment } from "react";
 import "@/styles/globals.css";
-import { cookies } from "next/headers";
+import Providers from "@/trpc/providers";
 
 const notosans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -21,30 +20,40 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-export default async function NotFound() {
+export default async function NotFoundPage() {
+  const { validateMatchedLang } = useLanguageHelper();
+  const storedLang = await getCookieLang();
+
   const {
     s,
     const: { lang, isDefaultLang },
-  } = useLanguage(useLanguageHelper().validateMatchedLang(cookies().get(COOKIES.lang)?.value));
+  } = useLanguage(validateMatchedLang(storedLang));
+
+  const NotFound = () => {
+    return (
+      <Fragment>
+        <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
+        <Contacts s={s} />
+        <section className="flex flex-col items-center justify-center mt-6">
+          <Iconify icon={ICONS.notFound} width={250} />
+          <Text as="heading" className="text-center">
+            <h1>{s.SECTIONS.notFound}</h1>
+          </Text>
+
+          <LinkButton lang={lang} href="" className="mt-6">
+            {s.SECTIONS.backToHomepage}
+          </LinkButton>
+        </section>
+      </Fragment>
+    );
+  };
 
   return (
     <html lang={lang} className={notosans.variable}>
       <body>
-        <main className={VARIANTS.Main()}>
-          <Profile disableLangSwitcher s={s} lang={lang} isDefaultLang={isDefaultLang} />
-          <Contacts s={s} />
-          <section className="flex flex-col items-center justify-center mt-6">
-            <Iconify icon={ICONS.notFound} width={250} />
-            <Text as="heading" className="text-center">
-              <h1>{s.SECTIONS.notFound}</h1>
-            </Text>
-
-            <LinkButton lang={lang} href="" className="mt-6">
-              {s.SECTIONS.backToHomepage}
-            </LinkButton>
-          </section>
-        </main>
-
+        <Providers setCookieLang={setCookieLang} storedLang={storedLang}>
+          <NotFound />
+        </Providers>
         <VercelApps />
         <TransitionEffect />
       </body>

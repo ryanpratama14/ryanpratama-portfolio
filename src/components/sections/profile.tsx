@@ -4,14 +4,11 @@ import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
-import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
-import { setCookie } from "@/lib/actions";
-import { COOKIES } from "@/lib/constants";
+import { useLanguage } from "@/internationalization/functions";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
-import { cookies } from "next/headers";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -79,9 +76,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
               <ProfileData />
             </section>
           </section>
-          {disableLangSwitcher ? null : (
-            <LangSwitcher lang={lang} storedLang={useLanguageHelper().validateLang(cookies().get(COOKIES.lang)?.value)} setCookie={setCookie} />
-          )}
+          {disableLangSwitcher ? null : <LangSwitcher lang={lang} />}
         </section>
       </section>
 
