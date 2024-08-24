@@ -26,24 +26,18 @@ const notosans = Noto_Sans({
   display: "swap",
 });
 
-const { getLangFromPath, validateMatchedLang } = useLanguageHelper();
+const { validateLangFromPath } = useLanguageHelper();
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
-export const generateMetadata = async () => {
-  const path = headers().get(HEADERS.path) ?? "";
-  const lang = getLangFromPath(path) ?? validateMatchedLang(await getCookieLang());
-  return getMetadata(lang);
-};
+export const generateMetadata = async () => getMetadata(validateLangFromPath(headers().get(HEADERS.path)));
 
 export default async function RootLayout({ children }: Children) {
-  const storedLang = await getCookieLang();
-  const path = headers().get(HEADERS.path) ?? "";
-  const lang = getLangFromPath(path) ?? validateMatchedLang(storedLang);
+  const lang = validateLangFromPath(headers().get(HEADERS.path));
 
   return (
     <html lang={lang} className={notosans.variable}>
       <body>
-        <TRPCReactProvider storedLang={storedLang} setCookieLang={setCookieLang}>
+        <TRPCReactProvider storedLang={await getCookieLang()} setCookieLang={setCookieLang}>
           <main className={VARIANTS.Main()}>{children}</main>
         </TRPCReactProvider>
         <VercelApps />

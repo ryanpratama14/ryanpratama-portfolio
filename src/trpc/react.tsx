@@ -23,6 +23,7 @@ export const api = createTRPCReact<AppRouter>();
 type Props = { children: React.ReactNode; setCookieLang: (lang: Lang) => Promise<void>; storedLang: Lang | undefined };
 
 export default function TRPCReactProvider({ children, setCookieLang, storedLang }: Props) {
+  const path = usePathname();
   const queryClient = getQueryClient();
 
   const [trpcClient] = useState(() =>
@@ -44,13 +45,10 @@ export default function TRPCReactProvider({ children, setCookieLang, storedLang 
     }),
   );
 
-  const { validateMatchedLang, getLangFromPath } = useLanguageHelper();
-  const path = usePathname();
-  const lang = validateMatchedLang(getLangFromPath(path));
-
   useEffect(() => {
+    const lang = useLanguageHelper().validateLangFromPath(path);
     if (!storedLang || storedLang !== lang) setCookieLang(lang);
-  }, [lang, setCookieLang, storedLang]);
+  }, [setCookieLang, storedLang, path]);
 
   return (
     <QueryClientProvider client={queryClient}>
