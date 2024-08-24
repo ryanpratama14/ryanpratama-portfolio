@@ -21,11 +21,13 @@ export const middleware = (req: NextRequest) => {
   const path = req.nextUrl.pathname;
   const lang = getLangFromPath(path) ?? validateLang(req.cookies.get(COOKIES.lang)?.value) ?? getLang(req);
 
-  const headers = new Headers(req.headers);
-  const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
-  headers.set(HEADERS.lang, lang);
+  if (isLangMissing(path)) {
+    const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
+    return NextResponse.redirect(newUrl);
+  }
 
-  const response = isLangMissing(path) ? NextResponse.redirect(newUrl) : NextResponse.next({ request: { headers } });
+  const response = NextResponse.next();
+  response.headers.set(HEADERS.lang, lang);
   return response;
 };
 
