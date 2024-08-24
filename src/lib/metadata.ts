@@ -9,7 +9,7 @@ export const getMetadata = (lang: Lang): Metadata => {
     const: { locale },
   } = useLanguage(lang);
 
-  const url = URLS.PRODUCTION.BASE_LANG(lang);
+  const url = URLS.PRODUCTION.BASE;
   const title = `${me.fullName} — ${me.softwareEngineer}`;
   const description = `${me.fullName}. ${me.summary}`;
   const images = [{ url: URLS.PRODUCTION.OG_IMAGE, type: "image/png", width: 1200, height: 630, alt: title }];
