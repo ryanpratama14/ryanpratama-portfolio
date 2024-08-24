@@ -4,21 +4,6 @@ import { useLanguage } from "@/internationalization/functions";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 
-// styles
-import { Noto_Sans } from "next/font/google";
-import "@/styles/globals.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
-const notosans = Noto_Sans({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-notosans",
-  display: "swap",
-});
-
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async ({ params }: { params: { lang: Lang } }): Promise<Metadata> => {
   const {
@@ -57,12 +42,8 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
   };
 };
 
-type Props = { params: { lang: Lang }; children: React.ReactNode };
+type Props = { children: React.ReactNode };
 
-export default function RootLayout({ children, params }: Props) {
-  return (
-    <html lang={params.lang} className={notosans.variable}>
-      <Providers>{children}</Providers>
-    </html>
-  );
+export default function RootLayout({ children }: Props) {
+  return <Providers>{children}</Providers>;
 }
