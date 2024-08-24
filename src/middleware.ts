@@ -1,27 +1,36 @@
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
-import { useLanguageHelper } from "@/internationalization/functions";
-import { COOKIES } from "@/lib/constants";
+import type { Lang } from "@/types";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
-const { getLangFromPath, isLangMissing, validateMatchedLang, validateLang } = useLanguageHelper();
+const getLangFromPathname = (pathname: string) => {
+  const lang = pathname.split("/")[1];
+  const validation = z.enum(LANGS).safeParse(lang);
+  if (validation.success) return validation.data;
+  return undefined;
+};
 
-const getLang = (req: NextRequest) => {
-  const headers = new Headers(req.headers);
+const getLang = (request: NextRequest) => {
+  const headers = new Headers(request.headers);
   const acceptLanguage = headers.get("accept-language");
   if (acceptLanguage) headers.set("accept-language", acceptLanguage.replaceAll("_", "-"));
   const headersObject = Object.fromEntries(headers.entries());
   const languages = new Negotiator({ headers: headersObject }).languages();
-  return validateMatchedLang(match(languages, LANGS, DEFAULT_LANG));
+  if (languages.includes("*")) return DEFAULT_LANG;
+  return match(languages, LANGS, DEFAULT_LANG) as Lang;
 };
 
-export const middleware = (req: NextRequest) => {
-  const path = req.nextUrl.pathname;
-  const lang = getLangFromPath(path) ?? validateLang(req.cookies.get(COOKIES.lang)?.value) ?? getLang(req);
-  const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
-  if (isLangMissing(path)) return NextResponse.redirect(newUrl);
+export const middleware = (request: NextRequest) => {
+  const pathname = request.nextUrl.pathname;
+  const storedLang = request.cookies.get("lang")?.value as Lang | undefined;
+  const lang: Lang = getLangFromPathname(pathname) ?? storedLang ?? getLang(request);
+  const pathnameMissing = LANGS.every((lang) => !pathname.startsWith(`/${lang}/`) && pathname !== `/${lang}`);
+  if (pathnameMissing) {
+    const newPath = `/${lang}${pathname.startsWith("/") ? "" : "/"}${pathname}`;
+    return NextResponse.redirect(new URL(newPath, request.url));
+  }
 };
-
 export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };
