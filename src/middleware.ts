@@ -4,9 +4,9 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import { useLanguageHelper } from "./internationalization/functions";
 
-const validateLang = (lang: Lang | null | undefined | string) => z.enum(LANGS).safeParse(lang).data;
+const { validateLang, getLangFromPath, isLangMissing } = useLanguageHelper();
 
 const getLang = (request: NextRequest) => {
   const headers = new Headers(request.headers);
@@ -20,9 +20,8 @@ const getLang = (request: NextRequest) => {
 
 export const middleware = (request: NextRequest) => {
   const path = request.nextUrl.pathname;
-  const lang = validateLang(path.split("/")[1]) ?? validateLang(request.cookies.get("lang")?.value) ?? getLang(request);
-  const isLangMissing = LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
-  if (isLangMissing) return NextResponse.redirect(new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, request.url));
+  const lang = getLangFromPath(path) ?? validateLang(request.cookies.get("lang")?.value) ?? getLang(request);
+  if (isLangMissing(path)) return NextResponse.redirect(new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, request.url));
 };
 
 export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };
