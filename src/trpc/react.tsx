@@ -44,9 +44,7 @@ export default function TRPCReactProvider({ children, setCookieLang, storedLang 
     }),
   );
 
-  const { validateMatchedLang } = useLanguageHelper();
-  const searchParams = useSearchParams();
-  const lang = validateMatchedLang(searchParams.get("lang"));
+  const lang = useLanguageHelper().validateMatchedLang(useSearchParams().get("lang"));
 
   useEffect(() => {
     if (!storedLang || storedLang !== lang) setCookieLang(lang);
