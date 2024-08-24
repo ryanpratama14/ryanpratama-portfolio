@@ -30,7 +30,7 @@ export default async function Providers({ children, lang, notFound }: Props) {
   return (
     <html lang={lang} className={notosans.variable}>
       <body>
-        <TRPCReactProvider lang={lang} storedLang={storedLang} setCookieLang={setCookieLang}>
+        <TRPCReactProvider storedLang={storedLang} setCookieLang={setCookieLang}>
           <main className={VARIANTS.Main()}>{notFound ? <NotFound lang={lang} /> : children}</main>
         </TRPCReactProvider>
         <VercelApps />
