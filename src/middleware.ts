@@ -1,12 +1,12 @@
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { useLanguageHelper } from "@/internationalization/functions";
-import { COOKIES, HEADERS } from "@/lib/constants";
+import { COOKIES } from "@/lib/constants";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const { validateMatchedLang, validateLang } = useLanguageHelper();
+const { getLangFromPath, isLangMissing, validateMatchedLang, validateLang } = useLanguageHelper();
 
 const getLang = (req: NextRequest) => {
   const headers = new Headers(req.headers);
@@ -17,19 +17,11 @@ const getLang = (req: NextRequest) => {
   return validateMatchedLang(match(languages, LANGS, DEFAULT_LANG));
 };
 
-export function middleware(req: NextRequest) {
-  const searchParamsLang = validateLang(req.nextUrl.searchParams.get("lang"));
-  const storedLang = validateLang(req.cookies.get(COOKIES.lang)?.value);
-  const lang = searchParamsLang ?? storedLang ?? getLang(req);
-
-  if (!searchParamsLang) {
-    req.nextUrl.searchParams.set("lang", lang);
-    return NextResponse.redirect(req.nextUrl);
-  }
-
-  const response = NextResponse.next();
-  response.headers.set(HEADERS.lang, lang);
-  return response;
-}
+export const middleware = (req: NextRequest) => {
+  const path = req.nextUrl.pathname;
+  const lang = getLangFromPath(path) ?? validateLang(req.cookies.get(COOKIES.lang)?.value) ?? getLang(req);
+  const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
+  if (isLangMissing(path)) return NextResponse.redirect(newUrl);
+};
 
 export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };

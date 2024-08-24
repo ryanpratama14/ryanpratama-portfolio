@@ -26,7 +26,7 @@ export default function NotFound({ lang }: Props) {
           <h1>{s.SECTIONS.notFound}</h1>
         </Text>
 
-        <LinkButton href="/" className="mt-6">
+        <LinkButton lang={lang} href="" className="mt-6">
           {s.SECTIONS.backToHomepage}
         </LinkButton>
       </section>
