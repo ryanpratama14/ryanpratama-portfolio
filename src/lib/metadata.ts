@@ -32,7 +32,7 @@ export const getMetadata = (lang: Lang): Metadata => {
     openGraph: {
       title: { default: title, template: `%s | ${title}` },
       description,
-      url,
+      url: `${url}/${lang}`,
       siteName: title,
       locale: locale.split("-").join("_"),
       type: "website",
