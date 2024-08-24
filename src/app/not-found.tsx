@@ -21,8 +21,8 @@ const notosans = Noto_Sans({
 });
 
 export default async function NotFoundPage() {
-  const { validateMatchedLang } = useLanguageHelper();
   const storedLang = await getCookieLang();
+  const { validateMatchedLang } = useLanguageHelper();
 
   const {
     s,

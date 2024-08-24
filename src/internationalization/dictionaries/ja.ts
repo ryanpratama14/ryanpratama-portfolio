@@ -53,6 +53,7 @@ export const ja: Dictionary = {
         db: "データベース",
         learning: "自己学習",
       },
+
       OTHER: {
         education: "学歴",
         languages: "言語",
@@ -61,7 +62,6 @@ export const ja: Dictionary = {
 
     SECTIONS: {
       notFound: "ページが見つかりません",
-
       backToHomepage: "ホームページに戻る",
       present: "現在",
       resume: "職務経歴書",

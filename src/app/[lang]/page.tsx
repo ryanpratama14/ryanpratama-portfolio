@@ -12,7 +12,7 @@ import { Fragment } from "react";
 
 type Props = { params: { lang: Lang } };
 
-export default function Home({ params }: Props) {
+export default function HomePage({ params }: Props) {
   const {
     s,
     const: { lang, isJapanese, isDefaultLang },

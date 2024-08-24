@@ -6,6 +6,7 @@ import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { THROW_TRPC } from "@/trpc/shared";
 import { Resend } from "resend";
+import { z } from "zod";
 
 const { s } = useLanguage(DEFAULT_LANG);
 const resend = new Resend(env.RESEND_API_KEY);
@@ -22,4 +23,6 @@ export const email = createTRPCRouter({
     if (error) return THROW_TRPC.error({ code: "INTERNAL_SERVER_ERROR", message: error.message });
     return { data, ...THROW_TRPC.ok({ code: "OK" }) };
   }),
+
+  get: publicProcedure.input(z.string()).query(({ input }) => `Hello ${input}`),
 });

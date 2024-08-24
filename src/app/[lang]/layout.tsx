@@ -64,10 +64,12 @@ export const generateMetadata = async ({ params }: { params: { lang: Lang } }): 
 type Props = { params: { lang: Lang }; children: React.ReactNode };
 
 export default async function RootLayout({ children, params }: Props) {
+  const storedLang = await getCookieLang();
+
   return (
     <html lang={params.lang} className={notosans.variable}>
       <body>
-        <Providers setCookieLang={setCookieLang} storedLang={await getCookieLang()}>
+        <Providers setCookieLang={setCookieLang} storedLang={storedLang}>
           {children}
         </Providers>
         <VercelApps />
