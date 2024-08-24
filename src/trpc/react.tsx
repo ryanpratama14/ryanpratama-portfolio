@@ -31,7 +31,7 @@ export default function TRPCReactProvider({ children, setCookieLang, storedLang,
         }),
         httpBatchStreamLink({
           transformer,
-          url: URLS.BASE_TRPC,
+          url: URLS.DEVELOPMENT.BASE_TRPC,
           headers: () => {
             const headers = new Headers();
             headers.set("x-trpc-source", "nextjs-react");

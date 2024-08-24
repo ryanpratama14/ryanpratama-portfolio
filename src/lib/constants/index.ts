@@ -17,6 +17,7 @@ import podfak from "@/assets/podfak.jpeg";
 import faotech from "@/assets/logo-faotech.png";
 import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
+import { env } from "@/env";
 
 export const COOKIES = {
   lang: "lang",
@@ -26,12 +27,25 @@ export const ENDPOINTS = {
   trpc: "/api/trpc",
 };
 
+export const URL = {
+  development: getBaseUrl(),
+  production: env.NEXT_PUBLIC_URL,
+};
+
 export const URLS = {
-  BASE: getBaseUrl(),
-  BASE_TRPC: `${getBaseUrl()}${ENDPOINTS.trpc}`,
-  BASE_LANG: (lang: Lang) => `${getBaseUrl()}/${lang}`,
-  FULL: (path: string) => `${getBaseUrl()}${path}`,
-  OG_IMAGE: "https://ryanpratama-portfolio.vercel.app/og.png",
+  DEVELOPMENT: {
+    BASE: URL.development,
+    BASE_TRPC: `${URL.development}${ENDPOINTS.trpc}`,
+    BASE_LANG: (lang: Lang) => `${URL.development}/${lang}`,
+    FULL: (path: string) => `${URL.development}${path}`,
+  },
+
+  PRODUCTION: {
+    BASE: URL.production,
+    BASE_LANG: (lang: Lang) => `${URL.production}/${lang}`,
+    FULL: (path: string) => `${URL.production}${path}`,
+    OG_IMAGE: `${URL.production}/og.png`,
+  },
 };
 
 export const PERSONALS = {

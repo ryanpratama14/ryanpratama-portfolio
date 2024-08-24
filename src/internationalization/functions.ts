@@ -1,5 +1,4 @@
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
-import { URLS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import { z } from "zod";
 
@@ -12,7 +11,6 @@ export const useLanguage = (lang: Lang) => {
   const isJapanese = lang === "ja";
   const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
-  const baseUrlWithLang = URLS.BASE_LANG(lang);
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
 
   // func
@@ -24,7 +22,7 @@ export const useLanguage = (lang: Lang) => {
   return {
     s,
     d,
-    const: { ...rest, isJapanese, isRussian, isDefaultLang, baseUrlWithLang, currentTime },
+    const: { ...rest, isJapanese, isRussian, isDefaultLang, currentTime },
     func: { formatMonth, formatDate, formatCurrency, formatCounter },
   };
 };
