@@ -1,7 +1,7 @@
 "use server";
 
 import { COOKIES } from "@/lib/constants";
-import type { Lang } from "@/types";
+import type { Lang, LangTarget } from "@/types";
 import { cookies } from "next/headers";
 
 export const setCookie = async (name: string, value: string) => {
@@ -13,5 +13,5 @@ export const setCookieLang = async (lang: Lang) => {
 };
 
 export const getCookieLang = async () => {
-  return cookies().get(COOKIES.lang)?.value as Lang | undefined;
+  return cookies().get(COOKIES.lang)?.value as LangTarget;
 };

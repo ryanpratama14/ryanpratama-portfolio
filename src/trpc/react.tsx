@@ -3,7 +3,7 @@
 import { URLS } from "@/lib/constants";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
-import type { Lang } from "@/types";
+import type { Lang, LangTarget } from "@/types";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { unstable_httpBatchStreamLink as httpBatchStreamLink, loggerLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
@@ -18,7 +18,7 @@ const getQueryClient = () => {
 
 export const api = createTRPCReact<AppRouter>();
 
-type Props = { children: React.ReactNode; setCookieLang: (lang: Lang) => Promise<void>; storedLang: Lang | undefined; lang: Lang };
+type Props = { children: React.ReactNode; setCookieLang: (lang: Lang) => Promise<void>; storedLang: LangTarget; lang: Lang };
 
 export default function TRPCReactProvider({ children, setCookieLang, storedLang, lang }: Props) {
   const queryClient = getQueryClient();
