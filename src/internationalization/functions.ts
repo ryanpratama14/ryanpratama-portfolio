@@ -1,4 +1,6 @@
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
+import { COOKIES } from "@/lib/constants";
+import { createUrl } from "@/lib/utils";
 import type { Lang } from "@/types";
 import { z } from "zod";
 
@@ -28,23 +30,21 @@ export const useLanguage = (lang: Lang) => {
 };
 
 export const useLanguageHelper = () => {
-  const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
-  const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);
+  const getLangFromPath = (path: string | null | undefined) => validateLang(path?.split("/")[1]);
 
-  const validateLang = (lang: string | undefined) => z.enum(LANGS).safeParse(lang).data;
-  const validateLangFromPath = (path: string) => validateMatchedLang(getLangFromPath(path));
-  const validateMatchedLang = (matchedLang: string | undefined) => {
+  const validateLang = (lang: string | null | undefined) => z.enum(LANGS).safeParse(lang).data;
+  const validateLangFromPath = (path: string | null | undefined) => validateMatchedLang(getLangFromPath(path));
+
+  const validateMatchedLang = (matchedLang: string | null | undefined) => {
     const lang = validateLang(matchedLang);
     if (lang) return lang;
     return DEFAULT_LANG;
   };
 
-  const changeLang = (targetLang: Lang, path: string) => {
-    if (!path) return "/";
-    const segments = path.split("/");
-    segments[1] = targetLang;
-    return segments.join("/");
+  const changeLang = ({ targetLang, path, newParams }: { targetLang: Lang; path: string; newParams: URLSearchParams }) => {
+    newParams.set(COOKIES.lang, targetLang);
+    return createUrl(path, newParams);
   };
 
-  return { isLangMissing, validateLang, getLangFromPath, validateMatchedLang, changeLang, validateLangFromPath };
+  return { validateLang, getLangFromPath, validateMatchedLang, changeLang, validateLangFromPath };
 };

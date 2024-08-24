@@ -28,6 +28,7 @@ export type History = {
   duty?: string[];
 };
 
+export type SearchParams = Record<string, string>;
 export type Children = { children: React.ReactNode };
-export type ParamsLang = { params: { lang: Lang } };
-export type ChildrenParamsLang = Children & ParamsLang;
+export type SearchParamsLang = { searchParams: Record<"lang", Lang> };
+export type ChildrenSearchParamsLang = Children & SearchParamsLang;

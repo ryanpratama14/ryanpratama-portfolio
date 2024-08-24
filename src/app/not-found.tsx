@@ -1,20 +1,25 @@
+"use client";
+
 import Iconify from "@/components/html/iconify";
 import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
-import { useLanguage } from "@/internationalization/functions";
-import { ICONS } from "@/lib/constants";
-import type { Lang } from "@/types";
+import { useLanguage, useLanguageHelper } from "@/internationalization/functions";
+import { COOKIES, ICONS } from "@/lib/constants";
+import { useSearchParams } from "next/navigation";
 import { Fragment } from "react";
 
-type Props = { lang: Lang };
+const { validateMatchedLang } = useLanguageHelper();
 
-export default function NotFound({ lang }: Props) {
+export default function NotFound() {
+  const searchParams = useSearchParams();
+
+  console.log(searchParams);
   const {
     s,
-    const: { isDefaultLang },
-  } = useLanguage(lang);
+    const: { isDefaultLang, lang },
+  } = useLanguage(validateMatchedLang(searchParams.get(COOKIES.lang)));
 
   return (
     <Fragment>
