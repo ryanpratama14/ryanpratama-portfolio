@@ -1,16 +1,13 @@
-import Providers from "@/app/providers";
+import NotFound from "@/components/not-found";
 import { useLanguageHelper } from "@/internationalization/functions";
 import { getCookieLang } from "@/lib/actions";
-import { Fragment } from "react";
+import { headers } from "next/headers";
+
+const { getLangFromPath, validateMatchedLang } = useLanguageHelper();
 
 export default async function NotFoundPage() {
-  const { validateMatchedLang } = useLanguageHelper();
-  const storedCookie = await getCookieLang();
-  const lang = validateMatchedLang(storedCookie);
+  const path = headers().get("x-path") ?? "";
+  const lang = getLangFromPath(path) ?? validateMatchedLang(await getCookieLang());
 
-  return (
-    <Providers notFound lang={lang}>
-      <Fragment />
-    </Providers>
-  );
+  return <NotFound lang={lang} />;
 }

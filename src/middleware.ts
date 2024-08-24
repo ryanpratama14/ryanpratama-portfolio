@@ -1,7 +1,6 @@
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { useLanguageHelper } from "@/internationalization/functions";
-import { COOKIES } from "@/lib/constants";
-import type { Lang } from "@/types";
+import { COOKIES, HEADERS } from "@/lib/constants";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
@@ -20,10 +19,12 @@ const getLang = (req: NextRequest) => {
 
 export const middleware = (req: NextRequest) => {
   const path = req.nextUrl.pathname;
-  const storedLang = req.cookies.get(COOKIES.lang)?.value as Lang | undefined;
-  const lang = getLangFromPath(path) ?? validateLang(storedLang) ?? getLang(req);
+  const headers = new Headers(req.headers);
+  headers.set(HEADERS.path, path);
+  const lang = getLangFromPath(path) ?? validateLang(req.cookies.get(COOKIES.lang)?.value) ?? getLang(req);
   const newUrl = new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url);
-  if (isLangMissing(path)) return NextResponse.redirect(newUrl);
+  const response = isLangMissing(path) ? NextResponse.redirect(newUrl) : NextResponse.next({ request: { headers } });
+  return response;
 };
 
 export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };

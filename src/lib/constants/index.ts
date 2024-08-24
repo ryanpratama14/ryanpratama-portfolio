@@ -27,6 +27,10 @@ export const ENDPOINTS = {
   trpc: "/api/trpc",
 };
 
+export const HEADERS = {
+  path: "x-path",
+};
+
 export const URL = {
   development: getBaseUrl(),
   production: env.NEXT_PUBLIC_URL,
