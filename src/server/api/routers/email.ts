@@ -4,7 +4,7 @@ import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
 import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
-import { THROW_TRPC } from "@/trpc/shared";
+import { type RouterInputs, THROW_TRPC } from "@/trpc/shared";
 import { Resend } from "resend";
 
 const { s } = useLang(DEFAULT_LANG);
@@ -23,3 +23,5 @@ export const email = createTRPCRouter({
     return THROW_TRPC.ok({ code: "OK", input, result: data });
   }),
 });
+
+export type MessageInput = RouterInputs["email"]["message"];

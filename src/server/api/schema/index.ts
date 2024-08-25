@@ -14,5 +14,3 @@ export class schema {
     };
   };
 }
-
-export type MessageInput = z.input<ReturnType<typeof schema.email.message>>;
