@@ -1,7 +1,7 @@
 import ScrollToTop from "@/components/scroll-to-top";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
-import { getMetadata } from "@/lib/metadata";
+import { getMetadata } from "@/lib/constants/metadata";
 import { VARIANTS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import type { ChildrenParamsLang, ParamsLang } from "@/types";

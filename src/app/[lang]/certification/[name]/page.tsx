@@ -7,7 +7,7 @@ import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { ENDPOINTS, URLS } from "@/lib/constants/helpers";
-import { getMetadataImage } from "@/lib/metadata";
+import { getMetadataImage } from "@/lib/constants/metadata";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
