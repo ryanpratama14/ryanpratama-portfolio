@@ -1,7 +1,7 @@
-import type { MessageInput } from "@/server/api/schema";
+import type { EmailMessageInput } from "@/server/api/routers/email";
 import { Body, Container, Head, Html, Tailwind, Text } from "@react-email/components";
 
-export default function Message({ name, email, message, lang }: MessageInput) {
+export default function Message({ name, email, message, lang }: EmailMessageInput) {
   return (
     <Html>
       <Head />

@@ -6,7 +6,8 @@ import Button from "@/components/html/button";
 import Input from "@/components/html/input";
 import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
-import { type MessageInput, schema } from "@/server/api/schema";
+import type { EmailMessageInput } from "@/server/api/routers/email";
+import { schema } from "@/server/api/schema";
 import { api } from "@/trpc/react";
 import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -24,7 +25,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<MessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang }, mode: "all" });
+  } = useForm<EmailMessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang }, mode: "all" });
 
   const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setOpen(true) });
 

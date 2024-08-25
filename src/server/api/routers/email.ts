@@ -24,4 +24,4 @@ export const email = createTRPCRouter({
   }),
 });
 
-export type MessageInput = RouterInputs["email"]["message"];
+export type EmailMessageInput = RouterInputs["email"]["message"];
