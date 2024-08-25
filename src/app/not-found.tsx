@@ -3,6 +3,7 @@ import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
+import TransitionEffect from "@/components/transition-effect";
 import { useLang, useLangHelper } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
 import { HEADERS } from "@/lib/constants/helpers";
@@ -31,6 +32,7 @@ export default function NotFoundPage() {
           {s.SECTIONS.backToHomepage}
         </LinkButton>
       </section>
+      <TransitionEffect />
     </Fragment>
   );
 }
