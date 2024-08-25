@@ -13,6 +13,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
+type Props = { params: { lang: Lang; name: string } };
+
 export const generateMetadata = async ({ params: { name, lang } }: Props): Promise<Metadata | undefined> => {
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (data) {
@@ -22,8 +24,6 @@ export const generateMetadata = async ({ params: { name, lang } }: Props): Promi
     return { title, openGraph: { title, url, images, siteName: title } };
   }
 };
-
-type Props = { params: { lang: Lang; name: string } };
 
 export default function CertificationPage({ params: { name, lang } }: Props) {
   const data = CERTIFICATIONS.find((e) => e.name === name);
