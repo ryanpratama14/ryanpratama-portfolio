@@ -19,7 +19,6 @@ export const getMetadata = (lang: Lang): Metadata => {
   const keywords = description.split(" ");
 
   return {
-    manifest: "/manifest.json",
     category: "technology",
     icons: [{ rel: "icon", url: "/favicon.ico" }],
     generator: title,
