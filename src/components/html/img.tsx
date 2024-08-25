@@ -7,5 +7,5 @@ type Props = {
 };
 
 export default function Img({ alt, src, className }: Props) {
-  return <Image alt={alt} src={src} placeholder="blur" priority className={className} sizes="(min-width: 740px) 674px, calc(95.48vw - 18px)" />;
+  return <Image alt={alt} src={src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" placeholder="blur" className={className} />;
 }
