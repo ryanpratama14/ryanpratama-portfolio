@@ -55,7 +55,6 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
         <Img
           src={avatar}
           alt={s.PERSONAL_DATA.fullName}
-          priority
           className="animate border-2 border-gray shadow-xl object-top object-cover size-16 md:size-32 aspect-square rounded-full"
         />
         <section className="flex justify-between w-full items-start">
