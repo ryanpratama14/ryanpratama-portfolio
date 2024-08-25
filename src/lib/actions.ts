@@ -1,6 +1,6 @@
 "use server";
 
-import { COOKIES } from "@/lib/constants/urls";
+import { COOKIES } from "@/lib/constants/helpers";
 import type { Lang, LangTarget } from "@/types";
 import { cookies } from "next/headers";
 

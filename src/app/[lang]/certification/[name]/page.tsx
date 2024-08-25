@@ -6,7 +6,7 @@ import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { ENDPOINTS, URLS } from "@/lib/constants/urls";
+import { ENDPOINTS, URLS } from "@/lib/constants/helpers";
 import { getMetadataImage } from "@/lib/metadata";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
@@ -17,7 +17,7 @@ export const generateMetadata = async ({ params: { name, lang } }: Props): Promi
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (data) {
     const title = data.label;
-    const url = `${URLS.PRODUCTION.BASE_LANG(lang)}${ENDPOINTS.certification}${data.name}`;
+    const url = `${URLS.PRODUCTION.BASE_LANG(lang)}${ENDPOINTS.certification(data.name)}`;
     const images = getMetadataImage(title);
     return { title, openGraph: { title, url, images, siteName: title } };
   }

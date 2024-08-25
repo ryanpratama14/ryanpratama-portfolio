@@ -5,7 +5,7 @@ import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import { useLang, useLangHelper } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
-import { HEADERS } from "@/lib/constants/urls";
+import { HEADERS } from "@/lib/constants/helpers";
 import { headers } from "next/headers";
 import { Fragment } from "react";
 

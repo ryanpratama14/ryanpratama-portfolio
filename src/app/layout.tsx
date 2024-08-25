@@ -4,7 +4,7 @@ import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
 import { useLangHelper } from "@/internationalization/functions";
 import { getCookieLang, setCookieLang } from "@/lib/actions";
-import { HEADERS } from "@/lib/constants/urls";
+import { HEADERS } from "@/lib/constants/helpers";
 import { getMetadata } from "@/lib/metadata";
 import { VARIANTS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";

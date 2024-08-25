@@ -8,7 +8,7 @@ export const COOKIES = {
 
 export const ENDPOINTS = {
   trpc: "/api/trpc",
-  certification: "/certification/",
+  certification: (name: string) => `/certification/${name}`,
 };
 
 export const HEADERS = {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLangHelper } from "@/internationalization/functions";
-import { URLS } from "@/lib/constants/urls";
+import { URLS } from "@/lib/constants/helpers";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import type { Lang, LangTarget } from "@/types";
