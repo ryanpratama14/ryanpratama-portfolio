@@ -49,10 +49,10 @@ export const VARIANTS = {
   }),
 
   Box: tv({
-    base: "rounded-md bg-graybg hover:bg-grayborder flex items-center shadow-xl animate hover:scale-[1.025] md:hover:scale-[1.05]",
+    base: "rounded-md bg-graybg hover:bg-grayborder flex items-center shadow-xl",
     variants: {
       style: {
-        contact: "text-sm md:text-base gap-1 px-2 py-0.5",
+        contact: "text-sm md:text-base gap-1 px-2 py-0.5 animate hover:scale-[1.025] md:hover:scale-[1.05]",
         techstack: "text-[0.7rem] md:text-sm px-1 py-[0.1rem] gap-[0.2rem] md:px-1.5 md:py-0.5 md:gap-1",
       },
     },
