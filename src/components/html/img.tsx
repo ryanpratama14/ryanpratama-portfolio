@@ -8,5 +8,5 @@ type Props = {
 };
 
 export default function Img({ alt, src, className, priority }: Props) {
-  return <Image alt={alt} src={src} placeholder="blur" priority={priority} className={className} />;
+  return <Image alt={alt} width={1000} height={1000} src={src} placeholder="blur" priority={priority} className={className} />;
 }

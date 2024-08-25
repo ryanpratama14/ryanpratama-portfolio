@@ -1,5 +1,3 @@
-import ScrollToTop from "@/components/scroll-to-top";
-import TransitionEffect from "@/components/transition-effect";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
 import { useLangHelper } from "@/internationalization/functions";
@@ -38,8 +36,6 @@ export default async function RootLayout({ children }: Children) {
           <main className={VARIANTS.Main()}>{children}</main>
         </TRPCReactProvider>
         <VercelApps />
-        <TransitionEffect />
-        <ScrollToTop />
       </body>
     </html>
   );
