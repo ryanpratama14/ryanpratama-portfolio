@@ -13,7 +13,7 @@ export default function Contacts({ s }: Props) {
       <section className="flex gap-1.5 flex-wrap">
         {CONTACTS.map((e) => {
           return (
-            <Link key={e.label} href={e.href} target="_blank" className={VARIANTS.Box({ style: "contact" })}>
+            <Link key={e.label} href={e.href} target="_blank" rel="noreferrer noopener" className={VARIANTS.Box({ style: "contact" })}>
               <Iconify icon={e.icon} width={17} />
               {e.label}
             </Link>

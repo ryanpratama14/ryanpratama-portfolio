@@ -3,6 +3,8 @@ import { PERSONALS, URLS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 
+export const getMetadataImage = (title: string) => [{ url: URLS.PRODUCTION.OG_IMAGE, type: "image/png", width: 1200, height: 630, alt: title }];
+
 export const getMetadata = (lang: Lang): Metadata => {
   const {
     s: { PERSONAL_DATA: me },
@@ -12,7 +14,7 @@ export const getMetadata = (lang: Lang): Metadata => {
   const url = URLS.PRODUCTION.BASE_LANG(lang);
   const title = `${me.fullName} — ${me.softwareEngineer}`;
   const description = me.summary;
-  const images = [{ url: URLS.PRODUCTION.OG_IMAGE, type: "image/png", width: 1200, height: 630, alt: title }];
+  const images = getMetadataImage(title);
   const keywords = description.split(" ");
 
   return {

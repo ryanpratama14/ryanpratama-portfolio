@@ -1,3 +1,4 @@
+import { env } from "@/env";
 import { getBaseUrl } from "@/lib/utils";
 import type { Certification, Contact, History, Lang, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
@@ -17,40 +18,6 @@ import podfak from "@/assets/podfak.jpeg";
 import faotech from "@/assets/logo-faotech.png";
 import kfu from "@/assets/logo-kfu.png";
 import nutech from "@/assets/logo-nutech.jpeg";
-import { env } from "@/env";
-
-export const COOKIES = {
-  lang: "lang",
-};
-
-export const ENDPOINTS = {
-  trpc: "/api/trpc",
-};
-
-export const HEADERS = {
-  lang: "x-lang",
-};
-
-export const URL = {
-  development: getBaseUrl(),
-  production: env.NEXT_PUBLIC_URL,
-};
-
-export const URLS = {
-  DEVELOPMENT: {
-    BASE: URL.development,
-    BASE_TRPC: `${URL.development}${ENDPOINTS.trpc}`,
-    BASE_LANG: (lang: Lang) => `${URL.development}/${lang}`,
-    FULL: (path: string) => `${URL.development}${path}`,
-  },
-
-  PRODUCTION: {
-    BASE: URL.production,
-    BASE_LANG: (lang: Lang) => `${URL.production}/${lang}`,
-    FULL: (path: string) => `${URL.production}${path}`,
-    OG_IMAGE: `${URL.production}/og.png`,
-  },
-};
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
@@ -316,3 +283,37 @@ export const CONTACTS: Contact[] = [
   { href: "https://wa.me/+6281210425333", label: "WhatsApp", icon: ICONS.whatsapp },
   { href: "https://www.instagram.com/ryanpratama14", label: "Instagram", icon: ICONS.instagram },
 ];
+
+export const COOKIES = {
+  lang: "lang",
+};
+
+export const ENDPOINTS = {
+  trpc: "/api/trpc",
+  certification: "/certification/",
+};
+
+export const HEADERS = {
+  lang: "x-lang",
+};
+
+const URL = {
+  DEVELOPMENT: getBaseUrl(),
+  PRODUCTION: env.NEXT_PUBLIC_URL,
+};
+
+export const URLS = {
+  DEVELOPMENT: {
+    BASE: URL.DEVELOPMENT,
+    BASE_TRPC: `${URL.DEVELOPMENT}${ENDPOINTS.trpc}`,
+    BASE_LANG: (lang: Lang) => `${URL.DEVELOPMENT}/${lang}`,
+    FULL: (path: string) => `${URL.DEVELOPMENT}${path}`,
+  },
+
+  PRODUCTION: {
+    BASE: URL.PRODUCTION,
+    BASE_LANG: (lang: Lang) => `${URL.PRODUCTION}/${lang}`,
+    FULL: (path: string) => `${URL.PRODUCTION}${path}`,
+    OG_IMAGE: `${URL.PRODUCTION}/og.png`,
+  },
+};

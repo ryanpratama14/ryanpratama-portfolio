@@ -33,7 +33,7 @@ export default function FeaturedProjects({ s }: Props) {
                     className="flex flex-col gap-0.5 items-end absolute font-semibold top-3 w-full px-3 text-right translate-x-full group-hover:translate-x-0"
                     as="menuTitle"
                   >
-                    <h1>{e.label}</h1>
+                    <h3>{e.label}</h3>
                     <div className="w-6 h-0.5 bg-white" />
                   </Text>
                   <Text className="text-center px-3 w-full absolute centered font-medium text-balance">

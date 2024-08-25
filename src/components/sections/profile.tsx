@@ -33,7 +33,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
 
       if (e.href) {
         return (
-          <Link target="_blank" href={e.href} key={e.label} className="flex gap-0.5 items-center">
+          <Link target="_blank" rel="noreferrer noopener" href={e.href} key={e.label} className="flex gap-0.5 items-center">
             <Data />
           </Link>
         );

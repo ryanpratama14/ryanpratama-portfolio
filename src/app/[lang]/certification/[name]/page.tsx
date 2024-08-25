@@ -5,14 +5,21 @@ import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
-import { CERTIFICATIONS } from "@/lib/constants";
+import { CERTIFICATIONS, ENDPOINTS, URLS } from "@/lib/constants";
+import { getMetadataImage } from "@/lib/metadata";
 import type { Lang } from "@/types";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
-export const generateMetadata = async ({ params: { name } }: Props) => {
+export const generateMetadata = async ({ params: { name, lang } }: Props): Promise<Metadata | undefined> => {
   const data = CERTIFICATIONS.find((e) => e.name === name);
-  if (data) return { title: data.label, openGraph: { title: data.label } };
+  if (data) {
+    const title = data.label;
+    const url = `${URLS.PRODUCTION.BASE_LANG(lang)}${ENDPOINTS.certification}${data.name}`;
+    const images = getMetadataImage(title);
+    return { title, openGraph: { title, url, images, siteName: title } };
+  }
 };
 
 type Props = { params: { lang: Lang; name: string } };

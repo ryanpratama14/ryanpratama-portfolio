@@ -6,7 +6,7 @@ export default function Container({ title, children }: Props) {
   return (
     <article className="flex flex-col gap-2.5">
       <Text as="menuTitle" color="gray" className="w-full border-b-2 border-graybg">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
       </Text>
       {children}
     </article>

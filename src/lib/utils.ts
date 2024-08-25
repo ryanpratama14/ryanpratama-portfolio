@@ -1,3 +1,5 @@
+import { env } from "@/env";
+import { URLS } from "@/lib/constants";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -10,4 +12,9 @@ export const getBaseUrl = () => {
   if (isClient) return `${window.location.origin}`;
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return `http://localhost:${process.env.PORT ?? 3000}`;
+};
+
+export const getUrl = () => {
+  if (env.NODE_ENV === "production") return URLS.PRODUCTION;
+  return URLS.DEVELOPMENT;
 };

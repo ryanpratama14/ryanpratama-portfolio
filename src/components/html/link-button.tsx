@@ -9,11 +9,18 @@ type Props = LinkProps &
   ComponentProps<"a"> &
   VariantProps<typeof VARIANTS.Button> & { children: React.ReactNode; lang?: Lang; target?: React.HTMLAttributeAnchorTarget };
 
-const LinkButton = ({ children, className, style, href, lang, target, ...rest }: Props) => {
+const LinkButton = ({ children, className, style, href, lang, target, rel, ...rest }: Props) => {
   const link = lang ? `/${lang}${href}` : href;
+  const outerLink = href.startsWith("http");
 
   return (
-    <Link href={link} target={href.startsWith("http") ? "_blank" : target} {...rest} className={cn(VARIANTS.Button({ className, style }))}>
+    <Link
+      href={link}
+      target={outerLink ? "_blank" : target}
+      rel={outerLink ? "noreferrer noopener" : rel}
+      {...rest}
+      className={cn(VARIANTS.Button({ className, style }))}
+    >
       {children}
       <span className="sr-only">{children}</span>
     </Link>
