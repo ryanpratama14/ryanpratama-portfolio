@@ -30,6 +30,6 @@ export const URLS = {
     BASE: URL.PRODUCTION,
     BASE_LANG: (lang: Lang) => `${URL.PRODUCTION}/${lang}`,
     FULL: (path: string) => `${URL.PRODUCTION}${path}`,
-    OG_IMAGE: `${URL.PRODUCTION}/og.png`,
+    OG_IMAGE: `${URL.PRODUCTION}/assets/opengraph.png`,
   },
 };
