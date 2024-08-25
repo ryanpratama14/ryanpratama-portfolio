@@ -8,15 +8,14 @@ import { useEffect, useState } from "react";
 export default function ScrollToTop() {
   const [visible, setVisible] = useState<boolean>(false);
 
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) setVisible(true);
-    if (scrolled <= 300) setVisible(false);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisible);
-  });
+    const toggleVisible = () => {
+      const scrolled = document.documentElement.scrollTop;
+      if (scrolled > 300) setVisible(true);
+      if (scrolled <= 300) setVisible(false);
+    };
+    window.addEventListener("scroll", toggleVisible, { passive: true });
+  }, []);
 
   return (
     <button
