@@ -3,16 +3,21 @@
 import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { useLangHelper } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
-import type { Lang } from "@/types";
+import type { Lang, LangTarget } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const { changeLang } = useLangHelper();
 
-type Props = { lang: Lang };
+type Props = { lang: Lang; storedLang: LangTarget; setCookieLang: (lang: Lang) => Promise<void> };
 
-export default function LangSwitcher({ lang }: Props) {
+export default function LangSwitcher({ lang, setCookieLang, storedLang }: Props) {
   const path = usePathname();
+
+  useEffect(() => {
+    if (!storedLang || lang !== storedLang) setCookieLang(lang);
+  }, [lang, storedLang, setCookieLang]);
 
   return (
     <section className="flex">

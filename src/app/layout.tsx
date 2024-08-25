@@ -1,7 +1,7 @@
+import ScrollToTop from "@/components/scroll-to-top";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
 import { useLangHelper } from "@/internationalization/functions";
-import { getCookieLang, setCookieLang } from "@/lib/actions";
 import { HEADERS } from "@/lib/constants/helpers";
 import { getMetadata } from "@/lib/metadata";
 import { VARIANTS } from "@/styles";
@@ -26,15 +26,16 @@ const { validateMatchedLang } = useLangHelper();
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => getMetadata(validateMatchedLang(headers().get(HEADERS.lang)));
 
-export default async function RootLayout({ children }: Children) {
+export default function RootLayout({ children }: Children) {
   const lang = validateMatchedLang(headers().get(HEADERS.lang));
 
   return (
     <html lang={lang} className={notosans.variable}>
       <body>
-        <TRPCReactProvider storedLang={await getCookieLang()} setCookieLang={setCookieLang}>
+        <TRPCReactProvider>
           <main className={VARIANTS.Main()}>{children}</main>
         </TRPCReactProvider>
+        <ScrollToTop />
         <VercelApps />
       </body>
     </html>

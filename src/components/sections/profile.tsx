@@ -5,6 +5,7 @@ import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
+import { getCookieLang, setCookieLang } from "@/lib/actions";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
@@ -19,7 +20,9 @@ type Props = {
   disableLangSwitcher?: boolean;
 };
 
-export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }: Props) {
+export default async function Profile({ disableLangSwitcher, s, lang, isDefaultLang }: Props) {
+  const storedLang = await getCookieLang();
+
   const ProfileData = () =>
     getProfileData(lang).map((e) => {
       const Data = () => (
@@ -76,7 +79,7 @@ export default function Profile({ disableLangSwitcher, s, lang, isDefaultLang }:
               <ProfileData />
             </section>
           </section>
-          {disableLangSwitcher ? null : <LangSwitcher lang={lang} />}
+          {disableLangSwitcher ? null : <LangSwitcher storedLang={storedLang} setCookieLang={setCookieLang} lang={lang} />}
         </section>
       </section>
 
