@@ -11,10 +11,6 @@ export const ENDPOINTS = {
   certification: (name: string) => `/certification/${name}`,
 };
 
-export const HEADERS = {
-  lang: "x-lang",
-};
-
 const URL = {
   DEVELOPMENT: getBaseUrl(),
   PRODUCTION: env.NEXT_PUBLIC_URL,
