@@ -1,4 +1,3 @@
-import avatar from "@/assets/avatar.jpg";
 import Iconify from "@/components/html/iconify";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
@@ -6,6 +5,7 @@ import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
 import { getCookieLang, setCookieLang } from "@/lib/actions";
+import { PHOTOS } from "@/lib/constants";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
@@ -53,7 +53,7 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
     <Fragment>
       <section className="flex items-center gap-3 md:gap-5">
         <Img
-          src={avatar}
+          src={PHOTOS.avatar}
           alt={s.PERSONAL_DATA.fullName}
           className="animate border-2 border-gray shadow-xl object-top object-cover size-16 md:size-32 aspect-square rounded-full"
         />

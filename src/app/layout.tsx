@@ -1,4 +1,3 @@
-import ScrollToTop from "@/components/scroll-to-top";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
 import { useLangHelper } from "@/internationalization/functions";
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: Children) {
         <TRPCReactProvider>
           <main className={VARIANTS.Main()}>{children}</main>
         </TRPCReactProvider>
-        <ScrollToTop />
         <VercelApps />
       </body>
     </html>

@@ -1,21 +1,17 @@
 import type { Certification, Contact, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
-// projects
-import belinsky from "@/assets/belinsky.jpg";
-import hebronstar from "@/assets/hebronstar.jpg";
-import kima from "@/assets/kima.jpg";
-import mandiri from "@/assets/mandiri.jpg";
-import turta from "@/assets/turta.jpg";
-
-// certifications
-import n4 from "@/assets/jlpt-n4.jpeg";
-import podfak from "@/assets/podfak.jpeg";
-
-// logos
-import faotech from "@/assets/logo-faotech.png";
-import kfu from "@/assets/logo-kfu.png";
-import nutech from "@/assets/logo-nutech.jpeg";
+import avatar from "#/images/avatar.jpg";
+import n4 from "#/images/certification/jlpt-n4.jpeg";
+import podfak from "#/images/certification/podfak.jpeg";
+import faotech from "#/images/logo/faotech.png";
+import kfu from "#/images/logo/kfu.png";
+import nutech from "#/images/logo/nutech.jpeg";
+import belinsky from "#/images/project/belinsky.jpg";
+import hebronstar from "#/images/project/hebronstar.jpg";
+import kima from "#/images/project/kima.jpg";
+import mandiri from "#/images/project/mandiri.jpg";
+import turta from "#/images/project/turta.jpg";
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
@@ -27,6 +23,7 @@ export const PHOTOS = {
   logo: { nutech, faotech, kfu },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n4, podfak },
+  avatar,
 };
 
 export const ICONS = {
