@@ -1,7 +1,7 @@
 "use client";
 
 import { useLangHelper } from "@/internationalization/functions";
-import { URLS } from "@/lib/constants";
+import { URLS } from "@/lib/constants/urls";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import type { Lang, LangTarget } from "@/types";
@@ -35,7 +35,7 @@ export default function TRPCReactProvider({ children, setCookieLang, storedLang 
         }),
         httpBatchStreamLink({
           transformer,
-          url: URLS.DEVELOPMENT.BASE_TRPC,
+          url: URLS.BASE_TRPC,
           headers: () => {
             const headers = new Headers();
             headers.set("x-trpc-source", "nextjs-react");

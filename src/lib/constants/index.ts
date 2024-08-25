@@ -1,6 +1,4 @@
-import { env } from "@/env";
-import { getBaseUrl } from "@/lib/utils";
-import type { Certification, Contact, History, Lang, Other, Project, TechStack } from "@/types";
+import type { Certification, Contact, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 // projects
@@ -283,37 +281,3 @@ export const CONTACTS: Contact[] = [
   { href: "https://wa.me/+6281210425333", label: "WhatsApp", icon: ICONS.whatsapp },
   { href: "https://www.instagram.com/ryanpratama14", label: "Instagram", icon: ICONS.instagram },
 ];
-
-export const COOKIES = {
-  lang: "lang",
-};
-
-export const ENDPOINTS = {
-  trpc: "/api/trpc",
-  certification: "/certification/",
-};
-
-export const HEADERS = {
-  lang: "x-lang",
-};
-
-const URL = {
-  DEVELOPMENT: getBaseUrl(),
-  PRODUCTION: env.NEXT_PUBLIC_URL,
-};
-
-export const URLS = {
-  DEVELOPMENT: {
-    BASE: URL.DEVELOPMENT,
-    BASE_TRPC: `${URL.DEVELOPMENT}${ENDPOINTS.trpc}`,
-    BASE_LANG: (lang: Lang) => `${URL.DEVELOPMENT}/${lang}`,
-    FULL: (path: string) => `${URL.DEVELOPMENT}${path}`,
-  },
-
-  PRODUCTION: {
-    BASE: URL.PRODUCTION,
-    BASE_LANG: (lang: Lang) => `${URL.PRODUCTION}/${lang}`,
-    FULL: (path: string) => `${URL.PRODUCTION}${path}`,
-    OG_IMAGE: `${URL.PRODUCTION}/og.png`,
-  },
-};

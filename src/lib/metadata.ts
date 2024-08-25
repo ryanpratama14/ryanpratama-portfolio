@@ -1,5 +1,6 @@
 import { useLang } from "@/internationalization/functions";
-import { PERSONALS, URLS } from "@/lib/constants";
+import { PERSONALS } from "@/lib/constants";
+import { URLS } from "@/lib/constants/urls";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 
