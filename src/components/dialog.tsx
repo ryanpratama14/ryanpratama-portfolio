@@ -1,10 +1,8 @@
-"use client";
-
 import Button from "@/components/html/button";
-import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Dialog as DialogHead, DialogPanel } from "@headlessui/react";
+import { Icon } from "@iconify-icon/react";
 import type { ComponentProps } from "react";
 
 type Props = ComponentProps<"section"> & {
@@ -30,7 +28,7 @@ export default function Dialog({ open, onClose, children, className, classNameDi
         )}
       >
         <Button onClick={onClose} style="close" className="absolute top-3 right-3">
-          <Iconify icon={ICONS.close} width={22.5} />
+          <Icon icon={ICONS.close} width={22.5} />
         </Button>
         <section {...rest} className={cn(className)}>
           {children}

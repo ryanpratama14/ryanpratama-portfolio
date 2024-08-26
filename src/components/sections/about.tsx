@@ -1,9 +1,9 @@
 import Container from "@/components/container";
-import Iconify from "@/components/html/iconify";
 import Text from "@/components/html/text";
 import { TECH_STACKS } from "@/lib/constants";
 import { VARIANTS } from "@/styles";
 import type { DictionaryStatic, TechStack } from "@/types";
+import { Icon } from "@iconify-icon/react";
 
 type Props = { s: DictionaryStatic };
 
@@ -19,8 +19,8 @@ export default function About({ s }: Props) {
             return (
               <section key={e.label} className={VARIANTS.Box({ style: "techstack" })}>
                 <section className="flex items-center gap-0.5">
-                  <Iconify icon={e.icon} width={13} />
-                  {e.icon2 ? <Iconify icon={e.icon2} width={13} /> : null}
+                  <Icon icon={e.icon} width={13} />
+                  {e.icon2 ? <Icon icon={e.icon2} width={13} /> : null}
                 </section>
 
                 <p>{e.label}</p>

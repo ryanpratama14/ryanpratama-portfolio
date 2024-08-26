@@ -1,8 +1,8 @@
 "use client";
 
-import Iconify from "@/components/html/iconify";
 import { ICONS } from "@/lib/constants";
 import { cn, loadToTop } from "@/lib/utils";
+import { Icon } from "@iconify-icon/react";
 import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
@@ -27,7 +27,7 @@ export default function ScrollToTop() {
       )}
     >
       <span className="sr-only">Scroll to Top</span>
-      <Iconify icon={ICONS.arrow} rotate={1} width={25} />
+      <Icon icon={ICONS.arrow} rotate={1} width={25} />
     </button>
   );
 }

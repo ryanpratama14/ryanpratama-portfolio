@@ -1,8 +1,8 @@
 import Container from "@/components//container";
-import Iconify from "@/components/html/iconify";
 import { CONTACTS } from "@/lib/constants";
 import { VARIANTS } from "@/styles";
 import type { DictionaryStatic } from "@/types";
+import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 
 type Props = { s: DictionaryStatic };
@@ -14,7 +14,7 @@ export default function Contacts({ s }: Props) {
         {CONTACTS.map((e) => {
           return (
             <Link key={e.label} href={e.href} target="_blank" rel="noreferrer noopener" className={VARIANTS.Box({ style: "contact" })}>
-              <Iconify icon={e.icon} width={17} />
+              <Icon icon={e.icon} width={17} />
               {e.label}
             </Link>
           );

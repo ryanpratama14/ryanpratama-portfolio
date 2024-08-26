@@ -1,4 +1,3 @@
-import Iconify from "@/components/html/iconify";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,6 +6,7 @@ import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
 import type { DictionaryStatic, History, Lang } from "@/types";
+import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 
 type Props = {
@@ -35,7 +35,7 @@ export default function HistoryCard({ data, lang, s }: Props) {
 
         <section className="pl-2.5 md:pl-3 flex flex-col">
           <Link target="_blank" rel="noreferrer noopener" href={e.href} className="w-fit flex items-center gap-1 translate-x-[0.085rem]">
-            <Iconify icon={ICONS.link} width={12} />
+            <Icon icon={ICONS.link} width={12} />
             <Text className={cn(VARIANTS.Text({ as: "content", className: "font-medium hover:underline" }))}>{e.label}</Text>
           </Link>
           <Text color="gray">

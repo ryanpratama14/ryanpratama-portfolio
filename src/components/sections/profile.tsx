@@ -1,4 +1,3 @@
-import Iconify from "@/components/html/iconify";
 import Img from "@/components/html/img";
 import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
@@ -10,6 +9,7 @@ import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
+import { Icon } from "@iconify-icon/react";
 import Link from "next/link";
 import { Fragment } from "react";
 
@@ -27,7 +27,7 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
     getProfileData(lang).map((e) => {
       const Data = () => (
         <Fragment>
-          <Iconify icon={e.icon} width={17.5} color={COLORS.gray} />
+          <Icon icon={e.icon} width={17.5} color={COLORS.gray} />
           <Text color="graydarker">
             <p className={cn({ "hover:underline": e.href })}>{e.label}</p>
           </Text>
