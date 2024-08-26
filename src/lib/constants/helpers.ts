@@ -6,6 +6,7 @@ import type { Lang } from "@/types";
 const URL = { DEVELOPMENT: getBaseUrl(), PRODUCTION: env.NEXT_PUBLIC_URL };
 
 export const COOKIES = { lang: "lang" };
+export const HEADERS = { lang: "x-lang", path: "x-pathname" };
 
 export const ENDPOINTS = {
   TRPC: "/api/trpc",

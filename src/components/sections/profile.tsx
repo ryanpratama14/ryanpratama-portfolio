@@ -78,7 +78,7 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
               <ProfileData />
             </section>
           </section>
-          {disableLangSwitcher ? null : <LangSwitcher storedLang={storedLang} setCookieLang={setCookieLang} lang={lang} />}
+          {disableLangSwitcher ? null : <LangSwitcher storedLang={storedLang} setCookieLang={setCookieLang} />}
         </section>
       </section>
 

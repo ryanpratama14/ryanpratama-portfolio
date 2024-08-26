@@ -8,12 +8,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const { changeLang } = useLangHelper();
+const { changeLang, validateMatchedLang, getLangFromPath } = useLangHelper();
 
-type Props = { lang: Lang; storedLang: LangTarget; setCookieLang: (lang: Lang) => Promise<void> };
+type Props = { storedLang: LangTarget; setCookieLang: (lang: Lang) => Promise<void> };
 
-export default function LangSwitcher({ lang, setCookieLang, storedLang }: Props) {
+export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
   const path = usePathname();
+  const lang = validateMatchedLang(getLangFromPath(path));
 
   useEffect(() => {
     if (!storedLang || lang !== storedLang) setCookieLang(lang);
