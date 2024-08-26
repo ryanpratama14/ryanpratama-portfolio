@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [...ALL_PATHS.map((path) => getEntry(path)), ...ALL_PATHS.flatMap((path) => LANGS.map((lang) => getEntry(path, lang)))];
 }
 
-const { addLang } = useLangHelper();
+const { addPath } = useLangHelper();
 
 const getEntry = (path: string, lang?: Lang) => {
   return {
@@ -19,5 +19,5 @@ const getEntry = (path: string, lang?: Lang) => {
 };
 
 const getUrl = (path: string, lang?: Lang) => {
-  return `${URLS.PRODUCTION.BASE}${addLang(lang)}${path === "/" ? "" : path}`;
+  return `${URLS.PRODUCTION.BASE}${addPath(path, lang)}`;
 };

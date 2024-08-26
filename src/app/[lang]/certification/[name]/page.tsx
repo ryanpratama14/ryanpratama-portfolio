@@ -8,12 +8,12 @@ import { useLang } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { ENDPOINTS, URLS } from "@/lib/constants/helpers";
 import { getMetadataImage } from "@/lib/constants/metadata";
-import type { Lang } from "@/types";
+import type { ParamsLang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
-type Props = { params: { lang: Lang; name: string } };
+type Props = ParamsLang & { params: { name: string } };
 
 export const generateMetadata = async ({ params: { name, lang } }: Props): Promise<Metadata | undefined> => {
   const data = CERTIFICATIONS.find((e) => e.name === name);
@@ -43,7 +43,7 @@ export default function CertificationPage({ params: { name, lang } }: Props) {
         <Img alt={data.alt} src={data.src} />
       </Container>
 
-      <LinkButton href="" lang={lang} className="mx-auto">
+      <LinkButton href="/" lang={lang} className="mx-auto">
         {s.SECTIONS.backToHomepage}
       </LinkButton>
       <Message s={s} lang={lang} />
