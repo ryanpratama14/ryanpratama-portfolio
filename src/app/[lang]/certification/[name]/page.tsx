@@ -19,7 +19,7 @@ export const generateMetadata = async ({ params: { name, lang } }: Props): Promi
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (data) {
     const title = data.label;
-    const url = `${URLS.PRODUCTION.BASE_LANG(lang)}${ENDPOINTS.certification(data.name)}`;
+    const url = `${URLS.PRODUCTION.BASE_LANG(lang)}${ENDPOINTS.CERTIFICATION(data.name)}`;
     const images = getMetadataImage(title);
     return { title, openGraph: { title, url, images, siteName: title } };
   }

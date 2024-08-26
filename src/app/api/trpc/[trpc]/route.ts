@@ -10,7 +10,7 @@ const createContext = async (req: NextRequest) => createTRPCContext({ headers: r
 
 const handler = (req: NextRequest) =>
   fetchRequestHandler({
-    endpoint: ENDPOINTS.trpc,
+    endpoint: ENDPOINTS.TRPC,
     req,
     router: appRouter,
     createContext: () => createContext(req),
