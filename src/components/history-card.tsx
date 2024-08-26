@@ -53,7 +53,7 @@ export default function HistoryCard({ data, lang, s }: Props) {
 
   if (e.duty)
     return (
-      <AccordionItem value={s.PERSONAL_DATA.history[e.key].label}>
+      <AccordionItem value={e.label}>
         <AccordionTrigger>
           <Card />
         </AccordionTrigger>

@@ -1,0 +1,17 @@
+body {
+  background-image: url("/assets/noise.webp");
+}
+
+textarea {
+  field-sizing: content;
+  min-height: 4lh;
+}
+
+.swiper-scrollbar {
+  --swiper-scrollbar-border-radius: 0px;
+  --swiper-scrollbar-bottom: 0px;
+  --swiper-scrollbar-sides-offset: 0%;
+  --swiper-scrollbar-bg-color: none;
+  --swiper-scrollbar-drag-bg-color: white;
+  --swiper-scrollbar-size: 2px;
+}

@@ -7,6 +7,7 @@ import TRPCReactProvider from "@/trpc/react";
 import type { ChildrenParamsLang, ParamsLang } from "@/types";
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
+import "@/styles/stylesheets.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
