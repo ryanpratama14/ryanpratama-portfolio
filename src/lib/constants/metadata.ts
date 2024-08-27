@@ -7,7 +7,7 @@ import { headers } from "next/headers";
 
 const { getUrl, splitLocale, URLS, HEADERS } = useUrl();
 
-export const getMetadataImage = (title: string) => [{ url: URLS.openGraphImage, type: "image/png", width: 1200, height: 630, alt: title }];
+export const getMetadataImage = (title: string) => [{ url: URLS.ogImage, type: "image/png", width: 1200, height: 630, alt: title }];
 
 export const getMetadata = (lang: Lang): Metadata => {
   const {

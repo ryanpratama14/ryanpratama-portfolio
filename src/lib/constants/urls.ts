@@ -25,15 +25,15 @@ export const useUrl = () => {
   };
 
   const BASE_URL = { development: getBaseUrl(), production: env.NEXT_PUBLIC_URL };
-  const ENDPOINTS = { trpc: "/api/trpc", opengraphImage: "/og.png", sitemap: "/sitemap.xml" };
+  const ENDPOINTS = { trpc: "/api/trpc", ogImage: "/og.png", sitemap: "/sitemap.xml" };
   const COOKIES = { lang: "lang" };
   const HEADERS = { lang: "x-lang", path: "x-pathname" };
   const PATHS = { main: "/", certification: CERTIFICATIONS.map((e) => `/certification/${e.name}`) };
   const ALL_PATHS = Object.values(PATHS).flat();
   const URLS = {
-    trpc: `${getBaseUrl()}${ENDPOINTS.trpc}`,
-    openGraphImage: `${BASE_URL.production}${ENDPOINTS.opengraphImage}`,
-    sitemap: `${BASE_URL.production}${ENDPOINTS.sitemap}`,
+    trpc: getUrl({ path: ENDPOINTS.trpc, type: "development" }),
+    ogImage: getUrl({ path: ENDPOINTS.ogImage }),
+    sitemap: getUrl({ path: ENDPOINTS.sitemap }),
   };
 
   return {
