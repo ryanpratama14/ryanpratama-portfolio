@@ -17,7 +17,7 @@ const createContext = cache(() => {
   return createTRPCContext({ headers: heads });
 });
 
-const { trpc: server, HydrateClient } = createHydrationHelpers<AppRouter>(createCaller(createContext), cache(createQueryClient));
+const { trpc: unlogged, HydrateClient } = createHydrationHelpers<AppRouter>(createCaller(createContext), cache(createQueryClient));
 const logged = createTRPCClient<AppRouter>({
   links: [
     loggerLink({
@@ -47,5 +47,5 @@ const logged = createTRPCClient<AppRouter>({
   ],
 });
 
-export const api = { server, logged };
+export const api = { unlogged, logged };
 export { HydrateClient };
