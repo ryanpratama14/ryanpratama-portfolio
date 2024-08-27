@@ -2,8 +2,8 @@ import ScrollToTop from "@/components/scroll-to-top";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
 import { useLangHelper } from "@/internationalization/functions";
-import { HEADERS } from "@/lib/constants/helpers";
 import { getMetadata } from "@/lib/constants/metadata";
+import { useUrl } from "@/lib/constants/urls";
 import { VARIANTS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
@@ -24,6 +24,8 @@ const notosans = Noto_Sans({
 });
 
 const { validateMatchedLang } = useLangHelper();
+const { HEADERS } = useUrl();
+
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => getMetadata(validateMatchedLang(headers().get(HEADERS.lang)));
 

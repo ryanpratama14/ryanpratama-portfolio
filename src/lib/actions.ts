@@ -1,8 +1,10 @@
 "use server";
 
-import { COOKIES } from "@/lib/constants/helpers";
+import { useUrl } from "@/lib/constants/urls";
 import type { Lang, LangTarget } from "@/types";
 import { cookies } from "next/headers";
+
+const { COOKIES } = useUrl();
 
 export const setCookie = async (name: string, value: string) => {
   cookies().set(name, value, { httpOnly: true, sameSite: "lax" });

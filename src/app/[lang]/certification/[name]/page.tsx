@@ -6,20 +6,23 @@ import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { ENDPOINTS, URLS } from "@/lib/constants/helpers";
 import { getMetadataImage } from "@/lib/constants/metadata";
+import { useUrl } from "@/lib/constants/urls";
 import type { ParamsLang } from "@/types";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
+const { HEADERS, getUrl } = useUrl();
+
 type Props = ParamsLang & { params: { name: string } };
 
-export const generateMetadata = async ({ params: { name, lang } }: Props): Promise<Metadata | undefined> => {
+export const generateMetadata = async ({ params: { name } }: Props): Promise<Metadata | undefined> => {
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (data) {
     const title = data.label;
-    const url = `${URLS.PRODUCTION.BASE_LANG(lang)}${ENDPOINTS.CERTIFICATION(data.name)}`;
+    const url = getUrl({ path: headers().get(HEADERS.path) });
     const images = getMetadataImage(title);
     return { title, openGraph: { title, url, images, siteName: title } };
   }

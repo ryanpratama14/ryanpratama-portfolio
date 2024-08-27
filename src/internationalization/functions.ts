@@ -26,7 +26,6 @@ export const useLang = (lang: Lang) => {
 };
 
 export const useLangHelper = () => {
-  const addPath = (path: string, lang?: Lang) => `${lang ? `/${lang}` : ""}${path === "/" ? "" : path}`;
   const validateLang = (lang: LangTarget) => z.enum(LANGS).safeParse(lang).data;
   const validateMatchedLang = (lang: LangTarget) => validateLang(lang) ?? DEFAULT_LANG;
   const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);
@@ -39,5 +38,5 @@ export const useLangHelper = () => {
     return segments.join("/");
   };
 
-  return { validateLang, validateMatchedLang, getLangFromPath, isLangMissing, changeLang, addPath };
+  return { validateLang, validateMatchedLang, getLangFromPath, isLangMissing, changeLang };
 };

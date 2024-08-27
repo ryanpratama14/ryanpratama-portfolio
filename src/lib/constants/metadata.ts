@@ -1,10 +1,13 @@
 import { useLang } from "@/internationalization/functions";
 import { PERSONALS } from "@/lib/constants";
-import { URLS } from "@/lib/constants/helpers";
+import { useUrl } from "@/lib/constants/urls";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
-export const getMetadataImage = (title: string) => [{ url: URLS.PRODUCTION.OG_IMAGE, type: "image/png", width: 1200, height: 630, alt: title }];
+const { getUrl, splitLocale, URLS, HEADERS } = useUrl();
+
+export const getMetadataImage = (title: string) => [{ url: URLS.openGraphImage, type: "image/png", width: 1200, height: 630, alt: title }];
 
 export const getMetadata = (lang: Lang): Metadata => {
   const {
@@ -12,7 +15,7 @@ export const getMetadata = (lang: Lang): Metadata => {
     const: { locale },
   } = useLang(lang);
 
-  const url = URLS.PRODUCTION.BASE_LANG(lang);
+  const url = getUrl({ path: headers().get(HEADERS.path) });
   const title = `${me.fullName} — ${me.softwareEngineer}`;
   const description = me.summary;
   const images = getMetadataImage(title);
@@ -35,7 +38,7 @@ export const getMetadata = (lang: Lang): Metadata => {
       description,
       url,
       siteName: title,
-      locale: locale.split("-").join("_"),
+      locale: splitLocale(locale),
       type: "website",
       images,
     },

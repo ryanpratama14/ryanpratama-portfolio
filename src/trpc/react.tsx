@@ -1,6 +1,6 @@
 "use client";
 
-import { URLS } from "@/lib/constants/helpers";
+import { useUrl } from "@/lib/constants/urls";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -30,7 +30,7 @@ export default function TRPCReactProvider({ children }: Props) {
         }),
         httpBatchStreamLink({
           transformer,
-          url: URLS.BASE_TRPC,
+          url: useUrl().URLS.trpc,
           headers: () => {
             const headers = new Headers();
             headers.set("x-trpc-source", "nextjs-react");

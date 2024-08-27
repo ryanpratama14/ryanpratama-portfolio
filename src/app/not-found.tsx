@@ -4,21 +4,22 @@ import Contacts from "@/components/sections/contacts";
 import Profile from "@/components/sections/profile";
 import { useLang, useLangHelper } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
-import { HEADERS, URLS } from "@/lib/constants/helpers";
 import { getMetadataImage } from "@/lib/constants/metadata";
+import { useUrl } from "@/lib/constants/urls";
 import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Fragment } from "react";
 
 const { validateMatchedLang } = useLangHelper();
+const { getUrl, HEADERS } = useUrl();
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const lang = validateMatchedLang(headers().get(HEADERS.lang));
   const { s } = useLang(lang);
   const title = s.SECTIONS.notFound;
   const images = getMetadataImage(title);
-  const url = `${URLS.PRODUCTION.BASE}${headers().get(HEADERS.path)}`;
+  const url = getUrl({ path: headers().get(HEADERS.path) });
   return { title, openGraph: { title, images, url, siteName: title } };
 };
 
