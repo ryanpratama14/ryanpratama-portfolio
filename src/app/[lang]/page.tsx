@@ -17,7 +17,7 @@ export default function HomePage({ params }: ParamsLang) {
     func: { formatDate },
   } = useLang(params.lang);
 
-  const updateDate = formatDate(new Date("2024-08-25"));
+  const updateDate = formatDate(new Date("2024-08-27"));
   const updatedOn = isJapanese ? `${updateDate}${s.MENUS.updatedOn}` : `${s.MENUS.updatedOn} ${updateDate}`;
 
   return (

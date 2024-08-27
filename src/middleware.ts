@@ -23,10 +23,10 @@ export const middleware = (req: NextRequest) => {
   const path = req.nextUrl.pathname;
   const lang = getLangFromPath(path) ?? validateLang(req.cookies.get("lang")?.value) ?? getLang(req);
   if (isLangMissing(path)) return NextResponse.redirect(new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url));
-  const response = NextResponse.next();
-  response.headers.set(HEADERS.lang, lang);
-  response.headers.set(HEADERS.path, path);
-  return response;
+  const res = NextResponse.next();
+  res.headers.set(HEADERS.lang, lang);
+  res.headers.set(HEADERS.path, path);
+  return res;
 };
 
 export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };
