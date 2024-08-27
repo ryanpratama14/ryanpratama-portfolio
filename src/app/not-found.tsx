@@ -1,6 +1,7 @@
 import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
+import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang, useLangHelper } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
@@ -45,6 +46,7 @@ export default async function NotFound() {
           {s.SECTIONS.backToHomepage}
         </LinkButton>
       </section>
+      <Message s={s} lang={lang} />
     </Fragment>
   );
 }
