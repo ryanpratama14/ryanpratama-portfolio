@@ -51,7 +51,7 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
 
   return (
     <Fragment>
-      <section className="flex items-center gap-3 md:gap-5">
+      <section className="flex items-center gap-2.5 md:gap-5">
         <Img
           src={PHOTOS.avatar}
           alt={s.PERSONAL_DATA.fullName}
