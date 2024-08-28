@@ -8,7 +8,6 @@ import { headers } from "next/headers";
 const { getUrl, splitLocale, URLS, HEADERS } = useUrl();
 
 export const getMetadataImage = (title: string) => [{ url: URLS.ogImage, type: "image/png", width: 1200, height: 630, alt: title }];
-
 export const getMetadata = (lang: Lang): Metadata => {
   const {
     s: { PERSONAL_DATA: me },
@@ -22,11 +21,11 @@ export const getMetadata = (lang: Lang): Metadata => {
   const keywords = description.split(" ");
 
   return {
-    category: "technology",
     generator: title,
     applicationName: title,
     creator: title,
     publisher: title,
+    category: "technology",
     referrer: "origin-when-cross-origin",
     authors: [{ name: title, url }],
     metadataBase: new URL(url),

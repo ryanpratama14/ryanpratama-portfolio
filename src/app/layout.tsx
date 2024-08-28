@@ -4,11 +4,13 @@ import { LANGS } from "@/internationalization";
 import { useLangHelper } from "@/internationalization/functions";
 import { getMetadata } from "@/lib/constants/metadata";
 import { useUrl } from "@/lib/constants/urls";
-import { VARIANTS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
-import { Noto_Sans } from "next/font/google";
 import { headers } from "next/headers";
+
+// styles
+import { VARIANTS } from "@/styles";
+import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/stylesheets.css";
 import "swiper/css";
