@@ -14,7 +14,7 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
 });
 
 const logger = t.middleware(async ({ next, path, type }) => {
-  CONSOLE_TRPC.info("path", `api.${path ?? "<no-path>"}.${type}`);
+  CONSOLE_TRPC.info("path", `${path}.${type}`);
   return await next();
 });
 

@@ -42,7 +42,12 @@ export const THROW_TRPC = {
     return { code, message, input, result };
   },
 
-  error: ({ code, message = ERROR_MESSAGES[code] }: { code: TRPC_ERROR_CODE_KEY; message?: string }) => {
+  error: <Result = unknown>({
+    code,
+    message = ERROR_MESSAGES[code],
+    result = null as Result,
+  }: { code: TRPC_ERROR_CODE_KEY; message?: string; result?: Result }) => {
+    CONSOLE_TRPC.error("result", result);
     throw new TRPCError({ code, message });
   },
 };
