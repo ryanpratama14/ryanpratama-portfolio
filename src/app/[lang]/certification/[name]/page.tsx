@@ -5,16 +5,16 @@ import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
+import { getHeaders } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { getMetadataImage } from "@/lib/constants/metadata";
 import { useUrl } from "@/lib/constants/urls";
 import type { ParamsLang } from "@/types";
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
-const { HEADERS, getUrl } = useUrl();
+const { getUrl } = useUrl();
 
 type Props = ParamsLang & { params: { name: string } };
 
@@ -22,7 +22,7 @@ export const generateMetadata = async ({ params: { name } }: Props): Promise<Met
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (data) {
     const title = data.label;
-    const url = getUrl({ path: headers().get(HEADERS.path) });
+    const url = getUrl({ path: (await getHeaders()).path });
     const images = getMetadataImage(title);
     return { title, openGraph: { title, url, images, siteName: title } };
   }

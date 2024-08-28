@@ -3,8 +3,8 @@ import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import type { ReadonlyURLSearchParams } from "next/navigation";
 
-const addPath = ({ path, lang }: { path: string | null; lang?: Lang }) => `${lang ? `/${lang}` : ""}${path ?? ""}`;
-const getUrl = ({ path, lang, type = "production" }: { path: string | null; lang?: Lang; type?: keyof typeof BASE_URL }) =>
+const addPath = ({ path, lang }: { path: string; lang?: Lang }) => `${lang ? `/${lang}` : ""}${path ?? ""}`;
+const getUrl = ({ path, lang, type = "production" }: { path: string; lang?: Lang; type?: keyof typeof BASE_URL }) =>
   `${BASE_URL[type]}${addPath({ path, lang })}`;
 const isExternalLink = (href: string) => href.startsWith("http");
 const splitLocale = (locale: string) => locale.split("-").join("_");

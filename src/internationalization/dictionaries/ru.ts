@@ -62,7 +62,6 @@ export const ru: Dictionary = {
 
     SECTIONS: {
       notFound: "Страница не найдена",
-
       backToHomepage: "На главную страницу",
       present: "настоящее время",
       resume: "Резюме",

@@ -13,11 +13,11 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
   },
 });
 
-const trpcLogger = t.middleware(async ({ next, path, type }) => {
+const logger = t.middleware(async ({ next, path, type }) => {
   CONSOLE_TRPC.info("path", `api.${path ?? "<no-path>"}.${type}`);
   return await next();
 });
 
 export const createCallerFactory = t.createCallerFactory;
 export const createTRPCRouter = t.router;
-export const publicProcedure = t.procedure.use(trpcLogger);
+export const publicProcedure = t.procedure.use(logger);

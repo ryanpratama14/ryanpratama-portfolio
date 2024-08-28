@@ -4,28 +4,28 @@ import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang, useLangHelper } from "@/internationalization/functions";
+import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
 import { getMetadataImage } from "@/lib/constants/metadata";
 import { useUrl } from "@/lib/constants/urls";
 import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Fragment } from "react";
 
 const { validateMatchedLang } = useLangHelper();
-const { getUrl, HEADERS } = useUrl();
+const { getUrl } = useUrl();
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const lang = validateMatchedLang(headers().get(HEADERS.lang));
+  const lang = validateMatchedLang((await getHeaders()).lang);
   const { s } = useLang(lang);
   const title = s.SECTIONS.notFound;
   const images = getMetadataImage(title);
-  const url = getUrl({ path: headers().get(HEADERS.path) });
+  const url = getUrl({ path: (await getHeaders()).path });
   return { title, openGraph: { title, images, url, siteName: title } };
 };
 
 export default async function NotFound() {
-  const lang = validateMatchedLang(headers().get(HEADERS.lang));
+  const lang = validateMatchedLang((await getHeaders()).lang);
 
   const {
     s,
