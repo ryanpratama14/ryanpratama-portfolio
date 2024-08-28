@@ -22,24 +22,33 @@ export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
 
   return (
     <section className="flex">
-      {LANGUAGE_OPTIONS.map(({ lang: langTarget, t: { s }, flag, label }) => {
-        const isActive = lang === langTarget;
-        const href = changeLang(langTarget, path);
+      {LANGUAGE_OPTIONS.map(
+        ({
+          lang: langTarget,
+          t: {
+            s: { PERSONAL_DATA: t },
+          },
+          flag,
+          label,
+        }) => {
+          const isActive = lang === langTarget;
+          const href = changeLang(langTarget, path);
 
-        return (
-          <Link
-            key={langTarget}
-            className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
-              "bg-graybg border-graydarker shadow-xl": isActive,
-            })}
-            href={href}
-            type="button"
-          >
-            <span className="sr-only">{`[${label} — ${langTarget}]: ${s.PERSONAL_DATA.fullName}. ${s.PERSONAL_DATA.softwareEngineer}. ${s.PERSONAL_DATA.summary}`}</span>
-            {flag}
-          </Link>
-        );
-      })}
+          return (
+            <Link
+              key={langTarget}
+              className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
+                "bg-graybg border-graydarker shadow-xl": isActive,
+              })}
+              href={href}
+              type="button"
+            >
+              <span className="sr-only">{`[${label} — ${langTarget}]: ${t.fullName}. ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
+              {flag}
+            </Link>
+          );
+        },
+      )}
     </section>
   );
 }

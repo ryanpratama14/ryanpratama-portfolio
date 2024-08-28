@@ -24,7 +24,8 @@ export default function FeaturedProjects({ s }: Props) {
         simulateTouch={false}
         breakpoints={{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 2.25 }, 1280: { slidesPerView: 2.5 }, 2056: { slidesPerView: 2.75 } }}
       >
-        {PROJECTS.map((e) => {
+        {PROJECTS.map((project) => {
+          const e = { desc: s.PROJECTS[project.key], ...project };
           return (
             <SwiperSlide key={e.label}>
               <section className="mb-2 aspect-square relative group overflow-hidden rounded-md">
@@ -47,12 +48,6 @@ export default function FeaturedProjects({ s }: Props) {
 
                 <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate-longer" />
               </section>
-
-              <ul className="sr-only">
-                {e.lists.map((list) => (
-                  <li key={list}>{list}</li>
-                ))}
-              </ul>
             </SwiperSlide>
           );
         })}

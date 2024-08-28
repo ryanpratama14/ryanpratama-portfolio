@@ -102,63 +102,33 @@ export const PROJECTS: Project[] = [
   {
     label: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
-    desc: "A Korean consulting firm that provides global services and industries, featuring a career microsite, admin dashboard, and landing pages for advertising job openings and managing candidate applications.",
+    key: "hebronstar",
     href: "https://hebronstar.com/en",
-    lists: [
-      "Developed a full-stack fully responsive web app using React",
-      "Implemented internationalization using i18next for multi-language support",
-      "Utilized TanStack Query with Axios to perform HTTP requests and consume RESTful APIs",
-      "Integrated Tailwind CSS for responsive component-based styling",
-      "Leveraged Redux Toolkit to implement a global state management solution",
-    ],
   },
   {
     label: "TurunTangan",
     src: PHOTOS.project.turta,
-    desc: "Indonesia's largest non-profit youth volunteer network with 100+ chapters, including an admin dashboard to manage volunteers, view and manage site content, and automate their volunteer network and operations.",
+    key: "turuntangan",
     href: "https://gerakanturuntangan.com",
-    lists: [
-      "Developed a full-stack fully responsive web app using React",
-      "Optimized key content pages for SEO objectives",
-      "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
-      "Integrated Tailwind CSS for responsive component-based styling",
-      "Leveraged Redux Toolkit to implement a global state management solution",
-    ],
   },
 
   {
     label: "Belinsky",
     src: PHOTOS.project.belinsky,
-    desc: "A production house and creative studio specializing in professional photography and filmmaking, showcasing their services, creative works, and client projects to attract new clients.",
+    key: "belinsky",
     href: "https://belinskyproduction.com",
-    lists: [
-      "Developed a static fully responsive web app using React",
-      "Optimized key content pages for SEO objectives",
-      "Integrated Tailwind CSS for responsive component-based styling",
-    ],
   },
   {
     label: "Synergy Perdana Mandiri",
     src: PHOTOS.project.mandiri,
-    desc: "A trading company specializing in general and chemicals trading, providing company and product information to customers in the fertilizer and chemical industries.",
+    key: "mandiri",
     href: "https://www.sinergyperdanamandiri.com",
-    lists: [
-      "Developed a static fully responsive web app using React",
-      "Optimized key content pages for SEO objectives",
-      "Integrated Tailwind CSS for responsive component-based styling",
-    ],
   },
   {
     label: "KIMA",
     src: PHOTOS.project.kima,
-    desc: "A digital platform that helps universities assess the relevance of their programs in specific fields and their alignment with the competency requirements of the job market.",
+    key: "kima",
     href: "https://kima-fe.vercel.app",
-    lists: [
-      "Developed a full-stack fully responsive web app using React",
-      "Utilized Axios library to perform HTTP requests and consume RESTful APIs",
-      "Integrated Tailwind CSS for responsive component-based styling",
-      "Leveraged Redux Toolkit to implement a global state management solution",
-    ],
   },
 ];
 
@@ -233,20 +203,6 @@ export const EXPERIENCES: History[] = [
     href: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
     till: null,
-    duty: [
-      "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
-      "Created 25+ document formats and implemented PDF/XLSX rendering using React-pdf, jsPDF and ExcelJS.",
-      "Ensured app quality with comprehensive testing: unit, integration, and end-to-end.",
-      "Implemented seamless integration of RESTful APIs using Axios.",
-
-      "Built fully responsive user interfaces primarily with Ant Design.",
-      "Collaborated with UI/UX designers to implement visually compelling and intuitive interfaces.",
-
-      "Worked with cross-functional teams, including back-end and QA engineers.",
-      "Maintained regular and effective communication with system analysts.",
-      "Utilized Git and Jira for prioritizing enhancements and bug fixes.",
-      "Created documentation, aiding stakeholder understanding and future maintenance.",
-    ],
   },
   {
     key: "faotech",
@@ -254,19 +210,6 @@ export const EXPERIENCES: History[] = [
     href: "https://faotech.dev",
     since: dayjs("2022-09").toDate(),
     till: dayjs("2023-08").toDate(),
-    duty: [
-      "Managed a front-end team of 2 to 3 engineers across 3 projects.",
-      "Built responsive web apps compatible across devices, integrating loading animations.",
-      "Implemented essential authorization features like login, registration, and account recovery.",
-      "Collaborated with UI/UX designers to create visually compelling user interfaces.",
-      "Integrated internationalization support with i18next framework.",
-
-      "Spearheaded back-end development, including API development, server-side logic, and database management.",
-      "Proficient in CRUD operations and optimized RESTful API endpoints.",
-
-      "Maintained comprehensive documentation to facilitate understanding with stakeholders.",
-      "Provided ongoing maintenance and support for applications.",
-    ],
   },
 ];
 
