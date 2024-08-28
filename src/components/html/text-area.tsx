@@ -1,16 +1,15 @@
 import Text from "@/components/html/text";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
-import { type ComponentProps, forwardRef, useId } from "react";
+import { type ComponentProps, useId } from "react";
 
-type InputProps = ComponentProps<"textarea"> & {
+type Props = ComponentProps<"textarea"> & {
   error: string | undefined;
   placeholder: string;
 };
 
-const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, error, ...rest }, ref) => {
+export default function TextArea({ placeholder, error, ref, ...rest }: Props) {
   const id = useId();
-
   return (
     <section className="gap-0.5 flex flex-col w-full">
       <label className="sr-only" htmlFor={id}>
@@ -22,8 +21,4 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, err
       </Text>
     </section>
   );
-});
-
-TextArea.displayName = "TextArea";
-
-export default TextArea;
+}

@@ -1,16 +1,15 @@
 import Text from "@/components/html/text";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
-import { type ComponentProps, forwardRef, useId } from "react";
+import { type ComponentProps, useId } from "react";
 
 type Props = ComponentProps<"input"> & {
   error: string | undefined;
   placeholder: string;
 };
 
-const Input = forwardRef<HTMLInputElement, Props>(({ placeholder, error, type, ...rest }, ref) => {
+export default function Input({ placeholder, error, type, ref, ...rest }: Props) {
   const id = useId();
-
   return (
     <section className="gap-0.5 flex flex-col w-full">
       <label className="sr-only" htmlFor={id}>
@@ -22,8 +21,4 @@ const Input = forwardRef<HTMLInputElement, Props>(({ placeholder, error, type, .
       </Text>
     </section>
   );
-});
-
-Input.displayName = "Input";
-
-export default Input;
+}
