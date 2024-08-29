@@ -28,7 +28,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.13",
-    "framer-motion": "^11.3.30",
+    "framer-motion": "^11.3.31",
     "lucide-react": "^0.436.0",
     "negotiator": "^0.6.3",
     "next": "^14.2.7",
