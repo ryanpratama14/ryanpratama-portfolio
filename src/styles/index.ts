@@ -57,8 +57,4 @@ export const VARIANTS = {
       },
     },
   }),
-
-  Main: tv({
-    base: "pt-shorter pb-[4.5rem] px-shorter xl:px-52 2xl:px-96 3xl:px-[32rem] animate flex flex-col gap-4 min-h-screen",
-  }),
 };

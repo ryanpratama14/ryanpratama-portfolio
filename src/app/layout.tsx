@@ -6,7 +6,6 @@ import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
 
 // styles
-import { VARIANTS } from "@/styles";
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/stylesheets.css";
@@ -30,10 +29,10 @@ export default async function RootLayout({ children }: Children) {
 
   return (
     <html lang={lang} className={notosans.variable}>
-      <body>
+      <body className="flex items-center justify-center">
         <VercelApps />
         <TRPCReactProvider>
-          <main className={VARIANTS.Main()}>{children}</main>
+          <main className="p-shorter w-full sm:max-w-5xl animate flex flex-col gap-4">{children}</main>
         </TRPCReactProvider>
       </body>
     </html>
