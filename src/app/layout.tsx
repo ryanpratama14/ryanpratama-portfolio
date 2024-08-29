@@ -32,7 +32,7 @@ export default async function RootLayout({ children }: Children) {
       <body className="flex items-center justify-center">
         <VercelApps />
         <TRPCReactProvider>
-          <main className="px-shorter pt-shorter pb-longer md:pb-shorter w-full sm:max-w-5xl animate flex flex-col gap-4">{children}</main>
+          <main className="px-shorter pt-shorter pb-16 md:pb-shorter w-full sm:max-w-5xl animate flex flex-col gap-4">{children}</main>
         </TRPCReactProvider>
       </body>
     </html>
