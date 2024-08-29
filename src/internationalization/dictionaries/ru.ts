@@ -81,7 +81,7 @@ export const ru: Dictionary = {
       featuredProjects: "Выделенные проекты",
       contacts: "Контакты",
       experience: "Опыт работы",
-      updatedOn: "Обновлено",
+
       message: "Давайте свяжемся!",
 
       TECH_STACKS: {
@@ -135,6 +135,6 @@ export const ru: Dictionary = {
   },
 
   d: {
-    hello: (name: string) => `Privet ${name}`,
+    updatedOn: (date: string) => `Обновлено ${date}`,
   },
 };

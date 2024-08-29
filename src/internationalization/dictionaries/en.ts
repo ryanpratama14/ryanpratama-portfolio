@@ -81,7 +81,7 @@ export const en = {
       featuredProjects: "Featured Projects",
       contacts: "Contacts",
       experience: "Experience",
-      updatedOn: "Updated on",
+
       message: "Let's Connect!",
       additionalInformation: "Additional Information",
 
@@ -133,6 +133,6 @@ export const en = {
   },
 
   d: {
-    hello: (name: string) => `Hello ${name}`,
+    updatedOn: (date: string) => `Updated on ${date}`,
   },
 };

@@ -13,12 +13,10 @@ import { Fragment } from "react";
 export default function HomePage({ params }: ParamsLang) {
   const {
     s,
+    d,
     const: { lang, isJapanese, isDefaultLang },
     func: { formatDate },
   } = useLang(params.lang);
-
-  const updateDate = formatDate(new Date("2024-08-28"));
-  const updatedOn = isJapanese ? `${updateDate}${s.MENUS.updatedOn}` : `${s.MENUS.updatedOn} ${updateDate}`;
 
   return (
     <Fragment>
@@ -29,7 +27,7 @@ export default function HomePage({ params }: ParamsLang) {
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
-      <Container title={updatedOn} />
+      <Container title={d.updatedOn(formatDate(new Date("2024-08-29")))} />
     </Fragment>
   );
 }

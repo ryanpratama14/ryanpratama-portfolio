@@ -83,7 +83,6 @@ export const ja: Dictionary = {
       about: "私について",
       featuredProjects: "注目のプロジェクト",
       contacts: "連絡先",
-      updatedOn: "に更新",
       message: "繋がりましょう！",
 
       TECH_STACKS: {
@@ -135,6 +134,6 @@ export const ja: Dictionary = {
   },
 
   d: {
-    hello: (name: string) => `こんにちは、${name}さん`,
+    updatedOn: (date: string) => `${date}に更新`,
   },
 };
