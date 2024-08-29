@@ -3,7 +3,7 @@ import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
-import { useLang, useLangHelper } from "@/internationalization/functions";
+import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
 import { getMetadataImage } from "@/lib/constants/metadata";
@@ -12,12 +12,10 @@ import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
-const { validateMatchedLang } = useLangHelper();
 const { getUrl } = useUrl();
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const lang = validateMatchedLang((await getHeaders()).lang);
-  const { s } = useLang(lang);
+  const { s } = useLang((await getHeaders()).lang);
   const title = s.SECTIONS.notFound;
   const images = getMetadataImage(title);
   const url = getUrl({ path: (await getHeaders()).path });
@@ -25,7 +23,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 };
 
 export default async function NotFound() {
-  const lang = validateMatchedLang((await getHeaders()).lang);
+  const lang = (await getHeaders()).lang;
 
   const {
     s,
