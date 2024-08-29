@@ -27,10 +27,8 @@ export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
             s: { PERSONAL_DATA: t },
           },
           flag,
-          label,
         }) => {
           const isActive = lang === langTarget;
-          const href = changeLang(langTarget, path);
 
           return (
             <Link
@@ -38,10 +36,10 @@ export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
               className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
                 "bg-graybg border-graydarker shadow-xl": isActive,
               })}
-              href={href}
+              href={changeLang(langTarget, path)}
               type="button"
             >
-              <span className="sr-only">{`[${label} — ${langTarget}]: ${t.fullName}. ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
+              <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
               {flag}
             </Link>
           );

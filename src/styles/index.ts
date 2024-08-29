@@ -32,7 +32,7 @@ export const VARIANTS = {
   }),
 
   Button: tv({
-    base: "animate disabled:cursor-progress rounded-full shadow-xl active:scale-95",
+    base: "animate disabled:cursor-progress rounded-md shadow-xl active:scale-95",
     variants: {
       style: {
         reguler: "font-medium px-4 py-1 w-max text-sm md:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",

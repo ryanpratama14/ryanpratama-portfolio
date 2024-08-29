@@ -10,13 +10,13 @@ import { useLang } from "@/internationalization/functions";
 import type { ParamsLang } from "@/types";
 import { Fragment } from "react";
 
-export default function HomePage({ params }: ParamsLang) {
+export default function HomePage({ params: { lang } }: ParamsLang) {
   const {
     s,
     d,
-    const: { lang, isJapanese, isDefaultLang },
+    const: { isJapanese, isDefaultLang },
     func: { formatDate },
-  } = useLang(params.lang);
+  } = useLang(lang);
 
   return (
     <Fragment>
