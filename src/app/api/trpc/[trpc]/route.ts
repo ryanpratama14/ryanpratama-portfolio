@@ -1,5 +1,5 @@
 import { env } from "@/env";
-import { useUrl } from "@/lib/constants/urls";
+import { ENDPOINTS } from "@/lib/constants/urls";
 import { appRouter } from "@/server/api/root";
 import { createTRPCContext } from "@/server/api/trpc";
 import { CONSOLE_TRPC } from "@/trpc/shared";
@@ -10,7 +10,7 @@ const createContext = async (req: NextRequest) => createTRPCContext({ headers: r
 
 const handler = (req: NextRequest) =>
   fetchRequestHandler({
-    endpoint: useUrl().ENDPOINTS.trpc,
+    endpoint: ENDPOINTS.trpc,
     req,
     router: appRouter,
     createContext: () => createContext(req),

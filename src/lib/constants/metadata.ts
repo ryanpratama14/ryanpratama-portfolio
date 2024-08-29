@@ -1,11 +1,9 @@
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
-import { useUrl } from "@/lib/constants/urls";
+import { URLS, getUrl, splitLocale } from "@/lib/constants/urls";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
-
-const { getUrl, splitLocale, URLS } = useUrl();
 
 export const getMetadataImage = (title: string) => [{ url: URLS.ogImage, type: "image/png", width: 1200, height: 630, alt: title }];
 export const getMetadata = async (lang: Lang): Promise<Metadata> => {

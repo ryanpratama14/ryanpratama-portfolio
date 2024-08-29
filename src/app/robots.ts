@@ -1,4 +1,4 @@
-import { useUrl } from "@/lib/constants/urls";
+import { URLS } from "@/lib/constants/urls";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: useUrl().URLS.sitemap,
+    sitemap: URLS.sitemap,
   };
 }

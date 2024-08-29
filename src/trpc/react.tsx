@@ -1,6 +1,6 @@
 "use client";
 
-import { useUrl } from "@/lib/constants/urls";
+import { URLS } from "@/lib/constants/urls";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import type { Children } from "@/types";
@@ -29,7 +29,7 @@ export default function TRPCReactProvider({ children }: Children) {
         }),
         httpBatchStreamLink({
           transformer,
-          url: useUrl().URLS.trpc,
+          url: URLS.trpc,
           headers: () => {
             const headers = new Headers();
             headers.set("x-trpc-source", "nextjs-react");

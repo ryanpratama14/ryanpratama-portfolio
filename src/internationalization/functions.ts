@@ -2,7 +2,7 @@ import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import type { Lang, LangTarget } from "@/types";
 import { z } from "zod";
 
-export const useLang = (lang: Lang) => {
+const useLang = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
   const { d, s } = t;
   const { locale, currency } = rest;
@@ -37,6 +37,4 @@ const changeLang = (lang: Lang, path: string) => {
   return segments.join("/");
 };
 
-export const useLangHelper = () => {
-  return { validateLang, validateMatchedLang, getLangFromPath, isLangMissing, changeLang };
-};
+export { useLang, validateLang, validateMatchedLang, getLangFromPath, isLangMissing, changeLang };

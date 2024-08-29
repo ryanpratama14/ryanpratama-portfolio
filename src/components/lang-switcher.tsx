@@ -1,14 +1,12 @@
 "use client";
 
 import { LANGUAGE_OPTIONS } from "@/internationalization";
-import { useLangHelper } from "@/internationalization/functions";
+import { changeLang, getLangFromPath, validateMatchedLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { Lang, LangTarget } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-
-const { changeLang, validateMatchedLang, getLangFromPath } = useLangHelper();
 
 type Props = { storedLang: LangTarget; setCookieLang: (lang: Lang) => Promise<void> };
 

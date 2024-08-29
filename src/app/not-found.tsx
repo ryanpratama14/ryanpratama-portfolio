@@ -7,12 +7,10 @@ import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
 import { getMetadataImage } from "@/lib/constants/metadata";
-import { useUrl } from "@/lib/constants/urls";
+import { getUrl } from "@/lib/constants/urls";
 import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
 import { Fragment } from "react";
-
-const { getUrl } = useUrl();
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { s } = useLang((await getHeaders()).lang);

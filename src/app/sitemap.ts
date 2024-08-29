@@ -1,9 +1,7 @@
 import { LANGS } from "@/internationalization";
-import { useUrl } from "@/lib/constants/urls";
+import { ALL_PATHS, getUrl } from "@/lib/constants/urls";
 import type { Lang } from "@/types";
 import type { MetadataRoute } from "next";
-
-const { ALL_PATHS, getUrl } = useUrl();
 
 const getEntry = (path: string, lang?: Lang) => {
   return {

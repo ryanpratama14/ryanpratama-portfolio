@@ -1,12 +1,10 @@
-import { useUrl } from "@/lib/constants/urls";
+import { addPath, isExternalLink } from "@/lib/constants/urls";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
 import type { Lang } from "@/types";
 import Link, { type LinkProps } from "next/link";
 import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
-
-const { addPath, isExternalLink } = useUrl();
 
 type Props = LinkProps & ComponentProps<"a"> & VariantProps<typeof VARIANTS.Button> & { children: React.ReactNode; lang?: Lang };
 

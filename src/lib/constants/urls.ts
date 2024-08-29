@@ -34,22 +34,19 @@ const URLS = {
   sitemap: getUrl({ path: ENDPOINTS.sitemap }),
 };
 
-export const useUrl = () => {
-  return {
-    addPath,
-    getBaseUrl,
-    getUrl,
-    isExternalLink,
-    splitLocale,
-    createUrl,
-
-    URLS,
-    BASE_URL,
-    ENDPOINTS,
-    COOKIES,
-    HEADERS,
-    ALL_PATHS,
-    PATHS,
-    IS_CLIENT,
-  };
+export {
+  addPath,
+  getBaseUrl,
+  getUrl,
+  isExternalLink,
+  splitLocale,
+  createUrl,
+  URLS,
+  BASE_URL,
+  ENDPOINTS,
+  COOKIES,
+  HEADERS,
+  ALL_PATHS,
+  PATHS,
+  IS_CLIENT,
 };

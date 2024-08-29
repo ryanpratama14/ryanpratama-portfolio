@@ -1,12 +1,9 @@
 "use server";
 
-import { useLangHelper } from "@/internationalization/functions";
-import { useUrl } from "@/lib/constants/urls";
+import { validateMatchedLang } from "@/internationalization/functions";
+import { COOKIES, HEADERS } from "@/lib/constants/urls";
 import type { Lang, LangTarget } from "@/types";
 import { cookies, headers } from "next/headers";
-
-const { COOKIES, HEADERS } = useUrl();
-const { validateMatchedLang } = useLangHelper();
 
 export const setCookie = async (name: string, value: string) => {
   cookies().set(name, value, { httpOnly: true, sameSite: "lax" });

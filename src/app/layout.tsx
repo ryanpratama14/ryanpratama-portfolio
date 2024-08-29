@@ -3,8 +3,6 @@ import { getHeaders } from "@/lib/actions";
 import { getMetadata } from "@/lib/constants/metadata";
 import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
-
-// styles
 import { Noto_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/stylesheets.css";
@@ -28,7 +26,7 @@ export default async function RootLayout({ children }: Children) {
 
   return (
     <html lang={lang} className={notosans.variable}>
-      <body className="flex items-center justify-center px-shorter pt-shorter pb-16 md:pb-shorter">
+      <body className="flex items-center justify-center px-shorter pt-shorter pb-14 md:pb-shorter">
         <TRPCReactProvider>
           <main className="w-full sm:max-w-4xl flex flex-col gap-4">{children}</main>
         </TRPCReactProvider>

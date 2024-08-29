@@ -8,13 +8,11 @@ import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { getMetadataImage } from "@/lib/constants/metadata";
-import { useUrl } from "@/lib/constants/urls";
+import { getUrl } from "@/lib/constants/urls";
 import type { ParamsLang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
-
-const { getUrl } = useUrl();
 
 type Props = ParamsLang & { params: { name: string } };
 
