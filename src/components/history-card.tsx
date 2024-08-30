@@ -16,9 +16,7 @@ type Props = {
 };
 
 export default function HistoryCard({ data, lang, s }: Props) {
-  const {
-    func: { formatMonth },
-  } = useLang(lang);
+  const { formatMonth } = useLang(lang);
 
   const e = { ...s.CONSTANTS.HISTORY[data.key], ...data };
 
@@ -26,7 +24,7 @@ export default function HistoryCard({ data, lang, s }: Props) {
     return (
       <section className="flex items-center text-left">
         <section
-          className={cn("w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow-xl", {
+          className={cn("w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow", {
             "p-2 flex items-center justify-center bg-white": !e.hasSquarePhoto,
           })}
         >

@@ -20,7 +20,7 @@ export const createQueryClient = () => {
   });
 };
 
-const time = `${useLang(DEFAULT_LANG).const.currentTime} 👉`;
+const time = `${useLang(DEFAULT_LANG).currentTime} 👉`;
 
 export const CONSOLE_TRPC = {
   info: (key: string, message?: unknown) => console.info(`🔵 ${time} ${key}: `, message),

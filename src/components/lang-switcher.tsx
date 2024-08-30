@@ -34,7 +34,7 @@ export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
             <Link
               key={langTarget}
               className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
-                "bg-graybg border-graydarker shadow-xl": isActive,
+                "bg-graybg border-graydarker shadow": isActive,
               })}
               href={changeLang(langTarget, path)}
               type="button"

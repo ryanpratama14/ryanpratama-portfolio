@@ -9,8 +9,6 @@ export type Dictionary = typeof en;
 export type DictionaryStatic = typeof en.s;
 export type DictionaryDynamic = typeof en.d;
 export type Language = ReturnType<typeof useLang>;
-export type LanguageConst = ReturnType<typeof useLang>["const"];
-export type LanguageFunc = ReturnType<typeof useLang>["func"];
 
 export type Profile = { href?: string; icon: string; label: string };
 export type Contact = { href: string; label: string; icon: string };

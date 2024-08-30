@@ -23,10 +23,8 @@ export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata((await getHeaders()).lang);
 
 export default async function RootLayout({ children }: Children) {
-  const lang = (await getHeaders()).lang;
-
   return (
-    <html lang={lang} className={notosans.variable}>
+    <html lang={(await getHeaders()).lang} className={notosans.variable}>
       <body className="flex items-center justify-center px-shorter pt-shorter pb-14 md:pb-shorter">
         <VercelApps />
         <TRPCReactProvider>

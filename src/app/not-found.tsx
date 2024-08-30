@@ -22,11 +22,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function NotFound() {
   const lang = (await getHeaders()).lang;
-
-  const {
-    s,
-    const: { isDefaultLang },
-  } = useLang(lang);
+  const { s, isDefaultLang } = useLang(lang);
 
   return (
     <Fragment>

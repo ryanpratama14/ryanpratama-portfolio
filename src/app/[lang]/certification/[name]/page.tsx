@@ -30,10 +30,7 @@ export default function CertificationPage({ params: { name, lang } }: Props) {
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 
-  const {
-    s,
-    const: { isDefaultLang },
-  } = useLang(lang);
+  const { s, isDefaultLang } = useLang(lang);
 
   return (
     <Fragment>

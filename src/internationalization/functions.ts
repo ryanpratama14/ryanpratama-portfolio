@@ -20,8 +20,16 @@ const useLang = (lang: Lang) => {
   return {
     s,
     d,
-    const: { ...rest, isJapanese, isRussian, isDefaultLang, currentTime },
-    func: { formatMonth, formatDate, formatCurrency, formatCounter },
+    ...rest,
+    isJapanese,
+    isRussian,
+    isDefaultLang,
+    currentTime,
+
+    formatMonth,
+    formatDate,
+    formatCurrency,
+    formatCounter,
   };
 };
 

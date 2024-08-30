@@ -17,7 +17,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, err
         {placeholder}
       </label>
       <textarea className={VARIANTS.Input()} placeholder={placeholder} {...rest} ref={ref} id={id} />
-      <Text className={cn("ml-0.5 shadow-xl", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
+      <Text className={cn("ml-0.5 shadow", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
         {error}
       </Text>
     </section>

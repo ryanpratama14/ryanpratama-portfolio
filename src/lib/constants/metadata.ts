@@ -9,7 +9,7 @@ export const getMetadataImage = (title: string) => [{ url: URLS.ogImage, type: "
 export const getMetadata = async (lang: Lang): Promise<Metadata> => {
   const {
     s: { PERSONAL_DATA: me },
-    const: { locale },
+    locale,
   } = useLang(lang);
 
   const url = getUrl({ path: (await getHeaders()).path });
