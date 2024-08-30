@@ -1,5 +1,5 @@
-import { email } from "@/server/api/routers/email";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
+import { email } from "routers/email";
 
 export const appRouter = createTRPCRouter({ email });
 

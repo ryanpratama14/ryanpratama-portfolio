@@ -20,7 +20,7 @@ export default function HistoryCard({ data, lang, s }: Props) {
     func: { formatMonth },
   } = useLang(lang);
 
-  const e = { ...s.PERSONAL_DATA.history[data.key], ...data };
+  const e = { ...s.CONSTANTS.HISTORY[data.key], ...data };
 
   const Card = () => {
     return (

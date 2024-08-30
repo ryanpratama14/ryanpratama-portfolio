@@ -14,14 +14,14 @@ export type LanguageFunc = ReturnType<typeof useLang>["func"];
 
 export type Profile = { href?: string; icon: string; label: string };
 export type Contact = { href: string; label: string; icon: string };
-export type Project = { key: keyof DictionaryStatic["PROJECTS"]; label: string; href: string; src: StaticImageData };
+export type Project = { key: keyof DictionaryStatic["CONSTANTS"]["PROJECTS"]; label: string; href: string; src: StaticImageData };
 export type Certification = { name: string; src: StaticImageData; alt: string; label: string };
 export type TechStack = Record<keyof DictionaryStatic["MENUS"]["TECH_STACKS"], { label: string; icon: string; icon2?: string }[]>;
 export type Other = { languages: (keyof DictionaryStatic["PERSONAL_DATA"]["languages"])[]; education: History[] };
 
 export type History = {
   hasSquarePhoto?: boolean;
-  key: keyof DictionaryStatic["PERSONAL_DATA"]["history"];
+  key: keyof DictionaryStatic["CONSTANTS"]["HISTORY"];
   src: StaticImageData;
   href: string;
   since: Date;

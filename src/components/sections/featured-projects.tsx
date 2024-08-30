@@ -25,7 +25,7 @@ export default function FeaturedProjects({ s }: Props) {
         breakpoints={{ 640: { slidesPerView: 2 }, 768: { slidesPerView: 2.15 }, 1024: { slidesPerView: 2.45 } }}
       >
         {PROJECTS.map((project) => {
-          const e = { desc: s.PROJECTS[project.key], ...project };
+          const e = { desc: s.CONSTANTS.PROJECTS[project.key], ...project };
           return (
             <SwiperSlide key={e.label}>
               <section className="mb-2 aspect-square relative group overflow-hidden rounded-md">
