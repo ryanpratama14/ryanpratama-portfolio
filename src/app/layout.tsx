@@ -1,3 +1,4 @@
+import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
 import { getMetadata } from "@/lib/constants/metadata";
@@ -27,6 +28,7 @@ export default async function RootLayout({ children }: Children) {
   return (
     <html lang={lang} className={notosans.variable}>
       <body className="flex items-center justify-center px-shorter pt-shorter pb-14 md:pb-shorter">
+        <VercelApps />
         <TRPCReactProvider>
           <main className="w-full sm:max-w-4xl flex flex-col gap-4">{children}</main>
         </TRPCReactProvider>
