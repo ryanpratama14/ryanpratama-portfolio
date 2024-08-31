@@ -47,17 +47,23 @@ export const getMetadata = async (lang: Lang): Promise<Metadata> => {
       images,
     },
     robots: {
-      index: false,
+      index: true,
       follow: true,
-      nocache: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
       googleBot: {
         index: true,
-        follow: false,
-        noimageindex: true,
+        follow: true,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
       },
+    },
+    appleWebApp: {
+      title: title,
+      statusBarStyle: "default",
+      capable: true,
     },
   };
 };

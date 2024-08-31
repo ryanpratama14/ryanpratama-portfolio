@@ -36,7 +36,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           <Input disabled={isPending} {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={t.name.placeholder} />
           <Input disabled={isPending} {...register("email")} error={errors.email?.message} autoComplete="email" placeholder={t.email.placeholder} />
           <TextArea disabled={isPending} {...register("message")} placeholder={t.message.placeholder} error={errors.message?.message} />
-          <Button disabled={isPending} type="submit" className="max-md:w-full mt-1">
+          <Button disabled={isPending} type="submit" className="max-md:w-full mt-0.5">
             {t.send}
           </Button>
         </form>
