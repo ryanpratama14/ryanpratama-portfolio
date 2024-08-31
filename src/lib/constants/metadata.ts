@@ -60,10 +60,5 @@ export const getMetadata = async (lang: Lang): Promise<Metadata> => {
         "max-snippet": -1,
       },
     },
-    appleWebApp: {
-      title: title,
-      statusBarStyle: "default",
-      capable: true,
-    },
   };
 };
