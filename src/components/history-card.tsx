@@ -18,7 +18,7 @@ type Props = {
 export default function HistoryCard({ data, lang, s }: Props) {
   const { formatMonth } = useLang(lang);
 
-  const e = { ...s.CONSTANTS.HISTORY[data.key], ...data };
+  const e = { ...s.CONSTANTS.HISTORY[data.key], ...data, location: s.LOCATIONS[data.location] };
 
   const Card = () => {
     return (
@@ -41,7 +41,7 @@ export default function HistoryCard({ data, lang, s }: Props) {
           </Text>
           <Text color="graydarker" as="small">
             <p>
-              {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : s.SECTIONS.present}
+              {e.location} • {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : s.SECTIONS.present}
             </p>
           </Text>
         </section>

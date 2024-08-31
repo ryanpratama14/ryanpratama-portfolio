@@ -1,6 +1,6 @@
+import { HEADERS } from "@/app/urls";
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { getLangFromPath, isLangMissing, validateLang, validateMatchedLang } from "@/internationalization/functions";
-import { HEADERS } from "@/lib/constants/urls";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";

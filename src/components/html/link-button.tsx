@@ -1,4 +1,4 @@
-import { addPath, isExternalLink } from "@/lib/constants/urls";
+import { addPath, isExternalLink } from "@/app/urls";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
 import type { Lang } from "@/types";

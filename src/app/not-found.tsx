@@ -1,3 +1,5 @@
+import { getMetadataImage } from "@/app/metadata";
+import { getUrl } from "@/app/urls";
 import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import Contacts from "@/components/sections/contacts";
@@ -6,8 +8,6 @@ import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
-import { getMetadataImage } from "@/lib/constants/metadata";
-import { getUrl } from "@/lib/constants/urls";
 import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
 import { Fragment } from "react";

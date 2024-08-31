@@ -1,7 +1,7 @@
+import { getMetadata } from "@/app/metadata";
 import VercelApps from "@/components/vercel-apps";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
-import { getMetadata } from "@/lib/constants/metadata";
 import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
 import { Noto_Sans } from "next/font/google";

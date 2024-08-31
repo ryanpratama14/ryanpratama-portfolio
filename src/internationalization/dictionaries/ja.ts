@@ -2,6 +2,48 @@ import type { Dictionary } from "@/types";
 
 export const ja: Dictionary = {
   s: {
+    PERSONAL_DATA: {
+      languages: {
+        en: "英語",
+        id: "インドネシア語",
+        ru: "ロシア語",
+        ja: "日本語",
+      },
+      fullName: "ライアン・プラタマ",
+      summary:
+        "フロントエンド開発を専門とする経験豊富なソフトウェアエンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
+      softwareEngineer: "ソフトウェアエンジニア",
+
+      about:
+        "大学の3学期目に、ロシアのカザンにあるインドネシア人の友人のアパートで行われた無料のプログラミングコースに参加しました。他の学生たちと一緒にJavaScriptの基本を学び、最終的に2022年にfaoTechというソフトウェアハウスのスタートアップを設立しました。スキルを磨くうちに、フロントエンド開発に情熱を感じ、この分野に特化することを決めました。",
+    },
+
+    COUNTER: {
+      age: "歳",
+      yearsExperience: "年の経験",
+    },
+
+    MENUS: {
+      additionalInformation: "追加情報",
+      experience: "職歴",
+      about: "私について",
+      featuredProjects: "注目のプロジェクト",
+      contacts: "連絡先",
+      message: "繋がりましょう！",
+
+      TECH_STACKS: {
+        programmingLanguages: "開発言語",
+        librariesFrameworks: "フレームワーク",
+        db: "データベース",
+        learning: "自己学習",
+      },
+
+      OTHER: {
+        education: "学歴",
+        languages: "言語",
+      },
+    },
+
     CONSTANTS: {
       PROJECTS: {
         hebronstar:
@@ -57,47 +99,6 @@ export const ja: Dictionary = {
         },
       },
     },
-    PERSONAL_DATA: {
-      languages: {
-        en: "英語",
-        id: "インドネシア語",
-        ru: "ロシア語",
-        ja: "日本語",
-      },
-      fullName: "ライアン・プラタマ",
-      summary:
-        "フロントエンド開発を専門とする経験豊富なソフトウェアエンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
-      softwareEngineer: "ソフトウェアエンジニア",
-
-      about:
-        "大学の3学期目に、ロシアのカザンにあるインドネシア人の友人のアパートで行われた無料のプログラミングコースに参加しました。他の学生たちと一緒にJavaScriptの基本を学び、最終的に2022年にfaoTechというソフトウェアハウスのスタートアップを設立しました。スキルを磨くうちに、フロントエンド開発に情熱を感じ、この分野に特化することを決めました。",
-    },
-
-    COUNTER: {
-      age: "歳",
-      yearsExperience: "年の経験",
-    },
-
-    MENUS: {
-      additionalInformation: "追加情報",
-      experience: "職歴",
-      about: "私について",
-      featuredProjects: "注目のプロジェクト",
-      contacts: "連絡先",
-      message: "繋がりましょう！",
-
-      TECH_STACKS: {
-        programmingLanguages: "開発言語",
-        librariesFrameworks: "フレームワーク",
-        db: "データベース",
-        learning: "自己学習",
-      },
-
-      OTHER: {
-        education: "学歴",
-        languages: "言語",
-      },
-    },
 
     SECTIONS: {
       notFound: "ページが見つかりません",
@@ -111,6 +112,7 @@ export const ja: Dictionary = {
       jakarta: "ジャカルタ",
       remote: "リモート",
       tokyo: "東京",
+      kazan: "カザン",
     },
 
     MESSAGE: {

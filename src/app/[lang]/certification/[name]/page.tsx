@@ -1,3 +1,5 @@
+import { getMetadataImage } from "@/app/metadata";
+import { getUrl } from "@/app/urls";
 import Container from "@/components/container";
 import Img from "@/components/html/img";
 import LinkButton from "@/components/html/link-button";
@@ -7,8 +9,6 @@ import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { getMetadataImage } from "@/lib/constants/metadata";
-import { getUrl } from "@/lib/constants/urls";
 import type { ParamsLang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";

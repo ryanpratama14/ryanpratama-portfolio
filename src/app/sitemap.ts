@@ -1,5 +1,5 @@
+import { ALL_PATHS, getUrl } from "@/app/urls";
 import { LANGS } from "@/internationalization";
-import { ALL_PATHS, getUrl } from "@/lib/constants/urls";
 import type { Lang } from "@/types";
 import type { MetadataRoute } from "next";
 

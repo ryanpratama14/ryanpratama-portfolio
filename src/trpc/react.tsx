@@ -1,6 +1,6 @@
 "use client";
 
-import { URLS } from "@/lib/constants/urls";
+import { URLS } from "@/app/urls";
 import type { AppRouter } from "@/server/api/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import type { Children } from "@/types";

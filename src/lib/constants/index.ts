@@ -193,6 +193,7 @@ export const OTHERS: Other = {
       since: dayjs("2019-09").toDate(),
       till: dayjs("2023-06").toDate(),
       hasSquarePhoto: true,
+      location: "kazan",
     },
   ],
 };
@@ -204,6 +205,7 @@ export const EXPERIENCES: History[] = [
     href: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
     till: null,
+    location: "jakarta",
   },
   {
     key: "faotech",
@@ -211,6 +213,7 @@ export const EXPERIENCES: History[] = [
     href: "https://faotech.dev",
     since: dayjs("2022-09").toDate(),
     till: dayjs("2023-08").toDate(),
+    location: "remote",
   },
 ];
 

@@ -22,7 +22,7 @@ export default function HomePage({ params: { lang } }: ParamsLang) {
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
-      <Container title={d.updatedOn(formatDate(new Date("2024-08-30")))} />
+      <Container title={d.updatedOn(formatDate(new Date("2024-09-01")))} />
     </Fragment>
   );
 }

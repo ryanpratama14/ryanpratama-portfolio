@@ -1,7 +1,7 @@
+import { URLS, getUrl, splitLocale } from "@/app/urls";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
-import { URLS, getUrl, splitLocale } from "@/lib/constants/urls";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 

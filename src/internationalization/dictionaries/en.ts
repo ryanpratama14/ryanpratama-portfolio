@@ -34,7 +34,7 @@ export const en = {
         programmingLanguages: "Programming Languages",
         librariesFrameworks: "Libraries & Frameworks",
         db: "Databases",
-        learning: "I'm Learning...",
+        learning: "I'm learning...",
       },
 
       OTHER: {
@@ -55,6 +55,7 @@ export const en = {
       jakarta: "Jakarta",
       remote: "Remote",
       tokyo: "Tokyo",
+      kazan: "Kazan",
     },
 
     MESSAGE: {

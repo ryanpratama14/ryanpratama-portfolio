@@ -1,7 +1,7 @@
 "use server";
 
+import { COOKIES, HEADERS } from "@/app/urls";
 import { validateMatchedLang } from "@/internationalization/functions";
-import { COOKIES, HEADERS } from "@/lib/constants/urls";
 import type { Lang, LangTarget } from "@/types";
 import { cookies, headers } from "next/headers";
 
