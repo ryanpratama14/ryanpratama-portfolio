@@ -46,7 +46,7 @@ export default function FeaturedProjects({ s }: Props) {
                   </LinkButton>
                 </section>
 
-                <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate-longer" />
+                <Img src={e.src} alt={e.desc} className="rounded-md object-cover size-full group-hover:scale-[1.1] animate-longer" priority />
               </section>
             </SwiperSlide>
           );
