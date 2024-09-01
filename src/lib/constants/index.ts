@@ -15,7 +15,7 @@ import turta from "#/images/project/turta.webp";
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
-  yoe: (dayjs().diff(dayjs("2022-09-01"), "month") / 12).toFixed(1),
+  yoe: (dayjs().diff(dayjs("2022-01-01"), "month") / 12).toFixed(1),
   x: "@totorogoriorio",
 };
 

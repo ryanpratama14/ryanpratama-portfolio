@@ -3,11 +3,14 @@ import { ICONS, PERSONALS } from "@/lib/constants";
 import type { Lang, Profile } from "@/types";
 
 export const getProfileData = (lang: Lang): Profile[] => {
-  const { s, formatCounter } = useLang(lang);
+  const { s, formatCounter, locale } = useLang(lang);
 
   return [
     { href: "/resume.pdf", icon: ICONS.resume, label: s.SECTIONS.resume },
-    { icon: ICONS.yoe, label: `${PERSONALS.yoe}${formatCounter(s.COUNTER.yearsExperience)}` },
+    {
+      icon: ICONS.yoe,
+      label: `${Number.parseInt(PERSONALS.yoe).toLocaleString(locale, { minimumFractionDigits: 1 })}${formatCounter(s.COUNTER.yearsExperience)}`,
+    },
     { icon: ICONS.location, label: s.LOCATIONS.jakarta },
     { icon: ICONS.age, label: `${PERSONALS.age}${formatCounter(s.COUNTER.age)}` },
   ];
