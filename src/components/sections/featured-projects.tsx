@@ -31,7 +31,7 @@ export default function FeaturedProjects({ s }: Props) {
               <section className="mb-2 aspect-square relative group overflow-hidden rounded-md">
                 <section className="rounded-md z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
                   <Text
-                    className="flex flex-col gap-0.5 items-end absolute font-semibold top-3 w-full px-3 text-right translate-x-full group-hover:translate-x-0"
+                    className="flex flex-col items-end absolute font-semibold top-3 w-full px-3 text-right translate-x-full group-hover:translate-x-0"
                     as="menuTitle"
                   >
                     <h3>{e.label}</h3>

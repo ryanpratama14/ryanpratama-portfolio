@@ -60,7 +60,7 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
         <section className="flex justify-between w-full items-start">
           <section className="flex flex-col md:gap-0.5">
             <section className="flex flex-col">
-              <Text as="heading">
+              <Text as="heading" className="font-bold">
                 <h1>{s.PERSONAL_DATA.fullName}</h1>
               </Text>
               {isDefaultLang ? null : (
@@ -70,7 +70,7 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
               )}
             </section>
 
-            <Text as="contentTitle" color="gray">
+            <Text as="menuTitle" color="gray" className="font-normal">
               <h2>{s.PERSONAL_DATA.softwareEngineer}</h2>
             </Text>
 

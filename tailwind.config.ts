@@ -67,7 +67,7 @@ const config = {
         longer10: "26vw",
       },
       fontFamily: {
-        notosans: ["var(--font-notosans)", ...fontFamily.sans],
+        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
       screens: {
         "3xl": "2056px",
