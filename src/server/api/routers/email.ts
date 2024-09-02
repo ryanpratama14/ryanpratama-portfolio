@@ -20,7 +20,7 @@ export const email = createTRPCRouter({
     });
 
     if (error) return THROW_TRPC.error({ code: "INTERNAL_SERVER_ERROR", message: error.message, result: error });
-    return THROW_TRPC.ok({ code: "OK", input, result });
+    return THROW_TRPC.ok({ code: "CREATED", input, result });
   }),
 });
 

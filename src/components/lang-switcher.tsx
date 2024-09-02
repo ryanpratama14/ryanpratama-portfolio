@@ -19,7 +19,7 @@ export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
   }, [lang, storedLang, setCookieLang]);
 
   return (
-    <section className="flex">
+    <section className="absolute right-0 top-0 flex">
       {LANGUAGE_OPTIONS.map(
         ({
           lang: langTarget,
@@ -33,13 +33,15 @@ export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
           return (
             <Link
               key={langTarget}
-              className={cn("text-2xl leading-3 px-1 py-1.5 rounded-md border-1 border-transparent", {
+              className={cn("text-2xl leading-3 px-1 pb-1.5 pt-2 rounded-md border-1 border-transparent", {
                 "bg-graybg border-graydarker shadow": isActive,
               })}
               href={changeLang(langTarget, path)}
               type="button"
             >
-              <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
+              <span className="sr-only">
+                {t.fullName} — {t.softwareEngineer}. {t.summary} {t.about}
+              </span>
               {flag}
             </Link>
           );

@@ -4,7 +4,7 @@ import { z } from "zod";
 
 const useLang = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
-  const { d, s } = t;
+  const { s, d } = t;
   const { locale, currency } = rest;
 
   const isJapanese = lang === "ja";
