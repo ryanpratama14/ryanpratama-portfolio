@@ -11,7 +11,7 @@ export default function Message({ name, email, message, lang }: EmailMessageInpu
             <Text>
               Name: {name}
               <br />
-              Email: {email}
+              Email: {email.toLowerCase()}
               <br />
               <span className="whitespace-pre-line">Message: {message}</span>
               <br />
