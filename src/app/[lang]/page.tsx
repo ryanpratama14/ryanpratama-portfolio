@@ -18,7 +18,7 @@ export default function HomePage({ params: { lang } }: ParamsLang) {
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
       <About s={s} />
-      <Experience s={s} lang={lang} />
+      <Experience s={s} lang={lang} isJapanese={isJapanese} />
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />

@@ -26,7 +26,7 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
           </Text>
           <Accordion type="multiple" className="space-y-2.5">
             {OTHERS.education.map((e) => {
-              return <HistoryCard key={e.key} data={e} lang={lang} s={s} />;
+              return <HistoryCard key={e.key} data={e} lang={lang} s={s} isJapanese={isJapanese} />;
             })}
           </Accordion>
         </section>
