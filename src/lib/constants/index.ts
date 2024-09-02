@@ -36,7 +36,7 @@ export const ICONS = {
   resume: "mdi:resume",
   yoe: "mdi:work",
   location: "mdi:location",
-  age: "mdi:person",
+  age: "bi:person-fill",
 
   ts: "teenyicons:typescript-solid",
   js: "teenyicons:javascript-solid",
