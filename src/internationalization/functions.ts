@@ -11,6 +11,7 @@ const useLang = (lang: Lang) => {
   const isRussian = lang === "ru";
   const isDefaultLang = lang === DEFAULT_LANG;
   const currentTime = new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  const splittedLocale = locale.split("-").join("_");
 
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
@@ -21,6 +22,7 @@ const useLang = (lang: Lang) => {
     s,
     d,
     ...rest,
+    splittedLocale,
     isJapanese,
     isRussian,
     isDefaultLang,

@@ -1,4 +1,4 @@
-import { URLS, getUrl, splitLocale } from "@/app/urls";
+import { URLS, getUrl } from "@/app/urls";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
@@ -9,7 +9,7 @@ export const getMetadataImage = (title: string) => [{ url: URLS.ogImage, type: "
 export const getMetadata = async (lang: Lang): Promise<Metadata> => {
   const {
     s: { PERSONAL_DATA: me },
-    locale,
+    splittedLocale: locale,
   } = useLang(lang);
 
   const url = getUrl({ path: (await getHeaders()).path });
@@ -35,7 +35,7 @@ export const getMetadata = async (lang: Lang): Promise<Metadata> => {
       description,
       url,
       siteName: title,
-      locale: splitLocale(locale),
+      locale,
       type: "website",
       images,
     },

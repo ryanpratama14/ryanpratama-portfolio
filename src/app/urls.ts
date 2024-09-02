@@ -7,7 +7,6 @@ const addPath = ({ path, lang }: { path: string; lang?: Lang }) => `${lang ? `/$
 const getUrl = ({ path, lang, type = "production" }: { path: string; lang?: Lang; type?: keyof typeof BASE_URL }) =>
   `${BASE_URL[type]}${addPath({ path, lang })}`;
 const isExternalLink = (href: string) => href.startsWith("http");
-const splitLocale = (locale: string) => locale.split("-").join("_");
 
 const getBaseUrl = () => {
   if (IS_CLIENT) return `${window.location.origin}`;
@@ -34,19 +33,4 @@ const URLS = {
   sitemap: getUrl({ path: ENDPOINTS.sitemap }),
 };
 
-export {
-  addPath,
-  getBaseUrl,
-  getUrl,
-  isExternalLink,
-  splitLocale,
-  createUrl,
-  URLS,
-  BASE_URL,
-  ENDPOINTS,
-  COOKIES,
-  HEADERS,
-  ALL_PATHS,
-  PATHS,
-  IS_CLIENT,
-};
+export { addPath, getBaseUrl, getUrl, isExternalLink, createUrl, URLS, BASE_URL, ENDPOINTS, COOKIES, HEADERS, ALL_PATHS, PATHS, IS_CLIENT };
