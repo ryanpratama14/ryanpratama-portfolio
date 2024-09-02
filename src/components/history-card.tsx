@@ -40,9 +40,7 @@ export default function HistoryCard({ data, lang, s }: Props) {
             <p className="font-medium">{e.desc}</p>
           </Text>
           <Text color="graydarker" as="small">
-            <p>
-              {e.location} • {formatMonth(e.since)} — {e.till ? formatMonth(e.till) : s.SECTIONS.present}
-            </p>
+            <p>{`${e.location} • ${formatMonth(e.since)} — ${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}</p>
           </Text>
         </section>
       </section>
