@@ -18,7 +18,7 @@ const LinkButton = ({ children, className, style, href, lang, target, rel, ...re
       className={cn(VARIANTS.Button({ className, style }))}
     >
       {children}
-      <span className="sr-only">{children}</span>
+      <span className="sr-only">Button</span>
     </Link>
   );
 };

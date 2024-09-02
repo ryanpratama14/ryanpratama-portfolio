@@ -27,7 +27,7 @@ export default function Dialog({ open, onClose, children, className, classNameDi
           classNameDialog,
         )}
       >
-        <Button onClick={onClose} style="close" className="absolute top-3 right-3 flex items-center justify-center">
+        <Button onClick={onClose} style="close" className="absolute top-3 right-3">
           <Icon icon={ICONS.close} width={22.5} />
         </Button>
         <section {...rest} className={cn(className)}>

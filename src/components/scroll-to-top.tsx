@@ -26,7 +26,7 @@ export default function ScrollToTop() {
         { "scale-0 translate-y-full": !visible },
       )}
     >
-      <span className="sr-only">Scroll to Top</span>
+      <span className="sr-only">Button</span>
       <Icon icon={ICONS.arrow} rotate={1} width={25} />
     </button>
   );

@@ -31,11 +31,10 @@ export const VARIANTS = {
   }),
 
   Button: tv({
-    base: "animate disabled:cursor-progress rounded-md shadow active:scale-95",
+    base: "flex items-center justify-center animate disabled:cursor-progress rounded-md shadow active:scale-95",
     variants: {
       style: {
-        reguler:
-          "flex items-center justify-center font-medium px-4 h-8 w-max text-sm md:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
+        reguler: "font-medium px-4 h-8 w-max text-sm md:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
         close: "bg-graybg hover:bg-grayhover p-0.5",
       },
     },
