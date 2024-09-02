@@ -92,7 +92,7 @@ export const ru: Dictionary = {
         db: "Базы данных",
       },
       OTHER: {
-        education: "Education",
+        education: "Образование",
         languages: "Языки",
       },
     },
