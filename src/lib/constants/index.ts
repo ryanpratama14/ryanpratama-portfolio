@@ -27,6 +27,7 @@ export const PHOTOS = {
 };
 
 export const ICONS = {
+  send: "mdi:send",
   notFound: "ooui:article-not-found-ltr",
   close: "mdi:close",
   arrow: "material-symbols:arrow-back-ios",

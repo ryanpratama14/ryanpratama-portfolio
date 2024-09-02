@@ -34,7 +34,8 @@ export const VARIANTS = {
     base: "animate disabled:cursor-progress rounded-md shadow active:scale-95",
     variants: {
       style: {
-        reguler: "font-medium px-4 py-1 w-max text-sm md:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
+        reguler:
+          "flex items-center justify-center font-medium px-4 h-8 w-max text-sm md:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
         close: "bg-graybg hover:bg-grayhover p-0.5",
       },
     },
