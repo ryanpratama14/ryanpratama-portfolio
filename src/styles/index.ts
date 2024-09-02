@@ -51,7 +51,7 @@ export const VARIANTS = {
     variants: {
       style: {
         contact: "shadow text-sm md:text-base gap-1 px-2 py-0.5 animate hover:bg-grayborder",
-        techstack: "text-xs md:text-sm px-1 py-[0.1rem] gap-[0.2rem] md:px-1.5 md:py-0.5 md:gap-1",
+        techstack: "text-[0.7rem] md:text-sm px-1 py-[0.1rem] gap-[0.2rem] md:px-1.5 md:py-0.5 md:gap-1",
       },
     },
   }),
