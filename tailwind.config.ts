@@ -68,6 +68,7 @@ const config = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        default: [...fontFamily.sans],
       },
       screens: {
         "3xl": "2056px",

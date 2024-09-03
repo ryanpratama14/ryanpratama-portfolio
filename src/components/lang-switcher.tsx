@@ -33,7 +33,7 @@ export default function LangSwitcher({ setCookieLang, storedLang }: Props) {
           return (
             <Link
               key={langTarget}
-              className={cn("text-xl md:text-2xl !leading-3 px-1 pb-1.5 pt-1.5 md:pt-2 rounded-md border-1 border-transparent", {
+              className={cn("font-default text-xl md:text-2xl !leading-3 px-1 py-1.5 md:px-1.5 md:py-2 rounded-md border-1 border-transparent", {
                 "bg-graybg border-graydarker shadow": isActive,
               })}
               href={changeLang(langTarget, path)}
