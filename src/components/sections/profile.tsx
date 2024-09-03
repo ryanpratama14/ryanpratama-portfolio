@@ -51,33 +51,36 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
 
   return (
     <Fragment>
-      <section className="flex items-center gap-2.5 md:gap-5 relative">
-        <Img
-          src={PHOTOS.avatar}
-          alt={s.PERSONAL_DATA.fullName}
-          className="animate border-2 border-gray shadow object-top object-cover size-16 md:size-32 aspect-square rounded-full"
-        />
+      <section className="flex justify-between items-start">
+        <section className="flex items-center gap-2.5 md:gap-5">
+          <Img
+            src={PHOTOS.avatar}
+            alt={s.PERSONAL_DATA.fullName}
+            className="animate border-2 border-gray shadow object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-full"
+          />
 
-        <section className="flex flex-col md:gap-0.5">
-          <section className="flex flex-col">
-            <Text as="heading" className="font-bold">
-              <h1>{s.PERSONAL_DATA.fullName}</h1>
-            </Text>
-            {isDefaultLang ? null : (
-              <Text as="small" className="-translate-y-0.5">
-                {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
+          <section className="flex flex-col md:gap-0.5">
+            <section className="flex flex-col">
+              <Text as="heading" className="font-bold">
+                <h1>{s.PERSONAL_DATA.fullName}</h1>
               </Text>
-            )}
-          </section>
+              {isDefaultLang ? null : (
+                <Text as="small" className="-translate-y-0.5">
+                  {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
+                </Text>
+              )}
+            </section>
 
-          <Text as="menuTitle" color="gray" className="font-normal">
-            <h2>{s.PERSONAL_DATA.softwareEngineer}</h2>
-          </Text>
+            <Text as="menuTitle" color="gray" className="font-normal">
+              <h2>{s.PERSONAL_DATA.softwareEngineer}</h2>
+            </Text>
 
-          <section className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
-            <ProfileData />
+            <section className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
+              <ProfileData />
+            </section>
           </section>
         </section>
+
         {disableLangSwitcher ? null : <LangSwitcher storedLang={storedLang} setCookieLang={setCookieLang} />}
       </section>
 
