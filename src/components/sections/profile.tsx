@@ -3,7 +3,7 @@ import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
-import { getCookieLang, setCookieLang } from "@/lib/actions";
+import { getCookieLang } from "@/lib/actions";
 import { PHOTOS } from "@/lib/constants";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
@@ -17,10 +17,9 @@ type Props = {
   s: DictionaryStatic;
   lang: Lang;
   isDefaultLang: boolean;
-  disableLangSwitcher?: boolean;
 };
 
-export default async function Profile({ disableLangSwitcher, s, lang, isDefaultLang }: Props) {
+export default async function Profile({ s, lang, isDefaultLang }: Props) {
   const storedLang = await getCookieLang();
 
   const ProfileData = () =>
@@ -81,7 +80,7 @@ export default async function Profile({ disableLangSwitcher, s, lang, isDefaultL
           </section>
         </section>
 
-        {disableLangSwitcher ? null : <LangSwitcher storedLang={storedLang} setCookieLang={setCookieLang} />}
+        <LangSwitcher storedLang={storedLang} />
       </section>
 
       <section className="flex md:hidden gap-y-1 gap-x-2 flex-wrap -mb-2 -translate-x-0.5">
