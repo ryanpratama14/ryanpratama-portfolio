@@ -9,6 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
   } = useLang(DEFAULT_LANG);
 
   const title = `${me.fullName} — ${me.softwareEngineer}`;
+  const description = me.summary;
 
   return {
     name: title,
@@ -17,32 +18,8 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: COLORS.black,
     display: "standalone",
     start_url: "/",
+    description,
     icons: [
-      {
-        src: "assets/icon-72x72.png",
-        sizes: "72x72",
-        type: "image/png",
-      },
-      {
-        src: "assets/icon-96x96.png",
-        sizes: "96x96",
-        type: "image/png",
-      },
-      {
-        src: "assets/icon-128x128.png",
-        sizes: "128x128",
-        type: "image/png",
-      },
-      {
-        src: "assets/icon-144x144.png",
-        sizes: "144x144",
-        type: "image/png",
-      },
-      {
-        src: "assets/icon-152x152.png",
-        sizes: "152x152",
-        type: "image/png",
-      },
       {
         src: "assets/icon-192x192.png",
         sizes: "192x192",
