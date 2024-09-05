@@ -2,22 +2,21 @@
 
 import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { changeLang, getLangFromPath, validateMatchedLang } from "@/internationalization/functions";
-import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/utils";
-import type { LangTarget } from "@/types";
+import type { Lang, LangTarget } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-type Props = { storedLang: LangTarget };
+type Props = { storedLang: LangTarget; setCookieLang: (lang: Lang) => Promise<void> };
 
-export default function LangSwitcher({ storedLang }: Props) {
+export default function LangSwitcher({ storedLang, setCookieLang }: Props) {
   const path = usePathname();
   const lang = validateMatchedLang(getLangFromPath(path));
 
   useEffect(() => {
     if (!storedLang || lang !== storedLang) setCookieLang(lang);
-  }, [lang, storedLang]);
+  }, [lang, storedLang, setCookieLang]);
 
   return (
     <section className="flex">
