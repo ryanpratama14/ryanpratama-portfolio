@@ -7,7 +7,7 @@ import Input from "@/components/html/input";
 import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
 import { ICONS } from "@/lib/constants";
-import type { EmailMessageInput } from "@/server/api/routers/email";
+import type { EmailMessageInput } from "@/server/api/routers";
 import { schema } from "@/server/api/schema";
 import { api } from "@/trpc/react";
 import type { DictionaryStatic, Lang } from "@/types";
