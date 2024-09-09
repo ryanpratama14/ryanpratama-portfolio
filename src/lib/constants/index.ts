@@ -202,6 +202,14 @@ export const OTHERS: Other = {
 };
 
 export const EXPERIENCES: History[] = [
+  // {
+  //   key: "nutech",
+  //   src: PHOTOS.logo.nutech,
+  //   href: "https://www.nutech-integrasi.com",
+  //   since: dayjs("2023-08").toDate(),
+  //   till: null,
+  //   location: "tokyo",
+  // },
   {
     key: "nutech",
     src: PHOTOS.logo.nutech,

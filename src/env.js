@@ -8,9 +8,7 @@ export const env = createEnv({
     RESEND_EMAIL_TO: z.string(),
     RESEND_EMAIL_FROM: z.string(),
   },
-  client: {
-    NEXT_PUBLIC_URL: z.string(),
-  },
+  client: { NEXT_PUBLIC_URL: z.string() },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     RESEND_API_KEY: process.env.RESEND_API_KEY,

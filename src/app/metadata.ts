@@ -30,35 +30,15 @@ export const getMetadata = async (lang: Lang): Promise<Metadata> => {
     title: { default: title, template: `%s | ${title}` },
     keywords,
     description,
-    openGraph: {
-      title: { default: title, template: `%s | ${title}` },
-      description,
-      url,
-      siteName: title,
-      locale,
-      type: "website",
-      images,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      creator: PERSONALS.x,
-      images,
-    },
+    openGraph: { title: { default: title, template: `%s | ${title}` }, description, url, siteName: title, locale, type: "website", images },
+    twitter: { card: "summary_large_image", title, description, creator: PERSONALS.x, images },
     robots: {
       index: true,
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
     },
   };
 };
