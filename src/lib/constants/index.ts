@@ -1,6 +1,7 @@
 import type { Certification, Contact, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
+// import fourdigit from "#/images/logo/4d.webp";
 import avatar from "#/images/avatar.webp";
 import n4 from "#/images/certification/jlpt-n4.webp";
 import podfak from "#/images/certification/podfak.webp";
@@ -114,7 +115,6 @@ export const PROJECTS: Project[] = [
     key: "turuntangan",
     href: "https://gerakanturuntangan.com",
   },
-
   {
     label: "Belinsky",
     src: PHOTOS.project.belinsky,
