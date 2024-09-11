@@ -7,6 +7,7 @@ import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
+import { UPDATED_ON } from "@/lib/constants";
 import type { ParamsLang } from "@/types";
 import { Fragment } from "react";
 
@@ -22,7 +23,7 @@ export default function HomePage({ params: { lang } }: ParamsLang) {
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
-      <Container title={d.updatedOn(formatDate(new Date("2024-09-05")))} />
+      <Container title={d.updatedOn(formatDate(UPDATED_ON))} />
     </Fragment>
   );
 }

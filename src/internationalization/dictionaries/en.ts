@@ -91,7 +91,7 @@ export const en = {
             "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
             "Created 25+ document formats and implemented PDF/XLSX rendering using React-pdf, jsPDF and ExcelJS.",
             "Ensured app quality with comprehensive testing: unit, integration, and end-to-end.",
-            "Implemented seamless integration of RESTful APIs using Axios.",
+            "Implemented seamless integration of APIs using Axios.",
 
             "Built fully responsive user interfaces primarily with Ant Design.",
             "Collaborated with UI/UX designers to implement visually compelling and intuitive interfaces.",
@@ -113,11 +113,16 @@ export const en = {
             "Integrated internationalization support with i18next framework.",
 
             "Spearheaded back-end development, including API development, server-side logic, and database management.",
-            "Proficient in CRUD operations and optimized RESTful API endpoints.",
+            "Proficient in CRUD operations and optimized API endpoints.",
 
             "Maintained comprehensive documentation to facilitate understanding with stakeholders.",
             "Provided ongoing maintenance and support for applications.",
           ],
+        },
+        fourdigit: {
+          label: "FOURDIGIT Inc.",
+          desc: "Front-end Engineer",
+          duty: ["TBD"],
         },
       },
 

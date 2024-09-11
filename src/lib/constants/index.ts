@@ -1,10 +1,10 @@
 import type { Certification, Contact, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
-// import fourdigit from "#/images/logo/4d.webp";
 import avatar from "#/images/avatar.webp";
 import n4 from "#/images/certification/jlpt-n4.webp";
 import podfak from "#/images/certification/podfak.webp";
+import fourdigit from "#/images/logo/4d.webp";
 import faotech from "#/images/logo/faotech.webp";
 import kfu from "#/images/logo/kfu.webp";
 import nutech from "#/images/logo/nutech.webp";
@@ -14,6 +14,8 @@ import kima from "#/images/project/kima.webp";
 import mandiri from "#/images/project/mandiri.webp";
 import turta from "#/images/project/turta.webp";
 
+export const UPDATED_ON = dayjs("2024-09-11").toDate();
+
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
   yoe: Number.parseInt((dayjs().diff(dayjs("2022-01-01"), "month") / 12).toFixed(1)),
@@ -21,10 +23,53 @@ export const PERSONALS = {
 };
 
 export const PHOTOS = {
-  logo: { nutech, faotech, kfu },
+  logo: { nutech, faotech, kfu, fourdigit },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n4, podfak },
   avatar,
+};
+
+export const EXPERIENCES: History[] = [
+  // {
+  //   key: "fourdigit",
+  //   src: PHOTOS.logo.fourdigit,
+  //   href: "https://www.4digit.com",
+  //   since: dayjs("2023-08").toDate(),
+  //   till: null,
+  //   location: "tokyo",
+  //   hasSquarePhoto: true,
+  // },
+  {
+    key: "nutech",
+    src: PHOTOS.logo.nutech,
+    href: "https://www.nutech-integrasi.com",
+    since: dayjs("2023-08").toDate(),
+    till: null,
+    location: "jakarta",
+  },
+  {
+    key: "faotech",
+    src: PHOTOS.logo.faotech,
+    href: "https://faotech.dev",
+    since: dayjs("2022-09").toDate(),
+    till: dayjs("2023-08").toDate(),
+    location: "remote",
+  },
+];
+
+export const OTHERS: Other = {
+  languages: ["id", "en", "ja", "ru"],
+  education: [
+    {
+      key: "kfu",
+      href: "https://kpfu.ru",
+      src: PHOTOS.logo.kfu,
+      since: dayjs("2019-09").toDate(),
+      till: dayjs("2023-06").toDate(),
+      hasSquarePhoto: true,
+      location: "kazan",
+    },
+  ],
 };
 
 export const ICONS = {
@@ -92,8 +137,8 @@ export const ICONS = {
 };
 
 export const CERTIFICATIONS: Certification[] = [
-  { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", label: "N4, Japanese-Language Proficiency Test" },
   // { name: "jlpt-n3", src: PHOTOS.certifications.n4, alt: "JLPT N3 Certification, Ryan Pratama", label: "N3, Japanese-Language Proficiency Test" },
+  { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", label: "N4, Japanese-Language Proficiency Test" },
   {
     name: "preparatory-faculty-of-russian-language",
     src: PHOTOS.certifications.podfak,
@@ -185,48 +230,6 @@ export const TECH_STACKS: TechStack = {
     { label: "Vue / Nuxt.js", icon: ICONS.vue, icon2: ICONS.nuxtjs },
   ],
 };
-
-export const OTHERS: Other = {
-  languages: ["id", "en", "ja", "ru"],
-  education: [
-    {
-      key: "kfu",
-      href: "https://kpfu.ru",
-      src: PHOTOS.logo.kfu,
-      since: dayjs("2019-09").toDate(),
-      till: dayjs("2023-06").toDate(),
-      hasSquarePhoto: true,
-      location: "kazan",
-    },
-  ],
-};
-
-export const EXPERIENCES: History[] = [
-  // {
-  //   key: "nutech",
-  //   src: PHOTOS.logo.nutech,
-  //   href: "https://www.nutech-integrasi.com",
-  //   since: dayjs("2023-08").toDate(),
-  //   till: null,
-  //   location: "tokyo",
-  // },
-  {
-    key: "nutech",
-    src: PHOTOS.logo.nutech,
-    href: "https://www.nutech-integrasi.com",
-    since: dayjs("2023-08").toDate(),
-    till: null,
-    location: "jakarta",
-  },
-  {
-    key: "faotech",
-    src: PHOTOS.logo.faotech,
-    href: "https://faotech.dev",
-    since: dayjs("2022-09").toDate(),
-    till: dayjs("2023-08").toDate(),
-    location: "remote",
-  },
-];
 
 export const CONTACTS: Contact[] = [
   { href: "mailto:ryanpratama.dev@gmail.com", label: "Email", icon: ICONS.email },
