@@ -1,4 +1,4 @@
-import { ALL_PATHS, getUrl } from "@/app/urls";
+import { ALL_PATHS, ENDPOINTS, getUrl } from "@/app/urls";
 import { LANGS } from "@/internationalization";
 import type { Lang } from "@/types";
 import type { MetadataRoute } from "next";
@@ -13,7 +13,7 @@ const getEntry = (path: string, lang?: Lang) => {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: getUrl({ path: "/resume.pdf" }), lastModified: new Date() },
+    { url: getUrl({ path: ENDPOINTS.resume }), lastModified: new Date() },
     ...ALL_PATHS.map((path) => getEntry(path)),
     ...ALL_PATHS.flatMap((path) => LANGS.map((lang) => getEntry(path, lang))),
   ];
