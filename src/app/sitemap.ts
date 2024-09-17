@@ -12,5 +12,9 @@ const getEntry = (path: string, lang?: Lang) => {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [...ALL_PATHS.map((path) => getEntry(path)), ...ALL_PATHS.flatMap((path) => LANGS.map((lang) => getEntry(path, lang)))];
+  return [
+    { url: getUrl({ path: "/resume.pdf" }), lastModified: new Date() },
+    ...ALL_PATHS.map((path) => getEntry(path)),
+    ...ALL_PATHS.flatMap((path) => LANGS.map((lang) => getEntry(path, lang))),
+  ];
 }
