@@ -1,10 +1,16 @@
 import { getMetadata } from "@/app/metadata";
-import HelperComponents from "@/components/helper-components";
+import ScreenSizeIndicator from "@/components/screen-size-indicator";
+import { env } from "@/env";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
+import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
+import NextTopLoader from "nextjs-toploader";
+import { Fragment } from "react";
 import "@/styles/globals.css";
 import "@/styles/stylesheets.css";
 import "swiper/css";
@@ -19,11 +25,24 @@ export default async function RootLayout({ children }: Children) {
   return (
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
       <body className="flex items-center justify-center px-shorter pt-shorter pb-14 md:pb-shorter">
-        <HelperComponents />
         <TRPCReactProvider>
           <main className="w-full sm:max-w-4xl flex flex-col gap-4">{children}</main>
         </TRPCReactProvider>
+
+        {OtherComponents[env.NODE_ENV]}
+        <NextTopLoader color={COLORS.blue} showSpinner={false} />
       </body>
     </html>
   );
 }
+
+const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element> = {
+  development: <ScreenSizeIndicator />,
+  production: (
+    <Fragment>
+      <Analytics />
+      <SpeedInsights />
+    </Fragment>
+  ),
+  test: <Fragment />,
+};
