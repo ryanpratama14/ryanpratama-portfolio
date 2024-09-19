@@ -6,22 +6,15 @@ export default function ScreenSizeIndicator() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    function updateDimensions() {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-
+    const updateDimensions = () => {
+      setDimensions({ width: window.innerWidth, height: window.innerHeight });
+    };
     updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-
+    window.addEventListener("resize", updateDimensions, { passive: true });
     return () => {
       window.removeEventListener("resize", updateDimensions);
     };
   }, []);
-
-  const { width, height } = dimensions;
 
   return (
     <div className="fixed bottom-5 left-5 z-50 flex items-center gap-1.5 rounded-md bg-white px-2.5 py-1 text-sm font-bold text-black shadow">
@@ -33,7 +26,7 @@ export default function ScreenSizeIndicator() {
       <span className="hidden 2xl:block 3xl:hidden">2XL</span>
       <span className="hidden 3xl:block">3XL</span>
       <span className="font-medium">
-        {width.toLocaleString()} x {height.toLocaleString()}
+        {dimensions.width.toLocaleString()} x {dimensions.height.toLocaleString()}
       </span>
     </div>
   );
