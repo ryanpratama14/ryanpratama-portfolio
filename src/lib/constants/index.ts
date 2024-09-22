@@ -14,7 +14,7 @@ import kima from "#/images/project/kima.webp";
 import mandiri from "#/images/project/mandiri.webp";
 import turta from "#/images/project/turta.webp";
 
-export const UPDATED_ON = dayjs("2024-09-11").toDate();
+export const UPDATED_ON = dayjs("2024-09-22").toDate();
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
