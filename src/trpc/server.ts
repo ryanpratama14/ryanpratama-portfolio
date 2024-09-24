@@ -34,6 +34,7 @@ const logged = createTRPCClient<AppRouter>({
                 path: op.path,
                 ctx,
                 type: op.type,
+                signal: undefined,
               }),
             )
             .then((data) => {
