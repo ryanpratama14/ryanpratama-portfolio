@@ -40,6 +40,6 @@ export const getMetadata = async (lang: Lang): Promise<Metadata> => {
       "max-snippet": -1,
       googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
     },
-    appleWebApp: { capable: true, title, statusBarStyle: "black-translucent" },
+    appleWebApp: { capable: true, title, statusBarStyle: "default" },
   };
 };
