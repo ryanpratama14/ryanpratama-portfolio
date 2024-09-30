@@ -176,7 +176,7 @@ export const PROJECTS: Project[] = [
     label: "KIMA",
     src: PHOTOS.project.kima,
     key: "kima",
-    href: "https://kima-fe.vercel.app",
+    href: "https://kima.kpfu.ru",
   },
 ];
 
