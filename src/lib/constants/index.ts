@@ -4,7 +4,6 @@ import dayjs from "dayjs";
 import avatar from "#/images/avatar.webp";
 import n4 from "#/images/certification/jlpt-n4.webp";
 import podfak from "#/images/certification/podfak.webp";
-import fourdigit from "#/images/logo/4d.webp";
 import faotech from "#/images/logo/faotech.webp";
 import kfu from "#/images/logo/kfu.webp";
 import nutech from "#/images/logo/nutech.webp";
@@ -23,22 +22,13 @@ export const PERSONALS = {
 };
 
 export const PHOTOS = {
-  logo: { nutech, faotech, kfu, fourdigit },
+  logo: { nutech, faotech, kfu },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n4, podfak },
   avatar,
 };
 
 export const EXPERIENCES: History[] = [
-  // {
-  //   key: "fourdigit",
-  //   src: PHOTOS.logo.fourdigit,
-  //   href: "https://www.4digit.com",
-  //   since: dayjs("2023-08").toDate(),
-  //   till: null,
-  //   location: "tokyo",
-  //   hasSquarePhoto: true,
-  // },
   {
     key: "nutech",
     src: PHOTOS.logo.nutech,

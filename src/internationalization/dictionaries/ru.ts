@@ -18,11 +18,6 @@ export const ru: Dictionary = {
       },
 
       HISTORY: {
-        fourdigit: {
-          label: "FOURDIGIT Inc.",
-          desc: "Фронтенд-разработчик",
-          duty: ["TBD"],
-        },
         kfu: {
           label: "Казанский федеральный университет",
           desc: "Бакалавр, менеджмент",

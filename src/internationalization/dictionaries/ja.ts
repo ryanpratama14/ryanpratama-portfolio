@@ -97,11 +97,6 @@ export const ja: Dictionary = {
             "アプリケーションの継続的な保守とサポートを提供しました。",
           ],
         },
-        fourdigit: {
-          label: "株式会社フォーデジット",
-          desc: "フロントエンドエンジニア",
-          duty: ["TBD"],
-        },
       },
     },
 

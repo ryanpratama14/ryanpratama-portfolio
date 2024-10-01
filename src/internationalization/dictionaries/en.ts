@@ -119,11 +119,6 @@ export const en = {
             "Provided ongoing maintenance and support for applications.",
           ],
         },
-        fourdigit: {
-          label: "FOURDIGIT Inc.",
-          desc: "Front-end Engineer",
-          duty: ["TBD"],
-        },
       },
 
       PROJECTS: {
