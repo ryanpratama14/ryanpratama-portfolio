@@ -13,11 +13,12 @@ import kima from "#/images/project/kima.webp";
 import mandiri from "#/images/project/mandiri.webp";
 import turta from "#/images/project/turta.webp";
 
-export const UPDATED_ON = dayjs("2024-09-22").toDate();
+const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
+export const UPDATED_ON = dayjs("2024-10-01").toDate();
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
-  yoe: Number.parseInt((dayjs().diff(dayjs("2022-01-01"), "month") / 12).toFixed(1)),
+  yoe: +(dayjs().diff(EXPERIENCE_START_DATE, "month") / 12).toFixed(1),
   x: "@totorogoriorio",
 };
 
@@ -41,7 +42,7 @@ export const EXPERIENCES: History[] = [
     key: "faotech",
     src: PHOTOS.logo.faotech,
     href: "https://faotech.dev",
-    since: dayjs("2022-09").toDate(),
+    since: EXPERIENCE_START_DATE,
     till: dayjs("2023-08").toDate(),
     location: "remote",
   },
