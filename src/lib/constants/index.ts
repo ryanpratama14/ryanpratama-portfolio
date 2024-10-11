@@ -38,6 +38,7 @@ export const EXPERIENCES: History[] = [
     since: dayjs("2024-11").toDate(),
     till: null,
     location: "remote",
+    hasSquarePhoto: true,
   },
   {
     key: "nutech",
