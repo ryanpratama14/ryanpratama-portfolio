@@ -102,6 +102,11 @@ export const en = {
             "Created documentation, aiding stakeholder understanding and future maintenance.",
           ],
         },
+        langame: {
+          label: "LANGAME",
+          desc: "Front-end Engineer",
+          duty: ["TBA"],
+        },
         faotech: {
           label: "faoTech",
           desc: "Full-stack Engineer",

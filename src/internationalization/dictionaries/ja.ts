@@ -80,6 +80,11 @@ export const ja: Dictionary = {
             "文書を作成し、ステークホルダーの理解を助け、将来のメンテナンスを支援しました。",
           ],
         },
+        langame: {
+          label: "LANGAME",
+          desc: "フロントエンドエンジニア",
+          duty: ["TBA"],
+        },
         faotech: {
           label: "faoTech",
           desc: "フルスタックエンジニア",
