@@ -31,15 +31,15 @@ export const PHOTOS = {
 };
 
 export const EXPERIENCES: History[] = [
-  {
-    key: "langame",
-    src: PHOTOS.logo.langame,
-    href: "https://langame.ru/",
-    since: dayjs("2024-11").toDate(),
-    till: null,
-    location: "remote",
-    hasSquarePhoto: true,
-  },
+  // {
+  //   key: "langame",
+  //   src: PHOTOS.logo.langame,
+  //   href: "https://langame.ru/",
+  //   since: dayjs("2024-11").toDate(),
+  //   till: null,
+  //   location: "remote",
+  //   hasSquarePhoto: true,
+  // },
   {
     key: "nutech",
     src: PHOTOS.logo.nutech,

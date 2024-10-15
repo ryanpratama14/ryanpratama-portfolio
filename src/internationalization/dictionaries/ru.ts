@@ -24,7 +24,7 @@ export const ru: Dictionary = {
           duty: null,
         },
         nutech: {
-          label: "PT Nutech Integrasi",
+          label: "Nutech Integrasi",
           desc: "Фронтенд-разработчик",
           duty: [
             "Разработал CEISA 4.0, веб-приложение для Главного таможенного управления Индонезии, повлиявшее на более чем 5000 пользователей.",
@@ -42,7 +42,7 @@ export const ru: Dictionary = {
           ],
         },
         langame: {
-          label: "ЛАНГЕЙМ",
+          label: "LANGAME",
           desc: "Фронтенд-разработчик",
           duty: ["TBA"],
         },
