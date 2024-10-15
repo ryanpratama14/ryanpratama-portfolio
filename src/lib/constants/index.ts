@@ -6,7 +6,9 @@ import n4 from "#/images/certification/jlpt-n4.webp";
 import podfak from "#/images/certification/podfak.webp";
 import faotech from "#/images/logo/faotech.webp";
 import kfu from "#/images/logo/kfu.webp";
+import langame from "#/images/logo/langame.webp";
 import nutech from "#/images/logo/nutech.webp";
+import rave from "#/images/logo/rave.webp";
 import belinsky from "#/images/project/belinsky.webp";
 import hebronstar from "#/images/project/hebronstar.webp";
 import kima from "#/images/project/kima.webp";
@@ -23,13 +25,22 @@ export const PERSONALS = {
 };
 
 export const PHOTOS = {
-  logo: { nutech, faotech, kfu },
+  logo: { nutech, faotech, kfu, langame, rave },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n4, podfak },
   avatar,
 };
 
 export const EXPERIENCES: History[] = [
+  // {
+  //   key: "langame",
+  //   src: PHOTOS.logo.langame,
+  //   href: "https://langame.ru/",
+  //   since: dayjs("2024-11").toDate(),
+  //   till: null,
+  //   location: "remote",
+  //   hasSquarePhoto: true,
+  // },
   {
     key: "nutech",
     src: PHOTOS.logo.nutech,

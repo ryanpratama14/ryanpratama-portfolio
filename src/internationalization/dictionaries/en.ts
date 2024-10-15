@@ -85,7 +85,7 @@ export const en = {
           duty: null,
         },
         nutech: {
-          label: "PT Nutech Integrasi",
+          label: "Nutech Integrasi",
           desc: "Front-end Engineer",
           duty: [
             "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
@@ -101,6 +101,11 @@ export const en = {
             "Utilized Git and Jira for prioritizing enhancements and bug fixes.",
             "Created documentation, aiding stakeholder understanding and future maintenance.",
           ],
+        },
+        langame: {
+          label: "LANGAME",
+          desc: "Front-end Engineer",
+          duty: ["TBA"],
         },
         faotech: {
           label: "faoTech",

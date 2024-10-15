@@ -63,7 +63,7 @@ export const ja: Dictionary = {
           duty: null,
         },
         nutech: {
-          label: "PT Nutech Integrasi",
+          label: "Nutech Integrasi",
           desc: "フロントエンドエンジニア",
           duty: [
             "インドネシア関税総局向けのウェブアプリCEISA 4.0を開発し、5000人以上のユーザーに影響を与えました。",
@@ -79,6 +79,11 @@ export const ja: Dictionary = {
             "GitとJiraを利用して、機能強化とバグ修正の優先順位をつけました。",
             "文書を作成し、ステークホルダーの理解を助け、将来のメンテナンスを支援しました。",
           ],
+        },
+        langame: {
+          label: "LANGAME",
+          desc: "フロントエンドエンジニア",
+          duty: ["TBA"],
         },
         faotech: {
           label: "faoTech",
