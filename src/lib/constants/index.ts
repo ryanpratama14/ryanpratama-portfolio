@@ -8,6 +8,7 @@ import faotech from "#/images/logo/faotech.webp";
 import kfu from "#/images/logo/kfu.webp";
 import langame from "#/images/logo/langame.webp";
 import nutech from "#/images/logo/nutech.webp";
+import rave from "#/images/logo/rave.webp";
 import belinsky from "#/images/project/belinsky.webp";
 import hebronstar from "#/images/project/hebronstar.webp";
 import kima from "#/images/project/kima.webp";
@@ -24,7 +25,7 @@ export const PERSONALS = {
 };
 
 export const PHOTOS = {
-  logo: { nutech, faotech, kfu, langame },
+  logo: { nutech, faotech, kfu, langame, rave },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n4, podfak },
   avatar,
