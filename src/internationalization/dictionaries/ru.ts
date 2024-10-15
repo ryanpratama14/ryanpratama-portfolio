@@ -46,6 +46,11 @@ export const ru: Dictionary = {
           desc: "Фронтенд-разработчик",
           duty: ["TBA"],
         },
+        rave: {
+          label: "Rave",
+          desc: "Фронтенд-разработчик",
+          duty: ["TBA"],
+        },
         faotech: {
           label: "faoTech",
           desc: "Фулстек-разработчик",

@@ -85,6 +85,11 @@ export const ja: Dictionary = {
           desc: "フロントエンドエンジニア",
           duty: ["TBA"],
         },
+        rave: {
+          label: "Rave",
+          desc: "フロントエンドエンジニア",
+          duty: ["TBA"],
+        },
         faotech: {
           label: "faoTech",
           desc: "フルスタックエンジニア",

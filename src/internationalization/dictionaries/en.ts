@@ -107,6 +107,11 @@ export const en = {
           desc: "Front-end Engineer",
           duty: ["TBA"],
         },
+        rave: {
+          label: "Rave",
+          desc: "Front-end Engineer",
+          duty: ["TBA"],
+        },
         faotech: {
           label: "faoTech",
           desc: "Full-stack Engineer",

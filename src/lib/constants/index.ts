@@ -33,10 +33,19 @@ export const PHOTOS = {
 
 export const EXPERIENCES: History[] = [
   // {
+  //   key: "rave",
+  //   src: PHOTOS.logo.rave,
+  //   href: "https://rave.tech/",
+  //   since: dayjs("2024-11").toDate(),
+  //   till: null,
+  //   location: "remote",
+  //   hasSquarePhoto: true,
+  // },
+  // {
   //   key: "langame",
   //   src: PHOTOS.logo.langame,
   //   href: "https://langame.ru/",
-  //   since: dayjs("2024-11").toDate(),
+  //   since: dayjs("2024-10").toDate(),
   //   till: null,
   //   location: "remote",
   //   hasSquarePhoto: true,
