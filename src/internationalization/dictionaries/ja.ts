@@ -123,6 +123,7 @@ export const ja: Dictionary = {
       remote: "リモート",
       tokyo: "東京",
       kazan: "カザン",
+      bali: "バリ島",
     },
 
     MESSAGE: {

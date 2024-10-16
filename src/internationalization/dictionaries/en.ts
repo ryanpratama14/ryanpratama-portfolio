@@ -56,6 +56,7 @@ export const en = {
       remote: "Remote",
       tokyo: "Tokyo",
       kazan: "Kazan",
+      bali: "Bali",
     },
 
     MESSAGE: {

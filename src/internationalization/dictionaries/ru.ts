@@ -125,6 +125,7 @@ export const ru: Dictionary = {
       remote: "Удалённо",
       tokyo: "Токио",
       kazan: "Казань",
+      bali: "Бали",
     },
 
     MESSAGE: {
