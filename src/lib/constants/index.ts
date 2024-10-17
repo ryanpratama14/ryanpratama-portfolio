@@ -56,7 +56,7 @@ export const EXPERIENCES: History[] = [
     href: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
     till: null,
-    location: "jakarta",
+    location: "remote",
   },
   {
     key: "faotech",
