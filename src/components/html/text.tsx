@@ -1,18 +1,15 @@
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
-import { type ComponentProps, forwardRef } from "react";
 import type { VariantProps } from "tailwind-variants";
 
-type Props = ComponentProps<"div"> & VariantProps<typeof VARIANTS.Text>;
+type Props = VariantProps<typeof VARIANTS.Text> & {
+  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "small" | "div";
+  className?: string;
+  children: React.ReactNode;
+};
 
-const Text = forwardRef<HTMLDivElement, Props>(({ children, className, as, color, ...rest }, ref) => {
-  return (
-    <div ref={ref} {...rest} className={cn(VARIANTS.Text({ className, color, as }))}>
-      {children}
-    </div>
-  );
-});
+export default function Text({ children, tag, className, as, color }: Props) {
+  const Tag = tag;
 
-Text.displayName = "Text";
-
-export default Text;
+  return <Tag className={cn(VARIANTS.Text({ className, color, as }))}>{children}</Tag>;
+}

@@ -12,17 +12,15 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
     <Container title={s.MENUS.additionalInformation}>
       <section className="flex flex-col gap-2">
         <section className="flex flex-col">
-          <Text color="graydarker">
-            <p>{s.MENUS.OTHER.languages}</p>
+          <Text tag="p" color="graydarker">
+            {s.MENUS.OTHER.languages}
           </Text>
 
-          <Text>
-            <p>{OTHERS.languages.map((e) => s.PERSONAL_DATA.languages[e]).join(isJapanese ? "、" : " / ")}</p>
-          </Text>
+          <Text tag="p">{OTHERS.languages.map((e) => s.PERSONAL_DATA.languages[e]).join(isJapanese ? "、" : " / ")}</Text>
         </section>
         <section className="flex flex-col gap-0.5">
-          <Text color="graydarker">
-            <p>{s.MENUS.OTHER.education}</p>
+          <Text tag="p" color="graydarker">
+            {s.MENUS.OTHER.education}
           </Text>
           <Accordion type="multiple" className="space-y-2.5">
             {OTHERS.education.map((e) => {

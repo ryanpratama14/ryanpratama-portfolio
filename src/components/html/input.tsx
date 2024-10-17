@@ -17,7 +17,7 @@ const Input = forwardRef<HTMLInputElement, Props>(({ placeholder, error, type, .
         {placeholder}
       </label>
       <input className={VARIANTS.Input()} placeholder={placeholder} ref={ref} {...rest} id={id} type={type ?? "text"} />
-      <Text className={cn("ml-0.5 shadow", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
+      <Text tag="small" className={cn("ml-0.5 shadow", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
         {error}
       </Text>
     </section>

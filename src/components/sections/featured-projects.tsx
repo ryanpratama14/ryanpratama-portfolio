@@ -30,15 +30,14 @@ export default function FeaturedProjects({ s }: Props) {
             <SwiperSlide key={e.label}>
               <section className="mb-2 aspect-square relative group overflow-hidden rounded-md">
                 <section className="z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
-                  <Text
-                    className="flex flex-col items-end absolute font-semibold top-2 w-full px-3 text-right translate-x-full group-hover:translate-x-0"
-                    as="menuTitle"
-                  >
-                    <h3>{e.label}</h3>
+                  <div className="flex flex-col items-end absolute font-semibold top-2 w-full px-3 text-right translate-x-full group-hover:translate-x-0">
+                    <Text tag="h3" as="menuTitle">
+                      {e.label}
+                    </Text>
                     <div className="w-6 h-0.5 bg-white" />
-                  </Text>
-                  <Text className="text-center px-3 w-full absolute centered font-medium text-balance">
-                    <p>{e.desc}</p>
+                  </div>
+                  <Text tag="p" className="text-center px-3 w-full absolute centered font-medium text-balance">
+                    {e.desc}
                   </Text>
 
                   <LinkButton href={e.href} className="translate-y-full group-hover:-translate-y-4 absolute centered-bottom">

@@ -19,7 +19,7 @@ export default function LangSwitcher({ storedLang, setCookieLang }: Props) {
   }, [lang, storedLang, setCookieLang]);
 
   return (
-    <section className="flex">
+    <nav className="flex">
       {LANGUAGE_OPTIONS.map(
         ({
           lang: langTarget,
@@ -45,6 +45,6 @@ export default function LangSwitcher({ storedLang, setCookieLang }: Props) {
           );
         },
       )}
-    </section>
+    </nav>
   );
 }

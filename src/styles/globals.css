@@ -9,9 +9,6 @@
   body {
     @apply text-white bg-black font-sans;
   }
-  ul {
-    @apply text-xs md:text-base ml-4 list-disc text-pretty;
-  }
 }
 
 @layer components {

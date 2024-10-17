@@ -31,8 +31,8 @@ export default async function NotFound() {
 
       <section className="flex flex-col gap-4 justify-center items-center text-center">
         <Icon icon={ICONS.notFound} width={250} />
-        <Text as="heading">
-          <h1>{s.SECTIONS.notFound}</h1>
+        <Text tag="h1" as="heading">
+          {s.SECTIONS.notFound}
         </Text>
         <LinkButton href="/" lang={lang} className="mx-auto">
           {s.SECTIONS.backToHomepage}

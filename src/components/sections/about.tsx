@@ -10,9 +10,9 @@ type Props = { s: DictionaryStatic };
 export default function About({ s }: Props) {
   const TechStack = ({ name }: { name: keyof TechStack }) => {
     return (
-      <section className="flex flex-col gap-0.5">
-        <Text color="graydarker">
-          <p>{s.MENUS.TECH_STACKS[name]}</p>
+      <li className="flex flex-col gap-0.5">
+        <Text tag="p" color="graydarker">
+          {s.MENUS.TECH_STACKS[name]}
         </Text>
         <section className="flex gap-1 md:gap-1.5 flex-wrap">
           {TECH_STACKS[name].map((e) => {
@@ -22,13 +22,12 @@ export default function About({ s }: Props) {
                   <Icon icon={e.icon} width={13} />
                   {e.icon2 ? <Icon icon={e.icon2} width={13} /> : null}
                 </section>
-
                 <p>{e.label}</p>
               </section>
             );
           })}
         </section>
-      </section>
+      </li>
     );
   };
 
@@ -36,14 +35,12 @@ export default function About({ s }: Props) {
 
   return (
     <Container title={s.MENUS.about}>
-      <Text>
-        <p>{s.PERSONAL_DATA.summary}</p>
-      </Text>
-      <section className="flex flex-col gap-2">
+      <Text tag="p">{s.PERSONAL_DATA.summary}</Text>
+      <ul className="flex flex-col gap-2">
         {keys.map((e) => {
           return <TechStack name={e} key={e} />;
         })}
-      </section>
+      </ul>
     </Container>
   );
 }

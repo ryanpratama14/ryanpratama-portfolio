@@ -35,13 +35,15 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
         <section className="pl-2.5 md:pl-3 flex flex-col">
           <Link target="_blank" rel="noreferrer noopener" href={e.href} className="w-fit flex items-center gap-1 translate-x-[0.085rem]">
             <Icon icon={ICONS.link} width={12} />
-            <Text className={cn(VARIANTS.Text({ as: "content", className: "font-medium hover:underline" }))}>{e.label}</Text>
+            <Text tag="p" className={cn(VARIANTS.Text({ as: "content", className: "font-medium hover:underline" }))}>
+              {e.label}
+            </Text>
           </Link>
-          <Text color="gray">
-            <p className="font-medium">{e.desc}</p>
+          <Text tag="p" color="gray" className="font-medium">
+            {e.desc}
           </Text>
-          <Text color="graydarker" as="small">
-            <p>{`${e.location} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}</p>
+          <Text tag="p" color="graydarker" as="small">
+            {`${e.location} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}
           </Text>
         </section>
       </section>
@@ -55,7 +57,7 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
           <Card />
         </AccordionTrigger>
         <AccordionContent>
-          <ul>
+          <ul className="text-xs md:text-base ml-4 list-disc text-pretty">
             {e.duty.map((duty) => (
               <li key={duty}>{duty}</li>
             ))}

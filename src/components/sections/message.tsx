@@ -60,11 +60,11 @@ export default function ProjectDiscuss({ s, lang }: Props) {
         }}
         className="space-y-1 text-left"
       >
-        <Text as="menuTitle" className="font-medium">
-          <p>{s.MESSAGE.sent}</p>
+        <Text tag="p" as="menuTitle" className="font-medium">
+          {s.MESSAGE.sent}
         </Text>
-        <Text color="gray" className="text-pretty">
-          <p>{s.MESSAGE.thankYou}</p>
+        <Text tag="p" color="gray" className="text-pretty">
+          {s.MESSAGE.thankYou}
         </Text>
       </Dialog>
     </Fragment>

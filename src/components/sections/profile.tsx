@@ -27,24 +27,26 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
       const Data = () => (
         <Fragment>
           <Icon icon={e.icon} width={17.5} color={COLORS.gray} />
-          <Text color="graydarker">
-            <p className={cn({ "hover:underline": e.href })}>{e.label}</p>
+          <Text tag="p" color="graydarker" className={cn({ "hover:underline": e.href })}>
+            {e.label}
           </Text>
         </Fragment>
       );
 
       if (e.href) {
         return (
-          <Link target="_blank" rel="noreferrer noopener" href={e.href} key={e.label} className="flex gap-0.5 items-center">
-            <Data />
-          </Link>
+          <li>
+            <Link target="_blank" rel="noreferrer noopener" href={e.href} key={e.label} className="flex gap-0.5 items-center">
+              <Data />
+            </Link>
+          </li>
         );
       }
 
       return (
-        <section key={e.label} className="flex gap-0.5 items-center">
+        <li key={e.label} className="flex gap-0.5 items-center">
           <Data />
-        </section>
+        </li>
       );
     });
 
@@ -60,23 +62,23 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
 
           <section className="flex flex-col md:gap-0.5">
             <section className="flex flex-col">
-              <Text as="heading" className="font-bold">
-                <h1>{s.PERSONAL_DATA.fullName}</h1>
+              <Text tag="h1" as="heading" className="font-bold">
+                {s.PERSONAL_DATA.fullName}
               </Text>
               {isDefaultLang ? null : (
-                <Text as="small" className="-translate-y-0.5">
+                <Text tag="small" as="small" className="-translate-y-0.5">
                   {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
                 </Text>
               )}
             </section>
 
-            <Text as="menuTitle" color="gray" className="font-normal">
-              <h2>{s.PERSONAL_DATA.softwareEngineer}</h2>
+            <Text tag="h2" as="menuTitle" color="gray" className="font-normal">
+              {s.PERSONAL_DATA.softwareEngineer}
             </Text>
 
-            <section className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
+            <ul className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
               <ProfileData />
-            </section>
+            </ul>
           </section>
         </section>
 
