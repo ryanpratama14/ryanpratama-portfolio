@@ -51,7 +51,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
     });
 
   return (
-    <Fragment>
+    <article>
       <section className="flex justify-between items-start">
         <section className="flex items-center gap-2.5 md:gap-5">
           <Img
@@ -61,7 +61,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
           />
 
           <section className="flex flex-col md:gap-0.5">
-            <section className="flex flex-col">
+            <header className="flex flex-col">
               <Text tag="h1" as="heading" className="font-bold">
                 {s.PERSONAL_DATA.fullName}
               </Text>
@@ -70,7 +70,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
                   {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
                 </Text>
               )}
-            </section>
+            </header>
 
             <Text tag="h2" as="menuTitle" color="gray" className="font-normal">
               {s.PERSONAL_DATA.softwareEngineer}
@@ -85,9 +85,9 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
         <LangSwitcher storedLang={storedLang} setCookieLang={setCookieLang} />
       </section>
 
-      <section className="flex md:hidden gap-y-1 gap-x-2 flex-wrap -mb-2 -translate-x-0.5">
+      <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap -translate-x-0.5">
         <ProfileData />
-      </section>
-    </Fragment>
+      </ul>
+    </article>
   );
 }

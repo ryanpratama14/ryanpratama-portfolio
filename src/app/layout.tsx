@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: Children) {
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
       <body className="px-shorter pt-shorter pb-14 md:pb-shorter">
         <TRPCReactProvider>
-          <main className="w-full sm:max-w-4xl flex flex-col gap-4 mx-auto">{children}</main>
+          <main className="max-w-4xl space-y-4 mx-auto">{children}</main>
         </TRPCReactProvider>
 
         {OtherComponents[env.NODE_ENV]}
