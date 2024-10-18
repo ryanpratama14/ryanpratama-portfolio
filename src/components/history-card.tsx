@@ -19,7 +19,7 @@ type Props = {
 export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
   const { formatMonth } = useLang(lang);
 
-  const e = { ...s.CONSTANTS.HISTORY[data.key], ...data, location: s.LOCATIONS[data.location] };
+  const e = { ...s.CONSTANTS.HISTORY[data.key], ...data, location: s.LOCATIONS[data.location], type: data.type ? s.LOCATIONS[data.type] : "" };
 
   const Card = () => {
     return (
@@ -43,7 +43,7 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
             {e.desc}
           </Text>
           <Text tag="p" color="graydarker" as="small">
-            {`${e.location} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}
+            {`${e.location}${e.type ? ` (${e.type.toLowerCase()})` : ""} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}
           </Text>
         </section>
       </section>
@@ -56,8 +56,9 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
         <AccordionTrigger>
           <Card />
         </AccordionTrigger>
-        <AccordionContent>
-          <ul className="text-xs md:text-base ml-4 list-disc text-pretty">
+        <AccordionContent className="space-y-1">
+          {e.about ? <Text tag="p">{e.about}</Text> : null}
+          <ul className="text-xs md:text-sm ml-4 list-disc text-pretty">
             {e.duty.map((duty) => (
               <li key={duty}>{duty}</li>
             ))}

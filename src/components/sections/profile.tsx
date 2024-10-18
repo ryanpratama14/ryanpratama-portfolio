@@ -35,7 +35,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
 
       if (e.href) {
         return (
-          <li>
+          <li className="flex">
             <Link target="_blank" rel="noreferrer noopener" href={e.href} key={e.label} className="flex gap-0.5 items-center">
               <Data />
             </Link>

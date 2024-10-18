@@ -63,6 +63,8 @@ export const ja: Dictionary = {
           duty: null,
         },
         nutech: {
+          about:
+            "TelkomGroupの一員として、東南アジアでインドネシアをデジタルイノベーションのリーディングハブにすることに努め、顧客体験に基づき最高の品質を効率的に提供しています。",
           label: "Nutech Integrasi",
           desc: "フロントエンドエンジニア",
           duty: [
@@ -80,17 +82,17 @@ export const ja: Dictionary = {
             "文書を作成し、ステークホルダーの理解を助け、将来のメンテナンスを支援しました。",
           ],
         },
-        langame: {
-          label: "LANGAME",
-          desc: "フロントエンドエンジニア",
-          duty: ["TBA"],
-        },
+
         rave: {
-          label: "Rave",
+          about: "",
+          label: "Rave Tech",
           desc: "フロントエンドエンジニア",
           duty: ["TBA"],
         },
+
         faotech: {
+          about:
+            "インドネシアに本拠を置くソフトウェアハウスの会社です。インドネシアとロシアの教育背景を組み合わせることで、さまざまな業界や地域のお客様にサービスを提供しています。",
           label: "faoTech",
           desc: "フルスタックエンジニア",
           duty: [
@@ -119,11 +121,13 @@ export const ja: Dictionary = {
     },
 
     LOCATIONS: {
+      singapore: "シンガポール",
       jakarta: "ジャカルタ",
       remote: "リモート",
       tokyo: "東京",
       kazan: "カザン",
       bali: "バリ島",
+      onsite: "オフィス勤務",
     },
 
     MESSAGE: {

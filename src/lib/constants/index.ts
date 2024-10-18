@@ -6,7 +6,6 @@ import n4 from "#/images/certification/jlpt-n4.webp";
 import podfak from "#/images/certification/podfak.webp";
 import faotech from "#/images/logo/faotech.webp";
 import kfu from "#/images/logo/kfu.webp";
-import langame from "#/images/logo/langame.webp";
 import nutech from "#/images/logo/nutech.webp";
 import rave from "#/images/logo/rave.webp";
 import belinsky from "#/images/project/belinsky.webp";
@@ -25,7 +24,7 @@ export const PERSONALS = {
 };
 
 export const PHOTOS = {
-  logo: { nutech, faotech, kfu, langame, rave },
+  logo: { nutech, faotech, kfu, rave },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n4, podfak },
   avatar,
@@ -35,19 +34,11 @@ export const EXPERIENCES: History[] = [
   // {
   //   key: "rave",
   //   src: PHOTOS.logo.rave,
-  //   href: "https://rave.tech/",
+  //   href: "https://rave.tech",
   //   since: dayjs("2024-11").toDate(),
   //   till: null,
-  //   location: "remote",
-  //   hasSquarePhoto: true,
-  // },
-  // {
-  //   key: "langame",
-  //   src: PHOTOS.logo.langame,
-  //   href: "https://langame.ru/",
-  //   since: dayjs("2024-10").toDate(),
-  //   till: null,
-  //   location: "remote",
+  //   location: "singapore",
+  //   type: "remote",
   //   hasSquarePhoto: true,
   // },
   {
@@ -56,7 +47,8 @@ export const EXPERIENCES: History[] = [
     href: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
     till: null,
-    location: "remote",
+    location: "jakarta",
+    type: "onsite",
   },
   {
     key: "faotech",
@@ -64,7 +56,8 @@ export const EXPERIENCES: History[] = [
     href: "https://faotech.dev",
     since: EXPERIENCE_START_DATE,
     till: dayjs("2023-08").toDate(),
-    location: "remote",
+    location: "kazan",
+    type: "remote",
   },
 ];
 

@@ -57,6 +57,8 @@ export const en = {
       tokyo: "Tokyo",
       kazan: "Kazan",
       bali: "Bali",
+      singapore: "Singapore",
+      onsite: "On-site",
     },
 
     MESSAGE: {
@@ -88,6 +90,8 @@ export const en = {
         nutech: {
           label: "Nutech Integrasi",
           desc: "Front-end Engineer",
+          about:
+            "Part of TelkomGroup, committed to making Indonesia the leading digital innovation hub in Southeast Asia, while efficiently delivering the highest quality based on customer experience.",
           duty: [
             "Developed CEISA 4.0, a web app for the Indonesian Directorate General of Customs and Excise, impacting 5000+ users.",
             "Created 25+ document formats and implemented PDF/XLSX rendering using React-pdf, jsPDF and ExcelJS.",
@@ -103,19 +107,18 @@ export const en = {
             "Created documentation, aiding stakeholder understanding and future maintenance.",
           ],
         },
-        langame: {
-          label: "LANGAME",
-          desc: "Front-end Engineer",
-          duty: ["TBA"],
-        },
+
         rave: {
-          label: "Rave",
+          label: "Rave Tech",
           desc: "Front-end Engineer",
           duty: ["TBA"],
+          about: "",
         },
         faotech: {
           label: "faoTech",
           desc: "Full-stack Engineer",
+          about:
+            "Indonesian-based software house company. Our unique combination of Indonesian and Russian educational backgrounds allows us to serve clients from diverse industries and locations.",
           duty: [
             "Managed a front-end team of 2 to 3 engineers across 3 projects.",
             "Built responsive web apps compatible across devices, integrating loading animations.",
