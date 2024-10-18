@@ -10,24 +10,24 @@ type Props = { s: DictionaryStatic };
 export default function About({ s }: Props) {
   const TechStack = ({ name }: { name: keyof TechStack }) => {
     return (
-      <li className="flex flex-col gap-0.5">
-        <Text tag="p" color="graydarker">
+      <section className="flex flex-col gap-0.5">
+        <Text tag="h5" color="graydarker">
           {s.MENUS.TECH_STACKS[name]}
         </Text>
-        <section className="flex gap-1 md:gap-1.5 flex-wrap">
+        <ul className="flex gap-1 md:gap-1.5 flex-wrap">
           {TECH_STACKS[name].map((e) => {
             return (
-              <section key={e.label} className={VARIANTS.Box({ style: "techstack" })}>
+              <li key={e.label} className={VARIANTS.Box({ style: "techstack" })}>
                 <section className="flex items-center gap-0.5">
                   <Icon icon={e.icon} width={13} />
                   {e.icon2 ? <Icon icon={e.icon2} width={13} /> : null}
                 </section>
                 <p>{e.label}</p>
-              </section>
+              </li>
             );
           })}
-        </section>
-      </li>
+        </ul>
+      </section>
     );
   };
 
@@ -36,11 +36,11 @@ export default function About({ s }: Props) {
   return (
     <Container title={s.MENUS.about}>
       <Text tag="p">{s.PERSONAL_DATA.summary}</Text>
-      <ul className="flex flex-col gap-2">
+      <section className="flex flex-col gap-2">
         {keys.map((e) => {
           return <TechStack name={e} key={e} />;
         })}
-      </ul>
+      </section>
     </Container>
   );
 }

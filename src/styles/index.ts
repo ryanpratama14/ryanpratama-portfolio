@@ -15,6 +15,7 @@ export const VARIANTS = {
         heading: "!text-xl md:!text-2xl xl:!text-3xl",
         menuTitle: "!text-base md:!text-lg",
         content: "!text-sm md:!text-base",
+        contentSmall: "!text-xs md:!text-base",
         small: "!text-xs md:!text-sm",
         mini: "!text-xs",
       },

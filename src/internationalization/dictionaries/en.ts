@@ -88,7 +88,7 @@ export const en = {
           duty: null,
         },
         nutech: {
-          label: "Nutech Integrasi",
+          label: "PT Nutech Integrasi",
           desc: "Front-end Engineer",
           about:
             "Part of TelkomGroup, committed to making Indonesia the leading digital innovation hub in Southeast Asia, while efficiently delivering the highest quality based on customer experience.",

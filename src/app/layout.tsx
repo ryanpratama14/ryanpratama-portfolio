@@ -24,9 +24,9 @@ export const generateMetadata = async () => await getMetadata((await getHeaders(
 export default async function RootLayout({ children }: Children) {
   return (
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
-      <body className="flex items-center justify-center px-shorter pt-shorter pb-14 md:pb-shorter">
+      <body className="px-shorter pt-shorter pb-14 md:pb-shorter">
         <TRPCReactProvider>
-          <main className="w-full sm:max-w-4xl flex flex-col gap-4">{children}</main>
+          <main className="w-full sm:max-w-4xl flex flex-col gap-4 mx-auto">{children}</main>
         </TRPCReactProvider>
 
         {OtherComponents[env.NODE_ENV]}

@@ -65,7 +65,7 @@ export const ja: Dictionary = {
         nutech: {
           about:
             "TelkomGroupの一員として、東南アジアでインドネシアをデジタルイノベーションのリーディングハブにすることに努め、顧客体験に基づき最高の品質を効率的に提供しています。",
-          label: "Nutech Integrasi",
+          label: "PT Nutech Integrasi",
           desc: "フロントエンドエンジニア",
           duty: [
             "インドネシア関税総局向けのウェブアプリCEISA 4.0を開発し、5000人以上のユーザーに影響を与えました。",

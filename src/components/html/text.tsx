@@ -3,7 +3,7 @@ import { VARIANTS } from "@/styles";
 import type { VariantProps } from "tailwind-variants";
 
 type Props = VariantProps<typeof VARIANTS.Text> & {
-  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "small" | "div";
+  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "small";
   className?: string;
   children: React.ReactNode;
 };
