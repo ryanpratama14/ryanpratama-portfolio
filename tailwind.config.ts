@@ -84,41 +84,74 @@ const config = {
     plugin(({ addUtilities }) => {
       addUtilities({
         ".animate": {
-          transition: "all 300ms",
+          transitionProperty: "all",
+          transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+          transitionDuration: "300ms",
         },
         ".animate-longer": {
-          transition: "all 500ms",
+          transitionProperty: "all",
+          transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+          transitionDuration: "500ms",
         },
-
-        // for absolute or fixed positions
         ".centered": {
           top: "50%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          "--tw-translate-x": "-50%",
+          "--tw-translate-y": "-50%",
+          transform:
+            "translate(var(--tw-translate-x), var(--tw-translate-y)) " +
+            "rotate(var(--tw-rotate)) " +
+            "skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) " +
+            "scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
         },
         ".centered-bottom": {
           bottom: "0",
           left: "50%",
-          transform: "translateX(-50%)",
+          "--tw-translate-x": "-50%",
+          transform:
+            "translate(var(--tw-translate-x), var(--tw-translate-y)) " +
+            "rotate(var(--tw-rotate)) " +
+            "skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) " +
+            "scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
         },
         ".centered-top": {
           top: "0",
           left: "50%",
-          transform: "translateX(-50%)",
+          "--tw-translate-x": "-50%",
+          transform:
+            "translate(var(--tw-translate-x), var(--tw-translate-y)) " +
+            "rotate(var(--tw-rotate)) " +
+            "skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) " +
+            "scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
         },
         ".centered-left": {
           top: "50%",
           left: "0",
-          transform: "translateY(-50%)",
+          "--tw-translate-y": "-50%",
+          transform:
+            "translate(var(--tw-translate-x), var(--tw-translate-y)) " +
+            "rotate(var(--tw-rotate)) " +
+            "skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) " +
+            "scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
         },
         ".centered-right": {
           top: "50%",
           right: "0",
-          transform: "translateY(-50%)",
+          "--tw-translate-y": "-50%",
+          transform:
+            "translate(var(--tw-translate-x), var(--tw-translate-y)) " +
+            "rotate(var(--tw-rotate)) " +
+            "skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) " +
+            "scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
         },
         ".centered-horizontal": {
           left: "50%",
-          transform: "translateX(-50%)",
+          "--tw-translate-x": "-50%",
+          transform:
+            "translate(var(--tw-translate-x), var(--tw-translate-y)) " +
+            "rotate(var(--tw-rotate)) " +
+            "skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) " +
+            "scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
         },
       });
     }),
