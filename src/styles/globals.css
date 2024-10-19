@@ -2,39 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    @apply scroll-smooth;
-  }
-  body {
-    @apply text-white bg-black font-sans;
-  }
+textarea {
+  field-sizing: content;
+  min-height: 4lh;
 }
 
-@layer components {
-  .animate {
-    @apply transition-all duration-300;
-  }
-  .animate-longer {
-    @apply transition-all duration-500;
-  }
-  /* fixed positions for absolute or fixed position */
-  .centered {
-    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-  }
-  .centered-bottom {
-    @apply bottom-0 left-1/2 -translate-x-1/2;
-  }
-  .centered-top {
-    @apply top-0 left-1/2 -translate-x-1/2;
-  }
-  .centered-left {
-    @apply top-1/2 left-0 -translate-y-1/2;
-  }
-  .centered-right {
-    @apply top-1/2 right-0 -translate-y-1/2;
-  }
-  .centered-horizontal {
-    @apply left-1/2 -translate-x-1/2;
-  }
+.swiper-scrollbar {
+  --swiper-scrollbar-border-radius: 0px;
+  --swiper-scrollbar-bottom: 0px;
+  --swiper-scrollbar-sides-offset: 0%;
+  --swiper-scrollbar-bg-color: none;
+  --swiper-scrollbar-drag-bg-color: white;
+  --swiper-scrollbar-size: 2px;
 }

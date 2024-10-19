@@ -12,7 +12,6 @@ import { GeistSans } from "geist/font/sans";
 import NextTopLoader from "nextjs-toploader";
 import { Fragment } from "react";
 import "@/styles/globals.css";
-import "@/styles/stylesheets.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -24,7 +23,7 @@ export const generateMetadata = async () => await getMetadata((await getHeaders(
 export default async function RootLayout({ children }: Children) {
   return (
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
-      <body className="px-shorter pt-shorter pb-14 md:pb-shorter">
+      <body className="px-shorter pt-shorter pb-14 md:pb-shorter text-white bg-black font-sans">
         <TRPCReactProvider>
           <main className="max-w-4xl space-y-4 mx-auto">{children}</main>
         </TRPCReactProvider>

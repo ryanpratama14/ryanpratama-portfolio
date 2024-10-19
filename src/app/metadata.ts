@@ -14,7 +14,7 @@ export const getMetadata = async (lang: Lang): Promise<Metadata> => {
 
   const url = getUrl({ path: (await getHeaders()).path });
   const title = `${me.fullName} — ${me.softwareEngineer}`;
-  const description = me.summary;
+  const description = `${me.fullName} — ${me.summaryShort}`;
   const images = getMetadataImage(title);
   const keywords = description.split(" ");
 

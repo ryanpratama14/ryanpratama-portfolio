@@ -25,7 +25,7 @@ export type History = {
   since: Date;
   till: Date | null;
   location: keyof DictionaryStatic["LOCATIONS"];
-  type?: keyof DictionaryStatic["LOCATIONS"];
+  type?: keyof DictionaryStatic["LOCATION_TYPES"];
 };
 
 export type Children = { children: React.ReactNode };

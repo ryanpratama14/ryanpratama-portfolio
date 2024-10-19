@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   darkMode: ["class"],
@@ -78,7 +79,50 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        ".animate": {
+          transition: "all 300ms",
+        },
+        ".animate-longer": {
+          transition: "all 500ms",
+        },
+
+        // for absolute or fixed positions
+        ".centered": {
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        },
+        ".centered-bottom": {
+          bottom: "0",
+          left: "50%",
+          transform: "translateX(-50%)",
+        },
+        ".centered-top": {
+          top: "0",
+          left: "50%",
+          transform: "translateX(-50%)",
+        },
+        ".centered-left": {
+          top: "50%",
+          left: "0",
+          transform: "translateY(-50%)",
+        },
+        ".centered-right": {
+          top: "50%",
+          right: "0",
+          transform: "translateY(-50%)",
+        },
+        ".centered-horizontal": {
+          left: "50%",
+          transform: "translateX(-50%)",
+        },
+      });
+    }),
+  ],
 } satisfies Config;
 
 export default config;

@@ -12,6 +12,8 @@ export const ja: Dictionary = {
       fullName: "ライアン・プラタマ",
       summary:
         "フロントエンド開発を専門とする経験豊富なソフトウェアエンジニア。業界のトレンドや最新テクノロジーを常に最新の状態に保ち、クライアントの要件に合わせた高品質のソリューションを作成することに熟練しています。",
+      summaryShort:
+        "経験豊富なソフトウェアエンジニアで、フロントエンド開発を専門としています。ニーズに合ったソリューションを提供することに尽力し、最新の技術トレンドに常に追随しています。",
       softwareEngineer: "ソフトウェアエンジニア",
 
       about:
@@ -123,13 +125,15 @@ export const ja: Dictionary = {
     LOCATIONS: {
       singapore: "シンガポール",
       jakarta: "ジャカルタ",
-      remote: "リモート",
       tokyo: "東京",
       kazan: "カザン",
       bali: "バリ島",
-      onsite: "オフィス勤務",
     },
 
+    LOCATION_TYPES: {
+      onsite: "オフィス勤務",
+      remote: "リモート",
+    },
     MESSAGE: {
       sent: "メッセージは正常に送信されました",
       thankYou:

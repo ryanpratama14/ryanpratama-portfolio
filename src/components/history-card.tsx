@@ -19,7 +19,7 @@ type Props = {
 export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
   const { formatMonth } = useLang(lang);
 
-  const e = { ...s.CONSTANTS.HISTORY[data.key], ...data, location: s.LOCATIONS[data.location], type: data.type ? s.LOCATIONS[data.type] : "" };
+  const e = { ...s.CONSTANTS.HISTORY[data.key], ...data, location: s.LOCATIONS[data.location], type: data.type ? s.LOCATION_TYPES[data.type] : "" };
 
   const Card = () => {
     return (
