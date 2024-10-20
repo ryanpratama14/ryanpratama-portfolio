@@ -1,4 +1,3 @@
-import Container from "@/components/container";
 import About from "@/components/sections/about";
 import AdditionalInformation from "@/components/sections/additional-information";
 import Contacts from "@/components/sections/contacts";
@@ -7,15 +6,13 @@ import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
-import { UPDATED_ON } from "@/lib/constants";
 import type { ParamsLang } from "@/types";
-import { Fragment } from "react";
 
 export default function HomePage({ params: { lang } }: ParamsLang) {
-  const { s, d, isJapanese, isDefaultLang, formatDate } = useLang(lang);
+  const { s, isJapanese, isDefaultLang } = useLang(lang);
 
   return (
-    <Fragment>
+    <main className="space-y-4">
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
       <About s={s} />
@@ -23,7 +20,6 @@ export default function HomePage({ params: { lang } }: ParamsLang) {
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
-      <Container title={d.updatedOn(formatDate(UPDATED_ON))} />
-    </Fragment>
+    </main>
   );
 }

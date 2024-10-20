@@ -83,6 +83,11 @@ const config = {
     require("tailwindcss-animate"),
     plugin(({ addUtilities }) => {
       addUtilities({
+        " .component-container": {
+          maxWidth: "56rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+        },
         ".animate": {
           transitionProperty: "all",
           transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",

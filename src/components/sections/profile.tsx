@@ -51,7 +51,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
     });
 
   return (
-    <article>
+    <article className="component-container">
       <section className="flex justify-between items-start">
         <section className="flex items-center gap-2.5 md:gap-5">
           <Img

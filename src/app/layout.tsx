@@ -1,8 +1,11 @@
 import { getMetadata } from "@/app/metadata";
+import Container from "@/components/container";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { env } from "@/env";
 import { LANGS } from "@/internationalization";
+import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
+import { UPDATED_ON } from "@/lib/constants";
 import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import type { Children } from "@/types";
@@ -21,11 +24,15 @@ export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata((await getHeaders()).lang);
 
 export default async function RootLayout({ children }: Children) {
+  const lang = (await getHeaders()).lang;
+  const { d, formatDate } = useLang(lang);
+
   return (
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
       <body className="px-shorter pt-shorter pb-14 md:pb-shorter text-white bg-black font-sans">
         <TRPCReactProvider>
-          <main className="max-w-4xl space-y-4 mx-auto">{children}</main>
+          {children}
+          <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
         </TRPCReactProvider>
 
         {OtherComponents[env.NODE_ENV]}
