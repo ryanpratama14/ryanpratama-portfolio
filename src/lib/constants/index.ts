@@ -15,7 +15,7 @@ import mandiri from "#/images/project/mandiri.webp";
 import turta from "#/images/project/turta.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
-export const UPDATED_ON = dayjs("2024-10-17").toDate();
+export const UPDATED_ON = dayjs("2024-10-20").toDate();
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),

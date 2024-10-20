@@ -24,19 +24,15 @@ export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata((await getHeaders()).lang);
 
 export default async function RootLayout({ children }: Children) {
-  const lang = (await getHeaders()).lang;
-  const { d, formatDate } = useLang(lang);
+  const { d, formatDate, lang } = useLang((await getHeaders()).lang);
 
   return (
-    <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
+    <html lang={lang} className={GeistSans.variable}>
       <body className="px-shorter pt-shorter pb-14 md:pb-shorter text-white bg-black font-sans">
-        <TRPCReactProvider>
-          {children}
-          <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
-        </TRPCReactProvider>
-
-        {OtherComponents[env.NODE_ENV]}
+        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
         <NextTopLoader color={COLORS.blue} showSpinner={false} />
+        {OtherComponents[env.NODE_ENV]}
       </body>
     </html>
   );
