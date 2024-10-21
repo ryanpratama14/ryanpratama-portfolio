@@ -56,13 +56,13 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
         <AccordionTrigger>
           <Card />
         </AccordionTrigger>
-        <AccordionContent className="space-y-1">
+        <AccordionContent className="space-y-0.5 text-pretty">
           {e.about ? (
             <Text tag="p" as="contentSmall">
               {e.about}
             </Text>
           ) : null}
-          <ul className="text-xs md:text-base ml-4 list-disc text-pretty">
+          <ul className="text-xs md:text-base ml-4 list-disc">
             {e.duty.map((duty) => (
               <li key={duty}>{duty}</li>
             ))}
