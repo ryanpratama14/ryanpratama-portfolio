@@ -31,22 +31,22 @@ export const PHOTOS = {
 };
 
 export const EXPERIENCES: History[] = [
-  // {
-  //   key: "rave",
-  //   src: PHOTOS.logo.rave,
-  //   href: "https://rave.tech",
-  //   since: dayjs("2024-11").toDate(),
-  //   till: null,
-  //   location: "singapore",
-  //   type: "remote",
-  //   hasSquarePhoto: true,
-  // },
+  {
+    key: "rave",
+    src: PHOTOS.logo.rave,
+    href: "https://rave.tech",
+    since: dayjs("2024-11").toDate(),
+    till: null,
+    location: "singapore",
+    type: "remote",
+    hasSquarePhoto: true,
+  },
   {
     key: "nutech",
     src: PHOTOS.logo.nutech,
     href: "https://www.nutech-integrasi.com",
     since: dayjs("2023-08").toDate(),
-    till: null,
+    till: dayjs("2024-11").toDate(),
     location: "jakarta",
     type: "onsite",
   },
