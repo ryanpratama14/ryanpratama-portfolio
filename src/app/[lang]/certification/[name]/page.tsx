@@ -9,12 +9,13 @@ import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";
-import type { ParamsLang } from "@/types";
+import type { Lang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
+import type { PageProps } from ".next/types/app/[lang]/certification/[name]/page";
 
-type Props = ParamsLang & { params: { name: string } };
+type Props = PageProps & { params: { lang: Lang; name: string } };
 
 export const generateMetadata = async ({ params: { name } }: Props): Promise<Metadata | undefined> => {
   const data = CERTIFICATIONS.find((e) => e.name === name);

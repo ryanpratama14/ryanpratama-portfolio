@@ -6,9 +6,12 @@ import FeaturedProjects from "@/components/sections/featured-projects";
 import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
-import type { ParamsLang } from "@/types";
+import type { Lang } from "@/types";
+import type { PageProps } from ".next/types/app/[lang]/(home)/page";
 
-export default function HomePage({ params: { lang } }: ParamsLang) {
+type Props = PageProps & { params: { lang: Lang } };
+
+export default function HomePage({ params: { lang } }: Props) {
   const { s, isJapanese, isDefaultLang } = useLang(lang);
 
   return (

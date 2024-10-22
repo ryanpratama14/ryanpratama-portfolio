@@ -8,7 +8,6 @@ import { getHeaders } from "@/lib/actions";
 import { UPDATED_ON } from "@/lib/constants";
 import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
-import type { Children } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
@@ -23,7 +22,9 @@ import "swiper/css/scrollbar";
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata((await getHeaders()).lang);
 
-export default async function RootLayout({ children }: Children) {
+type Props = { children: React.ReactNode };
+
+export default async function RootLayout({ children }: Props) {
   const { d, formatDate, lang } = useLang((await getHeaders()).lang);
 
   return (

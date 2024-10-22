@@ -27,7 +27,3 @@ export type History = {
   location: keyof DictionaryStatic["LOCATIONS"];
   type?: keyof DictionaryStatic["LOCATION_TYPES"];
 };
-
-export type Children = { children: React.ReactNode };
-export type ParamsLang = { params: { lang: Lang } };
-export type ChildrenParamsLang = Children & ParamsLang;

@@ -11,8 +11,8 @@ import type { TRPCErrorResponse } from "@trpc/server/rpc";
 import { headers } from "next/headers";
 import { cache } from "react";
 
-const createContext = cache(() => {
-  const heads = new Headers(headers());
+const createContext = cache(async () => {
+  const heads = new Headers(await headers());
   heads.set("x-trpc-source", "rsc");
   return createTRPCContext({ headers: heads });
 });
