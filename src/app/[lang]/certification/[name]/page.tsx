@@ -13,11 +13,12 @@ import type { Lang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
-import type { PageProps } from ".next/types/app/[lang]/certification/[name]/page";
 
-type Props = PageProps & { params: { lang: Lang; name: string } };
+type Props = { params: Promise<{ lang: Lang; name: string }> };
 
-export const generateMetadata = async ({ params: { name } }: Props): Promise<Metadata | undefined> => {
+export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
+  const { name } = await params;
+
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (data) {
     const title = data.label;
@@ -27,7 +28,9 @@ export const generateMetadata = async ({ params: { name } }: Props): Promise<Met
   }
 };
 
-export default function CertificationPage({ params: { name, lang } }: Props) {
+export default async function CertificationPage({ params }: Props) {
+  const { name, lang } = await params;
+
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 
@@ -38,7 +41,7 @@ export default function CertificationPage({ params: { name, lang } }: Props) {
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
 
-      <Container title={data.label}>
+      <Container title={data.label} className="my-4">
         <Img alt={data.alt} src={data.src} />
       </Container>
 

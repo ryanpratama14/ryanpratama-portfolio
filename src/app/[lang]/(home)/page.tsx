@@ -7,11 +7,11 @@ import Message from "@/components/sections/message";
 import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import type { Lang } from "@/types";
-import type { PageProps } from ".next/types/app/[lang]/(home)/page";
 
-type Props = PageProps & { params: { lang: Lang } };
+type Props = { params: Promise<{ lang: Lang }> };
 
-export default function HomePage({ params: { lang } }: Props) {
+export default async function HomePage({ params }: Props) {
+  const { lang } = await params;
   const { s, isJapanese, isDefaultLang } = useLang(lang);
 
   return (
