@@ -2,6 +2,7 @@ import type { Certification, Contact, History, Other, Project, TechStack } from 
 import dayjs from "dayjs";
 
 import avatar from "#/images/avatar.webp";
+import n3 from "#/images/certification/jlpt-n3.webp";
 import n4 from "#/images/certification/jlpt-n4.webp";
 import podfak from "#/images/certification/podfak.webp";
 import faotech from "#/images/logo/faotech.webp";
@@ -26,7 +27,7 @@ export const PERSONALS = {
 export const PHOTOS = {
   logo: { nutech, faotech, kfu, rave },
   project: { belinsky, hebronstar, kima, mandiri, turta },
-  certifications: { n4, podfak },
+  certifications: { n3, n4, podfak },
   avatar,
 };
 
@@ -141,7 +142,7 @@ export const ICONS = {
 };
 
 export const CERTIFICATIONS: Certification[] = [
-  // { name: "jlpt-n3", src: PHOTOS.certifications.n4, alt: "JLPT N3 Certification, Ryan Pratama", label: "N3, Japanese-Language Proficiency Test" },
+  { name: "jlpt-n3", src: PHOTOS.certifications.n3, alt: "JLPT N3 Certification, Ryan Pratama", label: "N3, Japanese-Language Proficiency Test" },
   { name: "jlpt-n4", src: PHOTOS.certifications.n4, alt: "JLPT N4 Certification, Ryan Pratama", label: "N4, Japanese-Language Proficiency Test" },
   {
     name: "preparatory-faculty-of-russian-language",
