@@ -1,5 +1,6 @@
-import type { NextConfig } from "next";
 await import("./src/env.js");
+
+import type { NextConfig } from "next";
 
 const config: NextConfig = {};
 
