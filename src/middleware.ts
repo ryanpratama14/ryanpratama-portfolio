@@ -26,4 +26,4 @@ export const middleware = (req: NextRequest) => {
   return res;
 };
 
-export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };
+export const config = { matcher: ["/((?!api|studio|_next|_vercel|.*\\..*).*)"] };
