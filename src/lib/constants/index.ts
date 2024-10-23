@@ -16,7 +16,7 @@ import mandiri from "#/images/project/mandiri.webp";
 import turta from "#/images/project/turta.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
-export const UPDATED_ON = dayjs("2024-10-21").toDate();
+export const UPDATED_ON = dayjs("2024-10-23").toDate();
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
@@ -32,16 +32,16 @@ export const PHOTOS = {
 };
 
 export const EXPERIENCES: History[] = [
-  {
-    key: "rave",
-    src: PHOTOS.logo.rave,
-    href: "https://rave.tech",
-    since: dayjs("2024-11").toDate(),
-    till: null,
-    location: "singapore",
-    type: "remote",
-    hasSquarePhoto: true,
-  },
+  // {
+  //   key: "rave",
+  //   src: PHOTOS.logo.rave,
+  //   href: "https://rave.tech",
+  //   since: dayjs("2024-11").toDate(),
+  //   till: null,
+  //   location: "singapore",
+  //   type: "remote",
+  //   hasSquarePhoto: true,
+  // },
   {
     key: "nutech",
     src: PHOTOS.logo.nutech,
