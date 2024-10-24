@@ -29,7 +29,7 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={lang} className={GeistSans.variable}>
-      <body className="px-shorter pt-shorter pb-14 md:pb-shorter text-white bg-black font-sans">
+      <body className="px-lg pt-lg pb-14 md:pb-lg text-white bg-black font-sans">
         <TRPCReactProvider>{children}</TRPCReactProvider>
         <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
         <NextTopLoader color={COLORS.blue} showSpinner={false} />
