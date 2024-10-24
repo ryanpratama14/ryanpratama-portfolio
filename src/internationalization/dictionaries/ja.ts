@@ -32,6 +32,7 @@ export const ja: Dictionary = {
       featuredProjects: "注目のプロジェクト",
       contacts: "連絡先",
       message: "繋がりましょう！",
+      blog: "ブログ",
 
       TECH_STACKS: {
         programmingLanguages: "開発言語",

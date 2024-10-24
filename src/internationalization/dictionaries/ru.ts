@@ -95,6 +95,7 @@ export const ru: Dictionary = {
       featuredProjects: "Выделенные проекты",
       contacts: "Контакты",
       experience: "Опыт работы",
+      blog: "Блог",
 
       message: "Давайте свяжемся!",
 

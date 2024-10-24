@@ -302,11 +302,77 @@ export type BLOG_POSTS_QUERYResult = Array<{
     _key: string;
   }>;
 }>;
+// Variable: BLOG_POST_QUERY
+// Query: *[_type == "post" && show == true && slug.current == $slug][0] {    ...,    categories[] -> {        ...,    }}
+export type BLOG_POST_QUERYResult = {
+  _id: string;
+  _type: "post";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  show?: boolean;
+  slug?: Slug;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  categories: Array<{
+    _id: string;
+    _type: "category";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    title?: string;
+    slug?: Slug;
+    description?: string;
+  }> | null;
+  publishedAt?: string;
+  body?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"post\" && show == true] {\n    ...,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POSTS_QUERYResult;
+    "*[_type == \"post\" && show == true && slug.current == $slug][0] {\n    ...,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POST_QUERYResult;
   }
 }

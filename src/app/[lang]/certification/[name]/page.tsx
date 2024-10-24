@@ -1,11 +1,11 @@
+import Contacts from "@/app/[lang]/(home)/components/contacts";
+import Message from "@/app/[lang]/(home)/components/message";
+import Profile from "@/app/[lang]/(home)/components/profile";
 import { getMetadataImage } from "@/app/metadata";
 import { getUrl } from "@/app/urls";
 import Container from "@/components/container";
 import Img from "@/components/html/img";
 import LinkButton from "@/components/html/link-button";
-import Contacts from "@/components/sections/contacts";
-import Message from "@/components/sections/message";
-import Profile from "@/components/sections/profile";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";

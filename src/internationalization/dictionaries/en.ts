@@ -28,6 +28,7 @@ export const en = {
       featuredProjects: "Featured Projects",
       contacts: "Contacts",
       experience: "Experience",
+      blog: "Blog",
 
       message: "Let's Connect!",
       additionalInformation: "Additional Information",
