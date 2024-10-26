@@ -20,8 +20,6 @@ type Props = {
 };
 
 export default async function Profile({ s, lang, isDefaultLang }: Props) {
-  const storedLang = await getCookieLang();
-
   const ProfileData = () =>
     getProfileData(lang).map((e) => {
       const Data = () => (
@@ -82,7 +80,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
           </section>
         </section>
 
-        <LangSwitcher storedLang={storedLang} setCookieLang={setCookieLang} />
+        <LangSwitcher storedLang={await getCookieLang()} setCookieLang={setCookieLang} />
       </section>
 
       <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap -translate-x-0.5">
