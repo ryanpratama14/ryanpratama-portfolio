@@ -39,7 +39,6 @@ export const EXPERIENCES: History[] = [
   //   till: null,
   //   location: "singapore",
   //   type: "remote",
-  //   hasSquarePhoto: true,
   // },
   {
     key: "nutech",
@@ -70,7 +69,6 @@ export const OTHERS: Other = {
       src: PHOTOS.logo.kfu,
       since: dayjs("2019-09").toDate(),
       till: dayjs("2023-06").toDate(),
-      hasSquarePhoto: true,
       location: "kazan",
     },
   ],

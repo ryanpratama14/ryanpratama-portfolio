@@ -18,7 +18,6 @@ export type TechStack = Record<keyof DictionaryStatic["MENUS"]["TECH_STACKS"], {
 export type Other = { languages: (keyof DictionaryStatic["PERSONAL_DATA"]["languages"])[]; education: History[] };
 
 export type History = {
-  hasSquarePhoto?: boolean;
   key: keyof DictionaryStatic["CONSTANTS"]["HISTORY"];
   src: StaticImageData;
   href: string;

@@ -24,12 +24,8 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
   const Card = () => {
     return (
       <section className="flex items-center text-left">
-        <section
-          className={cn("w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow", {
-            "p-2 flex items-center justify-center bg-white": !e.hasSquarePhoto,
-          })}
-        >
-          <Img src={e.src} alt={e.label} className={cn({ "object-cointain": !e.hasSquarePhoto, "size-full rounded-l-md": e.hasSquarePhoto })} />
+        <section className="w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow">
+          <Img src={e.src} alt={e.label} className="size-full rounded-l-md" />
         </section>
 
         <section className="pl-2.5 md:pl-3 flex flex-col">
