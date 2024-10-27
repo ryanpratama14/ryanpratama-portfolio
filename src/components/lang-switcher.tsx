@@ -37,7 +37,6 @@ export default function LangSwitcher({ storedLang, setCookieLang }: Props) {
                 "bg-graybg border-graydarker shadow": isActive,
               })}
               href={changeLang(langTarget, path)}
-              type="button"
             >
               <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
               {flag}
