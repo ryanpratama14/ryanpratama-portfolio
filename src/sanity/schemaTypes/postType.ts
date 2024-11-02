@@ -18,23 +18,13 @@ export const postType = defineType({
     defineField({
       name: "slug",
       type: "slug",
-      options: {
-        source: "title",
-      },
+      options: { source: "title" },
     }),
     defineField({
       name: "mainImage",
       type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
-        },
-      ],
+      options: { hotspot: true },
+      fields: [{ name: "alt", type: "string", title: "Alternative text" }],
     }),
     defineField({
       name: "categories",
@@ -47,7 +37,9 @@ export const postType = defineType({
     }),
     defineField({
       name: "body",
-      type: "blockContent",
+      title: "Description",
+      type: "array",
+      of: [{ type: "block" }, { type: "image", fields: [{ name: "alt", type: "string", title: "Alternative text" }] }],
     }),
   ],
 });
