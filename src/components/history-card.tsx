@@ -24,21 +24,19 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
   const Card = () => {
     return (
       <section className="flex items-center text-left">
-        <section className="w-[4.25rem] md:w-[5.25rem] aspect-square rounded-l-md shadow">
-          <Img src={e.src} alt={e.label} className="size-full rounded-l-md" />
-        </section>
+        <Img src={e.src} alt={e.label} className="size-full rounded-l-md w-[4.25rem] md:w-[5.25rem] shadow" />
 
         <section className="pl-2.5 md:pl-3 flex flex-col">
           <Link target="_blank" rel="noreferrer noopener" href={e.href} className="w-fit flex items-center gap-1 translate-x-[0.085rem]">
             <Icon icon={ICONS.link} width={12} />
-            <Text tag="p" className={cn(VARIANTS.Text({ as: "content", className: "font-medium hover:underline" }))}>
+            <Text tag="p" className={cn(VARIANTS.Text({ as: "content", className: "font-medium hover:underline line-clamp-1" }))}>
               {e.label}
             </Text>
           </Link>
-          <Text tag="p" color="gray" className="font-medium">
+          <Text tag="p" color="gray" className="font-medium line-clamp-1">
             {e.desc}
           </Text>
-          <Text tag="p" color="graydarker" as="small">
+          <Text tag="p" color="graydarker" as="small" className="line-clamp-1">
             {`${e.location}${e.type ? ` (${e.type.toLowerCase()})` : ""} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}
           </Text>
         </section>
