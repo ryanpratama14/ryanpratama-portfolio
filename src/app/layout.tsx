@@ -39,7 +39,7 @@ export default async function RootLayout({ children }: Props) {
   );
 }
 
-const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element> = {
+const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element | null> = {
   development: <ScreenSizeIndicator />,
   production: (
     <Fragment>
@@ -47,5 +47,5 @@ const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element> = {
       <SpeedInsights />
     </Fragment>
   ),
-  test: <Fragment />,
+  test: null,
 };
