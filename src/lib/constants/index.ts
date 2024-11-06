@@ -118,6 +118,7 @@ export const ICONS = {
   resend: "simple-icons:resend",
   reactPdf: "teenyicons:pdf-solid",
   exceljs: "teenyicons:ms-excel-solid",
+  sanity: "devicon-plain:sanity",
 
   mongodb: "teenyicons:mongodb-solid",
   postgresql: "akar-icons:postgresql-fill",
@@ -193,6 +194,8 @@ export const TECH_STACKS: TechStack = {
     { label: "T3 Stack", icon: ICONS.t3 },
     { label: "React / Next.js", icon: ICONS.react, icon2: ICONS.nextjs },
     { label: "React Native", icon: ICONS.reactNative },
+    { label: "Sanity", icon: ICONS.sanity },
+
     { label: "tRPC", icon: "devicon-plain:trpc" },
     { label: "Node.js", icon: ICONS.nodejs },
     { label: "Express.js", icon: ICONS.expressjs },

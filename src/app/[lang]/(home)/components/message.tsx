@@ -13,13 +13,14 @@ import { api } from "@/trpc/react";
 import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Icon } from "@iconify-icon/react";
-import { Fragment, useState } from "react";
+import { parseAsBoolean, useQueryState } from "nuqs";
+import { Fragment } from "react";
 import { useForm } from "react-hook-form";
 
 type Props = { s: DictionaryStatic; lang: Lang };
 
 export default function ProjectDiscuss({ s, lang }: Props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useQueryState("success", parseAsBoolean.withDefault(false));
   const { MESSAGE: t } = s;
 
   const {
