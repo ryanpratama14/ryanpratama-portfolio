@@ -11,7 +11,7 @@ export default function About({ s }: Props) {
   const TechStack = ({ name }: { name: keyof TechStack }) => {
     return (
       <section className="flex flex-col gap-0.5">
-        <Text tag="h5" color="graydarker">
+        <Text tag="p" color="graydarker">
           {s.MENUS.TECH_STACKS[name]}
         </Text>
         <ul className="flex gap-1 md:gap-1.5 flex-wrap">
