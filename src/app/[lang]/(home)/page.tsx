@@ -14,8 +14,7 @@ import Profile from "./components/profile";
 type Props = { params: Promise<{ lang: Lang }> };
 
 export default async function HomePage({ params }: Props) {
-  const { lang } = await params;
-  const { s, isJapanese, isDefaultLang } = useLang(lang);
+  const { s, isJapanese, isDefaultLang, lang } = useLang((await params).lang);
   // const posts = await client.fetch<BLOG_POSTS_QUERYResult>(BLOG_POSTS_QUERY, {}, { next: { revalidate: 10 } });
   // console.log(posts);
 

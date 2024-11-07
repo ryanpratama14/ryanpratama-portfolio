@@ -17,14 +17,13 @@ type Props = { params: Promise<{ lang: Lang; name: string }> };
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
   const { name } = await params;
-
   const data = CERTIFICATIONS.find((e) => e.name === name);
-  if (data) {
-    const title = data.label;
-    const url = getUrl({ path: (await getHeaders()).path });
-    const images = getMetadataImage(title);
-    return { title, openGraph: { title, url, images, siteName: title } };
-  }
+  if (!data) return;
+
+  const title = data.label;
+  const url = getUrl({ path: (await getHeaders()).path });
+  const images = getMetadataImage(title);
+  return { title, openGraph: { title, url, images, siteName: title } };
 };
 
 export default async function CertificationPage({ params }: Props) {
