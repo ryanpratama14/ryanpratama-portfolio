@@ -115,7 +115,7 @@ export const en = {
         },
 
         rave: {
-          label: "Rave Tech",
+          label: "Rave Tech Pte. Ltd.",
           desc: "Front-end Engineer",
           duty: ["TBA"],
           about: "",

@@ -34,7 +34,7 @@ export const EXPERIENCES: History[] = [
   // {
   //   key: "rave",
   //   src: PHOTOS.logo.rave,
-  //   href: "https://rave.tech",
+  //   href: "https://www.rave.tech",
   //   since: dayjs("2024-11").toDate(),
   //   till: null,
   //   location: "singapore",
@@ -240,6 +240,6 @@ export const CONTACTS: Contact[] = [
   { href: "https://github.com/ryanpratama14", label: "GitHub", icon: ICONS.github },
   { href: "https://www.linkedin.com/in/ryanpratama14", label: "LinkedIn", icon: ICONS.linkedin },
   { href: "https://t.me/ryanpratama14", label: "Telegram", icon: ICONS.telegram },
-  { href: "https://wa.me/+6281210425333", label: "WhatsApp", icon: ICONS.whatsapp },
+  { href: "https://wa.me/6281210425333", label: "WhatsApp", icon: ICONS.whatsapp },
   { href: "https://www.instagram.com/ryanpratama14", label: "Instagram", icon: ICONS.instagram },
 ];

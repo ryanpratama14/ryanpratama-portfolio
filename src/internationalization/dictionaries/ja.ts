@@ -88,7 +88,7 @@ export const ja: Dictionary = {
 
         rave: {
           about: "",
-          label: "Rave Tech",
+          label: "Rave Tech Pte. Ltd.",
           desc: "フロントエンドエンジニア",
           duty: ["TBA"],
         },

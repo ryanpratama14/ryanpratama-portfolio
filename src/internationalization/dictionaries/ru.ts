@@ -46,7 +46,7 @@ export const ru: Dictionary = {
 
         rave: {
           about: "",
-          label: "Rave Tech",
+          label: "Rave Tech Pte. Ltd.",
           desc: "Фронтенд-разработчик",
           duty: ["TBA"],
         },

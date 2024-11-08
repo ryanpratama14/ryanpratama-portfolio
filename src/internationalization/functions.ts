@@ -14,7 +14,6 @@ const useLang = (lang: Lang) => {
   const splittedLocale = locale.split("-").join("_");
 
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: isJapanese ? "short" : "2-digit", year: "numeric" });
-
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
   const formatCounter = (counter: string) => (isJapanese ? counter : ` ${counter}`);
