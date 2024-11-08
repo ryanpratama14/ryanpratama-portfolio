@@ -7,7 +7,7 @@ export default function Container({ title, children, tag = "article", className 
   const Tag = tag;
 
   return (
-    <Tag className={cn("flex flex-col gap-2.5 component-container", className)}>
+    <Tag className={cn("space-y-2.5 component-container", className)}>
       <Text tag="h2" as="menuTitle" color="gray" className="w-full border-b-2 border-graybg font-semibold">
         {title}
       </Text>

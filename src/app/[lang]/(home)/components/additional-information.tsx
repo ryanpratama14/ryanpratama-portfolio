@@ -10,15 +10,15 @@ type Props = { s: DictionaryStatic; lang: Lang; isJapanese: boolean };
 export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
   return (
     <Container title={s.MENUS.additionalInformation}>
-      <section className="flex flex-col gap-2">
-        <section className="flex flex-col">
+      <section className="space-y-2">
+        <section>
           <Text tag="p" color="graydarker">
             {s.MENUS.OTHER.languages}
           </Text>
 
           <Text tag="p">{OTHERS.languages.map((e) => s.PERSONAL_DATA.languages[e]).join(isJapanese ? "、" : " / ")}</Text>
         </section>
-        <section className="flex flex-col gap-0.5">
+        <section className="space-y-0.5">
           <Text tag="p" color="graydarker">
             {s.MENUS.OTHER.education}
           </Text>

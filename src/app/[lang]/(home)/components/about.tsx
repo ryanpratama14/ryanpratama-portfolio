@@ -10,7 +10,7 @@ type Props = { s: DictionaryStatic };
 export default function About({ s }: Props) {
   const TechStack = ({ name }: { name: keyof TechStack }) => {
     return (
-      <section className="flex flex-col gap-0.5">
+      <section className="space-y-0.5">
         <Text tag="p" color="graydarker">
           {s.MENUS.TECH_STACKS[name]}
         </Text>
@@ -36,7 +36,7 @@ export default function About({ s }: Props) {
   return (
     <Container title={s.MENUS.about}>
       <Text tag="p">{s.PERSONAL_DATA.summary}</Text>
-      <section className="flex flex-col gap-2">
+      <section className="space-y-2">
         {keys.map((e) => {
           return <TechStack name={e} key={e} />;
         })}

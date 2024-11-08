@@ -12,7 +12,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, err
   const id = useId();
 
   return (
-    <section className="gap-0.5 flex flex-col w-full">
+    <section className="space-y-0.5 w-full">
       <label className="sr-only" htmlFor={id}>
         {placeholder}
       </label>

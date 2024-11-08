@@ -58,8 +58,8 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
             className="animate border-2 border-gray shadow object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-full"
           />
 
-          <section className="flex flex-col md:gap-0.5">
-            <header className="flex flex-col">
+          <section className="md:space-y-0.5">
+            <header>
               <Text tag="h1" as="heading" className="font-bold">
                 {s.PERSONAL_DATA.fullName}
               </Text>
