@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, Props>(({ placeholder, error, type, .
   const id = useId();
 
   return (
-    <section className="space-y-0.5 w-full">
+    <section className="flex flex-col gap-0.5 w-full">
       <label className="sr-only" htmlFor={id}>
         {placeholder}
       </label>

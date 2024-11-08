@@ -12,11 +12,11 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, err
   const id = useId();
 
   return (
-    <section className="space-y-0.5 w-full">
+    <section className="flex flex-col gap-0.5 w-full">
       <label className="sr-only" htmlFor={id}>
         {placeholder}
       </label>
-      <textarea className={VARIANTS.Input()} placeholder={placeholder} {...rest} ref={ref} id={id} />
+      <textarea className={VARIANTS.Input()} placeholder={placeholder} ref={ref} {...rest} id={id} />
       <Text tag="small" className={cn("ml-0.5 shadow", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
         {error}
       </Text>
