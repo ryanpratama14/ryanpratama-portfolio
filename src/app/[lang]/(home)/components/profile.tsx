@@ -3,7 +3,7 @@ import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
-import { getCookieLang, setCookieLang } from "@/lib/actions";
+import { getCookieLang } from "@/lib/actions";
 import { PHOTOS } from "@/lib/constants";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
@@ -80,7 +80,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
           </section>
         </section>
 
-        <LangSwitcher storedLang={await getCookieLang()} setCookieLang={setCookieLang} />
+        <LangSwitcher storedLang={await getCookieLang()} />
       </section>
 
       <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap -translate-x-0.5">
