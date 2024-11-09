@@ -228,9 +228,9 @@ export const TECH_STACKS: TechStack = {
 
   learning: [
     { label: "Swift", icon: ICONS.swift },
-    { label: "Flutter", icon: ICONS.flutter },
-    // { label: "Go", icon: ICONS.go },
     { label: "Rust", icon: ICONS.rust },
+    // { label: "Flutter", icon: ICONS.flutter },
+    // { label: "Go", icon: ICONS.go },
     // { label: "Vue / Nuxt.js", icon: ICONS.vue, icon2: ICONS.nuxtjs },
   ],
 };
