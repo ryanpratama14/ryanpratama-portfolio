@@ -129,7 +129,7 @@ export const ICONS = {
   go: "simple-icons:go",
   vue: "mdi:vuejs",
   nuxtjs: "file-icons:nuxt",
-  astro: "simple-icons:astro",
+  rust: "teenyicons:rust-solid",
 
   email: "mdi:email-outline",
   github: "mdi:github",
@@ -229,9 +229,9 @@ export const TECH_STACKS: TechStack = {
   learning: [
     { label: "Swift", icon: ICONS.swift },
     { label: "Flutter", icon: ICONS.flutter },
-    { label: "Go", icon: ICONS.go },
-    { label: "Astro", icon: ICONS.astro },
-    { label: "Vue / Nuxt.js", icon: ICONS.vue, icon2: ICONS.nuxtjs },
+    // { label: "Go", icon: ICONS.go },
+    { label: "Rust", icon: ICONS.rust },
+    // { label: "Vue / Nuxt.js", icon: ICONS.vue, icon2: ICONS.nuxtjs },
   ],
 };
 
