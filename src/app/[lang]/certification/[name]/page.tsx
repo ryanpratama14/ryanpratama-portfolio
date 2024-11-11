@@ -1,13 +1,11 @@
 import Contacts from "@/app/[lang]/(home)/components/contacts";
 import Message from "@/app/[lang]/(home)/components/message";
 import Profile from "@/app/[lang]/(home)/components/profile";
-import { getMetadataImage } from "@/app/metadata";
-import { getUrl } from "@/app/urls";
+import { getMetadata } from "@/app/metadata";
 import Container from "@/components/container";
 import Img from "@/components/html/img";
 import LinkButton from "@/components/html/link-button";
 import { useLang } from "@/internationalization/functions";
-import { getHeaders } from "@/lib/actions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
@@ -19,11 +17,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
   const { name } = await params;
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) return;
-
-  const title = data.label;
-  const url = getUrl({ path: (await getHeaders()).path });
-  const images = getMetadataImage(title);
-  return { title, openGraph: { title, url, images, siteName: title } };
+  return await getMetadata({ title: data.label });
 };
 
 export default async function CertificationPage({ params }: Props) {

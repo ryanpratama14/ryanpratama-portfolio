@@ -1,8 +1,6 @@
 import Contacts from "@/app/[lang]/(home)/components/contacts";
 import Message from "@/app/[lang]/(home)/components/message";
 import Profile from "@/app/[lang]/(home)/components/profile";
-import { getMetadataImage } from "@/app/metadata";
-import { getUrl } from "@/app/urls";
 import LinkButton from "@/components/html/link-button";
 import Text from "@/components/html/text";
 import { useLang } from "@/internationalization/functions";
@@ -10,13 +8,11 @@ import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
 import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
+import { getMetadata } from "./metadata";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { s } = useLang((await getHeaders()).lang);
-  const title = s.SECTIONS.notFound;
-  const images = getMetadataImage(title);
-  const url = getUrl({ path: (await getHeaders()).path });
-  return { title, openGraph: { title, images, url, siteName: title } };
+  return await getMetadata({ title: s.SECTIONS.notFound });
 };
 
 export default async function NotFound() {

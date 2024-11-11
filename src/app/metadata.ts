@@ -1,37 +1,77 @@
-import { URLS, getUrl } from "@/app/urls";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
-import { PERSONALS } from "@/lib/constants";
-import type { Lang } from "@/types";
 import type { Metadata } from "next";
+import { ENDPOINTS, getUrl } from "./urls";
 
-export const getMetadataImage = (title: string) => [{ url: URLS.ogImage, type: "image/png", width: 1200, height: 630, alt: title }];
-export const getMetadata = async (lang: Lang): Promise<Metadata> => {
+export const getMetadata = async ({
+  title,
+  description,
+  imageUrl,
+}: {
+  description?: string;
+  title?: string;
+  imageUrl?: string;
+}): Promise<Metadata> => {
+  const lang = (await getHeaders()).lang;
+  const path = (await getHeaders()).path;
+
   const {
     s: { PERSONAL_DATA: me },
     splittedLocale: locale,
   } = useLang(lang);
+  const MAIN_TITLE = `${me.fullName} — ${me.softwareEngineer}`;
+  const MAIN_DESCRIPTION = description ?? `${me.fullName} — ${me.summaryShort}`;
 
-  const url = getUrl({ path: (await getHeaders()).path });
-  const title = `${me.fullName} — ${me.softwareEngineer}`;
-  const description = `${me.fullName} — ${me.summaryShort}`;
-  const images = getMetadataImage(title);
-  const keywords = description.split(" ");
+  const modifiedTitle = title ?? MAIN_TITLE;
+  const getMetadataTitle = () => (modifiedTitle === MAIN_TITLE ? modifiedTitle : `${modifiedTitle} | ${MAIN_TITLE}`);
+  const url = getUrl({ path });
+  const images = [{ url: imageUrl ?? getUrl({ path: ENDPOINTS.ogImage }), alt: getMetadataTitle() }];
+  const author = MAIN_TITLE;
+  const keywords = [
+    "software",
+    "engineer",
+    "front-end",
+    "back-end",
+    "full-stack",
+    "web",
+    "development",
+    "react",
+    "nextjs",
+    "nodejs",
+    "trpc",
+    "hono",
+    "expressjs",
+    "typescript",
+    "javascipt",
+  ].join(",");
 
   return {
-    generator: title,
-    applicationName: title,
-    creator: title,
-    publisher: title,
-    category: "technology",
+    generator: author,
+    applicationName: author,
+    creator: author,
+    publisher: author,
+    category: "education",
+    keywords,
     referrer: "origin-when-cross-origin",
     authors: [{ name: title, url }],
     metadataBase: new URL(url),
-    title: { default: title, template: `%s | ${title}` },
-    keywords,
-    description,
-    openGraph: { title: { default: title, template: `%s | ${title}` }, description, url, siteName: title, locale, type: "website", images },
-    twitter: { card: "summary_large_image", title, description, creator: PERSONALS.x, images },
+    title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
+    description: MAIN_DESCRIPTION,
+    openGraph: {
+      title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
+      description: MAIN_DESCRIPTION,
+      url,
+      siteName: getMetadataTitle(),
+      images,
+      type: "website",
+      locale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
+      description: MAIN_DESCRIPTION,
+      images,
+    },
     robots: {
       index: true,
       follow: true,
