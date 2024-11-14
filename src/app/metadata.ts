@@ -1,5 +1,6 @@
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
+import { PERSONALS } from "@/lib/constants";
 import type { Metadata } from "next";
 import { ENDPOINTS, getUrl } from "./urls";
 
@@ -27,23 +28,6 @@ export const getMetadata = async ({
   const url = getUrl({ path });
   const images = [{ url: imageUrl ?? getUrl({ path: ENDPOINTS.ogImage }), alt: getMetadataTitle() }];
   const author = MAIN_TITLE;
-  const keywords = [
-    "software",
-    "engineer",
-    "front-end",
-    "back-end",
-    "full-stack",
-    "web",
-    "development",
-    "react",
-    "nextjs",
-    "nodejs",
-    "trpc",
-    "hono",
-    "expressjs",
-    "typescript",
-    "javascipt",
-  ].join(",");
 
   return {
     generator: author,
@@ -71,6 +55,7 @@ export const getMetadata = async ({
       title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
       description: MAIN_DESCRIPTION,
       images,
+      creator: PERSONALS.x,
     },
     robots: {
       index: true,
@@ -83,3 +68,76 @@ export const getMetadata = async ({
     appleWebApp: { capable: true, title, statusBarStyle: "default" },
   };
 };
+
+const keywords = [
+  "software",
+  "engineer",
+  "front-end",
+  "back-end",
+  "full-stack",
+  "web",
+  "development",
+  "react",
+  "nextjs",
+  "nodejs",
+  "trpc",
+  "hono",
+  "expressjs",
+  "typescript",
+  "javascript",
+  "vue",
+  "angular",
+  "redux",
+  "mobx",
+  "svelte",
+  "graphql",
+  "api",
+  "websocket",
+  "docker",
+  "kubernetes",
+  "firebase",
+  "mongodb",
+  "postgresql",
+  "mysql",
+  "prisma",
+  "tailwindcss",
+  "styled-components",
+  "css",
+  "html",
+  "sass",
+  "jest",
+  "cypress",
+  "testing-library",
+  "webpack",
+  "babel",
+  "parcel",
+  "gulp",
+  "vite",
+  "eslint",
+  "prettier",
+  "jira",
+  "github",
+  "git",
+  "agile",
+  "scrum",
+  "rest",
+  "json",
+  "microservices",
+  "lambda",
+  "aws",
+  "azure",
+  "gcp",
+  "digitalocean",
+  "pwa",
+  "seo",
+  "typescript",
+  "accessibility",
+  "usability",
+  "ux",
+  "ui",
+  "design",
+  "figma",
+  "sketch",
+  "photoshop",
+  "illustrator",
+].join(",");
