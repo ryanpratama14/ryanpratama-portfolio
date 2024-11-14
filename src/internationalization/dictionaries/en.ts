@@ -120,6 +120,22 @@ export const en = {
           duty: ["TBA"],
           about: "",
         },
+
+        freelance: {
+          label: "Contact Me",
+          desc: "Freelance Full-stack Engineer",
+          duty: [
+            "Built two responsive web apps compatible across devices, integrating smooth loading animations.",
+            "Leveraged Sanity CMS for efficient content management, allowing clients to easily update and manage content.",
+            "Collaborated with freelance UI/UX designers to create visually compelling user interfaces.",
+            "Integrated internationalization support using the i18next framework.",
+            "Spearheaded back-end development using tRPC, ensuring fast, secure, and efficient server-side logic.",
+            "Maintained comprehensive documentation to facilitate clear communication with clients.",
+            "Provided ongoing maintenance and support for applications.",
+          ],
+          about: "Open for projects worldwide, offering expertise in full-stack development with a focus on dynamic, high-quality web applications.",
+        },
+
         faotech: {
           label: "faoTech",
           desc: "Full-stack Engineer",

@@ -5,6 +5,7 @@ import avatar from "#/images/avatar.webp";
 import n3 from "#/images/certification/jlpt-n3.webp";
 import podfak from "#/images/certification/podfak.webp";
 import faotech from "#/images/logo/faotech.webp";
+import freelance from "#/images/logo/freelance.webp";
 import kfu from "#/images/logo/kfu.webp";
 import nutech from "#/images/logo/nutech.webp";
 import rave from "#/images/logo/rave.webp";
@@ -24,13 +25,24 @@ export const PERSONALS = {
 };
 
 export const PHOTOS = {
-  logo: { nutech, faotech, kfu, rave },
+  logo: { nutech, faotech, kfu, rave, freelance },
   project: { belinsky, hebronstar, kima, mandiri, turta },
   certifications: { n3, podfak },
   avatar,
 };
 
+const MAILTO = "mailto:ryanpratama.dev@gmail.com";
+
 export const EXPERIENCES: History[] = [
+  // {
+  //   key: "freelance",
+  //   src: PHOTOS.logo.freelance,
+  //   href: MAILTO,
+  //   since: dayjs("2024-11").toDate(),
+  //   till: null,
+  //   location: "bali",
+  //   type: "remote",
+  // },
   // {
   //   key: "rave",
   //   src: PHOTOS.logo.rave,
@@ -236,7 +248,7 @@ export const TECH_STACKS: TechStack = {
 };
 
 export const CONTACTS: Contact[] = [
-  { href: "mailto:ryanpratama.dev@gmail.com", label: "Email", icon: ICONS.email },
+  { href: MAILTO, label: "Email", icon: ICONS.email },
   { href: "https://github.com/ryanpratama14", label: "GitHub", icon: ICONS.github },
   { href: "https://www.linkedin.com/in/ryanpratama14", label: "LinkedIn", icon: ICONS.linkedin },
   { href: "https://t.me/ryanpratama14", label: "Telegram", icon: ICONS.telegram },
