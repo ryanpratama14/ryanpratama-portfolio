@@ -4,15 +4,22 @@ import { PERSONALS } from "@/lib/constants";
 import type { Metadata } from "next";
 import { ENDPOINTS, getUrl } from "./urls";
 
-export const getMetadata = async ({
-  title,
-  description,
-  imageUrl,
-}: {
+type Props = {
+  openGraphArticle?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    expirationTime?: string;
+    authors?: null | string | URL | Array<string | URL>;
+    section?: null | string;
+    tags?: null | string | Array<string>;
+  };
+
   description?: string;
   title?: string;
   imageUrl?: string;
-}): Promise<Metadata> => {
+};
+
+export const getMetadata = async ({ title, description, imageUrl, openGraphArticle }: Props): Promise<Metadata> => {
   const lang = (await getHeaders()).lang;
   const path = (await getHeaders()).path;
 
@@ -20,7 +27,7 @@ export const getMetadata = async ({
     s: { PERSONAL_DATA: me },
     splittedLocale: locale,
   } = useLang(lang);
-  const MAIN_TITLE = `${me.fullName} — ${me.softwareEngineer}`;
+  const MAIN_TITLE = me.fullName;
   const MAIN_DESCRIPTION = description ?? `${me.fullName} — ${me.summaryShort}`;
 
   const modifiedTitle = title ?? MAIN_TITLE;
@@ -28,6 +35,7 @@ export const getMetadata = async ({
   const url = getUrl({ path });
   const images = [{ url: imageUrl ?? getUrl({ path: ENDPOINTS.ogImage }), alt: getMetadataTitle() }];
   const author = MAIN_TITLE;
+  const openGraphType = openGraphArticle ? { type: "article", ...openGraphArticle } : { type: "website" };
 
   return {
     generator: author,
@@ -37,7 +45,7 @@ export const getMetadata = async ({
     category: "education",
     keywords,
     referrer: "origin-when-cross-origin",
-    authors: [{ name: title, url }],
+    authors: [{ name: MAIN_TITLE, url }],
     metadataBase: new URL(url),
     title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
     description: MAIN_DESCRIPTION,
@@ -47,8 +55,8 @@ export const getMetadata = async ({
       url,
       siteName: getMetadataTitle(),
       images,
-      type: "website",
       locale,
+      ...openGraphType,
     },
     twitter: {
       card: "summary_large_image",
