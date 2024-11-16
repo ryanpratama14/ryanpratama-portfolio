@@ -6,12 +6,10 @@ import { ENDPOINTS, getUrl } from "./urls";
 
 type Props = {
   openGraphArticle?: {
-    publishedTime?: string;
-    modifiedTime?: string;
+    publishedTime: string;
+    modifiedTime: string;
     expirationTime?: string;
-    authors?: null | string | URL | Array<string | URL>;
     section?: null | string;
-    tags?: null | string | Array<string>;
   };
 
   description?: string;
@@ -35,7 +33,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
   const url = getUrl({ path });
   const images = [{ url: imageUrl ?? getUrl({ path: ENDPOINTS.ogImage }), alt: getMetadataTitle() }];
   const author = MAIN_TITLE;
-  const openGraphType = openGraphArticle ? { type: "article", ...openGraphArticle } : { type: "website" };
+  const openGraphType = { type: "article", authors: MAIN_TITLE, tags: keywords, ...openGraphArticle };
 
   return {
     generator: author,
@@ -148,4 +146,4 @@ const keywords = [
   "sketch",
   "photoshop",
   "illustrator",
-].join(",");
+];
