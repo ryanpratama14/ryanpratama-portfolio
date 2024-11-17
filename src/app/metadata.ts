@@ -33,7 +33,6 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
   const url = getUrl({ path });
   const images = [{ url: imageUrl ?? getUrl({ path: ENDPOINTS.ogImage }), alt: getMetadataTitle() }];
   const author = MAIN_TITLE;
-  const openGraphType = { type: "article", authors: MAIN_TITLE, tags: keywords, ...openGraphArticle };
 
   return {
     generator: author,
@@ -54,7 +53,10 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
       siteName: getMetadataTitle(),
       images,
       locale,
-      ...openGraphType,
+      type: "article",
+      authors: MAIN_TITLE,
+      tags: keywords,
+      ...openGraphArticle,
     },
     twitter: {
       card: "summary_large_image",

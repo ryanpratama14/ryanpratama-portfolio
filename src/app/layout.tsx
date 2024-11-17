@@ -30,7 +30,7 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={lang} className={GeistSans.variable}>
-      <body className="p-lg max-md:pb-16 text-white bg-black font-sans">
+      <body className="px-4 pt-4 pb-16 md:p-6 lg:p-12 xl:p-16 text-white bg-black font-sans">
         <TRPCReactProvider>
           <NuqsAdapter>{children}</NuqsAdapter>
         </TRPCReactProvider>
