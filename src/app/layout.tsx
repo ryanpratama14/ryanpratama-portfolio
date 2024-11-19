@@ -19,6 +19,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Wrapper from "./wrapper";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata({});
@@ -30,14 +31,19 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={lang} className={GeistSans.variable}>
-      <body className="px-4 pt-4 pb-16 md:p-6 lg:p-12 xl:p-16 text-white bg-black font-sans">
+      <Wrapper
+        components={
+          <Fragment>
+            <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
+            <NextTopLoader color={COLORS.blue} showSpinner={false} />
+            {OtherComponents[env.NODE_ENV]}
+          </Fragment>
+        }
+      >
         <TRPCReactProvider>
           <NuqsAdapter>{children}</NuqsAdapter>
         </TRPCReactProvider>
-        <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
-        <NextTopLoader color={COLORS.blue} showSpinner={false} />
-        {OtherComponents[env.NODE_ENV]}
-      </body>
+      </Wrapper>
     </html>
   );
 }

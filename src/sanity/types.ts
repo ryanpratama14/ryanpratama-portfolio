@@ -207,7 +207,7 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: BLOG_POSTS_QUERY
-// Query: *[_type == "post" && show == true] {    ...,    categories[] -> {        ...,    }}
+// Query: *[_type == "post" && show == true && defined(slug.current)] | order(publishedAt desc) {    ...,    categories[] -> {        ...,    }}
 export type BLOG_POSTS_QUERYResult = Array<{
   _id: string;
   _type: "post";
@@ -272,7 +272,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
   }>;
 }>;
 // Variable: BLOG_POST_QUERY
-// Query: *[_type == "post" && show == true && slug.current == $slug][0] {    ...,    categories[] -> {        ...,    }}
+// Query: *[_type == "post" && show == true && slug.current == $slug && defined(slug.current)][0] {    ...,    categories[] -> {        ...,    }}
 export type BLOG_POST_QUERYResult = {
   _id: string;
   _type: "post";
@@ -341,7 +341,7 @@ export type BLOG_POST_QUERYResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"post\" && show == true] {\n    ...,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POSTS_QUERYResult;
-    "*[_type == \"post\" && show == true && slug.current == $slug][0] {\n    ...,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POST_QUERYResult;
+    "*[_type == \"post\" && show == true && defined(slug.current)] | order(publishedAt desc) {\n    ...,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POSTS_QUERYResult;
+    "*[_type == \"post\" && show == true && slug.current == $slug && defined(slug.current)][0] {\n    ...,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POST_QUERYResult;
   }
 }
