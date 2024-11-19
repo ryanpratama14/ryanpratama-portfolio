@@ -133,7 +133,8 @@ export const en = {
             "Maintained comprehensive documentation to facilitate clear communication with clients.",
             "Provided ongoing maintenance and support for applications.",
           ],
-          about: "Open for projects worldwide, offering expertise in full-stack development with a focus on dynamic, high-quality web applications.",
+          about:
+            "Outside of my main work hours, I'm open for projects worldwide, offering expertise in full-stack development with a focus on dynamic, high-quality web applications.",
         },
 
         faotech: {
@@ -158,6 +159,11 @@ export const en = {
       },
 
       PROJECTS: {
+        faotour:
+          "A travel agency offering diverse tours across Europe and Asia, equipped with a Sanity CMS to manage tour packages, promotions, and content, along with a dynamic landing page, an emailing system, and a tour showcase and highlight their offerings.",
+        pemudaicmi:
+          "An organization of young Muslim intellectuals, featuring a Sanity CMS to manage news, journals, and content, a dynamic landing page, an emailing system, and an events showcase to streamline communication and highlight initiatives.",
+
         hebronstar:
           "A Korean consulting firm that provides global services and industries, featuring a career microsite, admin dashboard, and landing pages for advertising job openings and managing candidate applications.",
         turuntangan:

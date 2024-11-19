@@ -10,7 +10,9 @@ import kfu from "#/images/logo/kfu.webp";
 import nutech from "#/images/logo/nutech.webp";
 import rave from "#/images/logo/rave.webp";
 import belinsky from "#/images/project/belinsky.webp";
+import pemudaicmi from "#/images/project/pemudaicmi.webp";
 import hebronstar from "#/images/project/hebronstar.webp";
+import faotour from "#/images/project/faotour.webp";
 import kima from "#/images/project/kima.webp";
 import mandiri from "#/images/project/mandiri.webp";
 import turta from "#/images/project/turta.webp";
@@ -26,7 +28,7 @@ export const PERSONALS = {
 
 export const PHOTOS = {
   logo: { nutech, faotech, kfu, rave, freelance },
-  project: { belinsky, hebronstar, kima, mandiri, turta },
+  project: { belinsky, hebronstar, faotour, kima, mandiri, turta, pemudaicmi },
   certifications: { n3, podfak },
   avatar,
 };
@@ -162,6 +164,18 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    label: "Pemuda ICMI",
+    src: PHOTOS.project.pemudaicmi,
+    key: "pemudaicmi",
+    href: "https://pemudaicmi.com",
+  },
+  {
+    label: "Fao Tour & Travel",
+    src: PHOTOS.project.faotour,
+    key: "faotour",
+    href: "https://faotour.com",
+  },
   {
     label: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
