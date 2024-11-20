@@ -8,6 +8,7 @@ import { getHeaders } from "@/lib/actions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
+import type { Lang } from "@/types";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistMono } from "geist/font/mono";
@@ -15,25 +16,23 @@ import { GeistSans } from "geist/font/sans";
 import NextTopLoader from "nextjs-toploader";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Fragment } from "react";
-import Contacts from "./[lang]/(home)/components/contacts";
-import Message from "./[lang]/(home)/components/message";
-import Profile from "./[lang]/(home)/components/profile";
+import Contacts from "./(home)/components/contacts";
+import Message from "./(home)/components/message";
+import Profile from "./(home)/components/profile";
 import "@/styles/globals.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+type Props = { params: Promise<{ lang: Lang }>; children: React.ReactNode };
+
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata({});
 
-type Props = { children: React.ReactNode };
-
-export default async function RootLayout({ children }: Props) {
-  const { s, d, formatDate, lang, isDefaultLang } = useLang((await getHeaders()).lang);
+export default async function RootLayout({ children, params }: Props) {
+  const { s, d, formatDate, lang, isDefaultLang } = useLang((await params).lang);
   const isStudio = (await getHeaders()).path.startsWith("studio");
-
-  console.log((await getHeaders()).path);
 
   return (
     <html lang={lang} className={`${GeistSans.variable} ${GeistMono.variable}`}>
