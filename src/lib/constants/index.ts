@@ -10,11 +10,11 @@ import kfu from "#/images/logo/kfu.webp";
 import nutech from "#/images/logo/nutech.webp";
 import rave from "#/images/logo/rave.webp";
 import belinsky from "#/images/project/belinsky.webp";
-import pemudaicmi from "#/images/project/pemudaicmi.webp";
-import hebronstar from "#/images/project/hebronstar.webp";
 import faotour from "#/images/project/faotour.webp";
+import hebronstar from "#/images/project/hebronstar.webp";
 import kima from "#/images/project/kima.webp";
 import mandiri from "#/images/project/mandiri.webp";
+import pemudaicmi from "#/images/project/pemudaicmi.webp";
 import turta from "#/images/project/turta.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();

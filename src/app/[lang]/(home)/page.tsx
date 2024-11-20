@@ -3,6 +3,7 @@ import { useLang } from "@/internationalization/functions";
 // import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
 // import type { BLOG_POSTS_QUERYResult } from "@/sanity/types";
 import type { Lang } from "@/types";
+import { Fragment } from "react";
 import About from "./components/about";
 import AdditionalInformation from "./components/additional-information";
 import Contacts from "./components/contacts";
@@ -19,7 +20,7 @@ export default async function HomePage({ params }: Props) {
   // console.log(posts);
 
   return (
-    <main className="space-y-4">
+    <Fragment>
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
       <About s={s} />
@@ -27,6 +28,6 @@ export default async function HomePage({ params }: Props) {
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
-    </main>
+    </Fragment>
   );
 }

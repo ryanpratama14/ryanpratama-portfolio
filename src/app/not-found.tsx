@@ -8,6 +8,7 @@ import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
 import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import { getMetadata } from "./metadata";
 
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -20,7 +21,7 @@ export default async function NotFound() {
   const { s, isDefaultLang } = useLang(lang);
 
   return (
-    <main className="space-y-4">
+    <Fragment>
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
 
@@ -34,6 +35,6 @@ export default async function NotFound() {
         </LinkButton>
       </section>
       <Message s={s} lang={lang} />
-    </main>
+    </Fragment>
   );
 }

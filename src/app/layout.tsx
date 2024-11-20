@@ -6,6 +6,7 @@ import { LANGS } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { UPDATED_ON } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import { Analytics } from "@vercel/analytics/react";
@@ -19,7 +20,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import Wrapper from "./wrapper";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata({});
@@ -28,22 +28,24 @@ type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
   const { d, formatDate, lang } = useLang((await getHeaders()).lang);
+  const isStudio = (await getHeaders()).path.startsWith("studio");
 
   return (
     <html lang={lang} className={GeistSans.variable}>
-      <Wrapper
-        components={
+      <body className={cn({ "px-4 pt-4 pb-16 md:p-6 lg:p-12 xl:p-16 text-white bg-black font-sans": !isStudio })}>
+        <TRPCReactProvider>
+          <NuqsAdapter>
+            <main className="space-y-4">{children}</main>
+          </NuqsAdapter>
+        </TRPCReactProvider>
+        {isStudio ? null : (
           <Fragment>
             <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
             <NextTopLoader color={COLORS.blue} showSpinner={false} />
             {OtherComponents[env.NODE_ENV]}
           </Fragment>
-        }
-      >
-        <TRPCReactProvider>
-          <NuqsAdapter>{children}</NuqsAdapter>
-        </TRPCReactProvider>
-      </Wrapper>
+        )}
+      </body>
     </html>
   );
 }

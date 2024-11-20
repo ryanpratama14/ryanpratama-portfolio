@@ -10,6 +10,7 @@ import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Fragment } from "react";
 
 type Props = { params: Promise<{ lang: Lang; name: string }> };
 
@@ -29,7 +30,7 @@ export default async function CertificationPage({ params }: Props) {
   const { s, isDefaultLang } = useLang(lang);
 
   return (
-    <main className="space-y-4">
+    <Fragment>
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
 
@@ -41,6 +42,6 @@ export default async function CertificationPage({ params }: Props) {
         {s.SECTIONS.backToHomepage}
       </LinkButton>
       <Message s={s} lang={lang} />
-    </main>
+    </Fragment>
   );
 }
