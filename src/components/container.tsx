@@ -6,18 +6,16 @@ import LinkButton from "./html/link-button";
 type Props = {
   title: string | undefined;
   children?: React.ReactNode;
-  tag?: "footer" | "nav" | "article";
   className?: string;
   href?: string;
   lang?: LangTarget;
 };
 
-export default function Container({ title = "", children, tag = "article", className, href, lang }: Props) {
+export default function Container({ title = "", children, className, href, lang }: Props) {
   const { s } = useLang(validateMatchedLang(lang));
-  const Tag = tag;
 
   return (
-    <Tag className={cn("w-full flex flex-col gap-2.5 wrapper", className)}>
+    <article className={cn("w-full flex flex-col gap-2.5 wrapper", className)}>
       <header className={cn({ "flex justify-between items-center gap-4": href })}>
         <h2 className="text-gray w-full border-b-2 border-graybg font-semibold">{title}</h2>
         {href ? (
@@ -27,6 +25,6 @@ export default function Container({ title = "", children, tag = "article", class
         ) : null}
       </header>
       {children}
-    </Tag>
+    </article>
   );
 }

@@ -18,7 +18,6 @@ import pemudaicmi from "#/images/project/pemudaicmi.webp";
 import turta from "#/images/project/turta.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
-export const UPDATED_ON = dayjs().toDate();
 
 export const PERSONALS = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
