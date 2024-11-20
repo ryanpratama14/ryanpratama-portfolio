@@ -1,5 +1,6 @@
 import { PATHS } from "@/app/urls";
 import Container from "@/components/container";
+import Img from "@/components/html/img";
 import { sanityFetch } from "@/sanity/lib/client";
 import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
 import type { BLOG_POSTS_QUERYResult } from "@/sanity/types";
@@ -20,12 +21,22 @@ export default async function Blog({ s, formatDateLong }: Props) {
         {slicedData.map((e) => {
           return (
             <li key={e._id} className="flex flex-col gap-1.5 md:gap-2">
-              <header className="flex flex-col">
-                <Link href={`${PATHS.blog}/${e.slug?.current}`} className="font-semibold hover:underline">
-                  <h2 className="line-clamp-1">{e.title}</h2>
-                </Link>
-                <small className="text-blue-300">{formatDateLong(e.publishedAt)}</small>
-              </header>
+              <section className="flex items-center gap-3">
+                {e.mainImageUrl ? (
+                  <Img
+                    isStatic={false}
+                    src={e.mainImageUrl}
+                    alt={e.mainImage?.alt}
+                    className="shadow aspect-square size-14 rounded-md object-center object-cover"
+                  />
+                ) : null}
+                <header className="flex flex-col">
+                  <Link href={`${PATHS.blog}/${e.slug?.current}`} className="font-semibold hover:underline line-clamp-1">
+                    <h2 className="line-clamp-1">{e.title}</h2>
+                  </Link>
+                  <small className="text-blue-300 line-clamp-1">{formatDateLong(e.publishedAt)}</small>
+                </header>
+              </section>
               <small className="line-clamp-2">{e.description}</small>
             </li>
           );

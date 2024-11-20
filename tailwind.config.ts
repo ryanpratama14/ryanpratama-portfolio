@@ -50,7 +50,7 @@ const config = {
     require("tailwindcss-animate"),
     plugin(({ addUtilities }) => {
       addUtilities({
-        ".component-container": {
+        ".wrapper": {
           maxWidth: "56rem",
           marginLeft: "auto",
           marginRight: "auto",

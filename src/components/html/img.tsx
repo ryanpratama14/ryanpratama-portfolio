@@ -1,7 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 
 type Props = {
-  alt: string;
+  alt: string | undefined;
   src: StaticImageData | string;
   className?: string;
   priority?: boolean;
@@ -11,7 +11,7 @@ type Props = {
 export default function Img({ alt, src, className, priority, isStatic = true }: Props) {
   return (
     <Image
-      alt={alt}
+      alt={alt ?? ""}
       src={src}
       width={1000}
       height={1000}

@@ -46,7 +46,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
     });
 
   return (
-    <article className="component-container w-full">
+    <article className="wrapper w-full">
       <section className="flex justify-between items-start">
         <section className="flex items-center gap-2.5 md:gap-5">
           <Img
@@ -56,12 +56,11 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
           />
 
           <section className="md:space-y-0.5">
-            <header>
+            <header className="flex flex-col">
               <h1 className="font-bold">{s.PERSONAL_DATA.fullName}</h1>
-              {isDefaultLang ? null : <small className="-translate-y-0.5">{useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</small>}
+              {isDefaultLang ? null : <small>{useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</small>}
+              <h2 className="text-gray">{s.PERSONAL_DATA.softwareEngineer}</h2>
             </header>
-
-            <h2 className="text-gray font-normal">{s.PERSONAL_DATA.softwareEngineer}</h2>
 
             <ul className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
               <ProfileData />

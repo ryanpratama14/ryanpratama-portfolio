@@ -14,7 +14,7 @@ type Props = {
 
   description?: string;
   title?: string;
-  imageUrl?: string;
+  imageUrl?: string | null;
 };
 
 export const getMetadata = async ({ title, description, imageUrl, openGraphArticle }: Props): Promise<Metadata> => {

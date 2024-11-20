@@ -18,6 +18,12 @@ export const postType = defineType({
       initialValue: true,
     }),
     defineField({
+      name: "mainImage",
+      type: "image",
+      options: { hotspot: true },
+      fields: [{ name: "alt", type: "string", title: "Alternative text" }],
+    }),
+    defineField({
       name: "slug",
       type: "slug",
       options: { source: "title" },
