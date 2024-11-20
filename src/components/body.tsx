@@ -9,7 +9,7 @@ type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
 
 export default function Body({ data = [] }: Props) {
   return (
-    <section className="body-text flex flex-col gap-2 border-b-1 border-dashed border-blue-300 pb-2">
+    <section className="body-text flex flex-col gap-2 border-b-1 border-dashed border-blue-300 pb-1">
       <PortableText
         components={{
           block: {

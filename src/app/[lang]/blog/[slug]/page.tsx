@@ -35,7 +35,7 @@ export default async function BlogPageBySlug({ params }: Props) {
   return (
     <Fragment>
       <article className="wrapper flex flex-col gap-2.5 py-3">
-        <header className="flex flex-col gap-2">
+        <header className="flex flex-col gap-1.5">
           <h1 className="font-semibold">{data.title}</h1>
           <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">{formatDateLong(data.publishedAt)}</small>
         </header>
