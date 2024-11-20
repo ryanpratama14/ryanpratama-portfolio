@@ -1,7 +1,6 @@
 import { getMetadata } from "@/app/metadata";
 import BlogCards from "@/components/blog-cards";
 import Body from "@/components/body";
-import Container from "@/components/container";
 import Img from "@/components/html/img";
 import { useLang } from "@/internationalization/functions";
 import { sanityFetch } from "@/sanity/lib/client";
@@ -53,11 +52,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         <Body data={data.body} />
       </article>
 
-      {relatedPosts?.length ? (
-        <Container title={s.MENUS.blog}>
-          <BlogCards data={relatedPosts} formatDateLong={formatDateLong} />
-        </Container>
-      ) : null}
+      <BlogCards title={s.MENUS.blog} lang={lang} data={relatedPosts} formatDateLong={formatDateLong} />
     </Fragment>
   );
 }

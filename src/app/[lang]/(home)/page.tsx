@@ -1,6 +1,5 @@
 import { PATHS } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
-import Container from "@/components/container";
 import { useLang } from "@/internationalization/functions";
 import { sanityFetch } from "@/sanity/lib/client";
 import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
@@ -22,9 +21,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <Fragment>
       <About s={s} />
-      <Container href={PATHS.blog} lang={lang} title={s.MENUS.blog}>
-        <BlogCards data={slicedData} formatDateLong={formatDateLong} />
-      </Container>
+      <BlogCards href={PATHS.blog} lang={lang} title={s.MENUS.blog} data={slicedData} formatDateLong={formatDateLong} />
       <Experience s={s} lang={lang} isJapanese={isJapanese} />
       <FeaturedProjects s={s} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
