@@ -10,10 +10,14 @@ import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import NextTopLoader from "nextjs-toploader";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Fragment } from "react";
+import Contacts from "./[lang]/(home)/components/contacts";
+import Message from "./[lang]/(home)/components/message";
+import Profile from "./[lang]/(home)/components/profile";
 import "@/styles/globals.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -26,13 +30,13 @@ export const generateMetadata = async () => await getMetadata({});
 type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
-  const { d, formatDate, lang } = useLang((await getHeaders()).lang);
+  const { s, d, formatDate, lang, isDefaultLang } = useLang((await getHeaders()).lang);
   const isStudio = (await getHeaders()).path.startsWith("studio");
 
   console.log((await getHeaders()).path);
 
   return (
-    <html lang={lang} className={GeistSans.variable}>
+    <html lang={lang} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className={cn({ "px-4 pt-4 pb-16 md:p-6 lg:p-12 xl:p-16 text-white bg-black font-sans": !isStudio })}>
         {isStudio ? (
           <main>{children}</main>
@@ -40,7 +44,12 @@ export default async function RootLayout({ children }: Props) {
           <Fragment>
             <TRPCReactProvider>
               <NuqsAdapter>
-                <main className="flex flex-col gap-4">{children}</main>
+                <main className="flex flex-col gap-4">
+                  <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
+                  <Contacts s={s} />
+                  {children}
+                  <Message s={s} lang={lang} />
+                </main>
               </NuqsAdapter>
             </TRPCReactProvider>
 

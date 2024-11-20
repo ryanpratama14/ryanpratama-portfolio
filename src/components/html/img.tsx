@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image, { type StaticImageData } from "next/image";
 
 type Props = {
@@ -18,7 +19,7 @@ export default function Img({ alt, src, className, priority, isStatic = true }: 
       sizes={isStatic ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : undefined}
       placeholder={isStatic ? "blur" : undefined}
       priority={priority}
-      className={className}
+      className={cn("shadow", className)}
     />
   );
 }

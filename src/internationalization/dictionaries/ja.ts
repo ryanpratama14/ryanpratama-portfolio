@@ -26,6 +26,7 @@ export const ja: Dictionary = {
     },
 
     MENUS: {
+      more: "すべて表示",
       additionalInformation: "追加情報",
       experience: "職歴",
       about: "私について",

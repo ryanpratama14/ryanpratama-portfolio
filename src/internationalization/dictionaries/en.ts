@@ -24,6 +24,7 @@ export const en = {
     },
 
     MENUS: {
+      more: "View All",
       about: "About",
       featuredProjects: "Featured Projects",
       contacts: "Contacts",

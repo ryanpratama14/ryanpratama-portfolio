@@ -1,12 +1,6 @@
-import Contacts from "@/app/[lang]/(home)/components/contacts";
-import Message from "@/app/[lang]/(home)/components/message";
-import Profile from "@/app/[lang]/(home)/components/profile";
 import { getMetadata } from "@/app/metadata";
-import { PATHS } from "@/app/urls";
 import Container from "@/components/container";
 import Img from "@/components/html/img";
-import LinkButton from "@/components/html/link-button";
-import { useLang } from "@/internationalization/functions";
 import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
@@ -23,26 +17,16 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
 };
 
 export default async function CertificationPage({ params }: Props) {
-  const { name, lang } = await params;
+  const { name } = await params;
 
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 
-  const { s, isDefaultLang } = useLang(lang);
-
   return (
     <Fragment>
-      <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
-      <Contacts s={s} />
-
       <Container title={data.label}>
         <Img alt={data.alt} src={data.src} />
       </Container>
-
-      <LinkButton href={PATHS.main} lang={lang} className="mx-auto">
-        {s.SECTIONS.backToHomepage}
-      </LinkButton>
-      <Message s={s} lang={lang} />
     </Fragment>
   );
 }

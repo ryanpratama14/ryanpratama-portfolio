@@ -1,3 +1,4 @@
+import { PATHS } from "@/app/urls";
 import Img from "@/components/html/img";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
@@ -19,6 +20,8 @@ type Props = {
 };
 
 export default async function Profile({ s, lang, isDefaultLang }: Props) {
+  const storedLang = await getCookieLang();
+
   const ProfileData = () =>
     getProfileData(lang).map((e) => {
       const Data = () => (
@@ -48,12 +51,14 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
   return (
     <article className="wrapper w-full">
       <section className="flex justify-between items-start">
-        <section className="flex items-center gap-2.5 md:gap-5">
-          <Img
-            src={PHOTOS.avatar}
-            alt={s.PERSONAL_DATA.fullName}
-            className="animate border-2 border-gray shadow object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-full"
-          />
+        <section className="flex items-center gap-3 md:gap-5">
+          <Link href={PATHS.main}>
+            <Img
+              src={PHOTOS.avatar}
+              alt={s.PERSONAL_DATA.fullName}
+              className="animate object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-l-md"
+            />
+          </Link>
 
           <section className="md:space-y-0.5">
             <header className="flex flex-col">
@@ -68,7 +73,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
           </section>
         </section>
 
-        <LangSwitcher storedLang={await getCookieLang()} />
+        <LangSwitcher storedLang={storedLang} />
       </section>
 
       <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap -translate-x-0.5">

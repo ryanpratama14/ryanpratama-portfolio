@@ -9,7 +9,7 @@ type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
 
 export default function Body({ data = [] }: Props) {
   return (
-    <section className="body-text flex flex-col gap-2">
+    <section className="body-text flex flex-col gap-2 border-b-1 border-dashed border-blue-300 pb-2">
       <PortableText
         components={{
           block: {
@@ -35,7 +35,7 @@ export default function Body({ data = [] }: Props) {
               if (!value?.asset?._ref) return null;
               return (
                 <figure className="space-y-1 my-2">
-                  <Img isStatic={false} alt={value?.alt} className="shadow w-full aspect-auto rounded-md" src={urlFor(value).url()} />
+                  <Img isStatic={false} alt={value?.alt} className="w-full aspect-auto rounded-md" src={urlFor(value).url()} />
                   {value?.alt ? <figcaption className="text-gray">{value?.alt}</figcaption> : null}
                 </figure>
               );

@@ -111,6 +111,7 @@ export const ru: Dictionary = {
     },
 
     MENUS: {
+      more: "Показать всё",
       additionalInformation: "Дополнительная информация",
       about: "Обо мне",
       featuredProjects: "Выделенные проекты",
