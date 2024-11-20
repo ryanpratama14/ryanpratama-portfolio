@@ -1,11 +1,9 @@
 import { useLang } from "@/internationalization/functions";
-// import { client } from "@/sanity/lib/client";
-// import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
-// import type { BLOG_POSTS_QUERYResult } from "@/sanity/types";
 import type { Lang } from "@/types";
 import { Fragment } from "react";
 import About from "./components/about";
 import AdditionalInformation from "./components/additional-information";
+import Blog from "./components/blog";
 import Contacts from "./components/contacts";
 import Experience from "./components/experience";
 import FeaturedProjects from "./components/featured-projects";
@@ -15,15 +13,14 @@ import Profile from "./components/profile";
 type Props = { params: Promise<{ lang: Lang }> };
 
 export default async function HomePage({ params }: Props) {
-  const { s, isJapanese, isDefaultLang, lang } = useLang((await params).lang);
-  // const posts = await client.fetch<BLOG_POSTS_QUERYResult>(BLOG_POSTS_QUERY, {}, { next: { revalidate: 10 } });
-  // console.log(posts);
+  const { s, isJapanese, isDefaultLang, lang, formatDateLong } = useLang((await params).lang);
 
   return (
     <Fragment>
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       <Contacts s={s} />
       <About s={s} />
+      <Blog s={s} formatDateLong={formatDateLong} />
       <Experience s={s} lang={lang} isJapanese={isJapanese} />
       <FeaturedProjects s={s} />
       <Message s={s} lang={lang} />

@@ -1,6 +1,5 @@
-import { createClient, type QueryParams } from "next-sanity";
+import { type QueryParams, createClient } from "next-sanity";
 import { apiVersion, dataset, projectId } from "../env";
-import { env } from "@/env";
 
 export const client = createClient({
   projectId,
@@ -9,18 +8,17 @@ export const client = createClient({
   useCdn: true,
 });
 
-export const sanityFetch = async <const QueryString extends string>({
+export async function sanityFetch<QueryResponse>({
   query,
   params = {},
-  tags = [],
+  tags,
 }: {
-  query: QueryString;
+  query: string;
   params?: QueryParams;
-  revalidate?: number | false;
   tags?: string[];
-}) => {
-  return client.fetch(query, params, {
-    cache: env.NODE_ENV === "development" ? "no-store" : undefined,
-    next: { revalidate: 60, tags },
+}): Promise<QueryResponse> {
+  return client.fetch<QueryResponse>(query, params, {
+    cache: "no-store",
+    next: { tags },
   });
-};
+}

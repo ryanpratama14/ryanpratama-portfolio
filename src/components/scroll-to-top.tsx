@@ -25,10 +25,9 @@ export default function ScrollToTop() {
     <button
       type="button"
       onClick={loadToTop}
-      className={cn(
-        "animate fixed px-shorter max-md:right-0 max-md:bottom-0 md:centered-bottom -translate-y-2 hover:scale-110 hover:-translate-y-3 z-10",
-        { "scale-0 translate-y-full": !visible },
-      )}
+      className={cn("fixed px-shorter max-md:right-0 max-md:bottom-0 md:centered-bottom -translate-y-2 hover:scale-110 hover:-translate-y-3 z-10", {
+        "scale-0 translate-y-full": !visible,
+      })}
     >
       <span className="sr-only">Button</span>
       <Icon icon={ICONS.arrow} rotate={1} width={25} />

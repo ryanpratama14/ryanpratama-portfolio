@@ -4,7 +4,6 @@ import Container from "@/components/container";
 import Dialog from "@/components/dialog";
 import Button from "@/components/html/button";
 import Input from "@/components/html/input";
-import Text from "@/components/html/text";
 import TextArea from "@/components/html/text-area";
 import { ICONS } from "@/lib/constants";
 import type { EmailMessageInput } from "@/server/api/routers";
@@ -61,12 +60,8 @@ export default function ProjectDiscuss({ s, lang }: Props) {
         }}
         className="space-y-1 text-left"
       >
-        <Text tag="p" as="menuTitle" className="font-medium">
-          {s.MESSAGE.sent}
-        </Text>
-        <Text tag="p" color="gray" className="text-pretty">
-          {s.MESSAGE.thankYou}
-        </Text>
+        <h3 className="font-medium">{s.MESSAGE.sent}</h3>
+        <p className="text-gray">{s.MESSAGE.thankYou}</p>
       </Dialog>
     </Fragment>
   );

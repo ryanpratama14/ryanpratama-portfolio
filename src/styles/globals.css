@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  small,
+  button,
+  a,
+  input,
+  textarea {
+    @apply animate;
+  }
+
+  h1 {
+    @apply text-xl md:text-2xl xl:text-3xl;
+  }
+
+  h2 {
+    @apply text-base md:text-lg;
+  }
+
+  p,
+  a,
+  li,
+  input,
+  textarea {
+    @apply text-sm md:text-base;
+  }
+
+  small,
+  figcaption {
+    @apply text-xs md:text-sm;
+  }
+}
+
 textarea {
   field-sizing: content;
   min-height: 4lh;
@@ -14,4 +52,9 @@ textarea {
   --swiper-scrollbar-bg-color: none;
   --swiper-scrollbar-drag-bg-color: white;
   --swiper-scrollbar-size: 2px;
+}
+
+.body-text ul {
+  list-style-type: disc;
+  margin-left: 2rem;
 }

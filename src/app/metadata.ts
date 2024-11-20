@@ -6,8 +6,8 @@ import { ENDPOINTS, getUrl } from "./urls";
 
 type Props = {
   openGraphArticle?: {
-    publishedTime: string;
-    modifiedTime: string;
+    publishedTime?: string;
+    modifiedTime?: string;
     expirationTime?: string;
     section?: null | string;
   };

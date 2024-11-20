@@ -1,6 +1,5 @@
 import Container from "@/components/container";
 import HistoryCard from "@/components/history-card";
-import Text from "@/components/html/text";
 import { Accordion } from "@/components/ui/accordion";
 import { OTHERS } from "@/lib/constants";
 import type { DictionaryStatic, Lang } from "@/types";
@@ -12,16 +11,11 @@ export default function AdditionalInformation({ s, lang, isJapanese }: Props) {
     <Container title={s.MENUS.additionalInformation}>
       <section className="space-y-2">
         <section>
-          <Text tag="p" color="graydarker">
-            {s.MENUS.OTHER.languages}
-          </Text>
-
-          <Text tag="p">{OTHERS.languages.map((e) => s.PERSONAL_DATA.languages[e]).join(isJapanese ? "、" : " / ")}</Text>
+          <p className="text-graydarker">{s.MENUS.OTHER.languages}</p>
+          <p>{OTHERS.languages.map((e) => s.PERSONAL_DATA.languages[e]).join(isJapanese ? "、" : " / ")}</p>
         </section>
         <section className="space-y-0.5">
-          <Text tag="p" color="graydarker">
-            {s.MENUS.OTHER.education}
-          </Text>
+          <p className="text-graydarker">{s.MENUS.OTHER.education}</p>
           <Accordion type="multiple" className="space-y-2.5">
             {OTHERS.education.map((e) => {
               return <HistoryCard key={e.key} data={e} lang={lang} s={s} isJapanese={isJapanese} />;

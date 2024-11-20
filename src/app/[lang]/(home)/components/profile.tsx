@@ -1,5 +1,4 @@
 import Img from "@/components/html/img";
-import Text from "@/components/html/text";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
@@ -25,9 +24,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
       const Data = () => (
         <Fragment>
           <Icon icon={e.icon} width={17.5} color={COLORS.gray} />
-          <Text tag="p" color="graydarker" className={cn({ "hover:underline": e.href })}>
-            {e.label}
-          </Text>
+          <p className={cn("text-graydarker", { "hover:underline": e.href })}>{e.label}</p>
         </Fragment>
       );
 
@@ -49,7 +46,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
     });
 
   return (
-    <article className="component-container">
+    <article className="component-container w-full">
       <section className="flex justify-between items-start">
         <section className="flex items-center gap-2.5 md:gap-5">
           <Img
@@ -60,19 +57,11 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
 
           <section className="md:space-y-0.5">
             <header>
-              <Text tag="h1" as="heading" className="font-bold">
-                {s.PERSONAL_DATA.fullName}
-              </Text>
-              {isDefaultLang ? null : (
-                <Text tag="small" as="small" className="-translate-y-0.5">
-                  {useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}
-                </Text>
-              )}
+              <h1 className="font-bold">{s.PERSONAL_DATA.fullName}</h1>
+              {isDefaultLang ? null : <small className="-translate-y-0.5">{useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</small>}
             </header>
 
-            <Text tag="h2" as="menuTitle" color="gray" className="font-normal">
-              {s.PERSONAL_DATA.softwareEngineer}
-            </Text>
+            <h2 className="text-gray font-normal">{s.PERSONAL_DATA.softwareEngineer}</h2>
 
             <ul className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
               <ProfileData />

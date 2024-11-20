@@ -2,6 +2,7 @@ import Contacts from "@/app/[lang]/(home)/components/contacts";
 import Message from "@/app/[lang]/(home)/components/message";
 import Profile from "@/app/[lang]/(home)/components/profile";
 import { getMetadata } from "@/app/metadata";
+import { PATHS } from "@/app/urls";
 import Container from "@/components/container";
 import Img from "@/components/html/img";
 import LinkButton from "@/components/html/link-button";
@@ -38,7 +39,7 @@ export default async function CertificationPage({ params }: Props) {
         <Img alt={data.alt} src={data.src} />
       </Container>
 
-      <LinkButton href="/" lang={lang} className="mx-auto">
+      <LinkButton href={PATHS.main} lang={lang} className="mx-auto">
         {s.SECTIONS.backToHomepage}
       </LinkButton>
       <Message s={s} lang={lang} />

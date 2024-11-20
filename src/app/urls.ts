@@ -1,9 +1,8 @@
 import { env } from "@/env";
-import { CERTIFICATIONS } from "@/lib/constants";
 import type { Lang } from "@/types";
 import type { ReadonlyURLSearchParams } from "next/navigation";
 
-const addPath = ({ path, lang }: { path: string; lang?: Lang }) => `${lang ? `/${lang}` : ""}${path === "/" ? "" : path}`;
+const addPath = ({ path, lang }: { path: string; lang?: Lang }) => `${lang ? `/${lang}` : ""}${path === PATHS.main ? "" : path}`;
 const getUrl = ({ path, lang, type = "production" }: { path: string; lang?: Lang; type?: keyof typeof BASE_URL }) =>
   `${BASE_URL[type]}${addPath({ path, lang })}`;
 const isExternalLink = (href: string) => href.startsWith("http");
@@ -25,7 +24,7 @@ const BASE_URL = { development: getBaseUrl(), production: env.NEXT_PUBLIC_URL };
 const ENDPOINTS = { trpc: "/api/trpc", ogImage: "/assets/opengraph.png", sitemap: "/sitemap.xml", resume: "/resume.pdf" };
 const COOKIES = { lang: "lang" };
 const HEADERS = { lang: "x-lang", path: "x-pathname" };
-const PATHS = { main: "/", certification: CERTIFICATIONS.map((e) => `/certification/${e.name}`) };
+const PATHS = { main: "/", certification: "/certification", blog: "/blog" };
 const ALL_PATHS = Object.values(PATHS).flat();
 const URLS = {
   trpc: getUrl({ path: ENDPOINTS.trpc, type: "development" }),

@@ -2,7 +2,6 @@ import Contacts from "@/app/[lang]/(home)/components/contacts";
 import Message from "@/app/[lang]/(home)/components/message";
 import Profile from "@/app/[lang]/(home)/components/profile";
 import LinkButton from "@/components/html/link-button";
-import Text from "@/components/html/text";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
@@ -10,6 +9,7 @@ import { Icon } from "@iconify-icon/react";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 import { getMetadata } from "./metadata";
+import { PATHS } from "./urls";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { s } = useLang((await getHeaders()).lang);
@@ -27,10 +27,8 @@ export default async function NotFound() {
 
       <section className="flex flex-col gap-4 justify-center items-center text-center">
         <Icon icon={ICONS.notFound} width={250} />
-        <Text tag="h1" as="heading">
-          {s.SECTIONS.notFound}
-        </Text>
-        <LinkButton href="/" lang={lang} className="mx-auto">
+        <h1>{s.SECTIONS.notFound}</h1>
+        <LinkButton href={PATHS.main} lang={lang} className="max-md:w-full mx-auto">
           {s.SECTIONS.backToHomepage}
         </LinkButton>
       </section>

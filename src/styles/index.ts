@@ -8,32 +8,8 @@ export const COLORS = {
 };
 
 export const VARIANTS = {
-  Text: tv({
-    base: "animate",
-    variants: {
-      as: {
-        heading: "text-xl md:text-2xl xl:text-3xl",
-        menuTitle: "text-base md:text-lg",
-        content: "text-sm md:text-base",
-        contentSmall: "text-xs md:text-base",
-        small: "text-xs md:text-sm",
-        mini: "text-xs",
-      },
-      color: {
-        gray: "text-gray",
-        graydarker: "text-graydarker",
-        white: "text-white",
-        red: "text-red-400",
-      },
-    },
-    defaultVariants: {
-      as: "content",
-      color: "white",
-    },
-  }),
-
   Button: tv({
-    base: "flex items-center justify-center animate disabled:cursor-progress rounded-md shadow active:scale-95",
+    base: "flex items-center justify-center disabled:cursor-progress rounded-md shadow active:scale-95",
     variants: {
       style: {
         reguler: "font-medium px-4 h-7 md:h-8 w-max text-sm md:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
@@ -44,8 +20,9 @@ export const VARIANTS = {
       style: "reguler",
     },
   }),
+
   Input: tv({
-    base: "w-full disabled:bg-graydisabled bg-graybg focus:bg-grayhover hover:bg-grayhover focus:border-grayborder disabled:cursor-not-allowed text-sm md:text-base px-2 py-1 border-[1.5px] border-transparent animate placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
+    base: "w-full disabled:bg-graydisabled bg-graybg focus:bg-grayhover hover:bg-grayhover focus:border-grayborder disabled:cursor-not-allowed px-2 py-1 border-[1.5px] border-transparent placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
   }),
 
   Box: tv({

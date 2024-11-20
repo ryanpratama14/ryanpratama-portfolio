@@ -3,7 +3,6 @@
 import Container from "@/components/container";
 import Img from "@/components/html/img";
 import LinkButton from "@/components/html/link-button";
-import Text from "@/components/html/text";
 import { PROJECTS } from "@/lib/constants";
 import type { DictionaryStatic } from "@/types";
 import { Mousewheel, Scrollbar } from "swiper/modules";
@@ -31,14 +30,10 @@ export default function FeaturedProjects({ s }: Props) {
               <section className="mb-2 aspect-square relative group overflow-hidden rounded-md">
                 <section className="z-10 absolute top-0 left-0 size-full opacity-0 group-hover:opacity-100 bg-black/90 animate">
                   <div className="flex flex-col items-end absolute font-semibold top-2 w-full px-3 text-right translate-x-full group-hover:translate-x-0">
-                    <Text tag="h3" as="menuTitle">
-                      {e.label}
-                    </Text>
+                    <h2>{e.label}</h2>
                     <div className="w-6 h-0.5 bg-white" />
                   </div>
-                  <Text tag="p" className="text-center px-3 w-full absolute centered font-medium text-balance">
-                    {e.desc}
-                  </Text>
+                  <p className="text-center px-3 w-full absolute centered font-medium text-balance">{e.desc}</p>
 
                   <LinkButton href={e.href} className="translate-y-full group-hover:-translate-y-4 absolute centered-bottom">
                     {s.SECTIONS.visitProject}

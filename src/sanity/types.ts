@@ -77,18 +77,6 @@ export type Post = {
   title?: string;
   show?: boolean;
   slug?: Slug;
-  mainImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
   categories?: Array<{
     _ref: string;
     _type: "reference";
@@ -97,6 +85,7 @@ export type Post = {
     [internalGroqTypeReferenceTo]?: "category";
   }>;
   publishedAt?: string;
+  description?: string;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -217,18 +206,6 @@ export type BLOG_POSTS_QUERYResult = Array<{
   title?: string;
   show?: boolean;
   slug?: Slug;
-  mainImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
   categories: Array<{
     _id: string;
     _type: "category";
@@ -240,6 +217,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
     description?: string;
   }> | null;
   publishedAt?: string;
+  description?: string;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -282,18 +260,6 @@ export type BLOG_POST_QUERYResult = {
   title?: string;
   show?: boolean;
   slug?: Slug;
-  mainImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
   categories: Array<{
     _id: string;
     _type: "category";
@@ -305,6 +271,7 @@ export type BLOG_POST_QUERYResult = {
     description?: string;
   }> | null;
   publishedAt?: string;
+  description?: string;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;

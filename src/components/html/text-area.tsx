@@ -1,4 +1,3 @@
-import Text from "@/components/html/text";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
 import { type ComponentProps, forwardRef, useId } from "react";
@@ -17,9 +16,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, InputProps>(({ placeholder, err
         {placeholder}
       </label>
       <textarea className={VARIANTS.Input()} placeholder={placeholder} ref={ref} {...rest} id={id} />
-      <Text tag="small" className={cn("ml-0.5 shadow", { "opacity-0 -translate-y-2 -z-10": !error })} as="mini" color="red">
-        {error}
-      </Text>
+      <small className={cn("ml-0.5 shadow text-red-400", { "opacity-0 -translate-y-2 -z-10": !error })}>{error}</small>
     </section>
   );
 });

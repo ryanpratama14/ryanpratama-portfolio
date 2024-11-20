@@ -10,21 +10,18 @@ export const postType = defineType({
     defineField({
       name: "title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "show",
       type: "boolean",
+      initialValue: true,
     }),
     defineField({
       name: "slug",
       type: "slug",
       options: { source: "title" },
-    }),
-    defineField({
-      name: "mainImage",
-      type: "image",
-      options: { hotspot: true },
-      fields: [{ name: "alt", type: "string", title: "Alternative text" }],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "categories",
@@ -34,6 +31,12 @@ export const postType = defineType({
     defineField({
       name: "publishedAt",
       type: "datetime",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "description",
+      title: "SEO description",
+      type: "string",
     }),
     defineField({
       name: "body",

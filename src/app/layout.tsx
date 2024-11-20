@@ -5,7 +5,6 @@ import { env } from "@/env";
 import { LANGS } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
-import { UPDATED_ON } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
@@ -30,17 +29,22 @@ export default async function RootLayout({ children }: Props) {
   const { d, formatDate, lang } = useLang((await getHeaders()).lang);
   const isStudio = (await getHeaders()).path.startsWith("studio");
 
+  console.log((await getHeaders()).path);
+
   return (
     <html lang={lang} className={GeistSans.variable}>
       <body className={cn({ "px-4 pt-4 pb-16 md:p-6 lg:p-12 xl:p-16 text-white bg-black font-sans": !isStudio })}>
-        <TRPCReactProvider>
-          <NuqsAdapter>
-            <main className="space-y-4">{children}</main>
-          </NuqsAdapter>
-        </TRPCReactProvider>
-        {isStudio ? null : (
+        {isStudio ? (
+          <main>{children}</main>
+        ) : (
           <Fragment>
-            <Container tag="footer" title={d.updatedOn(formatDate(UPDATED_ON))} className="mt-4" />
+            <TRPCReactProvider>
+              <NuqsAdapter>
+                <main className="flex flex-col gap-4">{children}</main>
+              </NuqsAdapter>
+            </TRPCReactProvider>
+
+            <Container tag="footer" title={d.updatedOn(formatDate(new Date()))} className="mt-4" />
             <NextTopLoader color={COLORS.blue} showSpinner={false} />
             {OtherComponents[env.NODE_ENV]}
           </Fragment>
