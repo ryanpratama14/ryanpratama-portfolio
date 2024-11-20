@@ -6,6 +6,7 @@ import Img from "./html/img";
 type Props = { data: BLOG_POSTS_QUERYResult; formatDateLong: (str: string | undefined) => string };
 
 export default function BlogCards({ data, formatDateLong }: Props) {
+  if (!data?.length) return null;
   return (
     <ul className="grid md:grid-cols-2 gap-3">
       {data.map((e) => {

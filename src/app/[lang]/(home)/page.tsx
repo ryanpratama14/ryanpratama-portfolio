@@ -17,7 +17,7 @@ type Props = { params: Promise<{ lang: Lang }> };
 export default async function HomePage({ params }: Props) {
   const { s, isJapanese, lang, formatDateLong } = useLang((await params).lang);
   const data = await sanityFetch<BLOG_POSTS_QUERYResult>({ query: BLOG_POSTS_QUERY });
-  const slicedData = data.slice(0, 5);
+  const slicedData = data.slice(0, 6);
 
   return (
     <Fragment>
