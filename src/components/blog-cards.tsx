@@ -1,13 +1,12 @@
-import { PATHS } from "@/app/urls";
-import type { GetPostsResult } from "@/sanity/types";
+import type { PostList } from "@/sanity/lib/api";
 import type { Lang } from "@/types";
 import Link from "next/link";
 import Container from "./container";
 import Img from "./html/img";
 
-type Props = { data: GetPostsResult; formatDateLong: (str: string | undefined) => string; lang: Lang; href?: string; title: string };
+type Props = { data: PostList; lang: Lang; href?: string; title: string };
 
-export default function BlogCards({ data, href, lang, title, formatDateLong }: Props) {
+export default function BlogCards({ data, href, lang, title }: Props) {
   if (!data?.length) return null;
 
   return (
@@ -26,10 +25,10 @@ export default function BlogCards({ data, href, lang, title, formatDateLong }: P
                   />
                 ) : null}
                 <header className="flex flex-col pl-2.5 md:pl-3">
-                  <Link href={`${PATHS.blog}/${e.slug?.current}`} className="font-semibold hover:underline line-clamp-1">
+                  <Link href={e.href} className="font-semibold hover:underline line-clamp-1">
                     <h2 className="line-clamp-1">{e.title}</h2>
                   </Link>
-                  <small className="text-blue-300 font-medium line-clamp-1">{formatDateLong(e.publishedAt)}</small>
+                  <small className="text-blue-300 font-medium line-clamp-1">{e.publishedAtString}</small>
                 </header>
               </section>
               <small className="line-clamp-2">{e.description}</small>

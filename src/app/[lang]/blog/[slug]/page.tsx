@@ -3,9 +3,7 @@ import BlogCards from "@/components/blog-cards";
 import Body from "@/components/body";
 import Img from "@/components/html/img";
 import { useLang } from "@/internationalization/functions";
-import { sanityFetch } from "@/sanity/lib/client";
-import { GetPostBySlug, GetPosts } from "@/sanity/lib/queries";
-import type { GetPostBySlugResult, GetPostsResult } from "@/sanity/types";
+import { sanity } from "@/sanity/lib/api";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -15,8 +13,9 @@ type Props = { params: Promise<{ slug: string; lang: Lang }> };
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
   const { slug } = await params;
-  const data = await sanityFetch<GetPostBySlugResult>({ query: GetPostBySlug, params: { slug } });
-  if (!data) return;
+  const data = await sanity.post.detail({ slug });
+  if (!data?.slug?.current) return;
+
   return await getMetadata({
     title: data.title,
     description: data.description,
@@ -27,19 +26,18 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
 
 export default async function BlogPageBySlug({ params }: Props) {
   const { slug, lang } = await params;
-  const data = await sanityFetch<GetPostBySlugResult>({ query: GetPostBySlug, params: { slug } });
+  const data = await sanity.post.detail({ slug });
+  if (!data?.slug?.current) notFound();
 
-  if (!data) notFound();
-
-  const { formatDateLong, s } = useLang(lang);
-  const relatedPosts = await getRelatedPosts(data.slug?.current, GetPosts);
+  const relatedPosts = await sanity.post.list({ slice: 6, currentSlug: data.slug.current });
+  const { s } = useLang(lang);
 
   return (
     <Fragment>
       <article className="wrapper flex flex-col gap-2.5 py-3">
         <header className="flex flex-col gap-1.5">
           <h1 className="font-semibold">{data.title}</h1>
-          <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">{formatDateLong(data.publishedAt)}</small>
+          <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">{data.publishedAtString}</small>
         </header>
 
         {data.mainImageUrl ? (
@@ -52,12 +50,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         <Body data={data.body} />
       </article>
 
-      <BlogCards title={s.MENUS.blog} lang={lang} data={relatedPosts} formatDateLong={formatDateLong} />
+      <BlogCards title={s.MENUS.blog} lang={lang} data={relatedPosts} />
     </Fragment>
   );
 }
-
-const getRelatedPosts = async (currentSlug: string | undefined, query: string) => {
-  const posts = await sanityFetch<GetPostsResult>({ query });
-  return posts.filter((item) => item.slug?.current !== currentSlug).slice(0, 6);
-};
