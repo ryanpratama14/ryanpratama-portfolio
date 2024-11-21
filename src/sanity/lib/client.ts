@@ -8,16 +8,12 @@ export const client = createClient({
   useCdn: true,
 });
 
-export async function sanityFetch<QueryResponse>({
-  query,
-  params = {},
-  tags,
-}: {
+type Props = {
   query: string;
   params?: QueryParams;
   tags?: string[];
-}): Promise<QueryResponse> {
-  return client.fetch<QueryResponse>(query, params, {
-    next: { tags, revalidate: 30 },
-  });
-}
+};
+
+export const sanityFetch = async <QueryResponse>({ query, params = {}, tags }: Props): Promise<QueryResponse> => {
+  return await client.fetch<QueryResponse>(query, params, { next: { tags, revalidate: 30 } });
+};
