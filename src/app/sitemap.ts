@@ -2,8 +2,8 @@ import { ALL_PATHS, ENDPOINTS, PATHS, getUrl } from "@/app/urls";
 import { LANGS } from "@/internationalization";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { sanityFetch } from "@/sanity/lib/client";
-import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
-import type { BLOG_POSTS_QUERYResult } from "@/sanity/types";
+import { GetPosts } from "@/sanity/lib/queries";
+import type { GetPostsResult } from "@/sanity/types";
 import type { Lang } from "@/types";
 import type { MetadataRoute } from "next";
 
@@ -14,7 +14,7 @@ const createEntry = (path: string, lang?: Lang) => ({
 });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const blogPosts = await sanityFetch<BLOG_POSTS_QUERYResult>({ query: BLOG_POSTS_QUERY });
+  const blogPosts = await sanityFetch<GetPostsResult>({ query: GetPosts });
 
   const allPaths = [
     ...ALL_PATHS,

@@ -1,11 +1,11 @@
 import { PATHS } from "@/app/urls";
-import type { BLOG_POSTS_QUERYResult } from "@/sanity/types";
+import type { GetPostsResult } from "@/sanity/types";
 import type { Lang } from "@/types";
 import Link from "next/link";
 import Container from "./container";
 import Img from "./html/img";
 
-type Props = { data: BLOG_POSTS_QUERYResult; formatDateLong: (str: string | undefined) => string; lang: Lang; href?: string; title: string };
+type Props = { data: GetPostsResult; formatDateLong: (str: string | undefined) => string; lang: Lang; href?: string; title: string };
 
 export default function BlogCards({ data, href, lang, title, formatDateLong }: Props) {
   if (!data?.length) return null;

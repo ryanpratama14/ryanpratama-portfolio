@@ -2,8 +2,8 @@ import { PATHS } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import { useLang } from "@/internationalization/functions";
 import { sanityFetch } from "@/sanity/lib/client";
-import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
-import type { BLOG_POSTS_QUERYResult } from "@/sanity/types";
+import { GetPosts } from "@/sanity/lib/queries";
+import type { GetPostsResult } from "@/sanity/types";
 import type { Lang } from "@/types";
 import { Fragment } from "react";
 import About from "./components/about";
@@ -15,7 +15,7 @@ type Props = { params: Promise<{ lang: Lang }> };
 
 export default async function HomePage({ params }: Props) {
   const { s, isJapanese, lang, formatDateLong } = useLang((await params).lang);
-  const data = await sanityFetch<BLOG_POSTS_QUERYResult>({ query: BLOG_POSTS_QUERY });
+  const data = await sanityFetch<GetPostsResult>({ query: GetPosts });
   const slicedData = data.slice(0, 6);
 
   return (

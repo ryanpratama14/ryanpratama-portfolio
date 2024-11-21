@@ -4,8 +4,8 @@ import Body from "@/components/body";
 import Img from "@/components/html/img";
 import { useLang } from "@/internationalization/functions";
 import { sanityFetch } from "@/sanity/lib/client";
-import { BLOG_POSTS_QUERY, BLOG_POST_QUERY } from "@/sanity/lib/queries";
-import type { BLOG_POSTS_QUERYResult, BLOG_POST_QUERYResult } from "@/sanity/types";
+import { GetPostBySlug, GetPosts } from "@/sanity/lib/queries";
+import type { GetPostBySlugResult, GetPostsResult } from "@/sanity/types";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -15,7 +15,7 @@ type Props = { params: Promise<{ slug: string; lang: Lang }> };
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
   const { slug } = await params;
-  const data = await sanityFetch<BLOG_POST_QUERYResult>({ query: BLOG_POST_QUERY, params: { slug } });
+  const data = await sanityFetch<GetPostBySlugResult>({ query: GetPostBySlug, params: { slug } });
   if (!data) return;
   return await getMetadata({
     title: data.title,
@@ -27,12 +27,12 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
 
 export default async function BlogPageBySlug({ params }: Props) {
   const { slug, lang } = await params;
-  const data = await sanityFetch<BLOG_POST_QUERYResult>({ query: BLOG_POST_QUERY, params: { slug } });
+  const data = await sanityFetch<GetPostBySlugResult>({ query: GetPostBySlug, params: { slug } });
 
   if (!data) notFound();
 
   const { formatDateLong, s } = useLang(lang);
-  const relatedPosts = await getRelatedPosts(data.slug?.current, BLOG_POSTS_QUERY);
+  const relatedPosts = await getRelatedPosts(data.slug?.current, GetPosts);
 
   return (
     <Fragment>
@@ -58,6 +58,6 @@ export default async function BlogPageBySlug({ params }: Props) {
 }
 
 const getRelatedPosts = async (currentSlug: string | undefined, query: string) => {
-  const posts = await sanityFetch<BLOG_POSTS_QUERYResult>({ query });
+  const posts = await sanityFetch<GetPostsResult>({ query });
   return posts.filter((item) => item.slug?.current !== currentSlug).slice(0, 6);
 };

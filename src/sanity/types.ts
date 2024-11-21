@@ -207,9 +207,9 @@ export type Slug = {
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Category | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
-// Variable: BLOG_POSTS_QUERY
+// Variable: GetPosts
 // Query: *[_type == "post" && show == true && defined(slug.current)] | order(publishedAt desc) {    ...,    "mainImageUrl": mainImage.asset -> url,    categories[] -> {        ...,    }}
-export type BLOG_POSTS_QUERYResult = Array<{
+export type GetPostsResult = Array<{
   _id: string;
   _type: "post";
   _createdAt: string;
@@ -274,9 +274,9 @@ export type BLOG_POSTS_QUERYResult = Array<{
   }>;
   mainImageUrl: string | null;
 }>;
-// Variable: BLOG_POST_QUERY
+// Variable: GetPostBySlug
 // Query: *[_type == "post" && show == true && slug.current == $slug && defined(slug.current)][0] {    ...,    "mainImageUrl": mainImage.asset -> url,    categories[] -> {        ...,    }}
-export type BLOG_POST_QUERYResult = {
+export type GetPostBySlugResult = {
   _id: string;
   _type: "post";
   _createdAt: string;
@@ -346,7 +346,7 @@ export type BLOG_POST_QUERYResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"post\" && show == true && defined(slug.current)] | order(publishedAt desc) {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POSTS_QUERYResult;
-    "*[_type == \"post\" && show == true && slug.current == $slug && defined(slug.current)][0] {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n    categories[] -> {\n        ...,\n    }\n}": BLOG_POST_QUERYResult;
+    "*[_type == \"post\" && show == true && defined(slug.current)] | order(publishedAt desc) {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n    categories[] -> {\n        ...,\n    }\n}": GetPostsResult;
+    "*[_type == \"post\" && show == true && slug.current == $slug && defined(slug.current)][0] {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n    categories[] -> {\n        ...,\n    }\n}": GetPostBySlugResult;
   }
 }

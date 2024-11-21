@@ -2,8 +2,8 @@ import { getMetadata } from "@/app/metadata";
 import BlogCards from "@/components/blog-cards";
 import { useLang } from "@/internationalization/functions";
 import { sanityFetch } from "@/sanity/lib/client";
-import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
-import type { BLOG_POSTS_QUERYResult } from "@/sanity/types";
+import { GetPosts } from "@/sanity/lib/queries";
+import type { GetPostsResult } from "@/sanity/types";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 
@@ -16,7 +16,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 
 export default async function BlogPage({ params }: Props) {
   const { s, formatDateLong, lang } = useLang((await params).lang);
-  const data = await sanityFetch<BLOG_POSTS_QUERYResult>({ query: BLOG_POSTS_QUERY });
+  const data = await sanityFetch<GetPostsResult>({ query: GetPosts });
 
   return <BlogCards title={s.MENUS.blog} lang={lang} data={data} formatDateLong={formatDateLong} />;
 }

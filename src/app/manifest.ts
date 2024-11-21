@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     s: { PERSONAL_DATA: me },
   } = useLang(DEFAULT_LANG);
 
-  const title = `${me.fullName} — ${me.softwareEngineer}`;
+  const title = me.fullName;
   const description = me.summary;
 
   return {
