@@ -25,10 +25,10 @@ export default function BlogCards({ data, href, lang, title }: Props) {
                   />
                 ) : null}
                 <header className="flex flex-col pl-2.5 md:pl-3">
-                  <Link href={e.href} className="font-semibold hover:underline line-clamp-1">
+                  <Link href={e.href} className="font-medium hover:underline line-clamp-1">
                     <h2 className="line-clamp-1">{e.title}</h2>
                   </Link>
-                  <small className="text-blue-300 font-medium line-clamp-1">{e.publishedAtString}</small>
+                  <small className="text-blue-300 font-medium line-clamp-1">{e.publishedAtStringShort}</small>
                 </header>
               </section>
               <small className="line-clamp-2">{e.description}</small>

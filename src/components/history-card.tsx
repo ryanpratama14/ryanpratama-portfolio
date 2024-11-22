@@ -28,9 +28,7 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
             <Icon icon={ICONS.link} width={12} />
             <p className="font-medium hover:underline">{e.label}</p>
           </Link>
-          <p color="gray" className="text-gray font-medium line-clamp-1">
-            {e.desc}
-          </p>
+          <p className="text-gray font-medium line-clamp-1">{e.desc}</p>
 
           <small className="text-graydarker">
             {`${e.location}${e.type ? ` (${e.type.toLowerCase()})` : ""} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}

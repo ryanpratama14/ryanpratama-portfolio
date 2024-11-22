@@ -18,26 +18,21 @@ const useLang = (lang: Lang) => {
   const formatCurrency = (amount: number) => new Intl.NumberFormat(locale, { style: "currency", currency }).format(amount);
   const formatCounter = (counter: string) => (isJapanese ? counter : ` ${counter}`);
 
-  const formatDateLong = (str: string | undefined) => {
-    const date = new Date(str ?? new Date());
+  const formatPostDate = ({ publishedAt, type }: { publishedAt: string | undefined; type: "long" | "short" }) => {
+    const date = new Date(publishedAt ?? new Date());
+    const isLong = type === "long";
 
     const fullDate = date.toLocaleDateString(locale, {
-      month: "long",
+      month: isLong ? "long" : "short",
       day: "numeric",
       year: "numeric",
       hour: "numeric",
       minute: "numeric",
-      timeZone: "Asia/Singapore",
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
       timeZoneName: "short",
     });
 
-    const timeZoneName = date.toLocaleTimeString(locale, {
-      hour: "numeric",
-      minute: "numeric",
-      timeZoneName: "short",
-    });
-
-    return `${fullDate}${isJapanese ? "、" : ", "}${timeZoneName ?? ""}`;
+    return fullDate;
   };
 
   return {
@@ -52,7 +47,7 @@ const useLang = (lang: Lang) => {
 
     formatMonth,
     formatDate,
-    formatDateLong,
+    formatPostDate,
     formatCurrency,
     formatCounter,
   };

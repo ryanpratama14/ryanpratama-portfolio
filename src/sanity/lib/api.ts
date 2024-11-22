@@ -8,12 +8,13 @@ import type { GetPostBySlugResult, GetPostsResult } from "@/sanity/types";
 
 const formatPostData = async (post: GetPostBySlugResult) => {
   const lang = (await getHeaders()).lang;
-  const { formatDateLong } = useLang(lang);
+  const { formatPostDate } = useLang(lang);
 
   return {
     ...post,
     href: `${PATHS.blog}/${post?.slug?.current}`,
-    publishedAtString: formatDateLong(post?.publishedAt),
+    publishedAtString: formatPostDate({ publishedAt: post?.publishedAt, type: "long" }),
+    publishedAtStringShort: formatPostDate({ publishedAt: post?.publishedAt, type: "short" }),
   };
 };
 
