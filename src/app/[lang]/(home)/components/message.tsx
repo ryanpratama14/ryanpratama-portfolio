@@ -31,6 +31,8 @@ export default function ProjectDiscuss({ s, lang }: Props) {
 
   const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setOpen(true) });
 
+  console.log("Timezone >", Intl.DateTimeFormat().resolvedOptions().timeZone);
+
   return (
     <Fragment>
       <Container title={s.MENUS.message}>
