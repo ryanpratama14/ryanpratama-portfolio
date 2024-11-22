@@ -33,7 +33,7 @@ export default async function BlogPageBySlug({ params }: Props) {
   if (!data?.slug?.current) notFound();
 
   const url = getUrl({ path: (await getHeaders()).path });
-  const relatedPosts = await sanity.post.list({ slice: 6, currentSlug: data.slug.current });
+  const relatedPosts = await sanity.post.list({ slice: 6, slugToRemove: data.slug.current });
   const { s } = useLang(lang);
 
   return (

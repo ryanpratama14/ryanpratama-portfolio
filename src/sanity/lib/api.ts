@@ -20,12 +20,12 @@ const formatPostData = async (post: GetPostBySlugResult) => {
 
 export const sanity = {
   post: {
-    list: async ({ slice, currentSlug }: { slice?: number; currentSlug?: string }) => {
+    list: async ({ slice, slugToRemove }: { slice?: number; slugToRemove?: string }) => {
       const data = await sanityFetch<GetPostsResult>({ query: GetPosts });
       const formattedData = await Promise.all(data.map((item) => formatPostData(item)));
 
-      if (currentSlug) {
-        return formattedData.filter((item) => item.slug?.current !== currentSlug).slice(0, slice);
+      if (slugToRemove) {
+        return formattedData.filter((item) => item.slug?.current !== slugToRemove).slice(0, slice);
       }
 
       return formattedData.slice(0, slice);
