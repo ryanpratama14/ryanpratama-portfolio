@@ -20,6 +20,7 @@ export const getCookieLang = async () => {
 export const getHeaders = async () => {
   return {
     path: (await headers()).get(HEADERS.path) ?? "studio",
+    tz: (await headers()).get(HEADERS.path) ?? Intl.DateTimeFormat().resolvedOptions().timeZone,
     lang: validateMatchedLang((await headers()).get(HEADERS.lang)),
   };
 };
