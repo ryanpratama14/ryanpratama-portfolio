@@ -3,10 +3,14 @@
 import { useLang } from "@/internationalization/functions";
 import type { Lang } from "@/types";
 
-export default function LocalTime({ lang, dateString, type }: { type: "long" | "short"; dateString: string | undefined; lang: Lang }) {
+export default function LocalTime({
+  lang,
+  dateString = new Date(),
+  type,
+}: { type: "long" | "short"; dateString: Date | string | undefined; lang: Lang }) {
   const { locale } = useLang(lang);
 
-  const date = new Date(dateString ?? new Date());
+  const date = new Date(dateString);
   const isLong = type === "long";
 
   const fullDate = date.toLocaleDateString(locale, {
