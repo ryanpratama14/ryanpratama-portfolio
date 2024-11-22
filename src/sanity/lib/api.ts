@@ -9,6 +9,7 @@ const formatPostData = (post: GetPostBySlugResult) => {
   return {
     ...post,
     href: `${PATHS.blog}/${post?.slug?.current}`,
+    publishedAtDate: post?.publishedAt ? new Date(post?.publishedAt) : new Date(),
   };
 };
 

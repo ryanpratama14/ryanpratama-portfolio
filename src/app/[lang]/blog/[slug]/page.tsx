@@ -43,7 +43,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         <header className="flex flex-col gap-1.5">
           <h1 className="font-semibold">{data.title}</h1>
           <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">
-            <LocalTime type="long" lang={lang} dateString={data.publishedAt} />
+            <LocalTime type="long" lang={lang} date={data.publishedAtDate} />
           </small>
         </header>
 
