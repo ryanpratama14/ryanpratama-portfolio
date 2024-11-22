@@ -23,7 +23,7 @@ const IS_CLIENT = typeof window !== "undefined";
 const BASE_URL = { development: getBaseUrl(), production: env.NEXT_PUBLIC_URL };
 const ENDPOINTS = { trpc: "/api/trpc", ogImage: "/assets/opengraph.png", sitemap: "/sitemap.xml", resume: "/resume.pdf" };
 const COOKIES = { lang: "lang" };
-const HEADERS = { lang: "x-lang", path: "x-pathname", tz: "x-timezone" };
+const HEADERS = { lang: "x-lang", path: "x-pathname", tz: "x-tz" };
 const PATHS = { main: "/", certification: "/certification", blog: "/blog" };
 const ALL_PATHS = Object.values(PATHS).flat();
 const URLS = {
