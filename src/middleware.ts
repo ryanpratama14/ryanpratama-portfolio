@@ -23,7 +23,6 @@ export const middleware = (req: NextRequest) => {
   const res = NextResponse.next();
   res.headers.set(HEADERS.lang, lang);
   res.headers.set(HEADERS.path, path);
-  res.headers.set(HEADERS.tz, Intl.DateTimeFormat().resolvedOptions().timeZone);
   return res;
 };
 

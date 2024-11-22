@@ -3,6 +3,7 @@ import { getUrl } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import Body from "@/components/body";
 import Img from "@/components/html/img";
+import LocalTime from "@/components/local-time";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { sanity } from "@/sanity/lib/api";
@@ -41,7 +42,10 @@ export default async function BlogPageBySlug({ params }: Props) {
       <article className="wrapper flex flex-col gap-4 py-3">
         <header className="flex flex-col gap-1.5">
           <h1 className="font-semibold">{data.title}</h1>
-          <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">{data.publishedAtString}</small>
+          <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">
+            {data.publishedAtString}
+            <LocalTime lang={lang} publishedAt={data.publishedAt} />
+          </small>
         </header>
 
         {data.mainImageUrl ? (
