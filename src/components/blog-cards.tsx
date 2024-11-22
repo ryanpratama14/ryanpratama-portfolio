@@ -30,8 +30,7 @@ export default function BlogCards({ data, href, lang, title }: Props) {
                     <h2 className="line-clamp-1">{e.title}</h2>
                   </Link>
                   <small className="text-blue-300 font-medium line-clamp-1">
-                    {e.publishedAtStringShort}
-                    <LocalTime lang={lang} publishedAt={e.publishedAt} />
+                    <LocalTime type="short" lang={lang} dateString={e.publishedAt} />
                   </small>
                 </header>
               </section>

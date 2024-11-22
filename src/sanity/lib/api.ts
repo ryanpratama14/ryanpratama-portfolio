@@ -1,20 +1,14 @@
 import "server-only";
+
 import { PATHS } from "@/app/urls";
-import { useLang } from "@/internationalization/functions";
-import { getHeaders } from "@/lib/actions";
 import { sanityFetch } from "@/sanity/lib/client";
 import { GetPostBySlug, GetPosts } from "@/sanity/lib/queries";
 import type { GetPostBySlugResult, GetPostsResult } from "@/sanity/types";
 
-const formatPostData = async (post: GetPostBySlugResult) => {
-  const lang = (await getHeaders()).lang;
-  const { formatPostDate } = useLang(lang);
-
+const formatPostData = (post: GetPostBySlugResult) => {
   return {
     ...post,
     href: `${PATHS.blog}/${post?.slug?.current}`,
-    publishedAtString: formatPostDate({ publishedAt: post?.publishedAt, type: "long" }),
-    publishedAtStringShort: formatPostDate({ publishedAt: post?.publishedAt, type: "short" }),
   };
 };
 
@@ -22,7 +16,7 @@ export const sanity = {
   post: {
     list: async ({ slice, slugToRemove }: { slice?: number; slugToRemove?: string }) => {
       const data = await sanityFetch<GetPostsResult>({ query: GetPosts });
-      const formattedData = await Promise.all(data.map((item) => formatPostData(item)));
+      const formattedData = data.map((item) => formatPostData(item));
 
       if (slugToRemove) {
         return formattedData.filter((item) => item.slug?.current !== slugToRemove).slice(0, slice);
@@ -33,7 +27,7 @@ export const sanity = {
 
     detail: async ({ slug }: { slug: string }) => {
       const data = await sanityFetch<GetPostBySlugResult>({ query: GetPostBySlug, params: { slug } });
-      return await formatPostData(data);
+      return formatPostData(data);
     },
   },
 };

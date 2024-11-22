@@ -43,8 +43,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         <header className="flex flex-col gap-1.5">
           <h1 className="font-semibold">{data.title}</h1>
           <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">
-            {data.publishedAtString}
-            <LocalTime lang={lang} publishedAt={data.publishedAt} />
+            <LocalTime type="long" lang={lang} dateString={data.publishedAt} />
           </small>
         </header>
 
@@ -56,7 +55,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         ) : null}
 
         <Body data={data.body} />
-        <section className="space-y-2">
+        <section className="space-y-1.5">
           <h2 className="font-semibold">{s.SECTIONS.share}</h2>
           <Share url={url} />
         </section>
