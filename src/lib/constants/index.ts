@@ -32,7 +32,7 @@ export const PHOTOS = {
   avatar,
 };
 
-const MAILTO = "mailto:ryanpratama.dev@gmail.com";
+export const MAILTO = "mailto:ryanpratama.dev@gmail.com";
 
 export const EXPERIENCES: History[] = [
   // {

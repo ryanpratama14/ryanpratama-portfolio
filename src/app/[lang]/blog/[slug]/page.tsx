@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 import Share from "./components/share";
+import StickyTitle from "./components/sticky-title";
 
 type Props = { params: Promise<{ slug: string; lang: Lang }> };
 
@@ -39,11 +40,12 @@ export default async function BlogPageBySlug({ params }: Props) {
 
   return (
     <Fragment>
+      <StickyTitle data={data} lang={lang} />
       <article className="wrapper flex flex-col gap-4 py-3">
-        <header className="flex flex-col gap-1.5">
+        <header id="post-title" className="flex flex-col gap-1.5">
           <h1 className="font-semibold">{data.title}</h1>
           <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">
-            <LocalTime type="long" lang={lang} date={data.publishedAtDate} />
+            <LocalTime lang={lang} date={data.publishedAtDate} />
           </small>
         </header>
 
