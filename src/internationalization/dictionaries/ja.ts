@@ -137,6 +137,7 @@ export const ja: Dictionary = {
     },
 
     SECTIONS: {
+      share: "この記事を楽しんでいただけましたか？この投稿を共有して、他の人をインスパイアしましょう！",
       notFound: "ページが見つかりません",
       backToHomepage: "ホームページに戻る",
       present: "現在",

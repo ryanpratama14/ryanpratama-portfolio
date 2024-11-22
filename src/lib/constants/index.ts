@@ -150,6 +150,8 @@ export const ICONS = {
   telegram: "ph:telegram-logo",
   whatsapp: "mdi:whatsapp",
   instagram: "mdi:instagram",
+  x: "ri:twitter-x-fill",
+  facebook: "gg:facebook",
 };
 
 export const CERTIFICATIONS: Certification[] = [

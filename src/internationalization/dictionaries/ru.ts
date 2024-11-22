@@ -139,6 +139,7 @@ export const ru: Dictionary = {
     },
 
     SECTIONS: {
+      share: "Вам понравилось? Поделитесь этим постом и вдохновите других!",
       notFound: "Страница не найдена",
       backToHomepage: "На главную страницу",
       present: "настоящее время",

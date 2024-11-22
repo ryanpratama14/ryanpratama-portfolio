@@ -53,6 +53,7 @@ export const en = {
       present: "Present",
       resume: "Résumé",
       visitProject: "Visit Project",
+      share: "Enjoyed the read? Share this post and inspire others!",
     },
 
     LOCATIONS: {
