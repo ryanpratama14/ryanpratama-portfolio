@@ -46,9 +46,7 @@ export default function StickyTitle({ data, lang }: { data: PostDetail; lang: La
           />
           <header className="flex flex-col">
             <h2 className="font-semibold line-clamp-1">{data.title}</h2>
-            <small>
-              <LocalTime lang={lang} date={data.publishedAtDate} />
-            </small>
+            <LocalTime lang={lang} date={data.publishedAtDate} />
           </header>
         </section>
 

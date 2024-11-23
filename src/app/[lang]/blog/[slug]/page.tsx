@@ -44,9 +44,7 @@ export default async function BlogPageBySlug({ params }: Props) {
       <article className="wrapper flex flex-col gap-4 py-3">
         <header id="post-title" className="flex flex-col gap-1.5">
           <h1 className="font-semibold">{data.title}</h1>
-          <small className="text-blue-300 py-1 border-y-1 font-medium border-blue-300">
-            <LocalTime lang={lang} date={data.publishedAtDate} />
-          </small>
+          <LocalTime className="text-blue-300 py-1 border-y-1 font-medium border-blue-300" lang={lang} date={data.publishedAtDate} />
         </header>
 
         {data.mainImageUrl ? (

@@ -29,9 +29,7 @@ export default function BlogCards({ data, href, lang, title }: Props) {
                   <Link href={e.href} className="font-medium hover:underline line-clamp-1">
                     <h2 className="line-clamp-1">{e.title}</h2>
                   </Link>
-                  <small className="text-blue-300 font-medium line-clamp-1">
-                    <LocalTime lang={lang} date={e.publishedAtDate} />
-                  </small>
+                  <LocalTime className="text-blue-300 font-medium line-clamp-1" lang={lang} date={e.publishedAtDate} />
                 </header>
               </section>
               <small className="line-clamp-2">{e.description}</small>
