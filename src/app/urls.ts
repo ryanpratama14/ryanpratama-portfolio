@@ -5,7 +5,7 @@ import type { ReadonlyURLSearchParams } from "next/navigation";
 const addPath = ({ path, lang }: { path: string; lang?: Lang }) => `${lang ? `/${lang}` : ""}${path === PATHS.main ? "" : path}`;
 const getUrl = ({ path, lang, type = "production" }: { path: string; lang?: Lang; type?: keyof typeof BASE_URL }) =>
   `${BASE_URL[type]}${addPath({ path, lang })}`;
-const isExternalLink = (href: string) => href.startsWith("http");
+const isExternalLink = (href: string) => href.startsWith("http") || href.includes(ENDPOINTS.resume);
 
 const getBaseUrl = () => {
   if (IS_CLIENT) return `${window.location.origin}`;

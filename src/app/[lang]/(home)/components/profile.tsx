@@ -1,5 +1,6 @@
 import { PATHS } from "@/app/urls";
 import Img from "@/components/html/img";
+import LinkButton from "@/components/html/link-button";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
@@ -10,7 +11,6 @@ import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
 import { Icon } from "@iconify-icon/react";
-import Link from "next/link";
 import { Fragment } from "react";
 
 type Props = {
@@ -34,9 +34,9 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
       if (e.href) {
         return (
           <li className="flex">
-            <Link target="_blank" rel="noreferrer noopener" href={e.href} key={e.label} className="flex gap-0.5 items-center">
+            <LinkButton unstyled href={e.href} key={e.label} className="flex gap-0.5 items-center">
               <Data />
-            </Link>
+            </LinkButton>
           </li>
         );
       }
@@ -52,13 +52,13 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
     <article className="wrapper w-full">
       <section className="flex justify-between items-start">
         <section className="flex items-center gap-3 md:gap-5">
-          <Link href={PATHS.main}>
+          <LinkButton unstyled lang={lang} href={PATHS.main}>
             <Img
               src={PHOTOS.avatar}
               alt={s.PERSONAL_DATA.fullName}
               className="animate object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-l-md"
             />
-          </Link>
+          </LinkButton>
 
           <section className="md:space-y-0.5">
             <header className="flex flex-col">

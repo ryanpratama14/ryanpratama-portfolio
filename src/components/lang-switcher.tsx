@@ -5,9 +5,9 @@ import { changeLang, getLangFromPath, validateMatchedLang } from "@/internationa
 import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/utils";
 import type { LangTarget } from "@/types";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import LinkButton from "./html/link-button";
 
 type Props = { storedLang: LangTarget };
 
@@ -20,7 +20,7 @@ export default function LangSwitcher({ storedLang }: Props) {
   }, [lang, storedLang]);
 
   return (
-    <nav className="flex">
+    <ul className="flex">
       {LANGUAGE_OPTIONS.map(
         ({
           lang: langTarget,
@@ -32,19 +32,21 @@ export default function LangSwitcher({ storedLang }: Props) {
           const isActive = lang === langTarget;
 
           return (
-            <Link
-              key={langTarget}
-              className={cn("font-default text-xl md:text-2xl !leading-3 px-1 py-1.5 md:px-1.5 md:py-2 rounded-md border-1 border-transparent", {
-                "bg-graybg border-graydarker shadow": isActive,
-              })}
-              href={changeLang(langTarget, path)}
-            >
-              <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
-              {flag}
-            </Link>
+            <li key={langTarget}>
+              <LinkButton
+                unstyled
+                className={cn("font-default !text-xl md:!text-2xl !leading-3 px-1 md:px-1.5 rounded-md border-1 border-transparent", {
+                  "bg-graybg border-graydarker shadow": isActive,
+                })}
+                href={changeLang(langTarget, path)}
+              >
+                <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
+                {flag}
+              </LinkButton>
+            </li>
           );
         },
       )}
-    </nav>
+    </ul>
   );
 }

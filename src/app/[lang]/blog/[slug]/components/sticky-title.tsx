@@ -1,19 +1,15 @@
 "use client";
 
-import Img from "@/components/html/img";
+import LinkButton from "@/components/html/link-button";
 import LocalTime from "@/components/local-time";
-import { useLang } from "@/internationalization/functions";
 import { ICONS, MAILTO } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import type { PostDetail } from "@/sanity/lib/api";
 import type { Lang } from "@/types";
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import avatar from "#/images/avatar.webp";
 
 export default function StickyTitle({ data, lang }: { data: PostDetail; lang: Lang }) {
-  const { s } = useLang(lang);
   const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {
@@ -38,24 +34,18 @@ export default function StickyTitle({ data, lang }: { data: PostDetail; lang: La
       })}
     >
       <div className="wrapper flex justify-between gap-4 items-center">
-        <section className="flex gap-2.5 md:gap-3 items-center">
-          <Img
-            src={avatar}
-            alt={data.description ?? s.PERSONAL_DATA.fullName}
-            className="aspect-square size-10 md:size-12 rounded-md object-top object-cover"
-          />
-          <header className="flex flex-col">
-            <h2 className="font-semibold line-clamp-1">{data.title}</h2>
-            <LocalTime lang={lang} date={data.publishedAtDate} />
-          </header>
-        </section>
+        <header className="flex flex-col">
+          <h2 className="font-semibold line-clamp-1">{data.title}</h2>
+          <LocalTime lang={lang} date={data.publishedAtDate} />
+        </header>
 
-        <Link
+        <LinkButton
+          unstyled
           href={MAILTO}
           className="shadow size-8 text-[1.3rem] md:size-9 md:text-2xl aspect-square rounded-full flex items-center justify-center bg-white text-blue-600"
         >
           <Icon icon={ICONS.email} />
-        </Link>
+        </LinkButton>
       </div>
     </nav>
   );

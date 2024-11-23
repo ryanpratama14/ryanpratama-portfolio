@@ -1,9 +1,8 @@
-import { isExternalLink } from "@/app/urls";
 import Img from "@/components/html/img";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
-import Link from "next/link";
 import type { TypedObject } from "sanity";
+import LinkButton from "./html/link-button";
 
 type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
 
@@ -20,13 +19,11 @@ export default function Body({ data = [] }: Props) {
             strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
             link: ({ value, children }) => {
               const path = value?.href || "";
-              const target = isExternalLink(path) ? "_blank" : undefined;
-              const rel = isExternalLink(path) ? "noreferrer noopener" : undefined;
 
               return (
-                <Link href={value?.href} target={target} rel={rel} className="font-medium text-gray border-b-1 hover:border-blue-600">
+                <LinkButton unstyled href={path} className="font-medium text-gray border-b-1 hover:border-blue-600">
                   {children}
-                </Link>
+                </LinkButton>
               );
             },
           },

@@ -60,7 +60,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
         }}
         className="space-y-1 text-left"
       >
-        <h3 className="font-medium">{s.MESSAGE.sent}</h3>
+        <h2 className="font-semibold">{s.MESSAGE.sent}</h2>
         <p className="text-gray">{s.MESSAGE.thankYou}</p>
       </Dialog>
     </Fragment>

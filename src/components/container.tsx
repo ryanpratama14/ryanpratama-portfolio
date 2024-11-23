@@ -12,14 +12,14 @@ type Props = {
 };
 
 export default function Container({ title = "", children, className, href, lang }: Props) {
-  const { s } = useLang(validateMatchedLang(lang));
+  const { s, lang: definedLang } = useLang(validateMatchedLang(lang));
 
   return (
     <article className={cn("w-full flex flex-col gap-2.5 wrapper", className)}>
       <header className={cn({ "flex justify-between items-center gap-4": href })}>
         <h2 className="text-gray w-full border-b-2 border-graybg font-semibold">{title}</h2>
         {href ? (
-          <LinkButton href={href} className="min-w-32 md:min-w-36">
+          <LinkButton lang={definedLang} href={href} className="min-w-32 md:min-w-36">
             {s.MENUS.more}
           </LinkButton>
         ) : null}
