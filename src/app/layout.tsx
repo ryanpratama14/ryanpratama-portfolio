@@ -36,7 +36,7 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={(await getHeaders()).lang} className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className={cn({ "px-4 pt-4 pb-16 md:p-6 lg:p-12 xl:p-16 text-white bg-black font-sans": !isStudio })}>
+      <body className={cn({ "main-padding text-white bg-black font-sans": !isStudio })}>
         {isStudio ? (
           <main>{children}</main>
         ) : (

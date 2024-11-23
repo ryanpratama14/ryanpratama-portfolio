@@ -29,7 +29,7 @@ export default function StickyTitle({ data, lang }: { data: PostDetail; lang: La
 
   return (
     <nav
-      className={cn("py-4 shadow w-full px-4 md:px-6 xl:px-16 left-0 fixed top-0 animate-longer bg-blue-600 main-padding-x", {
+      className={cn("shadow w-full fixed left-0 top-0 animate-longer bg-blue-600 main-padding-x py-4", {
         "-translate-y-full invisible opacity-0": visible,
       })}
     >

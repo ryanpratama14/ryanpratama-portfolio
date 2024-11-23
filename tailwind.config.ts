@@ -51,6 +51,12 @@ const config = {
     require("tailwindcss-animate"),
     plugin(({ addUtilities }) => {
       addUtilities({
+        ".main-padding": {
+          "@apply max-md:pb-16 p-4 md:p-6 lg:p-12 xl:p-16": {},
+        },
+        ".main-padding-x": {
+          "@apply px-4 md:px-6 lg:px-12 xl:px-16": {},
+        },
         ".wrapper": {
           maxWidth: "56rem",
           marginLeft: "auto",
