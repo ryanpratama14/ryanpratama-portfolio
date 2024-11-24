@@ -19,7 +19,7 @@ export default function Container({ title = "", children, className, href, lang 
       <header className={cn({ "flex justify-between items-center gap-4": href })}>
         <h2 className="text-gray w-full border-b-2 border-graybg font-semibold">{title}</h2>
         {href ? (
-          <LinkButton lang={definedLang} href={href} className="min-w-32 md:min-w-36">
+          <LinkButton lang={definedLang} href={href} className="min-w-36">
             {s.MENUS.more}
           </LinkButton>
         ) : null}

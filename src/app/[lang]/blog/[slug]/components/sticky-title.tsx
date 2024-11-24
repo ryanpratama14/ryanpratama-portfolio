@@ -42,7 +42,7 @@ export default function StickyTitle({ data, lang }: { data: PostDetail; lang: La
         <LinkButton
           unstyled
           href={MAILTO}
-          className="shadow size-8 text-[1.3rem] md:size-9 md:text-2xl aspect-square rounded-full flex items-center justify-center bg-white text-blue-600"
+          className="shadow size-8 text-[1.3rem] md:size-9 md:text-2xl aspect-square rounded-full flex items-center justify-center bg-white hover:bg-white/80 text-blue-600"
         >
           <Icon icon={ICONS.email} />
         </LinkButton>
