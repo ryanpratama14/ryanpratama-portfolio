@@ -19,14 +19,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
-export const generateMetadata = async () => {
-  return await getMetadata({
-    openGraphArticle: {
-      publishedTime: new Date().toISOString(),
-      modifiedTime: new Date().toISOString(),
-    },
-  });
-};
+export const generateMetadata = async () => await getMetadata({});
 
 type Props = { children: React.ReactNode };
 

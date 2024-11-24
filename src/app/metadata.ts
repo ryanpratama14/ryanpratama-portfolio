@@ -4,14 +4,15 @@ import { PERSONALS } from "@/lib/constants";
 import type { Metadata } from "next";
 import { ENDPOINTS, getUrl } from "./urls";
 
-type Props = {
-  openGraphArticle?: {
-    publishedTime?: string;
-    modifiedTime?: string;
-    expirationTime?: string;
-    section?: null | string;
-  };
+type OpenGraphArticle = {
+  publishedTime?: string;
+  modifiedTime?: string;
+  expirationTime?: string;
+  section?: null | string;
+};
 
+type Props = {
+  openGraphArticle?: OpenGraphArticle;
   description?: string;
   title?: string;
   imageUrl?: string | null;
@@ -33,6 +34,12 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
   const url = getUrl({ path });
   const images = [{ url: imageUrl ?? getUrl({ path: ENDPOINTS.ogImage }), alt: getMetadataTitle() }];
   const author = MAIN_TITLE;
+
+  const openGraphData: OpenGraphArticle = {
+    ...openGraphArticle,
+    publishedTime: openGraphArticle?.publishedTime ?? new Date().toISOString(),
+    modifiedTime: openGraphArticle?.publishedTime ?? new Date().toISOString(),
+  };
 
   return {
     generator: author,
@@ -56,7 +63,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
       type: "article",
       authors: MAIN_TITLE,
       tags: keywords,
-      ...openGraphArticle,
+      ...openGraphData,
     },
     twitter: {
       card: "summary_large_image",

@@ -18,7 +18,6 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
 
 export default async function CertificationPage({ params }: Props) {
   const { name } = await params;
-
   const data = CERTIFICATIONS.find((e) => e.name === name);
   if (!data) notFound();
 
