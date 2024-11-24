@@ -21,9 +21,10 @@ type Props = {
 
 export default async function Profile({ s, lang, isDefaultLang }: Props) {
   const storedLang = await getCookieLang();
+  const profiles = getProfileData(lang);
 
-  const ProfileData = () =>
-    getProfileData(lang).map((e) => {
+  const ProfileData = () => {
+    return profiles.map((e) => {
       const Data = () => (
         <Fragment>
           <Icon icon={e.icon} width={17.5} color={COLORS.gray} />
@@ -47,6 +48,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
         </li>
       );
     });
+  };
 
   return (
     <article className="wrapper w-full">

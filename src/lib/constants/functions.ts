@@ -8,10 +8,7 @@ export const getProfileData = (lang: Lang): Profile[] => {
 
   return [
     { href: ENDPOINTS.resume, icon: ICONS.resume, label: s.SECTIONS.resume },
-    {
-      icon: ICONS.yoe,
-      label: `${(PERSONALS.yoe).toLocaleString(locale, { minimumFractionDigits: 1 })}${formatCounter(s.COUNTER.yearsExperience)}`,
-    },
+    { icon: ICONS.yoe, label: `${(PERSONALS.yoe).toLocaleString(locale, { minimumFractionDigits: 1 })}${formatCounter(s.COUNTER.yearsExperience)}` },
     { icon: ICONS.location, label: s.LOCATIONS.bali },
     { icon: ICONS.age, label: `${PERSONALS.age}${formatCounter(s.COUNTER.age)}` },
   ];
