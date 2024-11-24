@@ -35,7 +35,6 @@ const config = {
 
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        mono: ["var(--font-geist-mono)", ...fontFamily.sans],
         default: [...fontFamily.sans],
       },
       screens: {
