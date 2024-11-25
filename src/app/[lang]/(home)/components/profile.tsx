@@ -64,7 +64,9 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
 
           <section className="md:space-y-0.5">
             <header className="flex flex-col">
-              <h1 className="font-bold">{s.PERSONAL_DATA.fullName}</h1>
+              <LinkButton unstyled href={PATHS.main} lang={lang}>
+                <h1 className="font-bold hover:underline">{s.PERSONAL_DATA.fullName}</h1>
+              </LinkButton>
               {isDefaultLang ? null : <small>{useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</small>}
               <h2 className="text-gray">{s.PERSONAL_DATA.softwareEngineer}</h2>
             </header>

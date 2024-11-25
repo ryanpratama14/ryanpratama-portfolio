@@ -29,6 +29,7 @@ export const en = {
       featuredProjects: "Featured Projects",
       contacts: "Contacts",
       experience: "Experience",
+      certifications: "Certifications",
       blog: "Blog",
 
       message: "Let's Connect!",

@@ -26,6 +26,7 @@ export const ja: Dictionary = {
     },
 
     MENUS: {
+      certifications: "認定資格",
       more: "すべて表示",
       additionalInformation: "追加情報",
       experience: "職歴",
