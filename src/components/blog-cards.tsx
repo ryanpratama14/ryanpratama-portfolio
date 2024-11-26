@@ -32,7 +32,7 @@ export default function BlogCards({ data, href, lang, title }: Props) {
                   <LocalTime className="text-blue-300 font-medium line-clamp-1" lang={lang} date={e.publishedAtDate} />
                 </header>
               </section>
-              <small className="line-clamp-2">{e.description}</small>
+              <p className="line-clamp-2">{e.description}</p>
             </li>
           );
         })}
