@@ -15,7 +15,7 @@ export default function CertificationCards({ s, lang }: Props) {
           return (
             <li key={e.name}>
               <LinkButton unstyled href={`${PATHS.certification}/${e.name}`} lang={lang}>
-                <p className="font-semibold hover:underline">{title}</p>
+                <p className="hover:underline">{title}</p>
               </LinkButton>
             </li>
           );
