@@ -36,21 +36,22 @@ export const en = {
       experience: "Experience",
       certifications: "Certifications",
       blog: "Blog",
+      main: "Home",
 
       message: "Let's Connect!",
       additionalInformation: "Additional Information",
+    },
 
-      TECH_STACKS: {
-        programmingLanguages: "Programming Languages",
-        librariesFrameworks: "Libraries & Frameworks",
-        db: "Databases",
-        learning: "I'm learning...",
-      },
+    TECH_STACKS: {
+      programmingLanguages: "Programming Languages",
+      librariesFrameworks: "Libraries & Frameworks",
+      db: "Databases",
+      learning: "I'm learning...",
+    },
 
-      OTHER: {
-        education: "Education",
-        languages: "Languages",
-      },
+    OTHER: {
+      education: "Education",
+      languages: "Languages",
     },
 
     SECTIONS: {

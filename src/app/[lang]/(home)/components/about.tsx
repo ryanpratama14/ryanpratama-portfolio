@@ -10,7 +10,7 @@ export default function About({ s }: Props) {
   const TechStack = ({ name }: { name: keyof TechStack }) => {
     return (
       <section className="space-y-0.5">
-        <p className="text-graydarker">{s.MENUS.TECH_STACKS[name]}</p>
+        <p className="text-graydarker">{s.TECH_STACKS[name]}</p>
         <ul className="flex gap-1 md:gap-1.5 flex-wrap">
           {TECH_STACKS[name].map((e) => {
             return (

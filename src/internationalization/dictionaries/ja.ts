@@ -40,18 +40,19 @@ export const ja: Dictionary = {
       contacts: "連絡先",
       message: "繋がりましょう！",
       blog: "ブログ",
+      main: "ホームページ",
+    },
 
-      TECH_STACKS: {
-        programmingLanguages: "開発言語",
-        librariesFrameworks: "フレームワーク",
-        db: "データベース",
-        learning: "自己学習",
-      },
+    TECH_STACKS: {
+      programmingLanguages: "開発言語",
+      librariesFrameworks: "フレームワーク",
+      db: "データベース",
+      learning: "自己学習",
+    },
 
-      OTHER: {
-        education: "学歴",
-        languages: "言語",
-      },
+    OTHER: {
+      education: "学歴",
+      languages: "言語",
     },
 
     CONSTANTS: {

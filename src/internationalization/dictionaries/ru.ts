@@ -124,19 +124,19 @@ export const ru: Dictionary = {
       contacts: "Контакты",
       experience: "Опыт работы",
       blog: "Блог",
-
+      main: "Главная",
       message: "Давайте свяжемся!",
+    },
 
-      TECH_STACKS: {
-        learning: "Изучаю...",
-        programmingLanguages: "Языки программирования",
-        librariesFrameworks: "Библиотеки и фреймворки",
-        db: "Базы данных",
-      },
-      OTHER: {
-        education: "Образование",
-        languages: "Языки",
-      },
+    TECH_STACKS: {
+      learning: "Изучаю...",
+      programmingLanguages: "Языки программирования",
+      librariesFrameworks: "Библиотеки и фреймворки",
+      db: "Базы данных",
+    },
+    OTHER: {
+      education: "Образование",
+      languages: "Языки",
     },
 
     COUNTER: {
