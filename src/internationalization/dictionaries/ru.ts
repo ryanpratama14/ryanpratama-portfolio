@@ -4,6 +4,11 @@ import type { Dictionary } from "@/types";
 
 export const ru: Dictionary = {
   s: {
+    CERTIFICATIONS: {
+      "jlpt-n3": "Тест на знание японского языка (JLPT) N3",
+      "preparatory-faculty-of-russian-language": "Подготовительный факультет русского языка",
+    },
+
     CONSTANTS: {
       PROJECTS: {
         faotour:

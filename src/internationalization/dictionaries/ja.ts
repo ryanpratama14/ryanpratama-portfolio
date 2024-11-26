@@ -2,6 +2,11 @@ import type { Dictionary } from "@/types";
 
 export const ja: Dictionary = {
   s: {
+    CERTIFICATIONS: {
+      "jlpt-n3": "日本語能力試験N3",
+      "preparatory-faculty-of-russian-language": "ロシア語予備学部",
+    },
+
     PERSONAL_DATA: {
       languages: {
         en: "英語",

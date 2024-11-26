@@ -1,5 +1,6 @@
 import { PATHS } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
+import CertificationCards from "@/components/certification-cards";
 import { useLang } from "@/internationalization/functions";
 import { sanity } from "@/sanity/lib/api";
 import type { Lang } from "@/types";
@@ -22,6 +23,7 @@ export default async function HomePage({ params }: Props) {
       <Experience s={s} lang={lang} isJapanese={isJapanese} />
       <FeaturedProjects s={s} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
+      <CertificationCards s={s} lang={lang} />
     </Fragment>
   );
 }

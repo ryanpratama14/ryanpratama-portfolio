@@ -23,6 +23,11 @@ export const en = {
       yearsExperience: "YoE",
     },
 
+    CERTIFICATIONS: {
+      "jlpt-n3": "Japanese Language Proficiency-Test N3",
+      "preparatory-faculty-of-russian-language": "Preparatory Faculty of Russian Language",
+    },
+
     MENUS: {
       more: "View All",
       about: "About",

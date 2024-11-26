@@ -155,13 +155,8 @@ export const ICONS = {
 };
 
 export const CERTIFICATIONS: Certification[] = [
-  { name: "jlpt-n3", src: PHOTOS.certifications.n3, alt: "JLPT N3 Certification, Ryan Pratama", label: "N3, Japanese-Language Proficiency Test" },
-  {
-    name: "preparatory-faculty-of-russian-language",
-    src: PHOTOS.certifications.podfak,
-    alt: "Preparatory Faculty of Russian Language Certification, Ryan Pratama",
-    label: "Preparatory Faculty of Russian Language",
-  },
+  { name: "jlpt-n3", src: PHOTOS.certifications.n3 },
+  { name: "preparatory-faculty-of-russian-language", src: PHOTOS.certifications.podfak },
 ];
 
 export const PROJECTS: Project[] = [
