@@ -19,7 +19,6 @@ export const sanityRouter = {
     detail: publicProcedure.input(schema.sanity.post.detail).query(async ({ input }) => {
       const { slug } = input;
       const data = await sanityFetch<GetPostBySlugResult>({ query: GetPostBySlug, params: { slug }, tags: ["post-detail"] });
-      if (!data?.slug?.current) return THROW_TRPC.error({ code: "NOT_FOUND", result: data, input });
       return THROW_TRPC.ok({ code: "OK", input, result: formatPostData(data) });
     }),
 
