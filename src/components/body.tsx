@@ -32,7 +32,7 @@ export default function Body({ data = [] }: Props) {
               if (!value?.asset?._ref) return null;
               return (
                 <figure className="space-y-1 my-2">
-                  <Img isStatic={false} alt={value?.alt} className="w-full aspect-auto rounded-md" src={urlFor(value).url()} />
+                  <Img alt={value?.alt} className="w-full aspect-auto rounded-md" src={urlFor(value).url()} />
                   {value?.alt ? <figcaption className="text-gray">{value?.alt}</figcaption> : null}
                 </figure>
               );

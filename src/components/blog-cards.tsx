@@ -19,7 +19,6 @@ export default function BlogCards({ data, href, lang, title }: Props) {
               <section className="flex items-center">
                 {e.mainImageUrl ? (
                   <Img
-                    isStatic={false}
                     src={e.mainImageUrl}
                     alt={e.mainImage?.alt}
                     className="aspect-square rounded-l-md w-[4.25rem] md:w-[5.25rem] object-center object-cover"

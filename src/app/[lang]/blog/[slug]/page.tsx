@@ -51,7 +51,7 @@ export default async function BlogPageBySlug({ params }: Props) {
 
         {data.mainImageUrl ? (
           <figure className="space-y-1">
-            <Img isStatic={false} alt={data?.mainImage?.alt} className="w-full aspect-auto rounded-md" src={data.mainImageUrl} />
+            <Img alt={data?.mainImage?.alt} className="w-full aspect-auto rounded-md" src={data.mainImageUrl} />
             {data.mainImage?.alt ? <figcaption className="text-gray">{data.mainImage?.alt}</figcaption> : null}
           </figure>
         ) : null}
