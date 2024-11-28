@@ -7,7 +7,7 @@ import Img from "@/components/html/img";
 import LocalTime from "@/components/local-time";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
-import { sanity } from "@/sanity/lib/api";
+import { api } from "@/trpc/server";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -19,7 +19,7 @@ type Props = { params: Promise<{ slug: string; lang: Lang }> };
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
   const { slug } = await params;
-  const data = await sanity.post.detail({ slug });
+  const { result: data } = await api.unlogged.sanity.post.detail({ slug });
   if (!data?.slug?.current) return;
 
   return await getMetadata({
@@ -32,11 +32,11 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
 
 export default async function BlogPageBySlug({ params }: Props) {
   const { slug, lang } = await params;
-  const data = await sanity.post.detail({ slug });
+  const { result: data } = await api.unlogged.sanity.post.detail({ slug });
   if (!data?.slug?.current) notFound();
 
   const url = getUrl({ path: (await getHeaders()).path });
-  const relatedData = await sanity.post.list({ slice: 6, slugToRemove: data.slug.current });
+  const relatedData = await api.unlogged.sanity.post.list({ slice: 6, slugToRemove: data.slug.current });
   const { s } = useLang(lang);
 
   return (

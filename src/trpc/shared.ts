@@ -35,11 +35,9 @@ export const THROW_TRPC = {
     input = null as Input,
     result = null as Result,
   }: { code: TRPC_OK_CODE_KEY; message?: string; input?: Input; result?: Result }) => {
-    CONSOLE_TRPC.ok("code", code);
-    CONSOLE_TRPC.ok("input", input);
-    CONSOLE_TRPC.ok("message", message);
-    CONSOLE_TRPC.ok("result", result);
-    return { code, message, input, result };
+    const res = { input, result, code, message };
+    CONSOLE_TRPC.ok("ok", res);
+    return res;
   },
 
   error: <Result = unknown>({
@@ -47,7 +45,7 @@ export const THROW_TRPC = {
     message = ERROR_MESSAGES[code],
     result = null as Result,
   }: { code: TRPC_ERROR_CODE_KEY; message?: string; result?: Result }) => {
-    CONSOLE_TRPC.error("result", result);
+    CONSOLE_TRPC.error("error", result);
     throw new TRPCError({ code, message });
   },
 };

@@ -1,19 +1,19 @@
-import type { PostList } from "@/sanity/lib/api";
+import type { SanityPostListOutput } from "@/server/api/routers/sanity";
 import type { Lang } from "@/types";
 import Container from "./container";
 import Img from "./html/img";
 import LinkButton from "./html/link-button";
 import LocalTime from "./local-time";
 
-type Props = { data: PostList; lang: Lang; href?: string; title: string };
+type Props = { data: SanityPostListOutput; lang: Lang; href?: string; title: string };
 
 export default function BlogCards({ data, href, lang, title }: Props) {
-  if (!data?.length) return null;
+  if (!data.result?.length) return null;
 
   return (
     <Container title={title} lang={lang} href={href}>
       <ul className="grid md:grid-cols-2 gap-3">
-        {data.map((e) => {
+        {data.result.map((e) => {
           return (
             <li key={e._id} className="flex flex-col gap-1.5 md:gap-2">
               <section className="flex items-center">

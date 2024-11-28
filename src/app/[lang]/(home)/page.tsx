@@ -2,7 +2,7 @@ import { PATHS } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import CertificationCards from "@/components/certification-cards";
 import { useLang } from "@/internationalization/functions";
-import { sanity } from "@/sanity/lib/api";
+import { api } from "@/trpc/server";
 import type { Lang } from "@/types";
 import { Fragment } from "react";
 import About from "./components/about";
@@ -14,7 +14,7 @@ type Props = { params: Promise<{ lang: Lang }> };
 
 export default async function HomePage({ params }: Props) {
   const { s, isJapanese, lang } = useLang((await params).lang);
-  const data = await sanity.post.list({ slice: 6 });
+  const data = await api.unlogged.sanity.post.list({ slice: 6 });
 
   return (
     <Fragment>

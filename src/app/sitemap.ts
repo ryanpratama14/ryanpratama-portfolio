@@ -1,7 +1,7 @@
 import { ALL_PATHS, ENDPOINTS, PATHS, getUrl } from "@/app/urls";
 import { LANGS } from "@/internationalization";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { sanity } from "@/sanity/lib/api";
+import { api } from "@/trpc/server";
 import type { Lang } from "@/types";
 import type { MetadataRoute } from "next";
 
@@ -12,7 +12,7 @@ const createEntry = (path: string, lang?: Lang) => ({
 });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const blogPosts = await sanity.post.list({});
+  const { result: blogPosts } = await api.unlogged.sanity.post.list({});
 
   const allPaths = [
     ...ALL_PATHS,
