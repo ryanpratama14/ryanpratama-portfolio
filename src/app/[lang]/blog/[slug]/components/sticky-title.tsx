@@ -4,12 +4,12 @@ import LinkButton from "@/components/html/link-button";
 import LocalTime from "@/components/local-time";
 import { ICONS, MAILTO } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import type { PostDetail } from "@/sanity/lib/api";
+import type { SanityPostDetaiResultlOutput } from "@/server/api/routers/sanity";
 import type { Lang } from "@/types";
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import { useEffect, useState } from "react";
 
-export default function StickyTitle({ data, lang }: { data: PostDetail; lang: Lang }) {
+export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResultlOutput; lang: Lang }) {
   const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {

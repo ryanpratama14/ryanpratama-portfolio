@@ -37,3 +37,4 @@ export const sanityRouter = {
 };
 
 export type SanityPostListOutput = RouterOutputs["sanity"]["post"]["list"];
+export type SanityPostDetaiResultlOutput = RouterOutputs["sanity"]["post"]["detail"]["result"];
