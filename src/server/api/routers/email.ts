@@ -19,7 +19,7 @@ export const emailRouter = createTRPCRouter({
       react: Message(input),
     });
 
-    if (error) return THROW_TRPC.error({ code: "INTERNAL_SERVER_ERROR", message: error.message, data: error });
+    if (error) return THROW_TRPC.error({ code: "INTERNAL_SERVER_ERROR", message: error.message, result: error });
     return THROW_TRPC.ok({ code: "CREATED", input, result: data });
   }),
 });
