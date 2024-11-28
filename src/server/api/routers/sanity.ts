@@ -19,13 +19,14 @@ export const sanityRouter = {
     detail: publicProcedure.input(schema.sanity.post.detail).query(async ({ input }) => {
       const { slug } = input;
       const data = await sanityFetch<GetPostBySlugResult>({ query: GetPostBySlug, params: { slug }, tags: ["post-detail"] });
+      if (!data?.slug?.current) return THROW_TRPC.error({ code: "NOT_FOUND", result: data, input });
       return THROW_TRPC.ok({ code: "OK", input, result: formatPostData(data) });
     }),
 
     list: publicProcedure.input(schema.sanity.post.list).query(async ({ input }) => {
       const { slugToRemove, slice } = input;
       const data = await sanityFetch<GetPostsResult>({ query: GetPosts, tags: ["post-list"] });
-      const formattedData = data.map((item) => formatPostData(item));
+      const formattedData = data.filter((e) => e.slug?.current).map((item) => formatPostData(item));
 
       return THROW_TRPC.ok({
         code: "OK",
