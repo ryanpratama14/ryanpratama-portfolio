@@ -14,7 +14,7 @@ export default async function PdfViewer({ fileUrl, ...rest }: Props) {
 
     if (!isPdf) return <p>File is not a valid PDF.</p>;
 
-    return <iframe {...rest} src={`/pdfjs-dist/web/viewer.html?file=${encodeURIComponent(fileUrl)}`} />;
+    return <iframe {...rest} src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(fileUrl)}`} />;
   } catch (error) {
     console.error("Error loading PDF:", error);
     return <p>Unable to load the file.</p>;
