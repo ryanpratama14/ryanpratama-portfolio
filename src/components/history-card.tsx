@@ -2,6 +2,7 @@ import Img from "@/components/html/img";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useLang } from "@/internationalization/functions";
 import { ICONS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import type { DictionaryStatic, History, Lang } from "@/types";
 import { Icon } from "@iconify-icon/react";
 import LinkButton from "./html/link-button";
@@ -45,10 +46,12 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
           <Card />
         </AccordionTrigger>
         <AccordionContent className="space-y-0.5 text-pretty">
-          {e.about ? <p className="whitespace-pre-line">{e.about}</p> : null}
-          <ul className="ml-4 list-disc">
+          {e.about ? <p className={cn("whitespace-pre-line max-md:text-xs")}>{e.about}</p> : null}
+          <ul className="ml-3 list-disc">
             {e.duty.map((duty) => (
-              <li key={duty}>{duty}</li>
+              <li key={duty} className={cn("max-md:text-xs")}>
+                {duty}
+              </li>
             ))}
           </ul>
         </AccordionContent>

@@ -8,7 +8,7 @@ const getUrl = ({ path, lang, type = "production" }: { path: string; lang?: Lang
 const isExternalLink = (href: string) => href.startsWith("http") || href.includes(ENDPOINTS.resume);
 
 const getBaseUrl = () => {
-  if (IS_CLIENT) return `${window.location.origin}`;
+  if (IS_CLIENT) return window.location.origin;
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return `http://localhost:${process.env.PORT ?? 3000}`;
 };

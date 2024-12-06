@@ -2,7 +2,7 @@ import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
 import type { Metadata } from "next";
-import { ENDPOINTS, getUrl } from "./urls";
+import { URLS, getUrl } from "./urls";
 
 type OpenGraphArticle = {
   publishedTime?: string;
@@ -32,7 +32,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
   const modifiedTitle = title ?? MAIN_TITLE;
   const getMetadataTitle = () => (modifiedTitle === MAIN_TITLE ? modifiedTitle : `${modifiedTitle} | ${MAIN_TITLE}`);
   const url = getUrl({ path });
-  const images = [{ url: imageUrl ?? getUrl({ path: ENDPOINTS.ogImage }), alt: getMetadataTitle() }];
+  const images = [{ url: imageUrl ?? URLS.ogImage, alt: getMetadataTitle() }];
   const author = MAIN_TITLE;
 
   const openGraphData: OpenGraphArticle = {
