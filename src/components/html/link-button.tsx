@@ -8,7 +8,7 @@ import type { VariantProps } from "tailwind-variants";
 
 type Props = LinkProps & ComponentProps<"a"> & VariantProps<typeof VARIANTS.Button> & { children: React.ReactNode; lang?: Lang; unstyled?: boolean };
 
-const LinkButton = ({ children, className, style, href, lang, target, rel, unstyled, ...rest }: Props) => {
+export default function LinkButton({ children, className, style, href, lang, target, rel, unstyled, ...rest }: Props) {
   return (
     <Link
       href={addPath({ lang, path: href })}
@@ -21,6 +21,4 @@ const LinkButton = ({ children, className, style, href, lang, target, rel, unsty
       <span className="sr-only">Link</span>
     </Link>
   );
-};
-
-export default LinkButton;
+}

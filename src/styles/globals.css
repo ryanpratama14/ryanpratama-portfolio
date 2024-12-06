@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   h1,
   h2,
   h3,
@@ -23,6 +27,22 @@
   }
 
   h2 {
+    @apply text-base md:text-lg;
+  }
+
+  h3 {
+    @apply text-base md:text-lg;
+  }
+
+  h4 {
+    @apply text-base md:text-lg;
+  }
+
+  h5 {
+    @apply text-base md:text-lg;
+  }
+
+  h6 {
     @apply text-base md:text-lg;
   }
 
