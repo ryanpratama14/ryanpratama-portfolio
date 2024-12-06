@@ -30,6 +30,7 @@ const URLS = {
   trpc: getUrl({ path: ENDPOINTS.trpc, type: "development" }),
   ogImage: getUrl({ path: ENDPOINTS.ogImage }),
   sitemap: getUrl({ path: ENDPOINTS.sitemap }),
+  resume: getUrl({ path: ENDPOINTS.resume }),
 };
 
 export { addPath, getBaseUrl, getUrl, isExternalLink, createUrl, URLS, BASE_URL, ENDPOINTS, COOKIES, HEADERS, ALL_PATHS, PATHS, IS_CLIENT };

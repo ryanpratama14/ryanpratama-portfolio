@@ -1,4 +1,4 @@
-import { ENDPOINTS, getUrl } from "@/app/urls";
+import { URLS } from "@/app/urls";
 import Container from "@/components/container";
 import PdfViewer from "@/components/pdf-viewer";
 import { useLang } from "@/internationalization/functions";
@@ -12,7 +12,7 @@ export default async function ResumePage({ params }: Props) {
 
   return (
     <Container title={s.SECTIONS.resume}>
-      <PdfViewer className="min-h-[50vh]" fileUrl={getUrl({ path: ENDPOINTS.resume })} />
+      <PdfViewer className="min-h-[50vh]" fileUrl={URLS.resume} />
     </Container>
   );
 }
