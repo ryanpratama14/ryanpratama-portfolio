@@ -6,6 +6,7 @@ import { getHeaders } from "@/lib/actions";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
@@ -28,7 +29,17 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
+      <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
       <body className={cn({ "main-padding text-white bg-black font-sans": !isStudio })}>
+        <noscript>
+          <iframe
+            title="GTM"
+            src={`https://www.googletagmanager.com/ns.html?id=${env.NEXT_PUBLIC_GTM_ID}`}
+            height={0}
+            width={0}
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {isStudio ? (
           <main>{children}</main>
         ) : (

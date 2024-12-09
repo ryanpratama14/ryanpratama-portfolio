@@ -17,6 +17,7 @@
     "@headlessui/react": "^2.2.0",
     "@hookform/resolvers": "^3.9.1",
     "@iconify-icon/react": "^2.2.0",
+    "@next/third-parties": "^15.0.4",
     "@portabletext/react": "^3.2.0",
     "@radix-ui/react-accordion": "^1.2.1",
     "@react-email/components": "^0.0.30",
@@ -62,7 +63,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@formatjs/intl-localematcher": "^0.5.8",
+    "@formatjs/intl-localematcher": "^0.5.9",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.1",
