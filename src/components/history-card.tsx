@@ -47,7 +47,7 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
         </AccordionTrigger>
         <AccordionContent className="space-y-0.5 text-pretty">
           {e.about ? <p className={cn("whitespace-pre-line max-md:text-xs")}>{e.about}</p> : null}
-          <ul className="ml-3 list-disc">
+          <ul className="ml-4 list-disc">
             {e.duty.map((duty) => (
               <li key={duty} className={cn("max-md:text-xs")}>
                 {duty}
