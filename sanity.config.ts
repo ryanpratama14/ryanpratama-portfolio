@@ -4,6 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { apiVersion, dataset, projectId } from "./src/sanity/env";
+import { defaultDocumentNode } from "./src/sanity/lib/default-document-node";
 import { schema } from "./src/sanity/schema-types";
 import { structure } from "./src/sanity/structure";
 
@@ -12,5 +13,5 @@ export default defineConfig({
   projectId,
   dataset,
   schema,
-  plugins: [structureTool({ structure }), visionTool({ defaultApiVersion: apiVersion })],
+  plugins: [structureTool({ defaultDocumentNode, structure }), visionTool({ defaultApiVersion: apiVersion })],
 });
