@@ -12,7 +12,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
   return await getMetadata({ title: s.MENUS.blog });
 };
 
-export default async function BlogPage({ params }: Props) {
+export default async function PostPage({ params }: Props) {
   const { s, lang } = useLang((await params).lang);
   const data = await api.unlogged.sanity.post.list({});
 

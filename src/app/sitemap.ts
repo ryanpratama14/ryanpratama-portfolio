@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const allPaths = [
     ...ALL_PATHS,
-    ...blogPosts.map((e) => `${PATHS.blog}/${e.slug?.current}`),
+    ...blogPosts.map((e) => `${PATHS.post}/${e.slug?.current}`),
     ...CERTIFICATIONS.map((e) => `${PATHS.certification}/${e.name}`),
   ];
 

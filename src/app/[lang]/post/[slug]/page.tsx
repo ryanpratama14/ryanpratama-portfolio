@@ -30,7 +30,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
   });
 };
 
-export default async function BlogPageBySlug({ params }: Props) {
+export default async function PostPageBySlug({ params }: Props) {
   const { slug, lang } = await params;
   const { result: data } = await api.unlogged.sanity.post.detail({ slug });
   if (!data?.slug?.current) notFound();

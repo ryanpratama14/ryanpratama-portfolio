@@ -9,7 +9,7 @@ import { type RouterOutputs, THROW_TRPC } from "@/trpc/shared";
 const formatPostData = (post: GetPostBySlugResult) => {
   return {
     ...post,
-    href: `${PATHS.blog}/${post?.slug?.current}`,
+    href: `${PATHS.post}/${post?.slug?.current}`,
     publishedAtDate: post?.publishedAt ? new Date(post?.publishedAt) : new Date(),
   };
 };
