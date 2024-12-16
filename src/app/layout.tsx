@@ -1,18 +1,23 @@
 import { getMetadata } from "@/app/metadata";
+import { DisableDraftMode } from "@/components/disable-draft-mode";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { env } from "@/env";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
 import { cn } from "@/lib/utils";
+import { SanityLive } from "@/sanity/lib/live";
 import { COLORS } from "@/styles";
 import TRPCReactProvider from "@/trpc/react";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
+import { VisualEditing } from "next-sanity";
+import { draftMode } from "next/headers";
 import NextTopLoader from "nextjs-toploader";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Fragment } from "react";
+
 import "@/styles/globals.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -40,6 +45,14 @@ export default async function RootLayout({ children }: Props) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <SanityLive />
+        {(await draftMode()).isEnabled && (
+          <Fragment>
+            <DisableDraftMode />
+            <VisualEditing />
+          </Fragment>
+        )}
+
         {isStudio ? (
           <main>{children}</main>
         ) : (
