@@ -5,13 +5,10 @@ import { useDraftModeEnvironment } from "next-sanity/hooks";
 export function DisableDraftMode() {
   const environment = useDraftModeEnvironment();
 
-  // Only show the disable draft mode button when outside of Presentation Tool
-  if (environment !== "live" && environment !== "unknown") {
-    return null;
-  }
+  if (environment !== "live" && environment !== "unknown") return null;
 
   return (
-    <a href="/api/draft-mode/disable" className="fixed bottom-4 right-4 bg-gray-50 px-4 py-2">
+    <a href="/api/draft-mode/disable" className="fixed right-0 top-0 bg-white text-black font-bold px-2 py-0.5 text-sm shadow z-50">
       Disable Draft Mode
     </a>
   );
