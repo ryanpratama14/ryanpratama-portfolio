@@ -152,6 +152,7 @@ export const ICONS = {
   instagram: "mdi:instagram",
   x: "ri:twitter-x-fill",
   facebook: "gg:facebook",
+  spotify: "mdi:spotify",
 };
 
 export const CERTIFICATIONS: Certification[] = [
@@ -264,4 +265,5 @@ export const CONTACTS: Contact[] = [
   { href: "https://t.me/ryanpratama14", label: "Telegram", icon: ICONS.telegram },
   { href: "https://wa.me/6281210425333", label: "WhatsApp", icon: ICONS.whatsapp },
   { href: "https://www.instagram.com/ryanpratama14", label: "Instagram", icon: ICONS.instagram },
+  { href: "https://open.spotify.com/user/totorogoriorio", label: "Spotify", icon: ICONS.spotify },
 ];

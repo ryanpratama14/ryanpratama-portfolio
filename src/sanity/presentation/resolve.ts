@@ -7,7 +7,7 @@ export const resolve: PresentationPluginOptions["resolve"] = {
       select: { title: "title", slug: "slug.current" },
       resolve: (doc) => ({
         locations: [
-          { title: doc?.title, href: `${PATHS.post}/${doc?.slug}` },
+          { title: doc?.title || "Untitled", href: `${PATHS.post}/${doc?.slug}` },
           { title: "Posts Index", href: "/blog" },
         ],
       }),
