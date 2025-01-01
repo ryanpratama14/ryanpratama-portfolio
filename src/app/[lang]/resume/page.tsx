@@ -12,7 +12,7 @@ export default async function ResumePage({ params }: Props) {
 
   return (
     <Container title={s.SECTIONS.resume}>
-      <PdfViewer className="min-h-[50vh]" fileUrl={URLS.resume} />
+      <PdfViewer className="min-h-[75vh]" fileUrl={URLS.resume} />
     </Container>
   );
 }
