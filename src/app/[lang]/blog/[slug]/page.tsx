@@ -27,6 +27,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
     description: data.description,
     openGraphArticle: { publishedTime: data.publishedAt, modifiedTime: data._updatedAt },
     imageUrl: data.mainImageUrl,
+    tags: data.tags,
   });
 };
 

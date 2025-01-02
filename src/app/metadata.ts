@@ -48,7 +48,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
     creator: author,
     publisher: author,
     category: "education",
-    keywords: tags ?? keywords,
+    keywords: tags?.length ? tags : keywords,
     referrer: "origin-when-cross-origin",
     authors: [{ name: MAIN_TITLE, url }],
     metadataBase: new URL(url),
@@ -63,7 +63,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
       locale,
       type: "article",
       authors: MAIN_TITLE,
-      tags: tags ?? keywords,
+      tags: tags?.length ? tags : keywords,
       ...openGraphData,
     },
     twitter: {
