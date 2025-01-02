@@ -1,4 +1,11 @@
-import type { Certification, Contact, History, Other, Project, TechStack } from "@/types";
+import type {
+  Certification,
+  Contact,
+  History,
+  Other,
+  Project,
+  TechStack,
+} from "@/types";
 import dayjs from "dayjs";
 
 import avatar from "#/images/avatar.webp";
@@ -157,7 +164,10 @@ export const ICONS = {
 
 export const CERTIFICATIONS: Certification[] = [
   { name: "jlpt-n3", src: PHOTOS.certifications.n3 },
-  { name: "preparatory-faculty-of-russian-language", src: PHOTOS.certifications.podfak },
+  {
+    name: "preparatory-faculty-of-russian-language",
+    src: PHOTOS.certifications.podfak,
+  },
 ];
 
 export const PROJECTS: Project[] = [
@@ -260,10 +270,34 @@ export const TECH_STACKS: TechStack = {
 
 export const CONTACTS: Contact[] = [
   { href: MAILTO, label: "Email", icon: ICONS.email },
-  { href: "https://github.com/ryanpratama14", label: "GitHub", icon: ICONS.github },
-  { href: "https://www.linkedin.com/in/ryanpratama14", label: "LinkedIn", icon: ICONS.linkedin },
-  { href: "https://t.me/ryanpratama14", label: "Telegram", icon: ICONS.telegram },
-  { href: "https://wa.me/6281210425333", label: "WhatsApp", icon: ICONS.whatsapp },
-  { href: "https://www.instagram.com/ryanpratama14", label: "Instagram", icon: ICONS.instagram },
-  { href: "https://open.spotify.com/user/totorogoriorio", label: "Spotify", icon: ICONS.spotify },
+  {
+    href: "https://github.com/ryanpratama14",
+    label: "GitHub",
+    icon: ICONS.github,
+  },
+  {
+    href: "https://www.linkedin.com/in/ryanpratama14",
+    label: "LinkedIn",
+    icon: ICONS.linkedin,
+  },
+  {
+    href: "https://t.me/ryanpratama14",
+    label: "Telegram",
+    icon: ICONS.telegram,
+  },
+  {
+    href: "https://wa.me/6281210425333",
+    label: "WhatsApp",
+    icon: ICONS.whatsapp,
+  },
+  {
+    href: "https://www.instagram.com/ryanpratama14",
+    label: "Instagram",
+    icon: ICONS.instagram,
+  },
+  {
+    href: "https://open.spotify.com/user/totorogoriorio",
+    label: "Spotify",
+    icon: ICONS.spotify,
+  },
 ];
