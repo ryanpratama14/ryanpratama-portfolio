@@ -61,6 +61,18 @@ export default async function BlogPageBySlug({ params }: Props) {
           <h2 className="font-semibold">{s.SECTIONS.share}</h2>
           <Share url={url} />
         </section>
+
+        {data.tags?.length ? (
+          <ul className="flex gap-2 items-center flex-wrap">
+            {data.tags.map((e) => {
+              return (
+                <li key={e}>
+                  <small className="bg-white text-black px-2 py-1 rounded-md">{e}</small>
+                </li>
+              );
+            })}
+          </ul>
+        ) : null}
       </article>
 
       <BlogCards title={s.MENUS.blog} lang={lang} data={relatedData} />

@@ -98,6 +98,7 @@ export type Post = {
   }>;
   publishedAt?: string;
   description?: string;
+  tags?: Array<string>;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -251,6 +252,7 @@ export type GetPostsResult = Array<{
   }> | null;
   publishedAt?: string;
   description?: string;
+  tags?: Array<string>;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -318,6 +320,7 @@ export type GetPostBySlugResult = {
   }> | null;
   publishedAt?: string;
   description?: string;
+  tags?: Array<string>;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;

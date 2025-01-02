@@ -16,9 +16,10 @@ type Props = {
   description?: string;
   title?: string;
   imageUrl?: string | null;
+  tags?: string[];
 };
 
-export const getMetadata = async ({ title, description, imageUrl, openGraphArticle }: Props): Promise<Metadata> => {
+export const getMetadata = async ({ title, description, imageUrl, openGraphArticle, tags }: Props): Promise<Metadata> => {
   const lang = (await getHeaders()).lang;
   const path = (await getHeaders()).path;
 
@@ -47,7 +48,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
     creator: author,
     publisher: author,
     category: "education",
-    keywords,
+    keywords: tags ?? keywords,
     referrer: "origin-when-cross-origin",
     authors: [{ name: MAIN_TITLE, url }],
     metadataBase: new URL(url),
@@ -62,7 +63,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
       locale,
       type: "article",
       authors: MAIN_TITLE,
-      tags: keywords,
+      tags: tags ?? keywords,
       ...openGraphData,
     },
     twitter: {

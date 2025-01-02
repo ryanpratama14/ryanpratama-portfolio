@@ -53,6 +53,16 @@ export const postType = defineType({
       type: "string",
       group: "seo",
     }),
+
+    defineField({
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "string" }],
+      group: "seo",
+      options: { layout: "tags" },
+    }),
+
     defineField({
       name: "body",
       title: "Description",
