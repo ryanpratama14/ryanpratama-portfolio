@@ -25,8 +25,8 @@ export default function Share({ url }: { url: string }) {
     <ul className="flex gap-2">
       {DATA.map((e) => (
         <li key={e.icon}>
-          <span className="sr-only">{url}</span>
           <e.Component url={url}>
+            <span className="sr-only">{url}</span>
             <Icon
               icon={e.icon}
               width={22}
