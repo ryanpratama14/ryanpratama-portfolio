@@ -13,7 +13,7 @@ export default function Img({ alt, src, className, priority }: Props) {
 
   return (
     <Image
-      alt={alt ?? ""}
+      alt={alt || ""}
       src={src}
       width={1000}
       height={1000}

@@ -25,7 +25,7 @@ export const postType = defineType({
       name: "mainImage",
       type: "image",
       options: { hotspot: true },
-      fields: [{ name: "alt", type: "string", title: "Alternative text" }],
+      fields: [{ name: "alt", type: "string", title: "Caption" }],
       group: "detail",
     }),
     defineField({
@@ -68,7 +68,7 @@ export const postType = defineType({
       title: "Description",
       type: "array",
       group: "detail",
-      of: [{ type: "block" }, { type: "image", fields: [{ name: "alt", type: "string", title: "Alternative text" }] }],
+      of: [{ type: "block" }, { type: "image", fields: [{ name: "alt", type: "string", title: "Caption" }] }],
     }),
   ],
 });

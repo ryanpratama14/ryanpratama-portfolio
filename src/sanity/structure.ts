@@ -6,7 +6,6 @@ export const structure: StructureResolver = (S) =>
     .title("Blog")
     .items([
       S.documentTypeListItem("post").title("Posts"),
-      S.documentTypeListItem("category").title("Categories"),
       S.divider(),
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
       ...S.documentTypeListItems().filter((item) => item.getId() && !["post", "category"].includes(item.getId()!)),
