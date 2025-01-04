@@ -25,7 +25,10 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
   return await getMetadata({
     title: data.title,
     description: data.description,
-    openGraphArticle: { publishedTime: data.publishedAt, modifiedTime: data._updatedAt },
+    openGraphArticle: {
+      publishedTime: data.publishedAt,
+      modifiedTime: data._updatedAt,
+    },
     imageUrl: data.mainImageUrl,
     tags: data.tags,
   });
@@ -37,7 +40,10 @@ export default async function BlogPageBySlug({ params }: Props) {
   if (!data?.slug?.current) notFound();
 
   const url = getUrl({ path: (await getHeaders()).path });
-  const relatedData = await api.unlogged.sanity.post.list({ slice: 6, slugToRemove: data.slug.current });
+  const relatedData = await api.unlogged.sanity.post.list({
+    slice: 6,
+    slugToRemove: data.slug.current,
+  });
   const { s } = useLang(lang);
 
   return (
@@ -68,7 +74,7 @@ export default async function BlogPageBySlug({ params }: Props) {
             {data.tags.map((e) => {
               return (
                 <li key={e}>
-                  <small className="bg-white text-black px-2 py-1 rounded-md">{e}</small>
+                  <small className="bg-white text-black px-1.5 py-1 rounded-md">{e}</small>
                 </li>
               );
             })}
