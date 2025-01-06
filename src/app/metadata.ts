@@ -28,18 +28,18 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
     splittedLocale: locale,
   } = useLang(lang);
   const MAIN_TITLE = me.fullName;
-  const MAIN_DESCRIPTION = description ?? `${me.fullName} — ${me.summaryShort}`;
+  const MAIN_DESCRIPTION = description || `${me.fullName} — ${me.summaryShort}`;
 
-  const modifiedTitle = title ?? MAIN_TITLE;
+  const modifiedTitle = title || MAIN_TITLE;
   const getMetadataTitle = () => (modifiedTitle === MAIN_TITLE ? modifiedTitle : `${modifiedTitle} | ${MAIN_TITLE}`);
   const url = getUrl({ path });
-  const images = [{ url: imageUrl ?? URLS.ogImage, alt: getMetadataTitle() }];
+  const images = [{ url: imageUrl || URLS.ogImage, alt: getMetadataTitle() }];
   const author = MAIN_TITLE;
 
   const openGraphData: OpenGraphArticle = {
     ...openGraphArticle,
-    publishedTime: openGraphArticle?.publishedTime ?? new Date().toISOString(),
-    modifiedTime: openGraphArticle?.publishedTime ?? new Date().toISOString(),
+    publishedTime: openGraphArticle?.publishedTime || new Date().toISOString(),
+    modifiedTime: openGraphArticle?.publishedTime || new Date().toISOString(),
   };
 
   return {

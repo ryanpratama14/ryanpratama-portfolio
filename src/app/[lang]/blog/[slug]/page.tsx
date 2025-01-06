@@ -7,6 +7,7 @@ import Img from "@/components/html/img";
 import LocalTime from "@/components/local-time";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
+import { VARIANTS } from "@/styles";
 import { api } from "@/trpc/server";
 import type { Lang } from "@/types";
 import type { Metadata } from "next";
@@ -25,10 +26,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
   return await getMetadata({
     title: data.title,
     description: data.description,
-    openGraphArticle: {
-      publishedTime: data.publishedAt,
-      modifiedTime: data._updatedAt,
-    },
+    openGraphArticle: { publishedTime: data.publishedAt, modifiedTime: data._updatedAt },
     imageUrl: data.mainImageUrl,
     tags: data.tags,
   });
@@ -70,11 +68,11 @@ export default async function BlogPageBySlug({ params }: Props) {
         </section>
 
         {data.tags?.length ? (
-          <ul className="flex gap-2 items-center flex-wrap">
+          <ul className="flex gap-1 md:gap-1.5 flex-wrap">
             {data.tags.map((e) => {
               return (
                 <li key={e}>
-                  <small className="bg-white text-black px-1.5 py-1 rounded-md">{e}</small>
+                  <small className={VARIANTS.Box({ style: "techstack" })}>{e}</small>
                 </li>
               );
             })}
