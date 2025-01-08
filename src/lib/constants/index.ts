@@ -1,4 +1,4 @@
-import type { Certification, Contact, History, Other, Project, TechStack } from "@/types";
+import type { Certification, Contact, DictionaryStatic, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 import avatar from "#/images/avatar.webp";
@@ -19,10 +19,12 @@ import turta from "#/images/project/turta.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
 
-export const PERSONALS = {
+export const PERSONALS: { age: number; yoe: number; x: string; mailTo: string; location: keyof DictionaryStatic["LOCATIONS"] } = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
   yoe: +(dayjs().diff(EXPERIENCE_START_DATE, "month") / 12).toFixed(1),
   x: "@totorogoriorio",
+  mailTo: "mailto:ryanpratama.dev@gmail.com",
+  location: "bali",
 };
 
 export const PHOTOS = {
@@ -31,8 +33,6 @@ export const PHOTOS = {
   certifications: { n3, podfak },
   avatar,
 };
-
-export const MAILTO = "mailto:ryanpratama.dev@gmail.com";
 
 export const EXPERIENCES: History[] = [
   {
@@ -47,10 +47,10 @@ export const EXPERIENCES: History[] = [
   {
     key: "freelance",
     src: PHOTOS.logo.freelance,
-    href: MAILTO,
+    href: PERSONALS.mailTo,
     since: dayjs("2024-11").toDate(),
     till: null,
-    location: "bali",
+    location: PERSONALS.location,
     type: "remote",
   },
   {
@@ -255,14 +255,11 @@ export const TECH_STACKS: TechStack = {
   learning: [
     { label: "Swift", icon: ICONS.swift },
     { label: "Rust", icon: ICONS.rust },
-    // { label: "Flutter", icon: ICONS.flutter },
-    // { label: "Go", icon: ICONS.go },
-    // { label: "Vue / Nuxt.js", icon: ICONS.vue, icon2: ICONS.nuxtjs },
   ],
 };
 
 export const CONTACTS: Contact[] = [
-  { href: MAILTO, label: "Email", icon: ICONS.email },
+  { href: PERSONALS.mailTo, label: "Email", icon: ICONS.email },
   {
     href: "https://github.com/ryanpratama14",
     label: "GitHub",
@@ -279,7 +276,7 @@ export const CONTACTS: Contact[] = [
     icon: ICONS.telegram,
   },
   {
-    href: "https://wa.me/6281210425333",
+    href: "https://wa.me/+6281210425333",
     label: "WhatsApp",
     icon: ICONS.whatsapp,
   },
