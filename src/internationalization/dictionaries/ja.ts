@@ -106,7 +106,7 @@ export const ja: Dictionary = {
         },
 
         freelance: {
-          label: "連絡する",
+          label: "RYPR Studio",
           desc: "フリーランスのフルスタックエンジニア",
           duty: [
             "デバイス間で互換性のある2つのレスポンシブWebアプリを構築し、スムーズなローディングアニメーションを統合。",

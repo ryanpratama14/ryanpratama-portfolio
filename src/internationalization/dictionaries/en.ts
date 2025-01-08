@@ -131,7 +131,7 @@ export const en = {
         },
 
         freelance: {
-          label: "Contact Me",
+          label: "RYPR Studio",
           desc: "Freelance Full-stack Engineer",
           duty: [
             "Built two responsive web apps compatible across devices, integrating smooth loading animations.",

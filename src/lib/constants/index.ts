@@ -1,11 +1,4 @@
-import type {
-  Certification,
-  Contact,
-  History,
-  Other,
-  Project,
-  TechStack,
-} from "@/types";
+import type { Certification, Contact, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
 
 import avatar from "#/images/avatar.webp";
@@ -42,15 +35,6 @@ export const PHOTOS = {
 export const MAILTO = "mailto:ryanpratama.dev@gmail.com";
 
 export const EXPERIENCES: History[] = [
-  // {
-  //   key: "freelance",
-  //   src: PHOTOS.logo.freelance,
-  //   href: MAILTO,
-  //   since: dayjs("2024-11").toDate(),
-  //   till: null,
-  //   location: "bali",
-  //   type: "remote",
-  // },
   {
     key: "rave",
     src: PHOTOS.logo.rave,
@@ -58,6 +42,15 @@ export const EXPERIENCES: History[] = [
     since: dayjs("2024-11").toDate(),
     till: null,
     location: "singapore",
+    type: "remote",
+  },
+  {
+    key: "freelance",
+    src: PHOTOS.logo.freelance,
+    href: MAILTO,
+    since: dayjs("2024-11").toDate(),
+    till: null,
+    location: "bali",
     type: "remote",
   },
   {
