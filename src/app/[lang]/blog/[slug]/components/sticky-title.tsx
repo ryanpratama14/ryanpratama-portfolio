@@ -2,7 +2,7 @@
 
 import LinkButton from "@/components/html/link-button";
 import LocalTime from "@/components/local-time";
-import { ICONS, MAILTO } from "@/lib/constants";
+import { ICONS, PERSONALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import type { SanityPostDetaiResultlOutput } from "@/server/api/routers/sanity";
 import type { Lang } from "@/types";
@@ -41,7 +41,7 @@ export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResul
 
         <LinkButton
           unstyled
-          href={MAILTO}
+          href={PERSONALS.mailTo}
           className="shadow size-8 text-[1.3rem] md:size-9 md:text-2xl aspect-square rounded-full flex items-center justify-center bg-white hover:bg-white/80 text-blue-600"
         >
           <Icon icon={ICONS.email} />
