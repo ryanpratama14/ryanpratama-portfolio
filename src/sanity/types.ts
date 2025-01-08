@@ -89,13 +89,6 @@ export type Post = {
     _type: "image";
   };
   slug?: Slug;
-  categories?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "category";
-  }>;
   publishedAt?: string;
   description?: string;
   tags?: Array<string>;
@@ -188,17 +181,6 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type Category = {
-  _id: string;
-  _type: "category";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  slug?: Slug;
-  description?: string;
-};
-
 export type MediaTag = {
   _id: string;
   _type: "media.tag";
@@ -214,7 +196,7 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Category | MediaTag | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | MediaTag | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: GetPosts
@@ -240,16 +222,6 @@ export type GetPostsResult = Array<{
     _type: "image";
   };
   slug?: Slug;
-  categories: Array<{
-    _id: string;
-    _type: "category";
-    _createdAt: string;
-    _updatedAt: string;
-    _rev: string;
-    title?: string;
-    slug?: Slug;
-    description?: string;
-  }> | null;
   publishedAt?: string;
   description?: string;
   tags?: Array<string>;
@@ -284,6 +256,7 @@ export type GetPostsResult = Array<{
     _key: string;
   }>;
   mainImageUrl: string | null;
+  categories: null;
 }>;
 // Variable: GetPostBySlug
 // Query: *[_type == "post" && show == true && slug.current == $slug && defined(slug.current)][0] {    ...,    "mainImageUrl": mainImage.asset -> url,    categories[] -> {        ...,    }}
@@ -308,16 +281,6 @@ export type GetPostBySlugResult = {
     _type: "image";
   };
   slug?: Slug;
-  categories: Array<{
-    _id: string;
-    _type: "category";
-    _createdAt: string;
-    _updatedAt: string;
-    _rev: string;
-    title?: string;
-    slug?: Slug;
-    description?: string;
-  }> | null;
   publishedAt?: string;
   description?: string;
   tags?: Array<string>;
@@ -352,6 +315,7 @@ export type GetPostBySlugResult = {
     _key: string;
   }>;
   mainImageUrl: string | null;
+  categories: null;
 } | null;
 
 // Query TypeMap

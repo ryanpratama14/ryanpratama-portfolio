@@ -30,7 +30,7 @@ export const generateMetadata = async () => await getMetadata({});
 type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
-  const isStudio = (await getHeaders()).path.startsWith("studio");
+  const isStudio = (await getHeaders()).path.includes("studio");
 
   return (
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>

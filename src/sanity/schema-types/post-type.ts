@@ -36,12 +36,6 @@ export const postType = defineType({
       group: "detail",
     }),
     defineField({
-      name: "categories",
-      type: "array",
-      of: [defineArrayMember({ type: "reference", to: { type: "category" } })],
-      group: "detail",
-    }),
-    defineField({
       name: "publishedAt",
       type: "datetime",
       validation: (Rule) => Rule.required(),
