@@ -2,13 +2,14 @@ import { cn } from "@/lib/utils";
 import Image, { type StaticImageData } from "next/image";
 
 type Props = {
-  alt: string | undefined;
-  src: StaticImageData | string;
+  alt: string | undefined | null;
+  src: StaticImageData | string | undefined | null;
   className?: string;
   priority?: boolean;
 };
 
 export default function Img({ alt, src, className, priority }: Props) {
+  if (!src) return null;
   const isDynamic = typeof src === "string";
 
   return (
