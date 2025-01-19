@@ -60,6 +60,13 @@ export const ru: Dictionary = {
           duty: ["TBA"],
         },
 
+        waterhub: {
+          label: "WaterHub",
+          desc: "Freelance фронтенд-разработчик",
+          duty: ["TBA"],
+          about: "",
+        },
+
         freelance: {
           label: "RYPR Studio",
           desc: "Freelance фулстек-разработчик",

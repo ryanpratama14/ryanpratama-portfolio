@@ -105,6 +105,13 @@ export const ja: Dictionary = {
           duty: ["TBA"],
         },
 
+        waterhub: {
+          label: "WaterHub",
+          desc: "フリーランスのフロントエンドエンジニア",
+          duty: ["TBA"],
+          about: "",
+        },
+
         freelance: {
           label: "RYPR Studio",
           desc: "フリーランスのフルスタックエンジニア",

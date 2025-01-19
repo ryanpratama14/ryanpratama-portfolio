@@ -123,6 +123,13 @@ export const en = {
           ],
         },
 
+        waterhub: {
+          label: "WaterHub",
+          desc: "Frelance Front-end Engineer",
+          duty: ["TBA"],
+          about: "",
+        },
+
         rave: {
           label: "Rave Tech Pte. Ltd.",
           desc: "Front-end Engineer",

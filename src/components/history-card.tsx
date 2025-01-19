@@ -25,10 +25,14 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
         <Img src={e.src} alt={e.label} className="size-full rounded-l-md w-[4.25rem] md:w-[5.25rem]" />
 
         <section className="pl-2.5 md:pl-3 flex flex-col">
-          <LinkButton unstyled href={e.href} className="line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem]">
-            <Icon icon={ICONS.link} width={12} />
-            <p className="font-medium hover:underline">{e.label}</p>
-          </LinkButton>
+          {e.href ? (
+            <LinkButton unstyled href={e.href} className="line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem]">
+              <Icon icon={ICONS.link} width={12} />
+              <p className="font-medium hover:underline">{e.label}</p>
+            </LinkButton>
+          ) : (
+            <p className="font-medium">{e.label}</p>
+          )}
           <p className="text-gray font-medium line-clamp-1">{e.desc}</p>
 
           <small className="text-graydarker">

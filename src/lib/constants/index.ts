@@ -9,6 +9,7 @@ import freelance from "#/images/logo/freelance.webp";
 import kfu from "#/images/logo/kfu.webp";
 import nutech from "#/images/logo/nutech.webp";
 import rave from "#/images/logo/rave.webp";
+import waterhub from "#/images/logo/waterhub.webp";
 import belinsky from "#/images/project/belinsky.webp";
 import faotour from "#/images/project/faotour.webp";
 import hebronstar from "#/images/project/hebronstar.webp";
@@ -28,13 +29,22 @@ export const PERSONALS: { age: number; yoe: number; x: string; mailTo: string; l
 };
 
 export const PHOTOS = {
-  logo: { nutech, faotech, kfu, rave, freelance },
+  logo: { nutech, faotech, kfu, rave, freelance, waterhub },
   project: { belinsky, hebronstar, faotour, kima, mandiri, turta, pemudaicmi },
   certifications: { n3, podfak },
   avatar,
 };
 
 export const EXPERIENCES: History[] = [
+  // {
+  //   key: "waterhub",
+  //   src: PHOTOS.logo.waterhub,
+  //   href: "",
+  //   since: dayjs("2025-01").toDate(),
+  //   till: null,
+  //   location: "jakarta",
+  //   type: "remote",
+  // },
   {
     key: "rave",
     src: PHOTOS.logo.rave,
