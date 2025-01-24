@@ -30,7 +30,7 @@ export default function Share({ url }: { url: string }) {
             <Icon
               icon={e.icon}
               width={22}
-              className="animate size-8 text-white bg-blue-600 hover:bg-blue-800 shadow rounded-full flex items-center justify-center"
+              className="animate size-8 text-white bg-blue-600 hover:bg-blue-800 shadow-sm rounded-full flex items-center justify-center"
             />
           </e.Component>
         </li>

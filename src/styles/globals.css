@@ -1,8 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-black: #202020;
+  --color-gray: #d4d4d4;
+  --color-graydarker: #aeaeae;
+  --color-grayborder: rgb(174, 174, 174, 40%);
+  --color-graybg: rgb(174, 174, 174, 20%);
+  --color-grayhover: rgb(174, 174, 174, 30%);
+  --color-graydisabled: rgb(174, 174, 174, 10%);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-default: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --breakpoint-3xl: 2056px;
+  --border-width-1: 1px;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
 
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
   html {
     @apply scroll-smooth;
   }
@@ -19,7 +62,16 @@
   a,
   input,
   textarea {
-    @apply animate;
+    @apply transition-all duration-300;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  button,
+  input {
+    @apply disabled:cursor-not-allowed;
   }
 
   h1 {
@@ -47,16 +99,52 @@
   }
 }
 
-.swiper-scrollbar {
-  --swiper-scrollbar-border-radius: 0px;
-  --swiper-scrollbar-bottom: 0px;
-  --swiper-scrollbar-sides-offset: 0%;
-  --swiper-scrollbar-bg-color: none;
-  --swiper-scrollbar-drag-bg-color: white;
-  --swiper-scrollbar-size: 2px;
-}
+@layer components {
+  .animate {
+    @apply transition-all duration-300;
+  }
+  .animate-longer {
+    @apply transition-all duration-500;
+  }
+  .centered {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .centered-bottom {
+    @apply bottom-0 left-1/2 -translate-x-1/2;
+  }
+  .centered-top {
+    @apply top-0 left-1/2 -translate-x-1/2;
+  }
+  .centered-left {
+    @apply top-1/2 left-0 -translate-y-1/2;
+  }
+  .centered-right {
+    @apply top-1/2 right-0 -translate-y-1/2;
+  }
+  .centered-horizontal {
+    @apply left-1/2 -translate-x-1/2;
+  }
+  .body-text ul {
+    @apply list-disc ml-4;
+  }
+  .main-padding {
+    @apply max-md:pb-16 p-4 md:p-6 lg:p-12 xl:p-16;
+  }
+  .main-padding-x {
+    @apply px-4 md:px-6 lg:px-12 xl:px-16;
+  }
+  .wrapper {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.body-text ul {
-  list-style-type: disc;
-  margin-left: 1rem;
+  .swiper-scrollbar {
+    --swiper-scrollbar-border-radius: 0px;
+    --swiper-scrollbar-bottom: 0px;
+    --swiper-scrollbar-sides-offset: 0%;
+    --swiper-scrollbar-bg-color: none;
+    --swiper-scrollbar-drag-bg-color: white;
+    --swiper-scrollbar-size: 2px;
+  }
 }

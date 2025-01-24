@@ -29,7 +29,7 @@ export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResul
 
   return (
     <nav
-      className={cn("shadow w-full fixed left-0 top-0 animate-longer bg-blue-600 main-padding-x py-4", {
+      className={cn("shadow-sm w-full fixed left-0 top-0 animate-longer bg-blue-600 main-padding-x py-4", {
         "-translate-y-full invisible opacity-0": visible,
       })}
     >
@@ -42,7 +42,7 @@ export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResul
         <LinkButton
           unstyled
           href={PERSONALS.mailTo}
-          className="shadow size-8 text-[1.3rem] md:size-9 md:text-2xl aspect-square rounded-full flex items-center justify-center bg-white hover:bg-white/80 text-blue-600"
+          className="shadow-sm size-8 text-[1.3rem] md:size-9 md:text-2xl aspect-square rounded-full flex items-center justify-center bg-white hover:bg-white/80 text-blue-600"
         >
           <Icon icon={ICONS.email} />
         </LinkButton>

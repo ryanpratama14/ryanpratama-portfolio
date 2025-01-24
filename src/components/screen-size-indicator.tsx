@@ -17,7 +17,7 @@ export default function ScreenSizeIndicator() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 right-0 z-50 flex items-center gap-1.5 bg-white px-2 py-0.5 text-sm font-bold text-black shadow">
+    <div className="fixed bottom-0 right-0 z-50 flex items-center gap-1.5 bg-white px-2 py-0.5 text-sm font-bold text-black shadow-sm">
       <span className="sm:hidden">XS</span>
       <span className="hidden sm:block md:hidden">SM</span>
       <span className="hidden md:block lg:hidden">MD</span>
