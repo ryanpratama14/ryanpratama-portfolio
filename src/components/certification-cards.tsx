@@ -14,8 +14,8 @@ export default function CertificationCards({ s, lang }: Props) {
           const title = s.CERTIFICATIONS[e.name];
           return (
             <li key={e.name}>
-              <LinkButton unstyled href={`${PATHS.certification}/${e.name}`} lang={lang}>
-                <p className="hover:underline">{title}</p>
+              <LinkButton unstyled href={`${PATHS.certification}/${e.name}`} lang={lang} className="hover:underline">
+                {title}
               </LinkButton>
             </li>
           );

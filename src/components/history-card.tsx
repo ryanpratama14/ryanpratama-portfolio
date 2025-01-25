@@ -26,9 +26,14 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
 
         <section className="pl-2.5 md:pl-3 flex flex-col">
           {e.href ? (
-            <LinkButton unstyled href={e.href} className="line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem]">
+            <LinkButton
+              unstyled
+              href={e.href}
+              className="line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem] font-medium hover:underline"
+            >
               <Icon icon={ICONS.link} width={12} />
-              <p className="font-medium hover:underline">{e.label}</p>
+
+              {e.label}
             </LinkButton>
           ) : (
             <p className="font-medium">{e.label}</p>

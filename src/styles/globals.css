@@ -89,7 +89,8 @@
   p,
   li,
   input,
-  textarea {
+  textarea,
+  a {
     @apply text-sm md:text-base;
   }
 
@@ -138,7 +139,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .swiper-scrollbar {
     --swiper-scrollbar-border-radius: 0px;
     --swiper-scrollbar-bottom: 0px;
