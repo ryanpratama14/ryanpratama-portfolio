@@ -8,9 +8,8 @@ import { getCookieLang } from "@/lib/actions";
 import { PHOTOS } from "@/lib/constants";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
-import { COLORS } from "@/styles";
 import type { DictionaryStatic, Lang } from "@/types";
-import { Icon } from "@iconify-icon/react";
+import { DynamicIcon } from "lucide-react/dynamic";
 import { Fragment } from "react";
 
 type Props = {
@@ -27,7 +26,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
     return profiles.map((e) => {
       const Data = () => (
         <Fragment>
-          <Icon icon={e.icon} width={17.5} color={COLORS.gray} />
+          <DynamicIcon name={e.icon} size={17.5} className="text-gray" />
           <p className={cn("text-graydarker", { "hover:underline": e.href })}>{e.label}</p>
         </Fragment>
       );

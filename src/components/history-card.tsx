@@ -1,10 +1,9 @@
 import Img from "@/components/html/img";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useLang } from "@/internationalization/functions";
-import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import type { DictionaryStatic, History, Lang } from "@/types";
-import { Icon } from "@iconify-icon/react";
+import { DynamicIcon } from "lucide-react/dynamic";
 import LinkButton from "./html/link-button";
 
 type Props = {
@@ -31,7 +30,7 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
               href={e.href}
               className="line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem] font-medium hover:underline"
             >
-              <Icon icon={ICONS.link} width={12} />
+              <DynamicIcon name="square-arrow-out-up-right" size={15} />
 
               {e.label}
             </LinkButton>

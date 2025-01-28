@@ -12,16 +12,19 @@ type Props = LinkProps &
     children: React.ReactNode;
     lang?: Lang;
     unstyled?: boolean;
+    newTab?: boolean;
   };
 
-export default function LinkButton({ children, className, style, href, lang, target, rel, unstyled, ...rest }: Props) {
+export default function LinkButton({ children, className, style, href, lang, target, rel, unstyled, newTab, ...rest }: Props) {
+  const isNewTab = isExternalLink(href) || newTab;
+
   return (
     <Link
       href={addPath({ lang, path: href })}
-      target={isExternalLink(href) ? "_blank" : target}
-      rel={isExternalLink(href) ? "noreferrer noopener" : rel}
-      {...rest}
+      target={isNewTab ? "_blank" : target}
+      rel={isNewTab ? "noreferrer noopener" : rel}
       className={cn(unstyled ? className : VARIANTS.Button({ className, style }))}
+      {...rest}
     >
       {children || <span className="sr-only">Link</span>}
     </Link>

@@ -1,6 +1,7 @@
 import type { LANGS } from "@/internationalization";
 import type { en } from "@/internationalization/dictionaries/en";
 import type { useLang } from "@/internationalization/functions";
+import type { IconName } from "lucide-react/dynamic";
 import type { StaticImageData } from "next/image";
 
 export type Lang = (typeof LANGS)[number];
@@ -10,7 +11,7 @@ export type DictionaryStatic = Dictionary["s"];
 export type DictionaryDynamic = Dictionary["d"];
 export type Language = ReturnType<typeof useLang>;
 
-export type Profile = { href?: string; icon: string; label: string };
+export type Profile = { href?: string; icon: IconName; label: string };
 export type Contact = { href: string; label: string; icon: string };
 export type Project = { key: keyof DictionaryStatic["CONSTANTS"]["PROJECTS"]; label: string; href: string; src: StaticImageData };
 export type Certification = { name: keyof DictionaryStatic["CERTIFICATIONS"]; src: StaticImageData };

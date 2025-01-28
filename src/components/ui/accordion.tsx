@@ -2,7 +2,6 @@
 
 import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { COLORS } from "@/styles";
 import { Icon } from "@iconify-icon/react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import * as React from "react";
@@ -26,7 +25,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Icon icon={ICONS.accordionArrow} rotate={2} width={15} color={COLORS.gray} className="animate" />
+      <Icon icon={ICONS.accordionArrow} rotate={2} width={15} className="animate text-gray" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

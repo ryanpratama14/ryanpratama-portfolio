@@ -5,13 +5,12 @@ import Dialog from "@/components/dialog";
 import Button from "@/components/html/button";
 import Input from "@/components/html/input";
 import TextArea from "@/components/html/text-area";
-import { ICONS } from "@/lib/constants";
 import type { EmailMessageInput } from "@/server/api/routers/email";
 import { schema } from "@/server/api/schema";
 import { api } from "@/trpc/react";
 import type { DictionaryStatic, Lang } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Icon } from "@iconify-icon/react";
+import { DynamicIcon } from "lucide-react/dynamic";
 import { parseAsBoolean, useQueryState } from "nuqs";
 import { Fragment } from "react";
 import { useForm } from "react-hook-form";
@@ -40,7 +39,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           <TextArea disabled={isPending} {...register("message")} placeholder={t.message.placeholder} error={errors.message?.message} />
           <Button isPending={isPending} type="submit" className="max-md:w-full mt-0.5 relative group">
             <div className="absolute size-full flex items-center justify-center opacity-0 animate group-hover:opacity-100 group-hover:-translate-x-0 -translate-x-4">
-              <Icon icon={ICONS.send} width={20} />
+              <DynamicIcon name="send-horizontal" size={17.5} />
             </div>
 
             <div className="absolute size-full flex items-center justify-center group-hover:opacity-0 group-hover:translate-x-4 animate">

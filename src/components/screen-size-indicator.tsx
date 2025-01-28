@@ -1,8 +1,12 @@
 "use client";
 
+import { getLangFromPath, useLang, validateMatchedLang } from "@/internationalization/functions";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ScreenSizeIndicator() {
+  const lang = validateMatchedLang(getLangFromPath(usePathname()));
+  const { locale } = useLang(lang);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -25,10 +29,10 @@ export default function ScreenSizeIndicator() {
       <span className="hidden md:block lg:hidden">MD</span>
       <span className="hidden lg:block xl:hidden">LG</span>
       <span className="hidden xl:block 2xl:hidden">XL</span>
-      <span className="hidden 2xl:block 3xl:hidden">2XL</span>
+      <span className="hidden 2xl:block 3xl:hidden!">2XL</span>
       <span className="hidden 3xl:block">3XL</span>
       <span className="font-medium">
-        {dimensions.width.toLocaleString()} x {dimensions.height.toLocaleString()}
+        {dimensions.width.toLocaleString(locale)} x {dimensions.height.toLocaleString(locale)}
       </span>
     </div>
   );
