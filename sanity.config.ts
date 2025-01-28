@@ -1,6 +1,7 @@
 "use client";
 
 import { resolve } from "@/sanity/presentation/resolve";
+import { RocketIcon } from "@sanity/icons";
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { media } from "sanity-plugin-media";
@@ -25,4 +26,7 @@ export default defineConfig({
     }),
     media(),
   ],
+  title: "Ryan's Blog",
+  name: "ryan-s-blog",
+  icon: RocketIcon,
 });

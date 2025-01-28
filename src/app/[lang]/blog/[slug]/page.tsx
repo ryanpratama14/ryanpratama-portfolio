@@ -27,7 +27,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
     title: data.title,
     description: data.description,
     openGraphArticle: { publishedTime: data.publishedAt, modifiedTime: data._updatedAt },
-    imageUrl: data.mainImageUrl,
+    imageUrl: data.imageUrl,
     tags: data.tags,
   });
 };
@@ -55,7 +55,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         </header>
 
         <figure className="space-y-1">
-          <Img alt={data?.mainImage?.alt} className="w-full aspect-auto rounded-md" src={data.mainImageUrl} />
+          <Img alt={data?.mainImage?.alt} className="w-full aspect-auto rounded-md" src={data.imageUrl} />
           {data.mainImage?.alt ? <figcaption className="text-gray">{data.mainImage?.alt}</figcaption> : null}
         </figure>
 
