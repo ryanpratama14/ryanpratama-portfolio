@@ -14,12 +14,11 @@ export default function BlogCards({ data, href, lang, title }: Props) {
     <Container title={title} lang={lang} href={href}>
       <ul className="grid md:grid-cols-2 gap-3">
         {data.result.map((e) => {
-          if (!e.imageUrl) return null;
           return (
             <li key={e._id} className="flex flex-col gap-1.5 md:gap-2">
               <section className="flex items-center">
                 <Img
-                  src={e.imageUrl}
+                  src={e.mainImageUrl}
                   alt={e.mainImage?.alt}
                   className="aspect-square rounded-l-md w-[4.25rem] md:w-[5.25rem] object-center object-cover"
                 />

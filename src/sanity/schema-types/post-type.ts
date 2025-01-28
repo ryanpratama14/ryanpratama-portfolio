@@ -48,6 +48,7 @@ export const postType = defineType({
       group: "detail",
       of: [{ type: "block" }, { type: "image", fields: [{ name: "alt", type: "string", title: "Caption" }] }],
     }),
+
     defineField({
       name: "description",
       title: "Description",

@@ -17,7 +17,7 @@ export default function Breadcrumb({ slugTitle, s, lang }: Props) {
   const separator = <span> / </span>;
 
   return (
-    <ul className="text-white flex items-center gap-x-2 flex-wrap">
+    <ul className="text-gray-600 breadcrumb flex items-center gap-x-2 flex-wrap">
       <li className="hover:underline">
         <LinkButton unstyled lang={lang} href={PATHS.main}>
           {s.MENUS.main}

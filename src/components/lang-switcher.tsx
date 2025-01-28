@@ -35,8 +35,8 @@ export default function LangSwitcher({ storedLang }: Props) {
             <li key={langTarget}>
               <LinkButton
                 unstyled
-                className={cn("font-default text-xl! md:text-2xl! leading-3! px-1 md:px-1.5 rounded-md border-1 border-transparent", {
-                  "bg-graybg border-graydarker shadow-sm": isActive,
+                className={cn("font-default !text-xl md:!text-2xl !leading-3 px-1 md:px-1.5 rounded-md border-1 border-transparent", {
+                  "bg-graybg border-graydarker shadow": isActive,
                 })}
                 href={changeLang(langTarget, path)}
               >

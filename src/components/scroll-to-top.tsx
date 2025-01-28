@@ -9,15 +9,13 @@ export default function ScrollToTop() {
   const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
+    const ctr = new AbortController();
     const toggleVisible = () => {
       const scrolled = document.documentElement.scrollTop;
       if (scrolled > 300) setVisible(true);
       if (scrolled <= 300) setVisible(false);
     };
     toggleVisible();
-
-    const ctr = new AbortController();
-
     window.addEventListener("scroll", toggleVisible, { signal: ctr.signal });
     return () => {
       ctr.abort();

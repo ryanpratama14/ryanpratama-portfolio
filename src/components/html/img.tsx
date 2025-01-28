@@ -21,7 +21,7 @@ export default function Img({ alt, src, className, priority }: Props) {
       sizes={!isDynamic ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : undefined}
       placeholder={!isDynamic ? "blur" : undefined}
       priority={priority}
-      className={cn("shadow-sm", className)}
+      className={cn("shadow", className)}
     />
   );
 }

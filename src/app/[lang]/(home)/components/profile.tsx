@@ -26,7 +26,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
     return profiles.map((e) => {
       const Data = () => (
         <Fragment>
-          <DynamicIcon name={e.icon} size={17.5} className="text-gray" />
+          <DynamicIcon name={e.icon} width={17.5} className="text-gray" />
           <p className={cn("text-graydarker", { "hover:underline": e.href })}>{e.label}</p>
         </Fragment>
       );

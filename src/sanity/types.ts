@@ -200,7 +200,7 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: GetPosts
-// Query: *[_type == "post" && show == true] | order(publishedAt desc) {    ...,    "imageUrl": mainImage.asset -> url,}
+// Query: *[_type == "post" && show == true] | order(publishedAt desc) {    ...,    "mainImageUrl": mainImage.asset -> url,}
 export type GetPostsResult = Array<{
   _id: string;
   _type: "post";
@@ -255,10 +255,10 @@ export type GetPostsResult = Array<{
   }>;
   description?: string;
   tags?: Array<string>;
-  imageUrl: string | null;
+  mainImageUrl: string | null;
 }>;
 // Variable: GetPostBySlug
-// Query: *[_type == "post" && show == true && slug.current == $slug][0] {    ...,    "imageUrl": mainImage.asset -> url,}
+// Query: *[_type == "post" && show == true && slug.current == $slug][0] {    ...,    "mainImageUrl": mainImage.asset -> url,}
 export type GetPostBySlugResult = {
   _id: string;
   _type: "post";
@@ -313,14 +313,14 @@ export type GetPostBySlugResult = {
   }>;
   description?: string;
   tags?: Array<string>;
-  imageUrl: string | null;
+  mainImageUrl: string | null;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"post\" && show == true] | order(publishedAt desc) {\n    ...,\n    \"imageUrl\": mainImage.asset -> url,\n}": GetPostsResult;
-    "*[_type == \"post\" && show == true && slug.current == $slug][0] {\n    ...,\n    \"imageUrl\": mainImage.asset -> url,\n}": GetPostBySlugResult;
+    "*[_type == \"post\" && show == true] | order(publishedAt desc) {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n}": GetPostsResult;
+    "*[_type == \"post\" && show == true && slug.current == $slug][0] {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n}": GetPostBySlugResult;
   }
 }

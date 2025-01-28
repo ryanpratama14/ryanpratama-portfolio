@@ -28,10 +28,9 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
             <LinkButton
               unstyled
               href={e.href}
-              className="line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem] font-medium hover:underline"
+              className="font-medium hover:underline line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem]"
             >
-              <DynamicIcon name="square-arrow-out-up-right" size={15} />
-
+              <DynamicIcon name="external-link" size={12.5} />
               {e.label}
             </LinkButton>
           ) : (

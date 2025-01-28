@@ -26,7 +26,7 @@ export default defineConfig({
     }),
     media(),
   ],
-  title: "Ryan's Blog",
   name: "ryan-s-blog",
+  title: "Ryan's Blog",
   icon: RocketIcon,
 });
