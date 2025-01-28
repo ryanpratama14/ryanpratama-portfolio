@@ -25,7 +25,8 @@ export const en = {
 
     CERTIFICATIONS: {
       "jlpt-n3": "Japanese Language Proficiency-Test N3",
-      "preparatory-faculty-of-russian-language": "Preparatory Faculty of Russian Language",
+      "preparatory-faculty-of-russian-language":
+        "Preparatory Faculty of Russian Language",
     },
 
     MENUS: {
@@ -133,7 +134,14 @@ export const en = {
         rave: {
           label: "Rave Tech Pte. Ltd.",
           desc: "Front-end Engineer",
-          duty: ["TBA"],
+          duty: [
+            "Leveraged Sanity CMS to streamline content management for travel agency websites, enabling clients to easily update destination details, travel packages, and promotional content.",
+            "Collaborated with UI/UX designers to create visually compelling user interfaces.",
+            "Developed reusable React components to maintain code consistency and scalability across projects.",
+            "Assisted in the implementation of accessibility best practices to ensure compliance with WCAG standards.",
+            "Monitored and resolved performance bottlenecks using tools like Lighthouse and Chrome DevTools.",
+            "Introduced Tailwind CSS to streamline styling processes, reducing development time significantly.",
+          ],
           about: "",
         },
 
