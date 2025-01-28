@@ -23,9 +23,13 @@ export default function StickyTitle({ data, lang }: Props) {
         setVisible(titleTop > 0 && titleTop < window.innerHeight);
       }
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    const ctr = new AbortController();
+
+    window.addEventListener("scroll", handleScroll, { signal: ctr.signal });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      ctr.abort();
     };
   }, []);
 

@@ -9,10 +9,12 @@ export default function ScreenSizeIndicator() {
     const updateDimensions = () => {
       setDimensions({ width: window.innerWidth, height: window.innerHeight });
     };
+    const ctr = new AbortController();
+
     updateDimensions();
-    window.addEventListener("resize", updateDimensions, { passive: true });
+    window.addEventListener("resize", updateDimensions, { signal: ctr.signal });
     return () => {
-      window.removeEventListener("resize", updateDimensions);
+      ctr.abort();
     };
   }, []);
 

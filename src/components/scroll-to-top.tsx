@@ -15,9 +15,12 @@ export default function ScrollToTop() {
       if (scrolled <= 300) setVisible(false);
     };
     toggleVisible();
-    window.addEventListener("scroll", toggleVisible, { passive: true });
+
+    const ctr = new AbortController();
+
+    window.addEventListener("scroll", toggleVisible, { signal: ctr.signal });
     return () => {
-      window.removeEventListener("scroll", toggleVisible);
+      ctr.abort();
     };
   }, []);
 
