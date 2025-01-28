@@ -6,8 +6,8 @@ import type { StaticImageData } from "next/image";
 export type Lang = (typeof LANGS)[number];
 export type LangTarget = Lang | null | undefined | string;
 export type Dictionary = typeof en;
-export type DictionaryStatic = typeof en.s;
-export type DictionaryDynamic = typeof en.d;
+export type DictionaryStatic = Dictionary["s"];
+export type DictionaryDynamic = Dictionary["d"];
 export type Language = ReturnType<typeof useLang>;
 
 export type Profile = { href?: string; icon: string; label: string };

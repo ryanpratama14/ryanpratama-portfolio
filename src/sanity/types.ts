@@ -90,8 +90,6 @@ export type Post = {
   };
   slug?: Slug;
   publishedAt?: string;
-  description?: string;
-  tags?: Array<string>;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -122,6 +120,8 @@ export type Post = {
     _type: "image";
     _key: string;
   }>;
+  description?: string;
+  tags?: Array<string>;
 };
 
 export type SanityImageCrop = {
@@ -200,7 +200,7 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: GetPosts
-// Query: *[_type == "post" && show == true && defined(slug.current)] | order(publishedAt desc) {    ...,    "imageUrl": mainImage.asset -> url,}
+// Query: *[_type == "post" && show == true] | order(publishedAt desc) {    ...,    "imageUrl": mainImage.asset -> url,}
 export type GetPostsResult = Array<{
   _id: string;
   _type: "post";
@@ -223,8 +223,6 @@ export type GetPostsResult = Array<{
   };
   slug?: Slug;
   publishedAt?: string;
-  description?: string;
-  tags?: Array<string>;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -255,10 +253,12 @@ export type GetPostsResult = Array<{
     _type: "image";
     _key: string;
   }>;
+  description?: string;
+  tags?: Array<string>;
   imageUrl: string | null;
 }>;
 // Variable: GetPostBySlug
-// Query: *[_type == "post" && show == true && slug.current == $slug && defined(slug.current)][0] {    ...,    "imageUrl": mainImage.asset -> url,}
+// Query: *[_type == "post" && show == true && slug.current == $slug][0] {    ...,    "imageUrl": mainImage.asset -> url,}
 export type GetPostBySlugResult = {
   _id: string;
   _type: "post";
@@ -281,8 +281,6 @@ export type GetPostBySlugResult = {
   };
   slug?: Slug;
   publishedAt?: string;
-  description?: string;
-  tags?: Array<string>;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -313,6 +311,8 @@ export type GetPostBySlugResult = {
     _type: "image";
     _key: string;
   }>;
+  description?: string;
+  tags?: Array<string>;
   imageUrl: string | null;
 } | null;
 
@@ -320,7 +320,7 @@ export type GetPostBySlugResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"post\" && show == true && defined(slug.current)] | order(publishedAt desc) {\n    ...,\n    \"imageUrl\": mainImage.asset -> url,\n}": GetPostsResult;
-    "*[_type == \"post\" && show == true && slug.current == $slug && defined(slug.current)][0] {\n    ...,\n    \"imageUrl\": mainImage.asset -> url,\n}": GetPostBySlugResult;
+    "*[_type == \"post\" && show == true] | order(publishedAt desc) {\n    ...,\n    \"imageUrl\": mainImage.asset -> url,\n}": GetPostsResult;
+    "*[_type == \"post\" && show == true && slug.current == $slug][0] {\n    ...,\n    \"imageUrl\": mainImage.asset -> url,\n}": GetPostBySlugResult;
   }
 }

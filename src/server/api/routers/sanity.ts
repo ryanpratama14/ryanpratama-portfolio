@@ -10,7 +10,7 @@ const formatPostData = (post: GetPostBySlugResult) => {
   return {
     ...post,
     href: `${PATHS.post}/${post?.slug?.current}`,
-    publishedAtDate: post?.publishedAt ? new Date(post?.publishedAt) : new Date(),
+    publishedAtDate: post?.publishedAt ? new Date(post.publishedAt) : new Date(),
   };
 };
 
@@ -37,4 +37,4 @@ export const sanityRouter = {
 };
 
 export type SanityPostListOutput = RouterOutputs["sanity"]["post"]["list"];
-export type SanityPostDetaiResultlOutput = RouterOutputs["sanity"]["post"]["detail"]["result"];
+export type SanityPostDetaiResultOutput = RouterOutputs["sanity"]["post"]["detail"]["result"];

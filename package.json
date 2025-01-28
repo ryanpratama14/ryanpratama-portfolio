@@ -9,7 +9,7 @@
     "lint": "next lint",
     "start": "next start",
     "email": "email dev --port 4000 --dir src/components/emails",
-    "typegen": "sanity schema extract --path=src/sanity/extract.json && sanity typegen generate"
+    "type": "sanity schema extract --path=src/sanity/extract.json && sanity typegen generate"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -39,7 +39,7 @@
     "lucide-react": "^0.474.0",
     "negotiator": "^1.0.0",
     "next": "^15.1.6",
-    "next-sanity": "^9.8.44",
+    "next-sanity": "^9.8.45",
     "nextjs-toploader": "^3.7.15",
     "nuqs": "^2.3.1",
     "react": "^19.0.0",

@@ -42,12 +42,18 @@ export const postType = defineType({
       group: "detail",
     }),
     defineField({
+      name: "body",
+      title: "Description",
+      type: "array",
+      group: "detail",
+      of: [{ type: "block" }, { type: "image", fields: [{ name: "alt", type: "string", title: "Caption" }] }],
+    }),
+    defineField({
       name: "description",
       title: "Description",
       type: "string",
       group: "seo",
     }),
-
     defineField({
       name: "tags",
       title: "Tags",
@@ -55,14 +61,6 @@ export const postType = defineType({
       of: [{ type: "string" }],
       group: "seo",
       options: { layout: "tags" },
-    }),
-
-    defineField({
-      name: "body",
-      title: "Description",
-      type: "array",
-      group: "detail",
-      of: [{ type: "block" }, { type: "image", fields: [{ name: "alt", type: "string", title: "Caption" }] }],
     }),
   ],
 });
