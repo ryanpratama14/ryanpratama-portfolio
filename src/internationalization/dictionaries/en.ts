@@ -25,8 +25,7 @@ export const en = {
 
     CERTIFICATIONS: {
       "jlpt-n3": "Japanese Language Proficiency-Test N3",
-      "preparatory-faculty-of-russian-language":
-        "Preparatory Faculty of Russian Language",
+      "preparatory-faculty-of-russian-language": "Preparatory Faculty of Russian Language",
     },
 
     MENUS: {
