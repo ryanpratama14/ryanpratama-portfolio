@@ -12,8 +12,8 @@ export const postType = defineType({
     defineField({
       name: "title",
       type: "string",
-      validation: (Rule) => Rule.required(),
       group: "detail",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "show",
@@ -27,6 +27,7 @@ export const postType = defineType({
       options: { hotspot: true },
       fields: [{ name: "alt", type: "string", title: "Caption" }],
       group: "detail",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "slug",
@@ -38,8 +39,8 @@ export const postType = defineType({
     defineField({
       name: "publishedAt",
       type: "datetime",
-      validation: (Rule) => Rule.required(),
       group: "detail",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "body",
@@ -47,21 +48,25 @@ export const postType = defineType({
       type: "array",
       group: "detail",
       of: [{ type: "block" }, { type: "image", fields: [{ name: "alt", type: "string", title: "Caption" }] }],
+      validation: (Rule) => Rule.required(),
     }),
 
+    // SEO
     defineField({
       name: "description",
-      title: "Description",
+      title: "SEO, Description",
       type: "string",
       group: "seo",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "tags",
-      title: "Tags",
+      title: "SEO, Tags",
       type: "array",
       of: [{ type: "string" }],
       group: "seo",
       options: { layout: "tags" },
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });
