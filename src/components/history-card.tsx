@@ -1,5 +1,5 @@
 import Img from "@/components/html/img";
-import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/shadcn/ui/accordion";
 import { useLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { DictionaryStatic, History, Lang } from "@/types";

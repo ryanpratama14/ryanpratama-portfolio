@@ -1,6 +1,6 @@
 import Container from "@/components/container";
 import HistoryCard from "@/components/history-card";
-import { Accordion } from "@/components/ui/accordion";
+import { Accordion } from "@/components/shadcn/ui/accordion";
 import { OTHERS } from "@/lib/constants";
 import type { DictionaryStatic, Lang } from "@/types";
 
