@@ -36,15 +36,15 @@ export const PHOTOS = {
 };
 
 export const EXPERIENCES: History[] = [
-  // {
-  //   key: "waterhub",
-  //   src: PHOTOS.logo.waterhub,
-  //   href: "",
-  //   since: dayjs("2025-01").toDate(),
-  //   till: null,
-  //   location: "jakarta",
-  //   type: "remote",
-  // },
+  {
+    key: "waterhub",
+    src: PHOTOS.logo.waterhub,
+    href: "",
+    since: dayjs("2025-01").toDate(),
+    till: null,
+    location: "jakarta",
+    type: "remote",
+  },
   {
     key: "rave",
     src: PHOTOS.logo.rave,
