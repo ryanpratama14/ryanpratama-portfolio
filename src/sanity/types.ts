@@ -200,7 +200,7 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: GetPosts
-// Query: *[_type == "post" && show == true] | order(publishedAt desc) {    ...,    "mainImageUrl": mainImage.asset -> url,}
+// Query: *[_type == "post" && show == true] | order(publishedAt desc) {    ...,    "mainImageUrl": mainImage.asset -> url,    mainImage {      ...,      asset -> {        ...,        metadata {          ...        }      }    },}
 export type GetPostsResult = Array<{
   _id: string;
   _type: "post";
@@ -209,18 +209,43 @@ export type GetPostsResult = Array<{
   _rev: string;
   title?: string;
   show?: boolean;
-  mainImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
+  mainImage: {
+    asset: {
+      _id: string;
+      _type: "sanity.imageAsset";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      originalFilename?: string;
+      label?: string;
+      title?: string;
+      description?: string;
+      altText?: string;
+      sha1hash?: string;
+      extension?: string;
+      mimeType?: string;
+      size?: number;
+      assetId?: string;
+      uploadId?: string;
+      path?: string;
+      url?: string;
+      metadata: {
+        _type: "sanity.imageMetadata";
+        location?: Geopoint;
+        dimensions?: SanityImageDimensions;
+        palette?: SanityImagePalette;
+        lqip?: string;
+        blurHash?: string;
+        hasAlpha?: boolean;
+        isOpaque?: boolean;
+      } | null;
+      source?: SanityAssetSourceData;
+    } | null;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
-  };
+  } | null;
   slug?: Slug;
   publishedAt?: string;
   body?: Array<{
@@ -258,7 +283,7 @@ export type GetPostsResult = Array<{
   mainImageUrl: string | null;
 }>;
 // Variable: GetPostBySlug
-// Query: *[_type == "post" && show == true && slug.current == $slug][0] {    ...,    "mainImageUrl": mainImage.asset -> url,}
+// Query: *[_type == "post" && show == true && slug.current == $slug][0] {    ...,    "mainImageUrl": mainImage.asset -> url,    mainImage {      ...,      asset -> {        ...,        metadata {          ...        }      }    },}
 export type GetPostBySlugResult = {
   _id: string;
   _type: "post";
@@ -267,18 +292,43 @@ export type GetPostBySlugResult = {
   _rev: string;
   title?: string;
   show?: boolean;
-  mainImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
+  mainImage: {
+    asset: {
+      _id: string;
+      _type: "sanity.imageAsset";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      originalFilename?: string;
+      label?: string;
+      title?: string;
+      description?: string;
+      altText?: string;
+      sha1hash?: string;
+      extension?: string;
+      mimeType?: string;
+      size?: number;
+      assetId?: string;
+      uploadId?: string;
+      path?: string;
+      url?: string;
+      metadata: {
+        _type: "sanity.imageMetadata";
+        location?: Geopoint;
+        dimensions?: SanityImageDimensions;
+        palette?: SanityImagePalette;
+        lqip?: string;
+        blurHash?: string;
+        hasAlpha?: boolean;
+        isOpaque?: boolean;
+      } | null;
+      source?: SanityAssetSourceData;
+    } | null;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
-  };
+  } | null;
   slug?: Slug;
   publishedAt?: string;
   body?: Array<{
@@ -320,7 +370,7 @@ export type GetPostBySlugResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"post\" && show == true] | order(publishedAt desc) {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n}": GetPostsResult;
-    "*[_type == \"post\" && show == true && slug.current == $slug][0] {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n}": GetPostBySlugResult;
+    "*[_type == \"post\" && show == true] | order(publishedAt desc) {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n    mainImage {\n      ...,\n      asset -> {\n        ...,\n        metadata {\n          ...\n        }\n      }\n    },\n}": GetPostsResult;
+    "*[_type == \"post\" && show == true && slug.current == $slug][0] {\n    ...,\n    \"mainImageUrl\": mainImage.asset -> url,\n    mainImage {\n      ...,\n      asset -> {\n        ...,\n        metadata {\n          ...\n        }\n      }\n    },\n}": GetPostBySlugResult;
   }
 }

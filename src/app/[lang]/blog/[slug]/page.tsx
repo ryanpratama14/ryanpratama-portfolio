@@ -3,7 +3,7 @@ import { getUrl } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import Body from "@/components/body";
 import Breadcrumb from "@/components/breadcrumb";
-import Img from "@/components/html/img";
+import ImgSanity from "@/components/html/img-sanity";
 import LocalTime from "@/components/local-time";
 import { useLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
@@ -55,7 +55,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         </header>
 
         <figure className="space-y-1">
-          <Img alt={data?.mainImage?.alt} className="w-full aspect-auto rounded-md" src={data.mainImageUrl} />
+          <ImgSanity alt={data?.mainImage?.asset?.altText} className="w-full aspect-auto rounded-md" src={data.mainImage} />
           {data.mainImage?.alt ? <figcaption className="text-gray">{data.mainImage?.alt}</figcaption> : null}
         </figure>
 

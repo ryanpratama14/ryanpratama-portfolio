@@ -1,7 +1,7 @@
 import type { SanityPostListOutput } from "@/server/api/routers/sanity";
 import type { Lang } from "@/types";
 import Container from "./container";
-import Img from "./html/img";
+import ImgSanity from "./html/img-sanity";
 import LinkButton from "./html/link-button";
 import LocalTime from "./local-time";
 
@@ -17,8 +17,8 @@ export default function BlogCards({ data, href, lang, title }: Props) {
           return (
             <li key={e._id} className="flex flex-col gap-1.5 md:gap-2">
               <section className="flex items-center">
-                <Img
-                  src={e.mainImageUrl}
+                <ImgSanity
+                  src={e.mainImage}
                   alt={e.mainImage?.alt}
                   className="aspect-square rounded-l-md w-[4.25rem] md:w-[5.25rem] object-center object-cover"
                 />

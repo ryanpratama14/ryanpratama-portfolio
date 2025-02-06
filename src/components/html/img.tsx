@@ -16,11 +16,11 @@ export default function Img({ alt, src, className, priority }: Props) {
     <Image
       alt={alt || ""}
       src={src}
-      width={1000}
-      height={1000}
-      sizes={!isDynamic ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : undefined}
-      placeholder={!isDynamic ? "blur" : undefined}
+      sizes="(max-width: 800px) 100vw, 800px"
+      placeholder={isDynamic ? undefined : "blur"}
       priority={priority}
+      width={isDynamic ? 1000 : undefined}
+      height={isDynamic ? 1000 : undefined}
       className={cn("shadow", className)}
     />
   );

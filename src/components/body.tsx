@@ -1,7 +1,7 @@
-import Img from "@/components/html/img";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 import type { TypedObject } from "sanity";
+import Img from "./html/img";
 import LinkButton from "./html/link-button";
 
 type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
