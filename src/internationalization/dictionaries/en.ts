@@ -125,7 +125,7 @@ export const en = {
 
         waterhub: {
           label: "WaterHub",
-          desc: "Frelance Front-end Engineer",
+          desc: "Freelance Front-end Engineer",
           duty: ["TBA"],
           about: "",
         },
