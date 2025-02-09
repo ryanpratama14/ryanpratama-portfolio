@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@formatjs/intl-localematcher": "^0.5.10",
+    "@formatjs/intl-localematcher": "^0.6.0",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",

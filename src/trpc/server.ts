@@ -30,7 +30,7 @@ const logged = createTRPCClient<AppRouter>({
             .then((ctx) =>
               callTRPCProcedure({
                 getRawInput: async () => await op.input,
-                procedures: appRouter._def.procedures,
+                _def: { ...appRouter._def },
                 path: op.path,
                 ctx,
                 type: op.type,
