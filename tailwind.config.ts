@@ -110,7 +110,7 @@ const config = {
         },
 
         ".wrapper": {
-          "@apply mx-auto max-w-[700px] 2xl:max-w-[800px]": {},
+          "@apply mx-auto max-w-[600px] 2xl:max-w-[800px]": {},
         },
 
         ".animate": {

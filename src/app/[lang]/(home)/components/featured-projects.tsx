@@ -19,9 +19,9 @@ export default function FeaturedProjects({ s }: Props) {
         scrollbar={{ draggable: true, el: ".swiper-scrollbar" }}
         className="w-full"
         spaceBetween={10}
-        slidesPerView={1.3}
+        slidesPerView={1.45}
         simulateTouch={false}
-        breakpoints={{ 640: { slidesPerView: 2 }, 701: { slidesPerView: 2.5 } }}
+        breakpoints={{ 601: { slidesPerView: 2.15 }, 1536: { slidesPerView: 2.5 } }}
       >
         {PROJECTS.map((project) => {
           const e = { desc: s.CONSTANTS.PROJECTS[project.key], ...project };
@@ -35,7 +35,7 @@ export default function FeaturedProjects({ s }: Props) {
                   </div>
                   <small className="flex text-center px-3 w-full absolute centered font-medium text-balance">{e.desc}</small>
 
-                  <LinkButton href={e.href} className="whitespace-nowrap translate-y-full group-hover:-translate-y-4 absolute centered-bottom">
+                  <LinkButton href={e.href} className=" translate-y-full group-hover:-translate-y-4 absolute centered-bottom">
                     {s.SECTIONS.visitProject}
                   </LinkButton>
                 </section>

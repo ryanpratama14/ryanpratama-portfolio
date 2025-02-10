@@ -9,7 +9,7 @@ export const COLORS = {
 
 export const VARIANTS = {
   Button: tv({
-    base: "flex items-center justify-center disabled:cursor-progress rounded-md shadow active:scale-95",
+    base: "whitespace-nowrap flex items-center justify-center disabled:cursor-progress rounded-md shadow active:scale-95",
     variants: {
       style: {
         reguler: "font-medium px-4 h-7 2xl:h-8 text-sm 2xl:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
