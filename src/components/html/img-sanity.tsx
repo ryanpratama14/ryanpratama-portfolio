@@ -7,7 +7,6 @@ import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 
 export default function ImgSanity({ alt, src, className, priority }: Props) {
-  console.log(src);
   if (!src || !src?.asset?.metadata?.lqip) return null;
   const props = useNextSanityImage(client, src);
 

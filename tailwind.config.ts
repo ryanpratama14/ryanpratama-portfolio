@@ -108,11 +108,11 @@ const config = {
         ".main-padding-x": {
           "@apply px-4 md:px-6 lg:px-12 xl:px-16": {},
         },
+
         ".wrapper": {
-          maxWidth: "700px",
-          marginLeft: "auto",
-          marginRight: "auto",
+          "@apply mx-auto max-w-[700px] 2xl:max-w-[800px]": {},
         },
+
         ".animate": {
           transitionProperty: "all",
           transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",

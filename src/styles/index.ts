@@ -12,7 +12,7 @@ export const VARIANTS = {
     base: "flex items-center justify-center disabled:cursor-progress rounded-md shadow active:scale-95",
     variants: {
       style: {
-        reguler: "font-medium px-4 h-7 md:h-8 text-sm md:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
+        reguler: "font-medium px-4 h-7 2xl:h-8 text-sm 2xl:text-base bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
         close: "bg-graybg hover:bg-grayhover p-0.5",
       },
     },
@@ -29,8 +29,8 @@ export const VARIANTS = {
     base: "rounded-md flex items-center bg-graybg",
     variants: {
       style: {
-        contact: "shadow text-sm md:text-base gap-1 px-2 py-0.5 animate hover:bg-grayborder",
-        techstack: "text-[0.7rem] md:text-sm px-1 py-[0.1rem] gap-[0.2rem] md:px-1.5 md:py-0.5 md:gap-1",
+        contact: "shadow text-sm 2xl:text-base gap-1 px-2 py-0.5 animate hover:bg-grayborder",
+        techstack: "text-[0.7rem] 2xl:text-sm px-1 py-[0.1rem] gap-[0.2rem]",
       },
     },
   }),

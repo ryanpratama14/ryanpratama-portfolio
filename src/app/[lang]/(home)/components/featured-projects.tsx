@@ -21,7 +21,7 @@ export default function FeaturedProjects({ s }: Props) {
         spaceBetween={10}
         slidesPerView={1.3}
         simulateTouch={false}
-        breakpoints={{ 640: { slidesPerView: 2 }, 701: { slidesPerView: 2.5 }, 1536: { slidesPerView: 2.2 } }}
+        breakpoints={{ 640: { slidesPerView: 2 }, 701: { slidesPerView: 2.5 } }}
       >
         {PROJECTS.map((project) => {
           const e = { desc: s.CONSTANTS.PROJECTS[project.key], ...project };
