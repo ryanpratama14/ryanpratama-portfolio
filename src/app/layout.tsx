@@ -7,7 +7,7 @@ import { getHeaders } from "@/lib/actions";
 import { cn } from "@/lib/utils";
 import { SanityLive } from "@/sanity/lib/live";
 import { COLORS } from "@/styles";
-import TRPCReactProvider from "@/trpc/react";
+import { TRPCReactProvider } from "@/trpc/react";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";

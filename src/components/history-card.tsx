@@ -21,9 +21,9 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
   const Card = () => {
     return (
       <section className="flex items-center text-left">
-        <Img src={e.src} alt={e.label} className="size-full rounded-l-md w-[4.25rem] md:w-[5.25rem]" />
+        <Img src={e.src} alt={e.label} className="size-full rounded-l-md w-[4.25rem] 2xl:w-[5.25rem]" />
 
-        <section className="pl-2.5 md:pl-3 flex flex-col">
+        <section className="pl-2.5 2xl:pl-3 flex flex-col">
           {e.href ? (
             <LinkButton
               unstyled

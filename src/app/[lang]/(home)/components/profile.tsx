@@ -57,7 +57,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
             <Img
               src={PHOTOS.avatar}
               alt={s.PERSONAL_DATA.fullName}
-              className="animate object-top object-cover size-[4.75rem] md:size-32 aspect-square rounded-l-md"
+              className="animate object-top object-cover size-[4.75rem] md:size-24 2xl:size-32 aspect-square rounded-l-md"
             />
           </LinkButton>
 

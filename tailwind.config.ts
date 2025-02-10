@@ -109,7 +109,7 @@ const config = {
           "@apply px-4 md:px-6 lg:px-12 xl:px-16": {},
         },
         ".wrapper": {
-          maxWidth: "56rem",
+          maxWidth: "700px",
           marginLeft: "auto",
           marginRight: "auto",
         },

@@ -20,7 +20,7 @@ export default function BlogCards({ data, href, lang, title }: Props) {
                 <ImgSanity
                   src={e.mainImage}
                   alt={e.mainImage?.alt}
-                  className="aspect-square rounded-l-md w-[4.25rem] md:w-[5.25rem] object-center object-cover"
+                  className="aspect-square rounded-l-md w-[4.25rem] 2xl:w-[5.25rem] object-center object-cover"
                 />
                 <header className="flex flex-col pl-2.5 md:pl-3">
                   <LinkButton lang={lang} unstyled href={e.href} className="font-medium hover:underline line-clamp-1">

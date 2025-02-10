@@ -19,7 +19,7 @@ export const api = createTRPCReact<AppRouter>();
 
 type Props = { children: React.ReactNode };
 
-export default function TRPCReactProvider({ children }: Props) {
+export function TRPCReactProvider({ children }: Props) {
   const queryClient = getQueryClient();
 
   const [trpcClient] = useState(() =>
