@@ -39,7 +39,7 @@
     "motion": "^12.4.2",
     "negotiator": "^1.0.0",
     "next": "^15.1.7",
-    "next-sanity": "^9.8.56",
+    "next-sanity": "9.8.55",
     "next-sanity-image": "^6.1.1",
     "nextjs-toploader": "^3.7.15",
     "nuqs": "^2.3.2",
