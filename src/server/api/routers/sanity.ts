@@ -1,7 +1,7 @@
 import { PATHS } from "@/app/urls";
 import { sanityFetch } from "@/sanity/lib/live";
 import { GetPostBySlug, GetPosts } from "@/sanity/lib/queries";
-import type { GetPostBySlugResult } from "@/sanity/types";
+import type { GetPostBySlugResult, GetPostsResult } from "@/sanity/types";
 import { schema } from "@/server/api/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { type RouterOutputs, THROW_TRPC } from "@/trpc/shared";
@@ -25,8 +25,8 @@ export const sanityRouter = {
     list: publicProcedure.input(schema.sanity.post.list).query(async ({ input }) => {
       const { slugToRemove, slice } = input;
       const { data } = await sanityFetch({ query: GetPosts });
-      const formattedData = data.filter((e) => e.slug?.current).map((item) => formatPostData(item));
-
+      const updatedData = data as GetPostsResult;
+      const formattedData = updatedData.filter((e) => e.slug?.current).map((item) => formatPostData(item));
       return THROW_TRPC.ok({
         code: "OK",
         input,
