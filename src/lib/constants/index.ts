@@ -20,12 +20,18 @@ import turta from "#/images/project/turta.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
 
-export const PERSONALS: { age: number; yoe: number; x: string; mailTo: string; location: keyof DictionaryStatic["LOCATIONS"] } = {
+export const PERSONALS: {
+  age: number;
+  yoe: number;
+  x: string;
+  mailTo: string;
+  location: keyof DictionaryStatic["LOCATIONS"];
+} = {
   age: dayjs().diff(dayjs("2000-07-14"), "year"),
   yoe: +(dayjs().diff(EXPERIENCE_START_DATE, "month") / 12).toFixed(1),
   x: "@totorogoriorio",
   mailTo: "mailto:ryanpratama.dev@gmail.com",
-  location: "bali",
+  location: "jakarta",
 };
 
 export const PHOTOS = {

@@ -25,8 +25,7 @@ export const sanityRouter = {
     list: publicProcedure.input(schema.sanity.post.list).query(async ({ input }) => {
       const { slugToRemove, slice } = input;
       const { data } = await sanityFetch({ query: GetPosts });
-      const updatedData = data as GetPostsResult;
-      const formattedData = updatedData.filter((e) => e.slug?.current).map((item) => formatPostData(item));
+      const formattedData = data.filter((e) => e.slug?.current).map((item) => formatPostData(item));
       return THROW_TRPC.ok({
         code: "OK",
         input,
