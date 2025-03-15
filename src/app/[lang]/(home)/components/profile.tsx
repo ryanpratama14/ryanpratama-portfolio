@@ -33,8 +33,8 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
 
       if (e.href) {
         return (
-          <li className="flex">
-            <LinkButton unstyled href={e.href} key={e.label} className="flex gap-0.5 items-center">
+          <li className="flex" key={e.label}>
+            <LinkButton unstyled href={e.href} className="flex gap-0.5 items-center">
               <Data />
             </LinkButton>
           </li>
