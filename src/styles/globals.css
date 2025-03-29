@@ -116,8 +116,3 @@
   --swiper-scrollbar-drag-bg-color: white;
   --swiper-scrollbar-size: 2px;
 }
-
-.body-text ul {
-  list-style-type: disc;
-  margin-left: 1rem;
-}

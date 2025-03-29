@@ -8,7 +8,7 @@ type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
 
 export default function Body({ data = [] }: Props) {
   return (
-    <section className="body-text flex flex-col gap-2 border-b-1 border-dashed border-blue-300 pb-1">
+    <section className="[&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 flex flex-col gap-2 border-b-1 border-dashed border-blue-300 pb-1">
       <PortableText
         components={{
           block: {
@@ -36,7 +36,7 @@ export default function Body({ data = [] }: Props) {
             image: ({ value }) => {
               if (!value?.asset?._ref) return null;
               return (
-                <figure className="space-y-1 my-2">
+                <figure className="flex flex-col gap-1 my-2">
                   <Img alt={value?.alt} className="w-full aspect-auto rounded-md" src={urlFor(value).url()} />
                   {value?.alt ? <figcaption className="text-gray">{value.alt}</figcaption> : null}
                 </figure>
