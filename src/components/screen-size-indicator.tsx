@@ -16,10 +16,8 @@ export default function ScreenSizeIndicator() {
     const ctr = new AbortController();
 
     updateDimensions();
-    window.addEventListener("resize", updateDimensions, { signal: ctr.signal });
-    return () => {
-      ctr.abort();
-    };
+    window.addEventListener("resize", updateDimensions, ctr);
+    return () => ctr.abort();
   }, []);
 
   return (

@@ -45,7 +45,7 @@ export const EXPERIENCES: History[] = [
   {
     key: "waterhub",
     src: PHOTOS.logo.waterhub,
-    href: "",
+    href: "https://dashboard.waterhub.co.id",
     since: dayjs("2025-01").toDate(),
     till: null,
     location: "jakarta",

@@ -22,10 +22,8 @@ export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResul
         setVisible(titleTop > 0 && titleTop < window.innerHeight);
       }
     };
-    window.addEventListener("scroll", handleScroll, { signal: ctr.signal });
-    return () => {
-      ctr.abort();
-    };
+    window.addEventListener("scroll", handleScroll, ctr);
+    return () => ctr.abort();
   }, []);
 
   return (
