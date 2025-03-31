@@ -1,4 +1,4 @@
-import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
+import { createCallerFactory, createTRPCRouter } from "@/server/trpc";
 import { emailRouter } from "./routers/email";
 import { sanityRouter } from "./routers/sanity";
 

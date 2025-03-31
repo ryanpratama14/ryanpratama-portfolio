@@ -1,4 +1,4 @@
-import type { SanityPostListOutput } from "@/server/api/routers/sanity";
+import type { SanityPostListOutput } from "@/server/routers/sanity";
 import type { Lang } from "@/types";
 import Container from "./container";
 import ImgSanity from "./html/img-sanity";

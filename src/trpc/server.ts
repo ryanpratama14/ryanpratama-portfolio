@@ -1,7 +1,7 @@
 import "server-only";
 
-import { type AppRouter, appRouter, createCaller } from "@/server/api/root";
-import { createTRPCContext } from "@/server/api/trpc";
+import { type AppRouter, appRouter, createCaller } from "@/server/root";
+import { createTRPCContext } from "@/server/trpc";
 import { createQueryClient } from "@/trpc/shared";
 import { TRPCClientError, createTRPCClient, loggerLink } from "@trpc/client";
 import { createHydrationHelpers } from "@trpc/react-query/rsc";

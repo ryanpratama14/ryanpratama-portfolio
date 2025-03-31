@@ -2,8 +2,8 @@ import Message from "@/components/emails/message";
 import { env } from "@/env";
 import { DEFAULT_LANG } from "@/internationalization";
 import { useLang } from "@/internationalization/functions";
-import { schema } from "@/server/api/schema";
-import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+import { schema } from "@/server/schema";
+import { createTRPCRouter, publicProcedure } from "@/server/trpc";
 import { type RouterInputs, THROW_TRPC } from "@/trpc/shared";
 import { Resend } from "resend";
 

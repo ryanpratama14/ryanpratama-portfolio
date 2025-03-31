@@ -1,7 +1,7 @@
 "use client";
 
 import { URLS } from "@/app/urls";
-import type { AppRouter } from "@/server/api/root";
+import type { AppRouter } from "@/server/root";
 import { createQueryClient, transformer } from "@/trpc/shared";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchStreamLink, loggerLink } from "@trpc/client";

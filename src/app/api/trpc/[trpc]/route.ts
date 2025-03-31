@@ -1,7 +1,7 @@
 import { ENDPOINTS } from "@/app/urls";
 import { env } from "@/env";
-import { appRouter } from "@/server/api/root";
-import { createTRPCContext } from "@/server/api/trpc";
+import { appRouter } from "@/server/root";
+import { createTRPCContext } from "@/server/trpc";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import type { NextRequest } from "next/server";
 

@@ -2,8 +2,8 @@ import { PATHS } from "@/app/urls";
 import { sanityFetch } from "@/sanity/lib/live";
 import { GetPostBySlug, GetPosts } from "@/sanity/lib/queries";
 import type { GetPostBySlugResult } from "@/sanity/types";
-import { schema } from "@/server/api/schema";
-import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+import { schema } from "@/server/schema";
+import { createTRPCRouter, publicProcedure } from "@/server/trpc";
 import { type RouterOutputs, THROW_TRPC } from "@/trpc/shared";
 
 const formatPostData = (post: GetPostBySlugResult) => {
