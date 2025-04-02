@@ -32,6 +32,18 @@ export default function ProjectDiscuss({ s, lang }: Props) {
 
   return (
     <Fragment>
+      <Dialog
+        open={open}
+        onClose={() => {
+          setOpen(false);
+          reset();
+        }}
+        className="space-y-1 text-left"
+      >
+        <h2 className="font-semibold">{s.MESSAGE.sent}</h2>
+        <p className="text-gray">{s.MESSAGE.thankYou}</p>
+      </Dialog>
+
       <Container title={s.MENUS.message}>
         <form onSubmit={handleSubmit((data) => sendMessage(data))} className="space-y-2">
           <Input disabled={isPending} {...register("name")} error={errors.name?.message} autoComplete="name" placeholder={t.name.placeholder} />
@@ -50,18 +62,6 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           </Button>
         </form>
       </Container>
-
-      <Dialog
-        open={open}
-        onClose={() => {
-          setOpen(false);
-          reset();
-        }}
-        className="space-y-1 text-left"
-      >
-        <h2 className="font-semibold">{s.MESSAGE.sent}</h2>
-        <p className="text-gray">{s.MESSAGE.thankYou}</p>
-      </Dialog>
     </Fragment>
   );
 }
