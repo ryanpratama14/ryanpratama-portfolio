@@ -169,6 +169,7 @@ export const ICONS = {
   x: "ri:twitter-x-fill",
   facebook: "gg:facebook",
   spotify: "mdi:spotify",
+  wakatime: "simple-icons:wakatime",
 };
 
 export const CERTIFICATIONS: Certification[] = [
@@ -285,6 +286,11 @@ export const CONTACTS: Contact[] = [
     href: "https://www.linkedin.com/in/ryanpratama14",
     label: "LinkedIn",
     icon: ICONS.linkedin,
+  },
+  {
+    href: "https://wakatime.com/@ryanpratama14",
+    label: "WakaTime",
+    icon: ICONS.wakatime,
   },
   {
     href: "https://t.me/ryanpratama14",
