@@ -21,9 +21,9 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
   const Card = () => {
     return (
       <section className="flex items-center text-left">
-        <Img src={e.src} alt={e.label} className="size-full rounded-l-md w-[4.25rem] 2xl:w-[5.25rem]" />
+        <Img src={e.src} alt={e.label} className="size-full rounded-l-md w-[4.25rem]" />
 
-        <section className="pl-2.5 2xl:pl-3 flex flex-col">
+        <section className="pl-2.5 flex flex-col">
           {e.href ? (
             <LinkButton
               unstyled
@@ -53,10 +53,10 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
           <Card />
         </AccordionTrigger>
         <AccordionContent className="space-y-0.5 text-pretty">
-          {e.about ? <p className={cn("whitespace-pre-line max-md:text-xs")}>{e.about}</p> : null}
+          {e.about ? <p className={cn("whitespace-pre-line")}>{e.about}</p> : null}
           <ul className="ml-4 list-disc">
             {e.duty.map((duty) => (
-              <li key={duty} className={cn("max-md:text-xs")}>
+              <li key={duty} className={cn("")}>
                 {duty}
               </li>
             ))}

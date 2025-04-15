@@ -103,14 +103,13 @@ const config = {
     plugin(({ addUtilities }) => {
       addUtilities({
         ".main-padding": {
-          "@apply max-md:pb-16 p-4 md:p-6 lg:p-12 xl:p-16": {},
+          "@apply px-4 pt-4 pb-12 sm:pt-12": {},
         },
         ".main-padding-x": {
-          "@apply px-4 md:px-6 lg:px-12 xl:px-16": {},
+          "@apply px-4": {},
         },
-
         ".wrapper": {
-          "@apply mx-auto max-w-[600px] 2xl:max-w-[800px]": {},
+          "@apply mx-auto max-w-[700px]": {},
         },
 
         ".animate": {

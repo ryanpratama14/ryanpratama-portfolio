@@ -29,7 +29,7 @@
   }
 
   h1 {
-    @apply text-xl 2xl:text-3xl;
+    @apply text-xl;
   }
 
   h2,
@@ -37,20 +37,21 @@
   h4,
   h5,
   h6 {
-    @apply text-base 2xl:text-lg;
+    @apply text-base;
   }
 
   p,
   li,
   a,
   input,
-  textarea {
-    @apply text-sm 2xl:text-base;
+  textarea,
+  button {
+    @apply text-sm;
   }
 
   small,
   figcaption {
-    @apply text-xs 2xl:text-sm;
+    @apply text-xs;
   }
 
   :root {

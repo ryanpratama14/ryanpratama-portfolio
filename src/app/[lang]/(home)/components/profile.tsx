@@ -52,12 +52,12 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
   return (
     <article className="wrapper w-full">
       <section className="flex justify-between items-start">
-        <section className="flex items-center gap-3 md:gap-5">
+        <section className="flex items-center gap-3 md:gap-4">
           <LinkButton unstyled lang={lang} href={PATHS.main}>
             <Img
               src={PHOTOS.avatar}
               alt={s.PERSONAL_DATA.fullName}
-              className="animate object-top object-cover size-[4.75rem] md:size-24 2xl:size-32 aspect-square rounded-l-md"
+              className="animate object-top object-cover size-[4.75rem] md:size-24 aspect-square rounded-l-md"
             />
           </LinkButton>
 
