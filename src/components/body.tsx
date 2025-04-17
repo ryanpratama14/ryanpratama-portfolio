@@ -8,16 +8,16 @@ type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
 
 export default function Body({ data = [] }: Props) {
   return (
-    <section className="[&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 flex flex-col gap-2 border-b-1 border-dashed border-blue-300 pb-1">
+    <section className="[&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 flex flex-col gap-1 border-b-1 border-dashed border-blue-300 pb-1">
       <PortableText
         components={{
           block: {
-            h1: ({ children }) => <h1 className="mt-2 -mb-2">{children}</h1>,
-            h2: ({ children }) => <h2 className="mt-2 -mb-2">{children}</h2>,
-            h3: ({ children }) => <h3 className="mt-2 -mb-2">{children}</h3>,
-            h4: ({ children }) => <h4 className="mt-2 -mb-2">{children}</h4>,
-            h5: ({ children }) => <h5 className="mt-2 -mb-2">{children}</h5>,
-            h6: ({ children }) => <h6 className="mt-2 -mb-2">{children}</h6>,
+            h1: ({ children }) => <h1 className="mt-1 -mb-1">{children}</h1>,
+            h2: ({ children }) => <h2 className="mt-1 -mb-1">{children}</h2>,
+            h3: ({ children }) => <h3 className="mt-1 -mb-1">{children}</h3>,
+            h4: ({ children }) => <h4 className="mt-1 -mb-1">{children}</h4>,
+            h5: ({ children }) => <h5 className="mt-1 -mb-1">{children}</h5>,
+            h6: ({ children }) => <h6 className="mt-1 -mb-1">{children}</h6>,
           },
           marks: {
             strong: ({ children }) => <strong className="font-semibold">{children}</strong>,

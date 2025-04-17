@@ -20,7 +20,7 @@ export default function LangSwitcher({ storedLang }: Props) {
   }, [lang, storedLang]);
 
   return (
-    <ul className="flex">
+    <ul className="flex gap-1">
       {LANGUAGE_OPTIONS.map(
         ({
           lang: langTarget,
@@ -35,8 +35,9 @@ export default function LangSwitcher({ storedLang }: Props) {
             <li key={langTarget}>
               <LinkButton
                 unstyled
-                className={cn("font-default !text-xl md:!text-2xl !leading-3 px-1 md:px-1.5 rounded-md border-1 border-transparent", {
+                className={cn("font-default text-xl md:text-2xl px-1 md:px-1.5 rounded-md border-1 border-transparent", {
                   "bg-graybg border-graydarker shadow": isActive,
+                  "hover:bg-graybg": !isActive,
                 })}
                 href={changeLang(langTarget, path)}
               >
