@@ -104,6 +104,7 @@ export const OTHERS: Other = {
 };
 
 export const ICONS = {
+  stripe: "bi:stripe",
   send: "mdi:send",
   notFound: "ooui:article-not-found-ltr",
   close: "mdi:close",
@@ -261,6 +262,7 @@ export const TECH_STACKS: TechStack = {
     { label: "Resend", icon: ICONS.resend },
     { label: "React-pdf / js-PDF", icon: ICONS.reactPdf },
     { label: "ExcelJS", icon: ICONS.exceljs },
+    { label: "Stripe", icon: ICONS.stripe },
   ],
 
   db: [
