@@ -274,6 +274,7 @@ export const TECH_STACKS: TechStack = {
   learning: [
     { label: "Swift", icon: ICONS.swift },
     { label: "Rust", icon: ICONS.rust },
+    { label: "Go", icon: ICONS.go },
   ],
 };
 

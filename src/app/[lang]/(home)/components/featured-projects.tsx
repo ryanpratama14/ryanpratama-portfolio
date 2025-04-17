@@ -19,7 +19,7 @@ export default function FeaturedProjects({ s }: Props) {
         scrollbar={{ draggable: true, el: ".swiper-scrollbar" }}
         className="w-full"
         spaceBetween={10}
-        slidesPerView={1.45}
+        slidesPerView={1.35}
         simulateTouch={false}
         breakpoints={{ 768: { slidesPerView: 2.5 } }}
       >
