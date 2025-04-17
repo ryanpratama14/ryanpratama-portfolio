@@ -34,6 +34,7 @@ export default function LangSwitcher({ storedLang }: Props) {
           return (
             <li key={langTarget}>
               <LinkButton
+                disabled={isActive}
                 unstyled
                 className={cn("font-default text-xl md:text-2xl px-1 md:px-1.5 rounded-md border-1 border-transparent", {
                   "bg-graybg border-graydarker shadow": isActive,

@@ -238,6 +238,7 @@ export const TECH_STACKS: TechStack = {
     { label: "T3 Stack", icon: ICONS.t3 },
     { label: "React / Next.js", icon: ICONS.react, icon2: ICONS.nextjs },
     { label: "React Native", icon: ICONS.reactNative },
+    { label: "Stripe", icon: ICONS.stripe },
     { label: "Sanity", icon: ICONS.sanity },
 
     { label: "tRPC", icon: "devicon-plain:trpc" },
@@ -262,7 +263,6 @@ export const TECH_STACKS: TechStack = {
     { label: "Resend", icon: ICONS.resend },
     { label: "React-pdf / js-PDF", icon: ICONS.reactPdf },
     { label: "ExcelJS", icon: ICONS.exceljs },
-    { label: "Stripe", icon: ICONS.stripe },
   ],
 
   db: [

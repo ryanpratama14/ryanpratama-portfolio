@@ -13,10 +13,17 @@ type Props = LinkProps &
     lang?: Lang;
     unstyled?: boolean;
     newTab?: boolean;
+    disabled?: boolean;
   };
 
-export default function LinkButton({ children, className, style, href, lang, target, rel, unstyled, newTab, ...rest }: Props) {
+export default function LinkButton({ children, className, style, href, lang, target, rel, unstyled, newTab, disabled, ...rest }: Props) {
   const isNewTab = isExternalLink(href) || newTab;
+
+  if (disabled) {
+    return (
+      <span className={cn(unstyled ? className : VARIANTS.Button({ className, style }))}>{children || <span className="sr-only">Link</span>}</span>
+    );
+  }
 
   return (
     <Link
