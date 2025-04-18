@@ -132,6 +132,7 @@ export const ICONS = {
   hono: "simple-icons:hono",
   i18next: "simple-icons:i18next",
   redux: "akar-icons:redux-fill",
+  zustand: "devicon-plain:zustand",
   zod: "simple-icons:zod",
   reactHookForm: "simple-icons:reacthookform",
   drizzle: "simple-icons:drizzle",
@@ -153,6 +154,8 @@ export const ICONS = {
   mongodb: "teenyicons:mongodb-solid",
   postgresql: "akar-icons:postgresql-fill",
   mysql: "simple-icons:mysql",
+  neon: "logos:neon-icon",
+  supabase: "ri:supabase-fill",
 
   swift: "simple-icons:swift",
   flutter: "material-symbols:flutter",
@@ -246,6 +249,7 @@ export const TECH_STACKS: TechStack = {
     { label: "Express.js", icon: ICONS.expressjs },
     { label: "Hono", icon: ICONS.hono },
     { label: "i18next", icon: ICONS.i18next },
+    { label: "Zustand", icon: ICONS.zustand },
     { label: "Redux Toolkit", icon: ICONS.redux },
     { label: "Zod", icon: ICONS.zod },
     { label: "React Hook Form", icon: ICONS.reactHookForm },
@@ -267,6 +271,7 @@ export const TECH_STACKS: TechStack = {
 
   db: [
     { label: "MongoDB", icon: ICONS.mongodb },
+    { label: "Supabase", icon: ICONS.supabase },
     { label: "PostgreSQL", icon: ICONS.postgresql },
     { label: "MySQL", icon: ICONS.mysql },
   ],
