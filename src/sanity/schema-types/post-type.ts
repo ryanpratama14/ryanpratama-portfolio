@@ -27,7 +27,6 @@ export const postType = defineType({
       options: { hotspot: true },
       fields: [{ name: "alt", type: "string", title: "Caption" }],
       group: "detail",
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "slug",

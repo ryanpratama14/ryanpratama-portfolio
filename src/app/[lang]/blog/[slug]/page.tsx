@@ -54,11 +54,12 @@ export default async function BlogPageBySlug({ params }: Props) {
           <LocalTime className="text-blue-300 py-1 border-y-1 font-medium border-blue-300" lang={lang} date={data.publishedAtDate} />
         </header>
 
-        <figure className="space-y-1">
-          <ImgSanity alt={data?.mainImage?.asset?.altText} className="w-full aspect-auto rounded-md" src={data.mainImage} />
-          {data.mainImage?.alt ? <figcaption className="text-gray">{data.mainImage?.alt}</figcaption> : null}
-        </figure>
-
+        {data.mainImage ? (
+          <figure className="space-y-1">
+            <ImgSanity alt={data?.mainImage?.asset?.altText} className="w-full aspect-auto rounded-md" src={data.mainImage} />
+            {data.mainImage?.alt ? <figcaption className="text-gray">{data.mainImage?.alt}</figcaption> : null}
+          </figure>
+        ) : null}
         <Body data={data.body} />
         <section className="space-y-1.5">
           <h2 className="font-semibold">{s.SECTIONS.share}</h2>

@@ -22,15 +22,15 @@ const DATA = [
 
 export default function Share({ url }: { url: string }) {
   return (
-    <ul className="flex gap-2">
+    <ul className="flex gap-1.5">
       {DATA.map((e) => (
         <li key={e.icon}>
           <e.Component url={url}>
-            <span className="sr-only">{url}</span>
+            <span className="sr-only">{e.label}</span>
             <Icon
               icon={e.icon}
-              width={22}
-              className="animate size-8 text-white bg-blue-600 hover:bg-blue-800 shadow rounded-full flex items-center justify-center"
+              width={20}
+              className="animate p-1 text-white bg-blue-600 hover:bg-blue-800 shadow rounded-md flex items-center justify-center"
             />
           </e.Component>
         </li>

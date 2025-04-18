@@ -16,9 +16,9 @@ export default function BlogCards({ data, href, lang, title }: Props) {
         {data.result.map((e) => {
           return (
             <li key={e._id} className="flex flex-col gap-1.5 md:gap-2">
-              <section className="flex items-center">
+              <section className="flex items-center gap-2.5 md:gap-3">
                 <ImgSanity src={e.mainImage} alt={e.mainImage?.alt} className="aspect-square rounded-l-md w-[4.25rem] object-center object-cover" />
-                <header className="flex flex-col pl-2.5 md:pl-3">
+                <header className="flex flex-col">
                   <LinkButton lang={lang} unstyled href={e.href} className="font-medium hover:underline line-clamp-1">
                     <h2 className="line-clamp-1">{e.title}</h2>
                   </LinkButton>
