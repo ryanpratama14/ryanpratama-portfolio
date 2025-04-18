@@ -29,8 +29,8 @@ export const VARIANTS = {
     base: "rounded-md flex items-center bg-graybg",
     variants: {
       style: {
-        contact: "shadow text-sm gap-1 px-2 py-0.5 animate hover:bg-grayborder",
-        techstack: "text-[0.7rem] px-1 py-[0.1rem] gap-[0.2rem]",
+        contact: "shadow text-sm gap-1 px-1.5 py-0.5 animate hover:bg-grayborder",
+        techstack: "text-[0.7rem] px-[0.3rem] py-[0.1rem] gap-[0.2rem]",
       },
     },
   }),
