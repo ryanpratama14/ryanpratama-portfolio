@@ -20,7 +20,7 @@ export default function LangSwitcher({ storedLang }: Props) {
   }, [lang, storedLang]);
 
   return (
-    <ul className="flex gap-1">
+    <ul className="flex gap-0.5 md:gap-1">
       {LANGUAGE_OPTIONS.map(
         ({
           lang: langTarget,
