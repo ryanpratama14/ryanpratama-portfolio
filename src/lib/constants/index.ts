@@ -125,6 +125,7 @@ export const ICONS = {
   t3: "bi:stack",
   react: "teenyicons:react-solid",
   reactNative: "tabler:brand-react-native",
+  expo: "simple-icons:expo",
   nextjs: "teenyicons:nextjs-solid",
   trpc: "devicon-plain:trpc",
   nodejs: "akar-icons:node-fill",
@@ -186,18 +187,6 @@ export const CERTIFICATIONS: Certification[] = [
 
 export const PROJECTS: Project[] = [
   {
-    label: "Pemuda ICMI",
-    src: PHOTOS.project.pemudaicmi,
-    key: "pemudaicmi",
-    href: "https://pemudaicmi.com",
-  },
-  {
-    label: "Fao Tour & Travel",
-    src: PHOTOS.project.faotour,
-    key: "faotour",
-    href: "https://faotour.com",
-  },
-  {
     label: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
     key: "hebronstar",
@@ -208,6 +197,18 @@ export const PROJECTS: Project[] = [
     src: PHOTOS.project.turta,
     key: "turuntangan",
     href: "https://gerakanturuntangan.com",
+  },
+  {
+    label: "Pemuda ICMI",
+    src: PHOTOS.project.pemudaicmi,
+    key: "pemudaicmi",
+    href: "https://pemudaicmi.com",
+  },
+  {
+    label: "Fao Tour & Travel",
+    src: PHOTOS.project.faotour,
+    key: "faotour",
+    href: "https://faotour.com",
   },
   {
     label: "Belinsky",
@@ -240,7 +241,7 @@ export const TECH_STACKS: TechStack = {
   librariesFrameworks: [
     { label: "T3 Stack", icon: ICONS.t3 },
     { label: "React / Next.js", icon: ICONS.react, icon2: ICONS.nextjs },
-    { label: "React Native", icon: ICONS.reactNative },
+    { label: "React Native", icon: ICONS.reactNative, icon2: ICONS.expo },
     { label: "Stripe", icon: ICONS.stripe },
     { label: "Sanity", icon: ICONS.sanity },
 
