@@ -241,7 +241,7 @@ export const TECH_STACKS: TechStack = {
   librariesFrameworks: [
     { label: "T3 Stack", icon: ICONS.t3 },
     { label: "React / Next.js", icon: ICONS.react, icon2: ICONS.nextjs },
-    { label: "React Native", icon: ICONS.reactNative, icon2: ICONS.expo },
+    { label: "React Native / Expo", icon: ICONS.reactNative, icon2: ICONS.expo },
     { label: "Stripe", icon: ICONS.stripe },
     { label: "Sanity", icon: ICONS.sanity },
 
