@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import type { LangTarget } from "@/types";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import Img from "./html/img";
 import LinkButton from "./html/link-button";
 
 type Props = { storedLang: LangTarget };
@@ -36,14 +37,22 @@ export default function LangSwitcher({ storedLang }: Props) {
               <LinkButton
                 disabled={isActive}
                 unstyled
-                className={cn("font-default text-xl md:text-2xl px-1 md:px-1.5 rounded-md border-1 border-transparent", {
-                  "bg-graybg border-graydarker shadow": isActive,
-                  "hover:bg-graybg": !isActive,
-                })}
+                className={cn(
+                  "max-md:font-default max-md:text-xl px-1 md:p-2 rounded-md border-1 border-transparent md:flex items-center justify-center",
+                  {
+                    "bg-graybg border-graydarker shadow": isActive,
+                    "hover:bg-graybg": !isActive,
+                  },
+                )}
                 href={changeLang(langTarget, path)}
               >
                 <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
-                {flag}
+                <span className="md:hidden">{flag}</span>
+                <Img
+                  src={`/assets/flags/${langTarget.toLowerCase()}.svg`}
+                  alt={langTarget}
+                  className="w-6 h-4 object-cover object-center max-md:hidden"
+                />
               </LinkButton>
             </li>
           );
