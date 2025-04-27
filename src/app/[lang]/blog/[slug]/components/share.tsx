@@ -29,8 +29,8 @@ export default function Share({ url }: { url: string }) {
             <span className="sr-only">{e.label}</span>
             <Icon
               icon={e.icon}
-              width={17.5}
-              className="animate p-1 text-white bg-blue-600 hover:bg-blue-800 shadow rounded-md flex items-center justify-center"
+              width={18}
+              className="animate p-[0.225rem] text-white bg-blue-600 hover:bg-blue-800 shadow rounded-md flex items-center justify-center"
             />
           </e.Component>
         </li>
