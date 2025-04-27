@@ -22,11 +22,11 @@ export default function Body({ data = [] }: Props) {
           marks: {
             strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
             link: ({ value, children }) => {
-              const path = value?.href;
+              const path = value?.href as string | undefined | null;
               if (!path) return null;
 
               return (
-                <LinkButton unstyled href={path as string} className="font-medium text-gray border-b-1 hover:border-blue-600">
+                <LinkButton unstyled href={path} className="font-medium border-b-1 hover:border-blue-300 text-blue-300">
                   {children}
                 </LinkButton>
               );
