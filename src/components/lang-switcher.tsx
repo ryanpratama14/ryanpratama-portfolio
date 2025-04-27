@@ -31,6 +31,7 @@ export default function LangSwitcher({ storedLang }: Props) {
           flag,
         }) => {
           const isActive = lang === langTarget;
+          const href = changeLang(langTarget, path);
 
           return (
             <li key={langTarget}>
@@ -38,20 +39,20 @@ export default function LangSwitcher({ storedLang }: Props) {
                 disabled={isActive}
                 unstyled
                 className={cn(
-                  "max-md:font-default max-md:text-xl px-1 md:p-2 rounded-md border-1 border-transparent md:flex items-center justify-center",
+                  "max-md:font-default max-md:text-xl px-1 md:p-[0.4rem] rounded-md border-1 border-transparent md:flex items-center justify-center",
                   {
                     "bg-graybg border-graydarker shadow": isActive,
                     "hover:bg-graybg": !isActive,
                   },
                 )}
-                href={changeLang(langTarget, path)}
+                href={href}
               >
                 <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
                 <span className="md:hidden">{flag}</span>
                 <Img
                   src={`/assets/flags/${langTarget.toLowerCase()}.svg`}
                   alt={langTarget}
-                  className="w-6 h-4 object-cover object-center max-md:hidden"
+                  className="w-[1.4rem] h-[0.9rem] object-cover object-center max-md:hidden"
                 />
               </LinkButton>
             </li>
