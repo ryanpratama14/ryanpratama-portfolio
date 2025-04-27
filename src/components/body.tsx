@@ -8,7 +8,7 @@ type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
 
 export default function Body({ data = [] }: Props) {
   return (
-    <section className="[&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 flex flex-col gap-1 border-b-1 border-dashed border-blue-300 pb-1">
+    <section className="[&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 flex flex-col gap-1 border-b-1 border-dashed border-blue-300 pb-2">
       <PortableText
         components={{
           block: {
