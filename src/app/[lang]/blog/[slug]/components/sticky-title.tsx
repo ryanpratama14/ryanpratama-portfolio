@@ -23,6 +23,7 @@ export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResul
       }
     };
     window.addEventListener("scroll", handleScroll, ctr);
+
     return () => ctr.abort();
   }, []);
 
