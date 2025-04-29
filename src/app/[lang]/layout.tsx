@@ -25,7 +25,7 @@ export default async function RootLayout({ params, children }: Props) {
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
-        className="wrapper"
+        className="wrapper rounded-md"
       />
     </Fragment>
   );
