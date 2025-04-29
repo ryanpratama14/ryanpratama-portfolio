@@ -109,7 +109,7 @@ const config = {
           "@apply px-4": {},
         },
         ".wrapper": {
-          "@apply mx-auto max-w-[700px]": {},
+          "@apply mx-auto max-w-[700px] w-full": {},
         },
 
         ".animate": {

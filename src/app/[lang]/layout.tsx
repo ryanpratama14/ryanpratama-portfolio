@@ -18,6 +18,15 @@ export default async function RootLayout({ params, children }: Props) {
       {children}
       <Message s={s} lang={lang} />
       <Container title={d.updatedOn(formatDate(new Date()))} />
+      <iframe
+        title="Spotify"
+        src="https://open.spotify.com/embed/track/6Wz9rIfo9tOBcVCd1Mo7F7"
+        width="100%"
+        allowFullScreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        className="wrapper"
+      />
     </Fragment>
   );
 }
