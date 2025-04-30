@@ -42,15 +42,15 @@ export const PHOTOS = {
 };
 
 export const EXPERIENCES: History[] = [
-  {
-    key: "waterhub",
-    src: PHOTOS.logo.waterhub,
-    href: "https://dashboard.waterhub.co.id",
-    since: dayjs("2025-01").toDate(),
-    till: null,
-    location: "jakarta",
-    type: "remote",
-  },
+  // {
+  //   key: "waterhub",
+  //   src: PHOTOS.logo.waterhub,
+  //   href: "https://dashboard.waterhub.co.id",
+  //   since: dayjs("2025-01").toDate(),
+  //   till: null,
+  //   location: "jakarta",
+  //   type: "remote",
+  // },
   {
     key: "rave",
     src: PHOTOS.logo.rave,
@@ -60,15 +60,15 @@ export const EXPERIENCES: History[] = [
     location: "singapore",
     type: "remote",
   },
-  {
-    key: "freelance",
-    src: PHOTOS.logo.freelance,
-    href: PERSONALS.mailTo,
-    since: dayjs("2024-11").toDate(),
-    till: null,
-    location: PERSONALS.location,
-    type: "remote",
-  },
+  // {
+  //   key: "freelance",
+  //   src: PHOTOS.logo.freelance,
+  //   href: PERSONALS.mailTo,
+  //   since: dayjs("2024-11").toDate(),
+  //   till: null,
+  //   location: PERSONALS.location,
+  //   type: "remote",
+  // },
   {
     key: "nutech",
     src: PHOTOS.logo.nutech,
