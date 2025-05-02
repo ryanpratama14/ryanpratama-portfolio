@@ -18,7 +18,7 @@ export default function BlogCards({ data, href, lang, title }: Props) {
             <li key={e._id}>
               <LinkButton lang={lang} unstyled href={e.href} className="flex flex-col gap-1.5 md:gap-2">
                 <section className="flex items-center gap-2.5 md:gap-3">
-                  <ImgSanity src={e.mainImage} alt={e.mainImage?.alt} className="aspect-square rounded-l-md w-[4.25rem] object-center object-cover" />
+                  <ImgSanity src={e.mainImage} alt={e.mainImage?.alt} className="aspect-square rounded-l-sm w-[4.25rem] object-center object-cover" />
                   <header className="flex flex-col">
                     <h2 className="line-clamp-1 font-medium">{e.title}</h2>
                     <LocalTime className="text-blue-300 font-medium line-clamp-1" lang={lang} date={e.publishedAtDate} />

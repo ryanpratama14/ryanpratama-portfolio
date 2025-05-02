@@ -37,7 +37,7 @@ export default function Body({ data = [] }: Props) {
               if (!value?.asset?._ref) return null;
               return (
                 <figure className="flex flex-col gap-1 my-2">
-                  <Img alt={value?.alt} className="w-full aspect-auto rounded-md" src={urlFor(value).url()} />
+                  <Img alt={value?.alt} className="w-full aspect-auto rounded-sm" src={urlFor(value).url()} />
                   {value?.alt ? <figcaption className="text-gray">{value.alt}</figcaption> : null}
                 </figure>
               );

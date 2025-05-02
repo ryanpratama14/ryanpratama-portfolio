@@ -9,7 +9,7 @@ export const COLORS = {
 
 export const VARIANTS = {
   Button: tv({
-    base: "whitespace-nowrap flex items-center justify-center disabled:cursor-progress rounded-md shadow active:scale-95",
+    base: "whitespace-nowrap flex items-center justify-center disabled:cursor-progress rounded-sm shadow active:scale-95",
     variants: {
       style: {
         reguler: "font-medium px-4 h-7 bg-blue-600 hover:bg-blue-800 disabled:bg-blue-800",
@@ -22,11 +22,11 @@ export const VARIANTS = {
   }),
 
   Input: tv({
-    base: "w-full disabled:bg-graydisabled bg-graybg focus:bg-grayhover hover:bg-grayhover focus:border-grayborder disabled:cursor-not-allowed px-2 py-1 border-[1.5px] border-transparent placeholder:text-graydarker rounded-md outline-none active:outline-none focus:outline-none",
+    base: "w-full disabled:bg-graydisabled bg-graybg focus:bg-grayhover hover:bg-grayhover focus:border-grayborder disabled:cursor-not-allowed px-2 py-1 border-[1.5px] border-transparent placeholder:text-graydarker rounded-sm outline-none active:outline-none focus:outline-none",
   }),
 
   Box: tv({
-    base: "rounded-md flex items-center bg-graybg",
+    base: "rounded-sm flex items-center bg-graybg",
     variants: {
       style: {
         contact: "shadow text-sm gap-1 px-1.5 py-0.5 animate hover:bg-grayborder",

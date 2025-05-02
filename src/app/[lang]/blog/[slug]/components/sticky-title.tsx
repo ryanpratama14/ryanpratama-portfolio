@@ -42,7 +42,7 @@ export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResul
         <LinkButton
           unstyled
           href={PERSONALS.mailTo}
-          className="shadow p-1.5 aspect-square rounded-md flex items-center justify-center bg-white hover:bg-white/80 text-blue-600"
+          className="shadow p-1.5 aspect-square rounded-sm flex items-center justify-center bg-white hover:bg-white/80 text-blue-600"
         >
           <Mail className="size-5 md:size-[1.4rem]" />
         </LinkButton>

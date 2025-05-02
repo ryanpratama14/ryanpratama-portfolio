@@ -36,7 +36,6 @@ export const THROW_TRPC = {
     result = null as Result,
   }: { code: TRPC_OK_CODE_KEY; message?: string; input?: Input; result?: Result }) => {
     const res = { input, result, code, message };
-    CONSOLE_TRPC.ok("ok", res);
     return res;
   },
 
