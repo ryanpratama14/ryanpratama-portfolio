@@ -27,8 +27,7 @@ export default function ScreenSizeIndicator() {
       <li className="hidden md:block lg:hidden">MD</li>
       <li className="hidden lg:block xl:hidden">LG</li>
       <li className="hidden xl:block 2xl:hidden">XL</li>
-      <li className="hidden 2xl:block 3xl:hidden">2XL</li>
-      <li className="hidden 3xl:block">3XL</li>
+      <li className="hidden 2xl:block">2XL</li>
       <li className="font-medium">
         {dimensions.width.toLocaleString(locale)} x {dimensions.height.toLocaleString(locale)}
       </li>

@@ -12,19 +12,15 @@ export default function ProjectCard({ data }: { data: (typeof PROJECTS)[number] 
   const [clicked, setClicked] = useState(false);
 
   return (
-    <button
-      type="button"
-      onClick={() => setClicked(!clicked)}
-      className="mb-2 aspect-square relative group overflow-hidden rounded-sm group cursor-default"
-    >
+    <button type="button" onClick={() => setClicked(!clicked)} className="mb-2 aspect-square relative overflow-hidden rounded-sm group">
       <section
         className={cn("z-10 absolute top-0 left-0 size-full opacity-0 bg-black/90 animate group-hover:opacity-100", {
-          "max-sm:opacity-100": clicked,
+          "opacity-100": clicked,
         })}
       >
         <div
           className={cn("flex flex-col items-end absolute font-semibold top-2 w-full px-3 text-right translate-x-full group-hover:translate-x-0", {
-            "max-sm:translate-x-0": clicked,
+            "translate-x-0": clicked,
           })}
         >
           <p>{e.label}</p>
@@ -34,7 +30,7 @@ export default function ProjectCard({ data }: { data: (typeof PROJECTS)[number] 
 
         <LinkButton
           href={e.href}
-          className={cn("z-10 translate-y-full absolute centered-bottom group-hover:-translate-y-4", { "max-sm:-translate-y-4": clicked })}
+          className={cn("z-10 translate-y-full absolute centered-bottom group-hover:-translate-y-4", { "-translate-y-4": clicked })}
         >
           {e.visitProjectText}
         </LinkButton>
@@ -43,7 +39,7 @@ export default function ProjectCard({ data }: { data: (typeof PROJECTS)[number] 
       <Img
         src={e.src}
         alt={e.desc}
-        className={cn("rounded-sm object-cover size-full animate-longer group-hover:scale-[1.1]", { "max-sm:scale-[1.1]": clicked })}
+        className={cn("rounded-sm object-cover size-full animate-longer group-hover:scale-[1.1]", { "scale-[1.1]": clicked })}
         priority
       />
     </button>
