@@ -6,18 +6,18 @@ import { cn, toPascalCase } from "@/lib/utils";
 import type { DictionaryStatic, Lang } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
+import { type ComponentProps, Fragment } from "react";
 import LinkButton from "./html/link-button";
 
-type Props = { slugTitle: string | undefined; s: DictionaryStatic; lang: Lang };
+type Props = ComponentProps<"ul"> & { slugTitle: string | undefined; s: DictionaryStatic; lang: Lang };
 
-export default function Breadcrumb({ slugTitle, s, lang }: Props) {
+export default function Breadcrumb({ slugTitle, s, lang, className, ...rest }: Props) {
   const path = usePathname();
   const paths = path.split("/").filter((e) => !LANGS.includes(e as Lang) && e);
   const separator = <span> / </span>;
 
   return (
-    <ul className="text-graydarker breadcrumb flex items-center gap-x-1 flex-wrap">
+    <ul className={cn("text-graydarker breadcrumb flex items-center gap-x-1 flex-wrap", className)} {...rest}>
       <li className="hover:underline">
         <LinkButton unstyled lang={lang} href={PATHS.main}>
           {s.MENUS.main}
