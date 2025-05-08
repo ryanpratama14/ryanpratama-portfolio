@@ -26,7 +26,7 @@ export default function Body({ data = [] }: Props) {
               if (!path) return null;
 
               return (
-                <LinkButton unstyled href={path} className="font-medium border-b-1 hover:border-blue-300 text-blue-300">
+                <LinkButton unstyled href={path} className="font-medium border-b-1 border-blue-300 text-blue-300">
                   {children}
                 </LinkButton>
               );

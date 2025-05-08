@@ -3,7 +3,6 @@ import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/
 import { useLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { DictionaryStatic, History, Lang } from "@/types";
-import { DynamicIcon } from "lucide-react/dynamic";
 import LinkButton from "./html/link-button";
 
 type Props = {
@@ -22,22 +21,9 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
     return (
       <section className="flex items-center text-left">
         <Img src={e.src} alt={e.label} className="size-full rounded-l-sm w-[4.25rem]" />
-
-        <section className="pl-2.5 flex flex-col">
-          {e.href ? (
-            <LinkButton
-              unstyled
-              href={e.href}
-              className="font-medium hover:underline line-clamp-1 w-fit flex items-center gap-1 translate-x-[0.085rem]"
-            >
-              <DynamicIcon name="external-link" size={12.5} />
-              {e.label}
-            </LinkButton>
-          ) : (
-            <p className="font-medium">{e.label}</p>
-          )}
-          <p className="text-gray font-medium line-clamp-1">{e.desc}</p>
-
+        <section className="pl-2.5 flex flex-col gap-0.5">
+          <p className="font-semibold line-clamp-1">{e.desc}</p>
+          <small className="font-medium text-gray">{e.label}</small>
           <small className="text-graydarker">
             {`${e.location}${e.type ? ` (${e.type.toLowerCase()})` : ""} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}
           </small>
@@ -52,9 +38,12 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
         <AccordionTrigger>
           <Card />
         </AccordionTrigger>
-        <AccordionContent className="space-y-0.5 text-pretty">
-          {e.about ? <p className={cn("whitespace-pre-line")}>{e.about}</p> : null}
-          <ul className="ml-4 list-disc">
+        <AccordionContent className="flex flex-col gap-0.5">
+          {e.about ? <p className={cn("whitespace-pre-line text-pretty")}>{e.about}</p> : null}
+          <LinkButton unstyled href={e.href} className="w-fit font-medium border-b-1 border-blue-300 text-blue-300">
+            {e.href.replace(/https:\/\/(www\.)?/g, "")}
+          </LinkButton>
+          <ul className="ml-4 list-disc mt-1">
             {e.duty.map((duty) => (
               <li key={duty} className={cn("")}>
                 {duty}
