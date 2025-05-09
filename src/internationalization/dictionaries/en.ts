@@ -182,6 +182,8 @@ export const en = {
       },
 
       PROJECTS: {
+        rymal:
+          "A luxury perfume brand based in Dubai, featuring a modern e-commerce platform with promotional tools, a dynamic landing page, an integrated emailing system, and elegant showcases for their perfume collections.",
         faotour:
           "A travel agency offering diverse tours across Europe and Asia, equipped with a Sanity CMS to manage tour packages, promotions, and content, along with a dynamic landing page, an emailing system, and a tour showcase and highlight their offerings.",
         pemudaicmi:

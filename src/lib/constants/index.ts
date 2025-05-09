@@ -16,6 +16,7 @@ import hebronstar from "#/images/project/hebronstar.webp";
 import kima from "#/images/project/kima.webp";
 import mandiri from "#/images/project/mandiri.webp";
 import pemudaicmi from "#/images/project/pemudaicmi.webp";
+import rymal from "#/images/project/rymal.webp";
 import turta from "#/images/project/turta.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
@@ -36,7 +37,7 @@ export const PERSONALS: {
 
 export const PHOTOS = {
   logo: { nutech, faotech, kfu, rave, freelance, waterhub },
-  project: { belinsky, hebronstar, faotour, kima, mandiri, turta, pemudaicmi },
+  project: { belinsky, hebronstar, faotour, kima, mandiri, turta, pemudaicmi, rymal },
   certifications: { n3, podfak },
   avatar,
 };
@@ -187,6 +188,12 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    label: "RYMAL Dubai",
+    src: PHOTOS.project.rymal,
+    key: "rymal",
+    href: "https://rymaldubai.com",
+  },
   {
     label: "Hebronstar Strategy Consultants",
     src: PHOTOS.project.hebronstar,
