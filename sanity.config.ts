@@ -8,7 +8,6 @@ import { media } from "sanity-plugin-media";
 import { presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
 import { apiVersion, dataset, projectId } from "./src/sanity/env";
-import { defaultDocumentNode } from "./src/sanity/lib/default-document-node";
 import { schema } from "./src/sanity/schema-types";
 import { structure } from "./src/sanity/structure";
 
@@ -18,7 +17,7 @@ export default defineConfig({
   dataset,
   schema,
   plugins: [
-    structureTool({ defaultDocumentNode, structure }),
+    structureTool({ structure }),
     visionTool({ defaultApiVersion: apiVersion }),
     presentationTool({
       resolve,
