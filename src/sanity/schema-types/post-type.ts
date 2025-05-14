@@ -54,7 +54,7 @@ export const postType = defineType({
     defineField({
       name: "description",
       title: "SEO, Description",
-      type: "string",
+      type: "text",
       group: "seo",
       validation: (Rule) => Rule.required(),
     }),
