@@ -19,7 +19,7 @@ export default function About({ s }: Props) {
                   <Icon icon={e.icon} width={13} />
                   {e.icon2 ? <Icon icon={e.icon2} width={13} /> : null}
                 </section>
-                <small>{e.label}</small>
+                {e.label}
               </li>
             );
           })}

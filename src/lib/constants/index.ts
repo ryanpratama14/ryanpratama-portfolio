@@ -325,9 +325,9 @@ export const CONTACTS: Contact[] = [
     label: "Instagram",
     icon: ICONS.instagram,
   },
-  {
-    href: "https://open.spotify.com/user/totorogoriorio",
-    label: "Spotify",
-    icon: ICONS.spotify,
-  },
+  // {
+  //   href: "https://open.spotify.com/user/totorogoriorio",
+  //   label: "Spotify",
+  //   icon: ICONS.spotify,
+  // },
 ];

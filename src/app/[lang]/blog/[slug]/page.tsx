@@ -70,8 +70,8 @@ export default async function BlogPageBySlug({ params }: Props) {
           <ul className="flex gap-1 md:gap-1.5 flex-wrap">
             {data.tags.map((e) => {
               return (
-                <li key={e}>
-                  <small className={VARIANTS.Box({ style: "techstack" })}>{e}</small>
+                <li key={e} className={VARIANTS.Box({ style: "techstack" })}>
+                  {e}
                 </li>
               );
             })}
