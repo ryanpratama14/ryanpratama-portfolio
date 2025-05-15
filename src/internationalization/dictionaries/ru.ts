@@ -164,7 +164,7 @@ export const ru: Dictionary = {
       share: "Вам понравилось? Поделитесь этим постом и вдохновите других!",
       notFound: "Страница не найдена",
       backToHomepage: "На главную страницу",
-      present: "настоящее время",
+      present: "наст. время",
       resume: "Резюме",
       visitProject: "Посетить проект",
     },

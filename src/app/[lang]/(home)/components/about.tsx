@@ -16,8 +16,8 @@ export default function About({ s }: Props) {
             return (
               <li key={e.label} className={VARIANTS.Box({ style: "techstack" })}>
                 <section className="flex items-center gap-0.5">
-                  <Icon icon={e.icon} width={13} />
-                  {e.icon2 ? <Icon icon={e.icon2} width={13} /> : null}
+                  <Icon icon={e.icon} width={11} />
+                  {e.icon2 ? <Icon icon={e.icon2} width={11} /> : null}
                 </section>
                 {e.label}
               </li>
@@ -33,7 +33,7 @@ export default function About({ s }: Props) {
   return (
     <Container title={s.MENUS.about}>
       <p>{s.PERSONAL_DATA.summary}</p>
-      <section className="space-y-2">
+      <section className="flex flex-col gap-2">
         {keys.map((e) => {
           return <TechStack name={e} key={e} />;
         })}

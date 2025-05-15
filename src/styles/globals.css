@@ -219,7 +219,7 @@
 
   small,
   figcaption {
-    @apply text-xs;
+    @apply text-[0.6rem] md:text-xs;
   }
 }
 

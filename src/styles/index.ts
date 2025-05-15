@@ -30,7 +30,7 @@ export const VARIANTS = {
     variants: {
       style: {
         contact: "shadow text-xs md:text-sm gap-1 px-1.5 py-0.5 animate hover:bg-grayborder",
-        techstack: "text-[0.65rem] md:text-xs px-[0.3rem] py-[0.1rem] gap-[0.2rem]",
+        techstack: "text-[0.6rem] md:text-xs px-[0.3rem] py-[0.1rem] md:py-0.5 gap-[0.2rem]",
       },
     },
   }),
