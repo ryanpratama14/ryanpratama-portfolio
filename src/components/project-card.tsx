@@ -14,24 +14,20 @@ export default function ProjectCard({ data }: { data: (typeof PROJECTS)[number] 
   return (
     <button type="button" onClick={() => setClicked(!clicked)} className="mb-2 aspect-square relative overflow-hidden rounded-sm group">
       <section
-        className={cn("z-10 absolute top-0 left-0 size-full opacity-0 bg-black/90 animate group-hover:opacity-100", {
-          "opacity-100": clicked,
-        })}
+        className={cn(
+          "z-10 absolute flex flex-col gap-2.5 justify-between p-2.5 top-0 left-0 size-full opacity-0 bg-black/90 animate group-hover:opacity-100",
+          {
+            "opacity-100": clicked,
+          },
+        )}
       >
-        <div
-          className={cn("flex flex-col items-end absolute font-semibold top-2 w-full px-3 text-right translate-x-full group-hover:translate-x-0", {
-            "translate-x-0": clicked,
-          })}
-        >
-          <p>{e.label}</p>
-          <div className="w-6 h-0.5 bg-white" />
+        <div className="flex flex-col gap-0.5 items-end">
+          <p className="font-semibold text-right">{e.label}</p>
+          <div className="w-6 h-[1px] bg-white" />
         </div>
-        <small className="flex text-center px-3 w-full absolute centered font-medium text-balance">{e.desc}</small>
+        <small className="text-center text-balance">{e.desc}</small>
 
-        <LinkButton
-          href={e.href}
-          className={cn("z-10 translate-y-full absolute centered-bottom group-hover:-translate-y-4", { "-translate-y-4": clicked })}
-        >
+        <LinkButton href={e.href} className="md:h-7 h-6 w-fit mx-auto mb-1">
           {e.visitProjectText}
         </LinkButton>
       </section>
