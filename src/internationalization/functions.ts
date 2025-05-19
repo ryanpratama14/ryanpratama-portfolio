@@ -1,6 +1,6 @@
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import type { Lang, LangTarget } from "@/types";
-import { z } from "zod";
+import { z } from "zod/v4";
 
 const useLang = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
