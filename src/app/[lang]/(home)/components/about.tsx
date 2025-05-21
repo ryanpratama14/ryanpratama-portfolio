@@ -1,3 +1,5 @@
+"use client";
+
 import Container from "@/components/container";
 import { TECH_STACKS } from "@/lib/constants";
 import { VARIANTS } from "@/styles";
