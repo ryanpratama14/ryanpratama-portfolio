@@ -38,7 +38,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
           setOpen(false);
           reset();
         }}
-        className="space-y-1 text-left"
+        className="space-y-1"
       >
         <h2 className="font-semibold">{s.MESSAGE.sent}</h2>
         <p className="text-gray">{s.MESSAGE.thankYou}</p>

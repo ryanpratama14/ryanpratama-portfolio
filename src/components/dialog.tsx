@@ -1,9 +1,8 @@
-import Button from "@/components/html/button";
-import { ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Dialog as DialogHead, DialogPanel } from "@headlessui/react";
-import { Icon } from "@iconify-icon/react";
+import { X } from "lucide-react";
 import type { ComponentProps } from "react";
+import Button from "./html/button";
 
 type Props = ComponentProps<"section"> & {
   open: boolean;
@@ -18,22 +17,27 @@ export default function Dialog({ open, onClose, children, className, classNameDi
       open={open}
       onClose={onClose}
       transition
-      className="z-50 outline-none bg-black/60 fixed inset-0 flex items-center justify-center px-shorter animate data-[closed]:opacity-0"
+      className="fixed inset-0 flex items-center justify-center bg-black/80 z-[100] p-4 animate data-[closed]:opacity-0"
     >
-      <DialogPanel
-        transition
-        className={cn(
-          "data-[closed]:scale-90 data-[closed]:translate-y-6 animate w-full max-w-md relative rounded-sm p-6 shadow bg-black border-1 border-grayborder",
-          classNameDialog,
-        )}
-      >
-        <Button onClick={onClose} style="close" className="absolute top-3 right-3">
-          <Icon icon={ICONS.close} width={22.5} />
-        </Button>
-        <section {...rest} className={cn(className)}>
-          {children}
-        </section>
-      </DialogPanel>
+      <div className="max-h-full flex justify-center">
+        <DialogPanel
+          transition
+          className={cn(
+            "overflow-y-scroll data-[closed]:scale-90 animate rounded-sm shadow max-w-lg relative flex flex-col border border-grayborder",
+            classNameDialog,
+          )}
+        >
+          <section className="flex justify-end p-1.5 border-b border-grayborder bg-black">
+            <Button unstyled onClick={onClose} className="flex items-center justify-center p-0.5 bg-red-500 hover:bg-red-700 text-white rounded-sm">
+              <X size={17.5} />
+            </Button>
+          </section>
+
+          <section {...rest} className={cn("p-6 bg-black", className)}>
+            {children}
+          </section>
+        </DialogPanel>
+      </div>
     </DialogHead>
   );
 }
