@@ -26,12 +26,11 @@ export default function Share({ url }: { url: string }) {
       {DATA.map((e) => (
         <li key={e.icon}>
           <e.Component url={url}>
-            <span className="sr-only">{e.label}</span>
             <Icon
               icon={e.icon}
-              width={18}
-              className="animate p-[0.225rem] text-white bg-blue-600 hover:bg-blue-800 shadow rounded-sm flex items-center justify-center"
+              className="animate text-base p-[0.225rem] text-white bg-blue-600 hover:bg-blue-800 shadow rounded-sm flex items-center justify-center"
             />
+            <span className="sr-only">{e.label}</span>
           </e.Component>
         </li>
       ))}
