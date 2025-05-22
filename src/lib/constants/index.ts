@@ -18,6 +18,7 @@ import mandiri from "#/images/project/mandiri.webp";
 import pemudaicmi from "#/images/project/pemudaicmi.webp";
 import rymal from "#/images/project/rymal.webp";
 import turta from "#/images/project/turta.webp";
+import waterhubProject from "#/images/project/waterhub.webp";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
 
@@ -37,7 +38,7 @@ export const PERSONALS: {
 
 export const PHOTOS = {
   logo: { nutech, faotech, kfu, rave, freelance, waterhub },
-  project: { belinsky, hebronstar, faotour, kima, mandiri, turta, pemudaicmi, rymal },
+  project: { belinsky, hebronstar, faotour, kima, mandiri, turta, pemudaicmi, rymal, waterhubProject },
   certifications: { n3, podfak },
   avatar,
 };
@@ -188,6 +189,12 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    label: "WaterHub",
+    src: PHOTOS.project.waterhubProject,
+    key: "waterhub",
+    href: "https://dashboard.waterhub.co.id/",
+  },
   {
     label: "RYMAL Dubai",
     src: PHOTOS.project.rymal,
