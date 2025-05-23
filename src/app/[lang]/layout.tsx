@@ -2,7 +2,7 @@ import Container from "@/components/container";
 import { useLang } from "@/internationalization/functions";
 import type { Lang } from "@/types";
 import { Fragment } from "react";
-import Contacts from "./(home)/components/contacts";
+// import Contacts from "./(home)/components/contacts";
 import Message from "./(home)/components/message";
 import Profile from "./(home)/components/profile";
 
@@ -15,7 +15,7 @@ export default async function RootLayout({ params, children }: Props) {
     <Fragment>
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       {children}
-      <Contacts s={s} />
+      {/* <Contacts s={s} /> */}
       <Message s={s} lang={lang} />
       <Container title={d.updatedOn(formatDate(new Date()))} />
       <iframe
