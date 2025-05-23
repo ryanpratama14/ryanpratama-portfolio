@@ -19,9 +19,9 @@ export default async function HomePage({ params }: Props) {
   return (
     <Fragment>
       <About s={s} />
+      <FeaturedProjects s={s} />
       <BlogCards href={PATHS.post} lang={lang} title={s.MENUS.blog} data={data} />
       <Experience s={s} lang={lang} isJapanese={isJapanese} />
-      <FeaturedProjects s={s} />
       <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
       <CertificationCards s={s} lang={lang} />
     </Fragment>
