@@ -169,6 +169,7 @@ export const ru: Dictionary = {
       present: "наст. время",
       resume: "Резюме",
       visitProject: "Посетить проект",
+      email: "Эл. почта",
     },
 
     LOCATION_TYPES: {

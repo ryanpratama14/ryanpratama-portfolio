@@ -14,8 +14,8 @@ export default async function RootLayout({ params, children }: Props) {
   return (
     <Fragment>
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
-      <Contacts s={s} />
       {children}
+      <Contacts s={s} />
       <Message s={s} lang={lang} />
       <Container title={d.updatedOn(formatDate(new Date()))} />
       <iframe

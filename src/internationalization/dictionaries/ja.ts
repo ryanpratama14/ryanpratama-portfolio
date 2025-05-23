@@ -168,6 +168,7 @@ export const ja: Dictionary = {
       present: "現在",
       resume: "職務経歴書",
       visitProject: "プロジェクト訪問",
+      email: "メール",
     },
 
     LOCATIONS: {

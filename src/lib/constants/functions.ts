@@ -7,6 +7,7 @@ export const getProfileData = (lang: Lang): Profile[] => {
   const { s, formatCounter, locale } = useLang(lang);
 
   return [
+    { href: PERSONALS.mailTo, icon: "mail", label: s.SECTIONS.email },
     { href: ENDPOINTS.resume, icon: "file-user", label: s.SECTIONS.resume },
     {
       icon: "briefcase",
