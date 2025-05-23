@@ -8,7 +8,7 @@ export const getProfileData = (lang: Lang): Profile[] => {
 
   return [
     { href: PERSONALS.mailTo, icon: "mail", label: s.SECTIONS.email },
-    { href: ENDPOINTS.resume, icon: "file-user", label: s.SECTIONS.resume },
+    { href: ENDPOINTS.resume, icon: "text", label: s.SECTIONS.resume },
     {
       icon: "briefcase",
       label: `${(PERSONALS.yoe).toLocaleString(locale, { minimumFractionDigits: 1 })}${formatCounter(s.COUNTER.yearsExperience)}`,

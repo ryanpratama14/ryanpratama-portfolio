@@ -34,7 +34,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
       if (e.href) {
         return (
           <li className="flex" key={e.label}>
-            <LinkButton unstyled href={e.href} className="flex gap-0.5 items-center">
+            <LinkButton unstyled href={e.href} className="flex gap-0.5 md:gap-1 items-center">
               <Data />
             </LinkButton>
           </li>
@@ -70,7 +70,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
               <h2 className="text-gray">{s.PERSONAL_DATA.softwareEngineer}</h2>
             </header>
 
-            <ul className="hidden md:flex gap-3 flex-wrap -translate-x-0.5">
+            <ul className="hidden md:flex gap-3 flex-wrap">
               <ProfileData />
             </ul>
           </section>
@@ -79,7 +79,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
         <LangSwitcher storedLang={storedLang} />
       </section>
 
-      <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap -translate-x-0.5">
+      <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap">
         <ProfileData />
       </ul>
     </article>
