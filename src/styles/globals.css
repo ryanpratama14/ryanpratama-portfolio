@@ -15,6 +15,8 @@
   --color-blue-600: #2463eb;
   --breakpoint-3xl: 2056px;
   --border-width-1: 1px;
+  --text-xxs--line-height: calc(0.833 / 0.625);
+  --text-xxs: 0.625rem;
 
   /* // */
   --color-background: var(--background);
@@ -219,7 +221,7 @@
 
   small,
   figcaption {
-    @apply text-[0.6rem] md:text-xs;
+    @apply text-xxs md:text-xs;
   }
 }
 
