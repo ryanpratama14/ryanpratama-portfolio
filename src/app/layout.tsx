@@ -52,21 +52,20 @@ export default async function RootLayout({ children }: Props) {
             <VisualEditing />
           </Fragment>
         )}
-
-        {isStudio ? (
-          <main>{children}</main>
-        ) : (
-          <Fragment>
-            <TRPCReactProvider>
-              <NuqsAdapter>
+        <NuqsAdapter>
+          {isStudio ? (
+            <main>{children}</main>
+          ) : (
+            <Fragment>
+              <TRPCReactProvider>
                 <main className="flex flex-col gap-4">{children}</main>
-              </NuqsAdapter>
-            </TRPCReactProvider>
+              </TRPCReactProvider>
 
-            <NextTopLoader color={COLORS.blue} showSpinner={false} />
-            {OtherComponents[env.NODE_ENV]}
-          </Fragment>
-        )}
+              <NextTopLoader color={COLORS.blue} showSpinner={false} />
+              {OtherComponents[env.NODE_ENV]}
+            </Fragment>
+          )}
+        </NuqsAdapter>
       </body>
     </html>
   );

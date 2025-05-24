@@ -20,7 +20,7 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
   const Card = () => {
     return (
       <section className="flex items-center text-left">
-        <Img src={e.src} alt={e.label} className="size-full rounded-l-sm w-14 md:w-[4.25rem]" />
+        <Img src={e.src} alt={e.label} className="size-full rounded-l-sm w-[3.75rem] md:w-[4.25rem]" />
         <section className="pl-2 md:pl-2.5 flex flex-col gap-0.5">
           <p className="font-semibold line-clamp-1">{e.desc}</p>
           <small className="font-medium text-gray">{e.label}</small>
