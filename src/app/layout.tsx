@@ -4,7 +4,6 @@ import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { env } from "@/env";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
-import { cn } from "@/lib/utils";
 import { SanityLive } from "@/sanity/lib/live";
 import { COLORS } from "@/styles";
 import { TRPCReactProvider } from "@/trpc/react";
@@ -30,12 +29,25 @@ export const generateMetadata = async () => await getMetadata({});
 type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
-  const isStudio = (await getHeaders()).path.includes("studio");
-
   return (
     <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
       <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
-      <body className={cn({ "main-padding text-white bg-black font-sans": !isStudio })}>
+      <body className="text-white bg-black font-sans">
+        <SanityLive />
+        {(await draftMode()).isEnabled && (
+          <Fragment>
+            <DisableDraftMode />
+            <VisualEditing />
+          </Fragment>
+        )}
+        <NuqsAdapter>
+          <TRPCReactProvider>
+            {children}
+            <NextTopLoader color={COLORS.blue} showSpinner={false} />
+          </TRPCReactProvider>
+        </NuqsAdapter>
+        {OtherComponents[env.NODE_ENV]}
+
         <noscript>
           <iframe
             title="GTM"
@@ -45,27 +57,6 @@ export default async function RootLayout({ children }: Props) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <SanityLive />
-        {(await draftMode()).isEnabled && (
-          <Fragment>
-            <DisableDraftMode />
-            <VisualEditing />
-          </Fragment>
-        )}
-        <NuqsAdapter>
-          {isStudio ? (
-            <main>{children}</main>
-          ) : (
-            <Fragment>
-              <TRPCReactProvider>
-                <main className="flex flex-col gap-4">{children}</main>
-              </TRPCReactProvider>
-
-              <NextTopLoader color={COLORS.blue} showSpinner={false} />
-              {OtherComponents[env.NODE_ENV]}
-            </Fragment>
-          )}
-        </NuqsAdapter>
       </body>
     </html>
   );

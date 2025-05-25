@@ -1,8 +1,7 @@
 import Container from "@/components/container";
+import { env } from "@/env";
 import { useLang } from "@/internationalization/functions";
 import type { Lang } from "@/types";
-import { Fragment } from "react";
-// import Contacts from "./(home)/components/contacts";
 import Message from "./(home)/components/message";
 import Profile from "./(home)/components/profile";
 
@@ -12,21 +11,20 @@ export default async function RootLayout({ params, children }: Props) {
   const { lang, s, d, isDefaultLang, formatDate } = useLang((await params).lang);
 
   return (
-    <Fragment>
+    <main className="flex flex-col gap-4 main-padding">
       <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
       {children}
-      {/* <Contacts s={s} /> */}
       <Message s={s} lang={lang} />
       <Container title={d.updatedOn(formatDate(new Date()))} />
       <iframe
         title="Spotify"
-        src="https://open.spotify.com/embed/track/6Wz9rIfo9tOBcVCd1Mo7F7"
+        src={env.SPOTIFY_TRACK_URL}
         width="100%"
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
         className="wrapper rounded-sm"
       />
-    </Fragment>
+    </main>
   );
 }

@@ -8,6 +8,7 @@ export const env = createEnv({
     RESEND_EMAIL_TO: z.string(),
     RESEND_EMAIL_FROM: z.string(),
     SANITY_API_READ_TOKEN: z.string(),
+    SPOTIFY_TRACK_URL: z.string(),
   },
   client: {
     NEXT_PUBLIC_URL: z.string(),
@@ -17,6 +18,7 @@ export const env = createEnv({
   },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    SPOTIFY_TRACK_URL: process.env.SPOTIFY_TRACK_URL,
     SANITY_API_READ_TOKEN: process.env.SANITY_API_READ_TOKEN,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     RESEND_EMAIL_TO: process.env.RESEND_EMAIL_TO,

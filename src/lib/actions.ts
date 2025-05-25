@@ -1,6 +1,6 @@
 "use server";
 
-import { COOKIES, HEADERS } from "@/app/urls";
+import { COOKIES, HEADERS, PATHS } from "@/app/urls";
 import { validateMatchedLang } from "@/internationalization/functions";
 import type { Lang, LangTarget } from "@/types";
 import { cookies, headers } from "next/headers";
@@ -19,7 +19,7 @@ export const getCookieLang = async () => {
 
 export const getHeaders = async () => {
   return {
-    path: (await headers()).get(HEADERS.path) ?? "/studio",
+    path: (await headers()).get(HEADERS.path) || PATHS.main,
     lang: validateMatchedLang((await headers()).get(HEADERS.lang)),
   };
 };
