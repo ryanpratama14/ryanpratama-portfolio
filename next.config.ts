@@ -1,7 +1,7 @@
+import type { NextConfig } from "next";
 import "./src/env.js";
 
-/** @type {import("next").NextConfig} */
-const config = {
+const config: NextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
   },
