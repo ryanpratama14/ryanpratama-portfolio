@@ -1,5 +1,20 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": { "ignoreUnknown": false, "ignore": [] },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 150,
+    "lineEnding": "lf",
+    "ignore": []
+  },
   "organizeImports": { "enabled": true },
   "linter": {
     "enabled": true,
@@ -13,14 +28,5 @@
       },
       "suspicious": { "noAssignInExpressions": "off", "noArrayIndexKey": "off" }
     }
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 150,
-    "lineEnding": "lf",
-    "ignore": []
   }
 }
