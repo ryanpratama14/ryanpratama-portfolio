@@ -12,7 +12,8 @@ let clientQueryClientSingleton: QueryClient | undefined = undefined;
 
 const getQueryClient = () => {
   if (typeof window === "undefined") return createQueryClient();
-  return (clientQueryClientSingleton ??= createQueryClient());
+  clientQueryClientSingleton ??= createQueryClient();
+  return clientQueryClientSingleton;
 };
 
 export const api = createTRPCReact<AppRouter>();

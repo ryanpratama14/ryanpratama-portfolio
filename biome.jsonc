@@ -1,9 +1,9 @@
 {
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": true
+    "useIgnoreFile": true,
   },
   "files": { "ignoreUnknown": false, "ignore": [] },
   "formatter": {
@@ -13,20 +13,27 @@
     "indentWidth": 2,
     "lineWidth": 150,
     "lineEnding": "lf",
-    "ignore": []
+    "ignore": [],
   },
   "organizeImports": { "enabled": true },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "nursery": { "useImportRestrictions": "off" },
       "correctness": {
         "noUnusedImports": "error",
         "noUnusedVariables": "error",
-        "noUnusedLabels": "error"
+        "noUnusedLabels": "error",
       },
-      "suspicious": { "noAssignInExpressions": "off", "noArrayIndexKey": "off" }
-    }
-  }
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "fix": "safe",
+          "options": {
+            "functions": ["clsx", "cva", "cn"],
+          },
+        },
+      },
+      "recommended": true,
+    },
+  },
 }
