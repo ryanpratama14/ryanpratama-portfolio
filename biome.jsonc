@@ -24,14 +24,8 @@
         "noUnusedVariables": "error",
         "noUnusedLabels": "error"
       },
-      "nursery": {
-        "useSortedClasses": {
-          "level": "warn",
-          "fix": "safe",
-          "options": {
-            "functions": ["clsx", "cva", "cn"]
-          }
-        }
+      "suspicious": {
+        "noArrayIndexKey": "off"
       },
       "recommended": true
     }
