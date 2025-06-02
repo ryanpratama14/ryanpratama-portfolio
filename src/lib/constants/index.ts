@@ -38,7 +38,17 @@ export const PERSONALS: {
 
 export const PHOTOS = {
   logo: { nutech, faotech, kfu, rave, freelance, waterhub },
-  project: { belinsky, hebronstar, faotour, kima, mandiri, turta, pemudaicmi, rymal, waterhubProject },
+  project: {
+    belinsky,
+    hebronstar,
+    faotour,
+    kima,
+    mandiri,
+    turta,
+    pemudaicmi,
+    rymal,
+    waterhubProject,
+  },
   certifications: { n3, podfak },
   avatar,
 };
@@ -92,7 +102,7 @@ export const EXPERIENCES: History[] = [
 ];
 
 export const OTHERS: Other = {
-  languages: ["id", "en", "ja", "ru"],
+  languages: ["id", "en", "ru", "ja"],
   education: [
     {
       key: "kfu",
@@ -259,7 +269,6 @@ export const TECH_STACKS: TechStack = {
     { label: "React Native / Expo", icon: ICONS.reactNative, icon2: ICONS.expo },
     { label: "Stripe", icon: ICONS.stripe },
     { label: "Sanity", icon: ICONS.sanity },
-
     { label: "tRPC", icon: "devicon-plain:trpc" },
     { label: "Node.js", icon: ICONS.nodejs },
     { label: "Express.js", icon: ICONS.expressjs },
@@ -332,9 +341,4 @@ export const CONTACTS: Contact[] = [
     label: "Instagram",
     icon: ICONS.instagram,
   },
-  // {
-  //   href: "https://open.spotify.com/user/totorogoriorio",
-  //   label: "Spotify",
-  //   icon: ICONS.spotify,
-  // },
 ];
