@@ -52,6 +52,7 @@ export const THROW_TRPC = {
 };
 
 const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {
+  PAYMENT_REQUIRED: "Payment is required.",
   PARSE_ERROR: "Error parsing the request. Please check the syntax of your request.",
   BAD_REQUEST: "Invalid request. Please provide valid request parameters.",
   INTERNAL_SERVER_ERROR: "Internal server error. Please try again later.",
