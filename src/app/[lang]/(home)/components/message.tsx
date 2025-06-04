@@ -28,7 +28,11 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<EmailMessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang }, mode: "all" });
 
-  const { mutate: sendMessage, isPending } = api.email.message.useMutation({ onSuccess: () => setOpen(true) });
+  const { mutate: sendMessage, isPending } = api.email.message.useMutation({
+    onSuccess: () => {
+      setOpen(true);
+    },
+  });
 
   return (
     <Fragment>
