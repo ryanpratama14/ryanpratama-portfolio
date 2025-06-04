@@ -32,6 +32,9 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     onSuccess: () => {
       setOpen(true);
     },
+    onError: ({ message }) => {
+      alert(message);
+    },
   });
 
   return (
