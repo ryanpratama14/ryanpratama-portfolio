@@ -1,6 +1,6 @@
 import { LANGS } from "@/internationalization";
 import type { DictionaryStatic } from "@/types";
-import { z } from "zod";
+import { z } from "zod/v4";
 
 export const schema = {
   sanity: {
