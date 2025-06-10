@@ -3,6 +3,7 @@ import { QueryClient, defaultShouldDehydrateQuery } from "@tanstack/react-query"
 import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
 import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
 import SuperJSON from "superjson";
+type TRPC_OK_CODE_KEY = "OK" | "CREATED" | "ACCEPTED" | "NO_CONTENT" | "RESET_CONTENT" | "PARTIAL_CONTENT";
 
 export const transformer = SuperJSON;
 export const createQueryClient = () => {
@@ -73,6 +74,5 @@ export const CONSOLE_TRPC = {
   error: (key: string, message?: unknown) => console.error(`🔴 ${time} ${key}:`, message),
 };
 
-export type TRPC_OK_CODE_KEY = "OK" | "CREATED" | "ACCEPTED" | "NO_CONTENT" | "RESET_CONTENT" | "PARTIAL_CONTENT";
 export type RouterInputs = inferRouterInputs<AppRouter>;
 export type RouterOutputs = inferRouterOutputs<AppRouter>;
