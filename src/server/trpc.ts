@@ -1,6 +1,6 @@
 import { CONSOLE_TRPC, transformer } from "@/trpc/shared";
 import { initTRPC } from "@trpc/server";
-import { ZodError } from "zod/v4";
+import { ZodError, z } from "zod/v4";
 
 export const createTRPCContext = async (opts: { headers: Headers }) => {
   return { ...opts };
@@ -9,7 +9,10 @@ export const createTRPCContext = async (opts: { headers: Headers }) => {
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer,
   errorFormatter({ shape, error }) {
-    return { ...shape, data: { ...shape.data, zodError: error.cause instanceof ZodError ? error.cause.flatten() : null } };
+    const flat = error.cause instanceof ZodError ? z.flattenError(error.cause) : null;
+    const tree = error.cause instanceof ZodError ? z.treeifyError(error.cause) : null;
+    const pretty = error.cause instanceof ZodError ? z.prettifyError(error.cause) : null;
+    return { ...shape, data: { ...shape.data, error: { flat, tree, pretty }, zodError: flat } };
   },
 });
 
