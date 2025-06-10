@@ -12,7 +12,7 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
     const flat = error.cause instanceof ZodError ? z.flattenError(error.cause) : null;
     const tree = error.cause instanceof ZodError ? z.treeifyError(error.cause) : null;
     const pretty = error.cause instanceof ZodError ? z.prettifyError(error.cause) : null;
-    return { ...shape, data: { ...shape.data, error: { flat, tree, pretty }, zodError: flat } };
+    return { ...shape, data: { ...shape.data, flat, tree, pretty } };
   },
 });
 
