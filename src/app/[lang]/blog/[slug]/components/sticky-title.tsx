@@ -9,7 +9,7 @@ import type { Lang } from "@/types";
 import { Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResultlOutput; lang: Lang }) {
+export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResultlOutput["data"]; lang: Lang }) {
   const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {

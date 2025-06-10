@@ -20,8 +20,7 @@ type Props = {
 };
 
 export const getMetadata = async ({ title, description, imageUrl, openGraphArticle, tags }: Props): Promise<Metadata> => {
-  const lang = (await getHeaders()).lang;
-  const path = (await getHeaders()).path;
+  const { path, lang } = await getHeaders();
 
   const {
     s: { PERSONAL_DATA: me },

@@ -29,12 +29,14 @@ export const generateMetadata = async () => await getMetadata({});
 type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
+  const [{ lang }, { isEnabled: isDraftMode }] = await Promise.all([getHeaders(), draftMode()]);
+
   return (
-    <html lang={(await getHeaders()).lang} className={GeistSans.variable}>
+    <html lang={lang} className={GeistSans.variable}>
       <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
       <body className="text-white bg-black font-sans">
         <SanityLive />
-        {(await draftMode()).isEnabled && (
+        {isDraftMode && (
           <Fragment>
             <DisableDraftMode />
             <VisualEditing />
