@@ -1,5 +1,3 @@
-import { DEFAULT_LANG } from "@/internationalization";
-import { useLang } from "@/internationalization/functions";
 import type { AppRouter } from "@/server/root";
 import { QueryClient, defaultShouldDehydrateQuery } from "@tanstack/react-query";
 import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
@@ -20,67 +18,59 @@ export const createQueryClient = () => {
   });
 };
 
-const time = `${useLang(DEFAULT_LANG).currentTime} 👉`;
-
-export const CONSOLE_TRPC = {
-  info: (key: string, message?: unknown) => console.info(`🔵 ${time} ${key}: `, message),
-  ok: (key: string, message?: unknown) => console.info(`🟢 ${time} ${key}: `, message),
-  error: (key: string, message?: unknown) => console.info(`🔴 ${time} ${key}: `, message),
-};
-
 export const THROW_TRPC = {
-  ok: <Input = unknown, Result = unknown>({
+  ok: <Input = unknown, Data = unknown>({
     code,
     message = OK_MESSAGES[code],
     input = null as Input,
-    result = null as Result,
-  }: { code: TRPC_OK_CODE_KEY; message?: string; input?: Input; result?: Result }) => {
-    const res = { input, result, code, message };
-    return res;
+    data = null as Data,
+  }: { code: TRPC_OK_CODE_KEY; message?: string; input?: Input; data?: Data }) => {
+    return { input, data, code, message };
   },
 
-  error: <Input = unknown, Result = unknown>({
-    code,
-    message = ERROR_MESSAGES[code],
-    result = null as Result,
-    input = null as Input,
-  }: { code: TRPC_ERROR_CODE_KEY; message?: string; result?: Result; input?: Input }) => {
-    const res = { input, code, message, result };
-    CONSOLE_TRPC.error("error", res);
-    throw new TRPCError({ code, message });
+  error: (code: TRPC_ERROR_CODE_KEY, message?: string) => {
+    throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
   },
 };
 
 const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {
-  PAYMENT_REQUIRED: "Access denied. A valid payment is required to use this service.",
-  PARSE_ERROR: "Error parsing the request. Please check the syntax of your request.",
-  BAD_REQUEST: "Invalid request. Please provide valid request parameters.",
-  INTERNAL_SERVER_ERROR: "Internal server error. Please try again later.",
-  NOT_IMPLEMENTED: "Feature not implemented. This functionality is currently unavailable.",
-  UNAUTHORIZED: "Unauthorized access. Please authenticate to access this resource.",
-  FORBIDDEN: "Access forbidden. You do not have permission to access this resource.",
-  NOT_FOUND: "Resource not found. The requested resource does not exist.",
-  METHOD_NOT_SUPPORTED: "HTTP method not supported. Please use a supported HTTP method.",
-  UNSUPPORTED_MEDIA_TYPE: "Media type not supported. Please use a supported media type.",
-  TIMEOUT: "Request timeout. The server did not receive a timely response.",
-  CONFLICT: "Conflict in resource state. There is a conflict with the current state of the resource.",
-  PRECONDITION_FAILED: "Precondition failed for the request. Please meet the required conditions.",
-  PAYLOAD_TOO_LARGE: "Request payload too large. The size of the request payload exceeds the limit.",
-  UNPROCESSABLE_CONTENT: "Unprocessable request content. The request content is not valid or cannot be processed.",
-  TOO_MANY_REQUESTS: "Too many requests. Please try again later.",
-  CLIENT_CLOSED_REQUEST: "Client closed the request. The client terminated the request unexpectedly.",
-  BAD_GATEWAY: "Bad gateway. The server received an invalid response from the upstream server.",
-  SERVICE_UNAVAILABLE: "Service unavailable. The server is currently unable to handle the request.",
-  GATEWAY_TIMEOUT: "Gateway timeout. The server did not receive a timely response from the upstream server.",
+  PAYMENT_REQUIRED: "Access is restricted. A valid payment or subscription is required to proceed with this service.",
+  PARSE_ERROR: "The server encountered an issue while parsing your request. Please verify the request format and syntax.",
+  BAD_REQUEST: "The request is invalid or malformed. Ensure all required parameters are correctly provided.",
+  INTERNAL_SERVER_ERROR: "An unexpected error occurred on the server. Please try again later or contact support if the issue persists.",
+  NOT_IMPLEMENTED: "This functionality is currently unavailable. It has not yet been implemented by the server.",
+  UNAUTHORIZED: "Access denied. Authentication credentials are missing or invalid. Please log in and try again.",
+  FORBIDDEN: "You do not have the necessary permissions to perform this action. Please contact the administrator if you believe this is an error.",
+  NOT_FOUND: "The requested resource could not be located. It may have been removed, renamed, or never existed.",
+  METHOD_NOT_SUPPORTED: "The HTTP method used is not supported for this endpoint. Please refer to the API documentation.",
+  UNSUPPORTED_MEDIA_TYPE: "The media type of the request is not supported. Please use a valid Content-Type header.",
+  TIMEOUT: "The request timed out. The server did not receive a response within the expected timeframe.",
+  CONFLICT: "A conflict occurred due to the current state of the resource. Please resolve any conflicting changes before retrying.",
+  PRECONDITION_FAILED: "The request did not meet one or more preconditions. Please ensure all conditions are satisfied.",
+  PAYLOAD_TOO_LARGE: "The size of the request exceeds the server's allowed limit. Consider reducing the payload size.",
+  UNPROCESSABLE_CONTENT: "The server understands the request but was unable to process the contained instructions. Please verify the data.",
+  TOO_MANY_REQUESTS: "Rate limit exceeded. You have made too many requests in a short period. Please wait and try again.",
+  CLIENT_CLOSED_REQUEST: "The client closed the connection before the request was completed. Please retry the operation if needed.",
+  BAD_GATEWAY: "The server received an invalid response from an upstream service. Please try again or contact support.",
+  SERVICE_UNAVAILABLE: "The service is temporarily unavailable due to maintenance or overload. Please try again later.",
+  GATEWAY_TIMEOUT: "The gateway did not receive a timely response from the upstream server. Please retry the request later.",
 };
 
 const OK_MESSAGES: Record<TRPC_OK_CODE_KEY, string> = {
-  OK: "OK",
-  CREATED: "Resource created successfully.",
-  ACCEPTED: "Request accepted.",
-  NO_CONTENT: "No content available.",
-  RESET_CONTENT: "Reset content successful.",
-  PARTIAL_CONTENT: "Partial content received successfully.",
+  OK: "The request was successfully processed.",
+  CREATED: "The resource was created successfully and is now available.",
+  ACCEPTED: "The request has been accepted for processing, but the operation is not yet complete.",
+  NO_CONTENT: "The request was successful, but there is no content to return.",
+  RESET_CONTENT: "The request was successful. Please reset the view or form as appropriate.",
+  PARTIAL_CONTENT: "The server successfully processed part of the request. Additional actions may be required to complete it.",
+};
+
+const time = `${new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" })} 👉`;
+
+export const CONSOLE_TRPC = {
+  info: (key: string, message?: unknown) => console.info(`🔵 ${time} ${key}:`, message),
+  ok: (key: string, message?: unknown) => console.log(`🟢 ${time} ${key}:`, message),
+  error: (key: string, message?: unknown) => console.error(`🔴 ${time} ${key}:`, message),
 };
 
 export type TRPC_OK_CODE_KEY = "OK" | "CREATED" | "ACCEPTED" | "NO_CONTENT" | "RESET_CONTENT" | "PARTIAL_CONTENT";

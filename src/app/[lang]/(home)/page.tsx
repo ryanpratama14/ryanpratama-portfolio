@@ -14,7 +14,7 @@ type Props = { params: Promise<{ lang: Lang }> };
 
 export default async function HomePage({ params }: Props) {
   const { s, isJapanese, lang } = useLang((await params).lang);
-  const data = await api.unlogged.sanity.post.list({ slice: 4 });
+  const { data } = await api.unlogged.sanity.post.list({ slice: 4 });
 
   return (
     <Fragment>

@@ -19,7 +19,8 @@ export const sanityRouter = {
     detail: publicProcedure.input(schema.sanity.post.detail).query(async ({ input }) => {
       const { slug } = input;
       const { data } = await sanityFetch({ query: GetPostBySlug, params: { slug } });
-      return THROW_TRPC.ok({ code: "OK", input, result: formatPostData(data) });
+      if (!data) return THROW_TRPC.error("NOT_FOUND");
+      return THROW_TRPC.ok({ code: "OK", input, data: formatPostData(data) });
     }),
 
     list: publicProcedure.input(schema.sanity.post.list).query(async ({ input }) => {
@@ -29,11 +30,11 @@ export const sanityRouter = {
       return THROW_TRPC.ok({
         code: "OK",
         input,
-        result: slugToRemove ? formattedData.filter((item) => item.slug?.current !== slugToRemove).slice(0, slice) : formattedData.slice(0, slice),
+        data: slugToRemove ? formattedData.filter((item) => item.slug?.current !== slugToRemove).slice(0, slice) : formattedData.slice(0, slice),
       });
     }),
   }),
 };
 
-export type SanityPostListOutput = RouterOutputs["sanity"]["post"]["list"];
-export type SanityPostDetaiResultlOutput = RouterOutputs["sanity"]["post"]["detail"]["result"];
+export type SanityPostListOutput = RouterOutputs["sanity"]["post"]["list"]["data"];
+export type SanityPostDetaiResultlOutput = RouterOutputs["sanity"]["post"]["detail"]["data"];

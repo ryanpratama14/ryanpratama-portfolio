@@ -8,12 +8,12 @@ import LocalTime from "./local-time";
 type Props = { data: SanityPostListOutput; lang: Lang; href?: string; title: string };
 
 export default function BlogCards({ data, href, lang, title }: Props) {
-  if (!data.result?.length) return null;
+  if (!data?.length) return null;
 
   return (
     <Container title={title} lang={lang} href={href}>
       <ul className="grid md:grid-cols-2 gap-3">
-        {data.result.map((e) => {
+        {data.map((e) => {
           return (
             <li key={e._id}>
               <LinkButton lang={lang} unstyled href={e.href} className="flex flex-col gap-1.5 md:gap-2">
