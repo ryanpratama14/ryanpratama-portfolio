@@ -14,7 +14,7 @@ export const schema = {
     message: (s: DictionaryStatic) => {
       return z.object({
         name: z.string().min(1, s.MESSAGE.name.error),
-        email: z.string().email(s.MESSAGE.email.error),
+        email: z.email(s.MESSAGE.email.error),
         message: z.string().min(5, s.MESSAGE.message.error),
         lang: z.enum(LANGS),
       });

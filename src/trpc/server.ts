@@ -17,7 +17,10 @@ const createContext = cache(async () => {
   return createTRPCContext({ headers: heads });
 });
 
-const { trpc: unlogged, HydrateClient } = createHydrationHelpers<AppRouter>(createCaller(createContext), cache(createQueryClient));
+const getQueryClient = cache(createQueryClient);
+const caller = createCaller(createContext);
+const { trpc: unlogged, HydrateClient } = createHydrationHelpers<AppRouter>(caller, getQueryClient);
+
 const logged = createTRPCClient<AppRouter>({
   links: [
     loggerLink({

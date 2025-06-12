@@ -55,7 +55,7 @@
     "sanity-plugin-iframe-pane": "^3.2.1",
     "sanity-plugin-media": "^3.0.3",
     "server-only": "^0.0.1",
-    "styled-components": "^6.1.18",
+    "styled-components": "^6.1.19",
     "superjson": "^2.2.2",
     "swiper": "^11.2.8",
     "tailwind-merge": "^3.3.1",
