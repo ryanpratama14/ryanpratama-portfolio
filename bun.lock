@@ -58,6 +58,7 @@
       "devDependencies": {
         "@biomejs/biome": "^1.9.4",
         "@formatjs/intl-localematcher": "^0.6.1",
+        "@total-typescript/ts-reset": "^0.6.1",
         "@types/negotiator": "^0.6.4",
         "@types/node": "^24.0.1",
         "@types/react": "^19.1.8",
@@ -895,6 +896,8 @@
     "@tanstack/table-core": ["@tanstack/table-core@8.21.3", "", {}, "sha512-ldZXEhOBb8Is7xLs01fR3YEc3DERiz5silj8tnGkFZytt1abEvl/GhUmCE0PMLaMPTa3Jk4HbKmRlHmu+gCftg=="],
 
     "@tanstack/virtual-core": ["@tanstack/virtual-core@3.13.10", "", {}, "sha512-sPEDhXREou5HyZYqSWIqdU580rsF6FGeN7vpzijmP3KTiOGjOMZASz4Y6+QKjiFQwhWrR58OP8izYaNGVxvViA=="],
+
+    "@total-typescript/ts-reset": ["@total-typescript/ts-reset@0.6.1", "", {}, "sha512-cka47fVSo6lfQDIATYqb/vO1nvFfbPw7uWLayIXIhGETj0wcOOlrlkobOMDNQOFr9QOafegUPq13V2+6vtD7yg=="],
 
     "@trpc/client": ["@trpc/client@11.4.0", "", { "peerDependencies": { "@trpc/server": "11.4.0", "typescript": ">=5.7.2" } }, "sha512-AI+qThLuR52ALsMN/oEjgmw101c54YV6XoXSRyVGzO29kLUgo7PUBnvdq51x2rl57z7tg4AG8U2CvkDWdn00vw=="],
 

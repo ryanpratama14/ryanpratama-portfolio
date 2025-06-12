@@ -66,6 +66,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@formatjs/intl-localematcher": "^0.6.1",
+    "@total-typescript/ts-reset": "^0.6.1",
     "@types/negotiator": "^0.6.4",
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
