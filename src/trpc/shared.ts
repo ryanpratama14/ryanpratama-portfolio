@@ -19,7 +19,7 @@ export const createQueryClient = () => {
   });
 };
 
-export const THROW_TRPC = {
+export const THROW = {
   ok: <Input = unknown, Data = unknown>({
     code,
     message = OK_MESSAGES[code],
