@@ -68,7 +68,7 @@ const OK_MESSAGES: Record<TRPC_OK_CODE_KEY, string> = {
 
 const time = `${new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" })} 👉`;
 
-export const CONSOLE_TRPC = {
+export const CONSOLE = {
   info: (key: string, message?: unknown) => console.info(`🔵 ${time} ${key}:`, message),
   ok: (key: string, message?: unknown) => console.log(`🟢 ${time} ${key}:`, message),
   error: (key: string, message?: unknown) => console.error(`🔴 ${time} ${key}:`, message),
