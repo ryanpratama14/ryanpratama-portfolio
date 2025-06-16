@@ -25,7 +25,7 @@ export const THROW = {
     message = OK_MESSAGES[code],
     input = null as Input,
     data = null as Data,
-  }: { code: TRPC_OK_CODE_KEY; message?: string; input?: Input; data: Data }) => {
+  }: { code: TRPC_OK_CODE_KEY; message?: string | null | undefined; input?: Input; data: Data }) => {
     return { input, data, code, message };
   },
   error: (code: TRPC_ERROR_CODE_KEY, message?: string | null | undefined) => {
