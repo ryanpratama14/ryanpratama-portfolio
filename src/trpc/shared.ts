@@ -28,10 +28,15 @@ export const THROW = {
   }: { code: TRPC_OK_CODE_KEY; message?: string; input?: Input; data: Data }) => {
     return { input, data, code, message };
   },
-
-  error: (code: TRPC_ERROR_CODE_KEY, message?: string) => {
+  error: (code: TRPC_ERROR_CODE_KEY, message?: string | null | undefined) => {
     throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
   },
+};
+
+export const CONSOLE = {
+  info: (key: string, message: unknown) => console.info(`🔵 ${time} ${key}:`, message),
+  ok: (key: string, message: unknown) => console.log(`🟢 ${time} ${key}:`, message),
+  error: (key: string, message: unknown) => console.error(`🔴 ${time} ${key}:`, message),
 };
 
 const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {
@@ -67,12 +72,5 @@ const OK_MESSAGES: Record<TRPC_OK_CODE_KEY, string> = {
 };
 
 const time = `${new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" })} 👉`;
-
-export const CONSOLE = {
-  info: (key: string, message?: unknown) => console.info(`🔵 ${time} ${key}:`, message),
-  ok: (key: string, message?: unknown) => console.log(`🟢 ${time} ${key}:`, message),
-  error: (key: string, message?: unknown) => console.error(`🔴 ${time} ${key}:`, message),
-};
-
 export type RouterInputs = inferRouterInputs<AppRouter>;
 export type RouterOutputs = inferRouterOutputs<AppRouter>;
