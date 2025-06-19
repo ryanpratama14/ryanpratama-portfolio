@@ -1,8 +1,8 @@
+import { z } from "zod/v4";
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import type { Lang, LangTarget } from "@/types";
-import { z } from "zod/v4";
 
-const useLang = (lang: Lang) => {
+const getLang = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
   const { s, d } = t;
   const { locale, currency } = rest;
@@ -47,4 +47,4 @@ const changeLang = (lang: Lang, path: string) => {
   return segments.join("/");
 };
 
-export { useLang, validateLang, validateMatchedLang, getLangFromPath, isLangMissing, changeLang };
+export { getLang, validateLang, validateMatchedLang, getLangFromPath, isLangMissing, changeLang };

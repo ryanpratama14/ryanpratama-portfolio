@@ -1,9 +1,9 @@
-import { ALL_PATHS, ENDPOINTS, PATHS, getUrl } from "@/app/urls";
+import type { MetadataRoute } from "next";
+import { ALL_PATHS, ENDPOINTS, getUrl, PATHS } from "@/app/urls";
 import { LANGS } from "@/internationalization";
 import { CERTIFICATIONS } from "@/lib/constants";
 import { api } from "@/trpc/server";
 import type { Lang } from "@/types";
-import type { MetadataRoute } from "next";
 
 const createEntry = (path: string, lang?: Lang) => ({
   url: getUrl({ path, lang }),

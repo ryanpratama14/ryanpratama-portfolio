@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
 import { Dialog as DialogHead, DialogPanel } from "@headlessui/react";
 import { X } from "lucide-react";
 import type { ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 import Button from "./html/button";
 
 type Props = ComponentProps<"section"> & {

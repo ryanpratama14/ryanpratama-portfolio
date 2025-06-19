@@ -1,12 +1,12 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { type ComponentProps, Fragment } from "react";
 import { PATHS } from "@/app/urls";
 import { LANGS } from "@/internationalization";
 import { cn, toPascalCase } from "@/lib/utils";
 import type { DictionaryStatic, Lang } from "@/types";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { type ComponentProps, Fragment } from "react";
 import LinkButton from "./html/link-button";
 
 type Props = ComponentProps<"ul"> & { slugTitle: string | undefined; s: DictionaryStatic; lang: Lang };

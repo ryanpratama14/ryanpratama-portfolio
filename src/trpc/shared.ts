@@ -1,8 +1,11 @@
-import type { AppRouter } from "@/server/root";
-import { QueryClient, defaultShouldDehydrateQuery } from "@tanstack/react-query";
-import { TRPCError, type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
+import { defaultShouldDehydrateQuery, QueryClient } from "@tanstack/react-query";
+import type { TRPCClientError } from "@trpc/client";
+import { type inferRouterInputs, type inferRouterOutputs, TRPCError } from "@trpc/server";
 import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
+import { toast } from "sonner";
 import SuperJSON from "superjson";
+import type { AppRouter } from "@/server/root";
+
 type TRPC_OK_CODE_KEY = "OK" | "CREATED" | "ACCEPTED" | "NO_CONTENT" | "RESET_CONTENT" | "PARTIAL_CONTENT";
 
 export const transformer = SuperJSON;
@@ -15,6 +18,13 @@ export const createQueryClient = () => {
         shouldDehydrateQuery: (query) => defaultShouldDehydrateQuery(query) || query.state.status === "pending",
       },
       hydrate: { deserializeData: transformer.deserialize },
+      mutations: {
+        onError: (e) => {
+          const error = e as TRPCClientError<AppRouter>;
+          const message = error.data?.pretty ?? error.message ?? "An error occurred.";
+          toast.error(message);
+        },
+      },
     },
   });
 };
@@ -25,7 +35,12 @@ export const THROW = {
     message = OK_MESSAGES[code],
     input = null as Input,
     data = null as Data,
-  }: { code: TRPC_OK_CODE_KEY; message?: string | null | undefined; input?: Input; data: Data }) => {
+  }: {
+    code: TRPC_OK_CODE_KEY;
+    message?: string | null | undefined;
+    input?: Input;
+    data: Data;
+  }) => {
     return { input, data, code, message };
   },
   error: (code: TRPC_ERROR_CODE_KEY, message?: string | null | undefined) => {

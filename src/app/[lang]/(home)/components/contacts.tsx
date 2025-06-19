@@ -1,9 +1,9 @@
+import { Icon } from "@iconify-icon/react";
 import Container from "@/components//container";
 import LinkButton from "@/components/html/link-button";
 import { CONTACTS } from "@/lib/constants";
 import { VARIANTS } from "@/styles";
 import type { DictionaryStatic } from "@/types";
-import { Icon } from "@iconify-icon/react";
 
 type Props = { s: DictionaryStatic };
 

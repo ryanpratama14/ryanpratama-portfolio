@@ -1,16 +1,16 @@
+import { DynamicIcon } from "lucide-react/dynamic";
+import { Fragment } from "react";
 import { PATHS } from "@/app/urls";
 import Img from "@/components/html/img";
 import LinkButton from "@/components/html/link-button";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
-import { useLang } from "@/internationalization/functions";
+import { getLang } from "@/internationalization/functions";
 import { getCookieLang } from "@/lib/actions";
 import { PHOTOS } from "@/lib/constants";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
 import type { DictionaryStatic, Lang } from "@/types";
-import { DynamicIcon } from "lucide-react/dynamic";
-import { Fragment } from "react";
 
 type Props = {
   s: DictionaryStatic;
@@ -66,7 +66,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
               <LinkButton unstyled href={PATHS.main} lang={lang}>
                 <h1 className="font-bold hover:underline">{s.PERSONAL_DATA.fullName}</h1>
               </LinkButton>
-              {isDefaultLang ? null : <small>{useLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</small>}
+              {isDefaultLang ? null : <small>{getLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</small>}
               <h2 className="text-gray">{s.PERSONAL_DATA.softwareEngineer}</h2>
             </header>
 

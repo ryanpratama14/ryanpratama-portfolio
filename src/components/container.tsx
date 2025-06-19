@@ -1,4 +1,4 @@
-import { useLang, validateMatchedLang } from "@/internationalization/functions";
+import { getLang, validateMatchedLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { LangTarget } from "@/types";
 import LinkButton from "./html/link-button";
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Container({ title = "", children, className, href, lang }: Props) {
-  const { s, lang: definedLang } = useLang(validateMatchedLang(lang));
+  const { s, lang: definedLang } = getLang(validateMatchedLang(lang));
 
   return (
     <article className={cn("w-full flex flex-col gap-2 md:gap-2.5 wrapper", className)}>

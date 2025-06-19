@@ -1,12 +1,12 @@
 "use client";
 
-import { getLangFromPath, useLang, validateMatchedLang } from "@/internationalization/functions";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { getLang, getLangFromPath, validateMatchedLang } from "@/internationalization/functions";
 
 export default function ScreenSizeIndicator() {
   const lang = validateMatchedLang(getLangFromPath(usePathname()));
-  const { locale } = useLang(lang);
+  const { locale } = getLang(lang);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {

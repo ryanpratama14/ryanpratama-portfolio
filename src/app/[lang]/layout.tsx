@@ -1,6 +1,6 @@
 import Container from "@/components/container";
 import { env } from "@/env";
-import { useLang } from "@/internationalization/functions";
+import { getLang } from "@/internationalization/functions";
 import type { Lang } from "@/types";
 import Message from "./(home)/components/message";
 import Profile from "./(home)/components/profile";
@@ -8,7 +8,7 @@ import Profile from "./(home)/components/profile";
 type Props = { children: React.ReactNode; params: Promise<{ lang: Lang }> };
 
 export default async function RootLayout({ params, children }: Props) {
-  const { lang, s, d, isDefaultLang, formatDate } = useLang((await params).lang);
+  const { lang, s, d, isDefaultLang, formatDate } = getLang((await params).lang);
 
   return (
     <main className="flex flex-col gap-4 main-padding">

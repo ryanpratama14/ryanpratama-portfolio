@@ -1,10 +1,10 @@
 "use client";
 
+import { Icon } from "@iconify-icon/react";
 import Container from "@/components/container";
 import { TECH_STACKS } from "@/lib/constants";
 import { VARIANTS } from "@/styles";
 import type { DictionaryStatic, TechStack } from "@/types";
-import { Icon } from "@iconify-icon/react";
 
 type Props = { s: DictionaryStatic };
 

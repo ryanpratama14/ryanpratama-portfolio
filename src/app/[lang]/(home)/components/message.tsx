@@ -1,5 +1,10 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { DynamicIcon } from "lucide-react/dynamic";
+import { parseAsBoolean, useQueryState } from "nuqs";
+import { Fragment } from "react";
+import { useForm } from "react-hook-form";
 import Container from "@/components/container";
 import Dialog from "@/components/dialog";
 import Button from "@/components/html/button";
@@ -9,11 +14,6 @@ import type { EmailMessageInput } from "@/server/routers/email";
 import { schema } from "@/server/schema";
 import { api } from "@/trpc/react";
 import type { DictionaryStatic, Lang } from "@/types";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { DynamicIcon } from "lucide-react/dynamic";
-import { parseAsBoolean, useQueryState } from "nuqs";
-import { Fragment } from "react";
-import { useForm } from "react-hook-form";
 
 type Props = { s: DictionaryStatic; lang: Lang };
 
@@ -31,9 +31,6 @@ export default function ProjectDiscuss({ s, lang }: Props) {
   const { mutate: sendMessage, isPending } = api.email.message.useMutation({
     onSuccess: () => {
       setOpen(true);
-    },
-    onError: ({ message }) => {
-      alert(message);
     },
   });
 

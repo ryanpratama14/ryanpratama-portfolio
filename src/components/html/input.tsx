@@ -1,6 +1,6 @@
+import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
-import type { ComponentProps } from "react";
 
 type Props = ComponentProps<"input"> & {
   error: string | undefined;

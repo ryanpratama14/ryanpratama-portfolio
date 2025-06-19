@@ -1,15 +1,15 @@
-import type { LANGS } from "@/internationalization";
-import type { en } from "@/internationalization/dictionaries/en";
-import type { useLang } from "@/internationalization/functions";
 import type { IconName } from "lucide-react/dynamic";
 import type { StaticImageData } from "next/image";
+import type { LANGS } from "@/internationalization";
+import type { en } from "@/internationalization/dictionaries/en";
+import type { getLang } from "@/internationalization/functions";
 
 export type Lang = (typeof LANGS)[number];
 export type LangTarget = Lang | null | undefined | string;
 export type Dictionary = typeof en;
 export type DictionaryStatic = Dictionary["s"];
 export type DictionaryDynamic = Dictionary["d"];
-export type Language = ReturnType<typeof useLang>;
+export type Language = ReturnType<typeof getLang>;
 
 export type Profile = { href?: string; icon: IconName; label: string };
 export type Contact = { href: string; label: string; icon: string };

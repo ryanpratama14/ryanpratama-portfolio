@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import { useNextSanityImage } from "next-sanity-image";
 import { cn } from "@/lib/utils";
 import { client } from "@/sanity/lib/client";
 import type { Geopoint, SanityAssetSourceData, SanityImageCrop, SanityImageDimensions, SanityImageHotspot, SanityImagePalette } from "@/sanity/types";
-import { useNextSanityImage } from "next-sanity-image";
-import Image from "next/image";
 
 export default function ImgSanity({ alt, src, className, priority }: Props) {
   if (!src || !src?.asset?.metadata?.lqip) return null;

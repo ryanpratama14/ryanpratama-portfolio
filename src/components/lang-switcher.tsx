@@ -1,12 +1,12 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { changeLang, getLangFromPath, validateMatchedLang } from "@/internationalization/functions";
 import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/utils";
 import type { LangTarget } from "@/types";
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 import Img from "./html/img";
 import LinkButton from "./html/link-button";
 

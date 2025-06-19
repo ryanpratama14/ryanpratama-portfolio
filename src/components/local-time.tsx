@@ -1,14 +1,14 @@
 "use client";
 
-import { useLang } from "@/internationalization/functions";
+import type { ComponentProps } from "react";
+import { getLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { Lang } from "@/types";
-import type { ComponentProps } from "react";
 
 type Props = ComponentProps<"small"> & { date: Date; lang: Lang };
 
 export default function LocalTime({ lang, date, className, ...rest }: Props) {
-  const { locale } = useLang(lang);
+  const { locale } = getLang(lang);
 
   const fullDate = date.toLocaleDateString(locale, {
     month: "long",

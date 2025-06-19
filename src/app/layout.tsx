@@ -1,3 +1,13 @@
+import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GeistSans } from "geist/font/sans";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity";
+import NextTopLoader from "nextjs-toploader";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Fragment } from "react";
+import { Toaster } from "sonner";
 import { getMetadata } from "@/app/metadata";
 import { DisableDraftMode } from "@/components/disable-draft-mode";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
@@ -7,15 +17,6 @@ import { getHeaders } from "@/lib/actions";
 import { SanityLive } from "@/sanity/lib/live";
 import { COLORS } from "@/styles";
 import { TRPCReactProvider } from "@/trpc/react";
-import { GoogleTagManager } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GeistSans } from "geist/font/sans";
-import { VisualEditing } from "next-sanity";
-import { draftMode } from "next/headers";
-import NextTopLoader from "nextjs-toploader";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
-import { Fragment } from "react";
 
 import "@/styles/globals.css";
 import "swiper/css";
@@ -46,6 +47,7 @@ export default async function RootLayout({ children }: Props) {
           <TRPCReactProvider>
             {children}
             <NextTopLoader color={COLORS.blue} showSpinner={false} />
+            <Toaster position="top-right" richColors className="font-sans whitespace-pre-line" />
           </TRPCReactProvider>
         </NuqsAdapter>
         {OtherComponents[env.NODE_ENV]}

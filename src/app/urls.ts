@@ -1,7 +1,7 @@
+import type { ReadonlyURLSearchParams } from "next/navigation";
 import { env } from "@/env";
 import { PERSONALS } from "@/lib/constants";
 import type { Lang } from "@/types";
-import type { ReadonlyURLSearchParams } from "next/navigation";
 
 const addPath = ({ path, lang }: { path: string; lang?: Lang }) => `${lang ? `/${lang}` : ""}${path === PATHS.main ? "" : path}`;
 const getUrl = ({ path, lang, type = "production" }: { path: string; lang?: Lang; type?: keyof typeof BASE_URL }) =>

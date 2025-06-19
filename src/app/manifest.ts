@@ -1,12 +1,12 @@
-import { DEFAULT_LANG } from "@/internationalization";
-import { useLang } from "@/internationalization/functions";
-import { COLORS } from "@/styles";
 import type { MetadataRoute } from "next";
+import { DEFAULT_LANG } from "@/internationalization";
+import { getLang } from "@/internationalization/functions";
+import { COLORS } from "@/styles";
 
 export default function manifest(): MetadataRoute.Manifest {
   const {
     s: { PERSONAL_DATA: me },
-  } = useLang(DEFAULT_LANG);
+  } = getLang(DEFAULT_LANG);
 
   const title = me.fullName;
   const description = me.summary;

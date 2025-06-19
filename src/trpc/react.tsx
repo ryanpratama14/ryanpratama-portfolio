@@ -1,14 +1,14 @@
 "use client";
 
-import { URLS } from "@/app/urls";
-import type { AppRouter } from "@/server/root";
-import { createQueryClient, transformer } from "@/trpc/shared";
 import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchStreamLink, loggerLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
 import { useState } from "react";
+import { URLS } from "@/app/urls";
+import type { AppRouter } from "@/server/root";
+import { createQueryClient, transformer } from "@/trpc/shared";
 
-let clientQueryClientSingleton: QueryClient | undefined = undefined;
+let clientQueryClientSingleton: QueryClient | undefined;
 
 const getQueryClient = () => {
   if (typeof window === "undefined") return createQueryClient();

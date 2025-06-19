@@ -1,6 +1,6 @@
 import Img from "@/components/html/img";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/shadcn/ui/accordion";
-import { useLang } from "@/internationalization/functions";
+import { getLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { DictionaryStatic, History, Lang } from "@/types";
 import LinkButton from "./html/link-button";
@@ -13,7 +13,7 @@ type Props = {
 };
 
 export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
-  const { formatMonth } = useLang(lang);
+  const { formatMonth } = getLang(lang);
 
   const e = { ...s.CONSTANTS.HISTORY[data.key], ...data, location: s.LOCATIONS[data.location], type: data.type ? s.LOCATION_TYPES[data.type] : "" };
 

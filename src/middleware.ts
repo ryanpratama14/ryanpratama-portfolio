@@ -1,10 +1,10 @@
-import { HEADERS } from "@/app/urls";
-import { DEFAULT_LANG, LANGS } from "@/internationalization";
-import { getLangFromPath, isLangMissing, validateLang, validateMatchedLang } from "@/internationalization/functions";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
+import { HEADERS } from "@/app/urls";
+import { DEFAULT_LANG, LANGS } from "@/internationalization";
+import { getLangFromPath, isLangMissing, validateLang, validateMatchedLang } from "@/internationalization/functions";
 
 const getLang = (req: NextRequest) => {
   const headers = new Headers(req.headers);

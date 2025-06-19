@@ -1,8 +1,8 @@
-import { useLang } from "@/internationalization/functions";
+import type { Metadata } from "next";
+import { getLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
-import type { Metadata } from "next";
-import { URLS, getUrl } from "./urls";
+import { getUrl, URLS } from "./urls";
 
 type OpenGraphArticle = {
   publishedTime?: string;
@@ -25,7 +25,7 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
   const {
     s: { PERSONAL_DATA: me },
     splittedLocale: locale,
-  } = useLang(lang);
+  } = getLang(lang);
   const MAIN_TITLE = me.fullName;
   const MAIN_DESCRIPTION = description || `${me.fullName} — ${me.summaryShort}`;
 

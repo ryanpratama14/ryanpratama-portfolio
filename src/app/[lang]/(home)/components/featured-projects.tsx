@@ -1,11 +1,11 @@
 "use client";
 
+import { Mousewheel, Scrollbar } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "@/components/container";
 import ProjectCard from "@/components/project-card";
 import { PROJECTS } from "@/lib/constants";
 import type { DictionaryStatic } from "@/types";
-import { Mousewheel, Scrollbar } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 type Props = { s: DictionaryStatic };
 

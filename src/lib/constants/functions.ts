@@ -1,10 +1,10 @@
 import { ENDPOINTS } from "@/app/urls";
-import { useLang } from "@/internationalization/functions";
+import { getLang } from "@/internationalization/functions";
 import { PERSONALS } from "@/lib/constants";
 import type { Lang, Profile } from "@/types";
 
 export const getProfileData = (lang: Lang): Profile[] => {
-  const { s, formatCounter, locale } = useLang(lang);
+  const { s, formatCounter, locale } = getLang(lang);
 
   return [
     { href: PERSONALS.mailTo, icon: "mail", label: s.SECTIONS.email },

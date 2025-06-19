@@ -1,6 +1,6 @@
-import { CONSOLE, transformer } from "@/trpc/shared";
 import { initTRPC } from "@trpc/server";
 import { ZodError, z } from "zod/v4";
+import { CONSOLE, transformer } from "@/trpc/shared";
 
 export const createTRPCContext = async (opts: { headers: Headers }) => {
   return { ...opts };

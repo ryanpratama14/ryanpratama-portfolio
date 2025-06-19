@@ -1,14 +1,14 @@
+import { Resend } from "resend";
 import Message from "@/components/emails/message";
 import { env } from "@/env";
 import { DEFAULT_LANG } from "@/internationalization";
-import { useLang } from "@/internationalization/functions";
+import { getLang } from "@/internationalization/functions";
 import { schema } from "@/server/schema";
 import { createTRPCRouter, publicProcedure } from "@/server/trpc";
 import { type RouterInputs, THROW } from "@/trpc/shared";
-import { Resend } from "resend";
 
-const { s } = useLang(DEFAULT_LANG);
 const resend = new Resend(env.RESEND_API_KEY);
+const { s } = getLang(DEFAULT_LANG);
 
 export const emailRouter = createTRPCRouter({
   message: publicProcedure.input(schema.email.message(s)).mutation(async ({ input }) => {
