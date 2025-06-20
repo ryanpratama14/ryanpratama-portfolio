@@ -1,6 +1,4 @@
-import type { Certification, Contact, DictionaryStatic, History, Other, Project, TechStack } from "@/types";
 import dayjs from "dayjs";
-
 import avatar from "#/images/avatar.webp";
 import n3 from "#/images/certification/jlpt-n3.webp";
 import podfak from "#/images/certification/podfak.webp";
@@ -19,6 +17,7 @@ import pemudaicmi from "#/images/project/pemudaicmi.webp";
 import rymal from "#/images/project/rymal.webp";
 import turta from "#/images/project/turta.webp";
 import waterhubProject from "#/images/project/waterhub.webp";
+import type { Certification, Contact, DictionaryStatic, History, Other, Project, TechStack } from "@/types";
 
 const EXPERIENCE_START_DATE = dayjs("2022-09-01").toDate();
 

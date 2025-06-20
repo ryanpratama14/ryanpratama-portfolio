@@ -1,9 +1,9 @@
 "use server";
 
+import { cookies, headers } from "next/headers";
 import { COOKIES, HEADERS, PATHS } from "@/app/urls";
 import { validateMatchedLang } from "@/internationalization/functions";
 import type { Lang, LangTarget } from "@/types";
-import { cookies, headers } from "next/headers";
 
 export const setCookie = async (name: string, value: string) => {
   (await cookies()).set(name, value, { httpOnly: true, sameSite: "lax" });
