@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 import { getMetadata } from "@/app/metadata";
-import { getUrl } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import Body from "@/components/body";
 import Breadcrumb from "@/components/breadcrumb";
 import ImgSanity from "@/components/html/img-sanity";
 import LocalTime from "@/components/local-time";
 import { getLang } from "@/internationalization/functions";
-import { getHeaders } from "@/lib/actions";
 import { VARIANTS } from "@/styles";
 import { api } from "@/trpc/server";
 import type { Lang } from "@/types";
@@ -33,16 +31,10 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
 };
 
 export default async function BlogPageBySlug({ params }: Props) {
-  const url = getUrl({ path: (await getHeaders()).path });
   const { slug, lang } = await params;
   const { data } = await api.unlogged.sanity.post.detail({ slug });
   if (!data?.slug?.current) notFound();
-
-  const { data: relatedData } = await api.unlogged.sanity.post.list({
-    slice: 6,
-    slugToRemove: data.slug.current,
-  });
-
+  const { data: relatedData } = await api.unlogged.sanity.post.list({ slice: 6, slugToRemove: data.slug.current });
   const { s } = getLang(lang);
 
   return (
@@ -64,7 +56,7 @@ export default async function BlogPageBySlug({ params }: Props) {
         <Body data={data.body} />
         <section className="space-y-1.5">
           <h2 className="font-semibold">{s.SECTIONS.share}</h2>
-          <Share url={url} />
+          <Share />
         </section>
 
         {data.tags?.length ? (

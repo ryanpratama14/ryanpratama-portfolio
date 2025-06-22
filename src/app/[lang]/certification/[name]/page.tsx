@@ -9,6 +9,8 @@ import type { Lang } from "@/types";
 
 type Props = { params: Promise<{ lang: Lang; name: string }> };
 
+export const generateStaticParams = () => CERTIFICATIONS.map((e) => ({ name: e.name }));
+
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
   const { name, lang } = await params;
   const { s } = getLang(lang);

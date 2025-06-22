@@ -1,7 +1,7 @@
 "use client";
 
-import { ICONS } from "@/lib/constants";
 import { Icon } from "@iconify-icon/react";
+import { usePathname } from "next/navigation";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -10,6 +10,8 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from "react-share";
+import { getUrl } from "@/app/urls";
+import { ICONS } from "@/lib/constants";
 
 const DATA = [
   { label: "LinkedIn", icon: ICONS.linkedin, Component: LinkedinShareButton },
@@ -20,7 +22,9 @@ const DATA = [
   { label: "Email", icon: ICONS.email, Component: EmailShareButton },
 ];
 
-export default function Share({ url }: { url: string }) {
+export default function Share() {
+  const url = getUrl({ path: usePathname() });
+
   return (
     <ul className="flex gap-1.5">
       {DATA.map((e) => (
