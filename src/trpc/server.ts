@@ -7,6 +7,7 @@ import { observable } from "@trpc/server/observable";
 import type { TRPCErrorResponse } from "@trpc/server/rpc";
 import { headers } from "next/headers";
 import { cache } from "react";
+import { env } from "@/env";
 import { type AppRouter, appRouter, createCaller } from "@/server/root";
 import { createTRPCContext } from "@/server/trpc";
 import { createQueryClient } from "@/trpc/shared";
@@ -24,7 +25,7 @@ const { trpc: unlogged, HydrateClient } = createHydrationHelpers<AppRouter>(call
 const logged = createTRPCClient<AppRouter>({
   links: [
     loggerLink({
-      enabled: (op) => process.env.NODE_ENV === "development" || (op.direction === "down" && op.result instanceof Error),
+      enabled: (op) => env.NODE_ENV === "development" || (op.direction === "down" && op.result instanceof Error),
     }),
     () =>
       ({ op }) =>

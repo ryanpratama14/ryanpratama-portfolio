@@ -37,7 +37,7 @@
     "dayjs": "^1.11.13",
     "geist": "^1.4.2",
     "lucide-react": "^0.522.0",
-    "motion": "^12.18.1",
+    "motion": "^12.19.1",
     "negotiator": "^1.0.0",
     "next": "^15.3.4",
     "next-sanity": "9.12.0",
@@ -65,7 +65,7 @@
     "zod": "^3.25.67"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.0.4",
+    "@biomejs/biome": "^2.0.5",
     "@formatjs/intl-localematcher": "^0.6.1",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/negotiator": "^0.6.4",
