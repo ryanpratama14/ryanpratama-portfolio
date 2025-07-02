@@ -51,16 +51,6 @@ export default async function RootLayout({ children }: Props) {
           </TRPCReactProvider>
         </NuqsAdapter>
         {OtherComponents[env.NODE_ENV]}
-
-        <noscript>
-          <iframe
-            title="GTM"
-            src={`https://www.googletagmanager.com/ns.html?id=${env.NEXT_PUBLIC_GTM_ID}`}
-            height={0}
-            width={0}
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
       </body>
     </html>
   );

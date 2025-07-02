@@ -8,6 +8,8 @@ import Breadcrumb from "@/components/breadcrumb";
 import ImgSanity from "@/components/html/img-sanity";
 import LocalTime from "@/components/local-time";
 import { getLang } from "@/internationalization/functions";
+import { client } from "@/sanity/lib/client";
+import { GetPosts } from "@/sanity/lib/queries";
 import { VARIANTS } from "@/styles";
 import { api } from "@/trpc/server";
 import type { Lang } from "@/types";
@@ -15,6 +17,10 @@ import Share from "./components/share";
 import StickyTitle from "./components/sticky-title";
 
 type Props = { params: Promise<{ slug: string; lang: Lang }> };
+
+export const generateStaticParams = async (): Promise<{ slug: string | undefined }[]> => {
+  return (await client.fetch(GetPosts)).filter((r) => !!r.slug?.current).map((e) => ({ slug: e.slug?.current }));
+};
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
   const { slug } = await params;
