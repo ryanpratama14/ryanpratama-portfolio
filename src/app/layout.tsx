@@ -24,7 +24,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { generateOpenAPISpec } from "@/openapi";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata({});
@@ -33,8 +32,6 @@ type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
   const [{ lang }, { isEnabled: isDraftMode }] = await Promise.all([getHeaders(), draftMode()]);
-
-  console.log(await generateOpenAPISpec());
 
   return (
     <html lang={lang} className={GeistSans.variable}>
