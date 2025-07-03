@@ -1,33 +1,7 @@
-import { defaultShouldDehydrateQuery, QueryClient } from "@tanstack/react-query";
-import type { TRPCClientError } from "@trpc/client";
-import { type inferRouterInputs, type inferRouterOutputs, TRPCError } from "@trpc/server";
-import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
-import { toast } from "sonner";
-import SuperJSON from "superjson";
-import type { AppRouter } from "@/server/root";
+import { ORPCError, type ORPCErrorCode } from "@orpc/client";
+import type { ORPCOkCode } from "@/types";
 
-type TRPC_OK_CODE_KEY = "OK" | "CREATED" | "ACCEPTED" | "NO_CONTENT" | "RESET_CONTENT" | "PARTIAL_CONTENT";
-
-export const transformer = SuperJSON;
-export const createQueryClient = () => {
-  return new QueryClient({
-    defaultOptions: {
-      queries: { staleTime: 30 * 1000 },
-      dehydrate: {
-        serializeData: transformer.serialize,
-        shouldDehydrateQuery: (query) => defaultShouldDehydrateQuery(query) || query.state.status === "pending",
-      },
-      hydrate: { deserializeData: transformer.deserialize },
-      mutations: {
-        onError: (e) => {
-          const error = e as TRPCClientError<AppRouter>;
-          const message = error.data?.pretty ?? error.message ?? "An error occurred.";
-          toast.error(message);
-        },
-      },
-    },
-  });
-};
+const time = `${new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" })} 👉`;
 
 export const THROW = {
   ok: <Input = unknown, Data = unknown>({
@@ -36,15 +10,15 @@ export const THROW = {
     input = null as Input,
     data = null as Data,
   }: {
-    code: TRPC_OK_CODE_KEY;
+    code: ORPCOkCode;
     message?: string | null | undefined;
     input?: Input;
     data: Data;
   }) => {
     return { input, data, code, message };
   },
-  error: (code: TRPC_ERROR_CODE_KEY, message?: string | null | undefined) => {
-    throw new TRPCError({ code, message: message ?? ERROR_MESSAGES[code] });
+  error: (code: ORPCErrorCode, message?: string | null | undefined) => {
+    throw new ORPCError(code, { message: message ?? ERROR_MESSAGES[code] });
   },
 };
 
@@ -54,7 +28,8 @@ export const CONSOLE = {
   error: (key: string, message: unknown) => console.error(`🔴 ${time} ${key}:`, message),
 };
 
-const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {
+export const ERROR_MESSAGES: Record<ORPCErrorCode, string> = {
+  NOT_ACCEPTABLE: "The server cannot generate a response that is acceptable according to the request's Accept headers.",
   PAYMENT_REQUIRED: "Access is restricted. A valid payment or subscription is required to proceed with this service.",
   PARSE_ERROR: "The server encountered an issue while parsing your request. Please verify the request format and syntax.",
   BAD_REQUEST: "The request is invalid or malformed. Ensure all required parameters are correctly provided.",
@@ -77,7 +52,7 @@ const ERROR_MESSAGES: Record<TRPC_ERROR_CODE_KEY, string> = {
   GATEWAY_TIMEOUT: "The gateway did not receive a timely response from the upstream server. Please retry the request later.",
 };
 
-const OK_MESSAGES: Record<TRPC_OK_CODE_KEY, string> = {
+export const OK_MESSAGES: Record<ORPCOkCode, string> = {
   OK: "The request was successfully processed.",
   CREATED: "The resource was created successfully and is now available.",
   ACCEPTED: "The request has been accepted for processing, but the operation is not yet complete.",
@@ -86,6 +61,12 @@ const OK_MESSAGES: Record<TRPC_OK_CODE_KEY, string> = {
   PARTIAL_CONTENT: "The server successfully processed part of the request. Additional actions may be required to complete it.",
 };
 
-const time = `${new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" })} 👉`;
-export type RouterInputs = inferRouterInputs<AppRouter>;
-export type RouterOutputs = inferRouterOutputs<AppRouter>;
+export const parseCookies = (cookieHeader: string | null) => {
+  if (!cookieHeader) return null;
+  return Object.fromEntries(
+    cookieHeader.split("; ").map((cookie) => {
+      const [key, ...rest] = cookie.split("=");
+      return [key, rest.join("=")];
+    }),
+  );
+};

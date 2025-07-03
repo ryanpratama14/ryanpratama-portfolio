@@ -1,3 +1,4 @@
+import "@/server/orpc.server";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -16,13 +17,14 @@ import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
 import { SanityLive } from "@/sanity/lib/live";
 import { COLORS } from "@/styles";
-import { TRPCReactProvider } from "@/trpc/react";
+import { Providers } from "./providers";
 
 import "@/styles/globals.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { generateOpenAPISpec } from "@/openapi";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata({});
@@ -31,6 +33,8 @@ type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
   const [{ lang }, { isEnabled: isDraftMode }] = await Promise.all([getHeaders(), draftMode()]);
+
+  console.log(await generateOpenAPISpec());
 
   return (
     <html lang={lang} className={GeistSans.variable}>
@@ -44,11 +48,11 @@ export default async function RootLayout({ children }: Props) {
           </Fragment>
         )}
         <NuqsAdapter>
-          <TRPCReactProvider>
+          <Providers>
             {children}
             <NextTopLoader color={COLORS.blue} showSpinner={false} />
             <Toaster position="top-right" richColors className="font-sans whitespace-pre-line" />
-          </TRPCReactProvider>
+          </Providers>
         </NuqsAdapter>
         {OtherComponents[env.NODE_ENV]}
       </body>

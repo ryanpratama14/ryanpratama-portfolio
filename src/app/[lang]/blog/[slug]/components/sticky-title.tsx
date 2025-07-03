@@ -1,15 +1,15 @@
 "use client";
 
+import { Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 import LinkButton from "@/components/html/link-button";
 import LocalTime from "@/components/local-time";
 import { PERSONALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import type { SanityPostDetaiResultlOutput } from "@/server/routers/sanity";
+import type { PostDetailOutput } from "@/server/router/post";
 import type { Lang } from "@/types";
-import { Mail } from "lucide-react";
-import { useEffect, useState } from "react";
 
-export default function StickyTitle({ data, lang }: { data: SanityPostDetaiResultlOutput["data"]; lang: Lang }) {
+export default function StickyTitle({ data, lang }: { data: PostDetailOutput["data"]; lang: Lang }) {
   const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {

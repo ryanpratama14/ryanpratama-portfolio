@@ -1,11 +1,11 @@
-import type { SanityPostListOutput } from "@/server/routers/sanity";
+import type { PostListOutput } from "@/server/router/post";
 import type { Lang } from "@/types";
 import Container from "./container";
 import ImgSanity from "./html/img-sanity";
 import LinkButton from "./html/link-button";
 import LocalTime from "./local-time";
 
-type Props = { data: SanityPostListOutput["data"]; lang: Lang; href?: string; title: string };
+type Props = { data: PostListOutput["data"]; lang: Lang; href?: string; title: string };
 
 export default function BlogCards({ data, href, lang, title }: Props) {
   if (!data?.length) return null;

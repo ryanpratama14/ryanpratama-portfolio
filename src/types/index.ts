@@ -1,8 +1,10 @@
+import type { InferRouterInputs, InferRouterOutputs } from "@orpc/server";
 import type { IconName } from "lucide-react/dynamic";
 import type { StaticImageData } from "next/image";
 import type { LANGS } from "@/internationalization";
 import type { en } from "@/internationalization/dictionaries/en";
 import type { getLang } from "@/internationalization/functions";
+import type { router } from "@/server/router";
 
 export type Lang = (typeof LANGS)[number];
 export type LangTarget = Lang | null | undefined | string;
@@ -27,3 +29,7 @@ export type History = {
   location: keyof DictionaryStatic["LOCATIONS"];
   type?: keyof DictionaryStatic["LOCATION_TYPES"];
 };
+
+export type ORPCOkCode = "OK" | "CREATED" | "ACCEPTED" | "NO_CONTENT" | "RESET_CONTENT" | "PARTIAL_CONTENT";
+export type Inputs = InferRouterInputs<typeof router>;
+export type Outputs = InferRouterOutputs<typeof router>;

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { ALL_PATHS, ENDPOINTS, getUrl, PATHS } from "@/app/urls";
 import { LANGS } from "@/internationalization";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { api } from "@/trpc/server";
+import { api } from "@/server/orpc";
 import type { Lang } from "@/types";
 
 const createEntry = (path: string, lang?: Lang) => ({
@@ -12,7 +12,7 @@ const createEntry = (path: string, lang?: Lang) => ({
 });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { data: blogPosts } = await api.unlogged.sanity.post.list({});
+  const { data: blogPosts } = await api.post.list({});
 
   const allPaths = [
     ...ALL_PATHS,
