@@ -1,8 +1,6 @@
 import { defaultShouldDehydrateQuery, QueryClient } from "@tanstack/react-query";
-import type { TRPCClientError } from "@trpc/client";
 import { type inferRouterInputs, type inferRouterOutputs, TRPCError } from "@trpc/server";
 import type { TRPC_ERROR_CODE_KEY } from "@trpc/server/rpc";
-import { toast } from "sonner";
 import SuperJSON from "superjson";
 import type { AppRouter } from "@/server/root";
 
@@ -18,13 +16,6 @@ export const createQueryClient = () => {
         shouldDehydrateQuery: (query) => defaultShouldDehydrateQuery(query) || query.state.status === "pending",
       },
       hydrate: { deserializeData: transformer.deserialize },
-      mutations: {
-        onError: (e) => {
-          const error = e as TRPCClientError<AppRouter>;
-          const message = error.data?.pretty ?? error.message ?? "An error occurred.";
-          toast.error(message);
-        },
-      },
     },
   });
 };
