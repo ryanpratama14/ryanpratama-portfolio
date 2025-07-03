@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { DynamicIcon } from "lucide-react/dynamic";
 import { parseAsBoolean, useQueryState } from "nuqs";
 import { Fragment } from "react";
@@ -11,9 +10,9 @@ import Dialog from "@/components/dialog";
 import Button from "@/components/html/button";
 import Input from "@/components/html/input";
 import TextArea from "@/components/html/text-area";
-import { sendEmailAction } from "@/lib/actions";
 import type { EmailMessageInput } from "@/server/routers/email";
 import { schema } from "@/server/schema";
+import { api } from "@/trpc/react";
 import type { DictionaryStatic, Lang } from "@/types";
 
 type Props = { s: DictionaryStatic; lang: Lang };
@@ -29,8 +28,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     reset,
   } = useForm<EmailMessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang }, mode: "all" });
 
-  const { mutate: sendMessage, isPending } = useMutation({
-    mutationFn: async (data: EmailMessageInput) => await sendEmailAction(data),
+  const { mutate: sendMessage, isPending } = api.email.message.useMutation({
     onSuccess: () => {
       setOpen(true);
     },
