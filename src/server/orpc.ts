@@ -10,11 +10,7 @@ declare global {
 }
 
 const link = new RPCLink({
-  plugins: [
-    new BatchLinkPlugin({
-      groups: [{ condition: () => true, context: {} }],
-    }),
-  ],
+  plugins: [new BatchLinkPlugin({ groups: [{ condition: () => true, context: {} }] })],
   url: () => {
     if (typeof window === "undefined") {
       throw new Error("RPCLink is not allowed on the server side.");

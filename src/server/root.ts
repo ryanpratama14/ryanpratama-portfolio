@@ -1,15 +1,16 @@
 import { os } from "@orpc/server";
 import { headers } from "next/headers";
+import { cache } from "react";
 import { z } from "zod/v4";
 import { auth } from "./auth";
 import { parseCookies, THROW } from "./lib";
 
-export const createORPCContext = async (opts: { headers: Headers }) => {
+export const createORPCContext = cache(async (opts: { headers: Headers }) => {
   const session = await auth();
   return { session, ...opts };
-};
+});
 
-export const t = os
+export const base = os
   .$context<Awaited<ReturnType<typeof createORPCContext>>>()
   .use(async ({ next }) => {
     const heads = new Headers(await headers());
@@ -23,9 +24,9 @@ export const t = os
     },
   });
 
-export const procedure = {
-  public: t,
-  protected: t.use(async ({ next, context }) => {
+export const p = {
+  public: base,
+  protected: base.use(async ({ next, context }) => {
     if (!context.session) return THROW.error("UNAUTHORIZED");
     return await next({ context: { session: context.session } });
   }),

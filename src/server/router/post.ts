@@ -4,7 +4,7 @@ import { GetPostBySlug, GetPosts } from "@/sanity/lib/queries";
 import type { GetPostBySlugResult } from "@/sanity/types";
 import type { Outputs } from "@/types";
 import { THROW } from "../lib";
-import { procedure } from "../root";
+import { p } from "../root";
 import { schema } from "../schema";
 
 const formatPostData = (post: GetPostBySlugResult) => {
@@ -16,14 +16,14 @@ const formatPostData = (post: GetPostBySlugResult) => {
 };
 
 export const post = {
-  detail: procedure.public.input(schema.sanity.post.detail).handler(async ({ input }) => {
+  detail: p.public.input(schema.sanity.post.detail).handler(async ({ input }) => {
     const { slug } = input;
     const { data } = await sanityFetch({ query: GetPostBySlug, params: { slug } });
     if (!data) return THROW.error("NOT_FOUND");
     return THROW.ok({ code: "OK", input, data: formatPostData(data) });
   }),
 
-  list: procedure.public.input(schema.sanity.post.list).handler(async ({ input }) => {
+  list: p.public.input(schema.sanity.post.list).handler(async ({ input }) => {
     const { slugToRemove, slice } = input;
     const { data } = await sanityFetch({ query: GetPosts });
     const formattedData = data.filter((e) => e.slug?.current).map((item) => formatPostData(item));
