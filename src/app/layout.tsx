@@ -15,9 +15,9 @@ import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { env } from "@/env";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
+import { Providers } from "@/lib/tanstack-query/providers";
 import { SanityLive } from "@/sanity/lib/live";
 import { COLORS } from "@/styles";
-import { Providers } from "./providers";
 
 import "@/styles/globals.css";
 import "swiper/css";

@@ -1,26 +1,10 @@
-"use client";
-
 import { StandardRPCJsonSerializer } from "@orpc/client/standard";
-import { defaultShouldDehydrateQuery, QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { useState } from "react";
+import { defaultShouldDehydrateQuery, QueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-
-type Props = { children: React.ReactNode };
-
-export function Providers({ children }: Props) {
-  const [queryClient] = useState(() => createQueryClient());
-  return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-      <ReactQueryDevtools />
-    </QueryClientProvider>
-  );
-}
 
 const serializer = new StandardRPCJsonSerializer({ customJsonSerializers: [] });
 
-const createQueryClient = () => {
+export const createQueryClient = () => {
   return new QueryClient({
     defaultOptions: {
       queries: { staleTime: 60 * 1000 },
