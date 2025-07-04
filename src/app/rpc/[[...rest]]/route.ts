@@ -1,10 +1,12 @@
 import { ORPCError, onError, ValidationError } from "@orpc/server";
 import { RPCHandler } from "@orpc/server/fetch";
+import { BatchHandlerPlugin } from "@orpc/server/plugins";
 import { ZodError, z } from "zod/v4";
 import { createORPCContext } from "@/server/root";
 import { router } from "@/server/router";
 
 const handler = new RPCHandler(router, {
+  plugins: [new BatchHandlerPlugin()],
   clientInterceptors: [
     onError((error) => {
       if (error instanceof ORPCError && error.code === "BAD_REQUEST" && error.cause instanceof ValidationError) {
