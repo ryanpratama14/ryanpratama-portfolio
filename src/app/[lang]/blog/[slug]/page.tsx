@@ -24,7 +24,7 @@ export const generateStaticParams = async (): Promise<{ slug: string | undefined
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
   const { slug } = await params;
-  const { data } = await api.post.detail({ slug });
+  const { data } = await api.post.detail.call({ slug });
   if (!data?.slug?.current) return;
 
   return await getMetadata({
@@ -38,9 +38,9 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
 
 export default async function BlogPageBySlug({ params }: Props) {
   const { slug, lang } = await params;
-  const { data } = await api.post.detail({ slug });
+  const { data } = await api.post.detail.call({ slug });
   if (!data?.slug?.current) notFound();
-  const { data: relatedData } = await api.post.list({ slice: 6, slugToRemove: data.slug.current });
+  const { data: relatedData } = await api.post.list.call({ slice: 6, slugToRemove: data.slug.current });
   const { s } = getLang(lang);
 
   return (

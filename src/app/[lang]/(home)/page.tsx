@@ -14,7 +14,7 @@ type Props = { params: Promise<{ lang: Lang }> };
 
 export default async function HomePage({ params }: Props) {
   const { s, isJapanese, lang } = getLang((await params).lang);
-  const { data } = await api.post.list({ slice: 4 });
+  const { data } = await api.post.list.call({ slice: 4 });
 
   return (
     <Fragment>

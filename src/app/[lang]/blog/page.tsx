@@ -14,6 +14,6 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 
 export default async function BlogPage({ params }: Props) {
   const { s, lang } = getLang((await params).lang);
-  const { data } = await api.post.list({});
+  const { data } = await api.post.list.call({});
   return <BlogCards title={s.MENUS.blog} lang={lang} data={data} />;
 }

@@ -11,7 +11,7 @@ import Dialog from "@/components/dialog";
 import Button from "@/components/html/button";
 import Input from "@/components/html/input";
 import TextArea from "@/components/html/text-area";
-import { api } from "@/server/orpc.client";
+import { api } from "@/server/orpc";
 import type { EmailMessageInput } from "@/server/router/email";
 import { schema } from "@/server/schema";
 import type { DictionaryStatic, Lang } from "@/types";

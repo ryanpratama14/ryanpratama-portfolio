@@ -2,6 +2,7 @@ import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
 import { BatchLinkPlugin } from "@orpc/client/plugins";
 import type { RouterClient } from "@orpc/server";
+import { createTanstackQueryUtils } from "@orpc/tanstack-query";
 import { URLS } from "@/app/urls";
 import type { router } from "./router";
 
@@ -15,4 +16,4 @@ const link = new RPCLink({
 });
 
 export const instance: RouterClient<typeof router> = globalThis.$client ?? createORPCClient(link);
-export const api = instance;
+export const api = createTanstackQueryUtils(instance);
