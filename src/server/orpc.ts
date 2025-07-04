@@ -2,6 +2,7 @@ import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
 import { BatchLinkPlugin } from "@orpc/client/plugins";
 import type { RouterClient } from "@orpc/server";
+import { getUrl } from "@/app/urls";
 import type { router } from "./router";
 
 declare global {
@@ -9,7 +10,7 @@ declare global {
 }
 
 const link = new RPCLink({
-  url: `${typeof window !== "undefined" ? window.location.origin : "http://localhost:3000"}/rpc`,
+  url: `${typeof window !== "undefined" ? window.location.origin : getUrl({ path: "" })}/rpc`,
   plugins: [new BatchLinkPlugin({ groups: [{ condition: () => true, context: {} }] })],
 });
 
