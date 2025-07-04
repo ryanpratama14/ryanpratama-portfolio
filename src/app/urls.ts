@@ -31,6 +31,7 @@ const URLS = {
   ogImage: getUrl({ path: ENDPOINTS.ogImage }),
   sitemap: getUrl({ path: ENDPOINTS.sitemap }),
   resume: getUrl({ path: ENDPOINTS.resume }),
+  rpc: getUrl({ path: ENDPOINTS.rpc, type: "development" }),
 };
 
 export { addPath, getBaseUrl, getUrl, isExternalLink, createUrl, URLS, BASE_URL, ENDPOINTS, COOKIES, HEADERS, ALL_PATHS, PATHS, IS_CLIENT };

@@ -1,21 +1,13 @@
 import { os } from "@orpc/server";
 import { headers } from "next/headers";
-import { cache } from "react";
 import { z } from "zod/v4";
 import { auth } from "./auth";
 import { parseCookies, THROW } from "./lib";
 
-export const createORPCContext = cache(async (opts: { headers: Headers }) => {
-  const session = await auth();
-  return { session, ...opts };
-});
-
 export const base = os
-  .$context<Awaited<ReturnType<typeof createORPCContext>>>()
   .use(async ({ next }) => {
     const heads = new Headers(await headers());
-    heads.set("x-orpc-source", "rsc");
-    return next({ context: { ...(await createORPCContext({ headers: heads })), cookies: parseCookies(heads.get("cookie")) } });
+    return next({ context: { headers: heads, session: await auth(), cookies: parseCookies(heads.get("cookie")) } });
   })
   .errors({
     INPUT_VALIDATION_FAILED: {
@@ -26,7 +18,7 @@ export const base = os
 
 export const p = {
   public: base,
-  protected: base.use(async ({ next, context }) => {
+  authed: base.use(async ({ next, context }) => {
     if (!context.session) return THROW.error("UNAUTHORIZED");
     return await next({ context: { session: context.session } });
   }),
