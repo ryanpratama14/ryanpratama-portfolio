@@ -22,7 +22,7 @@ const createUrl = (path: string, params: URLSearchParams | ReadonlyURLSearchPara
 
 const IS_CLIENT = typeof window !== "undefined";
 const BASE_URL = { development: getBaseUrl(), production: env.NEXT_PUBLIC_URL };
-const ENDPOINTS = { ogImage: "/assets/opengraph.png", sitemap: "/sitemap.xml", resume: "/resume.pdf" } as const;
+const ENDPOINTS = { rpc: "/api/rpc", ogImage: "/assets/opengraph.png", sitemap: "/sitemap.xml", resume: "/resume.pdf" } as const;
 const COOKIES = { lang: "lang" };
 const HEADERS = { lang: "x-lang", path: "x-pathname" };
 const PATHS = { main: "/", certification: "/certification", post: "/blog", resume: "/resume" };

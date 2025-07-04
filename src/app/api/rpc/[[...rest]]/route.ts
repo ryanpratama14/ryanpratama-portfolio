@@ -2,6 +2,7 @@ import { ORPCError, onError, ValidationError } from "@orpc/server";
 import { RPCHandler } from "@orpc/server/fetch";
 import { BatchHandlerPlugin } from "@orpc/server/plugins";
 import { ZodError, z } from "zod/v4";
+import { ENDPOINTS } from "@/app/urls";
 import { createORPCContext } from "@/server/root";
 import { router } from "@/server/router";
 
@@ -28,7 +29,7 @@ const handler = new RPCHandler(router, {
 });
 
 const handleRequest = async (request: Request) => {
-  const { response } = await handler.handle(request, { prefix: "/rpc", context: await createORPCContext({ headers: request.headers }) });
+  const { response } = await handler.handle(request, { prefix: ENDPOINTS.rpc, context: await createORPCContext({ headers: request.headers }) });
   return response ?? new Response("Not found", { status: 404 });
 };
 
