@@ -10,16 +10,12 @@ export const createQueryClient = () => {
       queries: { staleTime: 60 * 1000 },
       dehydrate: {
         shouldDehydrateQuery: (query) => defaultShouldDehydrateQuery(query) || query.state.status === "pending",
-        serializeData(data) {
+        serializeData: (data) => {
           const [json, meta] = serializer.serialize(data);
           return { json, meta };
         },
       },
-      hydrate: {
-        deserializeData(data) {
-          return serializer.deserialize(data.json, data.meta);
-        },
-      },
+      hydrate: { deserializeData: (data) => serializer.deserialize(data.json, data.meta) },
       mutations: {
         onError: (e) => {
           toast.error(e.message);
