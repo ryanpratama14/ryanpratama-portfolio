@@ -8,11 +8,11 @@ import { THROW } from "../lib";
 import { p } from "../root";
 import { schema } from "../schema";
 
-const resend = new Resend(env.RESEND_API_KEY);
 const { s } = getLang(DEFAULT_LANG);
 
 export const email = {
   message: p.public.input(schema.email.message(s)).handler(async ({ input }) => {
+    const resend = new Resend(env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
       from: `Ryan <${env.RESEND_EMAIL_FROM}>`,
       to: env.RESEND_EMAIL_TO,

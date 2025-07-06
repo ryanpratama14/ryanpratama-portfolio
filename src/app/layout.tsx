@@ -1,4 +1,10 @@
+import "@/styles/globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import "@/server/orpc.server";
+
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -18,12 +24,6 @@ import { getHeaders } from "@/lib/actions";
 import { Providers } from "@/lib/tanstack-query/providers";
 import { SanityLive } from "@/sanity/lib/live";
 import { COLORS } from "@/styles";
-
-import "@/styles/globals.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async () => await getMetadata({});

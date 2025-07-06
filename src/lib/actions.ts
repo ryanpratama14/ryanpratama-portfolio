@@ -1,6 +1,6 @@
 "use server";
 
-import { cookies, headers } from "next/headers";
+import { cookies, draftMode, headers } from "next/headers";
 import { COOKIES, HEADERS, PATHS } from "@/app/urls";
 import { validateMatchedLang } from "@/internationalization/functions";
 import type { Lang, LangTarget } from "@/types";
@@ -23,3 +23,9 @@ export const getHeaders = async () => {
     lang: validateMatchedLang((await headers()).get(HEADERS.lang)),
   };
 };
+
+export async function disableDraftMode() {
+  const disable = (await draftMode()).disable();
+  const delay = new Promise((resolve) => setTimeout(resolve, 1000));
+  await Promise.allSettled([disable, delay]);
+}
