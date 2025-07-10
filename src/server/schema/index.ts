@@ -3,11 +3,9 @@ import { LANGS } from "@/internationalization";
 import type { DictionaryStatic } from "@/types";
 
 export const schema = {
-  sanity: {
-    post: {
-      list: z.object({ slice: z.number().optional(), slugToRemove: z.string().optional() }),
-      detail: z.object({ slug: z.string() }),
-    },
+  post: {
+    list: z.object({ slice: z.number().optional(), slugToRemove: z.string().optional() }),
+    detail: z.object({ slug: z.string() }),
   },
 
   email: {
