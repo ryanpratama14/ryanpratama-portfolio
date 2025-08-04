@@ -202,7 +202,7 @@ export const PROJECTS: Project[] = [
     label: "WaterHub",
     src: PHOTOS.project.waterhubProject,
     key: "waterhub",
-    href: "https://dashboard.waterhub.co.id/",
+    href: "https://dashboard.waterhub.co.id",
   },
   {
     label: "RYMAL Dubai",
@@ -244,13 +244,13 @@ export const PROJECTS: Project[] = [
     label: "Synergy Perdana Mandiri",
     src: PHOTOS.project.mandiri,
     key: "mandiri",
-    href: "https://www.sinergyperdanamandiri.com",
+    href: "https://sinergy-mandiri.vercel.app",
   },
   {
     label: "KIMA",
     src: PHOTOS.project.kima,
     key: "kima",
-    href: "https://kima.kpfu.ru",
+    href: "https://kima-fe.vercel.app",
   },
 ];
 
