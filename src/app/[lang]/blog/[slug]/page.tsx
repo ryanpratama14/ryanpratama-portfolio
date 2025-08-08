@@ -18,8 +18,8 @@ import StickyTitle from "./components/sticky-title";
 
 type Props = { params: Promise<{ slug: string; lang: Lang }> };
 
-export const generateStaticParams = async (): Promise<{ slug: string | undefined }[]> => {
-  return (await client.fetch(GetPosts)).filter((r) => !!r.slug?.current).map((e) => ({ slug: e.slug?.current }));
+export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
+  return (await client.fetch(GetPosts)).filter((r) => !!r.slug?.current).map((e) => ({ slug: e.slug?.current || "" }));
 };
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
