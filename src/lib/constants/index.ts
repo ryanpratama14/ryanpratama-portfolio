@@ -202,7 +202,7 @@ export const PROJECTS: Project[] = [
     label: "WaterHub",
     src: PHOTOS.project.waterhubProject,
     key: "waterhub",
-    href: "https://dashboard.waterhub.co.id",
+    href: "https://waterhub.co.id",
   },
   {
     label: "RYMAL Dubai",
