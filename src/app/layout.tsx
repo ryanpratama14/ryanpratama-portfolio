@@ -6,8 +6,6 @@ import "swiper/css/scrollbar";
 import "@/server/orpc.server";
 
 import { GoogleTagManager } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
@@ -59,11 +57,6 @@ export default async function RootLayout({ children }: Props) {
 
 const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element | null> = {
   development: <ScreenSizeIndicator />,
-  production: (
-    <Fragment>
-      <Analytics />
-      <SpeedInsights />
-    </Fragment>
-  ),
+  production: null,
   test: null,
 };
