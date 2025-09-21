@@ -8,7 +8,7 @@ import "@/server/orpc.server";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { GeistSans } from "geist/font/sans";
 import { draftMode } from "next/headers";
-import { VisualEditing } from "next-sanity";
+import { VisualEditing } from "next-sanity/visual-editing";
 import NextTopLoader from "nextjs-toploader";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Fragment } from "react";
