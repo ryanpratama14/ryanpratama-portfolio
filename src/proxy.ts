@@ -16,7 +16,7 @@ const getLang = (req: NextRequest) => {
   return validateMatchedLang(match(languages, LANGS, DEFAULT_LANG));
 };
 
-export const middleware = (req: NextRequest) => {
+export const proxy = (req: NextRequest) => {
   const path = req.nextUrl.pathname;
   const lang = getLangFromPath(path) ?? validateLang(req.cookies.get("lang")?.value) ?? getLang(req);
   if (isLangMissing(path)) return NextResponse.redirect(new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url));
