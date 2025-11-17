@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import avatar from "#/images/avatar.webp";
+import avatar from "#/images/avatar.jpg";
 import n3 from "#/images/certification/jlpt-n3.webp";
 import podfak from "#/images/certification/podfak.webp";
 import faotech from "#/images/logo/faotech.webp";
