@@ -226,7 +226,7 @@ export const PROJECTS: Project[] = [
     label: "Pemuda ICMI",
     src: PHOTOS.project.pemudaicmi,
     key: "pemudaicmi",
-    href: "https://pemudaicmi.com",
+    href: "https://pemudaicmi.vercel.app",
   },
   {
     label: "Fao Tour & Travel",
