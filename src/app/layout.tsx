@@ -47,13 +47,12 @@ export default async function RootLayout({ children }: Props) {
 }
 
 const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element | null> = {
-  development: (
+  development: <ScreenSizeIndicator />,
+  production: (
     <Fragment>
-      <ScreenSizeIndicator />
       <Analytics />
       <SpeedInsights />
     </Fragment>
   ),
-  production: null,
   test: null,
 };
