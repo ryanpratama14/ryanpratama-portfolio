@@ -28,7 +28,7 @@ export default async function RootLayout({ params, children }: Props): Promise<R
         <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
         {children}
         <Message s={s} lang={lang} />
-        <Container title={d.updatedOn(formatDate(new Date()))} />
+        <Container title={d.updatedOn(formatDate(new Date("2026-01-01")))} />
         <iframe
           title="Spotify"
           src={env.SPOTIFY_TRACK_URL}

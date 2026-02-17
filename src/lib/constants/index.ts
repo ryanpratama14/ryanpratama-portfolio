@@ -67,7 +67,7 @@ export const EXPERIENCES: History[] = [
     src: PHOTOS.logo.rave,
     href: "https://www.rave.tech",
     since: dayjs("2024-11").toDate(),
-    till: null,
+    till: dayjs("2025-10").toDate(),
     location: "singapore",
     type: "remote",
   },
