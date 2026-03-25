@@ -9,6 +9,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Fragment } from "react/jsx-runtime";
@@ -22,7 +23,7 @@ import { Providers } from "@/lib/tanstack-query/providers";
 import { COLORS } from "@/styles";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
-export const generateMetadata = async () => await getMetadata({});
+export const generateMetadata = async (): Promise<Metadata> => await getMetadata({});
 
 type Props = { children: React.ReactNode };
 
