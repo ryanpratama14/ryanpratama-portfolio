@@ -12,6 +12,8 @@
  * ---------------------------------------------------------------------------------
  */
 
+export declare const internalGroqTypeReferenceTo: unique symbol;
+
 // Source: src/sanity/extract.json
 export type SanityImageAssetReference = {
   _ref: string;
@@ -143,6 +145,7 @@ export type SanityImageMetadata = {
   palette?: SanityImagePalette;
   lqip?: string;
   blurHash?: string;
+  thumbHash?: string;
   hasAlpha?: boolean;
   isOpaque?: boolean;
 };
@@ -222,8 +225,6 @@ export type AllSanitySchemaTypes =
   | SanityImageAsset
   | Geopoint;
 
-export declare const internalGroqTypeReferenceTo: unique symbol;
-
 // Source: src/sanity/lib/queries.ts
 // Variable: GetPosts
 // Query: *[_type == "post" && show == true] | order(publishedAt desc) {    ...,    "mainImageUrl": mainImage.asset -> url,    mainImage {      ...,      asset -> {        ...,        metadata {          ...        }      }    },}
@@ -234,7 +235,7 @@ export type GetPostsResult = Array<{
   _updatedAt: string;
   _rev: string;
   title?: string;
-  show?: boolean;
+  show: true;
   mainImage: {
     asset: {
       _id: string;
@@ -262,6 +263,7 @@ export type GetPostsResult = Array<{
         palette?: SanityImagePalette;
         lqip?: string;
         blurHash?: string;
+        thumbHash?: string;
         hasAlpha?: boolean;
         isOpaque?: boolean;
       } | null;
@@ -355,6 +357,7 @@ export type GetPostBySlugResult = {
         palette?: SanityImagePalette;
         lqip?: string;
         blurHash?: string;
+        thumbHash?: string;
         hasAlpha?: boolean;
         isOpaque?: boolean;
       } | null;
