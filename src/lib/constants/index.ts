@@ -187,6 +187,8 @@ export const ICONS = {
   facebook: "gg:facebook",
   spotify: "mdi:spotify",
   wakatime: "simple-icons:wakatime",
+  php: "cib:php",
+  laravel: "mdi:laravel",
 };
 
 export const CERTIFICATIONS: Certification[] = [
@@ -258,12 +260,13 @@ export const TECH_STACKS: TechStack = {
   programmingLanguages: [
     { label: "TypeScript", icon: ICONS.ts },
     { label: "JavaScript", icon: ICONS.js },
+    { label: "PHP", icon: ICONS.php },
     { label: "HTML", icon: ICONS.html },
     { label: "CSS", icon: ICONS.css },
   ],
 
   librariesFrameworks: [
-    { label: "T3 Stack", icon: ICONS.t3 },
+    { label: "Laravel", icon: ICONS.laravel },
     { label: "React / Next.js", icon: ICONS.react, icon2: ICONS.nextjs },
     { label: "React Native / Expo", icon: ICONS.reactNative, icon2: ICONS.expo },
     { label: "Stripe", icon: ICONS.stripe },
