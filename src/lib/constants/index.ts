@@ -258,9 +258,9 @@ export const PROJECTS: Project[] = [
 
 export const TECH_STACKS: TechStack = {
   programmingLanguages: [
+    { label: "PHP", icon: ICONS.php },
     { label: "TypeScript", icon: ICONS.ts },
     { label: "JavaScript", icon: ICONS.js },
-    { label: "PHP", icon: ICONS.php },
     { label: "HTML", icon: ICONS.html },
     { label: "CSS", icon: ICONS.css },
   ],
