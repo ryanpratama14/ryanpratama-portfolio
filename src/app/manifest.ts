@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { DEFAULT_LANG } from "@/internationalization";
 import { getLang } from "@/internationalization/functions";
 import { COLORS } from "@/styles";

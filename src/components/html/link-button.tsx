@@ -1,6 +1,7 @@
 import Link, { type LinkProps } from "next/link";
 import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
+
 import { addPath, isExternalLink } from "@/app/urls";
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";

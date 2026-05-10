@@ -1,4 +1,5 @@
 import { z } from "zod/v4";
+
 import { LANGS } from "@/internationalization";
 import type { DictionaryStatic } from "@/types";
 

@@ -3,6 +3,7 @@ import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/
 import { getLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { DictionaryStatic, History, Lang } from "@/types";
+
 import LinkButton from "./html/link-button";
 
 type Props = {

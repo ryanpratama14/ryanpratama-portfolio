@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+
 import { getLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
+
 import { getUrl, URLS } from "./urls";
 
 type OpenGraphArticle = {

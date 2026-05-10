@@ -1,9 +1,11 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.mjs";
 import type { Metadata } from "next";
 import { Fragment } from "react";
+
 import { getLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { ICONS } from "@/lib/constants";
+
 import Contacts from "./[lang]/(home)/components/contacts";
 import Message from "./[lang]/(home)/components/message";
 import Profile from "./[lang]/(home)/components/profile";

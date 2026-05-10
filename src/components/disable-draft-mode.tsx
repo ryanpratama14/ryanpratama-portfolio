@@ -2,14 +2,16 @@
 
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
+
 import { disableDraftMode } from "@/lib/actions";
+
 import Button from "./html/button";
 
 export function DisableDraftMode() {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
 
-  if (window !== window.parent || !!window.opener) {
+  if (window !== window.parent || window.opener) {
     return null;
   }
 

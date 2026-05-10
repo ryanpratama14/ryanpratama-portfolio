@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+
 import { getLang, getLangFromPath, validateMatchedLang } from "@/internationalization/functions";
 
 export default function ScreenSizeIndicator() {

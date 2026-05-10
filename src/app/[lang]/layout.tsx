@@ -1,12 +1,14 @@
-import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
+import { draftMode } from "next/headers";
 import { Fragment } from "react";
+
 import Container from "@/components/container";
 import { DisableDraftMode } from "@/components/disable-draft-mode";
 import { env } from "@/env";
 import { getLang } from "@/internationalization/functions";
 import { SanityLive } from "@/sanity/lib/live";
 import type { Lang } from "@/types";
+
 import Message from "./(home)/components/message";
 import Profile from "./(home)/components/profile";
 

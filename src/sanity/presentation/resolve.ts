@@ -1,4 +1,5 @@
 import { defineLocations, type PresentationPluginOptions } from "sanity/presentation";
+
 import { PATHS } from "@/app/urls";
 
 export const resolve: PresentationPluginOptions["resolve"] = {

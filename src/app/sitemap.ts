@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { ALL_PATHS, ENDPOINTS, getUrl, PATHS } from "@/app/urls";
 import { LANGS } from "@/internationalization";
 import { CERTIFICATIONS } from "@/lib/constants";

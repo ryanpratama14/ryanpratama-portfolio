@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { getMetadata } from "@/app/metadata";
 import BlogCards from "@/components/blog-cards";
 import { getLang } from "@/internationalization/functions";

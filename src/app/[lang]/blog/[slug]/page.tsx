@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
+
 import { getMetadata } from "@/app/metadata";
 import BlogCards from "@/components/blog-cards";
 import Body from "@/components/body";
@@ -13,6 +14,7 @@ import { GetPosts } from "@/sanity/lib/queries";
 import { api } from "@/server/orpc";
 import { VARIANTS } from "@/styles";
 import type { Lang } from "@/types";
+
 import Share from "./components/share";
 import StickyTitle from "./components/sticky-title";
 

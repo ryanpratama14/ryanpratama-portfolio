@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { URLS } from "@/app/urls";
 
 export default function robots(): MetadataRoute.Robots {

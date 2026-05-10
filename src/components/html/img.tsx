@@ -1,4 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
+
 import { cn } from "@/lib/utils";
 
 type Props = {

@@ -1,9 +1,11 @@
 import { Resend } from "resend";
+
 import Message from "@/components/emails/message";
 import { env } from "@/env";
 import { DEFAULT_LANG } from "@/internationalization";
 import { getLang } from "@/internationalization/functions";
 import type { Inputs } from "@/types";
+
 import { THROW } from "../lib";
 import { p } from "../root";
 import { schema } from "../schema";

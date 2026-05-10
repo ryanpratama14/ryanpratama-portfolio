@@ -4,7 +4,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "@/server/orpc.server";
-
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -14,6 +13,7 @@ import NextTopLoader from "nextjs-toploader";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Fragment } from "react/jsx-runtime";
 import { Toaster } from "sonner";
+
 import { getMetadata } from "@/app/metadata";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { env } from "@/env";
@@ -28,7 +28,7 @@ export const generateMetadata = async (): Promise<Metadata> => await getMetadata
 type Props = { children: React.ReactNode };
 
 export default async function RootLayout({ children }: Props) {
-  const [{ lang }] = await Promise.all([getHeaders()]);
+  const lang = (await getHeaders()).lang;
 
   return (
     <html lang={lang} className={GeistSans.variable}>

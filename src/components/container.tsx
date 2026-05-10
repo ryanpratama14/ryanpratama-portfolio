@@ -1,6 +1,7 @@
 import { getLang, validateMatchedLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { LangTarget } from "@/types";
+
 import LinkButton from "./html/link-button";
 
 type Props = {

@@ -1,10 +1,12 @@
 import { Fragment } from "react";
+
 import { PATHS } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import CertificationCards from "@/components/certification-cards";
 import { getLang } from "@/internationalization/functions";
 import { api } from "@/server/orpc";
 import type { Lang } from "@/types";
+
 import About from "./components/about";
 import AdditionalInformation from "./components/additional-information";
 import Experience from "./components/experience";

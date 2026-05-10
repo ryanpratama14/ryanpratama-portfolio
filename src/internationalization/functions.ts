@@ -1,4 +1,5 @@
 import { z } from "zod/v4";
+
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import type { Lang, LangTarget } from "@/types";
 

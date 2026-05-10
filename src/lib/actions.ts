@@ -1,6 +1,7 @@
 "use server";
 
 import { cookies, draftMode, headers } from "next/headers";
+
 import { COOKIES, HEADERS, PATHS } from "@/app/urls";
 import { validateMatchedLang } from "@/internationalization/functions";
 import type { Lang, LangTarget } from "@/types";

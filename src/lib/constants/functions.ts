@@ -11,7 +11,7 @@ export const getProfileData = (lang: Lang): Profile[] => {
     { href: ENDPOINTS.resume, icon: "text", label: s.SECTIONS.resume },
     {
       icon: "briefcase",
-      label: `${(PERSONALS.yoe).toLocaleString(locale, { minimumFractionDigits: 1 })}${formatCounter(s.COUNTER.yearsExperience)}`,
+      label: `${PERSONALS.yoe.toLocaleString(locale, { minimumFractionDigits: 1 })}${formatCounter(s.COUNTER.yearsExperience)}`,
     },
     { icon: "map-pin", label: s.LOCATIONS[PERSONALS.location] },
     // { icon: "user", label: `${PERSONALS.age}${formatCounter(s.COUNTER.age)}` },

@@ -1,6 +1,7 @@
 import type { SanityDocument } from "sanity";
-import type { DefaultDocumentNodeResolver } from "sanity/structure";
 import { Iframe } from "sanity-plugin-iframe-pane";
+import type { DefaultDocumentNodeResolver } from "sanity/structure";
+
 import { getBaseUrl, PATHS } from "@/app/urls";
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, { schemaType }) => {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { getMetadata } from "@/app/metadata";
 import Container from "@/components/container";
 import Img from "@/components/html/img";

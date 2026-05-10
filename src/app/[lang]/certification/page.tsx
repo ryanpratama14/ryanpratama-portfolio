@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { getMetadata } from "@/app/metadata";
 import CertificationCards from "@/components/certification-cards";
 import { getLang } from "@/internationalization/functions";

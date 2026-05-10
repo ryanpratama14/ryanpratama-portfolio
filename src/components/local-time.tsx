@@ -1,6 +1,7 @@
 "use client";
 
 import type { ComponentProps } from "react";
+
 import { getLang } from "@/internationalization/functions";
 import { cn } from "@/lib/utils";
 import type { Lang } from "@/types";

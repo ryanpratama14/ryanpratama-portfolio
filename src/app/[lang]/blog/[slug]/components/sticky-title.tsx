@@ -2,6 +2,7 @@
 
 import { Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+
 import LinkButton from "@/components/html/link-button";
 import LocalTime from "@/components/local-time";
 import { PERSONALS } from "@/lib/constants";

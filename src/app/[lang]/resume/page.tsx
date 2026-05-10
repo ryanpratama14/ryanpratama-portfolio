@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { getMetadata } from "@/app/metadata";
 import { URLS } from "@/app/urls";
 import Container from "@/components/container";

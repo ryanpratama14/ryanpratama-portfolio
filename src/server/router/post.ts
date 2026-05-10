@@ -3,6 +3,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { GetPostBySlug, GetPosts } from "@/sanity/lib/queries";
 import type { GetPostBySlugResult } from "@/sanity/types";
 import type { Outputs } from "@/types";
+
 import { THROW } from "../lib";
 import { p } from "../root";
 import { schema } from "../schema";

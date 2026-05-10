@@ -1,6 +1,7 @@
 import type { InferRouterInputs, InferRouterOutputs } from "@orpc/server";
 import type { IconName } from "lucide-react/dynamic";
 import type { StaticImageData } from "next/image";
+
 import type { LANGS } from "@/internationalization";
 import type { en } from "@/internationalization/dictionaries/en";
 import type { getLang } from "@/internationalization/functions";
