@@ -14,7 +14,7 @@ const createEntry = (path: string, lang?: Lang) => ({
 });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { data: blogPosts } = await sanityFetch({ query: GetPosts });
+  const { data: blogPosts } = await sanityFetch({ query: GetPosts, stega: false, perspective: "published" });
 
   const allPaths = [
     ...ALL_PATHS,

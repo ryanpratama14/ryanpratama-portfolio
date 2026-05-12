@@ -31,7 +31,7 @@ export default async function RootLayout({ children }: Props) {
   const lang = (await getHeaders()).lang;
 
   return (
-    <html lang={lang} className={GeistSans.variable}>
+    <html lang={lang} className={GeistSans.variable} data-scroll-behavior="smooth">
       <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
       <body className="text-white bg-black font-sans">
         <NuqsAdapter>

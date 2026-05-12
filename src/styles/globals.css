@@ -172,10 +172,6 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  html {
-    @apply scroll-smooth;
-  }
   h1,
   h2,
   h3,

@@ -116,6 +116,7 @@ export const OTHERS: Other = {
 };
 
 export const ICONS = {
+  copy: "solar:copy-bold",
   stripe: "bi:stripe",
   send: "mdi:send",
   notFound: "ooui:article-not-found-ltr",
