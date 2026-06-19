@@ -232,12 +232,12 @@ export const PROJECTS: Project[] = [
     key: "pemudaicmi",
     href: "https://pemudaicmi.vercel.app",
   },
-  {
-    label: "Fao Tour & Travel",
-    src: PHOTOS.project.faotour,
-    key: "faotour",
-    href: "https://faotour.com",
-  },
+  // {
+  //   label: "Fao Tour & Travel",
+  //   src: PHOTOS.project.faotour,
+  //   key: "faotour",
+  //   href: "https://faotour.com",
+  // },
   {
     label: "Belinsky",
     src: PHOTOS.project.belinsky,
