@@ -1,6 +1,6 @@
 "use client";
 
-import { RocketIcon } from "@sanity/icons";
+import { RocketIcon } from "@sanity/icons/Rocket";
 import { defineConfig } from "sanity";
 import { media } from "sanity-plugin-media";
 import { presentationTool } from "sanity/presentation";
