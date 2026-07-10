@@ -1,4 +1,4 @@
-import { Body, Container, Head, Html, Tailwind, Text } from "@react-email/components";
+import { Body, Container, Head, Html, Tailwind, Text } from "react-email";
 
 import type { EmailMessageInput } from "@/server/router/email";
 
