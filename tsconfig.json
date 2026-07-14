@@ -3,7 +3,7 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ES2024",
+    "target": "es2025",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -15,7 +15,7 @@
     "checkJs": true,
 
     /* Bundled projects */
-    "lib": ["dom", "dom.iterable", "ES2024"],
+    "lib": ["dom", "dom.iterable", "ES2025"],
     "noEmit": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
