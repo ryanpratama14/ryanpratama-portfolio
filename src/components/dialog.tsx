@@ -19,7 +19,7 @@ export default function Dialog({ open, onClose, children, className, classNameDi
       open={open}
       onClose={onClose}
       transition
-      className="fixed inset-0 flex items-center justify-center bg-black/80 z-[100] p-4 animate data-[closed]:opacity-0"
+      className="fixed inset-0 flex items-center justify-center bg-black/80 z-100 p-4 animate data-[closed]:opacity-0"
     >
       <div className="max-h-full flex justify-center">
         <DialogPanel
