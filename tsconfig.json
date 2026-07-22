@@ -24,12 +24,7 @@
     "incremental": true,
 
     /* Path Aliases */
-    "paths": {
-      "@/*": ["./src/*"],
-      "#/*": ["./public/*"],
-      "~/*": ["./*"]
-    },
-
+    "paths": { "@/*": ["./src/*"], "#/*": ["./public/*"], "~/*": ["./*"] },
     "noUncheckedSideEffectImports": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
