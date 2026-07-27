@@ -1,7 +1,3 @@
 {
-  "editor.defaultFormatter": "oxc.oxc-vscode",
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
-  "#js/ts.preferences.autoImportSpecifierExcludeRegexes#": ["^(node:)?os$"]
+  "editor.defaultFormatter": "oxc.oxc-vscode"
 }

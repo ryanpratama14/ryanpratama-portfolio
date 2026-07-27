@@ -1,5 +1,4 @@
 import { ORPCError, type ORPCErrorCode } from "@orpc/client";
-import type { StandardSchemaV1 } from "@standard-schema/spec";
 
 import type { ORPCOkCode } from "@/types";
 
@@ -72,31 +71,3 @@ export const parseCookies = (cookieHeader: string | null) => {
     }),
   );
 };
-
-const pathKey = (segment: PropertyKey | StandardSchemaV1.PathSegment) =>
-  typeof segment === "object" && segment !== null && "key" in segment ? String(segment.key) : String(segment);
-
-export const flattenValidationIssues = (issues: readonly StandardSchemaV1.Issue[]) => {
-  const formErrors: string[] = [];
-  const fieldErrors: Record<string, string[]> = {};
-
-  for (const issue of issues) {
-    if (!issue.path?.length) {
-      formErrors.push(issue.message);
-      continue;
-    }
-
-    const key = issue.path.map(pathKey).join(".");
-    (fieldErrors[key] ??= []).push(issue.message);
-  }
-
-  return { formErrors, fieldErrors };
-};
-
-export const prettifyValidationIssues = (issues: readonly StandardSchemaV1.Issue[]) =>
-  issues
-    .map((issue) => {
-      const path = issue.path?.map(pathKey).join(".");
-      return path ? `${path}: ${issue.message}` : issue.message;
-    })
-    .join("\n");

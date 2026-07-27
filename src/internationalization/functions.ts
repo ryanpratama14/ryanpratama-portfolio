@@ -1,9 +1,7 @@
-import { type } from "arktype";
+import { z } from "zod/v4";
 
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import type { Lang, LangTarget } from "@/types";
-
-const LangSchema = type.enumerated(...LANGS);
 
 const getLang = (lang: Lang) => {
   const { t, ...rest } = LANGUAGES[lang];
@@ -38,10 +36,7 @@ const getLang = (lang: Lang) => {
   };
 };
 
-const validateLang = (lang: LangTarget) => {
-  const result = LangSchema(lang);
-  return result instanceof type.errors ? undefined : result;
-};
+const validateLang = (lang: LangTarget) => z.enum(LANGS).safeParse(lang).data;
 const validateMatchedLang = (lang: LangTarget) => validateLang(lang) ?? DEFAULT_LANG;
 const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);
 const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);
