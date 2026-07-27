@@ -1,20 +1,20 @@
 import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod/v4";
+import { type } from "arktype";
 
 export const env = createEnv({
   server: {
-    NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
-    RESEND_API_KEY: z.string(),
-    RESEND_EMAIL_TO: z.string(),
-    RESEND_EMAIL_FROM: z.string(),
-    SANITY_API_READ_TOKEN: z.string(),
-    SPOTIFY_TRACK_URL: z.string(),
+    NODE_ENV: type("'development' | 'test' | 'production' | undefined").pipe((v) => v ?? "development"),
+    RESEND_API_KEY: type("string"),
+    RESEND_EMAIL_TO: type("string"),
+    RESEND_EMAIL_FROM: type("string"),
+    SANITY_API_READ_TOKEN: type("string"),
+    SPOTIFY_TRACK_URL: type("string"),
   },
   client: {
-    NEXT_PUBLIC_URL: z.string(),
-    NEXT_PUBLIC_SANITY_DATASET: z.string(),
-    NEXT_PUBLIC_SANITY_PROJECT_ID: z.string(),
-    NEXT_PUBLIC_GTM_ID: z.string(),
+    NEXT_PUBLIC_URL: type("string"),
+    NEXT_PUBLIC_SANITY_DATASET: type("string"),
+    NEXT_PUBLIC_SANITY_PROJECT_ID: type("string"),
+    NEXT_PUBLIC_GTM_ID: type("string"),
   },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,

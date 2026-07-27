@@ -1,6 +1,6 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { arktypeResolver } from "@hookform/resolvers/arktype";
 import { useMutation } from "@tanstack/react-query";
 import { DynamicIcon } from "lucide-react/dynamic";
 import { parseAsBoolean, useQueryState } from "nuqs";
@@ -28,7 +28,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<EmailMessageInput>({ resolver: zodResolver(schema.email.message(s)), defaultValues: { lang }, mode: "all" });
+  } = useForm<EmailMessageInput>({ resolver: arktypeResolver(schema.email.message(s)), defaultValues: { lang }, mode: "all" });
 
   const { mutate: sendMessage, isPending } = useMutation(
     api.email.message.mutationOptions({

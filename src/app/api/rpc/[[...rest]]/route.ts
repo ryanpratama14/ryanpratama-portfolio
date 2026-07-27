@@ -1,9 +1,9 @@
 import { ORPCError, onError, ValidationError } from "@orpc/server";
 import { RPCHandler } from "@orpc/server/fetch";
 import { BatchHandlerPlugin } from "@orpc/server/plugins";
-import { ZodError, z } from "zod/v4";
 
 import { ENDPOINTS } from "@/app/urls";
+import { flattenValidationIssues, prettifyValidationIssues } from "@/server/lib";
 import { router } from "@/server/router";
 
 const handler = new RPCHandler(router, {
@@ -11,13 +11,11 @@ const handler = new RPCHandler(router, {
   clientInterceptors: [
     onError((error) => {
       if (error instanceof ORPCError && error.code === "BAD_REQUEST" && error.cause instanceof ValidationError) {
-        const zodError = new ZodError(error.cause.issues as z.core.$ZodIssue[]);
-
         throw new ORPCError("INPUT_VALIDATION_FAILED", {
           status: 422,
-          data: z.flattenError(zodError),
+          data: flattenValidationIssues(error.cause.issues),
           cause: error.cause,
-          message: z.prettifyError(zodError),
+          message: prettifyValidationIssues(error.cause.issues),
         });
       }
 
