@@ -1,20 +1,20 @@
 import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import * as v from "valibot";
 
 export const env = createEnv({
   server: {
-    NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
-    RESEND_API_KEY: z.string(),
-    RESEND_EMAIL_TO: z.string(),
-    RESEND_EMAIL_FROM: z.string(),
-    SANITY_API_READ_TOKEN: z.string(),
-    SPOTIFY_TRACK_URL: z.string(),
+    NODE_ENV: v.optional(v.picklist(["development", "test", "production"]), "development"),
+    RESEND_API_KEY: v.string(),
+    RESEND_EMAIL_TO: v.string(),
+    RESEND_EMAIL_FROM: v.string(),
+    SANITY_API_READ_TOKEN: v.string(),
+    SPOTIFY_TRACK_URL: v.string(),
   },
   client: {
-    NEXT_PUBLIC_URL: z.string(),
-    NEXT_PUBLIC_SANITY_DATASET: z.string(),
-    NEXT_PUBLIC_SANITY_PROJECT_ID: z.string(),
-    NEXT_PUBLIC_GTM_ID: z.string(),
+    NEXT_PUBLIC_URL: v.pipe(v.string(), v.url()),
+    NEXT_PUBLIC_SANITY_DATASET: v.string(),
+    NEXT_PUBLIC_SANITY_PROJECT_ID: v.string(),
+    NEXT_PUBLIC_GTM_ID: v.string(),
   },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,

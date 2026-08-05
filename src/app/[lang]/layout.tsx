@@ -11,6 +11,7 @@ import type { Lang } from "@/types";
 
 import Message from "./(home)/components/message";
 import Profile from "./(home)/components/profile";
+import ScreenSizeIndicator from "@/components/screen-size-indicator";
 
 type Props = { children: React.ReactNode; params: Promise<{ lang: string }> };
 
@@ -41,6 +42,14 @@ export default async function RootLayout({ params, children }: Props): Promise<R
           className="wrapper rounded-sm"
         />
       </main>
+      {OtherComponents[env.NODE_ENV]}
     </Fragment>
   );
 }
+
+
+const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element | null> = {
+  development: <ScreenSizeIndicator />,
+  production: null,
+  test: null,
+};

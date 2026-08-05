@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as v from "valibot";
 
 import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import type { Lang, LangTarget } from "@/types";
@@ -36,7 +36,10 @@ const getLang = (lang: Lang) => {
   };
 };
 
-const validateLang = (lang: LangTarget) => z.enum(LANGS).safeParse(lang).data;
+const validateLang = (lang: LangTarget) => {
+  const result = v.safeParse(v.picklist(LANGS), lang);
+  return result.success ? result.output : undefined;
+};
 const validateMatchedLang = (lang: LangTarget) => validateLang(lang) ?? DEFAULT_LANG;
 const getLangFromPath = (path: string) => validateLang(path.split("/")[1]);
 const isLangMissing = (path: string) => LANGS.every((lang) => !path.startsWith(`/${lang}/`) && path !== `/${lang}`);

@@ -1,6 +1,6 @@
 import { os } from "@orpc/server";
 import { headers } from "next/headers";
-import { z } from "zod";
+import * as v from "valibot";
 
 import { auth } from "./auth";
 import { parseCookies, THROW } from "./lib";
@@ -13,7 +13,10 @@ export const base = os
   .errors({
     INPUT_VALIDATION_FAILED: {
       status: 422,
-      data: z.object({ formErrors: z.array(z.string()), fieldErrors: z.record(z.string(), z.array(z.string()).optional()) }),
+      data: v.object({
+        formErrors: v.array(v.string()),
+        fieldErrors: v.record(v.string(), v.optional(v.array(v.string()))),
+      }),
     },
   });
 
