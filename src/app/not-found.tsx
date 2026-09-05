@@ -13,7 +13,7 @@ import { getMetadata } from "./metadata";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { s } = getLang((await getHeaders()).lang);
-  return await getMetadata({ title: s.SECTIONS.notFound });
+  return await getMetadata({ title: s.SECTIONS.notFound, index: false });
 };
 
 export default async function NotFound() {

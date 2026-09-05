@@ -4,14 +4,16 @@ import { Fragment } from "react";
 
 import Container from "@/components/container";
 import { DisableDraftMode } from "@/components/disable-draft-mode";
+import JsonLd from "@/components/json-ld";
+import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { env } from "@/env";
 import { getLang } from "@/internationalization/functions";
+import { getPersonJsonLd, getWebSiteJsonLd } from "@/lib/structured-data";
 import { SanityLive } from "@/sanity/lib/live";
 import type { Lang } from "@/types";
 
 import Message from "./(home)/components/message";
 import Profile from "./(home)/components/profile";
-import ScreenSizeIndicator from "@/components/screen-size-indicator";
 
 type Props = { children: React.ReactNode; params: Promise<{ lang: string }> };
 
@@ -20,6 +22,7 @@ export default async function RootLayout({ params, children }: Props): Promise<R
   const { isEnabled: isDraftMode } = await draftMode();
   return (
     <Fragment>
+      <JsonLd data={[getPersonJsonLd(lang), getWebSiteJsonLd(lang)]} />
       <SanityLive />
       {isDraftMode && (
         <Fragment>
@@ -46,7 +49,6 @@ export default async function RootLayout({ params, children }: Props): Promise<R
     </Fragment>
   );
 }
-
 
 const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element | null> = {
   development: <ScreenSizeIndicator />,

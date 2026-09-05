@@ -3,12 +3,15 @@ import { notFound } from "next/navigation";
 import { Fragment } from "react";
 
 import { getMetadata } from "@/app/metadata";
+import { getUrl, PATHS } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import Body from "@/components/body";
 import Breadcrumb from "@/components/breadcrumb";
 import ImgSanity from "@/components/html/img-sanity";
+import JsonLd from "@/components/json-ld";
 import LocalTime from "@/components/local-time";
 import { getLang } from "@/internationalization/functions";
+import { getBlogPostingJsonLd, getBreadcrumbJsonLd } from "@/lib/structured-data";
 import { client } from "@/sanity/lib/client";
 import { GetPosts } from "@/sanity/lib/queries";
 import { api } from "@/server/orpc";
@@ -32,6 +35,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
   return await getMetadata({
     title: data.title,
     description: data.description,
+    type: "article",
     openGraphArticle: { publishedTime: data.publishedAt, modifiedTime: data._updatedAt },
     imageUrl: data.mainImageUrl,
     tags: data.tags,
@@ -44,9 +48,30 @@ export default async function BlogPageBySlug({ params }: Props) {
   if (!data?.slug?.current) notFound();
   const { data: relatedData } = await api.post.list.call({ slice: 6, slugToRemove: data.slug.current });
   const { s } = getLang(lang);
+  const postPath = `${PATHS.post}/${data.slug.current}`;
+  const postUrl = getUrl({ path: postPath, lang });
 
   return (
     <Fragment>
+      <JsonLd
+        data={[
+          getBlogPostingJsonLd({
+            lang,
+            title: data.title || "",
+            description: data.description,
+            url: postUrl,
+            imageUrl: data.mainImageUrl,
+            publishedAt: data.publishedAt,
+            modifiedAt: data._updatedAt,
+            tags: data.tags,
+          }),
+          getBreadcrumbJsonLd([
+            { name: s.MENUS.main, url: getUrl({ path: PATHS.main, lang }) },
+            { name: s.MENUS.blog, url: getUrl({ path: PATHS.post, lang }) },
+            { name: data.title || slug, url: postUrl },
+          ]),
+        ]}
+      />
       <StickyTitle data={data} lang={lang} />
       <article className="wrapper flex flex-col gap-4">
         <header id="post-title" className="flex flex-col gap-1.5">

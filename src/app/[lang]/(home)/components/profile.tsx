@@ -19,36 +19,36 @@ type Props = {
   isDefaultLang: boolean;
 };
 
+function ProfileItems({ profiles }: { profiles: ReturnType<typeof getProfileData> }) {
+  return profiles.map((e) => {
+    const data = (
+      <Fragment>
+        <DynamicIcon name={e.icon} width={17.5} className="text-gray" />
+        <p className={cn("text-graydarker", { "hover:underline": e.href })}>{e.label}</p>
+      </Fragment>
+    );
+
+    if (e.href) {
+      return (
+        <li className="flex" key={e.label}>
+          <LinkButton unstyled href={e.href} className="flex gap-0.5 md:gap-1 items-center">
+            {data}
+          </LinkButton>
+        </li>
+      );
+    }
+
+    return (
+      <li key={e.label} className="flex gap-0.5 items-center">
+        {data}
+      </li>
+    );
+  });
+}
+
 export default async function Profile({ s, lang, isDefaultLang }: Props) {
   const storedLang = await getCookieLang();
   const profiles = getProfileData(lang);
-
-  const ProfileData = () => {
-    return profiles.map((e) => {
-      const Data = () => (
-        <Fragment>
-          <DynamicIcon name={e.icon} width={17.5} className="text-gray" />
-          <p className={cn("text-graydarker", { "hover:underline": e.href })}>{e.label}</p>
-        </Fragment>
-      );
-
-      if (e.href) {
-        return (
-          <li className="flex" key={e.label}>
-            <LinkButton unstyled href={e.href} className="flex gap-0.5 md:gap-1 items-center">
-              <Data />
-            </LinkButton>
-          </li>
-        );
-      }
-
-      return (
-        <li key={e.label} className="flex gap-0.5 items-center">
-          <Data />
-        </li>
-      );
-    });
-  };
 
   return (
     <article className="wrapper w-full">
@@ -72,7 +72,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
             </header>
 
             <ul className="hidden md:flex gap-3 flex-wrap">
-              <ProfileData />
+              <ProfileItems profiles={profiles} />
             </ul>
           </section>
         </section>
@@ -81,7 +81,7 @@ export default async function Profile({ s, lang, isDefaultLang }: Props) {
       </section>
 
       <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap">
-        <ProfileData />
+        <ProfileItems profiles={profiles} />
       </ul>
     </article>
   );

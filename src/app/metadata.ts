@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 
+import { env } from "@/env";
+import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { getLang } from "@/internationalization/functions";
 import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
 
-import { getUrl, URLS } from "./urls";
+import { getUrl, stripLangFromPath, URLS } from "./urls";
 
 type OpenGraphArticle = {
-  publishedTime?: string;
-  modifiedTime?: string;
-  expirationTime?: string;
+  publishedTime?: string | null;
+  modifiedTime?: string | null;
+  expirationTime?: string | null;
   section?: null | string;
 };
 
@@ -19,9 +21,19 @@ type Props = {
   title?: string;
   imageUrl?: string | null;
   tags?: string[];
+  type?: "website" | "article";
+  index?: boolean;
 };
 
-export const getMetadata = async ({ title, description, imageUrl, openGraphArticle, tags }: Props): Promise<Metadata> => {
+export const getMetadata = async ({
+  title,
+  description,
+  imageUrl,
+  openGraphArticle,
+  tags,
+  type = "website",
+  index = true,
+}: Props): Promise<Metadata> => {
   const { path, lang } = await getHeaders();
 
   const {
@@ -32,129 +44,83 @@ export const getMetadata = async ({ title, description, imageUrl, openGraphArtic
   const MAIN_DESCRIPTION = description || `${me.fullName} — ${me.summaryShort}`;
 
   const modifiedTitle = title || MAIN_TITLE;
-  const getMetadataTitle = () => (modifiedTitle === MAIN_TITLE ? modifiedTitle : `${modifiedTitle} | ${MAIN_TITLE}`);
-  const url = getUrl({ path });
-  const images = [{ url: imageUrl || URLS.ogImage, alt: getMetadataTitle() }];
-  const author = MAIN_TITLE;
+  const displayTitle = modifiedTitle === MAIN_TITLE ? modifiedTitle : `${modifiedTitle} | ${MAIN_TITLE}`;
+  const pathWithoutLang = stripLangFromPath(path);
+  const canonical = getUrl({ path: pathWithoutLang, lang });
+  const images = imageUrl ? [{ url: imageUrl, alt: displayTitle }] : [{ url: URLS.ogImage, alt: displayTitle, width: 1200, height: 630 }];
 
-  const openGraphData: OpenGraphArticle = {
-    ...openGraphArticle,
-    publishedTime: openGraphArticle?.publishedTime || new Date().toISOString(),
-    modifiedTime: openGraphArticle?.publishedTime || new Date().toISOString(),
-  };
+  const publishedTime = openGraphArticle?.publishedTime ?? undefined;
+  const modifiedTime = openGraphArticle?.modifiedTime ?? openGraphArticle?.publishedTime ?? undefined;
 
   return {
-    generator: author,
-    applicationName: author,
-    creator: author,
-    publisher: author,
-    category: "education",
+    metadataBase: new URL(env.NEXT_PUBLIC_URL),
+    generator: MAIN_TITLE,
+    applicationName: MAIN_TITLE,
+    creator: MAIN_TITLE,
+    publisher: MAIN_TITLE,
+    category: "technology",
     keywords: tags?.length ? tags : keywords,
     referrer: "origin-when-cross-origin",
-    authors: [{ name: MAIN_TITLE, url: getUrl({ path: "" }) }],
-    metadataBase: new URL(url),
+    authors: [{ name: MAIN_TITLE, url: getUrl({ path: "", lang }) }],
     title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
     description: MAIN_DESCRIPTION,
+    alternates: {
+      canonical,
+      languages: {
+        ...Object.fromEntries(LANGS.map((l) => [l, getUrl({ path: pathWithoutLang, lang: l })])),
+        "x-default": getUrl({ path: pathWithoutLang, lang: DEFAULT_LANG }),
+      },
+    },
     openGraph: {
-      title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
+      title: displayTitle,
       description: MAIN_DESCRIPTION,
-      url,
-      siteName: getMetadataTitle(),
+      url: canonical,
+      siteName: MAIN_TITLE,
       images,
       locale,
-      type: "article",
-      authors: [MAIN_TITLE, getUrl({ path: "" })],
-      tags: tags?.length ? tags : keywords,
-      ...openGraphData,
+      ...(type === "article"
+        ? {
+            type: "article" as const,
+            authors: [MAIN_TITLE],
+            tags: tags?.length ? tags : keywords,
+            publishedTime,
+            modifiedTime,
+            expirationTime: openGraphArticle?.expirationTime ?? undefined,
+            section: openGraphArticle?.section ?? undefined,
+          }
+        : { type: "website" as const }),
     },
     twitter: {
       card: "summary_large_image",
-      title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
+      title: displayTitle,
       description: MAIN_DESCRIPTION,
       images,
       creator: PERSONALS.x,
     },
     robots: {
-      index: true,
-      follow: true,
+      index,
+      follow: index,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
-      googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
+      googleBot: {
+        index,
+        follow: index,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-    appleWebApp: { capable: true, title, statusBarStyle: "default" },
+    icons: {
+      icon: [
+        { url: "/assets/icon-192x192.png", sizes: "192x192", type: "image/png" },
+        { url: "/assets/icon-512x512.png", sizes: "512x512", type: "image/png" },
+      ],
+      apple: [{ url: "/assets/icon-192x192.png", sizes: "192x192", type: "image/png" }],
+    },
+    appleWebApp: { capable: true, title: displayTitle, statusBarStyle: "default" },
+    formatDetection: { telephone: false },
   };
 };
 
-const keywords = [
-  "software",
-  "engineer",
-  "front-end",
-  "back-end",
-  "full-stack",
-  "web",
-  "development",
-  "react",
-  "nextjs",
-  "nodejs",
-  "trpc",
-  "hono",
-  "expressjs",
-  "typescript",
-  "javascript",
-  "vue",
-  "angular",
-  "redux",
-  "mobx",
-  "svelte",
-  "graphql",
-  "api",
-  "websocket",
-  "docker",
-  "kubernetes",
-  "firebase",
-  "mongodb",
-  "postgresql",
-  "mysql",
-  "prisma",
-  "tailwindcss",
-  "styled-components",
-  "css",
-  "html",
-  "sass",
-  "jest",
-  "cypress",
-  "testing-library",
-  "webpack",
-  "babel",
-  "parcel",
-  "gulp",
-  "vite",
-  "eslint",
-  "prettier",
-  "jira",
-  "github",
-  "git",
-  "agile",
-  "scrum",
-  "rest",
-  "json",
-  "microservices",
-  "lambda",
-  "aws",
-  "azure",
-  "gcp",
-  "digitalocean",
-  "pwa",
-  "seo",
-  "typescript",
-  "accessibility",
-  "usability",
-  "ux",
-  "ui",
-  "design",
-  "figma",
-  "sketch",
-  "photoshop",
-  "illustrator",
-];
+const keywords = ["Ryan Pratama", "software engineer", "front-end engineer", "full-stack", "React", "Next.js", "TypeScript", "portfolio"];

@@ -1,12 +1,20 @@
 import type { ReadonlyURLSearchParams } from "next/navigation";
 
 import { env } from "@/env";
+import { LANGS } from "@/internationalization";
 import { PERSONALS } from "@/lib/constants";
 import type { Lang } from "@/types";
 
 const addPath = ({ path, lang }: { path: string; lang?: Lang }) => `${lang ? `/${lang}` : ""}${path === PATHS.main ? "" : path}`;
 const getUrl = ({ path, lang, type = "production" }: { path: string; lang?: Lang; type?: keyof typeof BASE_URL }) =>
   `${BASE_URL[type]}${addPath({ path, lang })}`;
+const stripLangFromPath = (pathname: string) => {
+  const [maybeLang, ...rest] = pathname.split("/").filter(Boolean);
+  if (maybeLang && (LANGS as readonly string[]).includes(maybeLang)) {
+    return rest.length ? `/${rest.join("/")}` : PATHS.main;
+  }
+  return pathname || PATHS.main;
+};
 const isExternalLink = (href: string) => href.startsWith("http") || href.includes(ENDPOINTS.resume) || href.includes(PERSONALS.mailTo);
 
 const getBaseUrl = () => {
@@ -35,4 +43,19 @@ const URLS = {
   rpc: getUrl({ path: ENDPOINTS.rpc, type: "development" }),
 };
 
-export { ALL_PATHS, addPath, BASE_URL, COOKIES, createUrl, ENDPOINTS, getBaseUrl, getUrl, HEADERS, IS_CLIENT, isExternalLink, PATHS, URLS };
+export {
+  ALL_PATHS,
+  addPath,
+  BASE_URL,
+  COOKIES,
+  createUrl,
+  ENDPOINTS,
+  getBaseUrl,
+  getUrl,
+  HEADERS,
+  IS_CLIENT,
+  isExternalLink,
+  PATHS,
+  stripLangFromPath,
+  URLS,
+};

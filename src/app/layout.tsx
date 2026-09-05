@@ -15,7 +15,6 @@ import { Fragment } from "react/jsx-runtime";
 import { Toaster } from "sonner";
 
 import { getMetadata } from "@/app/metadata";
-import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { env } from "@/env";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";

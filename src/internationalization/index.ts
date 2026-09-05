@@ -10,4 +10,4 @@ export const LANGUAGES: Record<Lang, { flag: string; label: string; t: Dictionar
   ja: { flag: "🇯🇵", label: "日本語", lang: "ja", locale: "ja-JP", currency: "JPY", t: ja },
   ru: { flag: "🇷🇺", label: "Русский", lang: "ru", locale: "ru-RU", currency: "RUR", t: ru },
 };
-export const LANGUAGE_OPTIONS = Object.entries(LANGUAGES).map(([_, e]) => ({ ...e }));
+export const LANGUAGE_OPTIONS = Object.values(LANGUAGES).map((e) => ({ ...e }));
