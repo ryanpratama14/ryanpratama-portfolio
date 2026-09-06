@@ -150,6 +150,7 @@ export const ru: Dictionary = {
       learning: "Изучаю...",
       programmingLanguages: "Языки программирования",
       librariesFrameworks: "Библиотеки и фреймворки",
+      aiTools: "ИИ-инструменты",
       db: "Базы данных",
     },
     OTHER: {

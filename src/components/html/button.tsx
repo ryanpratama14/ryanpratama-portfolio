@@ -1,9 +1,9 @@
 import type { ComponentProps } from "react";
-import { PulseLoader } from "react-spinners";
 import type { VariantProps } from "tailwind-variants";
 
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
+import { Loader } from "lucide-react";
 
 type Props = ComponentProps<"button"> &
   VariantProps<typeof VARIANTS.Button> & {
@@ -20,7 +20,7 @@ export default function Button({ style, type, className, disabled, children, uns
       type={type ?? "button"}
       className={cn(unstyled ? className : VARIANTS.Button({ className, style }))}
     >
-      {isPending ? <PulseLoader size={5} color="white" /> : children || <span className="sr-only">Button</span>}
+      {isPending ? <Loader className="size-4 animate-spin" /> : children || <span className="sr-only">Button</span>}
     </button>
   );
 }

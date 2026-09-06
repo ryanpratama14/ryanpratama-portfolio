@@ -46,6 +46,7 @@ export const ja: Dictionary = {
     TECH_STACKS: {
       programmingLanguages: "開発言語",
       librariesFrameworks: "フレームワーク",
+      aiTools: "AIツール",
       db: "データベース",
       learning: "自己学習",
     },

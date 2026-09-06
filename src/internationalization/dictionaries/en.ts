@@ -45,6 +45,7 @@ export const en = {
     TECH_STACKS: {
       programmingLanguages: "Programming Languages",
       librariesFrameworks: "Libraries & Frameworks",
+      aiTools: "AI Tools",
       db: "Databases",
       learning: "I'm learning...",
     },
