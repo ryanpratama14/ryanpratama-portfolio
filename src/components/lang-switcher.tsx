@@ -24,43 +24,39 @@ export default function LangSwitcher({ storedLang }: Props) {
 
   return (
     <ul className="flex gap-0.5 md:gap-1">
-      {LANGUAGE_OPTIONS.map(
-        ({
-          lang: langTarget,
-          t: {
-            s: { PERSONAL_DATA: t },
-          },
-          flag,
-        }) => {
-          const isActive = lang === langTarget;
-          const href = changeLang(langTarget, path);
+      {LANGUAGE_OPTIONS.map(({ lang: langTarget, label, flag }) => {
+        const isActive = lang === langTarget;
+        const href = changeLang(langTarget, path);
 
-          return (
-            <li key={langTarget}>
-              <LinkButton
-                disabled={isActive}
-                unstyled
-                className={cn(
-                  "max-md:font-default max-md:text-xl px-1 md:p-[0.4rem] rounded-sm border-1 border-transparent md:flex items-center justify-center",
-                  {
-                    "bg-graybg border-graydarker shadow": isActive,
-                    "hover:bg-graybg": !isActive,
-                  },
-                )}
-                href={href}
-              >
-                <span className="sr-only">{`${t.fullName} — ${t.softwareEngineer}. ${t.summary} ${t.about}`}</span>
-                <span className="md:hidden">{flag}</span>
-                <Img
-                  src={`/assets/flags/${langTarget.toLowerCase()}.svg`}
-                  alt={langTarget}
-                  className="w-[1.4rem] h-[0.9rem] object-cover object-center max-md:hidden"
-                />
-              </LinkButton>
-            </li>
-          );
-        },
-      )}
+        return (
+          <li key={langTarget}>
+            <LinkButton
+              disabled={isActive}
+              unstyled
+              aria-label={label}
+              aria-current={isActive ? "page" : undefined}
+              className={cn(
+                "max-md:font-default max-md:text-xl px-1 md:p-[0.4rem] rounded-sm border-1 border-transparent md:flex items-center justify-center",
+                {
+                  "bg-graybg border-graydarker shadow": isActive,
+                  "hover:bg-graybg": !isActive,
+                },
+              )}
+              href={href}
+            >
+              <span className="sr-only">{label}</span>
+              <span className="md:hidden" aria-hidden>
+                {flag}
+              </span>
+              <Img
+                src={`/assets/flags/${langTarget.toLowerCase()}.svg`}
+                alt=""
+                className="w-[1.4rem] h-[0.9rem] object-cover object-center max-md:hidden"
+              />
+            </LinkButton>
+          </li>
+        );
+      })}
     </ul>
   );
 }

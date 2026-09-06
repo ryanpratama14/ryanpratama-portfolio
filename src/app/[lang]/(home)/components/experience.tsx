@@ -4,14 +4,14 @@ import { Accordion } from "@/components/shadcn/ui/accordion";
 import { EXPERIENCES } from "@/lib/constants";
 import type { DictionaryStatic, Lang } from "@/types";
 
-type Props = { s: DictionaryStatic; lang: Lang; isJapanese: boolean };
+type Props = { s: DictionaryStatic; lang: Lang };
 
-export default function ProfessionalExperiences({ s, lang, isJapanese }: Props) {
+export default function ProfessionalExperiences({ s, lang }: Props) {
   return (
     <Container title={s.MENUS.experience}>
       <Accordion type="multiple" className="space-y-2.5">
         {EXPERIENCES.map((e) => {
-          return <HistoryCard s={s} key={e.key} data={e} lang={lang} isJapanese={isJapanese} />;
+          return <HistoryCard s={s} key={e.key} data={e} lang={lang} />;
         })}
       </Accordion>
     </Container>

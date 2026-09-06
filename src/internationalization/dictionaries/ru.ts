@@ -1,5 +1,3 @@
-import { getRussianYearCounter } from "@/internationalization/helpers";
-import { PERSONALS } from "@/lib/constants";
 import type { Dictionary } from "@/types";
 
 export const ru: Dictionary = {
@@ -159,7 +157,7 @@ export const ru: Dictionary = {
     },
 
     COUNTER: {
-      age: getRussianYearCounter(PERSONALS.age),
+      age: "лет",
       yearsExperience: "года опыта",
     },
 

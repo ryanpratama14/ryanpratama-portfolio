@@ -10,11 +10,10 @@ type Props = {
   data: History;
   lang: Lang;
   s: DictionaryStatic;
-  isJapanese: boolean;
 };
 
-export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
-  const { formatMonth } = getLang(lang);
+export default function HistoryCard({ data, lang, s }: Props) {
+  const { formatWorkPeriod } = getLang(lang);
 
   const e = { ...s.CONSTANTS.HISTORY[data.key], ...data, location: s.LOCATIONS[data.location], type: data.type ? s.LOCATION_TYPES[data.type] : "" };
 
@@ -24,9 +23,7 @@ export default function HistoryCard({ data, lang, s, isJapanese }: Props) {
       <section className="pl-2 md:pl-2.5 flex flex-col gap-0.5">
         <p className="font-semibold line-clamp-1">{e.desc}</p>
         <small className="font-medium text-gray">{e.label}</small>
-        <small className="text-graydarker">
-          {`${e.location}${e.type ? ` (${e.type.toLowerCase()})` : ""} • ${formatMonth(e.since)}${isJapanese ? "〜" : " — "}${e.till ? formatMonth(e.till) : s.SECTIONS.present}`}
-        </small>
+        <small className="text-graydarker">{formatWorkPeriod(e.location, e.type, e.since, e.till, s.SECTIONS.present)}</small>
       </section>
     </section>
   );

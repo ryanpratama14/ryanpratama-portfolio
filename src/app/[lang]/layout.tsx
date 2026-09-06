@@ -18,7 +18,7 @@ import Profile from "./(home)/components/profile";
 type Props = { children: React.ReactNode; params: Promise<{ lang: string }> };
 
 export default async function RootLayout({ params, children }: Props): Promise<React.JSX.Element> {
-  const { lang, s, d, isDefaultLang, formatDate } = getLang((await params).lang as Lang);
+  const { lang, s, d, formatDate } = getLang((await params).lang as Lang);
   const { isEnabled: isDraftMode } = await draftMode();
   return (
     <Fragment>
@@ -31,7 +31,7 @@ export default async function RootLayout({ params, children }: Props): Promise<R
         </Fragment>
       )}
       <main className="flex flex-col gap-4 main-padding">
-        <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
+        <Profile s={s} lang={lang} />
         {children}
         <Message s={s} lang={lang} />
         <Container title={d.updatedOn(formatDate(new Date("2026-09-01")))} />

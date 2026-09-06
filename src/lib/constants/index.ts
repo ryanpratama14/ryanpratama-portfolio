@@ -291,7 +291,7 @@ export const TECH_STACKS: TechStack = {
     { label: "tRPC", icon: ICONS.trpc },
     { label: "Drizzle", icon: ICONS.drizzle },
     { label: "Prisma", icon: ICONS.prisma },
-  
+
     { label: "Zustand", icon: ICONS.zustand },
     { label: "Zod", icon: ICONS.zod },
     { label: "React Hook Form", icon: ICONS.reactHookForm },

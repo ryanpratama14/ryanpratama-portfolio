@@ -8,6 +8,6 @@ export const DEFAULT_LANG: Lang = "en";
 export const LANGUAGES: Record<Lang, { flag: string; label: string; t: Dictionary; locale: string; lang: Lang; currency: string }> = {
   en: { flag: "🇺🇸", label: "English", lang: "en", locale: "en-US", currency: "USD", t: en },
   ja: { flag: "🇯🇵", label: "日本語", lang: "ja", locale: "ja-JP", currency: "JPY", t: ja },
-  ru: { flag: "🇷🇺", label: "Русский", lang: "ru", locale: "ru-RU", currency: "RUR", t: ru },
+  ru: { flag: "🇷🇺", label: "Русский", lang: "ru", locale: "ru-RU", currency: "RUB", t: ru },
 };
 export const LANGUAGE_OPTIONS = Object.values(LANGUAGES).map((e) => ({ ...e }));

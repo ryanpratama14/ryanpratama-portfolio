@@ -15,7 +15,7 @@ import FeaturedProjects from "./components/featured-projects";
 type Props = { params: Promise<{ lang: Lang }> };
 
 export default async function HomePage({ params }: Props) {
-  const { s, isJapanese, lang } = getLang((await params).lang);
+  const { s, lang } = getLang((await params).lang);
   const { data } = await api.post.list.call({ slice: 4 });
 
   return (
@@ -23,8 +23,8 @@ export default async function HomePage({ params }: Props) {
       <About s={s} />
       <FeaturedProjects s={s} />
       <BlogCards href={PATHS.post} lang={lang} title={s.MENUS.blog} data={data} />
-      <Experience s={s} lang={lang} isJapanese={isJapanese} />
-      <AdditionalInformation s={s} lang={lang} isJapanese={isJapanese} />
+      <Experience s={s} lang={lang} />
+      <AdditionalInformation s={s} lang={lang} />
       <CertificationCards s={s} lang={lang} />
     </Fragment>
   );

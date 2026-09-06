@@ -18,11 +18,11 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function NotFound() {
   const lang = (await getHeaders()).lang;
-  const { s, isDefaultLang } = getLang(lang);
+  const { s } = getLang(lang);
 
   return (
     <Fragment>
-      <Profile s={s} lang={lang} isDefaultLang={isDefaultLang} />
+      <Profile s={s} lang={lang} />
       <Contacts s={s} />
 
       <article className="flex flex-col md:gap-2 justify-center items-center text-center">

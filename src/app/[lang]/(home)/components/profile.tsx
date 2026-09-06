@@ -16,7 +16,6 @@ import type { DictionaryStatic, Lang } from "@/types";
 type Props = {
   s: DictionaryStatic;
   lang: Lang;
-  isDefaultLang: boolean;
 };
 
 function ProfileItems({ profiles }: { profiles: ReturnType<typeof getProfileData> }) {
@@ -46,9 +45,10 @@ function ProfileItems({ profiles }: { profiles: ReturnType<typeof getProfileData
   });
 }
 
-export default async function Profile({ s, lang, isDefaultLang }: Props) {
+export default async function Profile({ s, lang }: Props) {
   const storedLang = await getCookieLang();
   const profiles = getProfileData(lang);
+  const isDefaultLang = lang === DEFAULT_LANG;
 
   return (
     <article className="wrapper w-full">

@@ -1,9 +1,9 @@
+import { Loader } from "lucide-react";
 import type { ComponentProps } from "react";
 import type { VariantProps } from "tailwind-variants";
 
 import { cn } from "@/lib/utils";
 import { VARIANTS } from "@/styles";
-import { Loader } from "lucide-react";
 
 type Props = ComponentProps<"button"> &
   VariantProps<typeof VARIANTS.Button> & {
