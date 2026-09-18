@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { DEFAULT_LANG } from "@/internationalization";
 import { getLang } from "@/internationalization/functions";
-import { COLORS } from "@/styles";
+import { COLORS } from "@/styles/colors";
 
 export default function manifest(): MetadataRoute.Manifest {
   const {
@@ -15,8 +15,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: title,
     short_name: title,
-    theme_color: COLORS.black,
-    background_color: COLORS.black,
+    theme_color: COLORS.background,
+    background_color: COLORS.background,
     display: "standalone",
     start_url: "/",
     description,

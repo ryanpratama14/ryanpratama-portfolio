@@ -22,8 +22,8 @@ function ProfileItems({ profiles }: { profiles: ReturnType<typeof getProfileData
   return profiles.map((e) => {
     const data = (
       <Fragment>
-        <DynamicIcon name={e.icon} width={17.5} className="text-gray" />
-        <p className={cn("text-graydarker", { "hover:underline": e.href })}>{e.label}</p>
+        <DynamicIcon name={e.icon} width={17.5} className="text-muted-foreground" />
+        <p className={cn("text-muted-foreground", { "hover:underline": e.href })}>{e.label}</p>
       </Fragment>
     );
 
@@ -68,7 +68,7 @@ export default async function Profile({ s, lang }: Props) {
                 <h1 className="font-bold hover:underline">{s.PERSONAL_DATA.fullName}</h1>
               </LinkButton>
               {isDefaultLang ? null : <small>{getLang(DEFAULT_LANG).s.PERSONAL_DATA.fullName}</small>}
-              <h2 className="text-gray">{s.PERSONAL_DATA.softwareEngineer}</h2>
+              <h2 className="text-muted-foreground">{s.PERSONAL_DATA.softwareEngineer}</h2>
             </header>
 
             <ul className="hidden md:flex gap-3 flex-wrap">

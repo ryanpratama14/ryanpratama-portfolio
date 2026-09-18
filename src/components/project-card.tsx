@@ -17,7 +17,7 @@ export default function ProjectCard({ data }: { data: (typeof PROJECTS)[number] 
     <button type="button" onClick={() => setClicked(!clicked)} className="mb-2 aspect-square relative overflow-hidden rounded-sm group">
       <section
         className={cn(
-          "z-10 absolute flex flex-col gap-2.5 justify-between p-2.5 top-0 left-0 size-full opacity-0 bg-black/90 animate group-hover:opacity-100",
+          "z-10 absolute flex flex-col gap-2.5 justify-between p-2.5 top-0 left-0 size-full opacity-0 bg-background/90 animate group-hover:opacity-100",
           {
             "opacity-100": clicked,
           },
@@ -25,7 +25,7 @@ export default function ProjectCard({ data }: { data: (typeof PROJECTS)[number] 
       >
         <div className="flex flex-col gap-0.5 items-end">
           <p className="font-semibold text-right">{e.label}</p>
-          <div className="w-6 h-[1px] bg-white" />
+          <div className="w-6 h-[1px] bg-foreground" />
         </div>
         <small className="text-center text-balance">{e.desc}</small>
 

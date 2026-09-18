@@ -44,7 +44,7 @@ export default function Share() {
               <button type="button" onClick={e.onClick}>
                 <Icon
                   icon={e.icon}
-                  className="animate text-base p-[0.225rem] text-white bg-blue-600 hover:bg-blue-800 shadow rounded-sm flex items-center justify-center"
+                  className="animate text-base p-[0.225rem] text-primary-foreground bg-primary hover:bg-primary/80 shadow rounded-sm flex items-center justify-center"
                 />
                 <span className="sr-only">{e.label}</span>
               </button>
@@ -57,7 +57,7 @@ export default function Share() {
             <e.Component url={url}>
               <Icon
                 icon={e.icon}
-                className="animate text-base p-[0.225rem] text-white bg-blue-600 hover:bg-blue-800 shadow rounded-sm flex items-center justify-center"
+                className="animate text-base p-[0.225rem] text-primary-foreground bg-primary hover:bg-primary/80 shadow rounded-sm flex items-center justify-center"
               />
               <span className="sr-only">{e.label}</span>
             </e.Component>

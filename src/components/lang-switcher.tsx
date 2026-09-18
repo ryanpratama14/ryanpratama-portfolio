@@ -38,8 +38,8 @@ export default function LangSwitcher({ storedLang }: Props) {
               className={cn(
                 "max-md:font-default max-md:text-xl px-1 md:p-[0.4rem] rounded-sm border-1 border-transparent md:flex items-center justify-center",
                 {
-                  "bg-graybg border-graydarker shadow": isActive,
-                  "hover:bg-graybg": !isActive,
+                  "bg-muted border-border shadow": isActive,
+                  "hover:bg-muted": !isActive,
                 },
               )}
               href={href}

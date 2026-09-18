@@ -49,7 +49,7 @@ export default function ProjectDiscuss({ s, lang }: Props) {
         className="space-y-1"
       >
         <h2 className="font-semibold">{s.MESSAGE.sent}</h2>
-        <p className="text-gray">{s.MESSAGE.thankYou}</p>
+        <p className="text-muted-foreground">{s.MESSAGE.thankYou}</p>
       </Dialog>
 
       <Container title={s.MENUS.message}>

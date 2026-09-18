@@ -9,7 +9,7 @@ type Props = { s: DictionaryStatic; lang: Lang };
 export default function ProfessionalExperiences({ s, lang }: Props) {
   return (
     <Container title={s.MENUS.experience}>
-      <Accordion type="multiple" className="space-y-2.5">
+      <Accordion multiple className="space-y-2.5">
         {EXPERIENCES.map((e) => {
           return <HistoryCard s={s} key={e.key} data={e} lang={lang} />;
         })}

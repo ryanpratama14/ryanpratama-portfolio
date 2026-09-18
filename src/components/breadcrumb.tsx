@@ -19,7 +19,7 @@ export default function Breadcrumb({ slugTitle, s, lang, className, ...rest }: P
   const separator = <span> / </span>;
 
   return (
-    <ul className={cn("text-graydarker breadcrumb flex items-center gap-x-1 flex-wrap", className)} {...rest}>
+    <ul className={cn("text-muted-foreground breadcrumb flex items-center gap-x-1 flex-wrap", className)} {...rest}>
       <li className="hover:underline">
         <LinkButton unstyled lang={lang} href={PATHS.main}>
           {s.MENUS.main}
@@ -34,7 +34,7 @@ export default function Breadcrumb({ slugTitle, s, lang, className, ...rest }: P
           <Fragment key={index}>
             <li className={cn({ "font-medium": path === href })}>
               {isLastIndex ? (
-                <p className="text-gray">{slugTitle ?? link}</p>
+                <p className="text-foreground">{slugTitle ?? link}</p>
               ) : (
                 <Link href={href} className="hover:underline">
                   {s.MENUS[link as keyof DictionaryStatic["MENUS"]] ?? toPascalCase(link)}

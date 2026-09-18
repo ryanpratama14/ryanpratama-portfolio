@@ -18,8 +18,9 @@ import { getMetadata } from "@/app/metadata";
 import { env } from "@/env";
 import { LANGS } from "@/internationalization";
 import { getHeaders } from "@/lib/actions";
+import { cn } from "@/lib/utils";
 import { Providers } from "@/lib/tanstack-query/providers";
-import { COLORS } from "@/styles";
+import { COLORS } from "@/styles/colors";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 export const generateMetadata = async (): Promise<Metadata> => await getMetadata({});
@@ -30,13 +31,13 @@ export default async function RootLayout({ children }: Props) {
   const lang = (await getHeaders()).lang;
 
   return (
-    <html lang={lang} className={GeistSans.variable} data-scroll-behavior="smooth">
+    <html lang={lang} className={cn(GeistSans.variable, "dark")} data-scroll-behavior="smooth">
       <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
-      <body className="text-white bg-black font-sans">
+      <body className="bg-background text-foreground font-sans">
         <NuqsAdapter>
           <Providers>
             {children}
-            <NextTopLoader color={COLORS.blue} showSpinner={false} />
+            <NextTopLoader color={COLORS.primary} showSpinner={false} />
             <Toaster position="top-right" richColors className="font-sans whitespace-pre-line" />
           </Providers>
         </NuqsAdapter>

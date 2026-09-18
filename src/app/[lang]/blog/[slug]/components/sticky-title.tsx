@@ -30,7 +30,7 @@ export default function StickyTitle({ data, lang }: { data: PostDetailOutput["da
 
   return (
     <nav
-      className={cn("shadow w-full fixed left-0 top-0 animate-longer bg-blue-600 main-padding-x py-3 md:py-4", {
+      className={cn("shadow w-full fixed left-0 top-0 animate-longer bg-primary text-primary-foreground main-padding-x py-3 md:py-4", {
         "-translate-y-full invisible opacity-0": visible,
       })}
     >
@@ -43,7 +43,7 @@ export default function StickyTitle({ data, lang }: { data: PostDetailOutput["da
         <LinkButton
           unstyled
           href={PERSONALS.mailTo}
-          className="shadow p-1 md:p-1.5 aspect-square rounded-sm flex items-center justify-center bg-white hover:bg-white/80 text-blue-600"
+          className="shadow p-1 md:p-1.5 aspect-square rounded-sm flex items-center justify-center bg-primary-foreground hover:bg-primary-foreground/80 text-primary"
         >
           <Mail className="size-5 md:size-[1.4rem]" />
         </LinkButton>

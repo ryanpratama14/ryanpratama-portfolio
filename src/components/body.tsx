@@ -10,7 +10,7 @@ type Props = { data: TypedObject | TypedObject[] | undefined; alt?: string };
 
 export default function Body({ data = [] }: Props) {
   return (
-    <section className="[&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 flex flex-col gap-1 border-b-1 border-dashed border-blue-300 pb-2">
+    <section className="[&_ul]:list-disc [&_ul]:ml-4 [&_ol]:list-decimal [&_ol]:ml-4 flex flex-col gap-1 border-b-1 border-dashed border-primary/50 pb-2">
       <PortableText
         components={{
           block: {
@@ -28,7 +28,7 @@ export default function Body({ data = [] }: Props) {
               if (!path) return null;
 
               return (
-                <LinkButton unstyled href={path} className="font-medium border-b-1 border-blue-300 text-blue-300">
+                <LinkButton unstyled href={path} className="font-medium border-b-1 border-primary text-primary">
                   {children}
                 </LinkButton>
               );
@@ -40,7 +40,7 @@ export default function Body({ data = [] }: Props) {
               return (
                 <figure className="flex flex-col gap-1 my-2">
                   <Img alt={value?.alt} className="w-full aspect-auto rounded-sm" src={urlFor(value).url()} />
-                  {value?.alt ? <figcaption className="text-gray">{value.alt}</figcaption> : null}
+                  {value?.alt ? <figcaption className="text-muted-foreground">{value.alt}</figcaption> : null}
                 </figure>
               );
             },
