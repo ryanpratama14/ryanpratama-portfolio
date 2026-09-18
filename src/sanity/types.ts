@@ -48,7 +48,8 @@ export type Post = {
           _type: "span";
           _key: string;
         }>;
-        style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+        style?:
+          "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
         listItem?: "bullet" | "number";
         markDefs?: Array<{
           href?: string;
@@ -296,7 +297,8 @@ export type GetPostsResult = Array<{
           _type: "span";
           _key: string;
         }>;
-        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+        style?:
+          "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
         listItem?: "bullet" | "number";
         markDefs?: Array<{
           href?: string;
@@ -382,7 +384,8 @@ export type GetPostBySlugResult = {
           _type: "span";
           _key: string;
         }>;
-        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+        style?:
+          "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
         listItem?: "bullet" | "number";
         markDefs?: Array<{
           href?: string;
@@ -409,10 +412,13 @@ export type GetPostBySlugResult = {
 } | null;
 
 // Query TypeMap
-import "@sanity/client";
-declare module "@sanity/client" {
+declare global {
   interface SanityQueries {
     '*[_type == "post" && show == true] | order(publishedAt desc) {\n    ...,\n    "mainImageUrl": mainImage.asset -> url,\n    mainImage {\n      ...,\n      asset -> {\n        ...,\n        metadata {\n          ...\n        }\n      }\n    },\n}': GetPostsResult;
     '*[_type == "post" && show == true && slug.current == $slug][0] {\n    ...,\n    "mainImageUrl": mainImage.asset -> url,\n    mainImage {\n      ...,\n      asset -> {\n        ...,\n        metadata {\n          ...\n        }\n      }\n    },\n}': GetPostBySlugResult;
   }
+}
+// Lets @sanity/client releases that predate the global registry read it too
+declare module "@sanity/client" {
+  interface SanityQueries extends globalThis.SanityQueries {}
 }
