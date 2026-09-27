@@ -1,57 +1,64 @@
-import { VisualEditing } from "next-sanity/visual-editing";
-import { draftMode } from "next/headers";
-import { Fragment } from "react";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Fragment } from "react/jsx-runtime";
+import { Toaster } from "sonner";
 
-import Container from "@/components/container";
-import { DisableDraftMode } from "@/components/disable-draft-mode";
-import JsonLd from "@/components/json-ld";
-import ScreenSizeIndicator from "@/components/screen-size-indicator";
+import { getMetadata } from "@/app/metadata";
+import { PATHS } from "@/app/urls";
 import { env } from "@/env";
-import { getLang } from "@/internationalization/functions";
-import { getPersonJsonLd, getWebSiteJsonLd } from "@/lib/structured-data";
-import { SanityLive } from "@/sanity/lib/live";
+import { LANGS } from "@/internationalization";
+import { Providers } from "@/lib/tanstack-query/providers";
+import { cn } from "@/lib/utils";
+import { COLORS } from "@/styles/colors";
 import type { Lang } from "@/types";
 
-import Message from "./(home)/components/message";
-import Profile from "./(home)/components/profile";
+import "@/styles/globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
-type Props = { children: React.ReactNode; params: Promise<{ lang: string }> };
+import "@/server/orpc.server";
 
-export default async function RootLayout({ params, children }: Props): Promise<React.JSX.Element> {
-  const { lang, s, d, formatDate } = getLang((await params).lang as Lang);
-  const { isEnabled: isDraftMode } = await draftMode();
+export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
+export const dynamicParams = false;
+
+export const generateMetadata = async ({ params }: LayoutProps<"/[lang]">): Promise<Metadata> => {
+  const { lang } = await params;
+  return await getMetadata({ lang: lang as Lang, path: PATHS.main });
+};
+
+export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
+  const { lang } = await params;
   return (
-    <Fragment>
-      <JsonLd data={[getPersonJsonLd(lang), getWebSiteJsonLd(lang)]} />
-      <SanityLive />
-      {isDraftMode && (
-        <Fragment>
-          <DisableDraftMode />
-          <VisualEditing />
-        </Fragment>
-      )}
-      <main className="flex flex-col gap-4 main-padding">
-        <Profile s={s} lang={lang} />
-        {children}
-        <Message s={s} lang={lang} />
-        <Container title={d.updatedOn(formatDate(new Date("2026-09-01")))} />
-        <iframe
-          title="Spotify"
-          src={env.SPOTIFY_TRACK_URL}
-          width="100%"
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-          className="wrapper rounded-sm"
-        />
-      </main>
-      {OtherComponents[env.NODE_ENV]}
-    </Fragment>
+    <html lang={lang} className={cn(GeistSans.variable, "dark")} data-scroll-behavior="smooth">
+      <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
+      <body className="bg-background text-foreground font-sans">
+        <NuqsAdapter>
+          <Providers>
+            {children}
+            <NextTopLoader color={COLORS.primary} showSpinner={false} />
+            <Toaster position="top-right" richColors className="font-sans whitespace-pre-line" />
+          </Providers>
+        </NuqsAdapter>
+        {OtherComponents[env.NODE_ENV]}
+      </body>
+    </html>
   );
 }
 
 const OtherComponents: Record<typeof env.NODE_ENV, React.JSX.Element | null> = {
-  development: <ScreenSizeIndicator />,
-  production: null,
+  development: null,
+  production: (
+    <Fragment>
+      <Analytics />
+      <SpeedInsights />
+    </Fragment>
+  ),
   test: null,
 };

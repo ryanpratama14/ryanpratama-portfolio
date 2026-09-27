@@ -21,18 +21,18 @@ import type { Lang } from "@/types";
 import Share from "./components/share";
 import StickyTitle from "./components/sticky-title";
 
-type Props = { params: Promise<{ slug: string; lang: Lang }> };
-
 export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   return (await client.fetch(GetPosts)).filter((r) => !!r.slug?.current).map((e) => ({ slug: e.slug?.current || "" }));
 };
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata | undefined> => {
-  const { slug } = await params;
+export const generateMetadata = async ({ params }: PageProps<"/[lang]/blog/[slug]">): Promise<Metadata | undefined> => {
+  const { slug, lang } = await params;
   const { data } = await api.post.detail.call({ slug });
   if (!data?.slug?.current) return;
 
   return await getMetadata({
+    lang: lang as Lang,
+    path: `${PATHS.post}/${data.slug.current}`,
     title: data.title,
     description: data.description,
     type: "article",
@@ -42,8 +42,9 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata | un
   });
 };
 
-export default async function BlogPageBySlug({ params }: Props) {
-  const { slug, lang } = await params;
+export default async function BlogPageBySlug({ params }: PageProps<"/[lang]/blog/[slug]">) {
+  const { slug, lang: langParam } = await params;
+  const lang = langParam as Lang;
   const { data } = await api.post.detail.call({ slug });
   if (!data?.slug?.current) notFound();
   const { data: relatedData } = await api.post.list.call({ slice: 6, slugToRemove: data.slug.current });

@@ -7,7 +7,6 @@ import LinkButton from "@/components/html/link-button";
 import LangSwitcher from "@/components/lang-switcher";
 import { DEFAULT_LANG } from "@/internationalization";
 import { getLang } from "@/internationalization/functions";
-import { getCookieLang } from "@/lib/actions";
 import { PHOTOS } from "@/lib/constants";
 import { getProfileData } from "@/lib/constants/functions";
 import { cn } from "@/lib/utils";
@@ -46,7 +45,6 @@ function ProfileItems({ profiles }: { profiles: ReturnType<typeof getProfileData
 }
 
 export default async function Profile({ s, lang }: Props) {
-  const storedLang = await getCookieLang();
   const profiles = getProfileData(lang);
   const isDefaultLang = lang === DEFAULT_LANG;
 
@@ -77,7 +75,7 @@ export default async function Profile({ s, lang }: Props) {
           </section>
         </section>
 
-        <LangSwitcher storedLang={storedLang} />
+        <LangSwitcher />
       </section>
 
       <ul className="mt-4 -mb-2 flex md:hidden gap-y-1 gap-x-2 flex-wrap">

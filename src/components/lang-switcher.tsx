@@ -7,20 +7,17 @@ import { LANGUAGE_OPTIONS } from "@/internationalization";
 import { changeLang, getLangFromPath, validateMatchedLang } from "@/internationalization/functions";
 import { setCookieLang } from "@/lib/actions";
 import { cn } from "@/lib/utils";
-import type { LangTarget } from "@/types";
 
 import Img from "./html/img";
 import LinkButton from "./html/link-button";
 
-type Props = { storedLang: LangTarget };
-
-export default function LangSwitcher({ storedLang }: Props) {
+export default function LangSwitcher() {
   const path = usePathname();
   const lang = validateMatchedLang(getLangFromPath(path));
 
   useEffect(() => {
-    if (!storedLang || lang !== storedLang) setCookieLang(lang);
-  }, [lang, storedLang]);
+    void setCookieLang(lang);
+  }, [lang]);
 
   return (
     <ul className="flex gap-0.5 md:gap-1">

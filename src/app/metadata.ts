@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { env } from "@/env";
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { getLang } from "@/internationalization/functions";
-import { getHeaders } from "@/lib/actions";
 import { PERSONALS } from "@/lib/constants";
+import type { Lang } from "@/types";
 
 import { getUrl, stripLangFromPath, URLS } from "./urls";
 
@@ -16,6 +16,8 @@ type OpenGraphArticle = {
 };
 
 type Props = {
+  lang: Lang;
+  path: string;
   openGraphArticle?: OpenGraphArticle;
   description?: string;
   title?: string;
@@ -26,6 +28,8 @@ type Props = {
 };
 
 export const getMetadata = async ({
+  lang,
+  path,
   title,
   description,
   imageUrl,
@@ -34,8 +38,6 @@ export const getMetadata = async ({
   type = "website",
   index = true,
 }: Props): Promise<Metadata> => {
-  const { path, lang } = await getHeaders();
-
   const {
     s: { PERSONAL_DATA: me },
     splittedLocale: locale,
@@ -62,7 +64,11 @@ export const getMetadata = async ({
     keywords: tags?.length ? tags : keywords,
     referrer: "origin-when-cross-origin",
     authors: [{ name: MAIN_TITLE, url: getUrl({ path: "", lang }) }],
-    title: { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
+    // Use absolute when the page title is the site name so the template does not produce "Name | Name".
+    title:
+      modifiedTitle === MAIN_TITLE
+        ? { absolute: MAIN_TITLE, template: `%s | ${MAIN_TITLE}` }
+        : { default: modifiedTitle, template: `%s | ${MAIN_TITLE}` },
     description: MAIN_DESCRIPTION,
     alternates: {
       canonical,

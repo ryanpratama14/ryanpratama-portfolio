@@ -1,4 +1,3 @@
-import { ENDPOINTS } from "@/app/urls";
 import { getLang } from "@/internationalization/functions";
 import { PERSONALS } from "@/lib/constants";
 import type { Lang, Profile } from "@/types";

@@ -3,7 +3,6 @@ import Negotiator from "negotiator";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { HEADERS } from "@/app/urls";
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { getLangFromPath, isLangMissing, validateLang, validateMatchedLang } from "@/internationalization/functions";
 
@@ -21,10 +20,7 @@ export const proxy = (req: NextRequest) => {
   const path = req.nextUrl.pathname;
   const lang = getLangFromPath(path) ?? validateLang(req.cookies.get("lang")?.value) ?? getLang(req);
   if (isLangMissing(path)) return NextResponse.redirect(new URL(`/${lang}${path.startsWith("/") ? "" : "/"}${path}`, req.url));
-  const res = NextResponse.next();
-  res.headers.set(HEADERS.lang, lang);
-  res.headers.set(HEADERS.path, path);
-  return res;
+  return NextResponse.next();
 };
 
-export const config = { matcher: ["/((?!api|studio|_next|_vercel|.*\\..*).*)"] };
+export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };

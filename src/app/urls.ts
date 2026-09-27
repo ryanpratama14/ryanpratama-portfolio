@@ -33,9 +33,8 @@ const IS_CLIENT = typeof window !== "undefined";
 const BASE_URL = { development: getBaseUrl(), production: env.NEXT_PUBLIC_URL };
 const ENDPOINTS = { rpc: "/api/rpc", ogImage: "/assets/opengraph.png", sitemap: "/sitemap.xml", resume: "/resume.pdf" } as const;
 const COOKIES = { lang: "lang" };
-const HEADERS = { lang: "x-lang", path: "x-pathname" };
-const PATHS = { main: "/", certification: "/certification", post: "/blog", resume: "/resume" };
-const ALL_PATHS = Object.values(PATHS).flat();
+const PATHS = { main: "/", certification: "/certification", post: "/blog" };
+const ALL_PATHS = Object.values(PATHS);
 const URLS = {
   ogImage: getUrl({ path: ENDPOINTS.ogImage }),
   sitemap: getUrl({ path: ENDPOINTS.sitemap }),
@@ -52,7 +51,6 @@ export {
   ENDPOINTS,
   getBaseUrl,
   getUrl,
-  HEADERS,
   IS_CLIENT,
   isExternalLink,
   PATHS,

@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { Fragment } from "react";
 
+import { getMetadata } from "@/app/metadata";
 import { PATHS } from "@/app/urls";
 import BlogCards from "@/components/blog-cards";
 import CertificationCards from "@/components/certification-cards";
@@ -12,10 +14,13 @@ import AdditionalInformation from "./components/additional-information";
 import Experience from "./components/experience";
 import FeaturedProjects from "./components/featured-projects";
 
-type Props = { params: Promise<{ lang: Lang }> };
+export const generateMetadata = async ({ params }: PageProps<"/[lang]">): Promise<Metadata> => {
+  const { lang } = await params;
+  return await getMetadata({ lang: lang as Lang, path: PATHS.main });
+};
 
-export default async function HomePage({ params }: Props) {
-  const { s, lang } = getLang((await params).lang);
+export default async function HomePage({ params }: PageProps<"/[lang]">) {
+  const { s, lang } = getLang((await params).lang as Lang);
   const { data } = await api.post.list.call({ slice: 4 });
 
   return (
