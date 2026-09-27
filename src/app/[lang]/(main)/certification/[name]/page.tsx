@@ -11,9 +11,7 @@ import type { Lang } from "@/types";
 
 export const generateStaticParams = () => CERTIFICATIONS.map((e) => ({ name: e.name }));
 
-export const generateMetadata = async ({
-  params,
-}: PageProps<"/[lang]/certification/[name]">): Promise<Metadata | undefined> => {
+export const generateMetadata = async ({ params }: PageProps<"/[lang]/certification/[name]">): Promise<Metadata | undefined> => {
   const { name, lang } = await params;
   const { s } = getLang(lang as Lang);
 

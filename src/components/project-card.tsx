@@ -25,7 +25,7 @@ export default function ProjectCard({ data }: { data: (typeof PROJECTS)[number] 
       >
         <div className="flex flex-col gap-0.5 items-end">
           <p className="font-semibold text-right">{e.label}</p>
-          <div className="w-6 h-[1px] bg-foreground" />
+          <div className="w-6 h-px bg-foreground" />
         </div>
         <small className="text-center text-balance">{e.desc}</small>
 

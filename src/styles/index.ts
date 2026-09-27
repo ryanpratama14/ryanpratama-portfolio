@@ -2,15 +2,15 @@ import { tv } from "tailwind-variants";
 
 export const VARIANTS = {
   Button: tv({
-    base: "whitespace-nowrap flex items-center justify-center disabled:cursor-progress rounded-sm shadow active:scale-95",
+    base: "whitespace-nowrap flex items-center gap-2 justify-center disabled:cursor-progress rounded-sm shadow active:scale-95",
     variants: {
       style: {
-        reguler: "font-medium px-4 h-7 bg-primary text-primary-foreground hover:bg-primary/80 disabled:bg-primary/60",
+        regular: "font-medium px-4 h-7.5 bg-primary text-primary-foreground hover:bg-primary/80 disabled:bg-primary/60",
         close: "bg-muted hover:bg-accent p-0.5",
       },
     },
     defaultVariants: {
-      style: "reguler",
+      style: "regular",
     },
   }),
 

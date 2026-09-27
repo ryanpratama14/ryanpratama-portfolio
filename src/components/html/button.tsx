@@ -20,7 +20,8 @@ export default function Button({ style, type, className, disabled, children, uns
       type={type ?? "button"}
       className={cn(unstyled ? className : VARIANTS.Button({ className, style }))}
     >
-      {isPending ? <Loader className="size-4 animate-spin" /> : children || <span className="sr-only">Button</span>}
+      {isPending ? <Loader className="size-3.5 animate-spin" /> : null}
+      {children || <span className="sr-only">Button</span>}
     </button>
   );
 }

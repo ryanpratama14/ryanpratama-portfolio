@@ -42,18 +42,4 @@ const URLS = {
   rpc: getUrl({ path: ENDPOINTS.rpc, type: "development" }),
 };
 
-export {
-  ALL_PATHS,
-  addPath,
-  BASE_URL,
-  COOKIES,
-  createUrl,
-  ENDPOINTS,
-  getBaseUrl,
-  getUrl,
-  IS_CLIENT,
-  isExternalLink,
-  PATHS,
-  stripLangFromPath,
-  URLS,
-};
+export { ALL_PATHS, addPath, BASE_URL, COOKIES, createUrl, ENDPOINTS, getBaseUrl, getUrl, IS_CLIENT, isExternalLink, PATHS, stripLangFromPath, URLS };
