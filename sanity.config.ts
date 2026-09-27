@@ -13,7 +13,7 @@ import { schema } from "./src/sanity/schema-types";
 import { structure } from "./src/sanity/structure";
 
 export default defineConfig({
-  basePath: "/en/studio",
+  basePath: "/studio",
   projectId,
   dataset,
   schema,

@@ -10,12 +10,12 @@ export const en = {
 
       fullName: "Ryan Pratama",
       summary:
-        "Experienced Software Engineer specializing in front-end development. Skilled in crafting high-quality solutions tailored to client requirements, with a commitment to staying updated on industry trends and emerging technologies.",
+        "Software engineer working across the frontend and backend. I ship end-to-end products, weave AI into the applications I build, and use AI tools every day to move faster without cutting corners on quality.",
       summaryShort:
-        "Experienced Software Engineer specializing in front-end development. Committed to crafting tailored solutions, staying updated on tech trends.",
+        "Software engineer across frontend and backend — shipping AI-integrated products and building with AI in the loop.",
       softwareEngineer: "Software Engineer",
       about:
-        "In my third semester at university, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan, Russia. Along with other students, we learned the basics of JavaScript and eventually formed a software house startup called faoTech in 2022. As I developed my skills, I discovered a passion for front-end development and decided to specialize in this field.",
+        "In my third semester at university, I joined a free programming course taught by my Indonesian friend in his apartment in Kazan, Russia. Along with other students, we learned the basics of JavaScript and eventually formed a software house startup called faoTech in 2022. I started on the frontend, then grew into backend work as well — and these days I ship end-to-end products with AI woven into both the applications I build and how I work.",
     },
 
     COUNTER: {

@@ -7,5 +7,5 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: true,
-  stega: { studioUrl: "/en/studio" },
+  stega: { studioUrl: "/studio" },
 });

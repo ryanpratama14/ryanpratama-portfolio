@@ -23,4 +23,4 @@ export const proxy = (req: NextRequest) => {
   return NextResponse.next();
 };
 
-export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };
+export const config = { matcher: ["/((?!api|_next|_vercel|studio|.*\\..*).*)"] };
