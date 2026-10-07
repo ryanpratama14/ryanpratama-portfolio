@@ -64,7 +64,6 @@ const getLang = (lang: Lang) => {
     isJapanese,
     isRussian,
     isDefaultLang,
-    currentTime: new Date().toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
 
     formatMonth,
     formatDate,

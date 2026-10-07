@@ -18,7 +18,9 @@ export default async function MainLayout({ params, children }: LayoutProps<"/[la
   return (
     <Fragment>
       <JsonLd data={[getPersonJsonLd(lang), getWebSiteJsonLd(lang)]} />
-      <SanityLive />
+      <Suspense>
+        <SanityLive />
+      </Suspense>
       <Suspense>
         <DraftModeTools />
       </Suspense>

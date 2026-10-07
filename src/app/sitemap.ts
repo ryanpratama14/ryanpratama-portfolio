@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { cacheLife } from "next/cache";
 
 import { ALL_PATHS, ENDPOINTS, getUrl, PATHS } from "@/app/urls";
 import { DEFAULT_LANG, LANGS } from "@/internationalization";
 import { CERTIFICATIONS } from "@/lib/constants";
-import { sanityFetch } from "@/sanity/lib/live";
+import { client } from "@/sanity/lib/client";
 import { GetPosts } from "@/sanity/lib/queries";
 import type { Lang } from "@/types";
 
@@ -18,8 +19,14 @@ const createEntry = (path: string, lang: Lang, lastModified?: string | Date | nu
   },
 });
 
+const getBlogPosts = async () => {
+  "use cache";
+  cacheLife("days");
+  return client.fetch(GetPosts);
+};
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { data: blogPosts } = await sanityFetch({ query: GetPosts, stega: false, perspective: "published" });
+  const blogPosts = await getBlogPosts();
 
   const staticEntries = ALL_PATHS.flatMap((path) => LANGS.map((lang) => createEntry(path, lang)));
 

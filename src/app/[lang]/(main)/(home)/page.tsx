@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 
 import { getMetadata } from "@/app/metadata";
 import { PATHS } from "@/app/urls";
@@ -26,7 +26,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   return (
     <Fragment>
       <About s={s} />
-      <FeaturedProjects s={s} />
+      <Suspense>
+        <FeaturedProjects s={s} />
+      </Suspense>
       <BlogCards href={PATHS.post} lang={lang} title={s.MENUS.blog} data={data} />
       <Experience s={s} lang={lang} />
       <AdditionalInformation s={s} lang={lang} />

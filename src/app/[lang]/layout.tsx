@@ -26,7 +26,6 @@ import "swiper/css/scrollbar";
 import "@/server/orpc.server";
 
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
-export const dynamicParams = false;
 
 export const generateMetadata = async ({ params }: LayoutProps<"/[lang]">): Promise<Metadata> => {
   const { lang } = await params;
