@@ -8,13 +8,12 @@ import { env } from "@/env";
 import { getLang } from "@/internationalization/functions";
 import { getPersonJsonLd, getWebSiteJsonLd } from "@/lib/structured-data";
 import { SanityLive } from "@/sanity/lib/live";
-import type { Lang } from "@/types";
 
 import Message from "./(home)/components/message";
 import Profile from "./(home)/components/profile";
 
 export default async function MainLayout({ params, children }: LayoutProps<"/[lang]">) {
-  const { lang, s, d, formatDate } = getLang((await params).lang as Lang);
+  const { lang, s, d, formatDate } = getLang((await params).lang);
   return (
     <Fragment>
       <JsonLd data={[getPersonJsonLd(lang), getWebSiteJsonLd(lang)]} />

@@ -8,14 +8,16 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Fragment } from "react/jsx-runtime";
 import { Toaster } from "sonner";
 
+import { notFound } from "next/navigation";
+
 import { getMetadata } from "@/app/metadata";
 import { PATHS } from "@/app/urls";
 import { env } from "@/env";
 import { LANGS } from "@/internationalization";
+import { validateLang } from "@/internationalization/functions";
 import { Providers } from "@/lib/tanstack-query/providers";
 import { cn } from "@/lib/utils";
 import { COLORS } from "@/styles/colors";
-import type { Lang } from "@/types";
 
 import "@/styles/globals.css";
 import "swiper/css";
@@ -28,12 +30,14 @@ import "@/server/orpc.server";
 export const generateStaticParams = async () => LANGS.map((lang) => ({ lang }));
 
 export const generateMetadata = async ({ params }: LayoutProps<"/[lang]">): Promise<Metadata> => {
-  const { lang } = await params;
-  return await getMetadata({ lang: lang as Lang, path: PATHS.main });
+  const lang = validateLang((await params).lang);
+  if (!lang) return {};
+  return await getMetadata({ lang, path: PATHS.main });
 };
 
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
-  const { lang } = await params;
+  const lang = validateLang((await params).lang);
+  if (!lang) notFound();
   return (
     <html lang={lang} className={cn(GeistSans.variable, "dark")} data-scroll-behavior="smooth">
       <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />

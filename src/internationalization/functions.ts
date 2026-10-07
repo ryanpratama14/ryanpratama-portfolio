@@ -5,14 +5,15 @@ import { DEFAULT_LANG, LANGS, LANGUAGES } from "@/internationalization";
 import { pluralizeRu } from "@/internationalization/helpers";
 import type { Lang, LangTarget } from "@/types";
 
-const getLang = (lang: Lang) => {
-  const { t, ...rest } = LANGUAGES[lang];
+const getLang = (lang: LangTarget) => {
+  const resolved = validateMatchedLang(lang);
+  const { t, ...rest } = LANGUAGES[resolved];
   const { s, d } = t;
   const { locale, currency } = rest;
 
-  const isJapanese = lang === "ja";
-  const isRussian = lang === "ru";
-  const isDefaultLang = lang === DEFAULT_LANG;
+  const isJapanese = resolved === "ja";
+  const isRussian = resolved === "ru";
+  const isDefaultLang = resolved === DEFAULT_LANG;
 
   const formatMonth = (date: Date) => date.toLocaleDateString(locale, { month: "short", year: "numeric" });
   const formatDate = (date: Date) => date.toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
