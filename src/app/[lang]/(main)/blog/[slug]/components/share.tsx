@@ -2,42 +2,36 @@
 
 import { Icon } from "@iconify-icon/react";
 import { usePathname } from "next/navigation";
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  LinkedinShareButton,
-  TelegramShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-} from "react-share";
+import { EmailShareButton, FacebookShareButton, LinkedinShareButton, TelegramShareButton, XShareButton, WhatsappShareButton } from "react-share";
 import { toast } from "sonner";
 
 import { getUrl } from "@/app/urls";
 import { ICONS } from "@/lib/constants";
 
+const getLinks = (url: string) => [
+  {
+    label: "Copy",
+    icon: ICONS.copy,
+    onClick: async () => {
+      await navigator.clipboard.writeText(url);
+      toast.success("Copied!");
+    },
+  },
+  { label: "LinkedIn", icon: ICONS.linkedin, Component: LinkedinShareButton },
+  { label: "WhatsApp", icon: ICONS.whatsapp, Component: WhatsappShareButton },
+  { label: "Telegram", icon: ICONS.telegram, Component: TelegramShareButton },
+  { label: "X", icon: ICONS.x, Component: XShareButton },
+  { label: "Facebook", icon: ICONS.facebook, Component: FacebookShareButton },
+  { label: "Email", icon: ICONS.email, Component: EmailShareButton },
+];
+
 export default function Share() {
   const url = getUrl({ path: usePathname() });
-
-  const DATA = [
-    {
-      label: "Copy",
-      icon: ICONS.copy,
-      onClick: async () => {
-        await navigator.clipboard.writeText(url);
-        toast.success("Copied!");
-      },
-    },
-    { label: "LinkedIn", icon: ICONS.linkedin, Component: LinkedinShareButton },
-    { label: "WhatsApp", icon: ICONS.whatsapp, Component: WhatsappShareButton },
-    { label: "Telegram", icon: ICONS.telegram, Component: TelegramShareButton },
-    { label: "X", icon: ICONS.x, Component: TwitterShareButton },
-    { label: "Facebook", icon: ICONS.facebook, Component: FacebookShareButton },
-    { label: "Email", icon: ICONS.email, Component: EmailShareButton },
-  ];
+  const links = getLinks(url);
 
   return (
     <ul className="flex gap-1.5">
-      {DATA.map((e) => {
+      {links.map((e) => {
         if (!e.Component && e.onClick) {
           return (
             <li key={e.icon}>
